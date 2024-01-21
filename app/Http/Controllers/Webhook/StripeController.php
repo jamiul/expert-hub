@@ -6,7 +6,9 @@ use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
 use App\Models\ExpertPayout;
+use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
+use App\Models\Milestone;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -53,16 +55,6 @@ class StripeController extends Controller {
                 $this->__paymentMethodDetached( $paymentMethod );
                 break;
 
-            case 'transfer.created':
-                $paymentMethod = $event->data->object;
-                $this->__paymentGeneric( $paymentMethod );
-                break;
-
-            case 'payment.created':
-                $paymentMethod = $event->data->object;
-                $this->__paymentGeneric( $paymentMethod );
-                break;
-
             case 'account.external_account.created':
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountCreate( $paymentMethod );
@@ -103,14 +95,19 @@ class StripeController extends Controller {
                 $this->__payoutPaid( $payout );
                 break;
 
-            case 'payment.created': //when money transferred to expert's stripe account
+            case 'transfer.created': //when money transferred to expert's stripe account
+                $paymentMethod = $event->data->object;
+                $this->__transferCreated( $paymentMethod );
+                break;
+
+            case 'payment.created':
                 $transfer = $event->data->object;
-                $this->__paymentCreated( $transfer );
+                $this->__paymentGeneric( $transfer );
                 break;
 
             case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
                 $transfer = $event->data->object;
-                $this->__transferReversed($transfer);
+                $this->__transferReversed( $transfer );
                 break;
 
             case 'account.application.authorized':
@@ -174,7 +171,7 @@ class StripeController extends Controller {
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
-                'payment_intent_id' => $paymentData->id,
+                'payment_intent_id'      => $paymentData->id,
                 'reference_id'           => $reference_id,
                 'reference_type'         => $reference_type,
                 'object'                 => $paymentData->object,
@@ -201,69 +198,134 @@ class StripeController extends Controller {
             //save to client transaction table
             //todo: calculate client displayable transaction data
             if ( $reference_type == 'milestone' ) {
-                //todo: read milestone amount from milestone id
-                $milestone_amount = 100;
-                $expert_id = 1; //retrieve it from milestone
+                $milestone         = Milestone::find( $reference_id );
+                $milestone->status = 'Funded';
+                $milestone->save();
+
+                $milestone_amount = $milestone->amount;
+                $expert_id        = $milestone->eoi->expert->user->id;
 
                 //breakdown charge into pieces
-                $charge = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
-                $profile = Profile::where('stripe_client_id', $paymentData->customer)->first();
+                $charge    = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+                $profile   = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
+                $client_id = $profile->user_id;
 
                 //parent transaction
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $reference_id,
-                    'type'           => 'Fixed Price',
-                    'description'    => "Invoice for for PROJECT NAME",
-                    'client_id'        => $profile->user_id,
-                    'expert_id'        => $expert_id,
-                    'amount'         => $charge['total_amount'],
-                    'charge_type'    => 'debit',
+                    'type'           => 'Payment',
+                    'description'    => "Paid from Mastercard 0026 to escrow for funding request xxxxxxxxx",
+                    'client_id'      => $client_id,
+                    'expert_id'      => null,
+                    'amount'         => ( $paymentData->amount / 100 ),
+                    'charge_type'    => 'credit',
                     'parent'         => null,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                 ];
                 $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
 
-                //child transaction
+                //escrow transaction
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Fixed Price',
+                    'description'    => "Funding request for " . $milestone->eoi->project->title,
+                    'client_id'      => $client_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $milestone_amount,
+                    'charge_type'    => 'debit',
+                    'parent'         => $stripe_transaction->id,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+
+                //service fee transaction
                 $service_fee      = $charge['service_charge'];
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $reference_id,
                     'type'           => 'Service Fee',
-                    'description'    => "Service Fee for Fixed Price - Ref ID $stripe_transaction->id",
-                    'client_id'        => $profile->user_id,
-                    'expert_id'        => $expert_id,
+                    'description'    => "Funding request for Fixed Price - Ref ID $stripe_transaction->id",
+                    'client_id'      => $client_id,
+                    'expert_id'      => $expert_id,
                     'amount'         => $service_fee,
-                    'charge_type'    => 'credit',
+                    'charge_type'    => 'debit',
                     'parent'         => $stripe_transaction->id,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                 ];
                 PaymentHelper::createClientTransaction( $transaction_data );
 
-                //child transaction
+                //contract initialization fee transaction
                 if ( $charge['contract_initialization_fee'] > 0 ) {
-                    $service_fee      = $charge['contract_initialization_fee'];
-                    $transaction_data = [
+                    $contract_initialization_fee = $charge['contract_initialization_fee'];
+                    $transaction_data            = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $reference_id,
                         'type'           => 'Contract Initialization Fee',
                         'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $stripe_transaction->id",
-                        'client_id'        => $profile->user_id,
-                        'expert_id'        => $expert_id,
-                        'amount'         => $service_fee,
-                        'charge_type'    => 'credit',
+                        'client_id'      => $profile->user_id,
+                        'expert_id'      => $expert_id,
+                        'amount'         => $contract_initialization_fee,
+                        'charge_type'    => 'debit',
                         'parent'         => $stripe_transaction->id,
                         'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
                 }
+
+                //payment gateway fee transaction
+                $gateway_fee      = $charge['payment_gateway_fee'];
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Payment Gateway Fee',
+                    'description'    => "Payment Gateway Fee for Fixed Price - Ref ID $stripe_transaction->id",
+                    'client_id'      => $profile->user_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $gateway_fee,
+                    'charge_type'    => 'debit',
+                    'parent'         => $stripe_transaction->id,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                PaymentHelper::createClientTransaction( $transaction_data );
+
+                //gst transaction
+                $gst              = $charge['gst'];
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'GST',
+                    'description'    => "GST for Fixed Price - Ref ID $stripe_transaction->id",
+                    'client_id'      => $profile->user_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $gst,
+                    'charge_type'    => 'debit',
+                    'parent'         => $stripe_transaction->id,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                PaymentHelper::createClientTransaction( $transaction_data );
+
+
+                /* milestone funded, update & send notification to expert*/
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Fixed Price',
+                    'description'    => "Funded for " . $milestone->eoi->project->title,
+                    'client_id'      => $profile->user_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $milestone_amount,
+                    'charge_type'    => 'credit',
+                    'parent'         => $stripe_transaction->id,
+                    'status'         => 0
+                ];
+                PaymentHelper::createExpertTransaction( $transaction_data );
             }
 
             //todo: add data to client specific transaction table
             //todo: update milestone status
             //todo: send payment notification & email to Client, Expert & Admin
-
-            Log::info( $paymentData );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
@@ -350,15 +412,15 @@ class StripeController extends Controller {
         }
     }
 
-    private function __chargeRefund($paymentData) {
+    private function __chargeRefund( $paymentData ) {
         $stripe_transaction = Transaction::updateOrCreate( [
             'charge_id' => $paymentData->id
         ], [
-            'payment_intent_id' => $paymentData->payment_intent,
+            'payment_intent_id'      => $paymentData->payment_intent,
             'object'                 => $paymentData->object,
             'amount'                 => $paymentData->amount,
             'amount_captured'        => $paymentData->amount_captured,
-            'amount_refunded'      => $paymentData->amount_refunded,
+            'amount_refunded'        => $paymentData->amount_refunded,
             'application_fee_amount' => $paymentData->application_fee_amount,
             'currency'               => $paymentData->currency,
             'customer_id'            => $paymentData->customer,
@@ -372,16 +434,17 @@ class StripeController extends Controller {
             'created_time'           => $paymentData->created ? Carbon::createFromTimestamp( $paymentData->created )->format( 'Y-m-d H:i:s' ) : null,
             'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp( $paymentData->canceled_at )->format( 'Y-m-d H:i:s' ) : null,
             'cancellation_reason'    => $paymentData->cancellation_reason,
-            'refunded' => $paymentData->refunded,
+            'refunded'               => $paymentData->refunded,
             'status'                 => $paymentData->status,
             'livemode'               => $paymentData->livemode
         ] );
     }
+
     /*
      * connect webhooks
      * */
-    private function __externalAccountCreate($paymentMethod) {
-        Log::info($paymentMethod);
+    private function __externalAccountCreate( $paymentMethod ) {
+        Log::info( $paymentMethod );
         try {
             $stripe_customer_id = $paymentMethod->account;
             $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
@@ -396,33 +459,33 @@ class StripeController extends Controller {
             }
 
             ExpertWithdrawal::updateOrCreate( [
-                'user_id' => $user_id,
+                'user_id'     => $user_id,
                 'fingerprint' => $paymentMethod->fingerprint
             ], [
-                'source_type' => $paymentMethod->object,
-                'bank_id' => $paymentMethod->id,
+                'source_type'         => $paymentMethod->object,
+                'bank_id'             => $paymentMethod->id,
                 'account_holder_name' => $paymentMethod->account_holder_name,
                 'account_holder_type' => $paymentMethod->account_holder_type,
-                'account_type' => $paymentMethod->account_type,
-                'bank_name' => $paymentMethod->bank_name,
-                'country' => $paymentMethod->country,
-                'currency' => $paymentMethod->currency,
-                'last4' => $paymentMethod->last4,
-                'routing_number' => $paymentMethod->routing_number,
-                'is_default' => $is_default,
-                'status' => $paymentMethod->status
+                'account_type'        => $paymentMethod->account_type,
+                'bank_name'           => $paymentMethod->bank_name,
+                'country'             => $paymentMethod->country,
+                'currency'            => $paymentMethod->currency,
+                'last4'               => $paymentMethod->last4,
+                'routing_number'      => $paymentMethod->routing_number,
+                'is_default'          => $is_default,
+                'status'              => $paymentMethod->status
             ] );
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
         }
     }
 
-    private function __deleteExternalAccount($paymentMethod) {
+    private function __deleteExternalAccount( $paymentMethod ) {
         try {
             ExpertWithdrawal::where( 'bank_id', $paymentMethod->id )->delete();
-        } catch (\Exception $ex) {
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
@@ -432,26 +495,26 @@ class StripeController extends Controller {
     /*
      * payout to expert's external bank account created
      * */
-    private function __payoutCreated($payout) {
+    private function __payoutCreated( $payout ) {
         try {
-            $destination_id = $payout->destination;
-            $withdrawalMethod           = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
-            $user_id            = $withdrawalMethod->user_id;
+            $destination_id   = $payout->destination;
+            $withdrawalMethod = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
+            $user_id          = $withdrawalMethod->user_id;
 
             $expertpayout = ExpertPayout::updateOrCreate( [
                 'payout_id' => $payout->id
             ], [
-                'user_id' => $user_id,
-                'amount' => $payout->amount,
-                'arrival_date' => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
+                'user_id'             => $user_id,
+                'amount'              => $payout->amount,
+                'arrival_date'        => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
                 'balance_transaction' => $payout->balance_transaction,
-                'currency' => $payout->currency,
-                'description' => $payout->description,
-                'destination_id' => $payout->destination,
-                'method' => $payout->method,
-                'type' => $payout->type,
-                'status' => $payout->status
-            ]);
+                'currency'            => $payout->currency,
+                'description'         => $payout->description,
+                'destination_id'      => $payout->destination,
+                'method'              => $payout->method,
+                'type'                => $payout->type,
+                'status'              => $payout->status
+            ] );
 
             //save transaction for expert
             $transaction_data = [
@@ -459,8 +522,8 @@ class StripeController extends Controller {
                 'milestone_id'   => null,
                 'type'           => 'Withdrawal',
                 'description'    => "Wire Transfer ($payout->currency) xxxx-$withdrawalMethod->last4",
-                'client_id'        => null,
-                'expert_id'        => $user_id,
+                'client_id'      => null,
+                'expert_id'      => $user_id,
                 'amount'         => $payout->amount / 100,
                 'charge_type'    => 'debit',
                 'parent'         => null,
@@ -469,15 +532,15 @@ class StripeController extends Controller {
             $transaction      = PaymentHelper::createExpertTransaction( $transaction_data );
 
             //send notification
-            $user = User::find($user_id);
+            $user = User::find( $user_id );
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route('expert.payment.withdraw'),
-                'button' => 'Make another withdraw',
+                'link'    => route( 'expert.payment.withdraw' ),
+                'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
@@ -487,42 +550,42 @@ class StripeController extends Controller {
     /*
      * payout to expert's external bank account status updated
      * */
-    private function __payoutUpdated($payout) {
+    private function __payoutUpdated( $payout ) {
         try {
-            $destination_id = $payout->destination;
-            $withdrawalMethod           = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
-            $user_id            = $withdrawalMethod->user_id;
+            $destination_id   = $payout->destination;
+            $withdrawalMethod = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
+            $user_id          = $withdrawalMethod->user_id;
 
             ExpertPayout::updateOrCreate( [
                 'payout_id' => $payout->id
             ], [
-                'user_id' => $user_id,
-                'amount' => $payout->amount,
-                'arrival_date' => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
+                'user_id'             => $user_id,
+                'amount'              => $payout->amount,
+                'arrival_date'        => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
                 'balance_transaction' => $payout->balance_transaction,
-                'currency' => $payout->currency,
-                'description' => $payout->description,
-                'destination_id' => $payout->destination,
-                'method' => $payout->method,
-                'type' => $payout->type,
-                'status' => $payout->status
-            ]);
+                'currency'            => $payout->currency,
+                'description'         => $payout->description,
+                'destination_id'      => $payout->destination,
+                'method'              => $payout->method,
+                'type'                => $payout->type,
+                'status'              => $payout->status
+            ] );
 
             //save transaction for expert
-            ClientTransaction::where('transaction_id', $payout->id)->update([
-                'status'         => ( $payout->status == 'paid' ) ? 1 : 0
-            ]);
+            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+                'status' => ( $payout->status == 'paid' ) ? 1 : 0
+            ] );
 
             //send notification
-            $user = User::find($user_id);
+            $user = User::find( $user_id );
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route('expert.payment.withdraw'),
-                'button' => 'Make another withdraw',
+                'link'    => route( 'expert.payment.withdraw' ),
+                'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
@@ -532,84 +595,84 @@ class StripeController extends Controller {
     /*
      * payout to expert's external bank account failed
      * */
-    private function __payoutFailed($payout) {
+    private function __payoutFailed( $payout ) {
         try {
-            $destination_id = $payout->destination;
-            $withdrawalMethod           = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
-            $user_id            = $withdrawalMethod->user_id;
+            $destination_id   = $payout->destination;
+            $withdrawalMethod = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
+            $user_id          = $withdrawalMethod->user_id;
 
             ExpertPayout::updateOrCreate( [
                 'payout_id' => $payout->id
             ], [
-                'user_id' => $user_id,
-                'amount' => $payout->amount,
-                'arrival_date' => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
+                'user_id'             => $user_id,
+                'amount'              => $payout->amount,
+                'arrival_date'        => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
                 'balance_transaction' => $payout->balance_transaction,
-                'currency' => $payout->currency,
-                'description' => $payout->description,
-                'destination_id' => $payout->destination,
-                'method' => $payout->method,
-                'type' => $payout->type,
-                'status' => $payout->status
-            ]);
+                'currency'            => $payout->currency,
+                'description'         => $payout->description,
+                'destination_id'      => $payout->destination,
+                'method'              => $payout->method,
+                'type'                => $payout->type,
+                'status'              => $payout->status
+            ] );
 
             //save transaction for expert
-            ClientTransaction::where('transaction_id', $payout->id)->update([
-                'status'         => ( $payout->status == 'paid' ) ? 1 : 0
-            ]);
+            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+                'status' => ( $payout->status == 'paid' ) ? 1 : 0
+            ] );
 
             //send notification
-            $user = User::find($user_id);
+            $user = User::find( $user_id );
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route('expert.payment.withdraw'),
-                'button' => 'Make another withdraw',
+                'link'    => route( 'expert.payment.withdraw' ),
+                'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
         }
     }
 
-    private function __payoutPaid($payout) {
+    private function __payoutPaid( $payout ) {
         try {
-            $destination_id = $payout->destination;
-            $withdrawalMethod           = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
-            $user_id            = $withdrawalMethod->user_id;
+            $destination_id   = $payout->destination;
+            $withdrawalMethod = ExpertWithdrawal::where( 'bank_id', $destination_id )->firstOrFail();
+            $user_id          = $withdrawalMethod->user_id;
 
             ExpertPayout::updateOrCreate( [
                 'payout_id' => $payout->id
             ], [
-                'user_id' => $user_id,
-                'amount' => $payout->amount,
-                'arrival_date' => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
+                'user_id'             => $user_id,
+                'amount'              => $payout->amount,
+                'arrival_date'        => $payout->created ? Carbon::createFromTimestamp( $payout->arrival_date )->format( 'Y-m-d' ) : null,
                 'balance_transaction' => $payout->balance_transaction,
-                'currency' => $payout->currency,
-                'description' => $payout->description,
-                'destination_id' => $payout->destination,
-                'method' => $payout->method,
-                'type' => $payout->type,
-                'status' => $payout->status
-            ]);
+                'currency'            => $payout->currency,
+                'description'         => $payout->description,
+                'destination_id'      => $payout->destination,
+                'method'              => $payout->method,
+                'type'                => $payout->type,
+                'status'              => $payout->status
+            ] );
 
             //save transaction for expert
-            ClientTransaction::where('transaction_id', $payout->id)->update([
-                'status'         => ( $payout->status == 'paid' ) ? 1 : 0
-            ]);
+            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+                'status' => ( $payout->status == 'paid' ) ? 1 : 0
+            ] );
 
             //send notification
-            $user = User::find($user_id);
+            $user = User::find( $user_id );
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route('expert.payment.withdraw'),
-                'button' => 'Make another withdraw',
+                'link'    => route( 'expert.payment.withdraw' ),
+                'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
@@ -619,16 +682,42 @@ class StripeController extends Controller {
     /*
      * when money transferred to expert's stripe account
      * */
-    private function __paymentCreated($transfer) {
-        Log::info($transfer);
+    private function __transferCreated( $transfer ) {
+        $reference_id   = @$transfer->metadata->reference_id; //milestone id
+        $reference_type = @$transfer->metadata->reference_type; //milestone
+
         //todo: save into transfer table
+
+        //todo: update expert funded milestone status
+        if($reference_type == 'milestone'){
+            $milestone = Milestone::find($reference_id);
+            $expert_id = $milestone->eoi->expert_id;
+
+            $profile = Profile::find($expert_id);
+
+            $balance = $profile->balance;
+            $escrow_balance = $profile->escrow_balance;
+
+            $balance += ($transfer->amount / 100);
+            $escrow_balance -= ($transfer->amount / 100);
+
+            $profile->balance = $balance;
+            $profile->escrow_balance = $escrow_balance;
+            $profile->save();
+
+            //calculate expert balance & escrow
+            ExpertTransaction::where('milestone_id', $reference_id)->update([
+                'status'         => 1
+            ]);
+
+        }
     }
 
     /*
      * admin reveresed already transferred amount from expert's stripe account
      * */
-    private function __transferReversed($transfer) {
-        Log::info($transfer);
+    private function __transferReversed( $transfer ) {
+        Log::info( $transfer );
         //todo: update existing transfer data status
     }
 

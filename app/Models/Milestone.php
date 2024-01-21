@@ -10,4 +10,8 @@ class Milestone extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function eoi() {
+        return $this->belongsTo(Eoi::class);
+    }
 }

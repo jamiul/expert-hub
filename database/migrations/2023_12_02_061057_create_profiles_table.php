@@ -22,6 +22,8 @@ return new class extends Migration
             $table->longText('biography')->nullable();
             $table->string('current_role')->nullable();
             $table->string('current_organization')->nullable();
+            $table->decimal('balance', [12,2])->default(0);
+            $table->decimal('escrow_balance', [12,2])->default(0);
             $table->string('status'); //App\Enums\ProfileStatus
             $table->boolean('active')->default(1);
             $table->timestamps();

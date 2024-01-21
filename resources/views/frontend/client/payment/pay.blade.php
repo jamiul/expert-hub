@@ -81,10 +81,9 @@
                         <div class="registration-modal-area  d-flex flex-row">
                             <img class="img-sidebar" src="http://127.0.0.1:8000/assets/frontend/img/foundation.png " alt="fundation">
                             <div class="foundation-text d-flex flex-column">
-                                <div class="foundation-title"> <h4>Foundations of PLS-SEM Using SmartPLS 4</h4> </div>
+                                <div class="foundation-title"> <h4>{{ $milestone->eoi->project->title }}</h4> </div>
                                 <div class="foundation-border d-flex justify-content-between flex-row">
                                     <h6>Australian Eastern Daylight Time (GMT +11)</h6>
-
                                 </div>
                             </div>
                         </div>

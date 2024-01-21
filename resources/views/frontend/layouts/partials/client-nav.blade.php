@@ -71,8 +71,9 @@
                     </a>
                 </li>
                 @livewire('expert-notification-count')
-
-                @livewire('new-message-count')
+                
+                <livewire:new-message-count />
+                
                 <!-- <<li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
 
