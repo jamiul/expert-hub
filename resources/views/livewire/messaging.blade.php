@@ -429,7 +429,7 @@
                             <x-icon.expand />
                         </button>
 
-                        <textarea name="messageBody" id="messageBody" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
+                        <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
 
 
                         <div class="chatbox-message-editor-helper">
@@ -476,7 +476,7 @@
                                     </div>
                                 </div>
 
-                                <button class="icon-btn send-message" id="sendMessageButton" wire:click="sendMessage">
+                                <button class="icon-btn send-message" id="sendMessageButton" wire:click.prevent="sendMessage">
                                     <x-icon.send />
                                 </button>
                             </div>

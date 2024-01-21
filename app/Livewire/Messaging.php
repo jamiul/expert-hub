@@ -49,19 +49,29 @@ class Messaging extends Component
         // return;
         // ToDelete: Debugging purpose, delete when you are done
 
-        
-       
-        DB::transaction(function () {
+    //    try{
+
+
+
+        //TODO::Implement transaction
+        // DB::transaction(function () { 
             
             
             $data = $this->validate();
             
             
+        
+            
             $message = Message::create([
                 'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
                 'content' => $data['messageBody'],
-            ]);                       
+                // 'content' => 'sss',
+            ]);      
             
+             
+        
+                        
+           
             $participants = $this->currentConversation->participants;
 
             foreach ($participants as $participant) {
@@ -71,9 +81,30 @@ class Messaging extends Component
                 }
             }            
         
-            NewMessageCreated::dispatch($this->currentConversation);            
-        });
+            
+            
 
+            NewMessageCreated::dispatch($this->currentConversation);      
+            
+            // dump($message); 
+            // dump($k); 
+            // dd('hi');      
+        // });
+
+
+
+
+
+
+
+
+
+    //    }catch (\Exception $e){
+    //     dd($e);
+    //    }
+       
+        
+        
         
         $this->reset('messageBody');
     }

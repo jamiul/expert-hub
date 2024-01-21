@@ -89,7 +89,7 @@ Route::get( '/notification-settings', [
 ] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
 
 // Nel test
-Route::get('/conversation/create', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');
+Route::get('/conversation/create/{id}', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');
 Route::get('/messaging', [ConversationController::class, 'index'])->middleware('auth')->name('messaging');
 // Webhooks
 Route::group(['prefix' => 'webhooks'], function (){

@@ -22,8 +22,13 @@ class ConversationController extends Controller
         return view('frontend.messaging.index');
     }
 
-    public function store()
+    public function store($id)
     {        
+        // if($id === Auth::user()->profile->id){
+        //     dd('please chose a different user other than current user');
+        // }
+        // dd($id);
+        
         DB::transaction(function () {
             $authUser = Auth::user();
             $participantProfileIDs = [$authUser->profile->id, 2]; //TODO:receive the second user from UI
