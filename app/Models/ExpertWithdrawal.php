@@ -12,15 +12,18 @@ class ExpertWithdrawal extends Model {
 
     protected $fillable = [
         'user_id',
-        'type',
-        'country',
-        'account_holder_type',
+        'source_type',
+        'bank_id',
         'account_holder_name',
+        'account_holder_type',
         'account_type',
-        'routing_number',
-        'account_number',
+        'bank_name',
+        'country',
         'currency',
-        'default',
+        'fingerprint',
+        'last4',
+        'routing_number',
+        'is_default',
         'status'
     ];
 }

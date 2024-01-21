@@ -1,3 +1,13 @@
+@if (isset($errors) && $errors->any())
+    @php
+        $collection = collect($errors->all());
+        $errors = $collection->unique();
+    @endphp
+    @foreach ($errors as $error)
+        {{ __($error) }}<br />
+    @endforeach
+@endif
+
 <link rel="stylesheet" href="{{ asset('vendor/iziToast/dist/css/iziToast.min.css') }}">
 <script src="{{ asset('vendor/iziToast/dist/js/iziToast.min.js') }}"></script>
 
@@ -37,22 +47,22 @@
     </script>
 @endif
 
-@if (isset($errors) && $errors->any())
-    @php
-        $collection = collect($errors->all());
-        $errors = $collection->unique();
-    @endphp
+{{--@if (isset($errors) && $errors->any())--}}
+{{--    @php--}}
+{{--        $collection = collect($errors->all());--}}
+{{--        $errors = $collection->unique();--}}
+{{--    @endphp--}}
 
-    <script>
-        "use strict";
-        @foreach ($errors as $error)
-        iziToast.error({
-            message: '{{ __($error) }}',
-            position: "topRight"
-        });
-        @endforeach
-    </script>
-@endif
+{{--    <script>--}}
+{{--        "use strict";--}}
+{{--        @foreach ($errors as $error)--}}
+{{--        iziToast.error({--}}
+{{--            message: '{{ __($error) }}',--}}
+{{--            position: "topRight"--}}
+{{--        });--}}
+{{--        @endforeach--}}
+{{--    </script>--}}
+{{--@endif--}}
 
 <script>
     "use strict";
