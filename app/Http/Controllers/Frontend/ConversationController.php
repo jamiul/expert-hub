@@ -29,9 +29,10 @@ class ConversationController extends Controller
         // }
         // dd($id);
         
-        DB::transaction(function () {
+        DB::transaction(function () use ($id) {
+            // dd($id);
             $authUser = Auth::user();
-            $participantProfileIDs = [$authUser->profile->id, 2]; //TODO:receive the second user from UI
+            $participantProfileIDs = [$authUser->profile->id, $id]; //TODO:receive the second user from UI
 
             $conversation = Conversation::create(['creator_profile_id' => $authUser->profile->id, 'title' => $authUser->first_name]);
 
