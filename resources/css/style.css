@@ -7271,6 +7271,8 @@ h2:after {
     margin-right: 8px;
 }
 
+
+
 @media (min-width: 1200px) and (max-width: 1366px) {
     .product-slider .carousel-w .carousel-inner .item-text {
         width: 200px;

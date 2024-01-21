@@ -1054,7 +1054,10 @@
   <div class="academic-block academic-block-client">
       <div class="container px-5 px-sm-3">
         <div class="heading client-heading">
-          <h2>Upcoming Academic Training</h2>
+          <h2 class="mb-0">Upcoming Academic Training</h2>
+
+          <a href="" class="btn edux-btn-border-primary">View All</a>
+
         </div>
         <div class="row">
           <div class="col-md-3">
@@ -1152,7 +1155,7 @@
           <h2>Discover our Experts</h2>
         </div>
         <div class="view-all-expert">
-          <button type="button" class="btn btn-primary edux-btn-primary">View All Experts</button>
+          <a href="" class="btn edux-btn-border-primary">View All</a>
         </div>
       </div>
   </div>
@@ -1392,7 +1395,7 @@
           <h3>Build on Demand Teams for your Education Institution</h3>
           <p class="hire-details">Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time. Hire in unde</p>
           <div class="post-job">
-            <button type="button" class="btn btn-primary edux-btn-primary">Get Started</button>
+            <button type="button" class="btn btn-primary edux-btn-primary">Started</button>
         </div>
         </div>
       </div>
@@ -1400,7 +1403,7 @@
       <div class="single-team-member-area">
         <div class="single-team-member-row">
 
-          <div class="single-team-member">
+          <!-- <div class="single-team-member">
             <div class="single-person-deniyel">
               <img src="{{ asset('assets/frontend/img/img6.png') }}" alt="person">
             </div>
@@ -1408,7 +1411,8 @@
               <h3>Darrell Steward</h3>
               <p>Accreditation Specialist</p>
             </div>
-          </div>
+          </div> -->
+
           <div class="single-team-member">
             <div class="single-person-deniyel">
               <img src="{{ asset('assets/frontend/img/img4.png') }}" alt="person">
@@ -1457,6 +1461,14 @@
               <p>Accreditation Specialist</p>
             </div>
           </div>
+
+
+        </div>
+        <div class="row">
+        <div class="about-team-interview edux-client-dashboard-light">
+        <img src="{{ asset('assets/frontend/img/interview-icon.png') }}" alt="person">
+                <p class="mb-0">You can hire experts directly here for <a href="#">TV interview</a> or <a href="#">Keynote Speakers</a></p>
+            </div>
         </div>
       </div>
       </div>
