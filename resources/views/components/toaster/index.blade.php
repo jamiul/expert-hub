@@ -2,7 +2,7 @@
     x-data="{
         notifications: [],
         add(e) {
-            console.log(e.detail.content);
+            console.log(e.timeStamp);
             this.notifications.push({
                 id: e.timeStamp,
                 type: e.detail.type,
@@ -14,6 +14,13 @@
         },
     }"
     @notify.window="add($event)"
+    @if(session('notify'))
+        x-init="notifications.push({
+            id: Date.now(),
+            type: '{{ session('notify')['type'] }}',
+            content: '{{ session('notify')['content'] }}',
+        })"
+    @endif
     class="position-fixed bottom-0 end-0 d-flex flex-column pe-4 pb-4 w-full max-w-xs space-y-4 sm:justify-start"
     role="status"
     aria-live="polite"
@@ -26,7 +33,7 @@
                 init() {
                     this.$nextTick(() => this.show = true)
  
-                    setTimeout(() => this.transitionOut(), 5000)
+                    setTimeout(() => this.transitionOut(), {{ config('toast.timeout') }})
                 },
                 transitionOut() {
                     this.show = false
@@ -42,28 +49,28 @@
             <div x-show="notification.type === 'success'" class="alert edux-alert alert-success" role="alert">
                 <x-icon.check-circle/>
                 <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
-                <button @click="transitionOut()" type="button" class="close" aria-label="Close">
+                <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true"><x-icon.close/></span>
                 </button>
             </div>
             <div x-show="notification.type === 'warning'" class="alert edux-alert alert-warning" role="alert">
                 <x-icon.warning/>
                 <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
-                <button @click="transitionOut()" type="button" class="close" aria-label="Close">
+                <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true"><x-icon.close/></span>
                 </button>
             </div>
             <div x-show="notification.type === 'info'" class="alert edux-alert alert-info" role="alert">
                 <x-icon.info/>
                 <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
-                <button @click="transitionOut()" type="button" class="close" aria-label="Close">
+                <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true"><x-icon.close/></span>
                 </button>
             </div>
             <div x-show="notification.type === 'danger'" class="alert edux-alert alert-danger" role="alert">
                 <x-icon.info/>
                 <span x-text="notification.content"><strong>Holy guacamole!</strong> You should check in on some of those fields below.</span>
-                <button @click="transitionOut()" type="button" class="close" aria-label="Close">
+                <button x-on:click="transitionOut()" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true"><x-icon.close/></span>
                 </button>
             </div>

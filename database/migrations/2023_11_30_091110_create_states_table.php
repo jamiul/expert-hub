@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invitations', function (Blueprint $table) {
+        Schema::create('states', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id');
-            $table->foreignId('expert_id');
-            $table->foreignId('eoi_id')->nullable();
-            $table->string('status');
+            $table->foreignId('country_id');
+            $table->string('name')->unique();
+            $table->string('code');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('invitations');
+        Schema::dropIfExists('states');
     }
 };
