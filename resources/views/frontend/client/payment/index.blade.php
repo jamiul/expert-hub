@@ -100,7 +100,7 @@
                             <div id="payment-element">
                                 <!-- Elements will create form elements here -->
                             </div>
-                            <button class="btn-with-draw d-flex justify-content-center align-items-center gap-2"
+                            <button class="btn-with-draw-paypal d-flex justify-content-center align-items-center  gap-2"
                                     id="submit">Add Card
                             </button>
                         </form>
