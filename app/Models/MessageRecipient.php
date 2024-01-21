@@ -5,24 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Message extends Model
+class MessageRecipient extends Model
 {
     use SoftDeletes;
 
     protected $guarded = [];
 
-    public function messageRecipients()
+    public function message()
     {
-        return $this->hasMany(MessageRecipient::class);
+        return $this->belongsTo(Message::class);
     }
 
     public function conversation()
     {
         return $this->belongsTo(Conversation::class);
-    }
-
-    public function profile()
-    {
-        return $this->belongsTo(Profile::class, 'sender_profile_id');
     }
 }

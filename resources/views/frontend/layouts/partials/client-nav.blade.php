@@ -71,8 +71,11 @@
                     </a>
                 </li>
                 @livewire('expert-notification-count')
-                <li>
+
+                @livewire('new-message-count')
+                <!-- <<li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
@@ -166,7 +169,7 @@
                             </a>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img

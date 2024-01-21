@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('message_recipients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('conversation_id');
-            $table->foreignId('sender_profile_id');
-            $table->longText('content')->nullable();
-            $table->boolean('has_attachment')->default(0);
-            $table->foreignId('parent_message_id')->nullable();
+            $table->foreignId('message_id');
+            $table->foreignId('recipient_profile_id');
+            $table->timestamp('seen_at')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('message_recipients');
     }
 };
