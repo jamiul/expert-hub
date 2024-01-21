@@ -222,15 +222,20 @@
                             <x-icon.arrow-back />
                         </button>
                     </div>
+
+                    @if($currentConversation)
                     <div class="chatbox-recipient-thumb">
-                        <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
+                        <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                     </div>
 
+                    
                     <div class="chatbox-recipient-info">
-                        <h3>{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h3>
+                        <h3>{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h3>
                         <p class="chatbox-recipient-time">5:32 AM GMT+6 | Australia </p>
                         <p class="chatbox-recipient-expertise">Curriculum Expert</p>
                     </div>
+                    @endif
+
                     <div class="advance-chat-options">
                         <button class="icon-btn">
                             <x-icon.call />
