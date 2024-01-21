@@ -19,7 +19,7 @@ class Messaging extends Component
 {
     public $messageBody;
     public $currentConversation;
-    public $currentConversationCreator;
+    // public $currentConversationCreator;
 
 
     public function rules()

@@ -271,6 +271,9 @@
                                     <p>{{$conversationMessage->content}}</p>
                                 </div>
                             </div>
+                            
+                            <!-- TODO:NEL: add conversation-user-message-action -->
+
                             <div class="conversation-user-message-action">
                                 <div class="dropdown">
                                     <button class="icon-btn message-action-trigger" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -295,6 +298,8 @@
                                 </div>
 
                             </div>
+
+                            <!-- TODO:NEL: add conversation-user-message-action end-->
 
                         </div>
 
@@ -410,6 +415,8 @@
 
                         </div> -->
                         
+                        <!-- TODO:NEL: add message typing -->
+
                         <div class="chatbox-conversation-message message-typing">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -425,6 +432,9 @@
                             </div>
 
                         </div>
+
+                        <!-- TODO:NEL: add message typing end-->
+
                     </div>
                     <div class="chatbox-message-editor">
                         <button class="insert-emoji-btn">
@@ -516,10 +526,11 @@
                 <div class="chatbox-conversation-summary-inner">
                     <div class="chatbox-recipient-card user-online">
                         <div class="chatbox-recipient-card-thumb">
-                            <img src="{{ asset('assets/frontend/img/chat-avatar1.png') }}" alt="avatar">
+                            <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
-                            <h3 class="h6">Michel Jhon</h3>
+                            
+                            <h3 class="h6">{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name }}</h3>
                             <p>Chill Intuative | Australia</p>
                             <p>5:32 AM GMT+6 | Australia </p>
                             <ul>
