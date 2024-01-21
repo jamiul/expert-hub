@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
+use App\Models\Milestone;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -60,9 +61,9 @@ class PaymentController extends Controller {
 
         $this->__setStripeCustomer();
 
-        $transactions = ClientTransaction::where( 'client_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+        $transactions = ClientTransaction::where( 'client_id', $user->id )->orderby('id', 'desc')->latest()->get();
 
-        return view( 'frontend.client.payment.billing-report', compact('transactions') );
+        return view( 'frontend.client.payment.billing-report', compact('transactions', 'user') );
     }
 
     /*
@@ -73,11 +74,13 @@ class PaymentController extends Controller {
 
         $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
 
-        $milestone_amount = 100;
+        $milestone = Milestone::find(1);
+
+        $milestone_amount = $milestone->amount;
         //breakdown charge into pieces
         $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
 
-        return view( 'frontend.client.payment.pay', compact( 'payment_methods', 'milestone_charges' ) );
+        return view( 'frontend.client.payment.pay', compact( 'payment_methods', 'milestone', 'milestone_charges' ) );
     }
 
     /*
@@ -88,7 +91,6 @@ class PaymentController extends Controller {
 
         $this->__setStripeCustomer();
 
-        $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
         //create payment intent
         try {
 //            $intent = $stripe->paymentIntents->create([
@@ -103,7 +105,11 @@ class PaymentController extends Controller {
 ////                'application_fee_amount' => 10 * 100,
 //                'on_behalf_of' => $CONNECTED_ACCOUNT_ID,
 //            ]);$milestone_amount
-            $milestone_amount = 100;
+            $milestone = Milestone::find(1);
+            $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->profile->stripe_acct_id;
+
+            $milestone_amount = $milestone->amount;
+
             $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
             $intent           = $this->stripe->paymentIntents->create( [
                 'customer'                  => $user->profile->stripe_client_id,
@@ -111,10 +117,10 @@ class PaymentController extends Controller {
                 'automatic_payment_methods' => [ 'enabled' => true ],
                 'amount'                    => number_format($charge['total_amount'], 2) * 100,
                 'currency'                  => 'aud',
-                'transfer_group'            => 'ORDER10',
+                'transfer_group'            => $CONNECTED_ACCOUNT_ID,
                 'payment_method'            => $request->payment_method_id,
                 'metadata'                  => [
-                    'reference_id'   => 1,
+                    'reference_id'   => $milestone->id,
                     'reference_type' => 'milestone'
                 ]
             ] );
@@ -133,10 +139,12 @@ class PaymentController extends Controller {
 
         $this->__setStripeCustomer();
 
-        $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
         //create payment intent
         try {
-            $milestone_amount = 100;
+            $milestone = Milestone::find(1);
+            $milestone_amount = $milestone->amount;
+            $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->stripe_acct_id;
+
             $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
             $intent           = $this->stripe->paymentIntents->create( [
                 'customer'                  => $user->profile->stripe_client_id,
@@ -144,10 +152,10 @@ class PaymentController extends Controller {
                 'off_session' => true,
                 'amount'                    => number_format($charge['total_amount'], 2) * 100,
                 'currency'                  => 'aud',
-                'transfer_group'            => 'ORDER10',
+                'transfer_group'            => $CONNECTED_ACCOUNT_ID,
                 'payment_method'            => $request->payment_method_id,
                 'metadata'                  => [
-                    'reference_id'   => 1,
+                    'reference_id'   => $milestone->id,
                     'reference_type' => 'milestone'
                 ]
             ] );
@@ -238,18 +246,20 @@ class PaymentController extends Controller {
      * Accept requested milestone /payment/accept-milestone
      * */
     public function acceptMilestone() {
-        $stripe = new \Stripe\StripeClient( [
-            "api_key" => env( 'STRIPE_SECRET' ),
-        ] );
-
-        $CONNECTED_ACCOUNT_ID = 'acct_1OYlT8BCePPNtsZd';
+        $milestone = Milestone::find(1);
+        $milestone_amount = $milestone->amount;
+        $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->stripe_acct_id;
 
         //todo: first store inside schedule transfer job then process it in 3 days.
-        $acceptMilestone = $stripe->transfers->create( [
-            'amount'         => 90 * 100,
+        $acceptMilestone = $this->stripe->transfers->create( [
+            'amount'         => $milestone_amount * 100,
             'currency'       => 'aud',
             'destination'    => $CONNECTED_ACCOUNT_ID,
-            'transfer_group' => 'ORDER10',
+            'transfer_group' => $CONNECTED_ACCOUNT_ID,
+            'metadata'                  => [
+                'reference_id'   => $milestone->id,
+                'reference_type' => 'milestone'
+            ]
         ] );
         //todo: save transfer into db and implement through webhook
 
