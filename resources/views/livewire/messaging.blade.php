@@ -56,11 +56,11 @@
                     @forelse($currentUsersConversations as $conversation)
                     <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}"  wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
-                            <img src="{{-- asset('assets/frontend/img/chat-avatar1.png') --}} {{$conversation->conversation->profile->getFirstMediaUrl('picture')}}" alt="avatar">
+                            <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
-                                <h6>{{ $conversation->conversation->title }}</h6>
+                                <h6>{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h6>
                                 <time>7: 30 am</time>
                             </div>
                             <div class="last-message-hints">
@@ -223,11 +223,11 @@
                         </button>
                     </div>
                     <div class="chatbox-recipient-thumb">
-                        <img src="{{$currentConversation->profile->getFirstMediaUrl('picture')}}" alt="avatar">
+                        <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                     </div>
 
                     <div class="chatbox-recipient-info">
-                        <h3>{{$currentConversation->title}}</h3>
+                        <h3>{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h3>
                         <p class="chatbox-recipient-time">5:32 AM GMT+6 | Australia </p>
                         <p class="chatbox-recipient-expertise">Curriculum Expert</p>
                     </div>

@@ -15,4 +15,9 @@ class Participant extends Model
     {
         return $this->belongsTo(Conversation::class);
     }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }
