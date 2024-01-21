@@ -29,6 +29,11 @@ class Eoi extends Model implements HasMedia
         return $this->belongsTo(Profile::class);
     }
 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
     public function markAsShortListed()
     {
         $this->update(['is_shortlisted' => true]);

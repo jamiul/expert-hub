@@ -377,7 +377,7 @@ class PaymentController extends Controller
 
         $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
-        return view( 'frontend.expert.payment.billing-report', compact('transactions') );
+        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
     }
 
     public function refundMilestone($milestone_id) {
