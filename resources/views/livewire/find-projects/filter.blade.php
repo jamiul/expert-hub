@@ -17,12 +17,23 @@
             @foreach ($projectCategories as $expertSkill)
             <div class="widget-accordion-item">
                 <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
+                    <x-form.check
+                        class="m-0 gap-0"
+                        wire:change="checkParent({{ $expertSkill }})"
+                        wire:model="filterByCategories"
+                        id="{{ Str::slug($expertSkill->name) }}-{{ $expertSkill->id }}"
+                        value="{{ $expertSkill->name }}"
+                    />
                     {{ $expertSkill->name }}
                 </div>
                 <div class="widget-accordion-content">
                     @foreach ($expertSkill->children as $child)
-                        <x-form.check wire:change="filter" wire:model="skills" id="{{ Str::slug($child->name) }}-{{ $child->id }}" value="{{ $child->name }}">
+                        <x-form.check
+                            wire:change="filter"
+                            wire:model="skills"
+                            id="{{ Str::slug($child->name) }}-{{ $child->id }}"
+                            value="{{ $child->name }}"
+                        >
                             {{ $child->name }}
                         </x-form.check>
                     @endforeach

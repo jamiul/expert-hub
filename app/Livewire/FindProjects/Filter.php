@@ -9,6 +9,8 @@ use Livewire\Attributes\Url;
 
 class Filter extends Component
 {
+    public $filterByCategories = [];
+
     #[Url()]
     public $search = '';
 
@@ -38,11 +40,29 @@ class Filter extends Component
         $this->setcountries();
     }
 
+    public function checkParent(Expertise $expertise)
+    {
+        $removeItems = [];
+
+        foreach ($expertise->children as $child) {
+            if (in_array($expertise->name, $this->filterByCategories)) {
+                $this->skills[] = $child->name;
+            } else {
+                $removeItems[] = $child->name;
+            }
+        }
+
+        $this->skills = array_diff($this->skills, $removeItems);
+
+        $this->filter();
+    }
+
     public function filter()
     {
         $filters = [
             'search' => $this->search,
             'skills' => $this->skills,
+            'filterByCategories' => $this->filterByCategories,
             'projectTypes' => $this->projectTypes,
             'startAmount' => $this->startAmount,
             'endAmount' => $this->endAmount,
@@ -55,6 +75,7 @@ class Filter extends Component
     {
         $this->search = '';
         $this->skills = [];
+        $this->filterByCategories = [];
         $this->projectTypes = [];
         $this->startAmount = [];
         $this->endAmount = [];
@@ -75,7 +96,7 @@ class Filter extends Component
                 ->whereNotIn('name', $this->selectedCountries)
                 ->limit(5)
                 ->get();
-        }else{
+        } else {
             $this->setCountries();
         }
     }
