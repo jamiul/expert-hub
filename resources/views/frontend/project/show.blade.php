@@ -90,9 +90,9 @@
                                 </div>
                                 <div class="mb-40">
                                     <p class="fw-medium mb-2">Required Skills</p>
-                                    <div class="tag-list branded-tag-list">
+                                    <div class="tag-list">
                                         @foreach ($project->skills as $skill)
-                                            <a href="#" class="project-tag">{{ $skill->name }}</a>
+                                            <a href="#" class="project-tag">{{ $skill->name }}s</a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -102,7 +102,11 @@
                                         @forelse ($project->attachments as $attachment)
                                             <div class="attachment-display-card">
                                                 <div class="attachment-display-thumb">
-                                                    <img src="{{ $attachment->getFullUrl() }}"/>
+                                                    @if(in_array($attachment->mime_type, ['image/jpeg','image/png']) )
+                                                        <img src="{{ $attachment->getFullUrl() }}"/>
+                                                    @else
+                                                        <x-icon.document-upload fill="#0059C999"/>
+                                                    @endif
                                                 </div>
                                                 <div class="attachment-display-info">
                                                     <h6 class="mb-1">{{ $attachment->name }}</h6>
