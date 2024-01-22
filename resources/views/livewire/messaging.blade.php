@@ -258,7 +258,7 @@
                         <!-- TODO: Improve here, remove the if conditional -->
                     @if($currentConversation)
                     @forelse($currentConversation->messages as $conversationMessage)
-                        <div class="chatbox-conversation-message recipient-message" onclick="showMobileMessageAction(this)">
+                        <div class="chatbox-conversation-message  {{ ($conversationMessage->sender_profile_id == auth()->user()->profile->id) ? 'recipient-message' : '' }} " onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
                                 <img src="{{-- asset('assets/frontend/img/chat-avatar.png') --}} {{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
                             </div>
