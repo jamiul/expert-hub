@@ -214,7 +214,7 @@
             </div>
         </div>
 
-        <div class="chatbox-content-area">
+        <div class="chatbox-content-area chatbox-conversation-summary-show">
             <div class="chatbox-recipient-area">
                 <div class="chatbox-recipient-inner">
                     <div class="chatbox-mobile-view-controller">
