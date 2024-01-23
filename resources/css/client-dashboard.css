@@ -3541,11 +3541,11 @@ font-weight: 500;
 /*  ========================= Admin dashboard  start here ================================================ */
 
 .admin-tab-nav-area {
-    background-color: #F0F1F7;
-    align-items: center;
-    min-height: 70px;
-    flex-wrap: wrap;
-    height: auto;
+  background-color: #F8F8F8;
+  align-items: center;
+  min-height: 70px;
+  flex-wrap: wrap;
+  height: auto;
 }
 
 .admin-tab-nav-area ul {

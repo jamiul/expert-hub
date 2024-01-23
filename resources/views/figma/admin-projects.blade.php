@@ -101,10 +101,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -157,10 +157,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -222,10 +222,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -287,10 +287,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -343,10 +343,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -399,10 +399,10 @@
                                   <button class="dropdown-item">View work dairy</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Message Expert</button>
+                                  <button class="dropdown-item">Email Expert</button>
                                 </li>
                                 <li>
-                                  <button class="dropdown-item">Dispute</button>
+                                  <button class="dropdown-item">Email Client</button>
                                 </li>
                                 <li>
                                   <button class="dropdown-item">Hold</button>
@@ -473,73 +473,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Approve</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Decline</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <span class="edux-batch edux-batch-decline">Decline</span>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#adminHomeComment" class="mb-0 dispute-reason">Reason for dispute</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy </button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -599,10 +536,73 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Approve</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Decline</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <span class="edux-batch edux-batch-decline">Decline</span>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#adminHomeComment" class="mb-0 dispute-reason">Reason for dispute</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy </button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -662,73 +662,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Approve</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Decline</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <span class="edux-batch edux-batch-decline">Decline</span>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#adminHomeComment" class="mb-0 dispute-reason">Reason for dispute</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy </button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -788,10 +725,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -851,10 +788,73 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Approve</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Decline</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <span class="edux-batch edux-batch-decline">Decline</span>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#adminHomeComment" class="mb-0 dispute-reason">Reason for dispute</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy </button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -914,10 +914,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Clinet Expert</button>
+                                <button class="dropdown-item">Email Clinet</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Approve</button>
@@ -988,64 +988,10 @@
                                 <button class="dropdown-item">View work dairy</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Dispute</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                             </ul>
                           </div>
@@ -1096,64 +1042,10 @@
                                 <button class="dropdown-item">View work dairy</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Dispute</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                             </ul>
                           </div>
@@ -1204,64 +1096,10 @@
                                 <button class="dropdown-item">View work dairy</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Dispute</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                             </ul>
                           </div>
@@ -1312,10 +1150,10 @@
                                 <button class="dropdown-item">View work dairy</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                             </ul>
                           </div>
@@ -1366,10 +1204,172 @@
                                 <button class="dropdown-item">View work dairy</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email client</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email client</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#reasonForCancel" class="mb-0 dispute-reason">Reason for Cancel</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email client</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                             </ul>
                           </div>
@@ -1436,67 +1436,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Unhold</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#reasonForOnHold" class="mb-0 dispute-reason">Reason for On-hold</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy </button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Dispute</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
@@ -1550,10 +1493,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
@@ -1607,10 +1550,67 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Unhold</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#reasonForOnHold" class="mb-0 dispute-reason">Reason for On-hold</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy </button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email client</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
@@ -1666,67 +1666,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Unhold</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-                        <td>
-                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
-                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
-                          <p data-bs-toggle="modal" data-bs-target="#reasonForOnHold" class="mb-0 dispute-reason">Reason for On-hold</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="dropdown">
-                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
-                              </svg>
-                            </a>
-                            <ul class="dropdown-menu admin-d-item">
-                              <li>
-                                <button class="dropdown-item">View work dairy </button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Dispute</button>
-                              </li>
-                              <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
@@ -1780,10 +1723,10 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
@@ -1837,10 +1780,67 @@
                                 <button class="dropdown-item">View work dairy </button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Dispute</button>
+                                <button class="dropdown-item">Email client</button>
                               </li>
                               <li>
-                                <button class="dropdown-item">Message Expert</button>
+                                <button class="dropdown-item">Email Expert</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Unhold</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+                        <td>
+                          <p class="fw-medium mb-0">Total:1:40 hrs earned $140</p>
+                          <p class="mb-0">$100.00/hr, 25 hrs weekly limit</p>
+                          <p data-bs-toggle="modal" data-bs-target="#reasonForOnHold" class="mb-0 dispute-reason">Reason for On-hold</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">EduExHub</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="draft-options btn btn-secondary dropdown-toggle draft-option-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 15C8.5875 15 8.23438 14.8531 7.94063 14.5594C7.64687 14.2656 7.5 13.9125 7.5 13.5C7.5 13.0875 7.64687 12.7344 7.94063 12.4406C8.23438 12.1469 8.5875 12 9 12C9.4125 12 9.76562 12.1469 10.0594 12.4406C10.3531 12.7344 10.5 13.0875 10.5 13.5C10.5 13.9125 10.3531 14.2656 10.0594 14.5594C9.76562 14.8531 9.4125 15 9 15ZM9 10.5C8.5875 10.5 8.23438 10.3531 7.94063 10.0594C7.64687 9.76563 7.5 9.4125 7.5 9C7.5 8.5875 7.64687 8.23438 7.94063 7.94063C8.23438 7.64688 8.5875 7.5 9 7.5C9.4125 7.5 9.76562 7.64688 10.0594 7.94063C10.3531 8.23438 10.5 8.5875 10.5 9C10.5 9.4125 10.3531 9.76563 10.0594 10.0594C9.76562 10.3531 9.4125 10.5 9 10.5ZM9 6C8.5875 6 8.23438 5.85313 7.94063 5.55938C7.64687 5.26562 7.5 4.9125 7.5 4.5C7.5 4.0875 7.64687 3.73438 7.94063 3.44063C8.23438 3.14687 8.5875 3 9 3C9.4125 3 9.76562 3.14687 10.0594 3.44063C10.3531 3.73438 10.5 4.0875 10.5 4.5C10.5 4.9125 10.3531 5.26562 10.0594 5.55938C9.76562 5.85313 9.4125 6 9 6Z" fill="#191D24" />
+                              </svg>
+                            </a>
+                            <ul class="dropdown-menu admin-d-item">
+                              <li>
+                                <button class="dropdown-item">View work dairy </button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email client</button>
+                              </li>
+                              <li>
+                                <button class="dropdown-item">Email Expert</button>
                               </li>
                               <li>
                                 <button class="dropdown-item">Unhold</button>
