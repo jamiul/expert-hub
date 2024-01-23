@@ -8,12 +8,19 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('frontend.project.find-projects');
+        return view('frontend.project.index');
     }
 
     public function create()
     {
         return view('frontend.project.create');
+    }
+
+    public function edit(Project $project)
+    {
+        return view('frontend.project.edit', [
+            'project' => $project,
+        ]);
     }
 
     public function show(Project $project)

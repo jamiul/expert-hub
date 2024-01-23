@@ -73,6 +73,8 @@ Route::get('/client/profile', [ClientProfileController::class, 'index'])->middle
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
+Route::get('/client/projects', [ProjectController::class, 'index'])->name('client.projects');
+Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');

@@ -100,24 +100,23 @@
                                     <div class="">
                                         <p class="fw-medium mb-2">Attachments</p>
                                         <div class="attachment-display-wrapper">
-                                            <div class="attachment-display-card">
-                                                <div class="attachment-display-thumb">
-                                                    <img src="{{ asset('assets/frontend/img/attachment1.png') }}"/>
+                                            @forelse ($project->attachments as $attachment)
+                                                <div class="attachment-display-card">
+                                                    <div class="attachment-display-thumb">
+                                                        @if(in_array($attachment->mime_type, ['image/jpeg','image/png']) )
+                                                            <img src="{{ $attachment->getFullUrl() }}"/>
+                                                        @else
+                                                            <x-icon.document-upload fill="#0059C999"/>
+                                                        @endif
+                                                    </div>
+                                                    <div class="attachment-display-info">
+                                                        <h6 class="mb-1">{{ $attachment->name }}</h6>
+                                                        <p class="m-0">{{ $attachment->human_readable_size }}</p>
+                                                    </div>
                                                 </div>
-                                                <div class="attachment-display-info">
-                                                    <h6 class="mb-1">File name.jpg</h6>
-                                                    <p class="m-0">1.3 MB</p>
-                                                </div>
-                                            </div>
-                                            <div class="attachment-display-card">
-                                                <div class="attachment-display-thumb">
-                                                    <img src="{{ asset('assets/frontend/img/attachment2.png') }}"/>
-                                                </div>
-                                                <div class="attachment-display-info">
-                                                    <h6 class="mb-1">File name.jpg</h6>
-                                                    <p class="m-0">1.3 MB</p>
-                                                </div>
-                                            </div>
+                                            @empty
+                                                <p>No file attached</p>
+                                            @endforelse
                                         </div>
                                     </div>
                                 </div>
