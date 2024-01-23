@@ -16,7 +16,7 @@
                             <li>Expert</li>
                             <li>Project</li>
                             <li>Training</li>
-                            <li>Scholarship</li>
+                            <li>Scholarship Database</li>
                         </ul>
                     </div>
                     <button>
