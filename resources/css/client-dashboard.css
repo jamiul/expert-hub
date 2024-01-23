@@ -3541,16 +3541,20 @@ font-weight: 500;
 /*  ========================= Admin dashboard  start here ================================================ */
 
 .admin-tab-nav-area {
-    background-color: #F0F1F7;
-    align-items: center;
-    min-height: 70px;
-    flex-wrap: wrap;
-    height: auto;
+  background-color: #F8F8F8;
+  align-items: center;
+  min-height: 70px;
+  flex-wrap: wrap;
+  height: auto;
 }
 
 .admin-tab-nav-area ul {
   margin-bottom: 0px !important;
-  padding-top: 30px;
+  padding: 30px 0px 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
 
 .admin-dashboard-area {
@@ -3571,13 +3575,14 @@ font-weight: 500;
 .admin-nav-link.active {
   background: #FFF !important;
   box-shadow: 0px 2px 8px 0px rgba(14, 0, 98, 0.03);
-  color: #000 !important;
-
-  font-size: 15px !important;
+  color: #0036E3 !important;
+  font-size: 16px !important;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   border-radius: 0px;
+  border-bottom: 1px solid #0036E3;
+
 }
 
 .admin-nav-link{
@@ -4050,6 +4055,111 @@ header.admin-header {
   align-items: center;
   gap: 15px;
 }
+
+
+.edux-top-search-area {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding:0.5rem 1rem;
+  border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+
+}
+
+.eudx-top-search {
+  min-width: 284px;
+}
+
+.edux-select-date{
+  min-width:300px;
+}
+
+.edux-zoom-area {
+  display: flex;
+  align-items: center;
+}
+
+.edux-zoom-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edux-zoom-video {
+  display: flex;
+  padding: 2px 12px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 42px;
+  background: rgba(0, 54, 227, 0.06);
+  justify-content: center;
+  color:  #0036E3;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+}
+.edux-zoom-link {
+  display: flex;
+  padding: 4px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background:  #0036E3;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 159.5%;
+}
+
+.edux-batch{
+  color:  #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+
+}
+
+.edux-batch-waiting {
+  display: flex;
+  width: 76px;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #F2E8B3;
+}
+
+.edux-batch-decline {
+  display: flex;
+  width: 76px;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #F2B3B3;
+}
+
+.edux-batch-approve {
+  display: flex;
+  width: 76px;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #B3F2C5;
+}
+
+
 /*  ========================= Admin dashboard  End here ================================================ */
 /*  ========================= Expert Login Start here ================================================ */
 
@@ -5847,14 +5957,15 @@ select.top-input-control option::hover{
   padding: 15px;
 }
 
-.dropdown-comments-dispute{
+
+.dropdown-comments-dispute {
   border-radius: 8px;
   background: #FFF;
   box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.18);
   display: flex;
-  padding: 15px;
+  padding: 12px;
   min-width: 358px;
-  height: 91px;
+  /* height: 91px; */
 }
 
 .comment-rating {
@@ -8666,6 +8777,37 @@ border:none
 
 .open-date-picker input.form-input-field.flatpickr-input {
   display: none;
+}
+
+.comment-rating {
+  color: #0036E3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  border-bottom: 1px solid #0036E3;
+  width: 160px;
+}
+
+.content-text-with-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating-title{
+  display: flex;
+  align-items: center;
+  gap:16px;
+
+  }
+
+  .comment-text-border {
+    border-top: 1px solid var(--color-border-color-solid, #E7E5EF);
+    padding-top: 10px;
+}
+
+.content-text-with-rating span{
+  font-size:14px;
 }
 
 
