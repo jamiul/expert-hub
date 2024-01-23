@@ -27,7 +27,7 @@
                             <div class="carousel-item active">
                                 <img src="{{ $expert->getFirstMediaUrl('picture') }}" />
                                 <div class="item-text">
-                                    <a href="#">
+                                    <a href="{{ route('expert.profile.show', $expert) }}">
                                         <img src="{{ asset('assets/frontend/img/map-img.png') }}" />
                                         <h4>{{ $expert->user->full_name }}</h4>
                                         <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
@@ -39,7 +39,7 @@
                             <div class="carousel-item">
                                 <img src="{{ $expert->getFirstMediaUrl('picture') }}" />
                                 <div class="item-text">
-                                    <a href="#">
+                                    <a href="{{ route('expert.profile.show', $expert) }}">
                                         <img src="{{ asset('assets/frontend/img/map-img.png') }}" />
                                         <h4>{{ $expert->user->full_name }}</h4>
                                         <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
