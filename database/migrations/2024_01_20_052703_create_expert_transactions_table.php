@@ -19,7 +19,8 @@ return new class extends Migration
             $table->foreignId('client_id')->nullable();
             $table->string('type')->nullable();
             $table->text('description')->nullable();
-            $table->double('amount')->nullable();
+            $table->decimal('amount', 12,2)->nullable();
+            $table->decimal('balance', 12,2)->default(0);
             $table->string('charge_type')->nullable();
             $table->integer('parent')->nullable();
             $table->boolean('status');

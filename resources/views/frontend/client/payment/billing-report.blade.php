@@ -31,7 +31,12 @@
                     <div class="all-project history-report">
                         <h2>Transection History</h2>
                     </div>
-
+                    <div>
+                        Available Balance: ${{ number_format($user->profile->balance, 2) }}
+                    </div>
+                    <div>
+                        Escrow Balance: ${{ number_format($user->profile->escrow_balance, 2) }}
+                    </div>
                 </div>
             </div>
 
@@ -56,23 +61,25 @@
                                     <td style="vertical-align: middle;">{{ $data->created_at->format('M d, Y') }}</td>
                                     <td style="vertical-align: middle;">{{ $data->type }}</td>
                                     <td class="balance-text">{{ $data->description }}</td>
-                                    <td style="vertical-align: middle;">{{ $data->expert->first_name }} {{ $data->expert->last_name }}</td>
+                                    <td style="vertical-align: middle;">{{ @$data->expert->first_name }} {{ @$data->expert->last_name }}</td>
                                     <td style="vertical-align: middle;">
                                         <span class="fw-bold">
                                             $
                                             @if($data->charge_type == 'debit')
-                                                {{ $data->amount }}
+                                                ({{ number_format($data->amount, 2) }})
                                             @elseif($data->charge_type == 'credit')
-                                                ({{ $data->amount }})
+                                                {{ number_format($data->amount, 2) }}
                                             @endif
                                              /
-                                        </span> $126.00
+                                        </span> ${{ number_format($data->balance, 2) }}
                                     </td>
                                     <td style="vertical-align: middle;">{{ $data->id }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+
+{{--                        {{ $transactions->links() }}--}}
 
                     </div>
                 </div>

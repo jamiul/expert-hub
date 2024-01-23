@@ -21,6 +21,9 @@
                                 <strong>Service Fees</strong> Per hour rate
                             </li>
                             <li class="@if($currentStep > 6) done-item @endif @if($currentStep == 6) running-item @endif">
+                                <strong>eKYC</strong> Additional information
+                            </li>
+                            <li class="@if($currentStep > 7) done-item @endif @if($currentStep == 7) running-item @endif">
                                 <strong>Profile Summary</strong> Personal information
                             </li>
                         </ul>
@@ -46,6 +49,9 @@
                     @endif
                     @if($currentStep === 6)
                         @include('livewire.profile.step6')
+                    @endif
+                    @if($currentStep === 7)
+                        @include('livewire.profile.step7')
                     @endif
                 </div>
                 <hr class="my-40">

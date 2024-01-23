@@ -100,7 +100,10 @@ class Wizard extends Component
             $this->validateOnly('hourly_rate');
             $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
         }
-        if ($this->currentStep == 6) {
+        if($this->currentStep == 6){
+            
+        }
+        if ($this->currentStep == 7) {
             $this->validate([
                 'biography' => ['required'],
                 'picture' => $this->rules()['picture'],

@@ -2,7 +2,7 @@
     <div class="public-header-main">
         <div class="public-header-container">
             <div class="header-logo">
-                <a href="{{ route('home') }}"><img src="{{ asset('assets/frontend/img/logo.png') }}"/></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}"/></a>
             </div>
             <div class="header-search">
                 <form action="">
