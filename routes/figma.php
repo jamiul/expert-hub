@@ -139,4 +139,6 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
     Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
     Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
+
+    Route::view('/all-express-of-interest', 'figma.all-express-of-interest');
 });
