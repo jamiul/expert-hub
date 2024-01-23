@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('profile_id');
-            $table->foreignId('expertise_id');
-            $table->string('title');
-            $table->string('slug');
-            $table->longText('description');
-            $table->string('type'); //App\Enums\ProjectType
-            $table->foreignId('currency_id');
-            $table->decimal('budget_start_amount', 10, 2);
+            $table->foreignId('expertise_id')->nullable();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('type')->nullable(); //App\Enums\ProjectType
+            $table->foreignId('currency_id')->nullable();
+            $table->decimal('budget_start_amount', 10, 2)->nullable();
             $table->decimal('budget_end_amount', 10, 2)->nullable();
             $table->string('status'); //App\Enums\ProjectStatus
             $table->boolean('active')->default(1);
