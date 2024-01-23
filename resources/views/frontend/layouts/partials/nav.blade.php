@@ -16,7 +16,7 @@
                             <li>Expert</li>
                             <li>Project</li>
                             <li>Training</li>
-                            <li>Scholarship Database</li>
+                            <li>Scholarship</li>
                         </ul>
                     </div>
                     <button>
@@ -57,7 +57,7 @@
                     <a href="#">{{ __('Find Training') }}</a>
                 </li>
                 <li>
-                    <a href="{{ url('scholarship-database') }}">{{ __('Scholarships') }}</a>
+                    <a href="{{ url('scholarship-database') }}">{{ __('Scholarship Database') }}</a>
                 </li>
                 <li>
                     <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
