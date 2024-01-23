@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+<div class="row">
         <div class="col-md-5 col-sm-6">
             <div class="team-text">
                 <div class="heading">
@@ -11,7 +11,7 @@
                         <x-button.link
                             href="{{ route('find.experts') }}"
                             class="btn btn-primary edux-btn-primary"
-                            text="Get Started"
+                            text="Started"
                         />
                     </div>
                 </div>
