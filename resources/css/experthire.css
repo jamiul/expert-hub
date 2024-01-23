@@ -7000,6 +7000,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     flex-direction: row;
     align-items: center;
     gap: 24px;
+    justify-content: flex-end;
 }
 
 .fixed-price {
