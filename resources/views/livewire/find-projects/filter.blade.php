@@ -15,7 +15,7 @@
         <div class="widget-accordion use-scroll-content">
 
             @foreach ($projectCategories as $expertSkill)
-            <div class="widget-accordion-item">
+            <div class="widget-accordion-item" wire:key="{{ $expertSkill->id }}">
                 <div class="widget-accordion-title" onclick="toggleAccordion(this)">
                     <x-form.check
                         class="m-0 gap-0"
@@ -29,6 +29,7 @@
                 <div class="widget-accordion-content">
                     @foreach ($expertSkill->children as $child)
                         <x-form.check
+                            wire:key="{{ $child->id }}"
                             wire:change="filter"
                             wire:model="skills"
                             id="{{ Str::slug($child->name) }}-{{ $child->id }}"

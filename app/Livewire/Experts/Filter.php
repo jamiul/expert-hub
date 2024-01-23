@@ -9,6 +9,9 @@ use Livewire\Component;
 
 class Filter extends Component
 {
+    public $filterByExpertField = [];
+    public $filterByExpertSkill = [];
+
     #[Url()]
     public $search = '';
 
@@ -36,12 +39,75 @@ class Filter extends Component
         $this->expertSkills = Expertise::skill()->isParent()->get();
     }
 
+    public function checkParentExpertField(Expertise $expertise)
+    {
+        if (in_array($expertise->name, $this->filterByExpertField)) {
+            $this->fields = array_merge($this->fields, $expertise->children->pluck('name')->toArray());
+        } else {
+            $this->fields = array_diff($this->fields, $expertise->children->pluck('name')->toArray());
+        }
+
+        $this->fields = array_values($this->fields);
+
+        $this->filter();
+    }
+
+    public function checkParentExpertSkill(Expertise $expertise)
+    {
+        if (in_array($expertise->name, $this->filterByExpertSkill)) {
+            $this->skills = array_merge($this->skills, $expertise->children->pluck('name')->toArray());
+        } else {
+            $this->skills = array_diff($this->skills, $expertise->children->pluck('name')->toArray());
+        }
+
+        $this->skills = array_values($this->skills);
+
+        $this->filter();
+    }
+
+
+    // public function checkParentExpertField(Expertise $expertise)
+    // {
+    //     $removeItems = [];
+
+    //     foreach ($expertise->children as $child) {
+    //         if (in_array($expertise->name, $this->filterByExpertField)) {
+    //             $this->fields[] = $child->name;
+    //         } else {
+    //             $removeItems[] = $child->name;
+    //         }
+    //     }
+
+    //     $this->fields = array_values(array_diff($this->fields, $removeItems));
+
+    //     $this->filter();
+    // }
+
+    // public function checkParentExpertSkill(Expertise $expertise)
+    // {
+    //     $removeItems = [];
+
+    //     foreach ($expertise->children as $child) {
+    //         if (in_array($expertise->name, $this->filterByExpertSkill)) {
+    //             $this->skills[] = $child->name;
+    //         } else {
+    //             $removeItems[] = $child->name;
+    //         }
+    //     }
+
+    //     $this->skills = array_values(array_diff($this->skills, $removeItems));
+
+    //     $this->filter();
+    // }
+
     public function filter()
     {
         $filters = [
             'search' => $this->search,
             'hourlyRate' => $this->hourlyRate,
             'selectedCountries' => $this->selectedCountries,
+            'filterByExpertField' => $this->filterByExpertField,
+            'filterByExpertSkill' => $this->filterByExpertSkill,
             'fields' => $this->fields,
             'skills' => $this->skills,
         ];
@@ -53,6 +119,8 @@ class Filter extends Component
         $this->search = '';
         $this->hourlyRate = '';
         $this->selectedCountries = [];
+        $this->filterByExpertField = [];
+        $this->filterByExpertSkill = [];
         $this->fields = [];
         $this->skills = [];
         $this->filter();

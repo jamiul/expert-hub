@@ -42,20 +42,19 @@ class Filter extends Component
 
     public function checkParent(Expertise $expertise)
     {
-        $removeItems = [];
+        $categoryName = $expertise->name;
 
-        foreach ($expertise->children as $child) {
-            if (in_array($expertise->name, $this->filterByCategories)) {
-                $this->skills[] = $child->name;
-            } else {
-                $removeItems[] = $child->name;
-            }
+        if (in_array($categoryName, $this->filterByCategories)) {
+            $this->skills = array_merge($this->skills, $expertise->children->pluck('name')->toArray());
+        } else {
+            $this->skills = array_diff($this->skills, $expertise->children->pluck('name')->toArray());
         }
 
-        $this->skills = array_diff($this->skills, $removeItems);
+        $this->skills = array_values($this->skills);
 
         $this->filter();
     }
+
 
     public function filter()
     {
