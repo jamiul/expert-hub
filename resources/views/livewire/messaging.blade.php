@@ -477,9 +477,10 @@
                                 {{-- </div>--}}
 
 
-                                <button class="icon-btn">
+                                <label class="icon-btn">
+                                <input type="file" style="display:none">
                                     <x-icon.attach-file />
-                                </button>
+                                </label>
                                 <div class="dropdown d-inline-block">
                                     <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown" aria-expanded="false">
                                         <x-icon.settings />
