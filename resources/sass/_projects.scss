@@ -286,14 +286,10 @@
     }
 }
 
-.project-tab {
+.project-tab, .edux-fill-tab {
     .tab-nav {
         padding-left: 40px;
         padding-right: 40px;
-    }
-
-    .page-content {
-        padding: 40px !important;
     }
 }
 
@@ -873,5 +869,13 @@
         //    grid-column: span 1;
         //}
 
+    }
+}
+
+.express-of-interest-tab {
+    .table-extra-padding {
+        a {
+            color: inherit;
+        }
     }
 }
