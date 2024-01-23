@@ -16,12 +16,23 @@
             @foreach ($expertFields as $expertField)
             <div class="widget-accordion-item">
                 <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
+                    <x-form.check
+                        wire:change="checkParentExpertField({{ $expertField }})"
+                        wire:model="filterByExpertField"
+                        class="m-0 gap-0"
+                        id="{{ Str::slug($expertField->name) }}-{{ $expertField->id }}"
+                        value="{{ $expertField->name }}"
+                    />
                     {{ $expertField->name }}
                 </div>
                 <div class="widget-accordion-content">
                     @foreach ($expertField->children as $child)
-                        <x-form.check wire:change="filter" wire:model="fields" id="{{ Str::slug($child->name) }}-{{ $child->id }}" value="{{ $child->name }}">
+                        <x-form.check
+                            wire:change="filter"
+                            wire:model="fields"
+                            id="{{ Str::slug($child->name) }}-{{ $child->id }}"
+                            value="{{ $child->name }}"
+                        >
                             {{ $child->name }}
                         </x-form.check>
                     @endforeach
@@ -36,7 +47,13 @@
             @foreach ($expertSkills as $expertSkill)
             <div class="widget-accordion-item">
                 <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
+                    <x-form.check
+                        class="m-0 gap-0"
+                        wire:change="checkParentExpertSkill({{ $expertSkill }})"
+                        wire:model="filterByExpertSkill"
+                        id="{{ Str::slug($expertSkill->name) }}-{{ $expertSkill->id }}"
+                        value="{{ $expertSkill->name }}"
+                    />
                     {{ $expertSkill->name }}
                 </div>
                 <div class="widget-accordion-content">
