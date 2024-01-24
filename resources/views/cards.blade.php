@@ -6,8 +6,8 @@
         <div class="row">
             <h4 class="my-5  text-center">General Elements</h4>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
                 I am label
                 <div class="tooltip-wrapper bottom-left">
                     <i class="tooltip-icon"></i>
@@ -17,6 +17,20 @@
                 </div>
             </div>
 
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="separator"><span>Small Text Summary</span></div>
+                <p class="text-summary text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequuntur ea earum fugiat
+                    id, in ipsa nemo omnis praesentium quibusdam quidem rem repellendus soluta, sunt suscipit voluptas
+                    voluptatum! Ad, architecto consequuntur delectus deleniti dolores dolorum natus quasi veniam
+                    voluptates.</p>
+                <div class="separator"><span>Regular Text Summary</span></div>
+                <p class="text-summary text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequuntur ea earum fugiat
+                    id, in ipsa nemo omnis praesentium quibusdam quidem rem repellendus soluta, sunt suscipit voluptas
+                    voluptatum! Ad, architecto consequuntur delectus deleniti dolores dolorum natus quasi veniam
+                    voluptates.</p>
+            </div>
         </div>
         <div class="row">
             <h4 class="my-5  text-center">Expert Card (Project)</h4>
@@ -342,12 +356,20 @@
                         <div class="col-md-8">
                             <div class="pagination-right">
                                 <ul>
-                                    <li> <x-icon.skip-previous/></li>
-                                    <li> <x-icon.arrow-left/> </li>
-                                    <li class="active"> 1 </li>
-                                    <li> 2 </li>
-                                    <li> <x-icon.arrow-right/> </li>
-                                    <li> <x-icon.skip-next/> </li>
+                                    <li>
+                                        <x-icon.skip-previous/>
+                                    </li>
+                                    <li>
+                                        <x-icon.arrow-left/>
+                                    </li>
+                                    <li class="active"> 1</li>
+                                    <li> 2</li>
+                                    <li>
+                                        <x-icon.arrow-right/>
+                                    </li>
+                                    <li>
+                                        <x-icon.skip-next/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
