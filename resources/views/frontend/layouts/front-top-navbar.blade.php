@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-3">
                     <div class="logo">
-                        <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}" /></a>
+                        <a href="/"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-5">

@@ -78,9 +78,14 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-weekly-report-transaction', 'figma.clientweeklyreporttransaction');
 
     Route::view('/client-weekly-report-two-budget', 'figma.clientweeklyreporttwobudget');
+
     Route::view('/client-dashboard-atime-sheet', 'figma.clientdashboardatimesheet');
     Route::view('/client-password-security', 'figma.clientdashboardpasswordsecurity');
     Route::view('/client-notification-setting', 'figma.clientdashboardnotificationsettting');
+
+    // Client Payment Module
+    Route::view('/client-tax-information', 'figma.client-tax-information');
+
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
     Route::view('/project-details-view', 'figma.project-details-view');
