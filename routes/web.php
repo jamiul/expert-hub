@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertOfferController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\FindProjectController;
@@ -81,6 +82,7 @@ Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'inde
 
 Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->middleware(['auth', 'client'])->name('offers.create');
 Route::get('/offers/{offer}', [OfferController::class, 'show'])->middleware(['auth', 'client'])->name('offers.show');
+Route::get('/expert/offers/{offer}/show', [ExpertOfferController::class, 'show'])->middleware(['auth', 'expert'])->name('expert.offer.show');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
