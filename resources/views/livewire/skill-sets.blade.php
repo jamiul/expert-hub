@@ -29,7 +29,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertField->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?fields[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -38,11 +38,6 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-
-
-
-
-
                             <div class="accordion">
                                 @foreach ($expertFields->skip($perRowExpert)->take($perRowExpert) as $expertField)
                                     <div class="at-item">
@@ -52,7 +47,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertField->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?fields[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -71,7 +66,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertField->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?fields[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -94,7 +89,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertSkill->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?skills[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -112,7 +107,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertSkill->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?skills[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -130,7 +125,7 @@
                                         <div class="at-tab">
                                             <ul>
                                                 @foreach ($expertSkill->children->sortBy('name') as $child)
-                                                    <li><a href="#">{{ $child->name }}</a></li>
+                                                    <li><a href="{{ route('find.experts') }}?skills[0]={{ $child->name }}">{{ $child->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>

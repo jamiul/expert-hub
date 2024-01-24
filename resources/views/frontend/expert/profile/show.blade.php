@@ -11,7 +11,7 @@
                         <div class="page-sidebar">
                             <div class="profile-widget user-bio-widget">
                                 <div class="user-profile-picture">
-                                    <img src="{{ asset('assets/frontend/img/Mask-img1.png') }}">
+                                    <img src="{{ $expert->picture }}">
                                     <button>Edit</button>
                                 </div>
                                 <div class="user-profile-info">
@@ -35,8 +35,8 @@
                                         </svg>
                                         <span> 10.15am AEST</span>
                                     </p>
-
-                                    <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                                    {{-- @TODO project need to be dynamic --}}
+                                    <button onclick="Livewire.dispatch('modal.open', { component: 'project.invite', arguments: { 'expert': {{ $expert->id }}, 'project': 10 }})" class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                         Invite to Project
                                     </button>
                                     <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
