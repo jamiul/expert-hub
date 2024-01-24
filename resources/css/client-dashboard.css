@@ -8462,6 +8462,21 @@ font-weight: 400;
   font-weight: 500;
 }
 
+
+.edux-btn-set-as-remove:hover{
+  display: flex;
+  padding: 2px 16px 1px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+  border: 2px solid  #C00000;
+  background: #C00000;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+
 .edux-radio-option{
   align-items: center;
   display: flex;
@@ -9009,6 +9024,21 @@ table.edux-table-extra-padding td:last-child {
   width: 100%;
   float: right;
   text-align: right;
+}
+
+.edux-billing-method-card-area {
+  border-radius: 8px;
+  border: 1px solid rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  padding: 40px;
+}
+
+.edux-pending{
+  color:  #E9B911;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: capitalize;
 }
   /* ============================================ Expert Profile End ============================================= */
 

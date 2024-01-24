@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="balance-area">
-          <span class="available-balance">Balance: <span>00.00</span> </span><span class="screw-balance">Escrow Balance: <span>$100.00</span>  </span>
+          <span class="available-balance">Balance: <span>00.00</span> </span>
         </div>
     </div>
 
@@ -88,7 +88,7 @@
                     <th scope="col">Date</th>
                     <th scope="col">Type</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Expert</th>
+                    <th scope="col">Clients</th>
                     <th scope="col">Amount / Balance</th>
                     <th scope="col">Ref ID</th>
                   </tr>
@@ -99,7 +99,7 @@
                   <td style="vertical-align: middle;">GST</td>
                   <td class="balance-text">GST for Fixed Price Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
-                  <td style="vertical-align: middle;"><span>($0.70)</span> <br/> $0.00</td>
+                  <td style="vertical-align: middle;"><span>($1.00)</span> <br/> <span class="edux-pending">Pending</span></td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678905</a></td>
                 </tr>
 
@@ -108,7 +108,7 @@
                   <td style="vertical-align: middle;">Payment Gateway Fee</td>
                   <td class="balance-text">Payment Gateway Fee for Fixed Price Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon Mohammad</td>
-                  <td style="vertical-align: middle;"><span>($6.64)</span> <br/> $0.70</td>
+                  <td style="vertical-align: middle;"><span>($10.00)</span> <br/> <span class="edux-pending">Pending</span></td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678904</a></td>
                 </tr>
 
@@ -117,7 +117,7 @@
                   <td style="vertical-align: middle;">Contract Initialisation Fee</td>
                   <td class="balance-text">Contract Initialisation Fee for Fixed Price-Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
-                  <td style="vertical-align: middle;"><span>($3.00)</span> <br/> $7.34</td>
+                  <td style="vertical-align: middle;"><span>($100.00)</span> <br/> <span class="edux-pending">Pending</span></td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678903</a></td>
                 </tr>
 
@@ -126,7 +126,7 @@
                   <td style="vertical-align: middle;">Market Place Fee</td>
                   <td class="balance-text">Funding request for Fixed Price - Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
-                  <td style="vertical-align: middle;"><span>($7.00)</span><br/> $10.34</td>
+                  <td style="vertical-align: middle;"><span>($0.50)</span><br/> $0.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678902</a></td>
                 </tr>
 
@@ -135,7 +135,7 @@
                   <td style="vertical-align: middle;">Fixed Price (Project Value)</td>
                   <td class="balance-text">Funding request for Developing Curriculum for Postgraduate Public Health Unit</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
-                  <td style="vertical-align: middle;"><span>($100.00)</span> <br/>$17.34</td>
+                  <td style="vertical-align: middle;"><span>($88.50)</span> <br/>$0.50</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678901</a></td>
                 </tr>
 
@@ -144,7 +144,7 @@
                   <td style="vertical-align: middle;">Payment</td>
                   <td class="balance-text">Paid from Mastercard 0026 to escrow for funding request 545678907</td>
                   <td style="vertical-align: middle;"></td>
-                  <td style="vertical-align: middle;"><span>$117.34</span> <br/> $117.34</td>
+                  <td style="vertical-align: middle;"><span>($1.00)</span> <br/> $89.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678909</a></td>
                 </tr>
 
@@ -153,7 +153,7 @@
                   <td style="vertical-align: middle;">Refund</td>
                   <td class="balance-text">Refund for ref #545678907</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$218.4 </span> <br/>$0.00</td>
+                  <td style="vertical-align: middle;"><span>($10.00)</span> <br/>$90.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -162,7 +162,7 @@
                   <td style="vertical-align: middle;">GST</td>
                   <td class="balance-text">GST for Fixed Price - Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$(1.40)</span> <br/>$0.00</td>
+                  <td style="vertical-align: middle;"><span>$100.00</span> <br/>$100.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -171,7 +171,7 @@
                   <td style="vertical-align: middle;">Payment Gateway Fee</td>
                   <td class="balance-text">Payment Gateway Fee for Fixed Price-Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$(13.10)</span>  <br/> $1.40</td>
+                  <td style="vertical-align: middle;"><span>($0.50)</span>  <br/>$0.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -180,7 +180,7 @@
                   <td style="vertical-align: middle;">Contract Initialisasion Fee</td>
                   <td class="balance-text">Contract Initialisation Fee for Fixed Price-Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$(3.00)</span> <br>$14.50</td>
+                  <td style="vertical-align: middle;"><span>($88.50)</span> <br>$0.50</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -189,7 +189,7 @@
                   <td style="vertical-align: middle;">Service Fee</td>
                   <td class="balance-text">Funding request for Fixed Price - Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$(14.00)</span> <br/>$17.50</td>
+                  <td style="vertical-align: middle;"><span>($1.00)</span> <br/>$89.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -198,7 +198,7 @@
                   <td style="vertical-align: middle;">Fixed Price</td>
                   <td class="balance-text">Funding request for Policy development assistance required for Chemical Engineering Industry</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
-                  <td style="vertical-align: middle;"><span>$(200.00)</span> <br/>$31.50</td>
+                  <td style="vertical-align: middle;"><span>($10.00)</span> <br/>$90.00</td>
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
                 </tr>
 
@@ -207,7 +207,7 @@
                   <td style="vertical-align: middle;">Payment</td>
                   <td class="balance-text">Paid from Mastercard 0026 to escrow for funding request xxxXXXXXX</td>
                   <td style="vertical-align: middle;"></td>
-                  <td style="vertical-align: middle;"><span>$231.50</span> <br/>$231.50</td>
+                  <td style="vertical-align: middle;"><span>$100.00</span> <br/>$100.00</td>
                   <td style="vertical-align: middle;"><a href="" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
               </tbody>
@@ -382,11 +382,11 @@
               </div>
               <div class="dingle-ref-item-invoice-price">
               <span class="ref-id fw-medium mb-4">Invoice</span>
-                <p><span class="ref-id">Invoice #</span> <span>545678907</span></p>
+                <p><span class="ref-id">Invoice #</span> <span class="fw-medium">545678907</span></p>
                 <p><span class="ref-id">Date</span> <span>Oct 23, 2023</span></p>
                 <p><span class="ref-id">Due Date</span> <span>Oct 23, 2023</span></p>
                 <p><span class="ref-id">Total Amount</span> <span>$7.34</span></p>
-                <p><span class="ref-id">Total Due</span> <span>$7.34</span></p>
+                <p><span class="ref-id">Total Due</span> <span class="fw-medium">$7.34</span></p>
               </div>
             </div>
 

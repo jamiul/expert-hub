@@ -20,6 +20,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-picture', 'figma.profilepicture');
     Route::view('/profile-completed', 'figma.profilecompleted');
 
+    // Consultation Modal
     Route::view('/add-consultation', 'figma.addconsultation');
     Route::view('/book-consultation', 'figma.bookconsultation');
     Route::view('/expert/profile/login/public', 'figma.loginpublic');
@@ -84,8 +85,15 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-notification-setting', 'figma.clientdashboardnotificationsettting');
 
     // Client Payment Module
-    Route::view('/client-tax-information', 'figma.client-tax-information');
     Route::view('/client-transaction', 'figma.client-transaction');
+    Route::view('/client-payment-setting', 'figma.client-payment-setting');
+    Route::view('/client-payment-setting-notification', 'figma.client-payment-setting-notification');
+    // Expert Payment Module
+    Route::view('/expert-transaction', 'figma.expert-transaction');
+    Route::view('/client-payment-setting', 'figma.client-payment-setting');
+    Route::view('/client-payment-setting-notification', 'figma.client-payment-setting-notification');
+
+        // Route::view('/client-tax-information', 'figma.client-tax-information');
 
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
