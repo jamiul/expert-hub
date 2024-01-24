@@ -751,9 +751,11 @@
         window.addEventListener('resize', updateClass);
     });
     function scrollToBottom(selectorElement) {
-        let selector = document.querySelector(selectorElement);.
+        let selector = document.querySelector(selectorElement);
         console.log(selector.scrollTop)
         selector.scrollTop = selector.scrollHeight;
     }
-    scrollToBottom('.chatbox-message-list');
+    setTimeout(function () {
+        scrollToBottom('.chatbox-message-list');
+    }, 500)
 </script>
