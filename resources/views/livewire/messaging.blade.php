@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="chatbox-wrapper">
         <div class="chatbox-contact-area">
@@ -54,7 +53,7 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
-                    <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}"  wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
@@ -228,7 +227,7 @@
                         <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                     </div>
 
-                    
+
                     <div class="chatbox-recipient-info">
                         <h3>{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h3>
                         <p class="chatbox-recipient-time">5:32 AM GMT+6 | Australia </p>
@@ -254,10 +253,11 @@
             <div class="chatbox-conversation-area">
                 <div class="chatbox-conversation-inner">
                     <div class="chatbox-message-list">
-                        {{-- dd($conversationMessages) --}}
+                        {{-- dd($currentConversation->messages) --}}
                         <!-- TODO: Improve here, remove the if conditional -->
-                    @if($currentConversation)
-                    @forelse($currentConversation->messages as $conversationMessage)
+                        @if($currentConversation)
+                        @forelse($currentConversation->messages as $conversationMessage)
+
                         <div class="chatbox-conversation-message  {{ ($conversationMessage->sender_profile_id == auth()->user()->profile->id) ? 'recipient-message' : '' }} " onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
                                 <img src="{{-- asset('assets/frontend/img/chat-avatar.png') --}} {{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
@@ -268,10 +268,18 @@
                                     <time> {{ Carbon\Carbon::parse($conversationMessage->created_at)->diffForHumans() }}</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>{{$conversationMessage->content}}</p>
+                                    <p>{{$conversationMessage->content}}
+
+                                        @forelse($conversationMessage->getMedia() as $file)
+                                        <a href="{{$file->getUrl()}}" download>file</a>
+                                        @empty
+
+                                        @endforelse
+
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <!-- TODO:NEL: add conversation-user-message-action -->
 
                             <div class="conversation-user-message-action">
@@ -328,7 +336,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -349,7 +357,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -370,7 +378,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -393,7 +401,7 @@
                         </div> -->
 
                         <!-- <div class="separator"><span>12 Oct 2023</span></div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -414,7 +422,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- TODO:NEL: add message typing -->
 
                         <div class="chatbox-conversation-message message-typing">
@@ -445,7 +453,13 @@
                         </button>
 
                         <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
+                        @if($messageAttachmentUrls)
+                        @forelse($messageAttachmentUrls as $messageAttachmentUrl)
+                        <a href="{{ $messageAttachmentUrl }}">file</a>
+                        @empty
 
+                        @endforelse
+                        @endif
 
                         <div class="chatbox-message-editor-helper">
                             <div class="message-editor-styling-action">
@@ -464,6 +478,13 @@
                                     <x-icon.code />
                                 </button>
                             </div>
+                            
+                            
+                            @error('messageAttachment')
+                                    <div class="form-input-error-message">{{ $message }}</div>
+                            @enderror
+                            
+                            
                             <div class="message-editor-functional-action">
                                 {{-- <div class="dropdown d-inline-block">--}}
                                 {{-- <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
@@ -476,9 +497,10 @@
                                 {{-- </div>--}}
                                 {{-- </div>--}}
 
-
+                                
                                 <label class="icon-btn">
-                                <input type="file" style="display:none">
+                                    <input type="file" name="messageAttachment" id="messageAttachment" multiple wire:model.live="messageAttachment" style="display:none">
+                                    
                                     <x-icon.attach-file />
                                 </label>
                                 <div class="dropdown d-inline-block">
@@ -530,7 +552,7 @@
                             <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
-                            
+
                             <h3 class="h6">{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name }}</h3>
                             <p>Chill Intuative | Australia</p>
                             <p>5:32 AM GMT+6 | Australia </p>
@@ -647,4 +669,3 @@
 
     </div>
 </div>
-

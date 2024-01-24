@@ -9,17 +9,25 @@ use App\Models\Message;
 use App\Models\MessageRecipient;
 use App\Models\Participant;
 use Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rules\File;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Route;
 
 class Messaging extends Component
 {
+    use WithFileUploads;
+
     public $messageBody;
     public $currentConversation;
     // public $currentConversationCreator;
+    // public $files = [];
+    public $messageAttachment = [];
+    public $messageAttachmentUrls = [];
 
 
     public function rules()
@@ -31,11 +39,18 @@ class Messaging extends Component
                 'min:' . MessagingEnum::MessageBodyMin->value,
                 'max:' . MessagingEnum::MessageBdyMax->value
             ],
+            
+            'messageAttachment.*' => [                
+                'nullable',
+                File::types(['image', 'pdf','docx','xlsx']), 
+                'max:10240',
+            ],
         ];
     }
 
     public function mount()
     {
+        
         // Load conversation when user visit messaging interface without selecting any notification
         $participant = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->first();
         $this->currentConversation =  $participant?->conversation;
@@ -64,6 +79,7 @@ class Messaging extends Component
 
     public function sendMessage()
     {
+        
         // ToDelete: Debugging purpose, delete when you are done
         // $data = $this->validate();
 
@@ -75,15 +91,37 @@ class Messaging extends Component
 
         //TODO::Implement transaction
         // DB::transaction(function () { 
-
-
+            
+           
         $data = $this->validate();
+        // toast('warning', 'Testing', $this);
+    //    dd($data);
 
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
             // 'content' => 'sss',
         ]);
+
+
+
+        
+         // file upload test start
+         if ($this->messageAttachment) {
+            foreach ($this->messageAttachment as $file) {
+                $fileName = $file->getClientOriginalName() . '-' . time() . '.' . $file->extension();
+                $message->addMedia($file->getRealPath())
+                    ->usingName($fileName)
+                    ->toMediaCollection();
+            }
+
+            
+        }
+
+        
+        // file upload test end
+
+
 
         $participants = $this->currentConversation->participants;
 
@@ -140,6 +178,44 @@ class Messaging extends Component
 
         $this->currentConversation = $conversation;
     }
+
+    // public function updated($propertyName)
+    // {
+    //    $data = $this->validateOnly($propertyName);
+    //    dd($data);
+    // }
+
+    public function updatedMessageAttachment()
+    {
+        // dump($this->messageAttachment);
+        
+    //     $this->validate(['messageAttachment.*' => [                
+    //         'nullable',
+            
+    //             File::types(['image', 'pdf','docx','xlsx'])
+    //         , 
+    //         'max:10240',
+    //     ],
+    // ]);
+        
+        
+        $this->validateOnly('messageAttachment.*');
+        // dd($this->messageAttachment);
+
+        // if(count($this->messageAttachment) < 1) {
+        //     return;
+        // }
+        
+        foreach ($this->messageAttachment as $file)
+        $this->messageAttachmentUrls[] = $file->temporaryUrl();
+        // dump($this->messageAttachmentUrls);
+    }
+
+    // public function updated($propertyName)
+    // {
+    //     $this->validateOnly($propertyName);
+    //     dd($propertyName);
+    // }
 
 
     public function render()
