@@ -49,7 +49,7 @@ header.client-header {
 }
 
 .s-profile{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -59,7 +59,7 @@ header.client-header {
 
 .s-setting{
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -67,7 +67,7 @@ header.client-header {
 
 .s-logout{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -130,7 +130,7 @@ header.client-header {
 }
 
 .search-input::placeholder{
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -225,14 +225,14 @@ span.indicator {
 
 .message-text h5{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
 }
 .message-text p{
   color: rgba(25, 29, 36, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -244,7 +244,7 @@ p.btn-details {
   background: #FFF;
   text-align: center !important;
   color: rgba(25, 29, 36, 0.70);
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -253,7 +253,7 @@ p.btn-details {
 .message-count p{
   color: rgba(25, 29, 36, 0.60);
   text-align: right;
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -340,7 +340,7 @@ span.profile-bell img {
 
 .top-batch {
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -355,7 +355,7 @@ span.profile-bell img {
 
 .top-batch-more {
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -378,7 +378,7 @@ a.setting-img img {
 .profile-setting-photo h4 {
   color: #303744;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -400,7 +400,7 @@ a.setting-img img {
 .btn-default.btn-preview{
   color: rgba(25, 29, 36, 0.70) !important;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -436,7 +436,7 @@ border: none;
 
 .single-option h6{
   color:#303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -476,7 +476,7 @@ li.active, a.active{
 .nav-area ul li a{
   text-decoration: none;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -513,7 +513,7 @@ button.top-search:hover{
 button.no-hover{
   background: transparent !important;
   color:#303744 !important;
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 400;
   display: flex;
@@ -527,7 +527,7 @@ button.no-hover::after{
 
 
 .all-job-tab{
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   color: #303744;
@@ -565,7 +565,7 @@ button.no-hover::after{
 }
 
 .btn-inprogress {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   color: #191D24;
@@ -580,7 +580,7 @@ button.no-hover::after{
 }
 
 .btn-hiring{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -597,7 +597,7 @@ button.no-hover::after{
 }
 
 .btn-onhold{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -610,7 +610,7 @@ button.no-hover::after{
 }
 
 .btn-complated{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -653,14 +653,14 @@ button.no-hover::after{
   align-items: center;
 }
 .profile-single-title-vs h3{
-  font-family: Colfax;
+
   font-size: 19px;
   font-weight: 500;
   color:#191D24;
   margin:22px 0px 6px;
 }
 .single-designation{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -669,7 +669,7 @@ button.no-hover::after{
 
 }
 .single-university{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   color: #0036E3;
@@ -732,7 +732,7 @@ button.no-hover::after{
 
 .single-person p{
   margin-bottom: 0px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -740,7 +740,7 @@ button.no-hover::after{
 }
 
 .profile-single-title h3 {
-  font-family: Colfax;
+
   font-size: 19px;
   font-weight: 500;
   line-height: 23px;
@@ -750,7 +750,7 @@ button.no-hover::after{
 
 .profile-feedback p {
   color: #369450;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -759,7 +759,7 @@ button.no-hover::after{
 
 .profile-single-text p {
   margin-bottom: 0px;
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -770,7 +770,7 @@ button.no-hover::after{
 
 .profile-single-text h6 {
   margin-bottom: 0px;
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -811,7 +811,7 @@ ul.all-project-rating svg {
   width: 100%;
   color: #0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -829,7 +829,7 @@ ul.all-project-rating svg {
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -854,7 +854,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   background:#369450 !important;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -974,7 +974,7 @@ button.owl-next span {
 }
 
 .country-rate, .country-rate{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -1089,7 +1089,7 @@ section.team-area {
 }
 
 .person-details h3 {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -1098,7 +1098,7 @@ section.team-area {
 }
 
 .person-details p {
-  font-family: Colfax;
+
   font-size: 11px;
   font-weight: 400;
   line-height: 13px;
@@ -1122,7 +1122,7 @@ section.team-area {
 }
 
 .single-team-text p{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -1131,7 +1131,7 @@ section.team-area {
 }
 
 .single-team-text h3 {
-  font-family: Colfax;
+
   font-size: 40px;
   font-weight: 500;
   line-height: 48px;
@@ -1141,7 +1141,7 @@ section.team-area {
 }
 
 .single-team-text p.hire-details{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
@@ -1177,7 +1177,7 @@ section.team-area {
 .short-option {
   display: flex;
   min-width: 156px;
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
@@ -1317,7 +1317,7 @@ span.material-symbols-outlined.active.setting-root {
 .header-bar nav ul li a{
   text-decoration: none;
   color: #fff !important;
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
 
@@ -1361,7 +1361,7 @@ span.material-symbols-outlined.active.setting-root {
 }
 
 .all-project h2{
-  font-family: Colfax;
+
   font-size: 23px;
   font-weight: 500;
   line-height: 32px;
@@ -1377,7 +1377,7 @@ span.material-symbols-outlined.active.setting-root {
 }
 
 .all-project-weekly h2 {
-  font-family: Colfax;
+
   font-size: 23px;
   font-weight: 500;
   line-height: 32px;
@@ -1389,7 +1389,7 @@ span.material-symbols-outlined.active.setting-root {
 }
 
 .project-time-sheet h2 {
-  font-family: Colfax;
+
   font-size: 23px;
   font-weight: 500;
   line-height: 32px;
@@ -1416,7 +1416,7 @@ span.material-symbols-outlined.active.setting-root {
   background: #0036E3;
   gap: 8px;
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -1435,7 +1435,7 @@ button.edux-btn-postjob{
   background: #0036E3;
   gap: 8px;
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -1530,7 +1530,7 @@ span.addall {
   min-width: 48px;
   margin-bottom: 0px;
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -1624,7 +1624,7 @@ td.health-budget{
 
 .total-report-area h4{
   color:#191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -1651,7 +1651,7 @@ td.health-budget{
 
 .report-hour-top{
   color:#191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -1659,7 +1659,7 @@ td.health-budget{
 
 .report-currency-top{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1667,7 +1667,7 @@ td.health-budget{
 
 .single-hourly-rate  .report-hour{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1676,7 +1676,7 @@ td.health-budget{
 
 .single-hourly-rate .report-currency{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -1685,7 +1685,7 @@ td.health-budget{
 
 .fixed-content .report-hour{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1694,7 +1694,7 @@ td.health-budget{
 
 .fixed-content .report-currency{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -1720,7 +1720,7 @@ td.health-budget{
 
 .activity-title h5 {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -1737,7 +1737,7 @@ td.health-budget{
 
 .activity-content h5{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -1745,7 +1745,7 @@ td.health-budget{
 
 .activity-content p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 400;
@@ -1771,7 +1771,7 @@ td.health-budget{
   width: 60%;
 }
 .short-date h6{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -1830,7 +1830,7 @@ ul.homedropdown{
 }
 .heath-unit-title h4 {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 23px;
   font-style: normal;
   font-weight: 500;
@@ -1903,7 +1903,7 @@ line-height: 159.5%;
   gap: 10px;
   color:  #0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -1915,7 +1915,7 @@ line-height: 159.5%;
 
 .health-tab-edit p{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -1929,7 +1929,7 @@ line-height: 159.5%;
   gap: 10px;
   text-align: center;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1943,7 +1943,7 @@ line-height: 159.5%;
 
 .health-tab-area h5{
   color:  #303744;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -1997,7 +1997,7 @@ cursor: pointer;
 
 .single-name-attachment h6 {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2056,7 +2056,7 @@ align-items: center;
 
 .attament-fixed h4 span{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -2100,7 +2100,7 @@ border-right: 1px solid rgba(14, 0, 98, 0.10);
 /* *** modal 2 *** */
 .health-text-area-border h4{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2137,7 +2137,7 @@ span.currency-edit {
 
 .space-rate {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -2150,7 +2150,7 @@ span.currency-edit {
 
 .edit-active span{
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2167,7 +2167,7 @@ span.text-count{
   right: 10px;
   bottom: 0px;
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2175,14 +2175,14 @@ span.text-count{
 
 .justify-content-between h5 {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
 }
 .without-method p {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2206,7 +2206,7 @@ button.btn-update{
   background: #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -2241,7 +2241,7 @@ button.btn-update{
 
 h5.single-contact-title{
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2268,7 +2268,7 @@ h5.single-contact-title{
 }
 .contact-amount p.mt-0{
   color:  #369450;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2298,7 +2298,7 @@ h5.single-contact-title{
 }
 p.suggest-text {
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2307,13 +2307,13 @@ p.suggest-text {
 
 span.suggest-skill{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
 .edit-draft-left h6{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -2324,7 +2324,7 @@ span.suggest-skill{
 }
 
 .btn-edit-draft {
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   line-height: 24px;
@@ -2414,7 +2414,7 @@ span.suggest-skill{
   font-size: 16px;
   font-weight: 500 !important;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -2425,7 +2425,7 @@ span.suggest-skill{
   font-size: 16px;
   font-weight: 500 !important;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -2436,7 +2436,7 @@ span.suggest-skill{
   font-size: 16px;
   font-weight: 500 !important;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -2455,7 +2455,7 @@ span.suggest-skill{
 
 a.dropdown-heading {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2467,7 +2467,7 @@ a.dropdown-heading:hover {
   font-size: 16px;
   font-weight: 500 !important;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -2491,7 +2491,7 @@ color:#191D24;
 }
 
 span.draft-color {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
@@ -2517,7 +2517,7 @@ span.draft-color {
 }
 
 span.hourly-color {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -2538,7 +2538,7 @@ span.hourly-color {
 
 .paypal-check .form-check-label {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -2577,7 +2577,7 @@ p.short-by-date {
   border-bottom: 1px solid  #E7E5EF;
   background: rgba(0, 54, 227, 0.03);
   color: rgba(48, 55, 68, 0.80);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2587,7 +2587,7 @@ p.short-by-date {
 .transaction-all-payment  thead th {
   background: rgba(0, 54, 227, 0.03);
   color: rgba(48, 55, 68, 0.80);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2611,7 +2611,7 @@ p.short-by-date {
   border-top: 1px solid  #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -2632,7 +2632,7 @@ p.short-by-date {
   border-top: 1px solid  #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -2684,6 +2684,12 @@ a.li-avatar-area {
   align-items: center;
 }
 
+
+.all-project.edux-tax-information {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /*  =================== Table History end ================== */
 
 /* ============== Draft and edit start here ============ */
@@ -2696,7 +2702,7 @@ a.li-avatar-area {
 }
 .pagination-left p{
   margin-bottom: 0px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
@@ -2726,7 +2732,7 @@ ul.pagination li.page-item a.page-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   text-align: left;
@@ -2747,7 +2753,7 @@ li.page-item.active a {
 }
 
 .result-perpage{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
@@ -2812,7 +2818,7 @@ font-weight: 500;
 
 .balance-area span {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -2837,7 +2843,7 @@ font-weight: 500;
   border: 2px;
   gap: 2px;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   line-height: 24px;
@@ -2859,14 +2865,14 @@ font-weight: 500;
 }
 
 .profile-single h6{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   color: #191D24;
 
 }
 .profile-single p{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   color: #303744B2;
@@ -2875,7 +2881,7 @@ font-weight: 500;
   margin-top: 18px;
 }
 .profile-single-policy h4 {
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   color:#191D24;
@@ -2883,7 +2889,7 @@ font-weight: 500;
 }
 
 .all-contact-rating-price p{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -2894,14 +2900,14 @@ font-weight: 500;
   color: #303744B2;
 }
 p.currency {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   color: #0036E3!important;
 }
 
 p.escrow{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   color:#191D24;
@@ -2910,21 +2916,21 @@ p.escrow{
 
 span.more-expand{
   color:#191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
 }
 
 .present-date p {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   color: #191D24;
   margin-top: 10px;
 }
 button.action-milestone-btn {
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   line-height: 24px;
@@ -2944,7 +2950,7 @@ button.action-milestone-btn {
 }
 
 .payment-title h4{
-  font-family: Colfax;
+
   font-size: 23px;
   font-weight: 500;
   line-height: 32px;
@@ -2952,7 +2958,7 @@ button.action-milestone-btn {
 }
 
 .payment-txt p{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -2970,7 +2976,7 @@ span.payment-currency{
 }
 
 .chard-number h6{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -2978,7 +2984,7 @@ span.payment-currency{
 }
 
 .chard-number p{
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
@@ -3087,7 +3093,7 @@ margin-bottom: 24px;
 
 input.form-control.p-input {
   color:  #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -3114,7 +3120,7 @@ input.form-control.p-input {
  margin-bottom: 24px;
 }
 .check-label{
-  font-family: Colfax;
+
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -3199,7 +3205,7 @@ color:#191D24;
   padding-right: 10px;
   color: #ffffff;
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -3321,7 +3327,7 @@ color:#191D24;
 
 .password-what h6 {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -3335,7 +3341,7 @@ span.what-icon {
 
 .password-what p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -3379,7 +3385,7 @@ span.what-icon {
 .change-option a{
   color: #0036E3;
   text-align: right;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -3401,7 +3407,7 @@ font-weight: 500;
 
 .email-update-area p {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -3411,7 +3417,7 @@ font-weight: 500;
 
 .email-contact-area h4{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -3452,7 +3458,7 @@ font-weight: 500;
 .paypal-check-input label.form-check-label.check-label {
 
   color: var(--color-heading-color, #191D24);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -3473,7 +3479,7 @@ font-weight: 500;
 
 .form-check-password label {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -3601,7 +3607,7 @@ font-weight: 500;
 
 .policy-content h6{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -3618,7 +3624,7 @@ font-weight: 500;
 
 .policy-content  p{
   color:#191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -3626,7 +3632,7 @@ font-weight: 500;
 
 span.spec-admin-form{
   color: rgba(48, 55, 68, 0.67);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -3634,21 +3640,21 @@ span.spec-admin-form{
 
 span.admin-fixed{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
 .admin-img-policy h4{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
 }
 .admin-img-policy p{
   color:  #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -3806,7 +3812,7 @@ font-weight: 400;
 
 policy-price p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3814,7 +3820,7 @@ policy-price p{
 
 span.admin-hours{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -3822,7 +3828,7 @@ span.admin-hours{
 
 span.admin-currency{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4277,7 +4283,7 @@ header.expert-login {
 
 .forget-password a{
   color:#0036E3;
-  font-family: Colfax;
+
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -4287,7 +4293,7 @@ header.expert-login {
 
 .kip-login{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -4299,7 +4305,7 @@ label.email-level {
   top: -11px;
   left: 15px;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4310,7 +4316,7 @@ label.password-level {
   top: -11px;
   left: 15px;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4420,7 +4426,7 @@ a.eye-off{
 
 .foundation-title h4{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -4428,7 +4434,7 @@ a.eye-off{
 
 .foundation-border h6{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4442,14 +4448,14 @@ h6.foundation-border{
 }
 p.donas-text{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
 p.donax-date-journy{
   color:  #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4457,7 +4463,7 @@ p.donax-date-journy{
 
 p.donax-date-donal{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4466,7 +4472,7 @@ p.donax-date-donal{
 
 p.donax-date-zoom{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4499,7 +4505,7 @@ p.donax-date-zoom{
   background-color: transparent;
   color:  #0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4515,7 +4521,7 @@ p.donax-date-zoom{
   background-color: transparent;
   color:  #0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4531,7 +4537,7 @@ p.donax-date-zoom{
   background: #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4569,7 +4575,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .modal-header-register h1 {
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 23px !important;
   font-style: normal;
   font-weight: 500;
@@ -4587,7 +4593,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 }
 .checkout-billing-content h3 {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 23px;
   font-style: normal;
   font-weight: 500;
@@ -4595,7 +4601,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 }
 .checkout-billing-content p{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -4610,7 +4616,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .paypal-icon-email span {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4637,7 +4643,7 @@ input.registration-check[type=checkbox]:checked+label::before {
   border-radius: 23px;
   border: 2px solid  #0036E3;
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4653,7 +4659,7 @@ input.registration-check[type=checkbox]:checked+label::before {
   gap: 10px;
   color:  #0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4713,7 +4719,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .light-single span {
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4722,7 +4728,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .checkout-journey p {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -4732,7 +4738,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .checkout-journey h5 {
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4754,7 +4760,7 @@ input.registration-check[type=checkbox]:checked+label::before {
   background:  #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4764,7 +4770,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .checkout-journey h5{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4772,7 +4778,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .checkout-code span{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -4797,7 +4803,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 }
 .single-subtotal.estimate-total span {
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4805,7 +4811,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 .checkout-learn span {
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -4813,7 +4819,7 @@ input.registration-check[type=checkbox]:checked+label::before {
 
 span.checkout-about, span.checkout-extend {
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -4896,7 +4902,7 @@ span.checkout-about, span.checkout-extend {
 
 .frontend-left-title h4{
   color: #000;
-  font-family: Colfax;
+
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -4929,7 +4935,7 @@ button.edux-save-update {
   background: #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4948,7 +4954,7 @@ button.edux-save-update-spinner {
   background: #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -4993,7 +4999,7 @@ button.save-as-draft {
     border: 2px solid  #0036E3;
     color: #0036E3;
     text-align: center;
-    font-family: Colfax;
+
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -5010,7 +5016,7 @@ button.save-update {
     background:  #0036E3;
     color: #FFF;
     text-align: center;
-    font-family: Colfax;
+
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -5051,7 +5057,7 @@ a.position-absolute.blog-close {
 
 .text-area h4 {
     color: #191D24;
-    font-family: Colfax;
+
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -5136,7 +5142,7 @@ h3.seller-title {
   border-radius: 4px;
   border: 2px solid #E7E5EF;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5150,7 +5156,7 @@ h3.seller-title {
 label.level-subtitle {
   top: -11px;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5162,7 +5168,7 @@ label.level-subtitle {
 label.level-title {
   top: -11px;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5172,7 +5178,7 @@ label.level-title {
 }
 label.admin-text-area-level{
   color: #303744 !important;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5207,7 +5213,7 @@ span.require-count{
   filter: drop-shadow(4px 4px 16px rgba(14, 0, 98, 0.10));
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -5243,7 +5249,7 @@ span.require-count{
 
 
 .field-search .experts-block .experts-text h3 {
-  font-family: Colfax;
+
   font-size: 16px !important;
   font-weight: 500 !important;
   line-height: 22px;
@@ -5613,7 +5619,7 @@ h4.more-read-blog {
 .btn-addexpert-cancel {
   color: #0036E3 !important;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -5629,7 +5635,7 @@ h4.more-read-blog {
 .btn-addexpert-cancel:hover{
   color: #0036E3 !important;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -5680,7 +5686,7 @@ h4.more-read-blog {
 label.basic-file-upload {
   padding: 15px;
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5718,7 +5724,7 @@ label.basic-file-upload:hover {
   border: 2px solid rgba(48, 55, 68, 0.15);
   padding: 15px;
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5743,7 +5749,7 @@ input.academic-title{
   border: 2px solid  #E7E5EF;
   padding: 15px;
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5754,7 +5760,7 @@ input.academic-title{
   padding: 15px;
   min-height: 134px !important;
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -6135,7 +6141,7 @@ display:flex;
 }
 .all-notification h4{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 48px;
   font-style: normal;
   font-weight: 500;
@@ -6172,7 +6178,7 @@ button.edux-btn-close {
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6191,7 +6197,7 @@ button.edux-btn-close {
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6207,7 +6213,7 @@ button.edux-btn-close {
   width: 100%;
   color:#0036E3;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6227,7 +6233,7 @@ button.edux-btn-close {
   width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6298,7 +6304,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6315,7 +6321,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6332,7 +6338,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6348,7 +6354,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6364,7 +6370,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6380,7 +6386,7 @@ span.arrow-left {
   justify-content: center;
   align-items: center;
   border-radius: 63px;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6476,7 +6482,7 @@ gap: 10px;
   align-items: center;
   justify-content: center;
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -6495,7 +6501,7 @@ gap: 10px;
 
 .edux-btn-green span{
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6514,7 +6520,7 @@ gap: 10px;
 
 .edux-btn-green-width span{
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6539,7 +6545,7 @@ gap: 10px;
   width: 100%;
   max-width: 50px;
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6556,7 +6562,7 @@ gap: 10px;
   width: 100%;
   max-width: 50px;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6566,7 +6572,7 @@ gap: 10px;
 
 .edux-my-favorite span {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6574,7 +6580,7 @@ gap: 10px;
 
 .edux-my-favorite-border span {
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -6600,7 +6606,7 @@ gap: 10px;
   flex: 1 0 0;
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6610,7 +6616,7 @@ gap: 10px;
 span.online-active{
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6634,7 +6640,7 @@ span.online-active{
   width: 100%;
   max-width: 115px;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6653,7 +6659,7 @@ span.online-active{
   width: 100%;
   max-width:215px;
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6831,7 +6837,7 @@ ul.edux-dropdown-show a.dropdown-heading:hover {
   font-size: 16px;
   font-weight: 500 !important;
   color: #0036E3;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -6877,7 +6883,7 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
 
 .avatar-title h4{
   color: rgba(25, 29, 36, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -6886,7 +6892,7 @@ ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
 
 .single-person-avatar-content p {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -6939,7 +6945,7 @@ p.avatar-count {
   background: #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -6961,7 +6967,7 @@ p.avatar-count {
 
 .middle-top-text h5 {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -6969,7 +6975,7 @@ p.avatar-count {
 }
 .middle-top-text p{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7023,7 +7029,7 @@ p.avatar-count {
 
 .middle-menu-area nav ul li a {
   color:#0036E3;
-  font-family: Colfax;
+
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -7058,7 +7064,7 @@ p.avatar-count {
 
 .ctx-person{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7067,7 +7073,7 @@ p.avatar-count {
 
 .ctx-time{
   color: rgba(48, 55, 68, 0.50);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7075,7 +7081,7 @@ p.avatar-count {
 
 .ctx-body p {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -7118,7 +7124,7 @@ p.avatar-count {
 
 .edux-with-option .ctx-body p{
   color:  #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -7403,7 +7409,7 @@ p.edux-start-text span {
 
 .edux-message-iconic-text p a{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7417,7 +7423,7 @@ p.edux-start-text span {
 
 .date-space span{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7468,7 +7474,7 @@ button.edux-btn-accordion:not(.collapsed)::after {
 
 button.edux-btn-accordion {
   color: #303744;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -7580,7 +7586,7 @@ tr.tr-edux-scholarship td {
 
 .edux-fund-type p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7593,7 +7599,7 @@ tr.tr-edux-scholarship td {
 
 .edux-study-level p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7606,7 +7612,7 @@ tr.tr-edux-scholarship td {
 
 .edux-study-area  p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7649,7 +7655,7 @@ font-weight: 400;
 
 .edux-status-modal-body p{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -7669,7 +7675,7 @@ font-weight: 400;
   max-width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -7686,7 +7692,7 @@ font-weight: 400;
   max-width: 100%;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -7702,7 +7708,7 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7722,7 +7728,7 @@ font-weight: 400;
     border-radius: 4px;
     border: 2px solid  #E7E5EF;
     color: rgba(25, 29, 36, 0.70);
-    font-family: Colfax;
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -7731,7 +7737,7 @@ font-weight: 400;
 
 .edux-label{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7739,7 +7745,7 @@ font-weight: 400;
 
 .edux-fund-type{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7815,7 +7821,7 @@ font-weight: 400;
   border-radius: 63px;
   background: #9CA5C2;
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -7917,7 +7923,7 @@ body > .edux-no-footer > footer .footer{
 }
 
 .edux-tooltips-details {
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -7984,7 +7990,7 @@ font-weight: 400;
 }
 
 .service-fee-description .edux-tooltips-details {
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -8033,7 +8039,7 @@ font-weight: 400;
 
 .skill-suggestion{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -8042,7 +8048,7 @@ font-weight: 400;
 
 .skill-suggestion span{
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8103,7 +8109,7 @@ font-weight: 400;
 .edux-btn-cancel{
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8119,7 +8125,7 @@ font-weight: 400;
 .edux-btn-cancel:hover{
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8143,7 +8149,7 @@ font-weight: 400;
   background:  #0036E3;
   color: #FFF;
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8159,7 +8165,7 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8175,7 +8181,7 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   color: rgba(25, 29, 36, 0.70);
   text-align: center;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8290,7 +8296,7 @@ font-weight: 400;
 
 .edux-selected-slot li.edux-day-schedule {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -8524,7 +8530,7 @@ font-weight: 400;
 }
 .edux-book-expert-time h4{
   color:  #191D24;
-  font-family: Colfax;
+
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -8594,7 +8600,7 @@ margin-bottom: 32px;
 
 .edux-paypal-billing span{
   color: #303744;
-  font-family: Colfax;
+
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -8603,7 +8609,7 @@ margin-bottom: 32px;
 
 .edux-check-and-fund p a{
   color:  #0036E3;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -8851,8 +8857,33 @@ table.edux-table-extra-padding td:last-child {
   padding: 0px 40px;
 }
 
+.edux-prof-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex.gap-2.edux-add-modal-steps {
+  display: flex;
+  justify-content: space-between;
+}
 
 
+.edux-tool-tips {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.edux-user-profile-skills ul li{
+  color:  #191D24 !important;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  border: 1px solid  #E7E5EF;
+}
 
   /* ============================================ Expert Profile End ============================================= */
 
@@ -8870,7 +8901,7 @@ table.edux-table-extra-padding td:last-child {
     border-radius: 4px;
     border: 2px solid #E7E5EF;
     color: #191D24;
-    font-family: Colfax;
+
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -9121,7 +9152,7 @@ header.client-header {
 }
 
 .single-team-text h3 {
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   line-height: 48px;
@@ -9207,7 +9238,7 @@ header.client-header {
 }
 
 .person-details p {
-  font-family: Colfax;
+
   font-size: 11px;
   font-weight: 400;
   line-height: 13px;
@@ -9220,7 +9251,7 @@ header.client-header {
 }
 
 .single-team-text h3 {
-  font-family: Colfax;
+
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
@@ -9230,7 +9261,7 @@ header.client-header {
 }
 
 .single-team-text p.hire-details {
-  font-family: Colfax;
+
   font-size: 13px;
   font-weight: 400;
   line-height: 26px;
@@ -9455,7 +9486,7 @@ h3, .h3 {
     width: 100%;
     color: #0036E3;
     text-align: center;
-    font-family: Colfax;
+
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -9587,7 +9618,7 @@ h3, .h3 {
 }
 
 .all-project h2 {
-  font-family: Colfax;
+
   font-size: 14px;
   font-weight: 500;
   line-height: 32px;
@@ -9739,7 +9770,7 @@ h3, .h3 {
 
 .edux-mobile-avatar-area h6 {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -9755,7 +9786,7 @@ h3, .h3 {
   font-style: normal;
   font-weight: 400;
   text-transform: capitalize;
-  font-family: Colfax;
+
   margin-bottom: 0px;
 }
 
@@ -9766,7 +9797,7 @@ h3, .h3 {
   font-style: normal;
   font-weight: 400;
   text-transform: capitalize;
-  font-family: Colfax;
+
 }
 
 .edux-offcanvas-header {
@@ -9779,7 +9810,7 @@ h3, .h3 {
 }
 p.edux-count-point {
   color: #FFF;
-  font-family: Colfax;
+
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -9807,7 +9838,7 @@ p.edux-count-point {
 
 .edux-offcanvas-body ul li a{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -9816,7 +9847,7 @@ p.edux-count-point {
 
 .edux-offcanvas-body ul li a.active{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -9825,7 +9856,7 @@ p.edux-count-point {
 
 .edux-profile-dropdown ul li a span{
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -10032,7 +10063,7 @@ ul.edux-dropdown-bottom {
   flex-direction: column;
   align-items: center;
   color: var(--color-heading-color, #191D24);
-  font-family: Colfax;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -10131,7 +10162,7 @@ ul.edux-mobile-dropdown li {
 
 .middle-top-text h5 {
   color: #191D24;
-  font-family: Colfax;
+
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -10139,7 +10170,7 @@ ul.edux-mobile-dropdown li {
 }
 .middle-top-text p {
   color: rgba(48, 55, 68, 0.70);
-  font-family: Colfax;
+
   font-size: 11px;
   font-style: normal;
   font-weight: 400;

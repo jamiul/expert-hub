@@ -5,8 +5,9 @@
   <div class="container">
     <div class="row">
       <div class="notification-area-password d-flex justify-content-between">
-        <div class="all-project">
-          <h2>Notification Settings</h2>
+        <div class="all-project edux-tax-information">
+          <h2>Tax Information</h2>
+          <p>Tax information is required in order to confirm if you are a Australia or non-Australia taxpayer and whether or not EduExHub is required to withhold taxes from your earnings. Add your tax information now to avoid delays in getting paid.</p>
         </div>
 
       </div>
@@ -15,6 +16,23 @@
 
     <div class="row password-padding">
       <div class="total-area-password">
+
+      <div class="password-area d-flex flex-row justify-content-between px-0">
+          <div class="password-what d-flex flex-column">
+              <h6 class="d-flex align-items-center">Tax Residence
+                <span class="what-icon ac-completed">
+                Completed
+              </span>
+
+            </h6>
+              <p>Your tax residence information is part of the EduExHub W-9 or W-8 form process. This address will be displayed on invoices.</p>
+          </div>
+
+            <div class="check-box-option">
+            <x-icon.edit fill="red"/>
+          </div>
+        </div>
+
         <div class="password-area-message d-flex flex-row justify-content-between px-0 password-noborder">
           <div class="password-what d-flex flex-column">
               <h6 class="d-flex align-items-center" >Message</h6>
