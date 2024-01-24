@@ -388,6 +388,7 @@
 
                             </div>
                             <div class="separator"><span>12 Oct 2023</span></div>
+
                             <div class="chatbox-conversation-message recipient-message">
                                 <div class="conversation-user-thumb">
                                     <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}"
@@ -400,6 +401,75 @@
                                     </div>
                                     <div class="conversation-message-body">
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                    </div>
+                                </div>
+                                <div class="conversation-user-message-action">
+                                    <button class="icon-btn message-action-trigger"
+                                            role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                        <x-icon.three-dots/>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="chatbox-conversation-message recipient-message">
+                                <div class="conversation-user-thumb">
+                                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}"
+                                         alt="avatar">
+                                </div>
+                                <div class="conversation-user-message">
+                                    <div class="conversation-message-header">
+                                        <h6>Michel Jhon</h6>
+                                        <time> 6:50 PM</time>
+                                    </div>
+                                    <div class="conversation-message-body">
+                                        <img src="{{ asset('assets/frontend/img/attachment1.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="conversation-user-message-action">
+                                    <button class="icon-btn message-action-trigger"
+                                            role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                        <x-icon.three-dots/>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="chatbox-conversation-message recipient-message">
+                                <div class="conversation-user-thumb">
+                                    <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}"
+                                         alt="avatar">
+                                </div>
+                                <div class="conversation-user-message">
+                                    <div class="conversation-message-header">
+                                        <h6>Michel Jhon</h6>
+                                        <time> 6:50 PM</time>
+                                    </div>
+                                    <div class="conversation-message-body">
+                                        <div class="chatbox-uploaded-media-wrapper">
+                                            <div class="chatbox-uploaded-media-item">
+                                                <div>
+                                                    <x-icon.file-pdf/>
+                                                </div>
+                                                <div>
+                                                    T451898021.pdf
+                                                </div>
+                                                <button>
+                                                    <x-icon.close/>
+                                                </button>
+                                            </div>
+                                            <div class="chatbox-uploaded-media-item">
+                                                <div>
+                                                    <x-icon.file-pdf/>
+                                                </div>
+                                                <div>
+                                                    client-chatbox-new-item-file-compressed.pdf
+                                                </div>
+                                                <button>
+                                                    <x-icon.close/>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="conversation-user-message-action">
@@ -440,7 +510,31 @@
                             <textarea name="" id="" cols="30" rows="10"
                                       placeholder="Type your message..."></textarea>
 
+                            <div class="chatbox-uploaded-media-wrapper">
+                                <div class="chatbox-uploaded-media-item">
+                                    <div>
+                                        <x-icon.file-pdf/>
+                                    </div>
+                                    <div>
+                                        T451898021.pdf
+                                    </div>
+                                    <button>
+                                        <x-icon.close/>
+                                    </button>
+                                </div>
+                                <div class="chatbox-uploaded-media-item">
+                                    <div>
+                                        <x-icon.file-pdf/>
+                                    </div>
+                                    <div>
+                                        client-chatbox-new-item-file-compressed.pdf
+                                    </div>
+                                    <button>
+                                        <x-icon.close/>
+                                    </button>
+                                </div>
 
+                            </div>
                             <div class="chatbox-message-editor-helper">
                                 <div class="message-editor-styling-action">
                                     <button class="icon-btn">
@@ -459,28 +553,30 @@
                                     </button>
                                 </div>
                                 <div class="message-editor-functional-action">
-{{--                                    <div class="dropdown d-inline-block">--}}
-{{--                                        <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                                            <x-icon.alternate-email/>--}}
-{{--                                        </button>--}}
-{{--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">--}}
-{{--                                            <button class="dropdown-item">Room</button>--}}
-{{--                                            <button class="dropdown-item">Fabio Rossi</button>--}}
-{{--                                            <button class="dropdown-item">Shuvo Reza</button>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
+                                    {{--                                    <div class="dropdown d-inline-block">--}}
+                                    {{--                                        <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
+                                    {{--                                            <x-icon.alternate-email/>--}}
+                                    {{--                                        </button>--}}
+                                    {{--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">--}}
+                                    {{--                                            <button class="dropdown-item">Room</button>--}}
+                                    {{--                                            <button class="dropdown-item">Fabio Rossi</button>--}}
+                                    {{--                                            <button class="dropdown-item">Shuvo Reza</button>--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
 
 
-                                    <button class="icon-btn">
+                                    <button class="icon-btn" onclick="toggleClasses('.chatbox-message-editor', 'media-uploaded')">
                                         <x-icon.attach-file/>
                                     </button>
                                     <div class="dropdown d-inline-block">
-                                        <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
                                             <x-icon.settings/>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="chatbox-editor-settings">
                                             <p class="text-sm fw-medium">Pressing Enter Key will :</p>
-                                            <x-form.radio label="" wire:model="gender" :options="['send-message' => 'Send message', 'line-break' => 'Add a line break']"/>
+                                            <x-form.radio label="" wire:model="gender"
+                                                          :options="['send-message' => 'Send message', 'line-break' => 'Add a line break']"/>
                                             <p class="text-sm fw-medium mb-0">You can use Ctrl + Enter to send</p>
                                         </div>
                                     </div>
@@ -535,7 +631,8 @@
                             <div class="chatbox-summary-accordion accordion" id="accordionExample">
 
                                 <div class="accordion-item border-0">
-                                    <button class="accordion-button chatbox-summary-accordion-btn" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button chatbox-summary-accordion-btn" type="button"
+                                            data-bs-toggle="collapse"
                                             data-bs-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
                                         Files & Links
@@ -604,7 +701,8 @@
 
 
                                 <div class="accordion-item border-0">
-                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed" type="button"
+                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed"
+                                            type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                             aria-expanded="false" aria-controls="collapseTwo">
                                         People
@@ -638,7 +736,8 @@
                                 </div>
 
                                 <div class="accordion-item border-0">
-                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed" type="button"
+                                    <button class="accordion-button chatbox-summary-accordion-btn collapsed"
+                                            type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
                                         Personal Note
@@ -750,11 +849,13 @@
         // Event listener to update the class when the window is resized
         window.addEventListener('resize', updateClass);
     });
+
     function scrollToBottom(selectorElement) {
         let selector = document.querySelector(selectorElement);
         console.log(selector.scrollTop)
         selector.scrollTop = selector.scrollHeight;
     }
+
     setTimeout(function () {
         scrollToBottom('.chatbox-message-list');
     }, 500)
