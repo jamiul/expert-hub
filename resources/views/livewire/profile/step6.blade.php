@@ -1,24 +1,19 @@
 <div class="progress-step-content ">
     <h6 class="mb-2">eKYC (electronic Know Your Customer) Info</h6>
     <p class="mb-4">Additional Information</p>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <div wire:ignore>
-        <x-form.flatpicker label="Date of Birth" wire:model="dob"/>
-    </div>
-    <x-form.choice wire:model="country" label="Country">
-        <option value="">Select Title</option>
-        <option value="Mr">Mr</option>
-        <option value="Mrs">Mrs</option>
-        <option value="Dr">Dr</option>
-        <option value="Prof">Prof</option>
-    </x-form.choice>
+    <x-form.flatpicker label="Date of Birth" wire:model="dob"/>
+    <x-form.select wire:model="gender" label="Gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </x-form.select>
+    <x-form.input readonly label="Country" value="{{ auth()->user()->country->name }}"/>
     <x-form.choice wire:model="state" label="State">
         <option value="">Select State</option>
-        <option value="Mr">Mr</option>
-        <option value="Mrs">Mrs</option>
-        <option value="Dr">Dr</option>
-        <option value="Prof">Prof</option>
+        @foreach ($availableStates as $state)
+            <option value="{{ $state->name }}">{{ $state->name }}</option>
+        @endforeach
     </x-form.choice>
     <x-form.input type="text" label="City" wire:model="city" placeholder="City"/>
     <x-form.input type="text" label="Postcode" wire:model="postcode" placeholder="Postcode"/>

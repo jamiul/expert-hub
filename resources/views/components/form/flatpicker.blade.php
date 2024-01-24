@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 @props([
 'name' => $attributes->whereStartsWith('wire:model')->first(),
 'label' => null,
@@ -36,7 +34,7 @@
             </div>
         @endif
     </label>@endif
-    <div wire:ignore class="icon-field-wrapper @if($inline == 'true') inline-calendar @endif">
+    <div class="icon-field-wrapper @if($inline == 'true') inline-calendar @endif">
         <input
             type="text"
             class="form-input-field{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"

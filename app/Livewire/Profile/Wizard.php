@@ -3,8 +3,11 @@
 namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
+use App\Models\State;
 use App\Models\University;
+use App\Models\User;
 use Illuminate\Mail\Mailables\Content;
+use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\File;
 use Livewire\Component;
@@ -34,6 +37,15 @@ class Wizard extends Component
     public $picture;
     public $pictureUrl = '';
 
+    public $availableStates;
+    public $dob;
+    public $gender;
+    public $state;
+    public $city;
+    public $postcode;
+    public $address_line_1;
+    public $address_line_2;
+
     public function mount()
     {
         $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
@@ -62,6 +74,16 @@ class Wizard extends Component
         $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
         $this->pictureUrl = $this->profile()->picture;
+
+        $this->availableStates = State::get();
+        $user = auth()->user();
+        $this->dob = $user->dob;
+        $this->gender = $user->gender;
+        $this->state = $user->state;
+        $this->city = $user->city;
+        $this->postcode = $user->postcode;
+        $this->address_line_1 = $user->address_line_1;
+        $this->address_line_2 = $user->address_line_2;
     }
 
     public function render()
@@ -101,7 +123,7 @@ class Wizard extends Component
             $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
         }
         if($this->currentStep == 6){
-            
+            $this->saveKyc();
         }
         if ($this->currentStep == 7) {
             $this->validate([
@@ -118,10 +140,24 @@ class Wizard extends Component
             return redirect()->route('expert.dashboard');
         }
 
-        if ($this->currentStep < 6) {
+        if ($this->currentStep < 7) {
             $this->currentStep += 1;
         }
 
+    }
+
+    public function saveKyc()
+    {
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'dob' => Carbon::parse($this->dob),
+            'gender' => $this->gender,
+            'state' => $this->state,
+            'city' => $this->city,
+            'postcode' => $this->postcode,
+            'address_line_1' => $this->address_line_1,
+            'address_line_2' => $this->address_line_2,
+        ]);
     }
 
     public function saveSkill()
