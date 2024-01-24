@@ -4158,6 +4158,37 @@ header.admin-header {
   border-radius: 50px;
   background: #B3F2C5;
 }
+.edux-batch-viewed {
+  display: flex;
+  padding: 2px 5px 2px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #369450;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 70px;
+}
+
+.edux-batch-not-viewed{
+  display: flex;
+  padding: 2px 5px 2px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+color: #8C8C8C;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+border-radius: 63px;
+background: #F0F0F0;
+width:85px;
+}
 
 
 /*  ========================= Admin dashboard  End here ================================================ */
@@ -8808,6 +8839,16 @@ border:none
 
 .content-text-with-rating span{
   font-size:14px;
+}
+
+
+table.edux-table-extra-padding td:last-child {
+  padding-right: 40px;
+  text-align: right;
+}
+
+.edux-hero-button{
+  padding: 0px 40px;
 }
 
 

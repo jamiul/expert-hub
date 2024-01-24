@@ -7,19 +7,13 @@
                     <div class="sidebar-layout right-sidebar-layout project-detials-layout">
                         <div class="page-sidebar">
                             <div class="sidebar-widget">
-                                <p class="text-sm mb-3">Fixed <strong class="h5">$200.00</strong></p>
-                                <a class="btn btn-primary btn-md w-100" href="/figma/submit-fixed-project-proposal">Send EOI</a>
-                                <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
-                                    <x-icon.heart width="24" height="24" fill="#0036E3"/>
-                                    Save this Project
-                                </button>
+                                <p class="text-sm mb-3">Fixed <strong class="h5 d-block">$200.00</strong></p>
+                                <a href="/figma/invitation-accept-hourly" class="btn mb-2 w-100 btn-md btn-primary">Accept</a>
+                                <button data-bs-toggle="modal"
+                                        data-bs-target="#declineModal" class="btn mb-2 w-100 btn-md btn-outline-primary">Decline</button>
+                                <a href="#" class="btn mb-2 w-100 btn-md btn-outline-primary"> <x-icon.chat fill="#0036E3"/> Chat with Client</a>
                             </div>
-                            <div class="sidebar-widget">
-                                <div class="alert alert-info mb-0">
-                                    You need to <a href="#">Log In</a> as a Consultant to send the EOI. Don't have an
-                                    account with us? <a href="#">Create an account now</a>
-                                </div>
-                            </div>
+
                             <div class="sidebar-widget">
                                 <h4 class="widget-title">About the client</h4>
                                 <div class="widget-content text-sm">
@@ -60,10 +54,10 @@
                             <div class="project-details-card">
                                 <div class="project-details-card-header pb-4">
                                     <div class="project-details-title">
+                                        <p class="mb-2">ID: #45765rte675345</p>
                                         <h1 class="h5 d-flex align-items-center gap-2 mb-2">
                                             <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                            Developing curriculum for Postgraduate public health
-                                            unit
+                                            LMS Expert required for Business Administration
                                         </h1>
                                     </div>
                                     <div
@@ -75,7 +69,7 @@
                                             </div>
                                             <div class="d-flex align-items-center gap-2">
                                                 <x-icon.tag fill="#0036E3"/>
-                                                Curriculum development
+                                                Public Health
                                             </div>
 
                                         </div>
@@ -207,6 +201,24 @@
                             <x-icon.chevron-right/>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="declineModal" tabindex="-1" aria-labelledby="declineModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-40">
+                    <h3 class="h5 mb-3">Decline Invitation?</h3>
+                    <p>Would you like to decline the Invitation?</p>
+                    <form action="">
+
+                        <div class="d-flex gap-3 mt-20 pt-20 justify-content-end border-top">
+                            <button style="width: 130px" class="btn btn-md btn-outline-gray">Cancel</button>
+                            <button style="width: 130px" class="btn btn-md btn-danger">Decline</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
