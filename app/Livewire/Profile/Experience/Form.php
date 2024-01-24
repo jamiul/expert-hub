@@ -44,7 +44,7 @@ class Form extends BaseForm
         }
 
         $this->profile()->experiences()->create($data);
-        $this->reset();
+        $this->reset();()
     }
 
     public function set(Experience $experience)
