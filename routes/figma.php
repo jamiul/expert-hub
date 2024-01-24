@@ -85,6 +85,7 @@ Route::group(['prefix' => 'figma'], function () {
 
     // Client Payment Module
     Route::view('/client-tax-information', 'figma.client-tax-information');
+    Route::view('/client-transaction', 'figma.client-transaction');
 
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
