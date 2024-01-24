@@ -88,6 +88,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/submit-fixed-project-proposal', 'figma.submit-fixed-project-proposal');
     Route::view('/all-express-of-interest', 'figma.all-express-of-interest');
     Route::view('/express-of-interest-project-view', 'figma.express-of-interest-project-view');
+    Route::view('/hired-project-view', 'figma.hired-project-view');
     Route::view('/invitation-project-view', 'figma.invitation-project-view');
     Route::view('/invitation-accept-hourly', 'figma.invitation-accept-hourly');
     Route::view('/invitation-accept-fixed', 'figma.invitation-accept-fixed');
