@@ -61,7 +61,7 @@ class Wizard extends Component
         $this->platform_fee = $this->profile()->hourly_rate * .1;
         $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
-        $this->pictureUrl = $this->profile()->getFirstMediaUrl('picture');
+        $this->pictureUrl = $this->profile()->picture;
     }
 
     public function render()
@@ -83,17 +83,17 @@ class Wizard extends Component
         }
         if ($this->currentStep == 2) {
             if($this->profile()->education->count() == 0){
-                return $this->dispatch('notify', content: 'Please add education', type: 'info');
+                return toast('success', 'Please add education', $this);
             }
         }
         if ($this->currentStep == 3) {
             if($this->profile()->experiences->count() == 0){
-                return $this->dispatch('notify', content: 'Please add experience', type: 'info');
+                return toast('info', 'Please add experience', $this);
             }
         }
         if ($this->currentStep == 4) {
             if($this->profile()->languages->count() == 0){
-                return $this->dispatch('notify', content: 'Please add language', type: 'info');
+                return toast('info', 'Please add language', $this);
             }
         }
         if ($this->currentStep == 5) {

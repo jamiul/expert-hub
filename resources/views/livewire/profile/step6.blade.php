@@ -1,11 +1,11 @@
-{{-- @script
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-@endscript --}}
 <div class="progress-step-content ">
     <h6 class="mb-2">eKYC (electronic Know Your Customer) Info</h6>
     <p class="mb-4">Additional Information</p>
-    <x-form.flatpicker label="Date of Birth" wire:model="dob"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <div wire:ignore>
+        <x-form.flatpicker label="Date of Birth" wire:model="dob"/>
+    </div>
     <x-form.choice wire:model="country" label="Country">
         <option value="">Select Title</option>
         <option value="Mr">Mr</option>

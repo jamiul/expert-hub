@@ -15,4 +15,9 @@ class Invitation extends Model
     protected $casts = [
         'status' => InvitationStatus::class,
     ];
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class, 'expert_id');
+    }
 }

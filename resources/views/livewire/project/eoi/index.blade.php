@@ -15,11 +15,11 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'invite-expert' }"
-                            @click="activeTab = 'invite-expert'">Invite Expert (12)
+                            @click="activeTab = 'invite-expert'">Invite Expert ({{ $project->invitations->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'offer' }"
-                            @click="activeTab = 'offer'">Offer (2)
+                            @click="activeTab = 'offer'">Offer ({{ $project->offers->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'hire' }"
@@ -158,7 +158,7 @@
                                                     <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                     <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                     <x-expert.message/>
-                                                    <x-expert.hire :expert="$eoi->expert"/>
+                                                    <x-expert.hire :expert="$eoi->expert" :eoi="$eoi" :project="$eoi->project"/>
                                                 </x-expert.card>
                                             @endforeach
                                         </div>
@@ -178,7 +178,7 @@
                                             <x-expert.card :expert="$eoi->expert">
                                                 <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                 <x-expert.message/>
-                                                <x-expert.hire :expert="$eoi->expert"/>
+                                                <x-expert.hire :expert="$eoi->expert" :eoi="$eoi" :project="$eoi->project"/>
                                             </x-expert.card>
                                         @endforeach
                                     </div>
@@ -198,7 +198,7 @@
                                                 <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                 <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                 <x-expert.message/>
-                                                <x-expert.hire :expert="$eoi->expert"/>
+                                                <x-expert.hire :expert="$eoi->expert" :eoi="$eoi" :project="$eoi->project"/>
                                             </x-expert.card>
                                         @endforeach
                                     </div>
@@ -375,7 +375,7 @@
                                                     @foreach ($filteredExperts as $expert)
                                                         <x-expert.card :expert="$expert">
                                                             <x-expert.invite wire:click="$dispatch('modal.open', { component: 'project.invite', arguments: { expert: {{ $expert->id }}, project: {{ $project->id }} }})"/>
-                                                            <x-expert.hire :expert="$expert"/>
+                                                            <x-expert.hire :expert="$expert" :project="$project"/>
                                                         </x-expert.card>
                                                     @endforeach
                                                 </div>
@@ -862,167 +862,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div x-show="activeTab === 'offer'" id="offer-tab-content">
                         <div class="expert-wrapper">
-                            <div class="project-expert-card border-bottom">
-                                <div class="project-expert-thumb">
-                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                </div>
-                                <div class="project-expert-details">
-                                    <div class="expert-card-header">
-                                        <div class="expert-card-header-info">
-                                            <h3 class="h6 project-expert-name mb-0">Professor Miles
-                                                Esther</h3>
-                                            <ul class="project-expert-meta">
-                                                <li>Public Health</li>
-                                                <li>Melbourne University</li>
-                                                <li>Australia</li>
-                                            </ul>
-                                            <div class="d-flex gap-3 align-items-center">
-                                                <div><strong class="fw-medium">$200 </strong>/ hr
-                                                </div>
-                                                <div class="star-ratings">
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                </div>
-                                                <div class="project-expert-profile-status">
-                                                    Available now
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="expert-card-header-action">
-                                            <button x-data="{ isFavorited: false }"
-                                                    class="btn btn-md btn-icon btn-outline-light btn-favorite"
-                                                    :class="{ 'favorited': isFavorited }"
-                                                    @click="isFavorited = !isFavorited">
-                                                                    <span class="heart-line">
-                                                                        <x-icon.heart/>
-                                                                    </span>
-                                                <span class="heart-filled">
-                                                                        <x-icon.heart-filled/>
-                                                                    </span>
-                                            </button>
-
-                                            <button class="btn btn-md btn-outline-primary">
-                                                Decline
-                                            </button>
-                                            <button class="btn btn-md btn-primary">Hire</button>
-                                        </div>
-                                    </div>
-                                    <div class="expert-card-body">
-                                        <div class="project-expert-summary py-3">
-                                            <p>Prof. Miles esther is an accomplished Curriculum
-                                                Development Specialist
-                                                with a distinguished career in education and a track
-                                                record of providing
-                                                consultation services in... <a href=""> more</a></p>
-                                        </div>
-                                        <div class="tag-list">
-                                            <a href="#"
-                                                class="expert-profile-tag offer-consultation-btn">
-                                                <x-icon.video fill="#0036E3"/>
-                                                Offer Consultation</a>
-                                            <a href="#" class="expert-profile-tag">Communication
-                                                Skills</a>
-                                            <a href="#" class="expert-profile-tag">Industry Treds
-                                                Awareness</a>
-                                            <a href="#" class="expert-profile-tag"> Research</a>
-                                            <a href="#" class="expert-profile-tag">System Research
-                                                Development</a>
-                                            <a href="#"
-                                                class="expert-profile-tag">Communication </a>
-                                            <a href="#" class="expert-profile-tag">Industry
-                                                Treds</a>
-                                            <a href="#" class="expert-profile-tag">Educational
-                                                Research</a>
-                                            <a href="#" class="expert-profile-tag">System
-                                                Development</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-expert-card border-bottom">
-                                <div class="project-expert-thumb">
-                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                </div>
-                                <div class="project-expert-details">
-                                    <div class="expert-card-header">
-                                        <div class="expert-card-header-info">
-
-                                            <h3 class="h6 project-expert-name mb-0">Professor Miles
-                                                Esther</h3>
-                                            <ul class="project-expert-meta">
-                                                <li>Public Health</li>
-                                                <li>Melbourne University</li>
-                                                <li>Australia</li>
-                                            </ul>
-                                            <div class="d-flex gap-3 align-items-center">
-                                                <div><strong class="fw-medium">$200 </strong>/ hr
-                                                </div>
-                                                <div class="star-ratings">
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                </div>
-                                                <div class="project-expert-profile-status">
-                                                    Available now
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="expert-card-header-action">
-                                            <button class="btn btn-md btn-outline-primary">
-                                                Decline
-                                            </button>
-                                            <button class="btn btn-md btn-primary"> Hire</button>
-                                        </div>
-                                    </div>
-                                    <div class="expert-card-body">
-                                        <div class="project-expert-summary py-3">
-                                            <p>Prof. Miles esther is an accomplished Curriculum
-                                                Development Specialist
-                                                with a distinguished career in education and a track
-                                                record of providing
-                                                consultation services in... <a href=""> more</a></p>
-                                        </div>
-                                        <div class="tag-list">
-                                            <a href="#"
-                                                class="expert-profile-tag offer-consultation-btn">
-                                                <x-icon.video fill="#0036E3"/>
-                                                Offer Consultation</a>
-                                            <a href="#" class="expert-profile-tag">Communication
-                                                Skills</a>
-                                            <a href="#" class="expert-profile-tag">Industry Treds
-                                                Awareness</a>
-                                            <a href="#" class="expert-profile-tag"> Research</a>
-                                            <a href="#" class="expert-profile-tag">System Research
-                                                Development</a>
-                                            <a href="#"
-                                                class="expert-profile-tag">Communication </a>
-                                            <a href="#" class="expert-profile-tag">Industry
-                                                Treds</a>
-                                            <a href="#" class="expert-profile-tag">Educational
-                                                Research</a>
-                                            <a href="#" class="expert-profile-tag">System
-                                                Development</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @forelse ($project->offers as $offer)
+                                <x-expert.card :expert="$offer->expert">
+                                    @livewire('offer.withdraw', ['offer' => $offer])
+                                </x-expert.card>
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                     <div x-show="activeTab === 'hire'" id="hire-tab-content">

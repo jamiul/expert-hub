@@ -36,7 +36,7 @@
             </div>
         @endif
     </label>@endif
-    <div class="icon-field-wrapper @if($inline == 'true') inline-calendar @endif">
+    <div wire:ignore class="icon-field-wrapper @if($inline == 'true') inline-calendar @endif">
         <input
             type="text"
             class="form-input-field{{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? ' has-error':'' }}"
