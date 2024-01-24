@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\Expert\PaymentController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
-use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
+use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
@@ -20,13 +21,13 @@ use App\Http\Controllers\Frontend\FindProjectController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
+use App\Http\Controllers\Frontend\OfferController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
 use App\Http\Controllers\Webhook\StripeController;
-use App\Http\Controllers\Expert\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,6 +78,8 @@ Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->mi
 Route::get('/client/projects', [ProjectController::class, 'index'])->name('client.projects');
 Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
+
+Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->name('offers.create');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
