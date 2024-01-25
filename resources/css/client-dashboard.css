@@ -8948,7 +8948,7 @@ table.edux-table-extra-padding td:last-child {
 }
 
 .edux-modal-dialog-invoice {
-    min-width: 1665px;
+    max-width: 1665px;
     margin: 0 auto;
     width: 100%;
 }
@@ -9018,7 +9018,7 @@ table.edux-table-extra-padding td:last-child {
   justify-content: flex-end;
   gap: 155px;
   display: flex;
-  padding: 14px 30px 14px 10px;
+  padding: 14px 10px 14px 10px;
   border: 1px solid #ddd;
   max-width: 350px;
   width: 100%;
@@ -9039,6 +9039,71 @@ table.edux-table-extra-padding td:last-child {
   font-style: normal;
   font-weight: 400;
   text-transform: capitalize;
+}
+
+.edux-withdrow-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid  #E7E5EF;
+  padding: 12px;
+}
+
+.edux-withdraw-free {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid  #E7E5EF;
+  padding: 12px;
+}
+
+.edux-withdraw-total-amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid  #E7E5EF;
+}
+
+.edux-exchange-rate {
+  padding:12px;
+}
+
+
+.edux-exchange-rate span{
+  color: #191D24;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-exchange-rate p{
+  color:#191D24;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.edux-Withdraw-method {
+  border-bottom: 1px solid  #E7E5EF;
+  padding: 12px;
+}
+
+.edux-withdraw-free-all{
+  display: flex;
+  flex-direction:column;
+  padding:12px;
+}
+
+.edux-withdraw-free-payment{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.preferred-payment-schedule {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 6px;
 }
   /* ============================================ Expert Profile End ============================================= */
 

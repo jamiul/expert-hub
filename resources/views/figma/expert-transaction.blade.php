@@ -100,7 +100,7 @@
                   <td class="balance-text">GST for Fixed Price Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
                   <td style="vertical-align: middle;"><span>($1.00)</span> <br/> <span class="edux-pending">Pending</span></td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678905</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678905</a></td>
                 </tr>
 
                 <tr>
@@ -109,7 +109,7 @@
                   <td class="balance-text">Payment Gateway Fee for Fixed Price Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon Mohammad</td>
                   <td style="vertical-align: middle;"><span>($10.00)</span> <br/> <span class="edux-pending">Pending</span></td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678904</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678904</a></td>
                 </tr>
 
                 <tr>
@@ -118,7 +118,7 @@
                   <td class="balance-text">Contract Initialisation Fee for Fixed Price-Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
                   <td style="vertical-align: middle;"><span>($100.00)</span> <br/> <span class="edux-pending">Pending</span></td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678903</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678903</a></td>
                 </tr>
 
                 <tr>
@@ -127,7 +127,7 @@
                   <td class="balance-text">Funding request for Fixed Price - Ref ID 545678907</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
                   <td style="vertical-align: middle;"><span>($0.50)</span><br/> $0.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678902</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678902</a></td>
                 </tr>
 
                 <tr>
@@ -136,7 +136,7 @@
                   <td class="balance-text">Funding request for Developing Curriculum for Postgraduate Public Health Unit</td>
                   <td style="vertical-align: middle;">Abu salaeh muhammad shaon</td>
                   <td style="vertical-align: middle;"><span>($88.50)</span> <br/>$0.50</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678901</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678901</a></td>
                 </tr>
 
                 <tr class="edux-middle-border">
@@ -145,7 +145,7 @@
                   <td class="balance-text">Paid from Mastercard 0026 to escrow for funding request 545678907</td>
                   <td style="vertical-align: middle;"></td>
                   <td style="vertical-align: middle;"><span>($1.00)</span> <br/> $89.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678909</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678909</a></td>
                 </tr>
 
                 <tr>
@@ -154,7 +154,7 @@
                   <td class="balance-text">Refund for ref #545678907</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>($10.00)</span> <br/>$90.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr>
@@ -163,7 +163,7 @@
                   <td class="balance-text">GST for Fixed Price - Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>$100.00</span> <br/>$100.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr>
@@ -172,7 +172,7 @@
                   <td class="balance-text">Payment Gateway Fee for Fixed Price-Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>($0.50)</span>  <br/>$0.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr>
@@ -181,7 +181,7 @@
                   <td class="balance-text">Contract Initialisation Fee for Fixed Price-Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>($88.50)</span> <br>$0.50</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr>
@@ -190,7 +190,7 @@
                   <td class="balance-text">Funding request for Fixed Price - Ref ID 16</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>($1.00)</span> <br/>$89.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr>
@@ -199,7 +199,7 @@
                   <td class="balance-text">Funding request for Policy development assistance required for Chemical Engineering Industry</td>
                   <td style="vertical-align: middle;">Michael Kassiou</td>
                   <td style="vertical-align: middle;"><span>($10.00)</span> <br/>$90.00</td>
-                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id">545678907</a></td>
+                  <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678907</a></td>
                 </tr>
 
                 <tr class="edux-middle-border">

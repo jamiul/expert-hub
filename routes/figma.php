@@ -90,10 +90,12 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-payment-setting-notification', 'figma.client-payment-setting-notification');
     // Expert Payment Module
     Route::view('/expert-transaction', 'figma.expert-transaction');
-    Route::view('/client-payment-setting', 'figma.client-payment-setting');
-    Route::view('/client-payment-setting-notification', 'figma.client-payment-setting-notification');
+    Route::view('/expert-payment-setting', 'figma.client-payment-setting');
+    Route::view('/expert-payment-setting-notification', 'figma.client-payment-setting-notification');
+    Route::view('/expert-get-paid', 'figma.expert-get-paid');
 
-        // Route::view('/client-tax-information', 'figma.client-tax-information');
+
+    // Route::view('/client-tax-information', 'figma.client-tax-information');
 
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
@@ -143,7 +145,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-work-diary', 'figma.expert-work-diary');
     Route::view('/expert-proposal', 'figma.expert-proposals');
     Route::view('/expert-job-offer', 'figma.expert-job-offer');
-    Route::view('/expert-get-paid', 'figma.expert-get-paid');
+
     Route::view('/expert-password-security', 'figma.expert-password-security');
     Route::view('/expert-id-verify', 'figma.expert-id-verify');
     Route::view('/expert-notification-settings', 'figma.expert-notification-settings');
