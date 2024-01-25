@@ -27,7 +27,7 @@ class Messaging extends Component
     // public $currentConversationCreator;
     // public $files = [];
     public $messageAttachment = [];
-    public $messageAttachmentUrls = [];
+    public $messageAttachmentTemporaryUrls = [];
 
 
     public function rules()
@@ -101,11 +101,14 @@ class Messaging extends Component
 
         //TODO::Implement transaction
         // DB::transaction(function () { 
-            
-           
+        
+        // unset so that attached file get removed from message sending box    
+        unset($this->messageAttachmentTemporaryUrls);   
+        
         $data = $this->validate();
         // toast('warning', 'Testing', $this);
     //    dd($data);
+        
 
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
@@ -121,6 +124,9 @@ class Messaging extends Component
                     ->usingName($fileName)
                     ->toMediaCollection();
             }
+
+            // Update message that it has an attachment
+            $message->update(['has_attachment' => true]);
 
             
         }        
@@ -205,7 +211,7 @@ class Messaging extends Component
         $this->validateOnly('messageAttachment.*');
                 
         foreach ($this->messageAttachment as $file)
-        $this->messageAttachmentUrls[] = $file->temporaryUrl();
+        $this->messageAttachmentTemporaryUrls[] = $file->temporaryUrl();
         // dump($this->messageAttachmentUrls);
     }
 

@@ -740,31 +740,31 @@ $chatbox-recipient-card-height: 164px;
     }
 }
 
-.chatbox-message-editor {
-    .chatbox-uploaded-media-wrapper {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 20px;
-    }
+// .chatbox-message-editor {
+//     .chatbox-uploaded-media-wrapper {
+//         display: none;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         padding: 20px;
+//     }
 
-    &.media-uploaded {
-        .chatbox-uploaded-media-wrapper {
-            display: flex;
-        }
+//     &.media-uploaded {
+//         .chatbox-uploaded-media-wrapper {
+//             display: flex;
+//         }
 
-        textarea {
-            visibility: hidden;
-        }
+//         textarea {
+//             visibility: hidden;
+//         }
 
-        .message-editor-styling-action {
-            visibility: hidden;
-        }
-    }
+//         .message-editor-styling-action {
+//             visibility: hidden;
+//         }
+//     }
 
-}
+// }
 
 //Manage Conversation Summary Sidebar
 .chatbox-content-area {

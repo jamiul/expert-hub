@@ -268,18 +268,34 @@
                                     <time> {{ Carbon\Carbon::parse($conversationMessage->created_at)->diffForHumans() }}</time>
                                 </div>
                                 <div class="conversation-message-body">
-                                    <p>{{$conversationMessage->content}}
+                                    @if(!$conversationMessage->has_attachment)
+                                    <p>{{$conversationMessage->content}}</p>
+                                    @endif
 
+                                    @if($conversationMessage->has_attachment)
+                                    <div class="chatbox-uploaded-media-wrapper">
+                                    {{$conversationMessage->content}}
                                         @forelse($conversationMessage->getMedia() as $file)
-                                        <a href="{{$file->getUrl()}}" download>file</a>
+                                        <div class="chatbox-uploaded-media-item">
+                                            <div>
+                                                <x-icon.file />
+                                            </div>
+                                            <div>
+                                                <a href="{{$file->getUrl()}}" download>file</a>
+                                            </div>
+                                        </div>
                                         @empty
 
                                         @endforelse
 
-                                    </p>
+                                    </div>
+                                    @endif
+
+
                                 </div>
                             </div>
 
+                            
                             <!-- TODO:NEL: add conversation-user-message-action -->
 
                             <div class="conversation-user-message-action">
@@ -453,13 +469,29 @@
                         </button>
 
                         <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
-                        @if($messageAttachmentUrls)
-                        @forelse($messageAttachmentUrls as $messageAttachmentUrl)
-                        <a href="{{ $messageAttachmentUrl }}">file</a>
+                        
+                        @if($messageAttachmentTemporaryUrls)
+                        @forelse($messageAttachmentTemporaryUrls as $messageAttachmentTemporaryUrl)
+                        <div class="chatbox-uploaded-media-wrapper" id="gfg_down">
+                            <div class="chatbox-uploaded-media-item">
+                                <div>
+                                    <x-icon.file />
+                                </div>
+                                <div>
+                                    <a href="{{ $messageAttachmentTemporaryUrl }}">File</a>
+
+                                </div>
+                                <!-- <button>
+                                    <x-icon.close />
+                                </button> -->
+                            </div>                
+
+                        </div>
                         @empty
 
                         @endforelse
                         @endif
+                        
 
                         <div class="chatbox-message-editor-helper">
                             <div class="message-editor-styling-action">
@@ -478,13 +510,13 @@
                                     <x-icon.code />
                                 </button>
                             </div>
-                            
-                            
+
+
                             @error('messageAttachment.*')
-                                    <div class="form-input-error-message">{{ $message }}</div>
+                            <div class="form-input-error-message">{{ $message }}</div>
                             @enderror
-                            
-                            
+
+
                             <div class="message-editor-functional-action">
                                 {{-- <div class="dropdown d-inline-block">--}}
                                 {{-- <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
@@ -497,10 +529,10 @@
                                 {{-- </div>--}}
                                 {{-- </div>--}}
 
-                                
+
                                 <label class="icon-btn">
-                                    <input type="file" name="messageAttachment[]" id="messageAttachment" multiple wire:model.live="messageAttachment" style="display:none">
-                                    
+                                    <input type="file" name="messageAttachment[]" id="messageAttachment" multiple wire:model.live="messageAttachment" class='d-none' onclick="toggleClasses('.chatbox-message-editor', 'media-uploaded')">
+
                                     <x-icon.attach-file />
                                 </label>
                                 <div class="dropdown d-inline-block">
@@ -514,7 +546,7 @@
                                     </div>
                                 </div>
 
-                                <button class="icon-btn send-message" id="sendMessageButton" wire:click.prevent="sendMessage">
+                                <button class="icon-btn send-message" id="sendMessageButton" wire:click.prevent="sendMessage" >
                                     <x-icon.send />
                                 </button>
                             </div>
