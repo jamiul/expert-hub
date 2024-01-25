@@ -209,7 +209,11 @@ class Messaging extends Component
         
         
         $this->validateOnly('messageAttachment.*');
-                
+        
+        // Setting to initial state to remove any previously added item - 
+        // otherwise previously added item will also show as attachment in message box although they are not
+        $this->messageAttachmentTemporaryUrls = [];
+
         foreach ($this->messageAttachment as $file)
         $this->messageAttachmentTemporaryUrls[] = $file->temporaryUrl();
         // dump($this->messageAttachmentUrls);

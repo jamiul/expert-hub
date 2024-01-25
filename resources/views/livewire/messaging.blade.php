@@ -281,7 +281,7 @@
                                                 <x-icon.file />
                                             </div>
                                             <div>
-                                                <a href="{{$file->getUrl()}}" download>file</a>
+                                                <a href="{{$file->getUrl()}}" download>{{$file->getAttribute('name')}}</a>
                                             </div>
                                         </div>
                                         @empty
@@ -471,14 +471,16 @@
                         <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
                         
                         @if($messageAttachmentTemporaryUrls)
-                        @forelse($messageAttachmentTemporaryUrls as $messageAttachmentTemporaryUrl)
-                        <div class="chatbox-uploaded-media-wrapper" id="gfg_down">
+                        {{-- dd($messageAttachment) --}}
+                        <div class="chatbox-uploaded-media-wrapper">
+                        @forelse($messageAttachmentTemporaryUrls as $key => $messageAttachmentTemporaryUrl)
+                        
                             <div class="chatbox-uploaded-media-item">
                                 <div>
                                     <x-icon.file />
                                 </div>
                                 <div>
-                                    <a href="{{ $messageAttachmentTemporaryUrl }}">File</a>
+                                    <a href="{{ $messageAttachmentTemporaryUrl }}">{{$messageAttachment[$key]->getClientOriginalName()}}</a>
 
                                 </div>
                                 <!-- <button>
@@ -486,10 +488,11 @@
                                 </button> -->
                             </div>                
 
-                        </div>
+                        
                         @empty
 
                         @endforelse
+                        </div>
                         @endif
                         
 
