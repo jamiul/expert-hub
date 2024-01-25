@@ -38,13 +38,23 @@ class Messaging extends Component
                 'string',
                 'min:' . MessagingEnum::MessageBodyMin->value,
                 'max:' . MessagingEnum::MessageBdyMax->value
-            ],
-            
+            ],            
             'messageAttachment.*' => [                
                 'nullable',
-                File::types(['image', 'pdf','docx','xlsx']), 
-                'max:10240',
+                'file',
+                'mimes:jpg,bmp,png,pdf,xlsx,docx,doc',
+                // File::types(['image', 'pdf','docx','xlsx']), 
+                // File::image()->max(1 * 1024),
+                'max:10240',                
             ],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'messageAttachment.*.mimes' => 'Supported file types are image,pdf,doc,xlsx',
+            'messageAttachment.*.max' => 'File size should not be greater than 5MB',            
         ];
     }
 
@@ -102,11 +112,8 @@ class Messaging extends Component
             'content' => $data['messageBody'],
             // 'content' => 'sss',
         ]);
-
-
-
         
-         // file upload test start
+         // file upload start
          if ($this->messageAttachment) {
             foreach ($this->messageAttachment as $file) {
                 $fileName = $file->getClientOriginalName() . '-' . time() . '.' . $file->extension();
@@ -116,12 +123,8 @@ class Messaging extends Component
             }
 
             
-        }
-
-        
-        // file upload test end
-
-
+        }        
+        // file upload end
 
         $participants = $this->currentConversation->participants;
 
@@ -200,24 +203,13 @@ class Messaging extends Component
         
         
         $this->validateOnly('messageAttachment.*');
-        // dd($this->messageAttachment);
-
-        // if(count($this->messageAttachment) < 1) {
-        //     return;
-        // }
-        
+                
         foreach ($this->messageAttachment as $file)
         $this->messageAttachmentUrls[] = $file->temporaryUrl();
         // dump($this->messageAttachmentUrls);
     }
 
-    // public function updated($propertyName)
-    // {
-    //     $this->validateOnly($propertyName);
-    //     dd($propertyName);
-    // }
-
-
+   
     public function render()
     {
         $currentUsersConversations = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->get();

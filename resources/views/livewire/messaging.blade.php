@@ -480,7 +480,7 @@
                             </div>
                             
                             
-                            @error('messageAttachment')
+                            @error('messageAttachment.*')
                                     <div class="form-input-error-message">{{ $message }}</div>
                             @enderror
                             
@@ -499,7 +499,7 @@
 
                                 
                                 <label class="icon-btn">
-                                    <input type="file" name="messageAttachment" id="messageAttachment" multiple wire:model.live="messageAttachment" style="display:none">
+                                    <input type="file" name="messageAttachment[]" id="messageAttachment" multiple wire:model.live="messageAttachment" style="display:none">
                                     
                                     <x-icon.attach-file />
                                 </label>
