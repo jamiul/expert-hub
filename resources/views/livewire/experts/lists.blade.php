@@ -46,9 +46,9 @@
                 </div>
 
                 <div class="expert-summary py-3">
-                    <p class="mb-0">
+                    <p class="mb-0 text-summary text-base">
                         {{ $expert->biography }}
-                        ... <a href=""> more</a>
+
                     </p>
                 </div>
                 <div class="tag-list expert-tag-list">
