@@ -158,7 +158,7 @@
                                                     <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                     <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                     <x-expert.message/>
-                                                    <x-expert.hire/>
+                                                    <x-expert.hire :expert="$eoi->expert"/>
                                                 </x-expert.card>
                                             @endforeach
                                         </div>
@@ -178,7 +178,7 @@
                                             <x-expert.card :expert="$eoi->expert">
                                                 <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                 <x-expert.message/>
-                                                <x-expert.hire/>
+                                                <x-expert.hire :expert="$eoi->expert"/>
                                             </x-expert.card>
                                         @endforeach
                                     </div>
@@ -198,7 +198,7 @@
                                                 <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                 <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                 <x-expert.message/>
-                                                <x-expert.hire/>
+                                                <x-expert.hire :expert="$eoi->expert"/>
                                             </x-expert.card>
                                         @endforeach
                                     </div>
@@ -375,7 +375,7 @@
                                                     @foreach ($filteredExperts as $expert)
                                                         <x-expert.card :expert="$expert">
                                                             <x-expert.invite wire:click="$dispatch('modal.open', { component: 'project.invite', arguments: { expert: {{ $expert->id }}, project: {{ $project->id }} }})"/>
-                                                            <x-expert.hire/>
+                                                            <x-expert.hire :expert="$expert"/>
                                                         </x-expert.card>
                                                     @endforeach
                                                 </div>

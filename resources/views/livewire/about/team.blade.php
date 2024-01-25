@@ -23,7 +23,7 @@
                     @foreach ($teamList2 as $team2)
                         <div class="col-md-4 col-sm-6">
                             <div class="team-block">
-                                <a href="#">
+                                <a href="{{ route('expert.profile.show', $team2) }}">
                                     <div class="team-img">
                                         <img src="{{ $team2->getFirstMediaUrl('picture') }}">
                                     </div>
@@ -40,7 +40,7 @@
                     @foreach ($teamList3 as $team3)
                         <div class="col-md-4 col-sm-6">
                             <div class="team-block">
-                                <a href="#">
+                                <a href="{{ route('expert.profile.show', $team3) }}">
                                     <div class="team-img">
                                         <img src="{{ $team3->getFirstMediaUrl('picture') }}">
                                     </div>

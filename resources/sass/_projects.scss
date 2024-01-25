@@ -286,7 +286,7 @@
     }
 }
 
-.project-tab {
+.project-tab, .edux-fill-tab {
     .tab-nav {
         padding-left: 40px;
         padding-right: 40px;
@@ -875,3 +875,11 @@
 
     }
 }
+.express-of-interest-tab {
+    .table-extra-padding {
+        a {
+            color: inherit;
+        }
+    }
+}
+

@@ -750,4 +750,10 @@
         // Event listener to update the class when the window is resized
         window.addEventListener('resize', updateClass);
     });
+    function scrollToBottom(selectorElement) {
+        let selector = document.querySelector(selectorElement);.
+        console.log(selector.scrollTop)
+        selector.scrollTop = selector.scrollHeight;
+    }
+    scrollToBottom('.chatbox-message-list');
 </script>
