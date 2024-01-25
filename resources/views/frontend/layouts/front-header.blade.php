@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     @if (!empty($data))
-        <title>{{ $data['title'] }}</title>
+        <title>Expert gate</title>
         <meta name="keywords" content="{{ $data['keyword'] }}">
         <meta name="description" content="{{ $data['description'] }}" />
         <meta name="csrf-token" content="{{ csrf_token() }}">

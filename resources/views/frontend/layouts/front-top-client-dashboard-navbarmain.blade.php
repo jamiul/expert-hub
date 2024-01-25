@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-md expert__dashboard__nav position-relative">
    <div class="container-fluid algin-items-center mx-auto">
       <a class="navbar-brand edux-navbar-brand" href="/figma/client-dashboardhome">
-         <img src="{{ asset('assets/frontend/img/logo.png') }}" />
+         <img style="width:150px;" src="{{ asset('logo/expert-gate-logo.png') }}" />
       </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">

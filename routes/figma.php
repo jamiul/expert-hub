@@ -78,14 +78,27 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/client-weekly-report-transaction', 'figma.clientweeklyreporttransaction');
 
     Route::view('/client-weekly-report-two-budget', 'figma.clientweeklyreporttwobudget');
+
     Route::view('/client-dashboard-atime-sheet', 'figma.clientdashboardatimesheet');
     Route::view('/client-password-security', 'figma.clientdashboardpasswordsecurity');
     Route::view('/client-notification-setting', 'figma.clientdashboardnotificationsettting');
+
+    // Client Payment Module
+    Route::view('/client-tax-information', 'figma.client-tax-information');
+
     //Projects
     Route::view('/find-projects', 'figma.find-projects');
     Route::view('/project-details-view', 'figma.project-details-view');
     Route::view('/submit-hourly-project-proposal', 'figma.submit-hourly-project-proposal');
     Route::view('/submit-fixed-project-proposal', 'figma.submit-fixed-project-proposal');
+    Route::view('/all-express-of-interest', 'figma.all-express-of-interest');
+    Route::view('/express-of-interest-project-view', 'figma.express-of-interest-project-view');
+    Route::view('/hired-project-view', 'figma.hired-project-view');
+    Route::view('/invitation-project-view', 'figma.invitation-project-view');
+    Route::view('/invitation-accept-hourly', 'figma.invitation-accept-hourly');
+    Route::view('/invitation-accept-fixed', 'figma.invitation-accept-fixed');
+    Route::view('/offer-project-view', 'figma.offer-project-view');
+
 
     // Admin dashboard
     Route::view('/super-admin-layout', 'figma.admin-layout');
@@ -139,4 +152,6 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
     Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
     Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
+
+
 });
