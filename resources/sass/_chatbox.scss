@@ -682,6 +682,88 @@ $chatbox-recipient-card-height: 164px;
             }
         }
     }
+
+
+}
+
+.chatbox-uploaded-media-wrapper {
+
+    //background-color: rgba(26, 25, 25, 0.7);
+    flex-wrap: wrap;
+    gap: 16px;
+    display: flex;
+
+
+    .chatbox-uploaded-media-item {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 16px 10px 12px;
+        border-radius: 4px;
+        gap: 8px;
+        position: relative;
+        font-size: 14px;
+        border: 1px solid $edu-border-color;
+
+        div {
+            max-width: 150px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+
+        }
+
+        button {
+            width: 20px;
+            height: 20px;
+            border: 1px solid $edu-border-color;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            border-radius: 20px;
+            padding: 2px;
+
+            &:hover {
+                background-color: #ff0b0b;
+
+                svg {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chatbox-message-editor {
+    .chatbox-uploaded-media-wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    &.media-uploaded {
+        .chatbox-uploaded-media-wrapper {
+            display: flex;
+        }
+
+        textarea {
+            visibility: hidden;
+        }
+
+        .message-editor-styling-action {
+            visibility: hidden;
+        }
+    }
+
 }
 
 //Manage Conversation Summary Sidebar
