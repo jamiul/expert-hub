@@ -15,7 +15,7 @@
                 <div class="px-40">
 
                     <h1 class="lead-lg fw-medium text-black mb-3">Get Paid</h1>
-                    
+
                     <div class="mt-4 p-3 p-sm-4 border rounded-4">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="col-8">
@@ -27,11 +27,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-4 p-3 p-sm-4 border rounded-4">
                         <p class="mb-2 lead fw-medium text-black d-flex align-items-center">
                             <span> Withdrawal schedule</span>
-                            <button class="btn btn__fab p-0 d-inline-flex justify-content-center align-items-center ms-1">
+                            <button data-bs-toggle="modal" data-bs-target="#modaltransactionedit" class="btn btn__fab p-0 d-inline-flex justify-content-center align-items-center ms-1">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.29683 15.8333H5.32727L13.0437 8.11692L12.0132 7.08647L4.29683 14.8029V15.8333ZM15.7167 7.21309L12.9042 4.42628L13.9908 3.33976C14.2354 3.0951 14.533 2.97278 14.8834 2.97278C15.2338 2.97278 15.5313 3.0951 15.776 3.33976L16.7904 4.35415C17.035 4.59881 17.1616 4.89207 17.1702 5.23395C17.1787 5.57582 17.0607 5.86908 16.816 6.11374L15.7167 7.21309ZM14.8129 8.12974L5.85931 17.0833H3.04688V14.2708L12.0004 5.31728L14.8129 8.12974ZM12.5244 7.59769L12.0132 7.08647L13.0437 8.11692L12.5244 7.59769Z" fill="#0036E3"/>
                                   </svg>
@@ -39,22 +39,22 @@
                         </p>
                         <p class="text-black mb-3">
                             Weekly (next on Oct 18) <br>
-                            Only when balance is $1,000.00 or more. <a href="#" class="text-black text-decoration-underline fw-medium">View payment calendar</a>
+                            Only when balance is $1,000.00 or more. <a href="#" class="text-primary text-decoration-underline fw-medium" data-bs-toggle="modal" data-bs-target="#modaltransactioneditcalender">View payment calendar</a>
                         </p>
                         <p class="text-black mb-0" >Direct to Local Bank (BDT) - Account ending in 1001</p>
                     </div>
-                    
+
                     <div class="mt-4 p-3 p-sm-4 border rounded-4">
                         <p class="mb-2 lead fw-medium text-black">
-                            Last withdrawal 
+                            Last withdrawal
                         </p>
                         <p class="text-black mb-3">
                             $119.51 to Direct to Local Bank (BDT) - Account ending in 5343 <br>
                             <span class="small">Oct 14, 2023</span>
                         </p>
-                        <a href="#" class="text-primary fw-medium text-decoration-underline mb-0" >View Transection history</a>
+                        <a href="" class="text-primary fw-medium text-decoration-underline mb-0" data-bs-toggle="modal" data-bs-target="#modaltransactionhistory">View Transection history</a>
                     </div>
-                    
+
                 </div>
             </div><!--.//main__content-->
 
@@ -69,10 +69,10 @@
 
                             <p class="title text-dark fw-medium mb-2">Get Paid Now</p>
                             <p class="mb-0 fw-medium text-black">Available balance <span class="text-primary">$2000</span></p>
-                         
+
                             <form action="#" name="withdrawalForm" class="mt-4">
-                                <div class="mb-4"> 
-                                    <label for="withdrawal__method" class="text-black small fw-medium">Withdrawal Method</label> 
+                                <div class="mb-4">
+                                    <label for="withdrawal__method" class="text-black small fw-medium">Withdrawal Method</label>
                                     <div class="custom-selec">
                                         <select name="withdrawal__method" id="withdrawal__method" class="form-select">
                                             <option value="Select withdrawal method" selected disabled>Select withdrawal method</option>
@@ -83,8 +83,8 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-4 d-none" id="paypalWithdrawMethodInfo"> 
-                                    <label for="amount" class="text-black small fw-medium mb-2">Amount</label> 
+                                <div class="mb-4 d-none" id="paypalWithdrawMethodInfo">
+                                    <label for="amount" class="text-black small fw-medium mb-2">Amount</label>
                                     <div class="">
                                         <div class="form-check mb-1">
                                             <input type="radio" name="amount" id="main_amount" class="form-check-input" value="$2087" checked>
@@ -98,11 +98,11 @@
 
                                     <!-- Other withdraw values -->
                                     <div class="d-none align-items-center mt-3" id="otherWithdrawAmount">
-                                        <label for="" class="px-3 text-black">AUD</label> 
+                                        <label for="" class="px-3 text-black">AUD</label>
                                         <div class="input-group">
                                             <span class="input-group-text border-end-0 bg-white" style="border-width: 2px;border-color: #E7E5EF;">$</span>
-                                            <input type="text" class="form-control border-start-0" aria-label="Amount (to the nearest dollar)"> 
-                                        </div> 
+                                            <input type="text" class="form-control border-start-0" aria-label="Amount (to the nearest dollar)">
+                                        </div>
                                     </div>
 
                                     <div class="border-top pt-3 my-4">
@@ -119,7 +119,7 @@
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <div class="text-black fw-medium">
-                                                <span>Total Amount</span> 
+                                                <span>Total Amount</span>
                                             </div>
                                             <div class="text-black lead fw-medium">$2086</div>
                                         </div>
@@ -128,7 +128,7 @@
 
 
                             </form>
-                            
+
                             <div class="mt-4 pt-3 border-top text-end">
                                 <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary fw-medium px-4 me-2">Cancel</button>
                                 <button class="btn btn-primary fw-medium px-4">Get Paid</button>
@@ -137,6 +137,224 @@
                     </div>
                 </div>
             </div>
+
+
+
+             <!-- Modal -->
+             <div class="modal fade setting__modal" id="modaltransactionhistory" tabindex="-1" role="dialog" aria-labelledby="modalGetPaid" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 800px;">
+                    <div class="modal-content">
+                        <div class="modal-body position-relative">
+                            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            <p class="title text-dark fw-medium mb-2">Withdrawal Successful</p>
+                            <div class="alert edux-alert alert-success" role="alert">
+                                <x-icon.check-circle/>
+                                <strong>Congratulation!</strong> Your withdrawal was sucessfull.
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true"><x-icon.close/></span>
+                                </button>
+                            </div>
+                            <p class="title text-dark fw-medium mb-2 px-2">Withdraw Details</p>
+
+                            <div class="edux-Withdraw-method">
+                                <p class="mb-0 fw-medium">Withdraw Method</p>
+                                <p class="mb-0">EXIM Bank Bangladesh</p>
+                            </div>
+
+                            <div class="edux-withdrow-amount">
+                                <p class="fw-medium mb-0">Withdraw Amount</p>
+                                <p class="mb-0">$90.00</p>
+                            </div>
+                            <div class="edux-withdraw-free">
+                                <p class="mb-0">Withdraw fee (Per payment)</p>
+                                <p class="mb-0">- $1.00</p>
+                            </div>
+
+                            <div class="edux-withdraw-total-amount">
+                                <p class="fw-medium mb-0">Total Amount</p>
+                                <p class="fw-medium mb-0">$2086</p>
+                            </div>
+
+                            <div class="edux-exchange-rate">
+                                <span class="fw-fst-normal">Last Exchange Rate</span>
+                                <p class="mb-0">79.00 USD/BDT (As of Nov 17,2019 12.00 +0600)</p>
+                            </div>
+
+                            <div class="pt-3 border-top text-end">
+                            <button class="btn btn-primary fw-medium px-4">Print</button>
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary fw-medium px-4 me-2">Close</button>
+
+                            </div>
+                        </div><!--.//modal-body-->
+                    </div>
+                </div>
+            </div>
+
+             <!-- Modal -->
+             <div class="modal fade setting__modal" id="modaltransactionedit" tabindex="-1" role="dialog" aria-labelledby="modalGetPaid" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 800px;">
+                    <div class="modal-content">
+                        <div class="modal-body position-relative">
+                            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            <p class="title text-dark fw-medium mb-2">Edit Payment Schedule</p>
+
+                            <div class="edux-Withdraw-method">
+                                <p class="mb-0 fw-medium">Primary Payment Method</p>
+                                <p class="mb-0">EXIM Bank Bangladesh</p>
+                            </div>
+
+
+                            <div class="edux-withdraw-free-all">
+                                 <p class="fw-medium mb-0">Withdrawal Fee</p>
+                                <div class="edux-withdraw-free-payment">
+                                <p class="mb-0">Withdraw fee (Per payment)</p>
+                                <p class="mb-0">- $1.00</p>
+                                </div>
+                            </div>
+
+                            <div class="preferred-payment-schedule mb-4">
+                                <p class="fw-medium mb-0">Preferred Payment Schedule</p>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Weekly (Every Sunday)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Twice per month (1st adn 3rd Sunday of each month)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Monthly (Last Sunday of each month)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Quarterly (Jan 1, 2024)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">No Schedule Payment</label>
+                                    </div>
+                            </div>
+
+                            <div class="preferred-payment-schedule mb-4">
+                                <p class="fw-medium mb-0">Next Scheduled Payment</p>
+                                 <span>You have not scheduled any payment</span>
+
+                            </div>
+                            <div class="pt-3 border-top text-end ">
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary fw-medium px-4 me-2">Close</button>
+                                <button class="btn btn-primary fw-medium px-4">Save</button>
+                            </div>
+                        </div><!--.//modal-body-->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+             <!-- Modal -->
+             <div class="modal fade setting__modal" id="modaltransactioneditcalender" tabindex="-1" role="dialog" aria-labelledby="modalGetPaid" aria-hidden="true">
+                <div class="modal-dialog" role="document" style="max-width: 800px;">
+                    <div class="modal-content">
+                        <div class="modal-body position-relative">
+                            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            <p class="title text-dark fw-medium mb-2">Edit Payment Schedule</p>
+
+                            <div class="edux-Withdraw-method">
+                                <p class="mb-0 fw-medium">Primary Payment Method</p>
+                                <p class="mb-0">EXIM Bank Bangladesh</p>
+                            </div>
+
+
+                            <div class="edux-withdraw-free-all">
+                                 <p class="fw-medium mb-0">Withdrawal Fee</p>
+                                <div class="edux-withdraw-free-payment">
+                                <p class="mb-0">Withdraw fee (Per payment)</p>
+                                <p class="mb-0">- $1.00</p>
+                                </div>
+                            </div>
+
+                            <div class="preferred-payment-schedule mb-4">
+                                <p class="fw-medium mb-0">Preferred Payment Schedule</p>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Weekly (Every Sunday)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Twice per month (1st adn 3rd Sunday of each month)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Monthly (Last Sunday of each month)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">Quarterly (Jan 1, 2024)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="radio" name="amount" id="other_amount" class="form-check-input" value="other" checked>
+                                        <label for="other_amount" class="form-check-label text-dark fs-15">No Schedule Payment</label>
+                                    </div>
+                            </div>
+
+                            <div class="mb-4">
+                                    <label for="withdrawal__method" class="text-black small fw-medium">Only Disperse When Minimum Balance Is</label>
+                                    <div class="custom-selec">
+                                        <select name="withdrawal__method" id="withdrawal__method" class="form-select">
+                                            <option value="$1000.00 or more" selected disabled>$1000.00 or more</option>
+                                            <option value="$1000.00 or more">$1000.00 or more</option>
+                                            <option value="$1000.00 or more">$1000.00 or more</option>
+                                            <option value="$1000.00 or more">$1000.00 or more</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="withdrawal__method" class="text-black small fw-medium">Minimum Reserve Balance</label>
+                                    <div class="custom-selec">
+                                        <select name="withdrawal__method" id="withdrawal__method" class="form-select">
+                                            <option value="$10.00" selected disabled>$10.00</option>
+                                            <option value="$10.00">$10.00</option>
+                                            <option value="$10.00">$10.00</option>
+                                            <option value="$10.00">$10.00</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            <div class="preferred-payment-schedule mb-4">
+                                <p class="fw-medium mb-0">Next Scheduled Payment</p>
+                                 <span>May 26, 2024</span>
+
+                            </div>
+
+
+
+
+
+                            <div class="pt-3 border-top text-end ">
+                                <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-primary fw-medium px-4 me-2">Cancel</button>
+                                <button class="btn btn-primary fw-medium px-4">Save</button>
+                            </div>
+                        </div><!--.//modal-body-->
+                    </div>
+                </div>
+            </div>
+
 
 
 
@@ -237,7 +455,7 @@
     var method = document.querySelector("#withdrawal__method");
     method.addEventListener('change', function(){
         // console.log(method.value);
-        if (method.value === 'PayPal') { 
+        if (method.value === 'PayPal') {
             document.querySelector("#paypalWithdrawMethodInfo").classList.remove('d-none');
         } else {
             document.querySelector("#paypalWithdrawMethodInfo").classList.add('d-none');
@@ -259,7 +477,7 @@
             if (this.value === 'other') {
                 box.classList.remove('d-none')
                 box.classList.add('d-flex')
-            } else { 
+            } else {
                 box.classList.add('d-none')
                 box.classList.remove('d-flex')
 

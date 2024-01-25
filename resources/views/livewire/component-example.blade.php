@@ -24,6 +24,7 @@
             <option value="Dr">Dr</option>
             <option value="Prof">Prof</option>
         </x-form.choice-static>
+
         <x-form.choice wire:model="titles" label="Select multiple" multiple>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
