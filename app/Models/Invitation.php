@@ -20,4 +20,9 @@ class Invitation extends Model
     {
         return $this->belongsTo(Profile::class, 'expert_id');
     }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'expert_id');
+    }
 }

@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertEoiController;
 use App\Http\Controllers\Frontend\ExpertOfferController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
@@ -71,6 +72,7 @@ Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
+Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
