@@ -103,8 +103,8 @@
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1 fw-medium">
-                                                <a href="{{ route('projects.show', $offer->project) }}">
-                                                    {{ $offer->project->title }}
+                                                <a href="{{ route('expert.offer.show', $offer) }}">
+                                                    {{ $offer->contract_title }}
                                                 </a>
                                             </p>
                                             <p class="mb-1">{{ $offer->created_at->diffForHumans() }}</p>

@@ -7,7 +7,7 @@
                             <div class="project-expert-card mb-40">
                                 <div class="project-expert-thumb">
                                     <div class="expert-thumb-box">
-                                        <img src="{{ $offer->client->picture }}"/>
+                                        <img class="rounded-circle" src="{{ $offer->client->picture }}"/>
                                     </div>
                                 </div>
                                 <div class="project-expert-details">

@@ -25,4 +25,19 @@ class Invitation extends Model
     {
         return $this->belongsTo(Project::class, 'expert_id');
     }
+
+    public function isPending()
+    {
+        return $this->status == InvitationStatus::Pending;
+    }
+
+    public function isDeclined()
+    {
+        return $this->status == InvitationStatus::Declined;
+    }
+
+    public function isAccepted()
+    {
+        return $this->status == InvitationStatus::Accepted;
+    }
 }

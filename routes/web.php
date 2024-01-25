@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
+use App\Http\Controllers\Frontend\ContractController;
 use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
@@ -73,6 +74,7 @@ Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->mi
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
 Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
+Route::get('/expert/contracts', [ContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts.index');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
