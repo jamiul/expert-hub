@@ -38,14 +38,14 @@ class Messaging extends Component
                 'string',
                 'min:' . MessagingEnum::MessageBodyMin->value,
                 'max:' . MessagingEnum::MessageBdyMax->value
-            ],            
-            'messageAttachment.*' => [                
+            ],
+            'messageAttachment.*' => [
                 'nullable',
                 'file',
                 'mimes:jpg,bmp,png,pdf,xlsx,docx,doc',
                 // File::types(['image', 'pdf','docx','xlsx']), 
                 // File::image()->max(1 * 1024),
-                'max:10240',                
+                'max:10240',
             ],
         ];
     }
@@ -54,13 +54,13 @@ class Messaging extends Component
     {
         return [
             'messageAttachment.*.mimes' => 'Supported file types are image,pdf,doc,xlsx',
-            'messageAttachment.*.max' => 'File size should not be greater than 5MB',            
+            'messageAttachment.*.max' => 'File size should not be greater than 5MB',
         ];
     }
 
     public function mount()
     {
-        
+
         // Load conversation when user visit messaging interface without selecting any notification
         $participant = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->first();
         $this->currentConversation =  $participant?->conversation;
@@ -79,17 +79,19 @@ class Messaging extends Component
         }
 
         // Mark all unread message as read --either for first conversation (when user visit /messaging) or for selected conversation
-        $unreadMessages = MessageRecipient::where('conversation_id', $this->currentConversation->id)
-            ->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->get();
+        if ($this->currentConversation) {
+            $unreadMessages = MessageRecipient::where('conversation_id', $this->currentConversation->id)
+                ->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->get();
 
-        foreach ($unreadMessages as $unreadMessage) {
-            $unreadMessage->update(['seen_at' => Carbon::now()]);
+            foreach ($unreadMessages as $unreadMessage) {
+                $unreadMessage->update(['seen_at' => Carbon::now()]);
+            }
         }
     }
 
     public function sendMessage()
     {
-        
+
         // ToDelete: Debugging purpose, delete when you are done
         // $data = $this->validate();
 
@@ -101,23 +103,23 @@ class Messaging extends Component
 
         //TODO::Implement transaction
         // DB::transaction(function () { 
-        
+
         // unset so that attached file get removed from message sending box    
-        unset($this->messageAttachmentTemporaryUrls);   
-        
+        unset($this->messageAttachmentTemporaryUrls);
+
         $data = $this->validate();
         // toast('warning', 'Testing', $this);
-    //    dd($data);
-        
+        //    dd($data);
+
 
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
             // 'content' => 'sss',
         ]);
-        
-         // file upload start
-         if ($this->messageAttachment) {
+
+        // file upload start
+        if ($this->messageAttachment) {
             foreach ($this->messageAttachment as $file) {
                 $fileName = $file->getClientOriginalName() . '-' . time() . '.' . $file->extension();
                 $message->addMedia($file->getRealPath())
@@ -127,9 +129,7 @@ class Messaging extends Component
 
             // Update message that it has an attachment
             $message->update(['has_attachment' => true]);
-
-            
-        }        
+        }
         // file upload end
 
         $participants = $this->currentConversation->participants;
@@ -154,7 +154,15 @@ class Messaging extends Component
     {
         return [
             "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
+            "echo-private:messaging.{$this->currentConversation?->id},.client-typo" => "topi",
+            // "echo-private:message-typing, client-typo" => "topi",
         ];
+    }
+
+    // #[On('echo-private:message-typing, client-typo')]
+    public function topi()
+    {
+        dd('typing');
     }
 
 
@@ -197,29 +205,29 @@ class Messaging extends Component
     public function updatedMessageAttachment()
     {
         // dump($this->messageAttachment);
-        
-    //     $this->validate(['messageAttachment.*' => [                
-    //         'nullable',
-            
-    //             File::types(['image', 'pdf','docx','xlsx'])
-    //         , 
-    //         'max:10240',
-    //     ],
-    // ]);
-        
-        
+
+        //     $this->validate(['messageAttachment.*' => [                
+        //         'nullable',
+
+        //             File::types(['image', 'pdf','docx','xlsx'])
+        //         , 
+        //         'max:10240',
+        //     ],
+        // ]);
+
+
         $this->validateOnly('messageAttachment.*');
-        
+
         // Setting to initial state to remove any previously added item - 
         // otherwise previously added item will also show as attachment in message box although they are not
         $this->messageAttachmentTemporaryUrls = [];
 
         foreach ($this->messageAttachment as $file)
-        $this->messageAttachmentTemporaryUrls[] = $file->temporaryUrl();
+            $this->messageAttachmentTemporaryUrls[] = $file->temporaryUrl();
         // dump($this->messageAttachmentUrls);
     }
 
-   
+
     public function render()
     {
         $currentUsersConversations = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->get();

@@ -580,11 +580,12 @@
 
 
             </div>
+            @if($currentConversation)
             <div class="chatbox-conversation-summary">
                 <div class="chatbox-conversation-summary-inner">
                     <div class="chatbox-recipient-card user-online">
                         <div class="chatbox-recipient-card-thumb">
-                            <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
+                            <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
 
@@ -700,7 +701,72 @@
 
                 </div>
             </div>
+            @endif
         </div>
 
     </div>
 </div>
+
+<script type="module">
+$('#messageBody').on('keydown', function(){
+        // alert('key down{{auth()->user()->id}}');
+  let channel = Echo.private('messaging.{{$currentConversation?->id}}');
+//   let channel = Echo.private('message-typing');
+
+  setTimeout( () => {
+    channel.whisper('typo', {
+    //   user: userid,
+      typing: true
+    })
+  }, 300)
+})
+
+
+
+
+// Echo.private('message-typing')
+//   .listenForWhisper('typo', (e) => {
+//     // e.typing ? $('.typing').show() : $('.typing').hide()
+//     console.log(e);
+//   })
+
+// setTimeout( () => {
+// //   $('.typing').hide()
+// }, 1000)
+
+
+// Echo.join("message-typing").whisper('typo', {
+//     // id: {{ auth()->id() }}
+//     // alert('inside whisper');
+// });
+
+
+
+
+// resources/assets/js/app.js
+
+
+  // resources/assets/js/app.js
+
+
+//   let _this = this;
+
+//   Echo.private('message-typing')
+//     .listenForWhisper('typo', (e) => {
+//     //   this.user = e.user;
+//     //   this.typing = e.typing;
+// console.log(e);
+//       // remove is typing indicator after 0.9s
+//       setTimeout(function() {
+//         _this.typing = false
+//       }, 900);
+//     });
+
+// =============worked
+
+// Echo.private('message-typing')
+//     .listenForWhisper('typo', (e) => {
+//         console.log('edddddddd');
+//     });
+
+</script>

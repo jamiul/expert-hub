@@ -29,3 +29,10 @@ Broadcast::channel('messaging.{conversationId}', function ($user, $conversationI
     
     return false;
 });
+
+
+// Broadcast::channel('message-typing', function ($user) {
+//     // return Auth::check();
+//     return Auth::check();
+//   });
+  
