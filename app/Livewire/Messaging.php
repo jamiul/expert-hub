@@ -109,12 +109,13 @@ class Messaging extends Component
 
         $data = $this->validate();
         // toast('warning', 'Testing', $this);
-        //    dd($data);
-
-
+        
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
+            'content' => $data['messageBody'],
+            // 'content' => 'sss',
+            'content' => $data['messageBody'],            
             // 'content' => 'sss',
         ]);
 
@@ -143,7 +144,7 @@ class Messaging extends Component
             }
         }
 
-        NewMessageCreated::dispatch($this->currentConversation);
+        NewMessageCreated::dispatch($this->currentConversation); 
 
         // }); //TODO::Implement transaction -- end
 
@@ -152,14 +153,31 @@ class Messaging extends Component
 
     public function getListeners()
     {
-        return [
-            "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
-            "echo-private:messaging.{$this->currentConversation?->id},.client-typo" => "topi",
-            // "echo-private:message-typing, client-typo" => "topi",
-        ];
+        // Generating following array item for multiple conversation
+        // "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
+        $conversationMessageListeners = [];
+
+        $participants = Auth::user()->profile->participants; 
+        foreach($participants as $participant) {
+            $conversationMessageListeners["echo-private:messaging.{$participant->conversation_id},NewMessageCreated"] =  'showNewMessage';
+        }
+
+        return $conversationMessageListeners;        
+        
+        // return [
+        //     "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
+        //     // "echo-private:messaging.1,NewMessageCreated" => 'showNewMessage',
+        //     // "echo-private:messaging.2,NewMessageCreated" => 'showNewMessage',
+        //     // "echo-private:messagindd,NewMessageCreatedooo" => 'showNewMessagepppp',
+        //     // "echo-private:messaginga, NewMessageCreated" => 'showNewMessage',
+        //     // "echo-private:messaging, NewMessageCreated" => 'showNewMessage',
+        //     // "echo-private:messaging.{$this->currentConversation?->id},.client-typo" => "topi",
+        //     // "echo-private:message-typing, client-typo" => "topi",
+        // ];
     }
 
     // #[On('echo-private:message-typing, client-typo')]
+    // #[On('echo-private:messaging.{currentConversation.id},NewMessageCreated')]
     public function topi()
     {
         dd('typing');

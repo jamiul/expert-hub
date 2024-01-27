@@ -48,7 +48,12 @@ class Profile extends Model implements HasMedia
 
     public function conversations()
     {
-        return $this->hasMany(Conversation::class);
+        return $this->hasMany(Conversation::class, 'creator_profile_id');
+    }
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class);
     }
 
     public function languages():BelongsToMany
