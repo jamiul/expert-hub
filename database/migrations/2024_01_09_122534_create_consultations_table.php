@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('time_zone');
             $table->text('description');
             $table->string('status');
+            $table->string('image')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

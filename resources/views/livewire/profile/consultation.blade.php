@@ -16,7 +16,7 @@
 
         <button
             wire:click="$dispatch('modal.open', { component: 'profile.consultation.add'})"
-            class="icon-btn icon-btn-md border ">
+            class="icon-btn icon-btn-md border">
             <x-icon.add />
         </button>
     </div>
@@ -50,7 +50,7 @@
                             <li>Accreditation Documentation</li>
                             <li>Accreditation Process</li>
                             <li>Educational Expertise</li>
-                            <li>Instructionḁl Design</li>
+                            <li>Instructional Design</li>
                         </ul>
                     </div>
                 </div>

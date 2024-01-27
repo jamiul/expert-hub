@@ -6,24 +6,24 @@
 </ul>
 <div class="progress-step-content mt-20">
 
-    <x-form.choice-static wire:model="title" label="Consultation Title">
+    <x-form.choice name="expertise_id" wire:model.blur="form.expertise_id" label="Consultation Title">
         <option value="">Select a consultation title</option>
         @foreach ($expertFields as $expertField)
-        <optgroup label="# {{ $expertField->name }}">
-            @foreach ($expertField->children as $child)
-            <option value="{{ $child->id }}">{{ $child->name }}</option>
-            @endforeach
-        </optgroup>
+            <optgroup label="# {{ $expertField->name }}">
+                @foreach ($expertField->children as $child)
+                    <option value="{{ $child->id }}">{{ $child->name }}</option>
+                @endforeach
+            </optgroup>
         @endforeach
-    </x-form.choice-static>
+    </x-form.choice>
 
-    <x-form.choice-static wire:model="titles" label="Consultation Skillsets" multiple>
+    <x-form.choice name="expertise_skills" wire:model="form.expertise_skills" label="Consultation Skillsets" multiple>
         @foreach ($expertSkills as $expertSkill)
             @foreach ($expertSkill->children as $child)
                 <option value="{{ $child->id }}">{{ $child->name }}</option>
             @endforeach
         @endforeach
-    </x-form.choice-static>
+    </x-form.choice>
     <p class="skill-suggestion">Suggestion skills: <span>Curriculum Editor, E-Learning Developer,
             Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
 
@@ -58,7 +58,12 @@
                             /hr
                         </div>
                         <div>
-                            <input type="text" class="input-field-control" placeholder="$0.00">
+                            <x-form.input
+                                type="number"
+                                name="hourly_rate"
+                                wire:model.live="form.hourly_rate"
+                                placeholder="0.00"
+                            />
                         </div>
                     </div>
                 </div>
@@ -74,7 +79,13 @@
                             /hr
                         </div>
                         <div>
-                            <input type="text" class="input-field-control edux-platform-bg" placeholder="$0.00">
+                            <x-form.input
+                                type="text"
+                                disabled
+                                name="platform_fee"
+                                wire:model.live="form.platform_fee"
+                                placeholder="0.00"
+                            />
                         </div>
                     </div>
                 </div>
@@ -90,7 +101,13 @@
                             /hr
                         </div>
                         <div>
-                            <input type="text" class="input-field-control edux-platform-bg" placeholder="$0.00">
+                            <x-form.input
+                                type="text"
+                                disabled
+                                name="total_fee"
+                                wire:model.live="form.total_fee"
+                                placeholder="0.00"
+                            />
                         </div>
                     </div>
                 </div>
@@ -103,9 +120,10 @@
         <h6 class="mb-2">What is the event time zone?</h6>
         <p>Time zone for opening hours and new events. Your invitees will see your availability in their
             local time zone.</p>
-        <select name="" id="" class="input-field-control edux-timezoon">
-            <option value="">Europe/Australia</option>
-            <option value="">Dhaka/Asia</option>
+        <select wire:model="form.time_zone" name="" id="" class="input-field-control edux-timezoon">
+            <option value="">Select time zone</option>
+            <option value="Europe/Australia">Europe/Australia</option>
+            <option value="Dhaka/Asia">Dhaka/Asia</option>
         </select>
     </div>
 
@@ -159,7 +177,7 @@
 
 
     <div class="mb-40">
-        <x-form.choice-static wire:model="titles" class="edux-timezoon" label="Select day" multiple>
+        <x-form.choice-static wire:model="titles" class="edux-timezoon" label="Select day">
             <option value="Mr">Monday</option>
             <option value="Mrs">Sunday</option>
             <option value="Dr">Friday</option>
@@ -240,8 +258,10 @@
         </h6>
 
         <div class="edux-select-options position-relative">
-            <textarea rows="5" cols="10" name="bio" id="bio" class="input-field-control h-auto"
-                placeholder="e.g. Brief 300 words summary about your expertise."></textarea>
+            <x-form.textarea
+                wire:model.defer="form.description"
+                placeholder="e.g. Brief 300 words summary about your expertise."
+            />
             <span class="edux-total-select-count">0/200</span>
         </div>
 
@@ -254,24 +274,27 @@
             </div>
         </h6>
 
-
         <div class="image-upload-preview">
             <div class="">
                 <div class="uploaded-img-preview">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133"
-                        fill="none">
-                        <g clip-path="url(#clip0_38_2)">
-                            <path
-                                d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z"
-                                fill="#B3C1CF"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_38_2">
-                                <rect width="132" height="132" fill="white" transform="translate(0 0.5)">
-                                </rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
+                    @if($form->image)
+                        <img src="{{ $form->image ? $form->image->temporaryUrl() : '' }}">
+                    @else
+                        <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133"
+                            fill="none">
+                            <g clip-path="url(#clip0_38_2)">
+                                <path
+                                    d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z"
+                                    fill="#B3C1CF"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_2">
+                                    <rect width="132" height="132" fill="white" transform="translate(0 0.5)">
+                                    </rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    @endif
                 </div>
                 <p class="text-sm fst-italic my-1">
                     Max 2MB 500px 500px
@@ -280,8 +303,9 @@
             <div>
                 <label for="upload-file" class="btn btn-outline-primary d-inline-flex align-items-center">
                     <x-icon.upload fill="#0059C999" />
-                    Upload Photo</label>
-                <input type="file" id="upload-file" class="d-none">
+                    Upload Photo
+                </label>
+                <input type="file" id="upload-file" class="d-none" wire:model="form.image">
             </div>
         </div>
     </div>
