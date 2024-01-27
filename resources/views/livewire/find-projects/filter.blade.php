@@ -15,8 +15,8 @@
         <div class="widget-accordion use-scroll-content">
 
             @foreach ($projectCategories as $expertSkill)
-            <div class="widget-accordion-item" wire:key="{{ $expertSkill->id }}">
-                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
+            <div x-data="{ isOpen: false }" :class="{ 'accordion-item-active': isOpen }" class="widget-accordion-item" wire:key="{{ $expertSkill->id }}">
+                <div class="widget-accordion-title" x-on:click="isOpen = !isOpen">
                     <x-form.check
                         class="m-0 gap-0"
                         wire:change="checkParent({{ $expertSkill }})"
@@ -26,7 +26,7 @@
                     />
                     {{ $expertSkill->name }}
                 </div>
-                <div class="widget-accordion-content">
+                <div x-show="isOpen" class="widget-accordion-content">
                     @foreach ($expertSkill->children as $child)
                         <x-form.check
                             wire:key="{{ $child->id }}"
