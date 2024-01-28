@@ -7645,6 +7645,7 @@ font-weight: 400;
   display: flex;
   align-items: center;
   gap: 3px;
+  justify-content: center;
 }
 
 .university-country {
@@ -8822,10 +8823,10 @@ border:none
 }
 
 
- .flatpickr-calendar{
+ /* .flatpickr-calendar{
     width: 358.875px !important;
 
-}
+} */
 
 .open-date-picker input.form-input-field.flatpickr-input {
   display: none;
