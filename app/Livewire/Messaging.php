@@ -75,7 +75,7 @@ class Messaging extends Component
                 return;
             }
 
-            $this->currentConversation = $newMessageRecipient->conversation; //only for selecting notification message conversation            
+            $this->currentConversation = $newMessageRecipient->conversation; //only for selecting notification message conversation     
         }
 
         // Mark all unread message as read --either for first conversation (when user visit /messaging) or for selected conversation
@@ -176,12 +176,23 @@ class Messaging extends Component
         // ];
     }
 
-    // #[On('echo-private:message-typing, client-typo')]
-    // #[On('echo-private:messaging.{currentConversation.id},NewMessageCreated')]
-    public function topi()
-    {
-        dd('typing');
-    }
+    // public function getListeners()
+    // {
+          
+        
+    //     return [
+            
+    //         "echo-private:message-typing.{$this->currentConversation?->id}, .client-typo" => "topi",
+    //     ];
+    // }
+
+    // #[On('echo-private:message-typing.{$this->currentConversation?->id}, .client-typing')]
+    // #[On('echo-private:message-typing, client-typing')]
+    // #[On('echo-private:message-typing, .client-typo')]
+    // public function topi()
+    // {
+    //     dd('typing');
+    // }
 
 
     public function showNewMessage($event)

@@ -53,7 +53,7 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
-                    <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    <div class="chatbox-contact-person user-online user-selected" data-conversation-id="{{$conversation->conversation->id}}" wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
@@ -274,7 +274,7 @@
 
                                     @if($conversationMessage->has_attachment)
                                     <div class="chatbox-uploaded-media-wrapper">
-                                    {{$conversationMessage->content}}
+                                        {{$conversationMessage->content}}
                                         @forelse($conversationMessage->getMedia() as $file)
                                         <div class="chatbox-uploaded-media-item">
                                             <div>
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
 
-                            
+
                             <!-- TODO:NEL: add conversation-user-message-action -->
 
                             <div class="conversation-user-message-action">
@@ -469,12 +469,12 @@
                         </button>
 
                         <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
-                        
+
                         @if($messageAttachmentTemporaryUrls)
                         {{-- dd($messageAttachment) --}}
                         <div class="chatbox-uploaded-media-wrapper">
-                        @forelse($messageAttachmentTemporaryUrls as $key => $messageAttachmentTemporaryUrl)
-                        
+                            @forelse($messageAttachmentTemporaryUrls as $key => $messageAttachmentTemporaryUrl)
+
                             <div class="chatbox-uploaded-media-item">
                                 <div>
                                     <x-icon.file />
@@ -486,15 +486,15 @@
                                 <!-- <button>
                                     <x-icon.close />
                                 </button> -->
-                            </div>                
+                            </div>
 
-                        
-                        @empty
 
-                        @endforelse
+                            @empty
+
+                            @endforelse
                         </div>
                         @endif
-                        
+
 
                         <div class="chatbox-message-editor-helper">
                             <div class="message-editor-styling-action">
@@ -549,7 +549,7 @@
                                     </div>
                                 </div>
 
-                                <button class="icon-btn send-message" id="sendMessageButton" wire:click.prevent="sendMessage" >
+                                <button class="icon-btn send-message" id="sendMessageButton" wire:click.prevent="sendMessage">
                                     <x-icon.send />
                                 </button>
                             </div>
@@ -705,68 +705,109 @@
         </div>
 
     </div>
+    {{dump('Neloy dumping'.$currentConversation?->id)}}
 </div>
 
+
 <script type="module">
-$('#messageBody').on('keydown', function(){
-        // alert('key down{{auth()->user()->id}}');
-  let channel = Echo.private('messaging.{{$currentConversation?->id}}');
-//   let channel = Echo.private('message-typing');
 
-  setTimeout( () => {
-    channel.whisper('typo', {
-    //   user: userid,
-      typing: true
+let conversation_id =  $('.chatbox-contact-person').data("conversation-id");
+
+// alert(conversation_id);
+$('.chatbox-contact-person').on('click', function() {
+    // var jata = {{$currentConversation}};
+    conversation_id = $(this).data("conversation-id");
+    // alert(conversation_id);
+        
+        
     })
-  }, 300)
-})
-
-
-
-
-// Echo.private('message-typing')
-//   .listenForWhisper('typo', (e) => {
-//     // e.typing ? $('.typing').show() : $('.typing').hide()
-//     console.log(e);
-//   })
-
-// setTimeout( () => {
-// //   $('.typing').hide()
-// }, 1000)
-
-
-// Echo.join("message-typing").whisper('typo', {
-//     // id: {{ auth()->id() }}
-//     // alert('inside whisper');
+// document.addEventListener('DOMContentLoaded', () => {
+// Livewire.hook('element.updated', (el, component) => {
+// var jata = @this.currentConversation.id;
+// console.log(jata);
+// })
 // });
 
 
 
+  
+    $('#messageBody').on('keydown', function() {
+        // alert(conversation_id);
+        // alert({{$currentConversation?->id}});
+        // alert('key down{{auth()->user()->id}}');
+        // alert(conversation_id);
+          let channel = Echo.private("message-typing."+conversation_id);
+        //   console.log(channel);
+        // let channel = Echo.private('message-typing');
 
-// resources/assets/js/app.js
+        setTimeout(() => {
+            channel.whisper('typo', {
+                
+                  conversation_id: conversation_id,
+                typing: true
+            })
+        }, 300)
+    })
 
 
-  // resources/assets/js/app.js
 
 
-//   let _this = this;
+    // Echo.private('message-typing')
+    //   .listenForWhisper('typo', (e) => {
+    //     // e.typing ? $('.typing').show() : $('.typing').hide()
+    //     console.log(e);
+    //   })
 
-//   Echo.private('message-typing')
-//     .listenForWhisper('typo', (e) => {
-//     //   this.user = e.user;
-//     //   this.typing = e.typing;
-// console.log(e);
-//       // remove is typing indicator after 0.9s
-//       setTimeout(function() {
-//         _this.typing = false
-//       }, 900);
-//     });
+    // setTimeout( () => {
+    // //   $('.typing').hide()
+    // }, 1000)
 
-// =============worked
 
-// Echo.private('message-typing')
-//     .listenForWhisper('typo', (e) => {
-//         console.log('edddddddd');
-//     });
+    // Echo.join("message-typing").whisper('typo', {
+    //     // id: {{ auth()->id() }}
+    //     // alert('inside whisper');
+    // });
 
+
+
+
+    // resources/assets/js/app.js
+
+
+    // resources/assets/js/app.js
+
+
+    //   let _this = this;
+
+    //   Echo.private('message-typing')
+    //     .listenForWhisper('typo', (e) => {
+    //     //   this.user = e.user;
+    //     //   this.typing = e.typing;
+    // console.log(e);
+    //       // remove is typing indicator after 0.9s
+    //       setTimeout(function() {
+    //         _this.typing = false
+    //       }, 900);
+    //     });
+
+    // =============worked
+   
+    
+    Echo.private("message-typing."+conversation_id)
+    
+        // .listenForWhisper('typo', (e) => {
+        .listenForWhisper('typo', (e) => {
+            console.log(e);
+            // e.typing ? $('.message-typing').show() : $('.message-typing').hide()
+            e.conversation_id == conversation_id ? $('.loader').show() : $('.loader').hide()
+            // $('.message-typing').hide();
+
+            setTimeout(() => {
+                $('.loader').hide()
+            }, 900)
+
+
+        });
+        console.log(Echo);
+        $('.loader').hide()
 </script>
