@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile;
 
+use App\Helpers\PaymentHelper;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
 use App\Models\State;
@@ -19,7 +20,7 @@ class Wizard extends Component
     use WithFileUploads;
 
     public int $currentStep = 1;
-    
+
     public $availableExpertFieldGroups = [];
     public $expertise_id;
 
@@ -71,7 +72,7 @@ class Wizard extends Component
         });
 
         $this->hourly_rate = $this->profile()->hourly_rate;
-        $this->platform_fee = $this->profile()->hourly_rate * .1;
+        $this->platform_fee = ($this->profile()->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
         $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
         $this->pictureUrl = $this->profile()->picture;
@@ -150,7 +151,8 @@ class Wizard extends Component
     public function saveKyc()
     {
         $user = User::find(auth()->user()->id);
-        $kyc = ExpertKYC::updateOrCreate(
+
+        ExpertKYC::updateOrCreate(
             ['user_id' => $user->id],
             [
                 'country' => $user->country->name,
@@ -167,15 +169,8 @@ class Wizard extends Component
             ]
         );
 
-        $user->update([
-            'dob' => Carbon::parse($this->dob),
-            'gender' => $this->gender,
-            'state' => $this->state,
-            'city' => $this->city,
-            'postcode' => $this->postcode,
-            'address_line_1' => $this->address_line_1,
-            'address_line_2' => $this->address_line_2,
-        ]);
+        //todo: submit kyc to stripe
+        PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function saveSkill()
@@ -192,13 +187,13 @@ class Wizard extends Component
     public function updatedHourlyRate()
     {
         if($this->hourly_rate){
-            $this->platform_fee = $this->hourly_rate * 0.1;
+            $this->platform_fee = ($this->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
             $this->total_fee = $this->hourly_rate + $this->platform_fee;
         }else{
             $this->platform_fee = 0;
             $this->total_fee = 0;
         }
-        
+
     }
 
     public function updatedPicture()
@@ -217,7 +212,7 @@ class Wizard extends Component
             'biography' => ['required'],
             'picture' => [
                 $required,
-                'image', 
+                'image',
                 File::image()->max(1 * 1024),
                 Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
