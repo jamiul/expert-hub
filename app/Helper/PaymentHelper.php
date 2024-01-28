@@ -5,9 +5,63 @@ namespace App\Helpers;
 use App\Models\ClientTransaction;
 use App\Models\ExpertTransaction;
 use App\Models\Profile;
+use App\Models\User;
 use Log;
 
 class PaymentHelper {
+
+    public static function expertRegisterToStripe( User $user ) {
+        if ( $user->profile->stripe_acct_id == '' ) {
+            try {
+                $api_key = env( 'STRIPE_SECRET' );
+                $stripe  = new \Stripe\StripeClient( [
+                    "api_key" => $api_key,
+                ] );
+
+                $country = $user->country->code;
+                $url     = route( 'expert.profile.show', $user->profile );
+                //todo: only for local use, while moving to live, change it
+                $url = 'http://test.eduexperthub.com';
+
+                $connected_account = $stripe->accounts->create( [
+                    'country'          => $country,
+                    'type'             => 'custom',
+                    'capabilities'     => [
+                        'card_payments' => [ 'requested' => true ],
+                        'transfers'     => [ 'requested' => true ],
+                    ],
+                    'business_type'    => 'individual',
+                    'business_profile' => [
+                        'mcc' => '5734',
+                        'url' => $url
+                    ],
+                    'email'            => $user->email,
+                    'individual'       => [
+                        'first_name' => $user->first_name,
+                        'last_name'  => $user->last_name,
+                        'email'      => $user->email
+                    ],
+                    'tos_acceptance'   => [
+                        'ip'   => \Request::ip(),
+                        'date' => now()->timestamp
+                    ],
+                    'settings'         => [
+                        'payouts' => [
+                            'schedule'             => [ 'interval' => 'manual' ],
+                            'statement_descriptor' => 'EduExHub'
+                        ]
+                    ]
+                ] );
+
+                $profile                 = Profile::where( 'user_id', $user->id )->first();
+                $profile->stripe_acct_id = $connected_account->id;
+                $profile->save();
+            } catch ( \Exception $ex ) {
+                error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
+            }
+        }
+    }
+
     public static function calculateMilestoneCharge( $milestone_amount ) {
         $service_charge = ( $milestone_amount * env( 'SERVICE_CHARGE' ) ) / 100;
 
