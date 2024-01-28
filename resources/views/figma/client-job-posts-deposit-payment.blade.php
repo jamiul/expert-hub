@@ -17,8 +17,9 @@
                                                value="male">
                                         <div class="form-radio-title">
                                             <label class="" for="mastercard">
-                                                <img class="me-1"
-                                                     src="{{ asset('assets/frontend/img/mastercard.png') }}" alt="">
+                                                <span>
+                                                    <x-icon.logo-master/>
+                                                </span>
                                                 Master ending in 8698
                                             </label>
                                             <span class="badge badge-outline-primary badge-pill"> Primary</span>
@@ -31,8 +32,9 @@
                                                value="female">
                                         <div class="form-radio-title">
                                             <label class="" for="visa">
-                                                <img class="me-1" src="{{ asset('assets/frontend/img/visa.png') }}"
-                                                     alt="">
+                                                <span>
+                                                    <x-icon.logo-visa/>
+                                                </span>
                                                 Visa ending in 8698
                                             </label>
                                             <button class="badge badge-success badge-pill"> Set as primary</button>
