@@ -3,6 +3,7 @@
 namespace App\Livewire\Profile;
 
 use App\Models\Expertise;
+use App\Models\ExpertKYC;
 use App\Models\State;
 use App\Models\University;
 use App\Models\User;
@@ -77,13 +78,13 @@ class Wizard extends Component
 
         $this->availableStates = State::get();
         $user = auth()->user();
-        $this->dob = $user->dob;
-        $this->gender = $user->gender;
-        $this->state = $user->state;
-        $this->city = $user->city;
-        $this->postcode = $user->postcode;
-        $this->address_line_1 = $user->address_line_1;
-        $this->address_line_2 = $user->address_line_2;
+        $this->dob = $user->expert_kyc->individual_dob;
+        $this->gender = $user->expert_kyc->individual_gender;
+        $this->state = $user->expert_kyc->individual_registered_address_state;
+        $this->city = $user->expert_kyc->individual_registered_address_city;
+        $this->postcode = $user->expert_kyc->individual_registered_address_postal_code;
+        $this->address_line_1 = $user->expert_kyc->individual_registered_address_line1;
+        $this->address_line_2 = $user->expert_kyc->individual_registered_address_line2;
     }
 
     public function render()
@@ -149,6 +150,23 @@ class Wizard extends Component
     public function saveKyc()
     {
         $user = User::find(auth()->user()->id);
+        $kyc = ExpertKYC::updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'country' => $user->country->name,
+                'individual_dob' => Carbon::parse($this->dob),
+                'individual_gender' => $this->gender,
+                'individual_phone' => $user->phone,
+                'individual_registered_address_country' => $user->country->name,
+                'individual_registered_address_state' => $this->state,
+                'individual_registered_address_city' => $this->city,
+                'individual_registered_address_postal_code' => $this->postcode,
+                'individual_registered_address_line1' => $this->address_line_1,
+                'individual_registered_address_line2' => $this->address_line_2,
+                'status' => 1,
+            ]
+        );
+
         $user->update([
             'dob' => Carbon::parse($this->dob),
             'gender' => $this->gender,
