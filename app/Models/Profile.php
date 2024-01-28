@@ -108,6 +108,12 @@ class Profile extends Model implements HasMedia
         return Project::whereIn('id', $projectIds)->get();
     }
 
+    public function savedExperts()
+    {
+        $expertIds = Favourite::where('profile_id', $this->id)->where('loveable_type', Profile::class)->pluck('loveable_id')->toArray();
+        return Profile::whereIn('id', $expertIds)->get();
+    }
+
     public function eois()
     {
         return $this->hasMany(Eoi::class, 'expert_id');

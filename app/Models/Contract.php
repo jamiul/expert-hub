@@ -10,4 +10,9 @@ class Contract extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }

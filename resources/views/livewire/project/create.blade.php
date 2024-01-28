@@ -45,10 +45,21 @@
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
-                                    <div class="main-form position-relative">
-                                    <x-form.textarea label="Project Description" wire:model.blur="description" placeholder="Write Description">
+                                    <div 
+                                        class="main-form position-relative" 
+                                        x-data="{
+                                            description: $wire.description,
+                                            get characterCount() { 
+                                                if(this.description == null){
+                                                    return 0
+                                                }
+                                                return this.description.length;
+                                            }
+                                        }"
+                                    >
+                                    <x-form.textarea label="Project Description" x-model="description"  wire:model.blur="description" placeholder="Write Description">
                                     </x-form.textarea>
-                                    <span class="edux-word-count">0/1000</span>
+                                    <span class="edux-word-count"><span x-text="characterCount">0</span>/5000</span>
                                         </div>
                                     </div>
                                     <div
@@ -114,11 +125,16 @@
                                 <div class="step step-5">
                                     <div class="main-form">
                                         <div class="card-body mt-40">
-                                            <h3 class="h6 mb-3">How do you want to pay?</h3>
+                                            <div class="mb-3">
+                                                <h3 class="h6">How do you want to pay?</h3>
+                                                @error('type')
+                                                    <div class="form-input-error-message">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                             <!-- Radio buttons for Hourly and Fixed -->
                                             <div class="contact-type-card-wrapper mb-3">
                                                 <div class="contact-type-card">
-                                                    <input type="radio" wire:model="type"
+                                                    <input type="radio" wire:model.live="type"
                                                             id="Hourly" class="d-none"
                                                             value="Hourly">
                                                     <label class="contact-type-card-inner" for="Hourly">
@@ -132,7 +148,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="contact-type-card">
-                                                    <input type="radio" wire:model="type" id="Fixed"
+                                                    <input type="radio" wire:model.live="type" id="Fixed"
                                                             class="d-none"
                                                             value="Fixed">
                                                     <label class="contact-type-card-inner" for="Fixed">
@@ -152,19 +168,38 @@
                                 <div class="step step-6">
                                     <div class="main-form">
                                         <div class="budget-block">
-                                            <h3>What is your estimate budget? (USD)</h3>
+                                             <div class="mb-3">
+                                                <h3 class="h6 mb-0">What is your estimate budget? (USD)</h3>
+                                            </div>
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                            @if($type == \App\Enums\ProjectType::Hourly)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-input-group">
                                                         <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    
-                                                        <input id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model.blur="budget_start_amount" placeholder="Type Here">
+                                                        <input id="budget_start_amount" class="form-input-field" type="number" wire:model.blur="budget_start_amount" placeholder="Type Here">
                                                     </div>
+                                                    @error('budget_start_amount')
+                                                        <div class="form-input-error-message">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-md-6">
                                                     <x-form.input type="number" min="0" label="End Amount" wire:model.blur="budget_end_amount" placeholder="Type Here"/>
                                                 </div>
                                             </div>
+                                            @else
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-input-group">
+                                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    
+                                                            <input id="budget_start_amount" class="form-input-field" type="number" wire:model.blur="budget_start_amount" placeholder="Type Here">
+                                                        </div>
+                                                        @error('budget_start_amount')
+                                                            <div class="form-input-error-message">{{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

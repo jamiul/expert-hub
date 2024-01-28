@@ -116,6 +116,7 @@
                                     <div class="attachment-display-wrapper">
                                         @forelse ($project->attachments as $attachment)
                                             <div class="attachment-display-card">
+                                                <a href="{{ $attachment->getFullUrl() }}" target="_blank">
                                                 <div class="attachment-display-thumb">
                                                     @if(in_array($attachment->mime_type, ['image/jpeg','image/png']) )
                                                         <img src="{{ $attachment->getFullUrl() }}"/>
@@ -127,6 +128,7 @@
                                                     <h6 class="mb-1">{{ $attachment->name }}</h6>
                                                     <p class="m-0">{{ $attachment->human_readable_size }}</p>
                                                 </div>
+                                                </a>
                                             </div>
                                         @empty
                                             <p>No file attached</p>
