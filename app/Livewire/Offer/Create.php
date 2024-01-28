@@ -2,9 +2,13 @@
 
 namespace App\Livewire\Offer;
 
+use App\Enums\OfferStatus;
 use App\Enums\ProjectStatus;
+use App\Enums\ProjectType;
+use App\Models\Offer;
 use App\Models\Profile;
 use Livewire\Attributes\Url;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Create extends Component
@@ -13,15 +17,22 @@ class Create extends Component
 
     public $type;
 
+    #[Validate('required')]
     public $client_id;
 
     #[Url()]
+    public $eoi_id;
+
+    #[Url()]
+    #[Validate('required')]
     public $project_id;
     public $project;
 
     public $projects;
 
+    #[Validate('required')]
     public $contract_title;
+    #[Validate('required')]
     public $amount;
     public $milestoneType;
 
@@ -72,6 +83,36 @@ class Create extends Component
     public function remove($i)
     {
         unset($this->milestones[$i]);
+    }
+
+    public function sendOffer()
+    {
+        $this->validate();
+        $offer = Offer::create([
+            'eoi_id' => $this->eoi_id,
+            'project_id' => $this->project_id,
+            'client_id' => auth()->user()->profile->id,
+            'expert_id' => $this->expert->id,
+            'contract_title' => $this->contract_title,
+            'contract_type' => $this->type,
+            'amount' => $this->amount,
+            'deposit_amount' => $this->depositAmount(),
+            'status' => OfferStatus::Draft,
+        ]);
+
+        dd($offer);
+    }
+
+    public function depositAmount()
+    {
+        if($this->type == ProjectType::Fixed){
+            if($this->milestoneType == 'single'){
+                return $this->amount;
+            }
+            if($this->milestoneType == 'multiple'){
+                return $this->milestone_amount[0];
+            }
+        }
     }
 
     public function render()

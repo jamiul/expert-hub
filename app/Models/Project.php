@@ -80,6 +80,11 @@ class Project extends Model implements HasMedia
         return $this->hasMany(Invitation::class);
     }
 
+    public function offers()
+    {
+        return $this->hasMany(Offer::class);
+    }
+
     public function currency()
     {
         return $this->belongsTo(Currency::class);

@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id');
+            $table->foreignId('client_id');
             $table->foreignId('expert_id');
-            $table->text('message');
+            $table->decimal('amount');
+            $table->text('message')->nullable();
             $table->string('status');
             $table->boolean('active')->default(1);
             $table->timestamps();

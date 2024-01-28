@@ -22,8 +22,15 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
             $table->foreignId('country_id');
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('address_line_1')->nullable();
+            $table->string('address_line_2')->nullable();
+            $table->string('password');
             $table->boolean('send_tips')->default(1);
             $table->boolean('terms_agreed')->default(1);
             $table->boolean('active')->default(1);

@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+
 @section('content')
-    @livewire('project.show', ['project' => $project])
+    @livewire('offer.expert.show',['offer' => $offer])
 @endsection
