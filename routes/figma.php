@@ -33,7 +33,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/job-posts', 'figma.projectCreate');
     Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
-    Route::view('/home', 'figma.homepage');
+    Route::view('/home', 'figma.home-page');
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
     Route::view('/client-profile-position-setup', 'figma.clientprofilepositionsetup');
