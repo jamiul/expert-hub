@@ -36,7 +36,7 @@
         </div>
         <div class="expert-card-body">
             <div class="project-expert-summary py-3">
-                <p>
+                <p class="text-summary">
                     {{ $expert->biography }}
                 </p>
             </div>

@@ -48,6 +48,7 @@ class Invite extends Modal
         ]));
         toast('success', 'Invitation Sent Successfully', $this);
         $this->close();
+        //Todo Update invitation count
     }
 
     public function sendMessage()

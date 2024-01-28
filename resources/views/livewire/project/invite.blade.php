@@ -3,9 +3,9 @@
     <x-expert.mini-card :expert="$expert"/>
     <x-form.textarea label="Message" wire:model="message" placeholder="Message">
     </x-form.textarea>
-    <x-form.choice wire:model="project_id" label="Chose a Job">
+    <x-form.select wire:model="project_id" label="Chose a Job">
         <option value="{{ $project->id }}">{{ $project->title }}</option>
-    </x-form.choice>
+    </x-form.select>
     <p class="modal-form-instruction">Want to talk to Professor Mile Esther about your project? <a
             href="">Schedule a consultation</a></p>
     <x-slot name="button">
