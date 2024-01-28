@@ -164,6 +164,6 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
     Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
     Route::view('/project/client-eoi-view-with-expert-profile', 'figma.client-eoi-view-with-expert-profile');
-
+    Route::view('/project/client-job-posts-deposit-payment', 'figma.client-job-posts-deposit-payment');
 
 });
