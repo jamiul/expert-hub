@@ -31,6 +31,7 @@ class Show extends Component
                 ]);
 
                 toast('success', 'New Contract Started');
+                return redirect()->route('expert.contracts');
             },
             prompt: [
                 'title' => 'Accept offer?',
