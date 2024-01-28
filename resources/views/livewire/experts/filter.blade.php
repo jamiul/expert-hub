@@ -12,10 +12,10 @@
     </div>
     <div class="filter-widget">
         <h4 class="widget-title">Experts by Field</h4>
-        <div x-data="{ expertField: null }" class="widget-accordion use-scroll-content">
+        <div class="widget-accordion use-scroll-content">
             @foreach ($expertFields as $expertField)
-            <div class="widget-accordion-item">
-                <div class="widget-accordion-title" x-on:click="expertField = '{{ Str::slug($expertField->name) }}'" :class="{ 'accordion-item-active': expertField === '{{ Str::slug($expertField->name) }}' }">
+            <div x-data="{ isOpen: false }" class="widget-accordion-item" :class="{ 'accordion-item-active': isOpen }">
+                <div class="widget-accordion-title" x-on:click="isOpen = !isOpen">
                     <x-form.check
                         wire:change="checkParentExpertField({{ $expertField }})"
                         wire:model="filterByExpertField"
@@ -25,7 +25,7 @@
                     />
                     {{ $expertField->name }}
                 </div>
-                <div class="widget-accordion-content" x-show="expertField === '{{ Str::slug($expertField->name) }}'">
+                <div class="widget-accordion-content" x-show="isOpen">
                     @foreach ($expertField->children as $child)
                         <x-form.check
                             wire:change="filter"
