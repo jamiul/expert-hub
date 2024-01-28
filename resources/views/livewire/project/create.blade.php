@@ -1,6 +1,10 @@
 <div class="site-content">
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+    </script>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -42,7 +46,7 @@
                                 </div>
                                 <div class="step step-2 mb-4">
                                     <div class="main-form position-relative">
-                                    <x-form.textarea label="Project Description" wire:model.blur="description" placeholder="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this">
+                                    <x-form.textarea label="Project Description" wire:model.blur="description" placeholder="Write Description">
                                     </x-form.textarea>
                                     <span class="edux-word-count">0/1000</span>
                                         </div>
@@ -53,6 +57,7 @@
                                         x-init="
                                             FilePond.setOptions({
                                                 allowMultiple: true,
+                                                acceptedFileTypes: ['image/*','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
                                                 server: {
                                                     process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
                                                         @this.upload('attachments', file, load, error, progress)
@@ -69,21 +74,28 @@
                                     >
                                         <input type="file" x-ref="input">
                                     </div>
-                                    {{-- <div class="customer-upload">
-                                        <div class="upload-file-user">
-                                        <div class="upload-file-user-img">
-                                            <img src="{{ asset('assets/frontend/img/uploadfile-icon.png') }}"/>
-                                        </div>
-                                        <div class="upload-file-user-text">
-                                            <h4>Customer_file.png</h4>
-                                            <p>456 KB    -   21 second left</p>
-                                        </div>
-                                        </div>
-                                        <div class="dust-img">
-                                        <x-icon.delete/>
-                                        </div>
-                                    </div> --}}
-
+                                    @error('attachments.*')
+                                        <div class="form-input-error-message">{{ $message }}</div>
+                                    @enderror
+                                    <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>Image, pdf, doc, excel (Max 10 MB)</span></p>
+                                    @if($project)
+                                        @foreach ($project->attachments as $attachment)
+                                            <div class="customer-upload">
+                                                <div class="upload-file-user">
+                                                    <div class="upload-file-user-img">
+                                                        <img src="{{ asset('assets/frontend/img/uploadfile-icon.png') }}"/>
+                                                    </div>
+                                                    <div class="upload-file-user-text">
+                                                        <h4>{{ $attachment->name }}</h4>
+                                                        <p>{{ $attachment->human_readable_size }}</p>
+                                                    </div>
+                                                </div>
+                                                <div wire:click="deleteAttachment({{ $attachment->id }})" wire:confirm="Are you sure you want to delete this attachment?" class="dust-img">
+                                                    <x-icon.delete/>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                                 <div class="step step-3 mt-3">
                                     <div class="main-form">
@@ -101,42 +113,37 @@
                                 </div>
                                 <div class="step step-5">
                                     <div class="main-form">
-                                        <div class="hourly-fixed-block">
-                                            <h3 class="subheadings">How do you want to pay?</h3>
-                                            <div class="row">
-                                                <div class="col-md-6 col-12">
-                                                    <div class="rate-box">
-                                                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                            <div class="hourly-check">
-                                                                <input type="radio" class="btn-check" wire:model.change="type" value="Hourly" id="btnradio1" autocomplete="off">
-                                                                <label class="btn btn-outline-primary" for="btnradio1">
-                                                                    <div class="currency-img">
-                                                                        <img src="{{ asset('assets/frontend/img/hourly.png') }}"/>
-                                                                    </div>
-                                                                    <div class="pay-rate">
-                                                                        <h3>Hourly rate</h3>
-                                                                        <p>Select freelancers based on their hourly rates and pay for the hours worked</p>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
+                                        <div class="card-body mt-40">
+                                            <h3 class="h6 mb-3">How do you want to pay?</h3>
+                                            <!-- Radio buttons for Hourly and Fixed -->
+                                            <div class="contact-type-card-wrapper mb-3">
+                                                <div class="contact-type-card">
+                                                    <input type="radio" wire:model="type"
+                                                            id="Hourly" class="d-none"
+                                                            value="Hourly">
+                                                    <label class="contact-type-card-inner" for="Hourly">
+                                                        <div>
+                                                            <span class="radio-field-icon"></span>
                                                         </div>
-                                                    </div>
+                                                        <div>
+                                                            <h4 class="h6">Hourly</h4>
+                                                            <p class="text-sm mb-0">Select freelancers based on their hourly rates and pay for the hours worked</p>
+                                                        </div>
+                                                    </label>
                                                 </div>
-                                                <div class="col-md-6 col-12">
-                                                    <div class="rate-box">
-                                                        <div class="fixed-check">
-                                                            <input type="radio" class="btn-check" wire:model.change="type" value="Fixed" id="btnradio2" autocomplete="off">
-                                                            <label class="btn btn-outline-primary" for="btnradio2">
-                                                                <div class="currency-img">
-                                                                    <img src="{{ asset('assets/frontend/img/fixed.png') }}"/>
-                                                                </div>
-                                                                <div class="pay-rate">
-                                                                    <h3>Fixed price</h3>
-                                                                    <p>Agree on a price upfront, then release payment upon project completion</p>
-                                                                </div>
-                                                            </label>
+                                                <div class="contact-type-card">
+                                                    <input type="radio" wire:model="type" id="Fixed"
+                                                            class="d-none"
+                                                            value="Fixed">
+                                                    <label class="contact-type-card-inner" for="Fixed">
+                                                        <div>
+                                                            <span class="radio-field-icon"></span>
                                                         </div>
-                                                    </div>
+                                                        <div>
+                                                            <h4 class="h6">Fixed</h4>
+                                                            <p class="text-sm mb-0">Agree on a price upfront, then release payment upon project completion</p>
+                                                        </div>
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,31 +152,26 @@
                                 <div class="step step-6">
                                     <div class="main-form">
                                         <div class="budget-block">
-                                            <h3>What is your estimate budget?</h3>
+                                            <h3>What is your estimate budget? (USD)</h3>
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                            <div class="d-flex gap-4">
-
-                                            </div>
                                             <div class="row">
-                                            <div class="col-md-6">
-                                            <div class="form-input-group">
-                                            <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    
-                                            <input id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model.blur="budget_start_amount" placeholder="Type Here">
-                                            </div>
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <x-form.input type="number" min="0" label="End Amount" wire:model.blur="budget_end_amount" placeholder="Type Here"/>
-                                            </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-input-group">
+                                                        <label class="form-input-label edux-tooltip-level">Start Amount  <span class="edux-tooltips"> <i><x-icon.info width="20" height="20" fill="#A1A0A5"/></i> <span class="edux-tooltips-details">  Minimum start amount is $50 </span> </span> </label>    
+                                                        <input id="budget_start_amount" class="form-input-field" type="number" min="0" wire:model.blur="budget_start_amount" placeholder="Type Here">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <x-form.input type="number" min="0" label="End Amount" wire:model.blur="budget_end_amount" placeholder="Type Here"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="form-buttons">
-                                    <button type="submit" class="edux-btn-primary">Post Job</button>
+                                <div class="d-flex gap-3 mt-3">
+                                    <button type="button" wire:click="saveAsDraft" class="btn edux-btn-border-primary">Save As Draft</button>
+                                    <button type="submit" class="edux-btn-primary">Post Project</button>
                                 </div>
-
                             </form>
                         </div>
                     </div>

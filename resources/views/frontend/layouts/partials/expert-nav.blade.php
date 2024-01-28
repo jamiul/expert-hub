@@ -2,7 +2,7 @@
     <div class="main-header-container">
         <div class="header-logo">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('assets/frontend/img/logo.png') }}"/>
+                <img src="{{ asset('logo/expert-gate-logo.png') }}"/>
             </a>
         </div>
         <nav class="main-header-nav">
@@ -69,8 +69,11 @@
                     </a>
                 </li>
                 @livewire('expert-notification-count')
-                <li>
+
+                <livewire:new-message-count />
+                <!-- <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+
                         <span>99</span>
                         <x-icon.message-line/>
                     </a>
@@ -164,20 +167,20 @@
                             </a>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
-                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
+                            src="{{ auth()->user()->profile->picture }}"/>
                     </a>
                     <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
-                                    src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
+                                    src="{{ auth()->user()->profile->picture }}"/>
                             </div>
                             <div class="dropdown-user-info  mb-3">
-                                <h3 class="h6 mb-1">Dr. Darrell Steward</h3>
+                                <h3 class="h6 mb-1">{{ auth()->user()->full_name }}</h3>
                                 <p class="text-sm">Sydney Islamic business school</p>
                             </div>
                             <div class="dropdown-user-profile-status  mb-3">

@@ -46,6 +46,11 @@ class Profile extends Model implements HasMedia
         return $this->hasMany(Project::class);
     }
 
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
+    }
+
     public function languages():BelongsToMany
     {
         return $this->belongsToMany(Language::class, 'profile_language')
@@ -95,5 +100,26 @@ class Profile extends Model implements HasMedia
     public function scopeExpert($query)
     {
         return $query->where('type', ProfileType::Expert);
+    }
+
+    public function savedProjects()
+    {
+        $projectIds = Favourite::where('profile_id', $this->id)->where('loveable_type', Project::class)->pluck('loveable_id')->toArray();
+        return Project::whereIn('id', $projectIds)->get();
+    }
+
+    public function eois()
+    {
+        return $this->hasMany(Eoi::class, 'expert_id');
+    }
+
+    public function invitations()
+    {
+        return $this->hasMany(Invitation::class, 'expert_id');
+    }
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class, 'expert_id');
     }
 }

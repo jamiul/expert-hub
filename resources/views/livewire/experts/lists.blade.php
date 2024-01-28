@@ -8,9 +8,12 @@
                     </div>
                 </div> <!--expert-thumb-->
                 <div class="expert-info">
-                    <h3 class="h6 project-expert-name mb-0">
-                        {{ $expert->user->full_name }}
-                    </h3>
+                    <a href="{{ route('expert.profile.show', $expert) }}">
+                        <h3 class="h6 project-expert-name mb-0">
+                            {{ $expert->user->full_name }}
+                        </h3>
+                    </a>
+
                     <ul class="expert-meta">
                         <li>{{ $expert->expertField->name }}</li>
                         {{-- <li>Melbourne University</li> --}}
@@ -43,9 +46,9 @@
                 </div>
 
                 <div class="expert-summary py-3">
-                    <p class="mb-0">
+                    <p class="mb-0 text-summary text-base">
                         {{ $expert->biography }}
-                        ... <a href=""> more</a>
+
                     </p>
                 </div>
                 <div class="tag-list expert-tag-list">

@@ -10,4 +10,19 @@ class Message extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function messageRecipients()
+    {
+        return $this->hasMany(MessageRecipient::class);
+    }
+
+    public function conversation()
+    {
+        return $this->belongsTo(Conversation::class);
+    }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'sender_profile_id');
+    }
 }

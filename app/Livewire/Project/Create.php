@@ -9,14 +9,16 @@ use App\Models\Project;
 use App\Notifications\ProjectPostNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rules\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Create extends Component
 {
     use WithFileUploads;
 
-    public int $currentStep = 1;
+    public Project $project;
 
     public $title;
     public $description;
@@ -35,52 +37,93 @@ class Create extends Component
     public $budget_start_amount;
     public $budget_end_amount;
 
-    public function mount()
+    public function mount(Project $project)
     {
         $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
         $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
+        $this->project = $project;
+        $this->title = $this->project->title;
+        $this->description = $this->project->description;
+        $this->expertise_id = $this->project->expertise_id;
+        $this->type = $this->project->type;
+        $this->budget_start_amount = $this->project->budget_start_amount;
+        $this->budget_end_amount = $this->project->budget_end_amount;
+        $this->selectedSkills = $this->project->skills->pluck('id')->toArray();
+        // dd($this->project->attachments);
     }
 
     public function save()
     {
-        $data = $this->validate();
-
-        $project = Project::create([
-            'profile_id' => Auth::user()->profile->id,
-            'expertise_id' => $this->expertise_id,
-            'title' => $data['title'],
-            'slug' => Str::slug($data['title'], '-') . time(),
-            'description' => $data['description'],
-            'type' => $data['type'],
-            'currency_id' => 1,
-            'budget_start_amount' => $data['budget_start_amount'],
-            'budget_end_amount' => $data['budget_end_amount'],
-            'status' => ProjectStatus::Published,
-        ]);
-        foreach($this->selectedSkills as $id){
-            $project->skills()->attach([
-                'expertise_id' => $id,
-            ]);
-        }
-        foreach ($this->attachments as $attachment) {
-            $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
-            $project->addMedia($attachment->getRealPath())
-                ->usingName($fileName)
-                ->toMediaCollection('attachments');
-        }
-        $this->notify($project);
+        $this->validate();
+        $this->setProject();
+        $this->project->profile_id = Auth::user()->profile->id;
+        $this->project->status = ProjectStatus::Published;
+        $this->project->save();
+        $this->saveSkills();
+        $this->uploadAttachments();
+        $this->notify();
         toast('success', 'Job has been posted successfully');
         return redirect()->route('client.dashboard');
     }
 
-    public function notify($project)
+    public function saveAsDraft()
+    {
+        $this->setProject();
+        if($this->project->id === null){
+            $this->project->profile_id = Auth::user()->profile->id;
+        }
+        $this->project->status = ProjectStatus::Draft;
+        $this->project->save();
+        $this->saveSkills();
+        $this->uploadAttachments();
+        toast('success', 'Job has been saved as Draft!');
+        return redirect()->route('client.projects');
+    }
+
+    public function setProject()
+    {
+        $this->project->title = $this->title;
+        $this->project->slug = $this->title ? Str::slug($this->title, '-') . time() : '';
+        $this->project->description = $this->description;
+        $this->project->expertise_id = $this->expertise_id;
+        $this->project->type = $this->type;
+        $this->project->currency_id = 1;
+        $this->project->budget_start_amount = $this->budget_start_amount;
+        $this->project->budget_end_amount = $this->budget_end_amount;
+    }
+
+    public function saveSkills()
+    {
+        if ($this->selectedSkills) {
+            $this->project->skills()->sync($this->selectedSkills);
+        }
+    }
+
+    public function uploadAttachments()
+    {
+        if ($this->attachments) {
+            foreach ($this->attachments as $attachment) {
+                $fileName = $attachment->getClientOriginalName() . '-' . time() . '.' . $attachment->extension();
+                $this->project->addMedia($attachment->getRealPath())
+                    ->usingName($fileName)
+                    ->toMediaCollection('attachments');
+            }
+        }
+    }
+
+    public function deleteAttachment(Media $media)
+    {
+        $media->delete();
+    }
+
+    public function notify()
     {
         $experts = Profile::expert()->with('user')->get();
-        $experts->each(function($expert) use($project){
+        $experts->each(function($expert){
             $expert->user->notify(new ProjectPostNotification([
                 'title'   => 'New Project posted',
-                'message' => $project->description,
-                'link'    => $project->slug,
+                'message' => $this->project->description,
+                'link'    => $this->project->slug,
                 'button' => 'View project',
                 'avatar'  => Auth::user()->profile->picture,
             ]));
@@ -97,6 +140,9 @@ class Create extends Component
             'type' => ['required'],
             'budget_start_amount' => ['required', 'numeric'],
             'budget_end_amount' => ['nullable', 'numeric'],
+            'attachments.*' => [
+                    File::types(['image', 'pdf','docx','xlsx'])
+                ]
         ];
     }
 

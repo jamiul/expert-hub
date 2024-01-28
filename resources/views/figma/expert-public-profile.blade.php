@@ -187,6 +187,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="page-block mt-40">
                                 <div class="card card-24">
                                     <div class="card-body">
@@ -619,7 +620,7 @@
         <!-- Modal : Add Work Experience-->
 <div class="modal fade" id="bookConsultation" tabindex="-1" aria-labelledby="addConsultationLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg flat-modal">
-    <div class="modal-content">
+    <div class="modal-content open-date-picker">
       <div class="modal-header border-0 pb-0">
         <h5 class="modal-title pt-3 px-0" id="exampleModalLabel">Booking A Curriculum development</h5>
         <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -634,7 +635,7 @@
         <div class="mb-40">
           <div class="available-schedule-slot mb-40">
 
-            <x-form.flatpicker label="Date picker" inline="true" name="datepicker"/>
+            <x-form.flatpicker label="" inline="true" name="datepicker"/>
 
             <div class="slot-item-area">
               <h6>Wednesday, 15th Oct </h6>
@@ -666,7 +667,7 @@
             </div>
           </div>
         </div>
-        <div class="edux-select-options position-relative">
+        <div class="edux-select-options position-relative d-none">
           <x-form.textarea label="Note" wire:model="bio" placeholder="Bio"> Select options </x-form.textarea>
           <span class="edux-total-select-count">0/200</span>
         </div>

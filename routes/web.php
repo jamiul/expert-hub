@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Expert\PaymentController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
@@ -9,23 +10,27 @@ use App\Http\Controllers\Frontend\Auth\RegistrationController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
+use App\Http\Controllers\Frontend\ContractController;
+use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertEoiController;
+use App\Http\Controllers\Frontend\ExpertOfferController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\FindProjectController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ManageEoiController;
 use App\Http\Controllers\Frontend\NotificationsController;
+use App\Http\Controllers\Frontend\OfferController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\ScholarshipController;
 use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
 use App\Http\Controllers\Webhook\StripeController;
-use App\Http\Controllers\Expert\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,13 +71,22 @@ Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->mid
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
+Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
+Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
+Route::get('/expert/contracts', [ContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
+Route::get('/client/projects', [ProjectController::class, 'index'])->name('client.projects');
+Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
+
+Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->middleware(['auth', 'client'])->name('offers.create');
+Route::get('/offers/{offer}', [OfferController::class, 'show'])->middleware(['auth', 'client'])->name('offers.show');
+Route::get('/expert/offers/{offer}/show', [ExpertOfferController::class, 'show'])->middleware(['auth', 'expert'])->name('expert.offer.show');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');
@@ -87,6 +101,9 @@ Route::get( '/notification-settings', [
     'notificationSettings'
 ] )->middleware( [ 'auth' ] )->name( 'notifications.settings' );
 
+// Nel test
+Route::get('/conversation/create/{id}', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');
+Route::get('/messaging/{id?}', [ConversationController::class, 'index'])->middleware('auth')->name('messaging');
 // Webhooks
 Route::group(['prefix' => 'webhooks'], function (){
     Route::post( 'stripe', [StripeController::class, 'receiveWebhook'] );

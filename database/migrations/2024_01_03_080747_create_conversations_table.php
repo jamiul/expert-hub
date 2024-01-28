@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id');
+            $table->foreignId('creator_profile_id');
             $table->string('title');
             $table->boolean('active')->default(1);
             $table->timestamps();

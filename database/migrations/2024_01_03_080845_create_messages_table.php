@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('conversation_id');
-            $table->foreignId('profile_id');
+            $table->foreignId('sender_profile_id');
             $table->longText('content')->nullable();
             $table->boolean('has_attachment')->default(0);
-            $table->foreignId('parent_id')->nullable();
+            $table->foreignId('parent_message_id')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

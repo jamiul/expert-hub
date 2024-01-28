@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('eoi_id');
+            $table->foreignId('eoi_id')->nullable();
+            $table->foreignId('project_id');
+            $table->foreignId('client_id');
+            $table->foreignId('expert_id');
+            $table->string('contract_title');
+            $table->string('contract_type');
             $table->decimal('amount');
-            $table->text('message');
+            $table->decimal('deposit_amount')->nullable();
+            $table->text('message')->nullable();
             $table->boolean('is_milestone')->default(0);
             $table->string('status');
             $table->boolean('active')->default(1);

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProjectStatus;
 use App\Enums\ProjectType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,6 +19,7 @@ class Project extends Model implements HasMedia
 
     protected $casts = [
         'type' => ProjectType::class,
+        'status' => ProjectStatus::class,
     ];
 
     public function registerMediaCollections(): void
@@ -38,6 +40,16 @@ class Project extends Model implements HasMedia
     public function isFixed()
     {
         return $this->type == ProjectType::Fixed;
+    }
+
+    public function isDraft()
+    {
+        return $this->status == ProjectStatus::Draft;
+    }
+
+    public function isPublished()
+    {
+        return $this->status == ProjectStatus::Published;
     }
 
     public function client()
@@ -66,6 +78,11 @@ class Project extends Model implements HasMedia
     public function invitations()
     {
         return $this->hasMany(Invitation::class);
+    }
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class);
     }
 
     public function currency()

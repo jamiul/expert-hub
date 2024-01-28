@@ -80,14 +80,14 @@
                                     >
                                         <input type="file" x-ref="input">
                                     </div>
-                                    <div class="image-upload-flat">
+                                    {{-- <div class="image-upload-flat">
                                         <label for="upload-file" class="text-center">
                                             <span> <x-icon.document-upload fill="#0059C999"/> </span>
                                             <span class="fw-medium">Clik to upload or drag & drop</span>
                                             <span class="text-sm">You may attach up to 10 files under the size of 25 MB each. Include work samples or other documents to support your application. Do not attach your resume — your profile is automatically forwarded to the client with your proposal. </span>
                                         </label>
                                         <input type="file" id="upload-file" class="d-none">
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <x-form.check wire:model="agreement" class="mt-20 project-eoi-trams-condition">

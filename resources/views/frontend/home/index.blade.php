@@ -2,7 +2,7 @@
 
 @section('content')
     @include('frontend.home.partials._product_slider')
-    @include('frontend.home.partials._require_main')
+    <livewire:require-steps :title="$requireTitle">
     @include('frontend.home.partials._expert_main')
     @include('frontend.home.partials._categories_main')
     @include('frontend.home.partials._team')

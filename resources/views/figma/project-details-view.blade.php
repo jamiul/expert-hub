@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="mb-40">
                                     <p class="fw-medium mb-2">Required Skills</p>
-                                    <div class="tag-list branded-tag-list">
+                                    <div class="tag-list">
                                         <a href="#" class="project-tag">Communication Skills</a>
                                         <a href="#" class="project-tag">Industry Treds Awareness</a>
                                         <a href="#" class="project-tag"> Research</a>
@@ -109,7 +109,7 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <p class="fw-medium mb-2">Required Skills</p>
+                                    <p class="fw-medium mb-2">Attachments</p>
                                     <div class="attachment-display-wrapper">
                                         <div class="attachment-display-card">
                                             <div class="attachment-display-thumb">

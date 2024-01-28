@@ -3,10 +3,15 @@
 namespace App\Livewire\Project;
 
 use App\Enums\InvitationStatus;
+use App\Models\Conversation;
 use App\Models\Invitation;
+use App\Models\Message;
+use App\Models\MessageRecipient;
+use App\Models\Participant;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Notifications\ProjectInvitationNotification;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
@@ -33,6 +38,7 @@ class Invite extends Modal
             'project_id' => $this->project_id,
             'status' => InvitationStatus::Pending
         ]);
+        $this->sendMessage();
         $this->expert->user->notify(new ProjectInvitationNotification([
             'title'   => 'Invitation to submit EOI',
             'message' => 'Submit EOI to this project',
@@ -40,8 +46,27 @@ class Invite extends Modal
             'button' => 'view invitation',
             'avatar'  => auth()->user()->profile->picture,
         ]));
-
+        toast('success', 'Invitation Sent Successfully', $this);
         $this->close();
+    }
+
+    public function sendMessage()
+    {
+        $authUser = Auth::user();
+        $participantProfileIDs = [$authUser->profile->id, $this->expert->id]; //TODO:receive the second user from UI
+
+        $conversation = Conversation::create(['creator_profile_id' => $authUser->profile->id, 'title' => $authUser->first_name]);
+
+        foreach ($participantProfileIDs as $participantProfileID) {
+            Participant::create(['conversation_id' => $conversation->id, 'profile_id' => $participantProfileID]);
+        }
+
+        $message = Message::create([
+            'conversation_id' => $conversation->id, 'sender_profile_id' => $authUser->profile->id,
+            'content' => $this->message,
+        ]);
+
+        MessageRecipient::create(['conversation_id' => $conversation->id, 'message_id' => $message->id, 'recipient_profile_id' => $this->expert->id]);
     }
 
     public function render()

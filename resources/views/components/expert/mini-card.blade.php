@@ -1,7 +1,8 @@
 @props([
     'expert' => null,
+    'card' => false
 ])
-<div class="project-expert-card border-0 p-0 mb-20">
+<div class="project-expert-card @if($card == false) border-0 p-0 @endif mb-20">
     <div class="project-expert-thumb">
         <img class="rounded-circle" src="{{ $expert->picture }}"/>
     </div>
@@ -27,5 +28,6 @@
                 </div>
             </div>
         </div>
+        {{ $slot }}
     </div>
 </div>

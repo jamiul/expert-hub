@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-client-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 
 @section('content')
 <section class="client-dashboard mx-auto my-5">
@@ -98,7 +98,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -108,7 +108,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -118,7 +118,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -138,7 +138,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -148,7 +148,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -158,7 +158,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -168,7 +168,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -178,7 +178,7 @@
               </div>
             </div>
 
-            
+
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -201,7 +201,7 @@
                 </label>
               </div>
             </div>
-        </div>    
+        </div>
 
         <div class="email-membership-area email-update-area ">
             <h4>Miscellaneous</h4>
@@ -239,7 +239,7 @@
               </div>
             </div>
             </div>
-        </div>   
+        </div>
 
         <div class="email-project-area email-membership-area  email-update-area ">
             <h4>Project recommendations for our Experts</h4>
@@ -251,7 +251,7 @@
                 </label>
               </div>
             </div>
-        </div>    
+        </div>
 
         <div class="email-communication-area email-update-area">
             <h4>Communications from EduExHub</h4>
@@ -263,7 +263,7 @@
                 </label>
               </div>
             </div>
-        </div>    
+        </div>
 
       </div>
     </div>
