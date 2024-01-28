@@ -67,8 +67,8 @@
                 </div>
             </div>
             <div class="project-list-card-item-body">
-                <p class="mb-0">
-                    {{ $project->description }}<a href="">More</a>
+                <p class="mb-0 text-summary text-base">
+                    {{ $project->description }}
                 </p>
             </div>
             <div class="tag-list">

@@ -13,7 +13,7 @@
                     </div>
                     <div class="seller-admin-project-filter mt-20">
                         <x-form.flatpicker class="vertical-label input-field-md" label="Sort By" name="datepicker"/>
-                         
+
                         <x-form.select class="input-field-md" wire:model="title">
                             <option value="Mr">Ascending</option>
                             <option value="Mrs">Descending</option>
@@ -186,7 +186,7 @@
                     <div class="sidebar-layout right-sidebar-layout edit-client-job-post border-0">
                         <div class="page-sidebar">
                             <div class="sidebar-widget">
-                                <x-form.input class="label-inline input-field-md" type="number" label="Hourly" wire:model="rate" placeholder="$200"/>
+                                <x-form.input class="input-field-md" type="number" label="Hourly" wire:model="rate" placeholder="$200"/>
                             </div>
 
                             <div class="sidebar-widget">
@@ -256,6 +256,10 @@
                                        </span>
                                     </div>
                                 </div>
+                                <x-form.select label="What is your project field" wire:model="field">
+                                    <option value="">Public health</option>
+
+                                </x-form.select>
                                 <x-form.textarea label="Project Description" wire:model="ProjectDescription"
                                                  placeholder="Project Description">Seeking an experienced Curriculum Developer to create a cutting-edge curriculum for our postgraduate public health unit. You will collaborate with our team to design a comprehensive curriculum that aligns with industry trends and academic standards. Your role involves conducting research, developing course materials, and crafting assessments that foster critical</x-form.textarea>
 
@@ -267,7 +271,7 @@
                                         <span class="tag">LMS 2 <x-icon.close-circle/> </span>
                                     </div>
                                 </div>
-                                <p class="suggestion-skills text-sm">
+                                <p class="field-suggestion text-sm">
                                     Suggestion skills:
                                     <strong>Curriculum Editor,</strong>
                                     <strong>E-Learning Developer,</strong>
@@ -307,6 +311,7 @@
                                     </div>
 
                                 </div>
+                                <p class="text-sm field-suggestion fst-italic my-3">Supported files type: <span class="text-dark"> Image, pdf, doc, excel (Max 10 MB)</span></p>
                                 <div class="d-flex gap-3 mt-20">
                                     <button style="width: 130px" class="btn btn-md btn-outline-primary">Cancel</button>
                                     <button style="width: 130px" class="btn btn-md btn-primary">Update</button>

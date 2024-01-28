@@ -28,7 +28,7 @@
         .card-body {
             padding: 40px;
             border-radius: 8px;
-            background: #FFF;
+            //background: #FFF;
         }
     }
 
@@ -36,7 +36,7 @@
         .card-body {
             padding: 40px 20px;
             border-radius: 8px;
-            background: #FFF;
+            //background: #FFF;
         }
     }
 
@@ -48,7 +48,7 @@
         .card-body {
             padding: 24px;
             border-radius: 8px;
-            background: #FFF;
+            //background: #FFF;
         }
     }
 
@@ -77,6 +77,13 @@
     grid-template-columns: 180px auto;
     gap: 20px;
     border: 1px solid $edu-border-color;
+}
+
+.consultation-card {
+    display: grid;
+    grid-template-columns: 180px auto;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .profile-setup-card {

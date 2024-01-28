@@ -11,7 +11,7 @@
                 <li class="item-has-submenu">
                     <a href="#">Projects</a>
                     <ul>
-                        <li><a href="/figma/project/client-job-posts">My project</a></li>
+                        <li><a href="{{ route('client.projects') }}">My project</a></li>
                         <li><a href="{{ route('projects.create') }}">Post a project</a></li>
                     </ul>
                 </li>

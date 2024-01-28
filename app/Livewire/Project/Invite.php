@@ -46,7 +46,7 @@ class Invite extends Modal
             'button' => 'view invitation',
             'avatar'  => auth()->user()->profile->picture,
         ]));
-
+        toast('success', 'Invitation Sent Successfully', $this);
         $this->close();
     }
 

@@ -3,9 +3,11 @@
 namespace App\Livewire\Project\Eoi;
 
 use App\Enums\EoiStatus;
+use App\Enums\InvitationStatus;
 use App\Models\Milestone;
 use App\Models\Project;
 use App\Notifications\EOIClientNotification;
+use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -55,16 +57,10 @@ class Create extends Component
         $this->serviceFee = $this->amount * 0.1;
         $this->amountAfterServiceFee = $this->amount - $this->serviceFee;
 
-        // $this->milestones[] = [
-        //     'milestone_description' => '',
-        //     'milestone_due_date' => '',
-        //     'milestone_amount' => '',
-        // ];
     }
 
     public function add($i)
     {
-        // dd($this->milestone_description);
         $this->validate(
             [
                 'milestone_description.0' => 'required',
@@ -161,6 +157,13 @@ class Create extends Component
                 ->usingName($fileName)
                 ->toMediaCollection('attachments');
         }
+        $invitation = $this->project->invitations()->where('expert_id', auth()->user()->profile->id)->first();
+        if($invitation){
+            $invitation->update([
+                'status' => InvitationStatus::Accepted
+            ]);
+        }
+        
         $this->project->client->user->notify(new EOIClientNotification([
             'title'   => 'New Eoi Submitted',
             'message' => '',

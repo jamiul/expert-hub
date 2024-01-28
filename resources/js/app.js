@@ -32,3 +32,6 @@ window.Echo = new Echo({
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
 });
+
+import flatpickr from "flatpickr";
+import 'flatpickr/dist/flatpickr.min.css'
