@@ -146,7 +146,7 @@
                                     <div x-show="activeTab === 'all-proposals'">
                                         <div class="expert-card-wrapper">
                                             @forelse ($project->eois as $eoi)
-                                                <x-expert.card :expert="$eoi->expert">
+                                                <x-expert.card :url="route('client.eois.show',[$project, $eoi])" :expert="$eoi->expert">
                                                     <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                     <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
                                                     <x-expert.message/>
