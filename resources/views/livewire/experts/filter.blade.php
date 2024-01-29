@@ -1,4 +1,4 @@
-<div class="page-sidebar">
+<div>
     <div class="search-block">
         <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Expert..."/>
     </div>
