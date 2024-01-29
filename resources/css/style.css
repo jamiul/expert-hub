@@ -3145,7 +3145,7 @@ h4 {
 
 .find-projects-require-main {
     padding: 50px 0;
-    margin-top: -40px;
+    /*margin-top: -40px;*/
 }
 
 .find-projects-require-main .team-button {
