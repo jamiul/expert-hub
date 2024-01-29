@@ -148,48 +148,12 @@
                             </div>
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 
-                                 <div class="require-action table-responsive">
-
-                                 <table class="table transaction-all-require">
-                                        <thead class="t-history">
-                                            <tr>
-                                                <th>Description</th>
-                                                <th>Issue Status</th>
-                                                <th>Due Date</th>
-                                                <th class="edux-tbl-action">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="">
-                                        <tr class="edux-pending-payment">
-                                            <td class="balance-text"> <span class="fw-medium">Add missing information for Shamim Hasan</span> <br/> <span>Onboarding and verification</span> </td>
-                                            <td style="vertical-align: middle;">Past Due</td>
-                                            <td style="vertical-align: middle;">2/2/2024</td>
-                                            <td style="vertical-align: middle;"  class="edux-tbl-action">
-                                                 <a class="btn btn-primary fs-15 fw-medium large__btn" data-bs-toggle="modal" data-bs-target="#addWithdrawalUpdate">Update</a>
-                                             </td>
-                                            </tr>
-                                            <tr class="edux-pending-payment">
-                                            <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
-                                            <td style="vertical-align: middle;">Past Due</td>
-                                            <td style="vertical-align: middle;">2/2/2024</td>
-                                            <td style="vertical-align: middle;"  class="edux-tbl-action">
-                                                 <a class="btn btn-primary fs-15 fw-medium large__btn" data-bs-toggle="modal" data-bs-target="#addWithdrawalUpdate">Update</a>
-
-                                             </td>
-                                            </tr>
-                                            <tr class="edux-pending-payment">
-                                            <td class="balance-text"> <span class="fw-medium">Add eKYC Info</span> <br/> <span>Onboarding and verification</span> </td>
-                                            <td style="vertical-align: middle;">Past Due</td>
-                                            <td style="vertical-align: middle;">2/2/2024</td>
-                                            <td style="vertical-align: middle;"  class="edux-tbl-action">
-
-                                                 <a class="btn btn-primary fs-15 fw-medium large__btn" data-bs-toggle="modal" data-bs-target="#addWithdrawalUpdate">Update</a>
-
-                                             </td>
-                                            </tr>
-                                        </tbody>
-                                        </table>
-
+                                 <div class="no-action-required">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                                    <path d="M26 39C26.7367 39 27.3542 38.7508 27.8525 38.2525C28.3508 37.7542 28.6 37.1367 28.6 36.4C28.6 35.6633 28.3508 35.0458 27.8525 34.5475C27.3542 34.0492 26.7367 33.8 26 33.8C25.2633 33.8 24.6458 34.0492 24.1475 34.5475C23.6492 35.0458 23.4 35.6633 23.4 36.4C23.4 37.1367 23.6492 37.7542 24.1475 38.2525C24.6458 38.7508 25.2633 39 26 39ZM23.4 28.6H28.6V13H23.4V28.6ZM26 52C22.4033 52 19.0233 51.3175 15.86 49.9525C12.6967 48.5875 9.945 46.735 7.605 44.395C5.265 42.055 3.4125 39.3033 2.0475 36.14C0.6825 32.9767 0 29.5967 0 26C0 22.4033 0.6825 19.0233 2.0475 15.86C3.4125 12.6967 5.265 9.945 7.605 7.605C9.945 5.265 12.6967 3.4125 15.86 2.0475C19.0233 0.6825 22.4033 0 26 0C29.5967 0 32.9767 0.6825 36.14 2.0475C39.3033 3.4125 42.055 5.265 44.395 7.605C46.735 9.945 48.5875 12.6967 49.9525 15.86C51.3175 19.0233 52 22.4033 52 26C52 29.5967 51.3175 32.9767 49.9525 36.14C48.5875 39.3033 46.735 42.055 44.395 44.395C42.055 46.735 39.3033 48.5875 36.14 49.9525C32.9767 51.3175 29.5967 52 26 52ZM26 46.8C31.8067 46.8 36.725 44.785 40.755 40.755C44.785 36.725 46.8 31.8067 46.8 26C46.8 20.1933 44.785 15.275 40.755 11.245C36.725 7.215 31.8067 5.2 26 5.2C20.1933 5.2 15.275 7.215 11.245 11.245C7.215 15.275 5.2 20.1933 5.2 26C5.2 31.8067 7.215 36.725 11.245 40.755C15.275 44.785 20.1933 46.8 26 46.8Z" fill="#275846"/>
+                                    </svg>
+                                    <p class="mb-0"> <strong>No Actions Required</strong> </p>
+                                    <span>We may require occasional updated to keep your account in good standing. Required actions will appear here.</span>
                                  </div>
                             </div>
 

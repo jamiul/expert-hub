@@ -94,7 +94,7 @@
                   </tr>
               </thead>
               <tbody class="">
-              <tr>
+              <tr class="edux-pending-payment">
                   <td style="vertical-align: middle;">Oct 23, 2023</td>
                   <td style="vertical-align: middle;">GST</td>
                   <td class="balance-text">GST for Fixed Price Ref ID 545678907</td>
@@ -103,7 +103,7 @@
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678905</a></td>
                 </tr>
 
-                <tr>
+                <tr  class="edux-pending-payment">
                   <td style="vertical-align: middle;">Oct 23, 2023</td>
                   <td style="vertical-align: middle;">Payment Gateway Fee</td>
                   <td class="balance-text">Payment Gateway Fee for Fixed Price Ref ID 545678907</td>
@@ -112,7 +112,7 @@
                   <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">545678904</a></td>
                 </tr>
 
-                <tr>
+                <tr  class="edux-pending-payment">
                   <td style="vertical-align: middle;">Oct 23, 2023</td>
                   <td style="vertical-align: middle;">Contract Initialisation Fee</td>
                   <td class="balance-text">Contract Initialisation Fee for Fixed Price-Ref ID 545678907</td>
