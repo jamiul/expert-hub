@@ -9252,6 +9252,38 @@ li.disabled {
   background-color: transparent;
 }
 
+.padding-40 {
+  padding: 0px 40px 10px;
+}
+
+.padding-close {
+  padding: 30px 40px 20px;
+}
+
+.no-action-required {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px;
+}
+
+.no-action-required p{
+  color:  #275846;
+  text-align: center;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.no-action-required span{
+  color:  #275846;
+  font-family: Colfax;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+}
 
   /* ============================================ Expert Profile End ============================================= */
 
