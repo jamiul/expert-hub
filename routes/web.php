@@ -84,6 +84,7 @@ Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->mi
 Route::get('/client/projects', [ProjectController::class, 'index'])->middleware(['auth', 'client'])->name('client.projects');
 Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
+Route::get('/client/projects/{project}/eois/{eoi}', [ManageEoiController::class, 'show'])->middleware(['auth', 'client'])->name('client.eois.show');
 Route::get('/client/contracts', [ClientContractController::class, 'index'])->middleware(['auth', 'client'])->name('client.contracts');
 
 Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->middleware(['auth', 'client'])->name('offers.create');
