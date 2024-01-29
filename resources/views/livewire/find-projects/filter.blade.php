@@ -15,30 +15,17 @@
         <div class="widget-accordion use-scroll-content">
 
             @foreach ($projectCategories as $expertSkill)
-            <div class="widget-accordion-item" wire:key="{{ $expertSkill->id }}">
-                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check
-                        class="m-0 gap-0"
-                        wire:change="checkParent({{ $expertSkill }})"
-                        wire:model="filterByCategories"
-                        id="{{ Str::slug($expertSkill->name) }}-{{ $expertSkill->id }}"
-                        value="{{ $expertSkill->name }}"
-                    />
+            {{-- //TODO: Fix and match style with figma --}}
+            <div class="border-bottom pt-2">
+                <x-form.check
+                    wire:key="{{ $expertSkill->id }}"
+                    wire:change="filter"
+                    wire:model="skills"
+                    id="{{ Str::slug($expertSkill->name) }}-{{ $expertSkill->id }}"
+                    value="{{ $expertSkill->name }}"
+                >
                     {{ $expertSkill->name }}
-                </div>
-                <div class="widget-accordion-content">
-                    @foreach ($expertSkill->children as $child)
-                        <x-form.check
-                            wire:key="{{ $child->id }}"
-                            wire:change="filter"
-                            wire:model="skills"
-                            id="{{ Str::slug($child->name) }}-{{ $child->id }}"
-                            value="{{ $child->name }}"
-                        >
-                            {{ $child->name }}
-                        </x-form.check>
-                    @endforeach
-                </div>
+                </x-form.check>
             </div>
             @endforeach
         </div>

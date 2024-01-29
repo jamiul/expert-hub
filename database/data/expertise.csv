@@ -1,33 +1,44 @@
-Agriculture,Architecture,Business,Education,Engineering,Environmental Science,Medicine,Health,Humanities,Languages,Law,Mathematics and Statistics,Science,Social Sciences
-Agronomy,Architectural Design,Accounting,Education Administration,Civil Engineering,Environmental Studies,General Medicine,Nursing,Archaeology,Arabic,Jurisprudence,Pure Mathematics,Physics,Sociology
-Horticulture,Architectural History,Business Administration,Curriculum and Instruction,Mechanical Engineering,Ecology,Surgery,Dentistry,African Studies,Chinese,International Law,Applied Mathematics,Chemistry,Anthropology
-Crop Science,Architectural Theory,Business Analytics,Special Education,Electrical Engineering,Conservation Biology,Internal Medicine,Pharmacy,Art History,Chinese History,Criminal Law,Statistics,Biology,Political Science
-Soil Science,Building Science,Business Law,Early Childhood Education,Chemical Engineering,Environmental Chemistry,Pediatrics,Public Health,Asian Studies,Composition,Civil Law,Actuarial Science,Mathematics,Economics
-Agricultural Economics,Urban Design,Economics,Educational Leadership,Aerospace Engineering,Environmental Engineering,Obstetrics and Gynecology,Biomedical Sciences,Chinese History,English,Constitutional Law,Operations Research,Geology,Psychology
-Animal Science,Sustainable Design,Entrepreneurship,Educational Psychology,Computer Engineering,Atmospheric Science,Psychiatry,Medical Laboratory Science,Christianity,ESL (English as a second language),Administrative Law,Mathematical Physics,Environmental Science,Social Work
-Veterinary Medicine,Landscape Architecture,Finance,Counseling and Guidance,Biomedical Engineering,Climate Science,Anesthesiology,Health Sciences,Classics (Classical Studies),French,Environmental Law,Financial Mathematics,Astronomy,Communication Studies
-Agricultural Engineering,Interior Architecture,Human Resource Management,Higher Education Administration,Environmental Engineering,Environmental Policy,Radiology,Physiotherapy (Physical Therapy),Comparative Literature,German,Family Law,Computational Mathematics,Oceanography,International Relations
-Agricultural Education,Historic Preservation,International Business,Adult Education,Industrial Engineering,Natural Resource Management,Pathology,Occupational Therapy,Comparative Politics,Grammar,Human Rights Law,Data Science,Atmospheric Sciences,Geography
-Agribusiness,Architectural Technology,Islamic Business Ethics,Instructional Design and Technology,Materials Engineering,Wildlife Biology,Emergency Medicine,Nutrition and Dietetics,Cultural Studies,Italian,Corporate Law,Biomathematics,Computer Science,Urban Studies
-Agricultural and Environmental Sciences,Construction Management,Islamic Finance,Educational Technology,Nuclear Engineering,Environmental Geology,Family Medicine,Speech-Language Pathology,Digital Humanities,Italian Opera,Tax Law,Mathematical Biology,Statistics,Linguistics
-Food Science and Technology,Environmental Design,Islamic Fintech,School Counseling,Structural Engineering,Environmental Economics,Dermatology,Health Informatics,Eastern Civilisation,Japanese,Intellectual Property Law,Game Theory,Biochemistry,Criminology
-Agricultural Biotechnology,Structural Engineering,Islamic Insurance Products,Educational Research,Geotechnical Engineering,Sustainability Studies,Ophthalmology,Epidemiology,Ethics,Latin,Labor and Employment Law,Cryptography,Genetics,Public Administration
-Sustainable Agriculture,Building Information Modeling,Islamic Marketing,Language Education,Systems Engineering,Marine Science/Marine Biology,Orthopedics,Health Administration,European Studies,Linguistics,Health Law,Probability Theory,Neuroscience,Development Studies
-Agricultural Extension,Urban Planning,Management,Physical Education,Robotics Engineering,Soil Science,Neurology,Health Education,Hinduism,Mandarin,Immigration Law,Numerical Analysis,Biophysics,Demography
-Rural Development,,Marketing,Music Education,,Hydrology,Oncology (Cancer Medicine),Radiography,History,Mandarin Chinese,Islamic Law,,Materials Science,Cultural Studies
-Agricultural Policy,,Operations Management,Art Education,,Environmental Health,Cardiology,Medical Imaging,Interdisciplinary Humanities,Noongar,,,Geophysics,Gender Studies
-Aquaculture,,Organisational Behaviour,Science Education,,Environmental Education,Gastroenterology,Medical Biotechnology,Islam,Portuguese,,,Applied Physics,Education
-Forestry,,Strategic Management,Mathematics Education,,Renewable Energy Studies,Infectious Diseases,Veterinary Medicine,Judaism,Rhetoric,,,Mathematical Biology,Human Services
-Agroecology,,Supply Chain Management,Literacy Education,,,Nephrology,,Languages and Literature (Modern Languages),Russian,,,Computational Science,Archaeology
-,,,,,,,,Latin,Sign Language,,,Nanotechnology,
-,,,,,,,,Linguistics,Spanish,,,,
-,,,,,,,,Literature,Writing,,,,
-,,,,,,,,Middle Eastern Studies,,,,,
-,,,,,,,,Mythology,,,,,
-,,,,,,,,Philosophy,,,,,
-,,,,,,,,Religious Studies,,,,,
-,,,,,,,,Rhetoric and Composition,,,,,
-,,,,,,,,Sikhism,,,,,
-,,,,,,,,Western Civilisation,,,,,
-,,,,,,,,Women's Studies,,,,,
-,,,,,,,,Gender Studies,,,,,
+Curriculum Development,Course Accreditation ,Learning Management System,Policy Development,Research and Analysis,Financial Management,Project Management,Writing and Editing,Grants and Scholarships
+Higher Education Curriculum Expert,Higher Education Accreditation  Expert,Industry LMS Expert,Industry Policy Expert,Learning Analytics Specialist,Financial Analyst,Program Manager,Curriculum Writer,Higher Education Grants Specialist
+Primary Education Curriculum Expert,Primary Education Accreditation Expert,Higher Education  LMS Expert,Higher Education Policy Expert,Assessment and Evaluation Analyst,Financial Controller,Portfolio Manager,Educational Content Writer ,Scholarships Consultant
+Vocational Education Curriculum Expert,Vocational Education Accreditation Expert,Vocational Education  LMS Expert,Primary Education Policy Expert,Curriculum Analyst,Risk Manager,Project Coordinator,Academic Curriculum Editor,Education Funding Analyst
+High School Education Curriculum Expert,High School Education Accreditation Expert,High School Education  LMS Expert,Vocational Education Policy Expert,Education Policy Analyst,Investment Analyst,Scrum Master,Educational Assessment Writer,Government Grants Program Director
+Agricultural Education Curriculum Expert,TEQSA Expert (Australia),Primary Education  LMS Expert,High School Education Policy Expert,Market Research Analyst,Treasury Analyst,Agile Project Manager,Government Grant Writer,Education Grants Researcher
+Sustainable Farming Specialist,ASQA Expert (Australia),Corporate Training LMS Expert,Healthcare Policy Expert,Business Intelligence Analyst,Corporate Finance Manager,Risk Manager,Research Report Writer,Nonprofit Grants Expert
+Agribusiness Education Curriculum Expert,QAA Expert (UK),Healthcare Education LMS Expert,Environmental Policy Expert,Industry Trends Analyst,Budget Analyst,Quality Assurance Manager,Technical Writer,Industry-Specific Scholarships Expert
+Urban Planning Education Curriculum Expert,Ofsted Expert (UK),Nonprofit Sector LMS Expert,Information Technology Policy Expert,Competitive Intelligence Specialist,Financial Consultant,IT Project Manager,Marketing Copywriter,Industry Training Grants Expert
+Business Education Curriculum Expert,MSCHE Expert (USA),Government Training LMS Expert,Social Justice Policy Expert,Industry Policy and Regulatory Analyst ,Audit Manager,Product Manager,Regulatory Compliance Writer,Education Grants Database Manager
+Islamic Finance Curriculum Expert,NECHE Expert (USA),K-12 Education LMS Expert,Energy Policy Expert,Education Policy and Regulatory Analyst ,Credit Risk Analyst,Business Analyst,Industry Policy Writer,International Education Scholarships Expert
+K-12 Education Curriculum Expert,HLC Expert (USA),STEM Education LMS Expert,Transportation Policy Expert,Workforce Development Analyst,Government Budget Analyst,Operations Manager,Government Policy Writer,Start-up Funding Consultant
+Engineering Education Curriculum Expert,ACICS Expert (USA),,Economic Policy Expert,Supply Chain Analyst,Treasury Specialist,Government Project Manager,Education Policy Writer,
+Civil Engineering Curriculum Expert,QAF Expert (Canada),,International Development Policy Expert,Technology Research Analyst,Financial Examiner,Public Sector Program Manager,Legal Writer,
+Mechanical Engineering Specialist,NZQA Expert (New Zealand),,Government Affairs Policy Expert,Institutional Research Analyst,Economic Analyst - Government,Government IT Project Coordinator,Social Media Content Writer ,
+Environmental Education Curriculum Expert,UGC Expert (Bangladesh),,Data Privacy and Security Policy Expert,Enrollment Management Analyst,Policy Analyst - Finance and Budget,Policy Analyst,Thesis Editor ,
+Medical Education Curriculum Expert,MQA Expert (Malaysia),,Border Security Policy Expert,Student Success Analyst,Government Auditor,Government Grants Manager,Data Analysis and Interpretation Writer,
+Clinical Skills Specialist,CHEA Expert (USA),,,Accreditation Analyst,Public Finance Manager,Government Procurement Specialist,Research Publication Editor,
+Public Health Education Curriculum Expert,ENQA Expert (Europe),,,Higher Education Policy Analyst,Financial Compliance Officer,Government Performance Analyst,Thesis Review Expert,
+Nutrition Education Specialist,NVAO Expert (Netherlands and Flanders),,,Quantitative Research Analyst,Government Grants Manager,Public Health Project Manager,,
+Humanities Education Curriculum Expert,DIQA Expert (Germany),,,Qualitative Research Specialist,Government Financial Analyst,,,
+Cultural Studies Curriculum Expert,CNA Expert (France),,,Research Methodologist,,,,
+Language Education Curriculum Expert,ANECA Expert (Spain),,,Survey Research Analyst,,,,
+Legal Education Curriculum Expert,EQAR Expert (Europe),,,,,,,
+Criminal Justice Curriculum Expert,TEC Expert (Ireland),,,,,,,
+Mathematics Education Curriculum Expert,NAB Expert (Pakistan),,,,,,,
+Data Science Curriculum Expert,NACC Expert (India),,,,,,,
+Science Education Curriculum Expert,CAQA Expert (China),,,,,,,
+Chemistry Curriculum Expert,SAC Expert (Singapore),,,,,,,
+Social Sciences Education Curriculum Expert,JUAA Expert (Japan),,,,,,,
+Psychology Education Curriculum Expert,KOTA Expert (South Korea),,,,,,,
+History Education Curriculum Expert,TÜRKAK Expert (Turkey),,,,,,,
+Geography Curriculum Specialist,AQAS Expert (Germany),,,,,,,
+Physics Education Curriculum Expert,ASIIN Expert (Germany),,,,,,,
+Economics Curriculum Specialist,AAQ Expert (Switzerland),,,,,,,
+Art Education Curriculum Expert,A3ES Expert (Portugal),,,,,,,
+Physical Education Curriculum Expert,CNAQ Expert (Qatar),,,,,,,
+Early Childhood Education Specialist,NOKUT Expert (Norway),,,,,,,
+Literacy Education Curriculum Specialist,CSQA Expert (South Africa),,,,,,,
+STEM Education Curriculum Specialist,KAA Expert (Kenya),,,,,,,
+Health Education Curriculum Expert,CEEQA Expert,,,,,,,
+,QS World Uni Rankings Consultant,,,,,,,
+,AACSB Accreditation Consultant,,,,,,,
+,Times Higher Education Rankings Consultant,,,,,,,

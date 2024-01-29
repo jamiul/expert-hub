@@ -2,9 +2,14 @@
 
 namespace App\Livewire\Profile;
 
+use App\Helpers\PaymentHelper;
 use App\Models\Expertise;
+use App\Models\ExpertKYC;
+use App\Models\State;
 use App\Models\University;
+use App\Models\User;
 use Illuminate\Mail\Mailables\Content;
+use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\File;
 use Livewire\Component;
@@ -15,7 +20,7 @@ class Wizard extends Component
     use WithFileUploads;
 
     public int $currentStep = 1;
-    
+
     public $availableExpertFieldGroups = [];
     public $expertise_id;
 
@@ -33,6 +38,15 @@ class Wizard extends Component
     public $biography;
     public $picture;
     public $pictureUrl = '';
+
+    public $availableStates;
+    public $dob;
+    public $gender;
+    public $state;
+    public $city;
+    public $postcode;
+    public $address_line_1;
+    public $address_line_2;
 
     public function mount()
     {
@@ -58,10 +72,20 @@ class Wizard extends Component
         });
 
         $this->hourly_rate = $this->profile()->hourly_rate;
-        $this->platform_fee = $this->profile()->hourly_rate * .1;
+        $this->platform_fee = ($this->profile()->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
         $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
-        $this->pictureUrl = $this->profile()->getFirstMediaUrl('picture');
+        $this->pictureUrl = $this->profile()->picture;
+
+        $this->availableStates = State::get();
+        $user = auth()->user();
+        $this->dob = $user->expert_kyc->individual_dob;
+        $this->gender = $user->expert_kyc->individual_gender;
+        $this->state = $user->expert_kyc->individual_registered_address_state;
+        $this->city = $user->expert_kyc->individual_registered_address_city;
+        $this->postcode = $user->expert_kyc->individual_registered_address_postal_code;
+        $this->address_line_1 = $user->expert_kyc->individual_registered_address_line1;
+        $this->address_line_2 = $user->expert_kyc->individual_registered_address_line2;
     }
 
     public function render()
@@ -83,17 +107,17 @@ class Wizard extends Component
         }
         if ($this->currentStep == 2) {
             if($this->profile()->education->count() == 0){
-                return $this->dispatch('notify', content: 'Please add education', type: 'info');
+                return toast('success', 'Please add education', $this);
             }
         }
         if ($this->currentStep == 3) {
             if($this->profile()->experiences->count() == 0){
-                return $this->dispatch('notify', content: 'Please add experience', type: 'info');
+                return toast('info', 'Please add experience', $this);
             }
         }
         if ($this->currentStep == 4) {
             if($this->profile()->languages->count() == 0){
-                return $this->dispatch('notify', content: 'Please add language', type: 'info');
+                return toast('info', 'Please add language', $this);
             }
         }
         if ($this->currentStep == 5) {
@@ -101,7 +125,7 @@ class Wizard extends Component
             $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
         }
         if($this->currentStep == 6){
-            
+            $this->saveKyc();
         }
         if ($this->currentStep == 7) {
             $this->validate([
@@ -118,10 +142,35 @@ class Wizard extends Component
             return redirect()->route('expert.dashboard');
         }
 
-        if ($this->currentStep < 6) {
+        if ($this->currentStep < 7) {
             $this->currentStep += 1;
         }
 
+    }
+
+    public function saveKyc()
+    {
+        $user = User::find(auth()->user()->id);
+
+        ExpertKYC::updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'country' => $user->country->name,
+                'individual_dob' => Carbon::parse($this->dob),
+                'individual_gender' => $this->gender,
+                'individual_phone' => $user->phone,
+                'individual_registered_address_country' => $user->country->name,
+                'individual_registered_address_state' => $this->state,
+                'individual_registered_address_city' => $this->city,
+                'individual_registered_address_postal_code' => $this->postcode,
+                'individual_registered_address_line1' => $this->address_line_1,
+                'individual_registered_address_line2' => $this->address_line_2,
+                'status' => 1,
+            ]
+        );
+
+        //todo: submit kyc to stripe
+        PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function saveSkill()
@@ -138,13 +187,13 @@ class Wizard extends Component
     public function updatedHourlyRate()
     {
         if($this->hourly_rate){
-            $this->platform_fee = $this->hourly_rate * 0.1;
+            $this->platform_fee = ($this->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
             $this->total_fee = $this->hourly_rate + $this->platform_fee;
         }else{
             $this->platform_fee = 0;
             $this->total_fee = 0;
         }
-        
+
     }
 
     public function updatedPicture()
@@ -163,7 +212,7 @@ class Wizard extends Component
             'biography' => ['required'],
             'picture' => [
                 $required,
-                'image', 
+                'image',
                 File::image()->max(1 * 1024),
                 Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],

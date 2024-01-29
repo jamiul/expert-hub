@@ -3,9 +3,12 @@
 namespace App\Livewire\Project\Eoi;
 
 use App\Enums\EoiStatus;
+use App\Enums\InvitationStatus;
 use App\Models\Milestone;
 use App\Models\Project;
 use App\Notifications\EOIClientNotification;
+use Illuminate\Validation\Rules\File;
+use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -16,18 +19,12 @@ class Create extends Component
     
     public $project;
 
-    #[Validate('required')]
     public $amount;
     public $serviceFee;
     public $amountAfterServiceFee;
 
-    #[Validate('nullable')]
     public $duration;
-
-    #[Validate('required')]
     public $cover_letter = '';
-
-    #[Validate('nullable')]
     public $attachments = [];
 
     public $milestoneType = 'multiple';
@@ -37,8 +34,7 @@ class Create extends Component
     public $milestone_due_date = [];
     public $milestone_amount = [];
 
-    #[Validate('required')]
-    public $agreement = false;
+    public $agreement;
 
     public function mount(Project $project)
     {
@@ -55,16 +51,28 @@ class Create extends Component
         $this->serviceFee = $this->amount * 0.1;
         $this->amountAfterServiceFee = $this->amount - $this->serviceFee;
 
-        // $this->milestones[] = [
-        //     'milestone_description' => '',
-        //     'milestone_due_date' => '',
-        //     'milestone_amount' => '',
-        // ];
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    public function rules()
+    {
+        return [
+            'amount' => ['required'],
+            'duration' => ['required'],
+            'cover_letter' => ['required', 'max:2000', 'min:200'],
+            'agreement' => ['accepted'],
+            'attachments.*' => [
+                File::types(['jpg', 'png', 'jpeg', 'pdf', 'docx', 'xlsx'])
+            ]
+        ];
     }
 
     public function add($i)
     {
-        // dd($this->milestone_description);
         $this->validate(
             [
                 'milestone_description.0' => 'required',
@@ -161,6 +169,13 @@ class Create extends Component
                 ->usingName($fileName)
                 ->toMediaCollection('attachments');
         }
+        $invitation = $this->project->invitations()->where('expert_id', auth()->user()->profile->id)->first();
+        if($invitation){
+            $invitation->update([
+                'status' => InvitationStatus::Accepted
+            ]);
+        }
+        
         $this->project->client->user->notify(new EOIClientNotification([
             'title'   => 'New Eoi Submitted',
             'message' => '',

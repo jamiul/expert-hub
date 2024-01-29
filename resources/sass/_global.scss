@@ -677,3 +677,26 @@ ul.progress-bar-nav-horizontal {
         height: 50px;
     }
 }
+
+.payment-method-options {
+    .form-radio-option {
+        display: flex;
+        gap: 1rem;
+
+        .form-radio-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.bb-1 {
+    border-bottom: 1px solid $edu-border-color;
+}
+
+.bt-1 {
+    border-top: 1px solid $edu-border-color;
+}

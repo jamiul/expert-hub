@@ -10,4 +10,19 @@ class Contract extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class, 'expert_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Profile::class, 'client_id');
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

@@ -33,6 +33,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/job-posts', 'figma.projectCreate');
     Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
+    Route::view('/home', 'figma.home-page');
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
     Route::view('/client-profile-position-setup', 'figma.clientprofilepositionsetup');
@@ -163,6 +164,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-job-post-view', 'figma.client-job-post-view');
     Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
     Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
-
+    Route::view('/project/client-eoi-view-with-expert-profile', 'figma.client-eoi-view-with-expert-profile');
+    Route::view('/project/client-job-posts-deposit-payment', 'figma.client-job-posts-deposit-payment');
 
 });

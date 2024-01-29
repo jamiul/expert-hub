@@ -7,6 +7,7 @@
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
+        @vite('resources/css/client-dashboard.css')
         @vite('resources/css/components.css')
         @vite('resources/css/choices.css')
         @vite('resources/js/choices.min.js')

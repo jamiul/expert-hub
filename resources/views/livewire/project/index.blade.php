@@ -45,7 +45,7 @@
                                 <td>
                                     @if($project->isPublished())
                                         <p class="mb-1">Proposal</p>
-                                        <p class="mb-1 fw-medium">{{ $project->eois->count() }} (48 new)</p>
+                                        <p class="mb-1 fw-medium">{{ $project->eois->count() }} ({{ $project->newEois()->count() }} new) </p>
                                     @else
                                         -
                                     @endif
@@ -53,7 +53,7 @@
                                 <td>
                                     @if($project->isPublished())
                                         <p class="mb-1">Message</p>
-                                        <p class="mb-1 fw-medium">7</p>
+                                        <p class="mb-1 fw-medium">{{ $project->messagedEois()->count() }}</p>
                                     @else
                                         -
                                     @endif
@@ -61,7 +61,7 @@
                                 <td>
                                     @if($project->isPublished())
                                         <p class="mb-1">Hired</p>
-                                        <p class="mb-1 fw-medium">1</p>
+                                        <p class="mb-1 fw-medium">{{ $project->contracts->count() }}</p>
                                     @else
                                         -
                                     @endif
@@ -77,8 +77,9 @@
                                                     <a class="dropdown-item" href="{{ route('client.projects.edit', $project) }}">Edit Posting</a>
                                                 @endif
                                                 @if($project->isPublished())
-                                                <a class="dropdown-item" data-bs-toggle="modal"
-                                                    data-bs-target="#editpostingcustomize" href="#">Edit Posting</a>
+                                                <button type="button" wire:click="$dispatch('modal.open', {component: 'project.edit-modal', arguments: {'project': {{ $project->id }}}})" class="dropdown-item">Edit Posting</button>
+                                                {{-- <a class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#editpostingcustomize" href="#">Edit Posting</a> --}}
                                                 @endif
                                             </li>
                                             <li>

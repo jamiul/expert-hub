@@ -24,8 +24,8 @@
         <div class="service-fee-input-row">
             <div class="service-fee-description">
                 <p class="fw-medium mb-1">Platform service fee</p>
-                <p class="mb-1">The Eduexhub Service Fee Is 10% when you begin a contract with a new
-                    client. Once you will over $500 with your client, the fee will be 5%.</p>
+                <p class="mb-1">The Eduexhub Service Fee Is {{ env('EXPERT_SERVICE_CHARGE', 5) }}% when you begin a contract with a new
+                    client.</p>
             </div>
             <div class="service-fee-input">
                 <div class="d-flex gap-4 align-items-center">

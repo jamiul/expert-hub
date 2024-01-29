@@ -104,7 +104,6 @@
                     </div>
                 </div> <!--proposed-milestone-field-group--> --}}
             </div>
-            {{ $i }}
             <button type="button" wire:click="add({{ $i }})" class="btn btn-link d-flex align-items-center px-0 gap-2">
                 <x-icon.add-circle fill="#0036E3"/>
                 Add Milestones
@@ -177,16 +176,13 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
-
 <div class="card mb-40">
     <div class="card-body">
         <h3 class="mb-2 text-base">How long will this project take?</h3>
         <div style="max-width: 256px">
-            <x-form.select label="Project Duration" wire:model="duration">
+            <x-form.select label="Project Duration" wire:model.live="duration">
                 <option value="">Select Duration</option>
                 <option value="Mr">15 Days</option>
                 <option value="Mrs">30 days</option>

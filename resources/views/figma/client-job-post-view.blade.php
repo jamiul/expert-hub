@@ -760,6 +760,73 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="project-expert-card border-bottom">
+                                                    <div class="project-expert-thumb">
+                                                        <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                                    </div>
+                                                    <div class="project-expert-details">
+                                                        <div class="expert-card-header">
+                                                            <div class="expert-card-header-info">
+                                                                <p class="project-expert-profile-flag">Best Match</p>
+                                                                <h3 class="h6 project-expert-name mb-0">Professor Miles
+                                                                    Esther</h3>
+                                                                <ul class="project-expert-meta">
+                                                                    <li>Public Health</li>
+                                                                    <li>Melbourne University</li>
+                                                                    <li>Australia</li>
+                                                                </ul>
+                                                                <div class="d-flex gap-3 align-items-center">
+                                                                    <div><strong class="fw-medium">$200 </strong>/ hr
+                                                                    </div>
+                                                                    <div class="star-ratings">
+                                                                        <x-icon.star-fill/>
+                                                                        <x-icon.star-fill/>
+                                                                        <x-icon.star-fill/>
+                                                                        <x-icon.star-fill/>
+                                                                        <x-icon.star-fill/>
+                                                                    </div>
+                                                                    <div class="project-expert-profile-status">
+                                                                        Available now
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="expert-card-header-action">
+                                                                <div class="badge badge-warning badge-pill">Withdrawn by Expert</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="expert-card-body">
+                                                            <div class="project-expert-summary py-3">
+                                                                <p>Prof. Miles esther is an accomplished Curriculum
+                                                                    Development Specialist
+                                                                    with a distinguished career in education and a track
+                                                                    record of providing
+                                                                    consultation services in... <a href=""> more</a></p>
+                                                            </div>
+                                                            <div class="tag-list">
+                                                                <a href="#"
+                                                                   class="expert-profile-tag offer-consultation-btn">
+                                                                    <x-icon.video fill="#0036E3"/>
+                                                                    Offer Consultation</a>
+                                                                <a href="#" class="expert-profile-tag">Communication
+                                                                    Skills</a>
+                                                                <a href="#" class="expert-profile-tag">Industry Treds
+                                                                    Awareness</a>
+                                                                <a href="#" class="expert-profile-tag"> Research</a>
+                                                                <a href="#" class="expert-profile-tag">System Research
+                                                                    Development</a>
+                                                                <a href="#"
+                                                                   class="expert-profile-tag">Communication </a>
+                                                                <a href="#" class="expert-profile-tag">Industry
+                                                                    Treds</a>
+                                                                <a href="#" class="expert-profile-tag">Educational
+                                                                    Research</a>
+                                                                <a href="#" class="expert-profile-tag">System
+                                                                    Development</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

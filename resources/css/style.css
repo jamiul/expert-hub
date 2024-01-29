@@ -218,7 +218,7 @@ header .header-menu .login-block i {
     left: 0;
     right: 0;
     margin: 0 calc(50% - 50vw);
-    height: 580px;
+    height: 520px;
 }
 .product-slider .carousel-w .carousel-inner .item-text img {
     height: auto !important;
@@ -232,7 +232,7 @@ header .header-menu .login-block i {
     max-width: 248px;
     padding: 10px 10px;
     position: absolute;
-    top: 165px;
+    top: 110px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.66);
     box-shadow: 9px 9px 36px 0px rgba(14, 0, 98, 0.10);
@@ -288,7 +288,7 @@ header .header-menu .login-block i {
 }
 
 .product-slider .carousel-w .hero-contant {
-    width: 80%;
+    width: 100%;
     z-index: 9;
     padding-bottom: 80px;
 }
@@ -296,9 +296,8 @@ header .header-menu .login-block i {
 .product-slider .carousel-w .carousel-inner {
     width: 100%;
 }
-
 .product-slider .carousel-w .carousel-inner img {
-    height: 540px;
+    height: 460px;
     object-fit: contain;
     object-position: right;
     width: 640px;
@@ -477,11 +476,14 @@ header .header-menu .login-block i {
     font-size: 16px;
     color: #303744;
     line-height: 25px;
-    max-width: 570px;
+    max-width: 710px;
     margin: auto;
     padding-bottom: 80px;
 }
 
+.eudx-btn-primary {
+    width: 218px;
+}
 .require-main .require-block {
     text-align: center;
     position: relative;
@@ -499,7 +501,6 @@ header .header-menu .login-block i {
 }
 
 .require-main .require-block .require-img .number {
-    display: none;
     position: absolute;
     right: 0;
     top: -15px;
@@ -511,6 +512,22 @@ header .header-menu .login-block i {
     font-weight: 500;
     line-height: 22px;
     margin: 25px 0 15px;
+}
+
+.team-hire .row {
+    justify-content: center;
+}
+
+.about-team-interview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: -20px; */
+    gap:8px;
+}
+
+.about-team-interview p{
+margin-bottom: 0px;
 }
 
 .require-main .require-block .require-text p {
@@ -577,8 +594,12 @@ header .header-menu .login-block i {
 }
 
 .categories-main {
-    background: #e8ebf699;
+    background: #fff;
     padding: 90px 0;
+}
+
+.edux-team-margin-top {
+    margin-top: 90px;
 }
 
 .categories-main .categories-block {
@@ -749,7 +770,7 @@ img.exp-categoryl {
 }
 
 .team {
-    margin-bottom: 100px;
+    margin-bottom: 90px;
 }
 
 .team .team-text .heading {
@@ -803,7 +824,7 @@ img.exp-categoryl {
 }
 
 .eduexhub {
-    background: #e8ebf699;
+    background: #fff;
     padding: 90px 0px;
 }
 
@@ -1107,12 +1128,13 @@ img.exp-categoryl {
 
 .skillsets {
     padding: 90px 0px;
+    background: #e8ebf699;
 }
 
-.skillsets .tabbable-panel {
+/* .skillsets .tabbable-panel {
     box-shadow: 0px 8px 32px 0px #0e006214;
     padding: 30px 0;
-}
+} */
 
 .skillsets .tabbable-panel .nav-tabs {
     border: none;
@@ -1141,12 +1163,16 @@ img.exp-categoryl {
 }
 
 .skillsets .tabbable-panel .tab-content {
-    border-top: solid 1px #dadceb;
+    /* border-top: solid 1px #dadceb; */
     padding: 50px 40px 0;
 }
 
 .skillsets .accordion .at-tab {
     display: none;
+}
+
+.at-title.active h2 {
+    color: #0036E3 !important;
 }
 
 .skillsets .accordion .at-title {
@@ -1216,6 +1242,7 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-tab ul li a:hover {
     color: #0036e3;
+    text-decoration: underline;
 }
 
 footer .footer {

@@ -15,8 +15,15 @@ class Lists extends Component
 
     public $filtersArray;
 
-    public function mount()
+    public $project;
+
+    public function mount($project = null)
     {
+        if($project){
+            $this->project = auth()->user()->profile->projects()->where('id', $project)->first();
+        }else{
+            $this->project = 0;
+        }
         $this->filtersArray = request()->only(
             'search',
             'hourlyRate',

@@ -15,4 +15,29 @@ class Invitation extends Model
     protected $casts = [
         'status' => InvitationStatus::class,
     ];
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class, 'expert_id');
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'expert_id');
+    }
+
+    public function isPending()
+    {
+        return $this->status == InvitationStatus::Pending;
+    }
+
+    public function isDeclined()
+    {
+        return $this->status == InvitationStatus::Declined;
+    }
+
+    public function isAccepted()
+    {
+        return $this->status == InvitationStatus::Accepted;
+    }
 }
