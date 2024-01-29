@@ -1,4 +1,4 @@
-<div class="page-content p-0" wire:loading.class="opacity-25">
+<div>
     @forelse ($experts as $expert)
         <div class="expert-card">
             <div class="expert-card-header mb-2">
