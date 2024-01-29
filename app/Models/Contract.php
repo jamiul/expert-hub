@@ -15,4 +15,9 @@ class Contract extends Model
     {
         return $this->belongsTo(Profile::class);
     }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

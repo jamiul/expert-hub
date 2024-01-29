@@ -128,4 +128,14 @@ class Profile extends Model implements HasMedia
     {
         return $this->hasMany(Offer::class, 'expert_id');
     }
+
+    public function expertContracts()
+    {
+        return $this->hasMany(Contract::class, 'expert_id');
+    }
+
+    public function clientContracts()
+    {
+        return $this->hasMany(Contract::class, 'client_id');
+    }
 }

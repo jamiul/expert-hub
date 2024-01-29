@@ -23,7 +23,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'hire' }"
-                            @click="activeTab = 'hire'">Hire (1)
+                            @click="activeTab = 'hire'">Hire ({{ $contracts->count() }})
                     </button>
 
                 </div>
@@ -225,7 +225,7 @@
                                                 @livewire('experts.filter')
                                             </div>
                                             <div class="page-content">
-                                                @livewire('experts.lists')
+                                                @livewire('experts.lists', ['project' => $project->id])
                                             </div>
                                         </div>
                                     </div>
@@ -244,117 +244,47 @@
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'my-hires-experts'">
                                         <div class="expert-wrapper">
-                                            <div class="project-expert-card border-bottom">
-                                                <div class="project-expert-thumb">
-                                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                                </div>
-                                                <div class="project-expert-details">
-                                                    <div class="expert-card-header">
-                                                        <div class="expert-card-header-info">
-                                                            <h3 class="h6 project-expert-name mb-0">Professor Miles
-                                                                Esther</h3>
-                                                            <ul class="project-expert-meta">
-                                                                <li>Public Health</li>
-                                                                <li>Melbourne University</li>
-                                                                <li>Australia</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="expert-card-header-action">
-                                                            <button x-data="{ isFavorited: false }"
-                                                                    class="btn btn-md btn-icon btn-outline-light btn-favorite"
-                                                                    :class="{ 'favorited': isFavorited }"
-                                                                    @click="isFavorited = !isFavorited">
-                                                                    <span class="heart-line">
-                                                                        <x-icon.heart/>
-                                                                    </span>
-                                                                <span class="heart-filled">
-                                                                        <x-icon.heart-filled/>
-                                                                    </span>
-                                                            </button>
-                                                            <button class="btn btn-md btn-outline-primary"> Rehire
-                                                            </button>
-                                                            <button class="btn btn-md btn-primary"> Invite to job
-                                                            </button>
-                                                        </div>
+                                            @foreach ($myHires as $hire)
+                                                <div class="project-expert-card border-bottom">
+                                                    <div class="project-expert-thumb">
+                                                        <img src="{{ $hire->expert->picture }}"/>
                                                     </div>
-                                                    <div class="expert-card-body">
-                                                        <div class="d-flex gap-3">
-                                                            <div>
-                                                                <div class="badge badge-pill badge-warning">Active</div>
+                                                    <div class="project-expert-details">
+                                                        <div class="expert-card-header">
+                                                            <div class="expert-card-header-info">
+                                                                <h3 class="h6 project-expert-name mb-0">{{ $hire->expert->user->full_name }}</h3>
+                                                                <ul class="project-expert-meta">
+                                                                    <li>{{ $hire->expert->expertField->name }}</li>
+                                                                    <li>Melbourne University</li>
+                                                                    <li>{{ $hire->expert->user->country->name }}</li>
+                                                                </ul>
                                                             </div>
-                                                            <div>
-                                                                <h3 class="h6 d-flex gap-2 mb-0">
-                                                                    <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                                    <span> Developing curriculum for
-                                                                        Postgraduate
-                                                                        public health
-                                                                        unit
-                                                                    </span>
-                                                                </h3>
-                                                                <div class="project-item-price">Hourly:  <strong class="fw-medium">$200.00</strong></div>
+                                                            <div class="expert-card-header-action">
+                                                                @livewire('favorite.expert', ['expert' => $hire->expert])
+                                                                <x-expert.hire :expert="$hire->expert" :project="$project"/>
+                                                                <x-expert.invite wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $hire->expert->id }}, 'project': {{ $project->id }}}})"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="expert-card-body">
+                                                            <div class="d-flex gap-3">
+                                                                <div>
+                                                                    <div class="badge badge-pill badge-warning">Active</div>
+                                                                </div>
+                                                                <div>
+                                                                    <h3 class="h6 d-flex gap-2 mb-0">
+                                                                        <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
+                                                                        <span> 
+                                                                            {{ $hire->project->title }}
+                                                                        </span>
+                                                                    </h3>
+                                                                    <div class="project-item-price">{{ $hire->project->type }}:  <strong class="fw-medium">${{ $hire->project->budget_start_amount }}</strong></div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="project-expert-card">
-                                                <div class="project-expert-thumb">
-                                                    <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                                </div>
-                                                <div class="project-expert-details">
-                                                    <div class="expert-card-header">
-                                                        <div class="expert-card-header-info">
-                                                            <h3 class="h6 project-expert-name mb-0">Professor Miles
-                                                                Esther</h3>
-                                                            <ul class="project-expert-meta">
-                                                                <li>Public Health</li>
-                                                                <li>Melbourne University</li>
-                                                                <li>Australia</li>
-                                                            </ul>
-
-
-                                                        </div>
-                                                        <div class="expert-card-header-action">
-                                                            <button x-data="{ isFavorited: false }"
-                                                                    class="btn btn-md btn-icon btn-outline-light btn-favorite"
-                                                                    :class="{ 'favorited': isFavorited }"
-                                                                    @click="isFavorited = !isFavorited">
-                                                                    <span class="heart-line">
-                                                                        <x-icon.heart/>
-                                                                    </span>
-                                                                <span class="heart-filled">
-                                                                        <x-icon.heart-filled/>
-                                                                    </span>
-                                                            </button>
-                                                            <button class="btn btn-md btn-outline-primary"> Rehire
-                                                            </button>
-                                                            <button class="btn btn-md btn-primary"> Invite to
-                                                                project
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="expert-card-body">
-                                                        <div class="d-flex gap-3">
-                                                            <div>
-                                                                <div class="badge badge-pill badge-success">Active</div>
-                                                            </div>
-                                                            <div>
-                                                                <h3 class="h6 d-flex gap-2 mb-0">
-                                                                    <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                                    <span> Developing curriculum for
-                                                                        Postgraduate
-                                                                        public health
-                                                                        unit
-                                                                    </span>
-                                                                </h3>
-                                                                <div class="project-item-price">Hourly: <strong class="fw-medium">$200.00</strong></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @endforeach
                                         </div>
-
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'saved-experts'">
                                         <div class="expert-wrapper">
