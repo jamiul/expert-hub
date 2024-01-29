@@ -1171,6 +1171,10 @@ img.exp-categoryl {
     display: none;
 }
 
+.at-title.active h2 {
+    color: #0036E3 !important;
+}
+
 .skillsets .accordion .at-title {
     cursor: pointer;
     position: relative;
@@ -1238,6 +1242,7 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-tab ul li a:hover {
     color: #0036e3;
+    text-decoration: underline;
 }
 
 footer .footer {
