@@ -6,7 +6,7 @@
 </ul>
 <div class="progress-step-content mt-20">
 
-    <x-form.choice name="expertise_id" wire:model.blur="form.expertise_id" label="Consultation Title">
+    <x-form.choice name="expertise_id" wire:model.change="form.expertise_id" label="Consultation Title">
         <option value="">Select a consultation title</option>
         @foreach ($expertFields as $expertField)
             <optgroup label="# {{ $expertField->name }}">
@@ -144,111 +144,55 @@
         </h6>
         <p><a class="fw-medium text-decoration-underline" href="">Schedule Your
                 Consultation</a> (Max 5 schedule per day)</p>
-        <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
-
+        {{-- <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
             <div class="available-time-select-col eudx-time-select">
                 <h6>Selected slot</h6>
                 <ul class="edux-selected-slot">
                     <div class="row edux-padding-xs">
-                        <li class="edux-day-schedule">Friday</li>
+                        <li class="edux-day-schedule">{{ $form->date }}</li>
                         <li>01.00 AM</li>
                         <li>10:00 AM</li>
                         <li>04:00 PM</li>
                         <li>05:00 PM</li>
-                        <li>09:00 PM</li>
-                        <li>09:00 PM</li>
-                    </div>
-
-                    <div class="row edux-padding-xs">
-                        <li class="edux-day-schedule">Saturday</li>
-                        <li>01.00 AM</li>
-                        <li>10:00 AM</li>
-                        <li>04:00 PM</li>
-                        <li>05:00 PM</li>
-                        <li>09:00 PM</li>
                         <li>09:00 PM</li>
                     </div>
                 </ul>
             </div>
-
-        </div>
+        </div> --}}
 
     </div>
 
 
     <div class="mb-40">
-        <x-form.choice-static wire:model="titles" class="edux-timezoon" label="Select day">
-            <option value="Mr">Monday</option>
-            <option value="Mrs">Sunday</option>
-            <option value="Dr">Friday</option>
-            <option value="Prof">Wednesday</option>
-        </x-form.choice-static>
+        <x-form.choice name="date" wire:model="form.date" class="edux-timezoon" label="Select day">
+            @foreach ($form->daysInWeek as $day)
+                <option value="{{ $day }}">{{ $day }}</option>
+            @endforeach
+
+        </x-form.choice>
         <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
 
             <div class="available-time-select-col eudx-time-select">
 
                 <ul class="edux-selected-slot edux-selected-slot-more">
-                    <li>01.00 AM</li>
-                    <li class="selected-date-bg">10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>01.00 AM</li>
-
-                    <li>10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li class="selected-date-bg">09:00 PM</li>
-                    <li class="selected-date-bg">09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-
-                    <li>10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li class="selected-date-bg">09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-
-                    <li>10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li class="selected-date-bg">09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-
-                    <li>10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li class="selected-date-bg">09:00 PM</li>
-                    <li>09:00 PM</li>
-
-                    <li class="selected-date-bg">10:00 AM</li>
-                    <li>04:00 PM</li>
-                    <li>05:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-                    <li>09:00 PM</li>
-
-
+                    @foreach ($hours as $hour)
+                        <li
+                            wire:click="addConsultationSlot('{{ $hour }}')"
+                            class="{{ $form->selectedHours->contains($hour) ? 'selected-date-bg' : '' }}"
+                            id="hour-{{ $loop->index }}"
+                        >
+                            {{ $hour }}
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
             <button type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
-
         </div>
-
     </div>
 
-
-
     <div class="progress-step-content mt-40">
-        <h6 class="mb-2">Consultation Summery
+        <h6 class="mb-2">Consultation Summary
             <div class="tooltip-wrapper bottom-left">
                 <i class="tooltip-icon"></i>
                 <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
@@ -280,20 +224,7 @@
                     @if($form->image)
                         <img src="{{ $form->image ? $form->image->temporaryUrl() : '' }}">
                     @else
-                        <svg xmlns="http://www.w3.org/2000/svg" width="132" height="133" viewBox="0 0 132 133"
-                            fill="none">
-                            <g clip-path="url(#clip0_38_2)">
-                                <path
-                                    d="M81.048 80.678C92.1752 83.9312 101.948 90.7027 108.903 99.9778C115.858 109.253 119.62 120.532 119.625 132.125H12.375C12.3774 120.531 16.1382 109.251 23.0934 99.9753C30.0486 90.6997 39.8234 83.9288 50.952 80.678L66 103.25L81.048 80.678ZM92.8125 51.6875C92.8125 58.7986 89.9876 65.6185 84.9593 70.6468C79.931 75.6751 73.1111 78.5 66 78.5C58.8889 78.5 52.069 75.6751 47.0407 70.6468C42.0124 65.6185 39.1875 58.7986 39.1875 51.6875C39.1875 44.5764 42.0124 37.7565 47.0407 32.7282C52.069 27.6999 58.8889 24.875 66 24.875C73.1111 24.875 79.931 27.6999 84.9593 32.7282C89.9876 37.7565 92.8125 44.5764 92.8125 51.6875Z"
-                                    fill="#B3C1CF"></path>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_38_2">
-                                    <rect width="132" height="132" fill="white" transform="translate(0 0.5)">
-                                    </rect>
-                                </clipPath>
-                            </defs>
-                        </svg>
+                        <img src="{{ $form->imageUrl }}">
                     @endif
                 </div>
                 <p class="text-sm fst-italic my-1">
@@ -313,7 +244,7 @@
 
 
 
-    <div class="progress-step-content mt-40">
+    {{-- <div class="progress-step-content mt-40">
         <div class="offered-service-card mb-40">
             <div>
                 <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt2.jpg') }}" />
@@ -379,5 +310,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

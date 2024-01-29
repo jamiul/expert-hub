@@ -38,4 +38,14 @@ class Consultation extends Model implements HasMedia
             ->wherePivot('active', 1)
             ->withTimestamps();
     }
+
+    public function expertField()
+    {
+        return $this->belongsTo(Expertise::class, 'expertise_id');
+    }
+
+    public function slots()
+    {
+        return $this->hasMany(ConsultationSlot::class, 'consultation_id');
+    }
 }

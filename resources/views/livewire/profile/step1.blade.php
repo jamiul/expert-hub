@@ -17,8 +17,12 @@
     <div class="accordion-items-select-wrapper skillset-selection-area">
         <div class="card card-24">
             <div class="card-header bg-white">
-                <x-form.search class="input-field-md" name="skill" wire:model.live="skill"
-                               placeholder="Search skillsets..."/>
+                <x-form.search
+                    class="input-field-md"
+                    name="skill"
+                    wire:model.live="skill"
+                    placeholder="Search skillsets..."
+                />
             </div>
             <div class="card-body py-3">
 
