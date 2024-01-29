@@ -182,7 +182,7 @@
     <div class="card-body">
         <h3 class="mb-2 text-base">How long will this project take?</h3>
         <div style="max-width: 256px">
-            <x-form.select label="Project Duration" wire:model="duration">
+            <x-form.select label="Project Duration" wire:model.live="duration">
                 <option value="">Select Duration</option>
                 <option value="Mr">15 Days</option>
                 <option value="Mrs">30 days</option>

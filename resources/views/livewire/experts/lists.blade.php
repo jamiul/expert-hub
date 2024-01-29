@@ -30,7 +30,11 @@
                     <button class="btn btn-icon btn-outline-light m-1">
                         <x-icon.message-line/>
                     </button>
-                    <button class="btn btn-md btn-outline-primary">Invite Project</button>
+                    @auth
+                        <button wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})" class="btn btn-md btn-outline-primary">Invite Project</button>
+                    @else
+                        <a href="{{ route('auth.login') }}" class="btn btn-md btn-outline-primary">Invite Project</a>
+                    @endauth
                 </div>
             </div>
             <div class="expert-card-body">
