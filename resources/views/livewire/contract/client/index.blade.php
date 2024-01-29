@@ -7,7 +7,7 @@
             <div class="title-page-body project-tab" x-data="{ activeTab: 'in-progress-contract' }">
                 <div class="tab-nav">
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'in-progress-contract' }"
-                            @click="activeTab = 'in-progress-contract'">In progress (23)
+                            @click="activeTab = 'in-progress-contract'">In progress ({{ $contracts->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'dispute-contract' }"
@@ -49,173 +49,58 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                @foreach ($contracts as $contract)
+                                    <tr class="align-middle">
+                                        <td>
+                                            <p class="mb-1">ID: 7557uy8675656</p>
+                                            <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                            <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
+                                            <p class="mb-1">Escrow: $1000.00</p>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-3 align-item-center">
+                                                <div class="expert-thumb">
+                                                    <img class="rounded-circle" style="width: 40px"
+                                                            src="{{ $contract->expert->picture }}"/>
+                                                </div>
+                                                <div class="expert-info">
+                                                    <p class="fw-medium project-expert-name mb-0">{{ $contract->expert->user->full_name }}</p>
+                                                </div>
                                             </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="icon-btn border" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                    <x-icon.three-dots/>
+                                                </button>
+                                                <ul class="dropdown-menu z-3">
+                                                    <li>
+                                                        <a class="dropdown-item" href="/figma/client-chatbox-new/">
+                                                            Message Expert
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" data-bs-toggle="modal"
+                                                            data-bs-target="#disputeModal" href="#">
+                                                            Dispute
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"  href="#">Contact Support</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" data-bs-toggle="modal"
+                                                            data-bs-target="#endContractModal" href="#">End Contact</a>
+                                                    </li>
+                                                </ul>
                                             </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Expert</a>
-                                                </li>
-
-                                                <li><a class="dropdown-item" data-bs-toggle="modal"
-                                                        data-bs-target="#disputeModal" href="#">Dispute</a></li>
-                                                <li>
-                                                    <a class="dropdown-item"  href="#">Contact Support</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" data-bs-toggle="modal"
-                                                        data-bs-target="#endContractModal" href="#">End Contact</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Expert</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">Dispute</a></li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Contact Support</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">End Contact</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656 <span
-                                                class="badge badge-primary-light ms-3 d-inline-flex align-items-center gap-2"> <x-icon.video
-                                                    fill="#0036E3" width="18" height="18"/> Consultation</span></p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                        <a class="btn btn-primary" href="">Zoom Link</a>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1">Fixed: $1000.00</p>
-                                        <p class="mb-1 fw-medium">Escrow: $1000.00</p>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Expert</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="#">Dispute</a></li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Contact Support</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">End Contact</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
 

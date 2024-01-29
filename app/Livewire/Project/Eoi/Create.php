@@ -7,6 +7,7 @@ use App\Enums\InvitationStatus;
 use App\Models\Milestone;
 use App\Models\Project;
 use App\Notifications\EOIClientNotification;
+use Illuminate\Validation\Rules\File;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -18,18 +19,12 @@ class Create extends Component
     
     public $project;
 
-    #[Validate('required')]
     public $amount;
     public $serviceFee;
     public $amountAfterServiceFee;
 
-    #[Validate('nullable')]
     public $duration;
-
-    #[Validate('required')]
     public $cover_letter = '';
-
-    #[Validate('nullable')]
     public $attachments = [];
 
     public $milestoneType = 'multiple';
@@ -39,8 +34,7 @@ class Create extends Component
     public $milestone_due_date = [];
     public $milestone_amount = [];
 
-    #[Validate('required')]
-    public $agreement = false;
+    public $agreement;
 
     public function mount(Project $project)
     {
@@ -57,6 +51,24 @@ class Create extends Component
         $this->serviceFee = $this->amount * 0.1;
         $this->amountAfterServiceFee = $this->amount - $this->serviceFee;
 
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    public function rules()
+    {
+        return [
+            'amount' => ['required'],
+            'duration' => ['required'],
+            'cover_letter' => ['required', 'max:2000', 'min:200'],
+            'agreement' => ['accepted'],
+            'attachments.*' => [
+                File::types(['jpg', 'png', 'jpeg', 'pdf', 'docx', 'xlsx'])
+            ]
+        ];
     }
 
     public function add($i)

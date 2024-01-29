@@ -13,7 +13,12 @@ class Contract extends Model
 
     public function expert()
     {
-        return $this->belongsTo(Profile::class);
+        return $this->belongsTo(Profile::class, 'expert_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Profile::class, 'client_id');
     }
 
     public function project()

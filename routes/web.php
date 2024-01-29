@@ -7,10 +7,11 @@ use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
+use App\Http\Controllers\Frontend\ClientContractController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
-use App\Http\Controllers\Frontend\ContractController;
+use App\Http\Controllers\Frontend\ExpertContractController;
 use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
@@ -74,15 +75,16 @@ Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->mi
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
 Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
-Route::get('/expert/contracts', [ContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');
+Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-Route::get('/client/projects', [ProjectController::class, 'index'])->name('client.projects');
+Route::get('/client/projects', [ProjectController::class, 'index'])->middleware(['auth', 'client'])->name('client.projects');
 Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
+Route::get('/client/contracts', [ClientContractController::class, 'index'])->middleware(['auth', 'client'])->name('client.contracts');
 
 Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->middleware(['auth', 'client'])->name('offers.create');
 Route::get('/offers/{offer}', [OfferController::class, 'show'])->middleware(['auth', 'client'])->name('offers.show');
