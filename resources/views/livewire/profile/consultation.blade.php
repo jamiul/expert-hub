@@ -11,9 +11,12 @@
             </button>
         </div>
 
-        <button wire:click="$dispatch('modal.open', { component: 'profile.consultation.add'})" class="icon-btn icon-btn-md border">
+        <button
+            wire:click="$dispatch('modal.open', { component: 'profile.consultation.add'})"
+            class="icon-btn icon-btn-md border {{ $consultations->count() == 3 ? 'd-none' : '' }}">
             <x-icon.add />
         </button>
+
     </div>
     @forelse ($consultations as $consultation)
         <div class="consultant-prof1 card-body border-0 edux-border-bottom pt-3">

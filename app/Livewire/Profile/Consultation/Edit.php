@@ -15,6 +15,7 @@ class Edit extends Modal
     public int|Consultation $consultation;
     public Form $form;
 
+    public $editable = true;
     public $expertSkills;
 
     public $expertFields;
@@ -29,9 +30,9 @@ class Edit extends Modal
         $this->hours = HoursHelper::create('00:00', '23:00', 60, 'g:i A');
     }
 
-    public function addConsultationSlot($hour)
+    public function editSlot($hour)
     {
-        $this->form->consultationSlot($hour);
+        $this->form->editConsultationSlot($hour);
     }
 
     public function updateConsultation()

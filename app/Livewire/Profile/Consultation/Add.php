@@ -13,6 +13,7 @@ class Add extends Modal
     use WithFileUploads;
     public Form $form;
 
+    public $editable = false;
     public $expertSkills;
 
     public $expertFields;
@@ -32,9 +33,9 @@ class Add extends Modal
         $this->close();
     }
 
-    public function addConsultationSlot($hour)
+    public function addSlot($hour)
     {
-        $this->form->consultationSlot($hour);
+        $this->form->addConsultationSlot($hour);
     }
 
     public function profile()

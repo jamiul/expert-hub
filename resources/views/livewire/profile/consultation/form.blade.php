@@ -58,12 +58,8 @@
                             /hr
                         </div>
                         <div>
-                            <x-form.input
-                                type="number"
-                                name="hourly_rate"
-                                wire:model.live="form.hourly_rate"
-                                placeholder="0.00"
-                            />
+                            <x-form.input type="number" name="hourly_rate" wire:model.live="form.hourly_rate"
+                                placeholder="0.00" />
                         </div>
                     </div>
                 </div>
@@ -79,13 +75,8 @@
                             /hr
                         </div>
                         <div>
-                            <x-form.input
-                                type="text"
-                                disabled
-                                name="platform_fee"
-                                wire:model.live="form.platform_fee"
-                                placeholder="0.00"
-                            />
+                            <x-form.input type="text" disabled name="platform_fee"
+                                wire:model.live="form.platform_fee" placeholder="0.00" />
                         </div>
                     </div>
                 </div>
@@ -101,13 +92,8 @@
                             /hr
                         </div>
                         <div>
-                            <x-form.input
-                                type="text"
-                                disabled
-                                name="total_fee"
-                                wire:model.live="form.total_fee"
-                                placeholder="0.00"
-                            />
+                            <x-form.input type="text" disabled name="total_fee" wire:model.live="form.total_fee"
+                                placeholder="0.00" />
                         </div>
                     </div>
                 </div>
@@ -168,21 +154,28 @@
             @foreach ($form->daysInWeek as $day)
                 <option value="{{ $day }}">{{ $day }}</option>
             @endforeach
-
         </x-form.choice>
+
         <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
-
             <div class="available-time-select-col eudx-time-select">
-
                 <ul class="edux-selected-slot edux-selected-slot-more">
+                    @php
+                        $selectedHoursArray = is_array($form->selectedHours) ? $form->selectedHours : $form->selectedHours->toArray();
+                    @endphp
                     @foreach ($hours as $hour)
-                        <li
-                            wire:click="addConsultationSlot('{{ $hour }}')"
-                            class="{{ $form->selectedHours->contains($hour) ? 'selected-date-bg' : '' }}"
-                            id="hour-{{ $loop->index }}"
-                        >
-                            {{ $hour }}
-                        </li>
+                        @if ($editable)
+                            <li wire:click="editSlot('{{ $hour }}')"
+                                class="{{ in_array($hour, $selectedHoursArray) || ($form->selectedHours instanceof Illuminate\Support\Collection && $form->selectedHours->contains($hour)) ? 'selected-date-bg' : '' }}"
+                                id="hour-{{ $loop->index }}">
+                                {{ $hour }}
+                            </li>
+                        @else
+                            <li wire:click="addSlot('{{ $hour }}')"
+                                class="{{ in_array($hour, $form->selectedHours) ? 'selected-date-bg' : '' }}"
+                                id="hour-{{ $loop->index }}">
+                                {{ $hour }}
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -202,10 +195,8 @@
         </h6>
 
         <div class="edux-select-options position-relative">
-            <x-form.textarea
-                wire:model.defer="form.description"
-                placeholder="e.g. Brief 300 words summary about your expertise."
-            />
+            <x-form.textarea wire:model.defer="form.description"
+                placeholder="e.g. Brief 300 words summary about your expertise." />
             <span class="edux-total-select-count">0/200</span>
         </div>
 
@@ -221,7 +212,7 @@
         <div class="image-upload-preview">
             <div class="">
                 <div class="uploaded-img-preview">
-                    @if($form->image)
+                    @if ($form->image)
                         <img src="{{ $form->image ? $form->image->temporaryUrl() : '' }}">
                     @else
                         <img src="{{ $form->imageUrl }}">
