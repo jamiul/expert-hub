@@ -109,7 +109,7 @@
                             <x-form.input type="text" label="Last Name" wire:model.blur="last_name" placeholder="Your last name"/>
                         </div>
                         <x-form.input type="email" label="Email Address" wire:model.live.debounce.1000="email" placeholder="name@example.com"/>
-                        <x-form.input type="tel" label="Phone (optional)" wire:model="phone" placeholder="your phone number"/>
+                        <x-form.input type="tel" label="Phone (optional)" wire:model.blur="phone" placeholder="your phone number"/>
                         <x-form.password type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
                         <x-form.password type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
                         <x-form.choice label="Country" wire:model.change="country_id">
@@ -123,8 +123,8 @@
                                 Send me emails with tips on how to find projects that fit my expertise.
                             </x-form.check>
                             <x-form.check wire:model.boolean.change="terms_agreed" required>
-                                Yes, I understand and agree to the <a href="#">EduEXHub Terms of Service</a>,
-                                including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy.</a>
+                                Yes, I understand and agree to the <a target="_blank" href="{{ route('terms-of-service') }}">EduEXHub Terms of Service</a>,
+                                including the <a target="_blank" href="{{ route('user-agreement') }}">User Agreement</a> and <a target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
                             </x-form.check>
                         </div>
                         <div class="d-grid mt-3">

@@ -21,7 +21,7 @@ class Position extends Component
             'current_role' => $this->current_role,
             'current_organization' => $this->current_organization,
         ]);
-        return redirect()->route('client.profile');
+        return redirect()->route('client.profile.edit');
     }
 
     public function render()

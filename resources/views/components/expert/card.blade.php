@@ -1,5 +1,6 @@
 @props([
     'expert' => null,
+    'url' => null
 ])
 <div class="project-expert-card border-bottom">
     <div class="project-expert-thumb">
@@ -9,7 +10,9 @@
         <div class="expert-card-header">
             <div class="expert-card-header-info">
                 <p class="project-expert-profile-flag">Best Match</p>
-                <h3 class="h6 project-expert-name mb-0">{{ $expert->user->full_name }}</h3>
+                <a href="{{ $url ?? route('expert.profile.show', $expert) }}">
+                    <h3 class="h6 project-expert-name mb-0">{{ $expert->user->full_name }}</h3>
+                </a>
                 <ul class="project-expert-meta">
                     <li>{{ $expert->expertField->name }}</li>
                     <li>Melbourne University</li>

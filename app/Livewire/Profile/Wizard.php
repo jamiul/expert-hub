@@ -21,19 +21,16 @@ class Wizard extends Component
 
     public int $currentStep = 1;
 
-    public $availableExpertFieldGroups = [];
+    public $expertCategories = [];
+    public $expert_category_id;
+
+    public $expertises = [];
     public $expertise_id;
 
-    public $availableSkillGroups = [];
     public $availableSkills = [];
-    public $selectedSkillGroups = [];
-    public $selectedSkills = [];
-    public $skillSearchResult = [];
-    public $skill = '';
+    public $skills = [];
 
     public $hourly_rate = '';
-    public $platform_fee = '';
-    public $total_fee = '';
 
     public $biography;
     public $picture;
@@ -50,42 +47,32 @@ class Wizard extends Component
 
     public function mount()
     {
-        $this->availableExpertFieldGroups = Expertise::expertise()->isParent()->get();
+        $this->expertCategories = Expertise::expertise()->isParent()->get();
+        $this->expert_category_id = $this->profile()->expert_category_id;
         $this->expertise_id = $this->profile()->expertise_id;
-        $this->profile()->expertises->each(function($skill){
-            $this->selectedSkills[$skill->id] = [
-                'name' => $skill->name,
-                'parent_id' => $skill->parent_id,
-            ];
-            if (!in_array($skill['parent_id'], $this->selectedSkillGroups)) {
-                $this->selectedSkillGroups[] = $skill['parent_id'];
-                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
-            }
-        });
-        $this->availableSkillGroups = Expertise::skill()->isParent()->pluck('id')->toArray();
-        $skills = Expertise::skill()->get();
-        $skills->each(function($skill){
-            $this->availableSkills[$skill->id] = [
-                'name' => $skill->name,
-                'parent_id' => $skill->parent_id,
-            ];
-        });
-
+        if($this->expert_category_id){
+            $this->expertises = Expertise::where('parent_id', $this->expert_category_id)->get();
+        }
+        $this->skills = $this->profile()->expertises->pluck('id')->toArray();
+        $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
         $this->hourly_rate = $this->profile()->hourly_rate;
-        $this->platform_fee = ($this->profile()->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
-        $this->total_fee = $this->profile()->hourly_rate + $this->platform_fee;
         $this->biography = $this->profile()->biography;
         $this->pictureUrl = $this->profile()->picture;
 
         $this->availableStates = State::get();
         $user = auth()->user();
-        $this->dob = $user->expert_kyc->individual_dob;
-        $this->gender = $user->expert_kyc->individual_gender;
-        $this->state = $user->expert_kyc->individual_registered_address_state;
-        $this->city = $user->expert_kyc->individual_registered_address_city;
-        $this->postcode = $user->expert_kyc->individual_registered_address_postal_code;
-        $this->address_line_1 = $user->expert_kyc->individual_registered_address_line1;
-        $this->address_line_2 = $user->expert_kyc->individual_registered_address_line2;
+        $this->dob = $user->expert_kyc?->individual_dob;
+        $this->gender = $user->expert_kyc?->individual_gender;
+        $this->state = $user->expert_kyc?->individual_registered_address_state;
+        $this->city = $user->expert_kyc?->individual_registered_address_city;
+        $this->postcode = $user->expert_kyc?->individual_registered_address_postal_code;
+        $this->address_line_1 = $user->expert_kyc?->individual_registered_address_line1;
+        $this->address_line_2 = $user->expert_kyc?->individual_registered_address_line2;
+    }
+
+    public function updatedExpertCategoryId()
+    {
+        $this->expertises = Expertise::where('parent_id', $this->expert_category_id)->get();
     }
 
     public function render()
@@ -103,7 +90,7 @@ class Wizard extends Component
     public function next()
     {
         if ($this->currentStep == 1) {
-            $this->saveSkill();
+            $this->saveStepOne();
         }
         if ($this->currentStep == 2) {
             if($this->profile()->education->count() == 0){
@@ -120,14 +107,10 @@ class Wizard extends Component
                 return toast('info', 'Please add language', $this);
             }
         }
-        if ($this->currentStep == 5) {
-            $this->validateOnly('hourly_rate');
-            $this->profile()->update(['hourly_rate' => $this->hourly_rate]);
-        }
-        if($this->currentStep == 6){
+        if($this->currentStep == 5){
             $this->saveKyc();
         }
-        if ($this->currentStep == 7) {
+        if ($this->currentStep == 6) {
             $this->validate([
                 'biography' => ['required'],
                 'picture' => $this->rules()['picture'],
@@ -142,7 +125,7 @@ class Wizard extends Component
             return redirect()->route('expert.dashboard');
         }
 
-        if ($this->currentStep < 7) {
+        if ($this->currentStep < 6) {
             $this->currentStep += 1;
         }
 
@@ -173,27 +156,20 @@ class Wizard extends Component
         PaymentHelper::expertRegisterToStripe($user);
     }
 
-    public function saveSkill()
+    public function saveStepOne()
     {
         $this->validate([
+            'expert_category_id' => ['required'],
             'expertise_id' => ['required'],
-            'selectedSkills' => ['required', 'array'],
+            'skills' => ['required', 'array', 'max:10', 'min:1'],
+            'hourly_rate' => ['required'],
         ]);
-        $this->profile()->update(['expertise_id' => $this->expertise_id]);
-        $expertises = array_keys($this->selectedSkills);
-        $this->profile()->expertises()->sync($expertises);
-    }
-
-    public function updatedHourlyRate()
-    {
-        if($this->hourly_rate){
-            $this->platform_fee = ($this->hourly_rate * env('EXPERT_SERVICE_CHARGE')) / 100;
-            $this->total_fee = $this->hourly_rate + $this->platform_fee;
-        }else{
-            $this->platform_fee = 0;
-            $this->total_fee = 0;
-        }
-
+        $this->profile()->update([
+            'expert_category_id' => $this->expert_category_id,
+            'expertise_id' => $this->expertise_id,
+            'hourly_rate' => $this->hourly_rate,
+        ]);
+        $this->profile()->expertises()->sync($this->skills);
     }
 
     public function updatedPicture()
@@ -207,8 +183,8 @@ class Wizard extends Component
         $required = $this->pictureUrl == '' ? 'required' : 'nullable';
         return [
             'expertise_id' => ['required'],
-            'selectedSkills' => ['required', 'array'],
-            'hourly_rate' => ['required', 'numeric', 'min:10', 'max:1000'],
+            'skills' => ['required', 'array'],
+            'hourly_rate' => ['required', 'numeric', 'min:50', 'max:1000'],
             'biography' => ['required'],
             'picture' => [
                 $required,
@@ -217,6 +193,13 @@ class Wizard extends Component
                 Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
         ];
+    }
+
+    public function updatedSkills()
+    {
+        $this->validate([
+            'skills' => ['required', 'array', 'max:10', 'min:1'],
+        ]);
     }
 
     public function updated($propertyName)
@@ -232,58 +215,6 @@ class Wizard extends Component
             'educationQualifications.required' => 'Please add some Education Qualifications',
             'selectedSkills.required' => 'The skills field is required',
         ];
-    }
-
-    public function updatedSkill()
-    {
-        if ($this->skill) {
-            $this->searchSkill();
-        } else {
-            $this->skillSearchResult = [];
-        }
-    }
-
-    public function searchSkill()
-    {
-        $this->skillSearchResult = Expertise::skill()->isChild()->where('name', 'like', '%' . $this->skill . '%')
-            ->whereNotIn('id', array_keys($this->selectedSkills))
-            ->limit(20)
-            ->get()
-            ->pluck('name', 'id')->toArray();
-    }
-
-    public function addSkill($id)
-    {
-        $skill = $this->availableSkills[$id];
-        if ($skill) {
-            $this->selectedSkills[$id] = $skill;
-            ksort($this->selectedSkills);
-            if(!in_array($skill['parent_id'], $this->selectedSkillGroups)){
-                $this->selectedSkillGroups[] = $skill['parent_id'];
-                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
-            }
-            unset($this->availableSkills[$id]);
-            if($this->skill){
-                $this->searchSkill();
-            }
-        }
-    }
-
-    public function removeSkill($id)
-    {
-        $skill = $this->selectedSkills[$id];
-        if ($skill){
-            unset($this->selectedSkills[$id]);
-            $this->availableSkills[$id] = $skill;
-            ksort($this->availableSkills);
-        }
-        $this->selectedSkillGroups = [];
-        foreach($this->selectedSkills as $skill){
-            if (!in_array($skill['parent_id'], $this->selectedSkillGroups)) {
-                $this->selectedSkillGroups[] = $skill['parent_id'];
-                $this->selectedSkillGroups = array_values($this->selectedSkillGroups);
-            }
-        }
     }
 
     public function removePicture()

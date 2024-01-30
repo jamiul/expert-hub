@@ -76,6 +76,16 @@ class Project extends Model implements HasMedia
         return $this->hasMany(Eoi::class);
     }
 
+    public function newEois()
+    {
+        return $this->eois()->whereDate('created_at', now())->get();
+    }
+
+    public function messagedEois()
+    {
+        return $this->eois()->where('is_messaged', true)->get();
+    }
+
     public function invitations()
     {
         return $this->hasMany(Invitation::class);

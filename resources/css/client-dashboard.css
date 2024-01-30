@@ -2611,10 +2611,14 @@ p.short-by-date {
   border-top: 1px solid  #E7E5EF;
   border-bottom: 1px solid  #E7E5EF;
   color: #191D24;
-
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
+}
+
+.transaction-all  tbody  tr.edux-pending-payment td{
+  border-bottom: 1px solid  #E7E5EF;
+  background: rgba(235, 239, 247, 0.30);
 }
 
 .check-box-option {
@@ -3558,7 +3562,7 @@ font-weight: 500;
   margin-bottom: 0px !important;
   padding: 30px 0px 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
   width: 100%;
 }
@@ -3950,13 +3954,12 @@ th.th-heading {
 
 span.fixed-screw {
   display: flex;
-  padding: 3px 0px;
+  padding:5px;
   border-radius: 29px;
-  background: var(--color-gray, #EBEFF7);
+  background:  #EBEFF7;
   border: none;
   justify-content: center;
-  color: var(--color-heading-color, #191D24);
-
+  color:  #191D24;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -8907,9 +8910,9 @@ table.edux-table-extra-padding td:last-child {
 .short-by-select-reverse .form-multiselect{
   min-width:253px;
 }
-.edux-middle-border{
+/* .edux-middle-border{
   border-bottom:2px solid #6E737C;
-}
+} */
 
 .edux-ref-id{
   color: #0036E3;
@@ -9106,6 +9109,193 @@ table.edux-table-extra-padding td:last-child {
   padding: 12px;
   gap: 6px;
 }
+
+.get-paid-payment {
+  display: flex;
+  flex-direction: row;
+  gap: 54px;
+}
+
+.account-action ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  gap: 10px;
+}
+
+.account-action ul li {
+  overflow: hidden;
+  color: #303744;
+  text-overflow: ellipsis;
+  font-family: Colfax;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+li.resticted {
+  color: #F00 !important;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 63px;
+  border: 1px solid  #F00;
+  display: flex;
+  padding: 4px 10px 2px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+li.disabled {
+  display: flex;
+  padding: 4px 10px 2px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 63px;
+  border: 1px solid  #E9B911;
+  color: #E9B911 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.edux-paypal-visa-billing-padding{
+  padding: 40px;
+}
+
+.edux-paypal-visa-billing-padding .edux-btn-border-primary {
+  max-width: 270px;
+}
+
+.view-requirement {
+  display: flex;
+  padding: 7px 42px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #191D24;
+  text-align: center;
+  font-family: Colfax;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  border-radius: 4px;
+  border: 1px solid #C8C5D4 !important;
+  background: #FFF !important;
+}
+.get-paid-end .btn {
+  min-width: 184px;
+  min-height: 48px;
+}
+
+
+.get-paid-all {
+  border-radius: 50% !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  background: #FFF !important;
+  border: 2px solid rgba(14, 0, 98, 0.1) !important;
+}
+
+.over-view .nav-link.active {
+  color: #0036E3;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  border-bottom: 2px solid #0036E3;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.over-view .nav-link{
+  color: #191D24;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+.edux-tbl-action {
+  text-align: right;
+}
+
+
+.transaction-all-require  thead th {
+  border-top: 1px solid rgba(14, 0, 98, 0.10);
+  border-bottom: 1px solid  rgba(14, 0, 98, 0.10);
+  background: #FFF;
+  color: rgba(48, 55, 68, 0.80);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 13px 8px;
+  color: #0036E3;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.transaction-all-require  tr td {
+  padding:24px 0px;
+}
+
+.transaction-all-require  tr:hover td {
+  background-color: transparent;
+}
+
+.padding-40 {
+  padding: 0px 40px 10px;
+}
+
+.padding-close {
+  padding: 30px 40px 20px;
+}
+
+.no-action-required {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px;
+}
+
+.no-action-required p{
+  color:  #275846;
+  text-align: center;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.no-action-required span{
+  color:  #275846;
+  font-family: Colfax;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.date-area .flatpickr-input {
+  width: 234px;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-area .form-input-group {
+  margin-bottom:0px;
+}
+
+
   /* ============================================ Expert Profile End ============================================= */
 
 /**** ============================================== Responsive Design Start Here  ================================= ***/

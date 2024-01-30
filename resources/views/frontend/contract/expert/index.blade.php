@@ -1,4 +1,4 @@
 @extends('frontend.layouts.app')
 @section('content')
-    @livewire('contract.index')
+    @livewire('contract.expert.index')
 @endsection

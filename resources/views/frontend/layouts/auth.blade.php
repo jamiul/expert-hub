@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="auth-nav d-flex align-items-center">
-                        <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}" /></a>
+                        <a href="/"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
                     </nav>
                 </div>
             </div>

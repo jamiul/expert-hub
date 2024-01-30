@@ -18,12 +18,14 @@ class Index extends Component
     public $filteredExperts;
     public $savedExperts;
     public $contracts;
+    public $myHires;
 
     public function mount()
     {
         $this->filteredExperts = Profile::expert()->get();
         $this->savedExperts = auth()->user()->profile->savedExperts();
         $this->contracts = $this->project->contracts;
+        $this->myHires = auth()->user()->profile->clientContracts;
     }
 
     public function addToShortList($id)
