@@ -3562,7 +3562,7 @@ font-weight: 500;
   margin-bottom: 0px !important;
   padding: 30px 0px 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
   width: 100%;
 }
@@ -3954,13 +3954,12 @@ th.th-heading {
 
 span.fixed-screw {
   display: flex;
-  padding: 3px 0px;
+  padding:5px;
   border-radius: 29px;
-  background: var(--color-gray, #EBEFF7);
+  background:  #EBEFF7;
   border: none;
   justify-content: center;
-  color: var(--color-heading-color, #191D24);
-
+  color:  #191D24;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -9284,6 +9283,18 @@ li.disabled {
   font-style: normal;
   font-weight: 400;
 }
+
+
+.date-area .flatpickr-input {
+  width: 234px;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-area .form-input-group {
+  margin-bottom:0px;
+}
+
 
   /* ============================================ Expert Profile End ============================================= */
 
