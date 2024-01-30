@@ -28,7 +28,10 @@
                             <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
                             <div class="homepage-slider-content">
                                 <a href="{{ route('expert.profile.show', $expert) }}">
-                                    <img src="{{ asset('assets/frontend/img/map-img.png') }}"/>
+                                    <div class="slider-map-wrapper">
+                                        <img src="{{ asset('assets/frontend/img/map-img.png') }}"/>
+                                        <div class="australia">Australia</div>
+                                    </div>
                                     <h4>{{ $expert->user->full_name }}</h4>
                                     <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
                                     <p class="text-primary">Oxford University</p>
