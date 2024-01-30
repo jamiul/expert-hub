@@ -1,58 +1,22 @@
 <div class="progress-step-content ">
-    <h5 class="mb-2">Hourly rate</h5>
-    <p>Clients will see this rate on your profile and in search results once you publish your
-        profile. You can adjust your rate every time you submit a proposal.</p>
-
-
-    <div class="service-fee-input-area">
-        <div class="service-fee-input-row">
-            <div class="service-fee-description">
-                <p class="fw-medium mb-1">Hourly Rate</p>
-                <p class="mb-1">Total amount the client will see</p>
-            </div>
-            <div class="service-fee-input">
-                <div class="d-flex gap-4 align-items-center">
-                    <div>
-                        /hr
-                    </div>
-                    <div>
-                        <x-form.input type="number" name="hourly_rate" wire:model.live="hourly_rate" placeholder="0.00"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="service-fee-input-row">
-            <div class="service-fee-description">
-                <p class="fw-medium mb-1">Platform service fee</p>
-                <p class="mb-1">The Eduexhub Service Fee Is {{ env('EXPERT_SERVICE_CHARGE', 5) }}% when you begin a contract with a new
-                    client.</p>
-            </div>
-            <div class="service-fee-input">
-                <div class="d-flex gap-4 align-items-center">
-                    <div>
-                        /hr
-                    </div>
-                    <div>
-                        <x-form.input type="text" disabled name="platform_fee" wire:model.live="platform_fee" placeholder="0.00"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="service-fee-input-row">
-            <div class="service-fee-description">
-                <p class="fw-medium mb-1">Hourly Rate</p>
-                <p class="mb-1">Total amount the client will see</p>
-            </div>
-            <div class="service-fee-input">
-                <div class="d-flex gap-4 align-items-center">
-                    <div>
-                        /hr
-                    </div>
-                    <div>
-                        <x-form.input type="text" disabled name="total_fee" wire:model.live="total_fee" placeholder="0.00"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h6 class="mb-2">eKYC (electronic Know Your Customer) Info</h6>
+    <p class="mb-4">Additional Information</p>
+    <x-form.flatpicker label="Date of Birth" wire:model="dob"/>
+    <x-form.select wire:model="gender" label="Gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </x-form.select>
+    <x-form.input readonly wire:model="country" label="Country" value="{{ auth()->user()->country->name }}"/>
+    <x-form.choice wire:model="state" label="State">
+        <option value="">Select State</option>
+        @foreach ($availableStates as $state)
+            <option value="{{ $state->name }}">{{ $state->name }}</option>
+        @endforeach
+    </x-form.choice>
+    <x-form.input type="text" label="City" wire:model="city" placeholder="City"/>
+    <x-form.input type="text" label="Postcode" wire:model="postcode" placeholder="Postcode"/>
+    <x-form.input type="text" label="Address Line 1" wire:model="address_line_1" placeholder="Address Line 1"/>
+    <x-form.input type="text" label="Address Line 2" wire:model="address_line_2" placeholder="Address Line 2"/>
 </div>

@@ -24,7 +24,7 @@ class Edit extends Modal
     {
         $this->education = $education;
         $this->form->set($education);
-        $this->institutions = University::where('country_id', 14)->get();
+        $this->institutions = University::where('country_id', 12)->get();
         $this->degrees = Degree::get();
         $this->fields = Expertise::expertise()->isChild()->get();
         $this->years = years();
