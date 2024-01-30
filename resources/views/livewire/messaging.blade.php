@@ -441,12 +441,13 @@
 
                         <!-- TODO:NEL: add message typing -->
 
-                        <div class="chatbox-conversation-message message-typing">
+                        <!-- <div class="chatbox-conversation-message message-typing d-none" wire:ignore> -->
+                        <div class="chatbox-conversation-message message-typing d-none" wire:ignore>
                             <div class="conversation-user-thumb">
-                                <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                                <img src="" id="message-writer" alt="">
                             </div>
-                            <div class="conversation-user-message">
-                                <div class="loader">
+                            <div class="conversation-user-message " >
+                                <div class="loader ">
                                     <svg height="10" width="40">
                                         <circle class="dot" cx="10" cy="5" r="3" style="fill:grey;" />
                                         <circle class="dot" cx="20" cy="5" r="3" style="fill:grey;" />
@@ -705,7 +706,7 @@
         </div>
 
     </div>
-    {{dump('Neloy dumping'.$currentConversation?->id)}}
+
 </div>
 
 
@@ -713,101 +714,52 @@
 
 let conversation_id =  $('.chatbox-contact-person').data("conversation-id");
 
-// alert(conversation_id);
+
 $('.chatbox-contact-person').on('click', function() {
-    // var jata = {{$currentConversation}};
-    conversation_id = $(this).data("conversation-id");
-    // alert(conversation_id);
-        
-        
+    
+    conversation_id = $(this).data("conversation-id");           
     })
-// document.addEventListener('DOMContentLoaded', () => {
-// Livewire.hook('element.updated', (el, component) => {
-// var jata = @this.currentConversation.id;
-// console.log(jata);
-// })
-// });
+
 
 
 
   
     $('#messageBody').on('keydown', function() {
-        // alert(conversation_id);
-        // alert({{$currentConversation?->id}});
-        // alert('key down{{auth()->user()->id}}');
-        // alert(conversation_id);
-          let channel = Echo.private("message-typing."+conversation_id);
-        //   console.log(channel);
-        // let channel = Echo.private('message-typing');
-
+        
+        let channel = Echo.private("message-typing."+conversation_id);
+        
         setTimeout(() => {
-            channel.whisper('typo', {
+            channel.whisper('typing', {
                 
-                  conversation_id: conversation_id,
-                typing: true
+                conversation_id: conversation_id,
+                userImage: "{!! auth()->user()->profile->getFirstMediaUrl('picture') !!}"
             })
         }, 300)
     })
 
 
-
-
-    // Echo.private('message-typing')
-    //   .listenForWhisper('typo', (e) => {
-    //     // e.typing ? $('.typing').show() : $('.typing').hide()
-    //     console.log(e);
-    //   })
-
-    // setTimeout( () => {
-    // //   $('.typing').hide()
-    // }, 1000)
-
-
-    // Echo.join("message-typing").whisper('typo', {
-    //     // id: {{ auth()->id() }}
-    //     // alert('inside whisper');
-    // });
-
-
-
-
-    // resources/assets/js/app.js
-
-
-    // resources/assets/js/app.js
-
-
-    //   let _this = this;
-
-    //   Echo.private('message-typing')
-    //     .listenForWhisper('typo', (e) => {
-    //     //   this.user = e.user;
-    //     //   this.typing = e.typing;
-    // console.log(e);
-    //       // remove is typing indicator after 0.9s
-    //       setTimeout(function() {
-    //         _this.typing = false
-    //       }, 900);
-    //     });
-
-    // =============worked
-   
+  
     
     Echo.private("message-typing."+conversation_id)
-    
-        // .listenForWhisper('typo', (e) => {
-        .listenForWhisper('typo', (e) => {
+            
+        .listenForWhisper('typing', (e) => {
             console.log(e);
-            // e.typing ? $('.message-typing').show() : $('.message-typing').hide()
-            e.conversation_id == conversation_id ? $('.loader').show() : $('.loader').hide()
-            // $('.message-typing').hide();
-
+            
+            if(e.conversation_id == conversation_id) {
+                $("#message-writer").attr("src",e.userImage);
+                $('.message-typing').removeClass('d-none')
+                
+            }else {
+                $('.message-typing').addClass('d-none')
+                
+            }
+            
             setTimeout(() => {
-                $('.loader').hide()
-            }, 900)
+                $('.message-typing').addClass('d-none')
+               
+            }, 1000)
 
 
         });
-        console.log(Echo);
-        $('.loader').hide()
+        
 </script>
