@@ -28,7 +28,7 @@
                     </div>
                     <div class="project-item-action d-flex align-items-center gap-2">
                         <div class="project-item-price">
-                            {{ $project->type }}: <strong>${{ $project->budget_start_amount . ' - ' . $project->budget_end_amount }}</strong>
+                            {{ $project->type }}: <strong>${{ $project->budget_start_amount }}@if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong>
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown"

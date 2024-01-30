@@ -4,6 +4,7 @@ namespace App\Livewire\Project\Eoi;
 
 use App\Enums\EoiStatus;
 use App\Enums\InvitationStatus;
+use App\Enums\MilestoneStatus;
 use App\Models\Milestone;
 use App\Models\Project;
 use App\Notifications\EOIClientNotification;
@@ -24,10 +25,11 @@ class Create extends Component
     public $amountAfterServiceFee;
 
     public $duration;
+    public $availableDurations = [];
     public $cover_letter = '';
     public $attachments = [];
 
-    public $milestoneType = 'multiple';
+    public $milestoneType = 'single';
     public $milestones = [];
     public $i = 1;
     public $milestone_description = [];
@@ -47,7 +49,7 @@ class Create extends Component
                 $this->amount = 0;
             }
         }
-        
+        $this->availableDurations = ['15 Days','30 Days','90 Days','180 Days'];
         $this->serviceFee = $this->amount * 0.1;
         $this->amountAfterServiceFee = $this->amount - $this->serviceFee;
 
@@ -150,7 +152,7 @@ class Create extends Component
                         'title' => $value,
                         'due_date' => now(),
                         'amount' => $this->milestone_amount[$key],
-                        'status' => 'Pending',
+                        'status' => MilestoneStatus::Pending,
                     ]);
                 }
             }else{
@@ -159,7 +161,7 @@ class Create extends Component
                     'title' => $this->project->title,
                     'due_date' => now(),
                     'amount' => $this->amount,
-                    'status' => 'Pending',
+                    'status' => MilestoneStatus::Pending,
                 ]);
             }
         }
