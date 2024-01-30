@@ -209,7 +209,7 @@
                                     <button class="tab-nav-item"
                                             @click="activeInvitedExpertTab = 'my-hires-experts'"
                                             :class="{ 'active': activeInvitedExpertTab === 'my-hires-experts' }">My
-                                        Hires Experts (1)
+                                        Hires Experts ({{ $myHires->count() }})
                                     </button>
                                     <button class="tab-nav-item" @click="activeInvitedExpertTab = 'saved-experts'"
                                             :class="{ 'active': activeInvitedExpertTab === 'saved-experts' }">Saved
@@ -244,7 +244,7 @@
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'my-hires-experts'">
                                         <div class="expert-wrapper">
-                                            @foreach ($myHires as $hire)
+                                            @forelse ($myHires as $hire)
                                                 <div class="project-expert-card border-bottom">
                                                     <div class="project-expert-thumb">
                                                         <img src="{{ $hire->expert->picture }}"/>
@@ -283,7 +283,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach
+                                            @empty
+                                                <x-empty/>
+                                            @endforelse
                                         </div>
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'saved-experts'">
