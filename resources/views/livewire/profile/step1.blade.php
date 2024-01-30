@@ -1,20 +1,50 @@
 <div class="progress-step-content  ">
-    <h6 class="mb-2">Expert by Field</h6>
-    <x-form.choice wire:model.change="expertise_id">
-        <option value="">Select Title</option>
-        @foreach ($availableExpertFieldGroups as $group)
-            <optgroup label="{{ $group->name }}">
-                @foreach ($group->children as $child)
-                    <option value="{{ $child->id }}">{{ $child->name }}</option>
-                @endforeach
-            </optgroup>
-        @endforeach
-    </x-form.choice>
-    <h6 class="mb-2 mt-20">Expert skillset</h6>
-    @error('selectedSkills')
+    <h6 class="mb-2">Tell us about your area of experties</h6>
+    <div class="pt-4">
+        <x-form.select wire:model.live="expert_category_id" :search="false" label="Expert by Categories">
+            <option value="">Select expert category</option>
+            @foreach ($expertCategories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+        </x-form.select>
+    </div>
+    <div class="pt-4">
+        <x-form.select wire:model.live="expertise_id" :search="false" label="Your Expertise">
+            <option value="">Select Your Expertise</option>
+            @foreach ($expertises as $expertise)
+                <option value="{{ $expertise->id }}">{{ $expertise->name }}</option>
+            @endforeach
+        </x-form.select>
+    </div>
+    <div class="pt-4">
+        <x-form.choice wire:model.live="skills" multiple label="Your Skillset">
+            @foreach ($availableSkills as $id => $name)
+                <option value="{{ $id }}">{{ $name }}</option>
+            @endforeach
+        </x-form.choice>
+        <div class="text-sm">Suggestion skills:  <span class="text-sm fw-medium">Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></div>
+    </div>
+    <div class="service-fee-input-area pt-4">
+        <div class="service-fee-input-row">
+            <div class="service-fee-description">
+                <p class="fw-medium mb-1">What is your preferred Hourly Rate</p>
+            </div>
+            <div class="service-fee-input">
+                <div class="d-flex gap-4 align-items-center">
+                    <div>
+                        /hr
+                    </div>
+                    <div>
+                        <x-form.input type="number" wire:model.blur="hourly_rate" placeholder="0.00"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- @error('selectedSkills')
     <div class="form-input-error-message">{{ $message }}</div>
-    @enderror
-    <div class="accordion-items-select-wrapper skillset-selection-area">
+    @enderror --}}
+    {{-- <div class="accordion-items-select-wrapper skillset-selection-area">
         <div class="card card-24">
             <div class="card-header bg-white">
                 <x-form.search class="input-field-md" name="skill" wire:model.live="skill"
@@ -81,5 +111,5 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

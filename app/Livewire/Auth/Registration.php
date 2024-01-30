@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Registration extends Component {
@@ -23,6 +24,7 @@ class Registration extends Component {
     public array $titles;
     public array $countries;
 
+    #[Url()]
     public string $type;
     public string $title;
     public string $first_name;
@@ -31,7 +33,7 @@ class Registration extends Component {
     public string $phone;
     public string $password;
     public string $password_confirmation;
-    public string $country_id;
+    public int $country_id = 12;
     public ?bool $send_tips = false;
     public ?bool $terms_agreed;
 
@@ -42,12 +44,12 @@ class Registration extends Component {
 
     public function rules() {
         return [
-            'type'                  => [ 'required' ],
+            'type'                  => [ 'required', Rule::in([ProfileType::Expert, ProfileType::Client]) ],
             'title'                 => [ 'required' ],
             'first_name'            => [ 'required' ],
             'last_name'             => [ 'required' ],
             'email'                 => [ 'required', 'email', 'unique:users' ],
-            'phone'                 => [ 'nullable' ],
+            'phone'                 => ['required', 'digits:9' ],
             'password'              => [
                 'required',
                 Password::min( 8 )
@@ -58,7 +60,7 @@ class Registration extends Component {
             'password_confirmation' => [ 'required_with:password', 'same:password' ],
             'country_id'            => [ 'required' ],
             'send_tips'             => [ 'nullable' ],
-            'terms_agreed'          => [ 'required' ],
+            'terms_agreed'          => [ 'accepted' ],
         ];
     }
 

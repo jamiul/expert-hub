@@ -51,6 +51,9 @@ Route::view('/components/widgets', 'sidebar-widget');
 Route::view('/components/cards', 'cards');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::view('/terms-of-service', 'terms-of-service')->name('terms-of-service');
+Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy-policy');
 
 Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name

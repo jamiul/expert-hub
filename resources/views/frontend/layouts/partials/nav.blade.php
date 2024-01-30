@@ -7,17 +7,17 @@
             <nav class="main-header-nav">
                 <ul>
                     <li>
-                        <a href="{{ url('/find-experts') }}">{{ __('Experts') }}</a>
+                        <a href="{{ route('find.experts') }}">{{ __('Experts') }}</a>
                     </li>
 
                     <li>
-                        <a href="{{ url('find-projects') }}">{{ __('Projects') }}</a>
+                        <a href="{{ route('find.projects') }}">{{ __('Projects') }}</a>
                     </li>
                     <li>
-                        <a href="#">{{ __('Training') }}</a>
+                        <a href="#">{{ __('Trainings') }}</a>
                     </li>
                     <li>
-                        <a href="{{ url('scholarship-database') }}">{{ __('Scholarship') }}</a>
+                        <a href="{{ route('scholarship-database') }}">{{ __('Scholarship Database') }}</a>
                     </li>
                     <li>
                         <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
@@ -36,7 +36,7 @@
 
             <div class="header-special-menu">
                 <ul class="">
-                    <li><a href="#">Join as an Expert</a></li>
+                    <li><a href="{{ route('auth.registration',['type' => \App\Enums\ProfileType::Expert->value]) }}">Join as an Expert</a></li>
                     <li class="header-special-menu-active-item"><a href="{{ route('projects.create') }}">{{ __('Post your Project') }}</a></li>
                     @guest
                         <li><a href="{{ route('auth.login') }}"> {{ __('Log In') }}  </a></li>
