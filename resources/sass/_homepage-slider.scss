@@ -1,6 +1,25 @@
 .homepage-main-slider-wrapper {
     background: #E8EBF6;
 
+    .row {
+        min-height: 520px;
+    }
+
+    .hero-text {
+        padding: 100px 0 114px;
+
+        h2 {
+            font-size: 43px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%;
+        }
+
+        p {
+            margin: 16px 0 32px;
+        }
+    }
+
     .homepage-slider-item {
         position: relative;
         text-align: right;

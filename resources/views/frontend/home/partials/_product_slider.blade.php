@@ -1,6 +1,6 @@
 <div class="homepage-main-slider-wrapper">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-end">
             <div class="col-md-6">
                 <div class="hero-text">
                     <h2>Find a Top Academic <br> Expert for Your Project</h2>
