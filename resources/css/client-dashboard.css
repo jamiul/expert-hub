@@ -8071,12 +8071,12 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   background: rgba(0, 54, 227, 0.02);
 }
-.text-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+/*.text-center {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 10px;*/
+/*}*/
 
 
 .edux-label-upload {

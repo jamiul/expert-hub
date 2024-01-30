@@ -1,75 +1,65 @@
-<div class="require-main find-projects-require-main project-instruction">
+<div class="page-section work-steps-section">
     <div class="container">
-        <div class="heading">
-            <h4>Require steps</h4>
-            <h2>{{ $title }}</h2>
-            <p>We are the largest, globally connected network of top academic talent, and we're prepared to tackle
-                your most critical projects.</p>
+        <div style="max-width: 725px; margin-bottom: 75px" class="section-title-wrapper text-center mx-auto">
+            <h2 class="section-title">Required Steps</h2>
+            <p class="section-title-lead">{{ $title }}</p>
+            <p class="section-title-summary">Step into the largest global network of academic and industry experts,
+                ready to tackle your most complex projects. Find the perfect expert for your project with our simple,
+                four-step process.</p>
         </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="require-block">
-                    <div class="require-arrow">
-                        <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                    </div>
-                    <div class="require-img">
-                        <img src="<?php echo e(asset('assets/frontend/img/require1.png')); ?>">
-                        <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n1.png')); ?>">
-                    </div>
-                    <div class="require-text">
-                        <h3>Create a Profile</h3>
-                        <p>Highlight your skills and experience, show your portfolio, and set your ideal pay
-                            rate.</p>
-                    </div>
+        <div class="work-steps-wrapper">
+            <div class="work-steps-box">
+                <div class="work-steps-icon">
+                    <span>1</span>
+                    <img src="<?php echo e(asset('assets/frontend/img/step-post-project.svg')); ?>">
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="require-block">
-                    <div class="require-arrow">
-                        <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                    </div>
-                    <div class="require-img">
-                        <img src="<?php echo e(asset('assets/frontend/img/require2.png')); ?>">
-                        <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n2.png')); ?>">
-                    </div>
-                    <div class="require-text">
-                        <h3>Submit Project <br> Interest</h3>
-                        <p>Review expressions of interest from our network of academic experts who are interested in
-                            working on your project.</p>
-                    </div>
+                <div class="work-steps-content">
+                    <h3>Post Your
+                        Project</h3>
+                    <p>Whether it's a university, organisational or personal project, our academic and industry experts
+                        are here to help.</p>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="require-block">
-                    <div class="require-arrow">
-                        <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                    </div>
-                    <div class="require-img">
-                        <img src="<?php echo e(asset('assets/frontend/img/require3.png')); ?>">
-                        <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n3.png')); ?>">
-                    </div>
-                    <div class="require-text">
-                        <h3>Complete the <br> Project</h3>
-                        <p>Check steps off as you finish and work with your client if you have questions.</p>
-                    </div>
+            </div> <!--work-steps-box-->
+            <div class="work-steps-box">
+                <div class="work-steps-icon">
+                    <span>2</span>
+                    <img src="<?php echo e(asset('assets/frontend/img/step-interest.svg')); ?>">
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="require-block">
-                    <div class="require-img">
-                        <img src="<?php echo e(asset('assets/frontend/img/require4.png')); ?>">
-                        <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n4.png')); ?>">
-                    </div>
-                    <div class="require-text">
-                        <h3>Get paid <br> securely</h3>
-                        <p>Payment held in escrow until project is complete to your satisfection</p>
-                    </div>
+                <div class="work-steps-content">
+                    <h3>Expressions of Interest</h3>
+                    <p>Highly-qualified academic and industry experts will express interest if they are available to
+                        contribute to your project.</p>
                 </div>
-            </div>
+            </div> <!--work-steps-box-->
+            <div class="work-steps-box">
+                <div class="work-steps-icon">
+                    <span>3</span>
+                    <img src="<?php echo e(asset('assets/frontend/img/step-perfect-match.svg')); ?>">
+                </div>
+                <div class="work-steps-content">
+                    <h3>Choose Your
+                        Perfect Match</h3>
+                    <p>Make an informed choice by selecting the academic or industry expert who aligns best with your
+                        project requirements.</p>
+                </div>
+            </div> <!--work-steps-box-->
+            <div class="work-steps-box">
+                <div class="work-steps-icon">
+                    <span>4</span>
+                    <img src="<?php echo e(asset('assets/frontend/img/step-pay.svg')); ?>">
+                </div>
+                <div class="work-steps-content">
+                    <h3 style="max-width: 120px">Pay Securely</h3>
+                    <p>Book with confidence as your payment is held securely in escrow until the project is completed to
+                        your satisfaction.</p>
+                </div>
+            </div> <!--work-steps-box-->
+
         </div>
-        <hr class="my-4">
-        <div class="text-center">
-            <a href="" class="btn btn-primary btn-md">Get Started</a>
+
+
+        <div style="margin-top: 50px" class="text-center">
+            <a href="" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
         </div>
     </div>
 </div>
