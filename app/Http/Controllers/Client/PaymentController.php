@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Client;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
+use App\Models\Contract;
 use App\Models\Milestone;
+use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -69,18 +71,34 @@ class PaymentController extends Controller {
     /*
      * fund a milestone /payment/pay
      * */
-    public function pay() {
+    public function pay(Request $request) {
         $user = auth()->user();
 
         $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
 
-        $milestone = Milestone::find(1);
-
-        $milestone_amount = $milestone->amount;
+        //read payment type
+        $reference = $request->reference;
+        if($reference == 'contract'){
+            $contract = Contract::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+            $milestones = Milestone::where('contract_id', $contract->id)->where('status', 'Want to Pay')->get();
+            $project = $contract->project;
+        } else if($reference == 'offer'){
+            $contract = Offer::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+            $milestones = Milestone::where('offer_id', $contract->id)->where('status', 'Want to Pay')->get();
+            $project = $contract->project;
+        } else {
+            abort(404);
+        }
+        $milestone_amount = $milestones->sum('amount');
         //breakdown charge into pieces
         $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
 
-        return view( 'frontend.client.payment.pay', compact( 'payment_methods', 'milestone', 'milestone_charges' ) );
+        return view( 'frontend.client.payment.summary', compact( 'payment_methods',
+            'project',
+            'contract',
+            'milestones',
+            'milestone_charges'
+        ) );
     }
 
     /*
