@@ -46,7 +46,7 @@
                                          alt="">
                                 </div>
                                 <div class="user-small-card-info">
-                                    <p class="m-0 fw-bold">{{ $contract->expert->user->first_name }} {{ $contract->expert->user->last_name }}</p>
+                                    <p class="m-0 fw-bold">{{ $contract->expert->user->full_name }}</p>
                                 </div>
                             </div>
 
