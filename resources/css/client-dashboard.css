@@ -5907,9 +5907,9 @@ p.p-rote {
 
 }
 
-.live-zoom {
+/* .live-zoom {
   max-width: 220px !important;
-}
+} */
 
 .academic-block.academic-blog .live-zoom {
   border-right: none !important
@@ -9294,6 +9294,51 @@ li.disabled {
 .date-area .form-input-group {
   margin-bottom:0px;
 }
+
+.consultation-with-area {
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #FFF;
+}
+
+/* ============================= Training Start Here ================================= */
+.training-speaker-title-area {
+  display: flex;
+  justify-content: space-between;
+}
+.training-speaker-option {
+  display: flex;
+  justify-content: space-between;
+  gap:8px;
+
+}
+
+.training-speaker-option span{
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  border: 2px solid #EBEFF7;
+}
+
+.training-expert-card .scholarship-details .custom-table .tr .td:first-child {
+  width: 145px;
+}
+
+.training-speaker-area {
+  border-radius: 8px;
+  border: 3px solid rgba(0, 54, 227, 0.04);
+  background: #FFF;
+  padding: 24px;
+  margin-top: 10px;
+}
+/* ============================= Training Start Here ================================= */
 
 
   /* ============================================ Expert Profile End ============================================= */
