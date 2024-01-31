@@ -18,6 +18,7 @@ class Add extends Modal
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );
+        $stripe_account_id = $user->profile->stripe_client_id;
 
         if ( $user->profile->stripe_client_id == '' ) {
             $stripe_account = $stripe->customers->create( [
@@ -28,12 +29,14 @@ class Add extends Modal
             $profile                   = Profile::where( 'user_id', $user->id )->first();
             $profile->stripe_client_id = $stripe_account->id;
             $profile->save();
+
+            $stripe_account_id = $stripe_account->id;
         }
 
         //create setup intent
         try {
             $intent = $stripe->setupIntents->create( [
-                'customer'                  => $user->profile->stripe_client_id,
+                'customer'                  => $stripe_account_id,
                 'usage'                     => 'off_session',
                 'automatic_payment_methods' => [ 'enabled' => true ],
                 'metadata'                  => [

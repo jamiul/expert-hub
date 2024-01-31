@@ -86,7 +86,7 @@
                                                           href="#">Policy</a> fees and
                                 <a class="text-decoration-underline fw-medium" href="#">estimated taxes</a>
                             </p>
-                            <button class="btn btn-primary btn-md w-100">Fund Milestone & Hire</button>
+                            <button class="btn btn-primary btn-md w-100" id="fund_now">Fund Milestone & Hire</button>
                         </div>
                     </div>
                 </div>
@@ -155,93 +155,6 @@
             });
         })
 
-
-        document.addEventListener('DOMContentLoaded', async () => {
-            const stripe = Stripe('{{ env('STRIPE_KEY') }}');
-            console.log(stripe);
-            {{--const {--}}
-            {{--    error: backendError,--}}
-            {{--    clientSecret--}}
-            {{--} = await fetch('{{ route('client.payment.createPaymentIntent') }}', {--}}
-            {{--    method: 'POST',--}}
-            {{--    body: JSON.stringify({--}}
-            {{--        milestone_id: 1,--}}
-            {{--        amount: document.getElementById("release_value").value--}}
-            {{--    }),--}}
-            {{--    headers: {--}}
-            {{--        "X-CSRF-Token": "{{ csrf_token() }}",--}}
-            {{--        'Content-type': 'application/json;',--}}
-            {{--    }--}}
-            {{--}).then(r => r.json());--}}
-            {{--if (backendError) {--}}
-            {{--    addMessage(backendError.message);--}}
-            {{--}--}}
-
-            // const appearance = { /* appearance */};
-            // const options = {
-            //     layout: {
-            //         type: 'accordion',
-            //         defaultCollapsed: false,
-            //         radios: false,
-            //         spacedAccordionItems: true
-            //     }
-            // };
-            //
-            // const elements = stripe.elements({clientSecret, appearance});
-            // const paymentElement = elements.create('payment', options);
-            // paymentElement.mount('#payment-element');
-
-            // const linkAuthenticationElement = elements.create("linkAuthentication");
-            // linkAuthenticationElement.mount("#link-authentication-element");
-
-            // If the customer's email is known when the page is loaded, you can
-            // pass the email to the linkAuthenticationElement on mount:
-            //
-            //   linkAuthenticationElement.mount("#link-authentication-element",  {
-            //     defaultValues: {
-            //       email: 'jenny.rosen@example.com',
-            //     }
-            //   })
-            // If you need access to the email address entered:
-            //
-            //  linkAuthenticationElement.on('change', (event) => {
-            //    const email = event.value.email;
-            //    console.log({ email });
-            //  })
-
-            // When the form is submitted...
-            const form = document.getElementById('payment-form');
-            let submitted = false;
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                // Disable double submission of the form
-                if(submitted) { return; }
-                submitted = true;
-                form.querySelector('button').disabled = true;
-
-                const nameInput = document.querySelector('#name');
-
-                // Confirm the payment given the clientSecret
-                // from the payment intent that was just created on
-                // the server.
-                const {error: stripeError} = await stripe.confirmPayment({
-                    elements,
-                    confirmParams: {
-                        return_url: "{{ route('client.payment.index') }}",
-                    }
-                });
-
-                if (stripeError) {
-                    addMessage(stripeError.message);
-                    // reenable the form.
-                    submitted = false;
-                    form.querySelector('button').disabled = false;
-                    return;
-                }
-            });
-        });
-
         var stripe;
         var card;
 
@@ -249,7 +162,9 @@
             fetch('{{ route('client.payment.chargeCardOffsession') }}', {
                 method: 'POST',
                 body: JSON.stringify({
-                    payment_method_id: paymentMethod
+                    payment_method_id: paymentMethod,
+                    reference: '{{ request()->reference }}',
+                    id: {{ request()->id }}
                 }),
                 headers: {
                     "X-CSRF-Token": "{{ csrf_token() }}",
@@ -258,24 +173,9 @@
             }).then(function(result) {
                 return result.json();
             }).then(function (data){
-                setupElements();
-
-                console.log(data.clientSecret);
-
-                setupNewPaymentMethodView(data.clientSecret);
-
-                if (data.error && data.error === "authentication_required") {
-                    // Card needs to be authenticatied
-                    // Reuse the card details we have to use confirmCardPayment() to prompt for authentication
-                    showAuthenticationView(data);
-                } else if (data.error) {
-                    // Card was declined off-session -- ask customer for a new card
-                    notify('error', data.error);
-                } else if (data.succeeded) {
-                    console.log(data);
-                    // Card was successfully charged off-session
-                    // No recovery flow needed
-                    paymentIntentSucceeded(data.clientSecret, ".sr-select-pm");
+                if(data.intent.status == "succeeded"){
+                    notify('success', 'Payment escrow successfully.'),
+                    window.location.href = data.redirect
                 }
             });
         }
@@ -349,13 +249,14 @@
                 // document.querySelector(".code-preview").classList.add("expand");
             });
         };
-        {{--document.querySelector('#fund_now').addEventListener('click', function (event) {--}}
-        {{--    event.preventDefault();--}}
-        {{--    const stripe = Stripe('{{ env('STRIPE_KEY') }}');--}}
 
-        {{--    var selectedPaymentMethod = document.querySelector(".payment_method:checked").getAttribute('data-id');--}}
+        document.querySelector('#fund_now').addEventListener('click', function (event) {
+            event.preventDefault();
+            const stripe = Stripe('{{ env('STRIPE_KEY') }}');
 
-        {{--    chargeCard(selectedPaymentMethod);--}}
-        {{--});--}}
+            var selectedPaymentMethod = document.querySelector(".payment_method:checked").getAttribute('data-id');
+
+            chargeCard(selectedPaymentMethod);
+        });
     </script>
 @endsection
