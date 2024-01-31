@@ -8,7 +8,6 @@
     @include('frontend.home.partials._eduexhub')
     @include('frontend.home.partials._academic_block')
     @include('frontend.home.partials._scholarship')
-
     @livewire('skill-sets')
 @endsection
 
