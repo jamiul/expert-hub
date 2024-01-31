@@ -3,12 +3,12 @@
 @section('content')
     @include('frontend.home.partials._product_slider')
     <livewire:require-steps :title="$requireTitle">
-    @include('frontend.home.partials._expert_main')
     @include('frontend.home.partials._categories_main')
     @include('frontend.home.partials._team')
     @include('frontend.home.partials._eduexhub')
-    @include('frontend.home.partials._scholarship')
     @include('frontend.home.partials._academic_block')
+    @include('frontend.home.partials._scholarship')
+
     @livewire('skill-sets')
 @endsection
 

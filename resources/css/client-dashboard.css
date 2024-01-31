@@ -892,17 +892,17 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   border-bottom: 1px solid #E7E5EF !important
 }
 
-.owl-carousel button.owl-prev, button.owl-next {
-  width: 44px;
-  height: 44px;
-  border-radius: 42.84px !important;
-  background: #fff !important;
-  color: #000 !important;
-  text-decoration: none;
-  font-size: 28px !important;
-  position: absolute;
-  top: 41%;
-}
+/*.owl-carousel button.owl-prev, button.owl-next {*/
+/*  width: 44px;*/
+/*  height: 44px;*/
+/*  border-radius: 42.84px !important;*/
+/*  background: #fff !important;*/
+/*  color: #000 !important;*/
+/*  text-decoration: none;*/
+/*  font-size: 28px !important;*/
+/*  position: absolute;*/
+/*  top: 41%;*/
+/*}*/
 
 .owl-carousel button.owl-prev {
   left: -50px;
@@ -937,22 +937,22 @@ button.btn.btn-xs.btn-success.btn-preview.active {
   display: none !important;
 }
 
-.owl-carousel button.owl-next {
-  right: 40px;
-  background: rgba(0, 54, 227, 1) !important;
-  color: #fff !important;
-}
+/*.owl-carousel button.owl-next {*/
+/*  right: 40px;*/
+/*  background: rgba(0, 54, 227, 1) !important;*/
+/*  color: #fff !important;*/
+/*}*/
 
 .portfolioCaousel button.owl-next {
   right: 0px !important;
   background: rgba(0, 54, 227, 1) !important;
   color: #fff !important;
 }
-button.owl-next span {
-  width: 44px;
-  height: 44px;
-  border-radius: 42.84px;
-}
+/*button.owl-next span {*/
+/*  width: 44px;*/
+/*  height: 44px;*/
+/*  border-radius: 42.84px;*/
+/*}*/
 
 
 .discover-carousel .owl-stage-outer {
@@ -8071,12 +8071,12 @@ font-weight: 400;
   border: 2px solid  #E7E5EF;
   background: rgba(0, 54, 227, 0.02);
 }
-.text-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+/*.text-center {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 10px;*/
+/*}*/
 
 
 .edux-label-upload {
