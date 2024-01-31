@@ -345,3 +345,14 @@ $page-section-bg: #F1F3FA;
         }
     }
 }
+
+.experts-skills-tab {
+    .accordion{
+        .at-tab{
+            ul{
+                column-count: 2;
+                column-gap: 40px;
+            }
+        }
+    }
+}

@@ -1,8 +1,8 @@
 <div class="academic-block">
     <div class="container">
-        <div class="heading">
-            <h4>Academic training</h4>
-            <h2>Upcoming Academic Training</h2>
+        <div style="margin-bottom: 30px" class="section-title-wrapper text-center">
+            <h2 class="section-title">Academic training</h2>
+            <p class="section-title-lead">Upcoming Academic Training</p>
         </div>
         <div class="row">
             <div class="col-md-3 col-sm-6">

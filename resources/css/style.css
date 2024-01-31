@@ -220,6 +220,7 @@ header .header-menu .login-block i {
     margin: 0 calc(50% - 50vw);
     height: 520px;
 }
+
 .product-slider .carousel-w .carousel-inner .item-text img {
     height: auto !important;
     width: auto;
@@ -296,6 +297,7 @@ header .header-menu .login-block i {
 .product-slider .carousel-w .carousel-inner {
     width: 100%;
 }
+
 .product-slider .carousel-w .carousel-inner img {
     height: 460px;
     object-fit: contain;
@@ -484,6 +486,7 @@ header .header-menu .login-block i {
 .eudx-btn-primary {
     width: 218px;
 }
+
 .require-main .require-block {
     text-align: center;
     position: relative;
@@ -523,11 +526,11 @@ header .header-menu .login-block i {
     align-items: center;
     justify-content: center;
     /* margin-top: -20px; */
-    gap:8px;
+    gap: 8px;
 }
 
-.about-team-interview p{
-margin-bottom: 0px;
+.about-team-interview p {
+    margin-bottom: 0px;
 }
 
 .require-main .require-block .require-text p {
@@ -1215,7 +1218,6 @@ img.exp-categoryl {
 }
 
 
-
 .skillsets .accordion .at-tab ul {
     padding: 0;
     margin: 20px 0 0;
@@ -1227,24 +1229,18 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-tab ul li a {
     color: #303744;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     display: inline-block;
     width: 100%;
+    line-height: 120%;
 }
 
-.skillsets .accordion .at-tab ul li a {
-    color: #303744;
-    font-size: 15px;
-    font-weight: 400;
-    display: inline-block;
-    width: 100%;
-    text-decoration: none;
-}
 
 .skillsets .accordion .at-tab ul li a:hover {
     color: #0036e3;
     text-decoration: underline;
+    font-weight: 500;
 }
 
 footer .footer {
@@ -1280,7 +1276,7 @@ footer .footer .footer-block ul li a {
     text-decoration: none;
     display: inline-block;
     width: 100%;
-    transition: all 500ms;
+    /*transition: all 0.2s;*/
 }
 
 footer .footer .footer-block ul li a:hover {
@@ -7301,13 +7297,13 @@ h2:after {
 }
 
 
-
 @media (max-width: 1440px) {
     .product-slider .carousel-w .carousel-inner .item-text h4 {
         font-size: 15px;
     }
 
 }
+
 @media (max-width: 1400px) {
 
     .product-slider .carousel-w .carousel-inner .item-text h4 {
@@ -7338,6 +7334,7 @@ h2:after {
     }
 
 }
+
 @media (min-width: 1200px) and (max-width: 1366px) {
     .product-slider .carousel-w .carousel-inner .item-text {
         width: 200px;
