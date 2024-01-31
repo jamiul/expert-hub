@@ -110,7 +110,7 @@
                         .addClass("current");
                 })
                 .owlCarousel({
-                    items: 5,
+
                     dots: false,
                     nav: true,
                     navText: [
@@ -122,6 +122,11 @@
                     slideBy: 1,
                     responsiveRefreshRate: 100,
                     margin: 23,
+                    responsive: {
+                        1200 : {
+                            items: 5,
+                        }
+                    }
                 })
                 .on("changed.owl.carousel", syncPosition2);
 
