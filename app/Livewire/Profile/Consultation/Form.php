@@ -17,6 +17,7 @@ class Form extends BaseForm
     public $platform_fee = '';
     public $total_fee = '';
     public $imageUrl = '';
+    public $confirmSlots = [];
 
     #[Validate('required')]
     public $expertise_id = '';
@@ -50,8 +51,6 @@ class Form extends BaseForm
 
     public $day;
     public $daysInWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    // public $daysInWeek = ['Monday' => 0, 'Tuesday' => 1, 'Wednesday' => 2, 'Thursday' => 3, 'Friday' => 4, 'Saturday' => 5, 'Sunday' => 6];
-
 
     public function mount()
     {
@@ -75,48 +74,42 @@ class Form extends BaseForm
         $consultation->skills()->attach($data['expertise_skills'], ['active' => true]);
 
         // Add consultation slots
-        $this->addConsultationSlots($consultation->id, $data['date'], $this->selectedHours);
+        $this->addConsultationSlots($consultation->id);
 
         $this->reset();
     }
 
-    public function addConsultationSlots($consultationId, $date, $times)
+    protected function prepareSlotsData($consultationId)
     {
-        $profileId = $this->profile()->id;
+        $slots = [];
 
-        foreach ($times as $time) {
-            // Create a new slot
-            $time = (string) $time;
-            ConsultationSlot::create([
-                'consultation_id' => $consultationId,
-                'profile_id' => $profileId,
-                'date' => $date,
-                'time' => $time,
-                'status' => 'available'
-            ]);
+        foreach ($this->confirmSlots as $day => $times) {
+            foreach ($times as $time) {
+                $slots[] = [
+                    'consultation_id' => $consultationId,
+                    'profile_id' => $this->profile()->id,
+                    'date' => $day,
+                    'time' => $time,
+                    'status' => 'available'
+                ];
+            }
         }
+
+        ConsultationSlot::insert($slots);
+
     }
 
-    public function updateConsultationSlots($date, $times)
+    public function addConsultationSlots($consultationId)
     {
-        // dd($date, $times);
-        $profileId = $this->profile()->id;
+        $this->prepareSlotsData($consultationId);
+    }
 
-        // Delete existing slots for the given date and consultation
+    public function updateConsultationSlots()
+    {
+        // Delete existing slots for the given consultation
         $this->consultation->slots()->delete();
 
-        // Create updated slots
-        $this->consultation->slots()->createMany(
-            collect($times)->map(function ($time) use ($profileId, $date) {
-                return [
-                    'profile_id' => $profileId,
-                    'date' => $date,
-                    'time' => $time,
-                    'status' => 'available',
-                    'active' => true
-                ];
-            })->all()
-        );
+        $this->prepareSlotsData($this->consultation->id);
     }
 
 
@@ -156,32 +149,49 @@ class Form extends BaseForm
         $this->description = $consultation->description;
         $this->imageUrl = $consultation->image;
         $this->expertise_skills = $consultation->skills->pluck('id');
-        $this->date = $consultation->slots->pluck('date')->toArray();
-        // $this->date = is_array($consultation->slots->pluck('date')) ? $consultation->slots->pluck('date') : [$consultation->slots->pluck('date')];
-        $this->selectedHours = $consultation->slots->pluck('time');
-        $this->time = $consultation->slots->pluck('time');
+        $this->confirmSlots = $consultation->slots->groupBy('date')->mapWithKeys(function ($slots) {
+            return [$slots->first()['date'] => $slots->pluck('time', 'id')->toArray()];
+        })->toArray();
     }
 
     public function update()
     {
         $data = $this->validate();
         $data['time'] = $this->selectedHours;
-        // $data['date'] = $this->date;
         $data['profile_id'] = $this->profile()->id;
 
-        // dd($data);
         $this->consultation->update(Arr::except($data, ['expertise_skills', 'date', 'time']));
 
         if (!is_null($this->image)) {
-
             $this->consultation->addMedia($this->image->getRealPath())
                 ->usingName($this->image->getClientOriginalName())
                 ->toMediaCollection('image');
         }
+
         $this->consultation->skills()->sync($data['expertise_skills']);
-        $this->updateConsultationSlots($data['date'], $data['time']);
+        $this->updateConsultationSlots();
 
         $this->reset();
+    }
+
+    public function setSlots()
+    {
+        if (!isset($this->confirmSlots) || !is_array($this->confirmSlots)) {
+            $this->confirmSlots = [];
+        }
+        if (empty($this->date)) {
+            $this->date = "Monday";
+        }
+
+        $this->confirmSlots[$this->date] = $this->selectedHours;
+        $this->resetSlots();
+    }
+
+
+    public function resetSlots()
+    {
+        $this->date = '';
+        $this->selectedHours = [];
     }
 
     public function profile()

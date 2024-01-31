@@ -38,6 +38,11 @@ class Add extends Modal
         $this->form->addConsultationSlot($hour);
     }
 
+    public function setSelectedSlots()
+    {
+        $this->form->setSlots();
+    }
+
     public function profile()
     {
         return auth()->user()->profile;

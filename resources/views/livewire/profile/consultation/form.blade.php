@@ -130,21 +130,23 @@
         </h6>
         <p><a class="fw-medium text-decoration-underline" href="">Schedule Your
                 Consultation</a> (Max 5 schedule per day)</p>
-        {{-- <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
+        <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
             <div class="available-time-select-col eudx-time-select">
                 <h6>Selected slot</h6>
-                <ul class="edux-selected-slot">
-                    <div class="row edux-padding-xs">
-                        <li class="edux-day-schedule">{{ $form->date }}</li>
-                        <li>01.00 AM</li>
-                        <li>10:00 AM</li>
-                        <li>04:00 PM</li>
-                        <li>05:00 PM</li>
-                        <li>09:00 PM</li>
-                    </div>
+                <ul class="edux-selected-slot" wire:poll>
+                    @if(count($form->confirmSlots) > 0)
+                        @foreach ($form->confirmSlots as $day => $times)
+                            <div class="row edux-padding-xs">
+                                <li class="edux-day-schedule">{{ $day }}</li>
+                                    @foreach ($times as $time)
+                                        <li>{{ $time }}</li>
+                                    @endforeach
+                            </div>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
-        </div> --}}
+        </div>
 
     </div>
 
@@ -180,7 +182,13 @@
                 </ul>
             </div>
 
-            <button type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
+            <button
+                wire:click="setSelectedSlots"
+                type="button"
+                class="btn btn-primary eudx-btn-save"
+            >
+                Confirm
+            </button>
         </div>
     </div>
 

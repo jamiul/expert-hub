@@ -35,6 +35,11 @@ class Edit extends Modal
         $this->form->editConsultationSlot($hour);
     }
 
+    public function setSelectedSlots()
+    {
+        $this->form->setSlots();
+    }
+
     public function updateConsultation()
     {
         $this->form->update();
