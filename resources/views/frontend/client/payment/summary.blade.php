@@ -19,7 +19,10 @@
                                                 <div class="form-radio-title">
                                                     <label class="" for="mastercard">
                                                 <span>
-                                                    <x-icon.logo-{{ $payment_method->brand }}/>
+                                                    @php
+                                                        $iconComponentFileName = 'icon.logo-' . $payment_method->brand;
+                                                    @endphp
+                                                    <x-dynamic-component :component="$iconComponentFileName"/>
                                                 </span>
                                                         Master ending in {{ $payment_method->last4 }} Exp: {{ $payment_method->exp_month }}/{{ $payment_method->exp_year }}
                                                     </label>
@@ -31,7 +34,6 @@
                             </div>
                         </div>
                     @endif
-
                     <button type="button" class="btn btn-outline-primary btn-has-icon btn-md border-2 mt-40">
                         <x-icon.add-circle fill="#0036E3"/>
                         <span class="btn-text">Add New Billing Method</span>
