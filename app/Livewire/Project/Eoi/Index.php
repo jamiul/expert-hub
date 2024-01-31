@@ -6,9 +6,10 @@ use App\Enums\InvitationStatus;
 use App\Models\Invitation;
 use App\Models\Profile;
 use App\Models\Project;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
-
+#[On('invitation-sent')]
 class Index extends Component
 {
     use InteractsWithConfirmationModal;
