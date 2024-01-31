@@ -392,6 +392,8 @@ class StripeController extends Controller {
                 'is_default' => $is_default,
                 'livemode'   => $paymentMethod->livemode
             ] );
+
+
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
