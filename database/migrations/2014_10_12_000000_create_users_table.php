@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->foreignId('country_id');
+            $table->string('password');
             $table->boolean('send_tips')->default(1);
             $table->boolean('terms_agreed')->default(1);
             $table->boolean('active')->default(1);

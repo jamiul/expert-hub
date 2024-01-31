@@ -14,7 +14,6 @@ class Consultation extends Component
     public function mount()
     {
         $this->consultations = $this->profile()->consultation;
-        // dd($this->consultations);
     }
 
     #[On('refresh')]

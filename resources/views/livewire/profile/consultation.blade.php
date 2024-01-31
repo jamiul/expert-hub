@@ -31,7 +31,8 @@
                     <div class="prof-text">
                         <div class="edux-prof-text">
                             <h6>{{ $consultation->expertField->name }}</h6>
-                            <button
+                            <div class="consultation-button">
+                                <button
                                 wire:click="$dispatch('modal.open', { component: 'profile.consultation.edit', arguments: { consultation: {{ $consultation->id }} }})"
                                 class="icon-btn icon-btn-md border "
                             >
@@ -43,6 +44,7 @@
                             >
                                 <x-icon.delete/>
                             </button>
+                            </div>
                         </div>
                         <div class="profp1">
                             <p class="mb-0">{{ $consultation->description }}</p>

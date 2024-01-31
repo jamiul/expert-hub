@@ -1,6 +1,10 @@
 <div class="my-60">
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+    </script>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
@@ -57,13 +61,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="mb-4 text-base">Additional details</h3>
-                                    <x-form.textarea label="Cover Letter" wire:model.blur="cover_letter" placeholder="max 200 words"/>
+                                    <x-form.textarea label="Cover Letter" wire:model.blur="cover_letter" placeholder="max 2000 characters"/>
                                     <div
                                         wire:ignore
                                         x-data
                                         x-init="
                                             FilePond.setOptions({
                                                 allowMultiple: true,
+                                                acceptedFileTypes: ['image/*','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
                                                 server: {
                                                     process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
                                                         @this.upload('attachments', file, load, error, progress)
@@ -80,17 +85,17 @@
                                     >
                                         <input type="file" x-ref="input">
                                     </div>
-                                    <div class="image-upload-flat">
+                                    {{-- <div class="image-upload-flat">
                                         <label for="upload-file" class="text-center">
                                             <span> <x-icon.document-upload fill="#0059C999"/> </span>
                                             <span class="fw-medium">Clik to upload or drag & drop</span>
                                             <span class="text-sm">You may attach up to 10 files under the size of 25 MB each. Include work samples or other documents to support your application. Do not attach your resume — your profile is automatically forwarded to the client with your proposal. </span>
                                         </label>
                                         <input type="file" id="upload-file" class="d-none">
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
-                            <x-form.check wire:model="agreement" class="mt-20 project-eoi-trams-condition">
+                            <x-form.check wire:model.change="agreement" class="mt-20 project-eoi-trams-condition">
                                 Yes, I understand and agree to the <a href="">EduEXHub Terms of Service</a>, including
                                 the
                                 <a href="">User Agreement</a> and <a href="">Privacy Policy</a>.

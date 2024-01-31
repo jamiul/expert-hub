@@ -6,8 +6,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="sidebar-layout left-sidebar-layout find-expert-page-layout">
-                    @livewire('experts.filter')
-                    @livewire('experts.lists')
+                    <div class="page-sidebar">
+                        @livewire('experts.filter')
+                    </div>
+                    <div class="page-content p-0" wire:loading.class="opacity-25">
+                        @livewire('experts.lists')
+                    </div>
                 </div>
             </div>
         </div>

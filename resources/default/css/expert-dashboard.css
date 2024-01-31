@@ -790,11 +790,11 @@ line-height: 19px;
   border-color: #E7E5EF !important;
 }
 .get__paid .btn__fab {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  background: #FFF;
-  border: 2px solid rgba(14, 0, 98, 0.1);
+  border-radius: 50% !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  background: #FFF !important;
+  border: 2px solid rgba(14, 0, 98, 0.1) !important;
 }
 .get__paid .btn__fab:hover, .get__paid .btn__fab:focus, .get__paid .btn__fab:active {
   background-color: var(--primary);

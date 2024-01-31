@@ -2,12 +2,13 @@
 
 namespace App\Livewire\Profile\Consultation;
 
-use App\Models\Consultation;
+use DateTimeZone;
 use Illuminate\Support\Arr;
+use App\Models\Consultation;
 use Livewire\WithFileUploads;
+use Livewire\Form as BaseForm;
 use App\Models\ConsultationSlot;
 use Livewire\Attributes\Validate;
-use Livewire\Form as BaseForm;
 
 class Form extends BaseForm
 {
@@ -48,13 +49,15 @@ class Form extends BaseForm
     #[Validate('nullable')]
     public $time;
     public $selectedHours = [];
+    public $timezoneIndetifiers = [];
 
     public $day;
-    public $daysInWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    public $daysInWeek = ['Select Day','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     public function mount()
     {
         $this->imageUrl = $this->profile()->consultation()?->getFirstMediaUrl('image');
+        $this->timezoneIndetifiers = DateTimeZone::listIdentifiers();
     }
 
     public function add()
@@ -96,7 +99,6 @@ class Form extends BaseForm
         }
 
         ConsultationSlot::insert($slots);
-
     }
 
     public function addConsultationSlots($consultationId)
@@ -152,6 +154,17 @@ class Form extends BaseForm
         $this->confirmSlots = $consultation->slots->groupBy('date')->mapWithKeys(function ($slots) {
             return [$slots->first()['date'] => $slots->pluck('time', 'id')->toArray()];
         })->toArray();
+
+        $this->date = "";
+
+    }
+
+    public function updatedDate()
+    {
+        if(! is_null($this->consultation)){
+            $filteredSlots = $this->consultation->slots->where('date', $this->date);
+            $this->selectedHours = $filteredSlots->pluck('time');
+        }
     }
 
     public function update()

@@ -2,11 +2,12 @@
 
 namespace App\Livewire\Profile\Consultation;
 
+use DateTimeZone;
 use App\Models\Expertise;
 use Livewire\WithFileUploads;
 use App\Livewire\Profile\Consultation\Form;
-use WireElements\Pro\Components\Modal\Modal;
 use Label84\HoursHelper\Facades\HoursHelper;
+use WireElements\Pro\Components\Modal\Modal;
 
 class Add extends Modal
 {
@@ -18,12 +19,14 @@ class Add extends Modal
 
     public $expertFields;
     public $hours = [];
+    public $timezoneIndetifiers = [];
 
     public function mount()
     {
         $this->expertFields = Expertise::expertise()->isParent()->get();
         $this->expertSkills = Expertise::skill()->isParent()->get();
         $this->hours = HoursHelper::create('00:00', '23:00', 60, 'g:i A');
+        $this->timezoneIndetifiers = DateTimeZone::listIdentifiers( DateTimeZone::AUSTRALIA  );
     }
 
     public function addConsultation()
@@ -41,6 +44,11 @@ class Add extends Modal
     public function setSelectedSlots()
     {
         $this->form->setSlots();
+    }
+
+    public function filterDay()
+    {
+        $this->form->updatedDate();
     }
 
     public function profile()

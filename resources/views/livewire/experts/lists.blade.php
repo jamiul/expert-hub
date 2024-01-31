@@ -1,4 +1,4 @@
-<div class="page-content p-0" wire:loading.class="opacity-25">
+<div>
     @forelse ($experts as $expert)
         <div class="expert-card">
             <div class="expert-card-header mb-2">
@@ -30,7 +30,11 @@
                     <button class="btn btn-icon btn-outline-light m-1">
                         <x-icon.message-line/>
                     </button>
-                    <button class="btn btn-md btn-outline-primary">Invite Project</button>
+                    @auth
+                        <button wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})" class="btn btn-md btn-outline-primary">Invite Project</button>
+                    @else
+                        <a href="{{ route('auth.login') }}" class="btn btn-md btn-outline-primary">Invite Project</a>
+                    @endauth
                 </div>
             </div>
             <div class="expert-card-body">
@@ -46,9 +50,9 @@
                 </div>
 
                 <div class="expert-summary py-3">
-                    <p class="mb-0">
+                    <p class="mb-0 text-summary text-base">
                         {{ $expert->biography }}
-                        ... <a href=""> more</a>
+
                     </p>
                 </div>
                 <div class="tag-list expert-tag-list">

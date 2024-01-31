@@ -24,6 +24,7 @@
             @endforeach
         @endforeach
     </x-form.choice>
+
     <p class="skill-suggestion">Suggestion skills: <span>Curriculum Editor, E-Learning Developer,
             Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></p>
 
@@ -108,8 +109,9 @@
             local time zone.</p>
         <select wire:model="form.time_zone" name="" id="" class="input-field-control edux-timezoon">
             <option value="">Select time zone</option>
-            <option value="Europe/Australia">Europe/Australia</option>
-            <option value="Dhaka/Asia">Dhaka/Asia</option>
+            @foreach ($timezoneIndetifiers as $timezone)
+                <option value="{{ $timezone }}">{{ $timezone }}</option>
+            @endforeach
         </select>
     </div>
 
@@ -128,12 +130,15 @@
                 </div>
             </div>
         </h6>
-        <p><a class="fw-medium text-decoration-underline" href="">Schedule Your
-                Consultation</a> (Max 5 schedule per day)</p>
+        <p>
+            <a class="fw-medium text-decoration-underline" href="">Schedule Your Consultation</a>
+            (Max 5 schedule per day)
+        </p>
+
         <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
             <div class="available-time-select-col eudx-time-select">
                 <h6>Selected slot</h6>
-                <ul class="edux-selected-slot" wire:poll>
+                <ul class="edux-selected-slot">
                     @if(count($form->confirmSlots) > 0)
                         @foreach ($form->confirmSlots as $day => $times)
                             <div class="row edux-padding-xs">
@@ -152,11 +157,17 @@
 
 
     <div class="mb-40">
-        <x-form.choice name="date" wire:model="form.date" class="edux-timezoon" label="Select day">
+        <x-form.select
+            name="date"
+            wire:model="form.date"
+            wire:change="filterDay"
+            class="edux-timezoon"
+            label="Select day"
+        >
             @foreach ($form->daysInWeek as $day)
-                <option value="{{ $day }}">{{ $day }}</option>
+                <option value="{{ $loop->first ? '' : $day }}">{{ $day }}</option>
             @endforeach
-        </x-form.choice>
+        </x-form.select>
 
         <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
             <div class="available-time-select-col eudx-time-select">

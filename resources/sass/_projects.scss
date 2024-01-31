@@ -556,7 +556,9 @@
     }
 }
 
-.suggestion-skills {
+.field-suggestion {
+    color: #6E737C;
+
     strong {
         color: rgba(48, 55, 68, 0.70);
         cursor: pointer;
@@ -875,6 +877,7 @@
 
     }
 }
+
 .express-of-interest-tab {
     .table-extra-padding {
         a {
@@ -883,3 +886,10 @@
     }
 }
 
+.checkout-project-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 48px;
+}

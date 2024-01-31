@@ -7,14 +7,18 @@ use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
 use App\Http\Controllers\Frontend\Auth\NewPasswordController;
 use App\Http\Controllers\Frontend\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Frontend\Auth\RegistrationController;
+use App\Http\Controllers\Frontend\ClientContractController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
+use App\Http\Controllers\Frontend\ExpertContractController;
 use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
+use App\Http\Controllers\Frontend\ExpertEoiController;
+use App\Http\Controllers\Frontend\ExpertOfferController;
 use App\Http\Controllers\Frontend\ExpertProfileController;
 use App\Http\Controllers\Frontend\FindExpertController;
 use App\Http\Controllers\Frontend\FindProjectController;
@@ -47,6 +51,9 @@ Route::view('/components/widgets', 'sidebar-widget');
 Route::view('/components/cards', 'cards');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::view('/terms-of-service', 'terms-of-service')->name('terms-of-service');
+Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy-policy');
 
 Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
@@ -70,16 +77,22 @@ Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
+Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
+Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
-Route::get('/client/projects', [ProjectController::class, 'index'])->name('client.projects');
+Route::get('/client/projects', [ProjectController::class, 'index'])->middleware(['auth', 'client'])->name('client.projects');
 Route::get('/client/projects/{project}/edit', [ProjectController::class, 'edit'])->name('client.projects.edit');
 Route::get('/client/projects/{project}/eois', [ManageEoiController::class, 'index'])->middleware(['auth', 'client'])->name('client.eois.index');
+Route::get('/client/projects/{project}/eois/{eoi}', [ManageEoiController::class, 'show'])->middleware(['auth', 'client'])->name('client.eois.show');
+Route::get('/client/contracts', [ClientContractController::class, 'index'])->middleware(['auth', 'client'])->name('client.contracts');
 
-Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->name('offers.create');
+Route::get('/offers/create/{expert}', [OfferController::class, 'create'])->middleware(['auth', 'client'])->name('offers.create');
+Route::get('/offers/{offer}', [OfferController::class, 'show'])->middleware(['auth', 'client'])->name('offers.show');
+Route::get('/expert/offers/{offer}/show', [ExpertOfferController::class, 'show'])->middleware(['auth', 'expert'])->name('expert.offer.show');
 
 Route::get('/projects/create', [ProjectController::class, 'create'])->middleware(['auth', 'client'])->name('projects.create');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->middleware('auth')->name('projects.show');

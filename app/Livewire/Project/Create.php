@@ -3,6 +3,7 @@
 namespace App\Livewire\Project;
 
 use App\Enums\ProjectStatus;
+use App\Enums\ProjectType;
 use App\Models\Expertise;
 use App\Models\Profile;
 use App\Models\Project;
@@ -45,7 +46,7 @@ class Create extends Component
         $this->title = $this->project->title;
         $this->description = $this->project->description;
         $this->expertise_id = $this->project->expertise_id;
-        $this->type = $this->project->type;
+        $this->type = $this->project->type ? $this->project->type : ProjectType::Fixed;
         $this->budget_start_amount = $this->project->budget_start_amount;
         $this->budget_end_amount = $this->project->budget_end_amount;
         $this->selectedSkills = $this->project->skills->pluck('id')->toArray();
@@ -63,7 +64,8 @@ class Create extends Component
         $this->uploadAttachments();
         $this->notify();
         toast('success', 'Job has been posted successfully');
-        return redirect()->route('client.dashboard');
+        session()->flash('activeTab', 'invite-expert');
+        return redirect()->route('client.eois.index', $this->project);
     }
 
     public function saveAsDraft()
@@ -123,7 +125,7 @@ class Create extends Component
             $expert->user->notify(new ProjectPostNotification([
                 'title'   => 'New Project posted',
                 'message' => $this->project->description,
-                'link'    => $this->project->slug,
+                'link'    => route('projects.show', $this->project),
                 'button' => 'View project',
                 'avatar'  => Auth::user()->profile->picture,
             ]));
@@ -134,14 +136,14 @@ class Create extends Component
     {
         return [
             'expertise_id' => ['required'],
-            'title' => ['required', 'string'],
-            'description' => ['required'],
-            'selectedSkills' => ['required', 'array'],
+            'title' => ['required', 'string', 'max:255', 'min:15'],
+            'description' => ['required', 'max:5000', 'min:500'],
+            'selectedSkills' => ['required', 'array', 'max:10', 'min:1'],
             'type' => ['required'],
-            'budget_start_amount' => ['required', 'numeric'],
+            'budget_start_amount' => ['required', 'numeric','max:50000', 'min:50'],
             'budget_end_amount' => ['nullable', 'numeric'],
             'attachments.*' => [
-                    File::types(['image', 'pdf','docx','xlsx'])
+                    File::types(['jpg','png','jpeg', 'pdf','docx','xlsx'])
                 ]
         ];
     }
@@ -153,7 +155,12 @@ class Create extends Component
             'type.required' => 'Please select how do you want to pay',
         ];
     }
-
+    public function updatedSelectedSkills()
+    {
+        $this->validate([
+            'selectedSkills' => ['required', 'array', 'max:10', 'min:1'],
+        ]);
+    }
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
@@ -162,34 +169,5 @@ class Create extends Component
     public function render()
     {
         return view('livewire.project.create');
-    }
-
-    public function searchSkill()
-    {
-        if ($this->skill) {
-            $availableSkills = Expertise::where('name', 'like', '%' . $this->skill . '%')
-                ->whereNotIn('id', array_keys($this->selectedSkills))
-                ->limit(5)
-                ->get()
-                ->pluck('name', 'id')->toArray();
-            $this->availableSkills = $availableSkills;
-        } else {
-            $this->availableSkills = [];
-        }
-    }
-
-    public function addSkill($id)
-    {
-        $skill = Expertise::find($id);
-        if ($skill) {
-            $this->selectedSkills[$skill->id] = $skill->name;
-            ksort($this->selectedSkills);
-            $this->reset('skill', 'availableSkills');
-        }
-    }
-
-    public function removeSkill($id)
-    {
-        unset($this->selectedSkills[$id]);
     }
 }

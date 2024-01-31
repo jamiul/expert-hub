@@ -1,0 +1,358 @@
+$page-section-bg: #F1F3FA;
+.page-section {
+    padding: 90px 0;
+
+    &.work-steps-section {
+        background-color: $page-section-bg;
+    }
+
+    &.team-section {
+        background-color: $page-section-bg;
+    }
+
+}
+
+.section-title-wrapper {
+    .section-title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 120%;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        color: $edu-primary-color;
+    }
+
+    .section-title-lead {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 120%;
+        margin-bottom: 0.5rem;
+    }
+
+    .section-title-summary {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 160%; /* 1.6rem */
+    }
+}
+
+.work-steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 236px);
+    justify-content: space-between;
+    counter-reset: step-counter;
+    gap: 24px;
+
+    .work-steps-box {
+        text-align: center;
+
+
+        .work-steps-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            //overflow: hidden;
+            background-color: #fff;
+            border: 1px solid rgba(0, 89, 201, 0.15);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+            position: relative;
+
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: #DADBEB;
+                position: absolute;
+                right: calc(-100% - 30px);
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 22px;
+                //background-color: #DADBEB;
+                position: absolute;
+                left: calc(-100% - 30px);
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="24" viewBox="0 0 221 24" fill="none"><path d="M220.061 13.0607C220.646 12.4749 220.646 11.5251 220.061 10.9394L210.515 1.39342C209.929 0.80763 208.979 0.80763 208.393 1.39342C207.808 1.9792 207.808 2.92895 208.393 3.51474L216.879 12L208.393 20.4853C207.808 21.0711 207.808 22.0208 208.393 22.6066C208.979 23.1924 209.929 23.1924 210.515 22.6066L220.061 13.0607ZM-1.31134e-07 13.5L219 13.5L219 10.5L1.31134e-07 10.5L-1.31134e-07 13.5Z" fill="%23DADBEB"/></svg>') no-repeat right center;
+            }
+
+            span {
+                display: flex;
+                width: 33px;
+                height: 33px;
+                align-items: center;
+                justify-content: center;
+                background-color: $edu-primary-color;
+                border: 4px solid #ffffff;
+                box-shadow: 4px 4px 16px rgba(14, 0, 98, 0.10);
+                font-size: 14px;
+                font-weight: 500;
+                color: white;
+                border-radius: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 111.5%;
+            max-width: 140px;
+            margin: 0 auto 10px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 160%;
+        }
+
+        &:hover {
+            .work-steps-icon {
+                background-color: #d1dcff;
+
+                svg {
+                    path {
+                        fill: white !important;
+                    }
+                }
+            }
+        }
+
+        &:first-child {
+            .work-steps-icon {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &:last-child {
+            .work-steps-icon {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.category-grid-section {
+    .btn-outline-primary {
+        width: 235px;
+        margin-top: 18px;
+    }
+}
+
+.category-box {
+    margin-bottom: 2rem;
+
+    .category-image {
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 137%;
+        margin-bottom: 8px;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 160%;
+        margin-bottom: 0;
+    }
+}
+
+.expert-team-building-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    justify-content: center;
+    //
+    //&:after {
+    //    content: "";
+    //    display: block;
+    //    order: 1;
+    //    background-color: #000;
+    //    flex: 0 0 calc(100% / 3 - 20px);
+    //    max-width: calc(100% / 3 - 20px);
+    //}
+    .clearfix {
+        width: 100% !important;
+        max-width: unset;
+        flex: 100%;
+    }
+
+    & > div.expert-team-member {
+        flex: 0 0 calc(100% / 3 - 20px);
+        max-width: calc(100% / 3 - 20px);
+        margin-bottom: 25px;
+        transition: 0.2s;
+
+        &:nth-child(3) {
+            //margin-left: auto;
+        }
+
+        .expert-team-member-img {
+            background: #C8E0FD;
+            border-radius: 6px 6px 0 0;
+            overflow: hidden;
+        }
+
+        .expert-team-member-info {
+            background-color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 14px 13px 37px #0e00621f;
+
+            h4 {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 120%;
+                margin-bottom: 4px;
+
+                a {
+                    color: inherit;
+                }
+            }
+
+            p {
+                color: rgba(48, 55, 68, 0.70);
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            .expert-team-member-info {
+                box-shadow: 2px 2px 2px #0e00621f;
+            }
+        }
+    }
+}
+
+.expert-team-interview-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    justify-content: center;
+
+    a {
+        text-decoration: underline;
+        color: $edu-primary-color;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.team-section {
+    .section-title-wrapper {
+        max-width: 423px;
+
+        a {
+            margin-top: 24px;
+            width: 218px;
+        }
+    }
+}
+
+.company-speciality-wrapper {
+    display: grid;
+    gap: 48px 64px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 0 57px;
+
+    .company-speciality-card {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 20px auto;
+
+        h3 {
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 120%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            margin-bottom: 5px;
+        }
+
+        img {
+            display: block;
+        }
+
+        a {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 160%;
+        }
+    }
+}
+
+.company-speciality-tab {
+    .nav-tabs {
+        border: none;
+        justify-content: center;
+        border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+
+        li {
+            float: none;
+            display: inline-block;
+            margin: 0;
+
+            button {
+                color: #303744;
+                font-size: 24px;
+                font-weight: 400;
+                border: none;
+                margin: 0;
+                padding: 0 30px;
+                background: none;
+
+                &.active {
+                    color: #0036e3;
+                    border-bottom: solid 3px #0036e3;
+                    background-color: transparent;
+                }
+
+            }
+        }
+    }
+}
+
+.skillsets {
+    .accordion{
+        .at-tab{
+            ul{
+                column-count: 2;
+                column-gap: 40px;
+            }
+        }
+    }
+}

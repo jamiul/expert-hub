@@ -21,7 +21,7 @@
     </head>
     <body>
         @php
-            Illuminate\Support\Facades\Auth::guard('web')->logout();
+            // Illuminate\Support\Facades\Auth::guard('web')->logout();
             if(isset($header)){
                 if($header == 'client'){
                     $user = App\Models\User::find(1);

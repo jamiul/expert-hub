@@ -6,6 +6,7 @@ use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use App\Models\Country;
 use App\Models\Expertise;
+use App\Models\ExpertKYC;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -83,6 +84,10 @@ class UserSeeder extends Seeder
                     'hourly_rate' => fake()->randomElement([50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]),
                 ]);
                 $profile->expertises()->attach(Expertise::inRandomOrder()->skill()->isChild()->limit(9)->pluck('id')->toArray());
+                ExpertKYC::create([
+                    'user_id' => $user_id,
+                    'status'  => 1
+                ]);
             }
         }
     }

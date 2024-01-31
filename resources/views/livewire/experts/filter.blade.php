@@ -1,4 +1,4 @@
-<div class="page-sidebar">
+<div>
     <div class="search-block">
         <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Expert..."/>
     </div>
@@ -11,11 +11,11 @@
         </div>
     </div>
     <div class="filter-widget">
-        <h4 class="widget-title">Experts by Field</h4>
+        <h4 class="widget-title">Expert Category</h4>
         <div class="widget-accordion use-scroll-content">
             @foreach ($expertFields as $expertField)
-            <div class="widget-accordion-item">
-                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
+            <div x-data="{ isOpen: false }" class="widget-accordion-item" :class="{ 'accordion-item-active': isOpen }">
+                <div class="widget-accordion-title" x-on:click="isOpen = !isOpen">
                     <x-form.check
                         wire:change="checkParentExpertField({{ $expertField }})"
                         wire:model="filterByExpertField"
@@ -25,7 +25,7 @@
                     />
                     {{ $expertField->name }}
                 </div>
-                <div class="widget-accordion-content">
+                <div class="widget-accordion-content" x-show="isOpen">
                     @foreach ($expertField->children as $child)
                         <x-form.check
                             wire:change="filter"
@@ -33,32 +33,6 @@
                             id="{{ Str::slug($child->name) }}-{{ $child->id }}"
                             value="{{ $child->name }}"
                         >
-                            {{ $child->name }}
-                        </x-form.check>
-                    @endforeach
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-    <div class="filter-widget">
-        <h4 class="widget-title">Expert Skillsets</h4>
-        <div class="widget-accordion use-scroll-content">
-            @foreach ($expertSkills as $expertSkill)
-            <div class="widget-accordion-item">
-                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                    <x-form.check
-                        class="m-0 gap-0"
-                        wire:change="checkParentExpertSkill({{ $expertSkill }})"
-                        wire:model="filterByExpertSkill"
-                        id="{{ Str::slug($expertSkill->name) }}-{{ $expertSkill->id }}"
-                        value="{{ $expertSkill->name }}"
-                    />
-                    {{ $expertSkill->name }}
-                </div>
-                <div class="widget-accordion-content">
-                    @foreach ($expertSkill->children as $child)
-                        <x-form.check wire:change="filter" wire:model="skills" id="{{ Str::slug($child->name) }}-{{ $child->id }}" value="{{ $child->name }}">
                             {{ $child->name }}
                         </x-form.check>
                     @endforeach

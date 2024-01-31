@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile\Consultation;
 
+use DateTimeZone;
 use App\Models\Expertise;
 use App\Models\Consultation;
 use Livewire\WithFileUploads;
@@ -20,6 +21,7 @@ class Edit extends Modal
 
     public $expertFields;
     public $hours = [];
+    public $timezoneIndetifiers = [];
 
     public function mount(Consultation $consultation)
     {
@@ -28,6 +30,7 @@ class Edit extends Modal
         $this->expertFields = Expertise::expertise()->isParent()->get();
         $this->expertSkills = Expertise::skill()->isParent()->get();
         $this->hours = HoursHelper::create('00:00', '23:00', 60, 'g:i A');
+        $this->timezoneIndetifiers = DateTimeZone::listIdentifiers( DateTimeZone::AUSTRALIA  );
     }
 
     public function editSlot($hour)
@@ -45,6 +48,11 @@ class Edit extends Modal
         $this->form->update();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Consultation::class);
         $this->close();
+    }
+
+    public function filterDay()
+    {
+        $this->form->updatedDate();
     }
     public function render()
     {

@@ -7,6 +7,7 @@
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
+        @vite('resources/css/client-dashboard.css')
         @vite('resources/css/components.css')
         @vite('resources/css/choices.css')
         @vite('resources/js/choices.min.js')
@@ -17,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="auth-nav d-flex align-items-center">
-                        <a href="/"><img src="{{ asset('assets/frontend/img/logo.png') }}" /></a>
+                        <a href="/"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
                     </nav>
                 </div>
             </div>
