@@ -5907,9 +5907,9 @@ p.p-rote {
 
 }
 
-.live-zoom {
+/* .live-zoom {
   max-width: 220px !important;
-}
+} */
 
 .academic-block.academic-blog .live-zoom {
   border-right: none !important
@@ -9293,6 +9293,14 @@ li.disabled {
 
 .date-area .form-input-group {
   margin-bottom:0px;
+}
+
+.consultation-with-area {
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #FFF;
 }
 
 

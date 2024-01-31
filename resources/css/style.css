@@ -992,9 +992,26 @@ img.exp-categoryl {
     border-bottom: solid 1px #d9dbea;
 }
 
-.academic-block .live-zoom {
+/* .academic-block .live-zoom {
     border-right: solid 1px #d9dbea;
+} */
+
+.eudx-training{
+    border-left: solid 1px #d9dbea;
+    padding-left:20px;
+    margin-left:0px;
+
 }
+.training-expert-card .expert-card-header ul.expert-meta li {
+    display: inline-block;
+    padding-right: 10px;
+    position: relative;
+    color: rgba(48, 55, 68, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
 
 .academic-block .live-zoom .zoom-icon {
     display: flex;
@@ -1069,7 +1086,35 @@ img.exp-categoryl {
 }
 
 .academic-block .training-button {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.zoom-live-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color:  #303744;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.zoom-live-text span{
+    gap: 18px;
+    color:  #303744;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.training-expert-card .expert-card-header {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
 }
 
 .academic-block .training-button a {
@@ -1107,7 +1152,7 @@ img.exp-categoryl {
 
 .academic-block .academic-button {
     text-align: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .academic-block .academic-button a {
