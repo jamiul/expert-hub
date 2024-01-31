@@ -75,10 +75,7 @@
     </div>
 </div>
 
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+@push('bottom_scripts')
 <script>
     jQuery(document).ready(function () {
 
@@ -179,3 +176,4 @@
 
     });
 </script>
+@endpush

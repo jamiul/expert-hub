@@ -109,7 +109,7 @@
                             <x-form.input type="text" label="Last Name" wire:model.blur="last_name" placeholder="Your last name"/>
                         </div>
                         <x-form.input type="email" label="Email Address" wire:model.live.debounce.1000="email" placeholder="name@example.com"/>
-                        <x-form.input type="tel" label="Phone (optional)" wire:model.blur="phone" placeholder="your phone number"/>
+                        <x-form.input type="tel" label="Phone" wire:model.blur="phone" placeholder="your phone number"/>
                         <x-form.password type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
                         <x-form.password type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
                         <x-form.choice label="Country" wire:model.change="country_id">
