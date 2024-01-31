@@ -1,7 +1,7 @@
-# Setup EduExHub in Local machine
+# Setup Expert Gate in Local machine
 
-- `git clone https://github.com/Sydney-IBS/EduExHub.git`
-- `cd EduExHub`
+- `git clone https://github.com/Sydney-IBS/Expert Gate.git`
+- `cd Expert Gate`
 - `composer install`
 - `npm install`
 - `php artisan migrate:fresh --seed`
