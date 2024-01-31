@@ -58,4 +58,11 @@ class Edit extends Modal
     {
         return view('livewire.profile.consultation.edit');
     }
+
+    public static function attributes(): array
+    {
+        return [
+            'size' => '4xl',
+        ];
+    }
 }

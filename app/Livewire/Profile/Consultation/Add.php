@@ -61,4 +61,11 @@ class Add extends Modal
     {
         return view('livewire.profile.consultation.add');
     }
+
+    public static function attributes(): array
+    {
+        return [
+            'size' => '4xl',
+        ];
+    }
 }
