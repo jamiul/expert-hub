@@ -3,14 +3,16 @@
         <div class="row align-items-end">
             <div class="col-md-6">
                 <div class="hero-text">
-                    <h2>Find a Top Academic <br> Expert for Your Project</h2>
-                    <p>EduExHub is an exclusive platform featuring top academic experts across <br> diverse fields.
-                        Whether it's a personal or institutional project</p>
+                    <h2>Connect With Top Academic And Industry Experts For Your Project</h2>
+                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
+                        you with leaders in course accreditation, curriculum design, policy development, project
+                        management and more. Choose ExpertGate when your most pivotal academic and industry projects
+                        demand the best.</p>
                     <div class="hero-button d-flex gap-3">
                         <x-button.link
                             href="{{ route('find.experts') }}"
                             class="btn btn-primary edux-btn-primary"
-                            text="Find Experts"
+                            text="Find an Expert"
                         />
                         <x-button.link
                             href="{{ route('auth.login') }}"
@@ -76,104 +78,104 @@
 </div>
 
 @push('bottom_scripts')
-<script>
-    jQuery(document).ready(function () {
+    <script>
+        jQuery(document).ready(function () {
 
-        var bigimage = $("#homepage-slider-main");
-        var thumbs = $("#homepage-slider-thumbnails");
-        //var totalslides = 10;
-        var syncedSecondary = true;
+            var bigimage = $("#homepage-slider-main");
+            var thumbs = $("#homepage-slider-thumbnails");
+            //var totalslides = 10;
+            var syncedSecondary = true;
 
-        bigimage
-            .owlCarousel({
-                items: 1,
-                slideSpeed: 2000,
-                nav: false,
-                autoplay: true,
-                dots: false,
-                loop: true,
-                responsiveRefreshRate: 200,
-                navText: [
-                    '<i class="fa fa-arrow-left" aria-hidden="true">Left</i>',
-                    '<i class="fa fa-arrow-right" aria-hidden="true">Right</i>'
-                ]
-            })
-            .on("changed.owl.carousel", syncPosition);
+            bigimage
+                .owlCarousel({
+                    items: 1,
+                    slideSpeed: 2000,
+                    nav: false,
+                    autoplay: true,
+                    dots: false,
+                    loop: true,
+                    responsiveRefreshRate: 200,
+                    navText: [
+                        '<i class="fa fa-arrow-left" aria-hidden="true">Left</i>',
+                        '<i class="fa fa-arrow-right" aria-hidden="true">Right</i>'
+                    ]
+                })
+                .on("changed.owl.carousel", syncPosition);
 
-        thumbs
-            .on("initialized.owl.carousel", function () {
+            thumbs
+                .on("initialized.owl.carousel", function () {
+                    thumbs
+                        .find(".owl-item")
+                        .eq(0)
+                        .addClass("current");
+                })
+                .owlCarousel({
+                    items: 5,
+                    dots: false,
+                    nav: true,
+                    navText: [
+                        '<span class="material-symbols-outlined">chevron_left</span>',
+                        '<span class="material-symbols-outlined">chevron_right</span>'
+                    ],
+                    smartSpeed: 200,
+                    slideSpeed: 500,
+                    slideBy: 1,
+                    responsiveRefreshRate: 100,
+                    margin: 23,
+                })
+                .on("changed.owl.carousel", syncPosition2);
+
+            function syncPosition(el) {
+                //if loop is set to false, then you have to uncomment the next line
+                //var current = el.item.index;
+
+                //to disable loop, comment this block
+                var count = el.item.count - 1;
+                var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+                if (current < 0) {
+                    current = count;
+                }
+                if (current > count) {
+                    current = 0;
+                }
+                //to this
                 thumbs
                     .find(".owl-item")
-                    .eq(0)
+                    .removeClass("current")
+                    .eq(current)
                     .addClass("current");
-            })
-            .owlCarousel({
-                items: 5,
-                dots: false,
-                nav: true,
-                navText: [
-                    '<span class="material-symbols-outlined">chevron_left</span>',
-                    '<span class="material-symbols-outlined">chevron_right</span>'
-                ],
-                smartSpeed: 200,
-                slideSpeed: 500,
-                slideBy: 1,
-                responsiveRefreshRate: 100,
-                margin: 23,
-            })
-            .on("changed.owl.carousel", syncPosition2);
+                var onscreen = thumbs.find(".owl-item.active").length - 1;
+                var start = thumbs
+                    .find(".owl-item.active")
+                    .first()
+                    .index();
+                var end = thumbs
+                    .find(".owl-item.active")
+                    .last()
+                    .index();
 
-        function syncPosition(el) {
-            //if loop is set to false, then you have to uncomment the next line
-            //var current = el.item.index;
-
-            //to disable loop, comment this block
-            var count = el.item.count - 1;
-            var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
-
-            if (current < 0) {
-                current = count;
+                if (current > end) {
+                    thumbs.data("owl.carousel").to(current, 100, true);
+                }
+                if (current < start) {
+                    thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+                }
             }
-            if (current > count) {
-                current = 0;
-            }
-            //to this
-            thumbs
-                .find(".owl-item")
-                .removeClass("current")
-                .eq(current)
-                .addClass("current");
-            var onscreen = thumbs.find(".owl-item.active").length - 1;
-            var start = thumbs
-                .find(".owl-item.active")
-                .first()
-                .index();
-            var end = thumbs
-                .find(".owl-item.active")
-                .last()
-                .index();
 
-            if (current > end) {
-                thumbs.data("owl.carousel").to(current, 100, true);
+            function syncPosition2(el) {
+                if (syncedSecondary) {
+                    var number = el.item.index;
+                    bigimage.data("owl.carousel").to(number, 100, true);
+                }
             }
-            if (current < start) {
-                thumbs.data("owl.carousel").to(current - onscreen, 100, true);
-            }
-        }
 
-        function syncPosition2(el) {
-            if (syncedSecondary) {
-                var number = el.item.index;
-                bigimage.data("owl.carousel").to(number, 100, true);
-            }
-        }
+            thumbs.on("click", ".owl-item", function (e) {
+                e.preventDefault();
+                var number = $(this).index();
+                bigimage.data("owl.carousel").to(number, 300, true);
+            });
 
-        thumbs.on("click", ".owl-item", function (e) {
-            e.preventDefault();
-            var number = $(this).index();
-            bigimage.data("owl.carousel").to(number, 300, true);
         });
-
-    });
-</script>
+    </script>
 @endpush
