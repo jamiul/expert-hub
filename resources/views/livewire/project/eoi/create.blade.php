@@ -61,7 +61,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="mb-4 text-base">Additional details</h3>
-                                    <x-form.textarea label="Cover Letter" wire:model.blur="cover_letter" placeholder="max 2000 characters"/>
+                                    <x-form.countable-textarea label="Cover Letter" wire:model.blur="cover_letter" placeholder="max 2000 characters"/>
                                     <div
                                         wire:ignore
                                         x-data

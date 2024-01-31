@@ -45,10 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
-                                    <x-counter :max="5000">
-                                        <x-form.textarea label="Project Description" x-model="description"  wire:model.blur="description" placeholder="Write Description">
-                                        </x-form.textarea>
-                                    </x-counter>
+                                    <x-form.countable-textarea label="Project Description"  wire:model.blur="description" placeholder="Write Description"/>
                                     <div
                                         wire:ignore
                                         x-data
