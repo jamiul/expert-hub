@@ -54,6 +54,7 @@ Route::group(['prefix' => 'figma'], function () {
     //Find Training Page
 
     Route::view('/expert-find-training', 'figma.expert-find-training-profile');
+    Route::view('/expert-create-training', 'figma.expert-create-training');
 
 
     //expert status

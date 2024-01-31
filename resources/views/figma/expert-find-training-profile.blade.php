@@ -165,6 +165,107 @@
                         </svg>
                           </button>
                       </div>
+
+                    <div class="training-speaker-area">
+                      <div class="training-speaker-title-area">
+                        <h6>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h6>
+                        <div class="training-speaker-option">
+                          <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M6.69872 18.79C6.24157 18.79 5.85111 18.6281 5.52734 18.3043C5.20356 17.9806 5.04167 17.5901 5.04167 17.1329V5.49836H4.125V4.12338H8.24998V3.3125H13.75V4.12338H17.875V5.49836H16.9583V17.1329C16.9583 17.596 16.7979 17.9879 16.477 18.3088C16.1562 18.6296 15.7643 18.79 15.3012 18.79H6.69872ZM15.5833 5.49836H6.41664V17.1329C6.41664 17.2152 6.44309 17.2828 6.49598 17.3357C6.54887 17.3886 6.61645 17.415 6.69872 17.415H15.3012C15.3718 17.415 15.4364 17.3856 15.4952 17.3269C15.5539 17.2681 15.5833 17.2035 15.5833 17.1329V5.49836ZM8.6202 15.5817H9.99517V7.33169H8.6202V15.5817ZM12.0048 15.5817H13.3798V7.33169H12.0048V15.5817Z" fill="#191D24"/>
+                          </svg></span>
+                          <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M4.72652 17.42H5.86L14.348 8.932L13.2146 7.79849L4.72652 16.2865V17.42ZM17.2883 7.93778L14.1947 4.87229L15.3898 3.67711C15.659 3.408 15.9863 3.27344 16.3717 3.27344C16.7572 3.27344 17.0845 3.408 17.3536 3.67711L18.4694 4.79295C18.7386 5.06207 18.8778 5.38466 18.8872 5.76072C18.8966 6.13678 18.7667 6.45937 18.4976 6.72849L17.2883 7.93778ZM16.2941 8.94609L6.44524 18.795H3.35156V15.7013L13.2004 5.85239L16.2941 8.94609ZM13.7769 8.36085L13.2146 7.79849L14.348 8.932L13.7769 8.36085Z" fill="#191D24"/>
+                          </svg></span>
+                        </div>
+                      </div>
+
+                      <div class="row border-0">
+                          <div class="col-md-6">
+                            <div class="expert-card training-expert-card">
+                            <div class="expert-card-header mb-2">
+                                <div class="expert-thumb">
+                                    <div class="expert-thumb-box">
+                                        <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                                    </div>
+                                </div> <!--expert-thumb-->
+                                <div class="expert-info">
+                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                    <ul class="expert-meta">
+                                        <li>Public Health</li>
+                                        <li>Melbourne University</li>
+                                        <li>Australia</li>
+                                    </ul>
+
+
+
+
+                                </div><!--expert-info-->
+
+
+                            </div>
+
+                            <div class="scholarship-details">
+                                  <div class="custom-table text-sm">
+                                      <div class="tr">
+                                          <div class="td">Seminar Dates</div>
+                                          <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                      </div>
+                                      <div class="tr">
+                                          <div class="td">Time & Location</div>
+                                          <div class="td fw-medium">10.15am  AEST, Sydney, Australia</div>
+                                      </div>
+                                      <div class="tr">
+                                          <div class="td">Training Mode</div>
+                                          <div class="td fw-medium">
+                                            <a href="#" class="expert-tag offer-consultation-btn">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                              <path d="M1.98438 7.506V14.246C1.99038 15.77 3.34538 16.996 4.99838 16.991H15.6914C15.9944 16.991 16.2404 16.766 16.2404 16.493V9.753C16.2324 8.23 14.8774 7.003 13.2264 7.009H2.53137C2.22937 7.009 1.98438 7.233 1.98438 7.506ZM16.9204 10.136L21.3364 7.173C21.7194 6.881 22.0164 6.954 22.0164 7.482V16.518C22.0164 17.119 21.6534 17.046 21.3364 16.827L16.9204 13.87V10.136Z" fill="#0036E3"></path>
+                                              </svg>
+                                                  Live via Zoom
+                                              </a>
+                                          </div>
+                                      </div>
+                                      <div class="tr">
+                                          <div class="td">Language</div>
+                                          <div class="td fw-medium">English</div>
+                                      </div>
+                                      <div class="tr">
+                                          <div class="td">Training Category</div>
+                                          <div class="td fw-medium">Research and Analysis</div>
+                                      </div>
+                                      <div class="tr">
+                                          <div class="td">Training Fee</div>
+                                          <div class="td fw-medium">USD 995</div>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="expert-card training-expert-card">
+                            <div class="expert-card-header mb-2">
+                                <div class="expert-thumb">
+                                    <div class="expert-thumb-box">
+                                        <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                                    </div>
+                                </div> <!--expert-thumb-->
+                                <div class="expert-info">
+                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                    <ul class="expert-meta">
+                                        <li>Public Health</li>
+                                        <li>Melbourne University</li>
+                                        <li>Australia</li>
+                                    </ul>
+                                </div><!--expert-info-->
+
+                            </div>
+                            </div>
+                          </div>
+                      </div>
+
+                    </div>
                   </div>
               </div>
 
