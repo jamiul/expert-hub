@@ -45,23 +45,10 @@
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
-                                    <div 
-                                        class="main-form position-relative" 
-                                        x-data="{
-                                            description: $wire.description,
-                                            get characterCount() { 
-                                                if(this.description == null){
-                                                    return 0
-                                                }
-                                                return this.description.length;
-                                            }
-                                        }"
-                                    >
-                                    <x-form.textarea label="Project Description" x-model="description"  wire:model.blur="description" placeholder="Write Description">
-                                    </x-form.textarea>
-                                    <span class="edux-word-count"><span x-text="characterCount">0</span>/5000</span>
-                                        </div>
-                                    </div>
+                                    <x-counter :max="5000">
+                                        <x-form.textarea label="Project Description" x-model="description"  wire:model.blur="description" placeholder="Write Description">
+                                        </x-form.textarea>
+                                    </x-counter>
                                     <div
                                         wire:ignore
                                         x-data
