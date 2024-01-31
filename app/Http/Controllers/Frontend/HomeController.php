@@ -13,7 +13,7 @@ class HomeController extends Controller
     private function fetchProfileData($ids)
     {
         return Profile::whereIn('id', $ids)
-        ->with('user' ,'expertField')->limit(6)->get();
+        ->with('user' ,'expertField')->limit(10)->get();
 
     }
 

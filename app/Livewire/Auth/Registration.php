@@ -49,7 +49,7 @@ class Registration extends Component {
             'first_name'            => [ 'required' ],
             'last_name'             => [ 'required' ],
             'email'                 => [ 'required', 'email', 'unique:users' ],
-            'phone'                 => ['required', 'digits:9' ],
+            'phone'                 => ['nullable' ],
             'password'              => [
                 'required',
                 Password::min( 8 )
