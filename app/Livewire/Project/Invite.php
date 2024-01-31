@@ -54,6 +54,7 @@ class Invite extends Modal
             'avatar'  => auth()->user()->profile->picture,
         ]));
         toast('success', 'Invitation Sent Successfully', $this);
+        $this->dispatch('invitation-sent');
         $this->close();
         //Todo Update invitation count
     }

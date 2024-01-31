@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Offer;
 
+use App\Enums\MilestoneStatus;
 use App\Enums\OfferStatus;
 use App\Enums\ProjectStatus;
 use App\Enums\ProjectType;
+use App\Models\Milestone;
 use App\Models\Offer;
 use App\Models\Profile;
+use Illuminate\Support\Carbon;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -42,6 +45,9 @@ class Create extends Component
     public $milestone_due_date = [];
     public $milestone_amount = [];
 
+    #[Validate('accepted')]
+    public $terms;
+
     public function mount()
     {
         if($this->project_id){
@@ -60,18 +66,16 @@ class Create extends Component
         $this->validate(
             [
                 'milestone_description.0' => 'required',
-                'milestone_due_date.0' => 'required',
+                'milestone_due_date.0' => 'nullable',
                 'milestone_amount.0' => 'required',
                 'milestone_description.*' => 'required',
-                'milestone_due_date.*' => 'required',
+                'milestone_due_date.*' => 'nullable',
                 'milestone_amount.*' => 'required',
             ],
             [
                 'milestone_description.0.required' => 'Description field is required',
-                'milestone_due_date.0.required' => 'Due date field is required',
                 'milestone_amount.0.required' => 'Amount field is required',
                 'milestone_description.*.required' => 'Description field is required',
-                'milestone_due_date.*.required' => 'Due date field is required',
                 'milestone_amount.*.required' => 'Amount field is required',
             ]
         );
@@ -99,8 +103,33 @@ class Create extends Component
             'deposit_amount' => $this->depositAmount(),
             'status' => OfferStatus::Draft,
         ]);
-
-        dd($offer);
+        
+        if ($this->project->isFixed()) {
+            if ($this->milestoneType == 'multiple') {
+                foreach ($this->milestone_description as $key => $value) {
+                    if(isset($this->milestone_amount[$key])){
+                        Milestone::create([
+                            'eoi_id' => $this->eoi_id,
+                            'offer_id' => $offer->id,
+                            'title' => $value,
+                            'due_date' => isset($this->milestone_due_date[$key]) ? Carbon::parse($this->milestone_due_date[$key]) : null,
+                            'amount' => $this->milestone_amount[$key],
+                            'status' => MilestoneStatus::WantToPay,
+                        ]);
+                    }
+                }
+            } else {
+                Milestone::create([
+                    'eoi_id' => $this->eoi_id,
+                    'offer_id' => $offer->id,
+                    'title' => $this->contract_title,
+                    'due_date' => null,
+                    'amount' => $offer->amount,
+                    'status' => MilestoneStatus::WantToPay,
+                ]);
+            }
+        }
+        return redirect()->route('client.payment.pay',['reference' => 'offer', 'id' => $offer->id]);
     }
 
     public function depositAmount()

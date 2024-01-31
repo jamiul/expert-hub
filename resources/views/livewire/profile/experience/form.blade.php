@@ -21,7 +21,7 @@
         @endif
     </div>
 </div>
-<x-form.textarea label="Description" wire:model="form.description" placeholder="Type"/>
+<x-form.countable-textarea model="description" label="Description" wire:model="form.description" placeholder="Type"/>
 <x-form.check wire:model.live="form.currentExperience">
     I currently work here
 </x-form.check>

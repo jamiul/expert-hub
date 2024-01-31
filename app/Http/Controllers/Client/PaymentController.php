@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Client;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
+use App\Models\Contract;
 use App\Models\Milestone;
+use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -69,18 +71,34 @@ class PaymentController extends Controller {
     /*
      * fund a milestone /payment/pay
      * */
-    public function pay() {
+    public function pay(Request $request) {
         $user = auth()->user();
 
         $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
 
-        $milestone = Milestone::find(1);
-
-        $milestone_amount = $milestone->amount;
+        //read payment type
+        $reference = $request->reference;
+        if($reference == 'contract'){
+            $contract = Contract::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+            $milestones = Milestone::where('contract_id', $contract->id)->where('status', 'Want to Pay')->get();
+            $project = $contract->project;
+        } else if($reference == 'offer'){
+            $contract = Offer::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+            $milestones = Milestone::where('offer_id', $contract->id)->where('status', 'Want to Pay')->get();
+            $project = $contract->project;
+        } else {
+            abort(404);
+        }
+        $milestone_amount = $milestones->sum('amount');
         //breakdown charge into pieces
         $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
 
-        return view( 'frontend.client.payment.pay', compact( 'payment_methods', 'milestone', 'milestone_charges' ) );
+        return view( 'frontend.client.payment.summary', compact( 'payment_methods',
+            'project',
+            'contract',
+            'milestones',
+            'milestone_charges'
+        ) );
     }
 
     /*
@@ -141,22 +159,41 @@ class PaymentController extends Controller {
 
         //create payment intent
         try {
-            $milestone = Milestone::find(1);
-            $milestone_amount = $milestone->amount;
-            $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->stripe_acct_id;
+            $reference = $request->reference;
+            if($reference == 'contract'){
+                $contract = Contract::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+                $milestones = Milestone::where('contract_id', $contract->id)->where('status', 'Want to Pay')->get();
+                $project = $contract->project;
+                $redirect = route('contract.show', $contract->id);
+            } else if($reference == 'offer'){
+                $contract = Offer::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+                $milestones = Milestone::where('offer_id', $contract->id)->where('status', 'Want to Pay')->get();
+                $project = $contract->project;
+                $redirect = route('offers.show', $contract->id);
+            } else {
+                abort(404);
+            }
+            $milestone_amount = $milestones->sum('amount');
+
+            $CONNECTED_ACCOUNT_ID = $contract->expert->stripe_acct_id;
 
             $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+
             $intent           = $this->stripe->paymentIntents->create( [
                 'customer'                  => $user->profile->stripe_client_id,
                 'confirm' => true,
                 'off_session' => true,
-                'amount'                    => number_format($charge['total_amount'], 2) * 100,
-                'currency'                  => 'aud',
+                'amount'                    => round(number_format($charge['total_amount'], 2, '.', '') * 100),
+                'currency'                  => $user->profile->currency,
                 'transfer_group'            => $CONNECTED_ACCOUNT_ID,
                 'payment_method'            => $request->payment_method_id,
                 'metadata'                  => [
-                    'reference_id'   => $milestone->id,
-                    'reference_type' => 'milestone'
+                    'reference_id'   => $milestones->pluck('id')->toJson(),
+                    'reference_type' => 'milestone',
+                    'contract_type' => $reference,
+                    'contract_id' => $contract->id,
+                    'client_id' => $user->id,
+                    'expert_id' => $contract->expert->user->id
                 ]
             ] );
 
@@ -165,6 +202,8 @@ class PaymentController extends Controller {
         }
 
         return response()->json( [
+            'redirect' => $redirect,
+            'intent' => $intent,
             'clientSecret' => $intent->client_secret
         ] );
     }

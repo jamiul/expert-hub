@@ -215,7 +215,7 @@
                                                 fill="#A1A0A5"/></span> Attach File</label>
                                 </div>
                             </div>
-                            <x-form.check wire:model="terms">
+                            <x-form.check wire:model.live="terms">
                                 Yes, I understand and agree to the EduExHub Terms of Service, including the User
                                 Agreement and Privacy Policy.
                             </x-form.check>

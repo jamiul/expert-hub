@@ -36,7 +36,7 @@ class EoiSeeder extends Seeder
                 'title' => $project->title,
                 'due_date' => now(),
                 'amount' => $eoi->amount,
-                'status' => MilestoneStatus::Pending,
+                'status' => MilestoneStatus::WantToPay,
             ]);
         }
     }
