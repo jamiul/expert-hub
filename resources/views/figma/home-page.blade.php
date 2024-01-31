@@ -8,7 +8,6 @@
               <div class="hero-text">
                 <h2>Connect With Top Academic <br>and Industry Experts</h2>
                 <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect you with leaders in course accreditation, curriculum design, policy development, project management and more. Choose ExpertGate when your most pivotal academic and industry projects demand the best.</p>
-
                   <div class="hero-button d-flex gap-3">
                     <a href="#" class="btn btn-primary edux-btn-primary">Find an Expert</a>
                     <a href="#" class="btn edux-btn-border-primary">Become an Expert</a>
@@ -708,150 +707,216 @@
     <div class="academic-block">
       <div class="container">
         <div class="heading">
-          <h4>Academic training</h4>
-          <h2>Upcoming Academic Training</h2>
+          <h4>Upcoming trainings</h4>
+          <h2>Elevate your skills with trainings led by <br/> industry and academic leaders</h2>
         </div>
         <div class="row">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-2 col-sm-6 px-0">
             <div class="live-zoom">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
 
                 <h4>Live via Zoom</h4>
               </div>
-              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="training">
-              <h3>Statistics with R*</h3>
-              <div class="training-text">
-                <span>Instructor:</span>
-                <a href="#">Cameron Williamson</a>
-                <a href="#">Guy Hawkins</a>
+          <div class="col-md-8 col-sm-6">
+            <div class="training eudx-training">
+              <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+
+              <div class="row border-0">
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
               </div>
-              <h6>Language: <span>French</span></h6>
+
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-2">
             <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
           </div>
         </div>
+
+
         <div class="row">
-          <div class="col-md-3 col-sm-6">
-            <div class="live-zoom">
-              <div class="zoom-icon">
-                <img src="images/zoom-icon.png"></img>
-                <h4>Live via Zoom</h4>
-              </div>
-              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="training">
-              <h3>Longitudinal Data Analysis Using Stata</h3>
-              <div class="training-text">
-                <span>Instructor:</span>
-                <a href="#">Marvin McKinney</a>
-                <a href="#">Wade Warren</a>
-              </div>
-              <h6>Language: <span>French</span></h6>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="training-button">
-              <a href="#">Registration</a>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-2 col-sm-6 px-0">
             <div class="live-zoom">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
+
                 <h4>Live via Zoom</h4>
               </div>
-              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="training">
-              <h3>Multilevel and Mixed Models Using Stata</h3>
-              <div class="training-text">
-                <span>Instructor:</span>
-                <a href="#">Leslie Alexander</a>
-                <a href="#">Jacob Jones</a>
+          <div class="col-md-8 col-sm-6">
+            <div class="training eudx-training">
+              <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+
+              <div class="row border-0">
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
               </div>
-              <h6>Language: <span>French</span></h6>
+
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-2">
             <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
           </div>
         </div>
+
+
         <div class="row">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-2 col-sm-6 px-0">
             <div class="live-zoom">
               <div class="zoom-icon">
-              <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
+                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
+
                 <h4>Live via Zoom</h4>
               </div>
-              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
+              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="training">
-              <h3>Curriculum Development</h3>
-              <div class="training-text">
-                <span>Instructor:</span>
-                <a href="#">Floyd Miles</a>
-                <a href="#">Courtney Henry</a>
+          <div class="col-md-8 col-sm-6">
+            <div class="training eudx-training">
+              <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+
+              <div class="row border-0">
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="expert-card training-expert-card">
+                    <div class="expert-card-header mb-2">
+                        <div class="expert-thumb">
+                            <div class="expert-thumb-box">
+                                <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                            </div>
+                        </div> <!--expert-thumb-->
+                        <div class="expert-info">
+                            <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                            <ul class="expert-meta">
+                                <li>Public Health</li>
+                                <li>Melbourne University</li>
+                                <li>Australia</li>
+                            </ul>
+                        </div><!--expert-info-->
+
+                    </div>
+                    </div>
+                  </div>
               </div>
-              <h6>Language: <span>French</span></h6>
+
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-2">
             <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
           </div>
         </div>
-        <div class="row academic-border">
-          <div class="col-md-3 col-sm-6">
-            <div class="live-zoom">
-              <div class="zoom-icon">
-              <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
-                <h4>Live via Zoom</h4>
-              </div>
-              <p>Mon Aug 28 – Wed Aug 30, 2023, from 10am – 3pm daily (Australian Eastern Standard Time)</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="training">
-              <h3>LMS  Integration</h3>
-              <div class="training-text">
-                <span>Instructor:</span>
-                <a href="#">Annette Black</a>
-                <a href="#">Albert Flores</a>
-              </div>
-              <h6>Language: <span>French</span></h6>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="training-button">
-              <a href="#">Registration</a>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-        </div>
+
+<div class="row"></div>
         <div class="academic-button">
           <a href="#">View All Training</a>
         </div>

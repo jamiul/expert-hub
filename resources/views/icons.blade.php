@@ -14,7 +14,6 @@
                 <div class="icon-component-list">
                     @foreach ($iconComponentFileNames as $iconComponentFileName)
 
-
                         <div onclick="copyCode(this)">
                             <x-dynamic-component :component="$iconComponentFileName"/>
                             <p><code>{{ '<x-' . $iconComponentFileName . '/>' }}</code></p>

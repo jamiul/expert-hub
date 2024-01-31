@@ -1,4 +1,4 @@
-@extends('frontend.layouts.figma', ['header' => 'client'])
+@extends('frontend.layouts.app')
 
 @section('content')
     <section class="my-60">
@@ -7,34 +7,12 @@
                 <div class="col-md-8">
                     <h1 class="h5">Select a billing method</h1>
                     <p>This will be primary billing method across all contracts, account activity and subscriptions</p>
-                    @if(($payment_methods->count() > 0))
-                        <div class="card card-24 card-payment-method">
-                            <div class="card-body">
-                                <div class="form-radio-group mb-0">
-                                    <div class="form-radio-options payment-method-options">
-                                        @foreach($payment_methods as $payment_method)
-                                            <div class="form-radio-option ">
-                                                <input type="radio" name="payment-method" id="mastercard" data-id="{{ $payment_method->stripe_payment_id }}"
-                                                       class="form-radio-field form-check-input">
-                                                <div class="form-radio-title">
-                                                    <label class="" for="mastercard">
-                                                <span>
-                                                    @php
-                                                        $iconComponentFileName = 'icon.logo-' . $payment_method->brand;
-                                                    @endphp
-                                                    <x-dynamic-component :component="$iconComponentFileName"/>
-                                                </span>
-                                                        Master ending in {{ $payment_method->last4 }} Exp: {{ $payment_method->exp_month }}/{{ $payment_method->exp_year }}
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                    <button type="button" class="btn btn-outline-primary btn-has-icon btn-md border-2 mt-40">
+
+                    @livewire('payment.card.lists')
+
+                    <button type="button"
+                            onclick="Livewire.dispatch('modal.open', { component: 'payment.card.add' })"
+                            class="btn btn-outline-primary btn-has-icon btn-md border-2 mt-40">
                         <x-icon.add-circle fill="#0036E3"/>
                         <span class="btn-text">Add New Billing Method</span>
                     </button>
@@ -48,7 +26,7 @@
                                          alt="">
                                 </div>
                                 <div class="user-small-card-info">
-                                    <p class="m-0 fw-bold">{{ $contract->expert->user->first_name }} {{ $contract->expert->user->last_name }}</p>
+                                    <p class="m-0 fw-bold">{{ $contract->expert->user->full_name }}</p>
                                 </div>
                             </div>
 
@@ -108,7 +86,7 @@
                                                           href="#">Policy</a> fees and
                                 <a class="text-decoration-underline fw-medium" href="#">estimated taxes</a>
                             </p>
-                            <button class="btn btn-primary btn-md w-100">Fund Milestone & Hire</button>
+                            <button class="btn btn-primary btn-md w-100" id="fund_now">Fund Milestone & Hire</button>
                         </div>
                     </div>
                 </div>
@@ -116,5 +94,169 @@
 
         </div>
     </section>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        window.addEventListener('loadStripeElement', event => {
+            const stripe = Stripe('{{ env('STRIPE_KEY') }}');
+            const clientSecret = event.detail[0].clientSecret;
 
+            const appearance = { /* appearance */};
+            const options = {
+                layout: {
+                    type: 'accordion',
+                    defaultCollapsed: false,
+                    radios: false,
+                    spacedAccordionItems: true
+                }
+            };
+
+            const elements = stripe.elements({clientSecret, appearance});
+            const paymentElement = elements.create('payment', options);
+            paymentElement.mount('#payment-element');
+
+            const form = document.getElementById('payment-form');
+            let submitted = false;
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                if (submitted) {
+                    return;
+                }
+                submitted = true;
+                form.querySelector('button').disabled = true;
+
+                const nameInput = document.querySelector('#name');
+
+                stripe.confirmSetup({
+                    elements,
+                    confirmParams: {
+                        return_url: "{{ route('offers.show', $contract->id) }}",
+                    },
+                    redirect: "if_required",
+                }).then(function (result) {
+                    console.log(result);
+                    if (result.error) {
+                        notify('error', result.error.message);
+                    } else {
+                        console.log(result.setupIntent.status);
+                        if (result.setupIntent.status == 'succeeded') {
+                            notify('success', 'Card saved successfully')
+
+                            setTimeout(function (){
+                                Livewire.dispatch('modal.close');
+                                Livewire.dispatch('refresh-the-component');
+                            }, 2000);
+
+                        }
+                    }
+                    submitted = false;
+                    form.querySelector('button').disabled = false;
+                });
+            });
+        })
+
+        var stripe;
+        var card;
+
+        var chargeCard = function(paymentMethod) {
+            fetch('{{ route('client.payment.chargeCardOffsession') }}', {
+                method: 'POST',
+                body: JSON.stringify({
+                    payment_method_id: paymentMethod,
+                    reference: '{{ request()->reference }}',
+                    id: {{ request()->id }}
+                }),
+                headers: {
+                    "X-CSRF-Token": "{{ csrf_token() }}",
+                    'Content-type': 'application/json;',
+                }
+            }).then(function(result) {
+                return result.json();
+            }).then(function (data){
+                if(data.intent.status == "succeeded"){
+                    notify('success', 'Payment escrow successfully.'),
+                    window.location.href = data.redirect
+                }
+            });
+        }
+
+        var setupElements = function() {
+            stripe = Stripe("{{ env('STRIPE_KEY') }}");
+            var elements = stripe.elements();
+            var style = {
+                base: {
+                    color: "#32325d",
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    fontSmoothing: "antialiased",
+                    fontSize: "16px",
+                    "::placeholder": {
+                        color: "#aab7c4"
+                    }
+                },
+                invalid: {
+                    color: "#fa755a",
+                    iconColor: "#fa755a"
+                }
+            };
+
+            card = elements.create("card", { style: style });
+            card.mount("#payment-element");
+        };
+
+        // Set up event handler for new payment method view
+        var setupNewPaymentMethodView = function(clientSecret) {
+            // Event handler to prompt a customer to enter new payment details
+            document.querySelector("#update-pm").addEventListener("click", function(evt) {
+                document.querySelector("#update-pm").disabled = true;
+                // Use confirmCardPayment() to attemp to pay for the PaymentIntent with a
+                // new card (collected by the Card Element) and save it to the customer
+                stripe
+                    .confirmCardPayment(clientSecret, {
+                        payment_method: { card: card },
+                        save_payment_method: true
+                    })
+                    .then(function(stripeJsResult) {
+                        document.querySelector("#update-pm").disabled = false;
+                        if (stripeJsResult.error) {
+                            // Ask for new card details
+                            notify('error', stripeJsResult.error.message);
+                        } else if (
+                            stripeJsResult.paymentIntent &&
+                            stripeJsResult.paymentIntent.status === "succeeded"
+                        ) {
+                            // New card details were used to pay for the PaymentIntent
+                            // There's a risk your customer will drop-off or close the browser before this callback executes
+                            // We recommend handling any business-critical post-payment logic in a webhook
+                            stripe.retrievePaymentIntent(clientSecret).then(function(result) {
+                                var paymentIntent = result.paymentIntent;
+                                var paymentIntentJson = JSON.stringify(paymentIntent, null, 2);
+                                document.querySelector("pre").textContent = paymentIntentJson;
+                                document.querySelector(".code-preview").classList.add("expand");
+                            });
+                        }
+                    });
+            });
+        };
+
+        var paymentIntentSucceeded = function(clientSecret, viewSelector) {
+            // hideEl(viewSelector);
+            // showEl(".code-preview");
+            stripe.retrievePaymentIntent(clientSecret).then(function(result) {
+                var paymentIntent = result.paymentIntent;
+                var paymentIntentJson = JSON.stringify(paymentIntent, null, 2);
+                console.log(paymentIntentJson);
+                // document.querySelector("pre").textContent = paymentIntentJson;
+                // document.querySelector(".code-preview").classList.add("expand");
+            });
+        };
+
+        document.querySelector('#fund_now').addEventListener('click', function (event) {
+            event.preventDefault();
+            const stripe = Stripe('{{ env('STRIPE_KEY') }}');
+
+            var selectedPaymentMethod = document.querySelector(".payment_method:checked").getAttribute('data-id');
+
+            chargeCard(selectedPaymentMethod);
+        });
+    </script>
 @endsection
