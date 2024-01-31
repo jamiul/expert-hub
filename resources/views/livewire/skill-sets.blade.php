@@ -67,7 +67,7 @@
                 </div>
                 <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-lg-6">
                             <div class="accordion">
                                 @foreach ($expertSkills->take($perRowSkill) as $expertSkill)
                                     <div class="at-item">
@@ -87,7 +87,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-lg-6">
                             <div class="accordion">
                                 @foreach ($expertSkills->skip($perRowSkill)->take($perRowSkill) as $expertSkill)
                                     <div class="at-item">
@@ -107,26 +107,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="accordion">
-                                @foreach ($expertSkills->skip(8) as $expertSkill)
-                                    <div class="at-item">
-                                        <div class="at-title">
-                                            <h2>{{ $expertSkill->name }}</h2>
-                                        </div>
-                                        <div class="at-tab">
-                                            <ul>
-                                                @foreach ($expertSkill->children->sortBy('name') as $child)
-                                                    <li>
-                                                        <a href="{{ route('find.experts') }}?skills[0]={{ $child->name }}">{{ $child->name }}</a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
