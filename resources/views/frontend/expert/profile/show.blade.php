@@ -24,7 +24,7 @@
                                                 d="M12.5009 11.8654C12.9985 11.8654 13.4239 11.6882 13.7771 11.3339C14.1303 10.9795 14.3069 10.5536 14.3069 10.056C14.3069 9.55839 14.1297 9.133 13.7754 8.7798C13.4211 8.4266 12.9951 8.25 12.4975 8.25C11.9999 8.25 11.5745 8.42717 11.2213 8.7815C10.8681 9.13583 10.6915 9.56179 10.6915 10.0594C10.6915 10.557 10.8687 10.9824 11.223 11.3356C11.5774 11.6888 12.0033 11.8654 12.5009 11.8654ZM12.4992 19.5135C14.4556 17.7622 15.9527 16.0824 16.9906 14.474C18.0284 12.8657 18.5473 11.457 18.5473 10.2481C18.5473 8.42498 17.9681 6.92627 16.8098 5.7519C15.6515 4.57753 14.2146 3.99035 12.4992 3.99035C10.7838 3.99035 9.34698 4.57753 8.18865 5.7519C7.03031 6.92627 6.45115 8.42498 6.45115 10.2481C6.45115 11.457 6.97006 12.8657 8.00787 14.474C9.04571 16.0824 10.5428 17.7622 12.4992 19.5135ZM12.4992 21.5096C9.98257 19.3288 8.0954 17.2993 6.8377 15.4211C5.58001 13.5429 4.95117 11.8186 4.95117 10.2481C4.95117 7.94038 5.69765 6.07213 7.1906 4.64328C8.68353 3.21443 10.4531 2.5 12.4992 2.5C14.5454 2.5 16.3149 3.21443 17.8078 4.64328C19.3008 6.07213 20.0473 7.94038 20.0473 10.2481C20.0473 11.8186 19.4184 13.5429 18.1607 15.4211C16.903 17.2993 15.0159 19.3288 12.4992 21.5096Z"
                                                 fill="#191D24" fill-opacity="0.5" />
                                         </svg>
-                                        <sapn> Sydney, Australia</sapn>
+                                        <span> Sydney, {{ $expert->user->country->name }}</span>
                                     </p>
                                     <p class="text-sm d-flex align-items-center justify-content-center">
                                         <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
@@ -36,9 +36,12 @@
                                         <span> 10.15am AEST</span>
                                     </p>
                                     {{-- @TODO project need to be dynamic --}}
-                                    <button onclick="Livewire.dispatch('modal.open', { component: 'project.invite', arguments: { 'expert': {{ $expert->id }}, 'project': 10 }})" class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                                    @if(isset($eoi))
+                                    @else
+                                    <button onclick="Livewire.dispatch('modal.open', { component: 'project.invite', arguments: { 'expert': {{ $expert->id }}, 'project': 0 }})" class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                         Invite to Project
                                     </button>
+                                    @endif
                                     <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24"
                                             viewBox="0 0 25 24" fill="none">
@@ -97,6 +100,23 @@
                         </div>
 
                         <div class="page-content">
+                            @if(isset($eoi))
+                                <div class="card card-24 mb-40" style="background-color: #F4F6F9;">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                                            <h3 class="mb-0 h5">
+                                                EOI Details
+                                            </h3>
+                                            <p class="mb-0">
+                                                Proposed <span class="fw-medium">${{ $eoi->amount }}</span>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            {{ $eoi->cover_letter }}
+                                        </p>
+                                    </div>
+                                </div>
+                            @else
                             <div class="consultant-details border-0 p-0 shadow-none">
                                 <div class="consultant-details-left">
                                     <h3 class="d-inline-flex align-items-center">
@@ -106,9 +126,11 @@
                                         <span>${{ $expert->hourly_rate }}/hour</span>
                                     </p>
                                 </div>
-                                <p>{{ $expert->biography ?? '' }}<a href="#" class="edux-read-more">More</a>
+                                <p>
+                                    {{ $expert->biography ?? '' }}
                                 </p>
                             </div>
+                            @endif
                             <div class="consultant-prof edux-consultant-prof card card-24">
                                 <div class="d-flex gap-2 align-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

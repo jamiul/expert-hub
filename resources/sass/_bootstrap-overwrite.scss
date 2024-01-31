@@ -111,44 +111,58 @@ table {
 .badge {
     font-size: 0.875rem;
     font-weight: 500;
+    border: 2px solid transparent;
 
     &.badge-primary {
         color: #fff;
         background-color: $edu-primary-color;
+        border-color: $edu-primary-color;
     }
+
     &.badge-primary-light {
         color: $edu-primary-color;
         background: rgba(0, 54, 227, 0.06);
+        border-color: rgba(0, 54, 227, 0.06);
     }
 
     &.badge-secondary {
         color: #fff;
         background-color: #6c757d;
+        border-color: #6c757d;
     }
 
     &.badge-success {
         color: #fff;
         background-color: #369450;
+        border-color: #369450;
     }
 
     &.badge-danger {
         color: #fff;
         background-color: #dc3545;
+        border-color: #dc3545;
     }
 
     &.badge-warning {
         color: #212529;
         background-color: #E9B911;
+        border-color: #E9B911;
     }
 
     &.badge-info {
         color: #fff;
         background-color: #17a2b8;
+        border-color: #17a2b8;
     }
 
     &.badge-pill {
         padding: 4px 12px;
         border-radius: 30px;
+    }
+
+    &.badge-outline-primary {
+        border-color: $edu-primary-color;
+        color: $edu-primary-color;
     }
 }
 

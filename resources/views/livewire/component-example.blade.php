@@ -31,7 +31,7 @@
             <option value="Dr">Dr</option>
             <option value="Prof">Prof</option>
         </x-form.choice>
-        <x-form.choice wire:model="title" label="Select Single">
+        <x-form.choice wire:model="title" label="Select Single" :search="false">
             <option value="">Select Title</option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>

@@ -33,6 +33,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/job-posts', 'figma.projectCreate');
     Route::view('/jobposts-test', 'figma.clientjobpost');
     //client Registration
+    Route::view('/home', 'figma.home-page');
     Route::view('/client-login', 'figma.clientlogin');
     Route::view('/client-signup', 'figma.clientsignup');
     Route::view('/client-profile-position-setup', 'figma.clientprofilepositionsetup');
@@ -92,6 +93,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-transaction', 'figma.expert-transaction');
     Route::view('/expert-payment-setting', 'figma.client-payment-setting');
     Route::view('/expert-payment-setting-notification', 'figma.client-payment-setting-notification');
+    Route::view('/expert-payment-setting-notification-empty', 'figma.client-payment-setting-notification-empty');
     Route::view('/expert-get-paid', 'figma.expert-get-paid');
 
 
@@ -120,6 +122,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/super-admin-scholarship-post', 'figma.admindashboardscholarshippost');
 
     Route::view('/super-admin-payment', 'figma.adminpayment');
+    Route::view('/super-admin-payment-backup', 'figma.admin-payment-backup');
     Route::view('/super-admin-review', 'figma.adminpaymentprogress');
 
     //Expert Dashboard Login
@@ -164,6 +167,6 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-send-job-offer', 'figma.client-send-job-offer');
     Route::view('/project/client-send-job-offer-view', 'figma.client-send-job-offer-view');
     Route::view('/project/client-eoi-view-with-expert-profile', 'figma.client-eoi-view-with-expert-profile');
-
+    Route::view('/project/client-job-posts-deposit-payment', 'figma.client-job-posts-deposit-payment');
 
 });

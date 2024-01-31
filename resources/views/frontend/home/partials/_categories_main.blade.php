@@ -1,264 +1,145 @@
-<div class="categories-main">
+<section class="page-section category-grid-section">
     <div class="container">
-        <div class="heading">
-            <h4>Categories</h4>
-            <h2>Browse Experts by Category <br> of Expertise</h2>
+        <div style="margin-bottom: 71px" class="section-title-wrapper text-center mx-auto">
+            <h2 class="section-title">Categories</h2>
+            <p class="section-title-lead">Browse Experts by Category</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-curriculum-development.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Curriculum Development</a></h3>
+                        <p>Assist in developing engaging, effective curricula tailored to your educational needs.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-course-accreditation.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Course Accreditation</a></h3>
+                        <p>Help clients meet industry standards and gain official recognition for their programs.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img
+                                src="{{ asset('assets/frontend/img/categories/category-learning-management-system.png') }}"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Learning Management System</a></h3>
+                        <p>Implement efficient Learning Management systems to streamline your educational processes.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-policy-development.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Policy Development</a></h3>
+                        <p>Provide valuable insights and guidance on policy development, analysis, and
+                            implementation.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-research-and-analysis.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Research and Analysis</a></h3>
+                        <p>Offer rigorous research methodologies and data analysis to help you make informed decisions
+                            for business operations.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-financial-management.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Financial Management</a></h3>
+                        <p>Provide financial advice and strategies to optimise your organisation's financial health.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img src="{{ asset('assets/frontend/img/categories/category-project-management.png') }}"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Project Management</a></h3>
+                        <p>Ensure your projects are executed efficiently, on time, and within budget.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="category-box">
+                    <div class="category-image">
+                        <a href="">
+                            <img
+                                src="{{ asset('assets/frontend/img/categories/category-grants-and-scholarships.png') }}"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="category-info">
+                        <h3><a href="#">Grants and Scholarships</a></h3>
+                        <p>Guide you through scholarship opportunities and application processes for educational
+                            funding.</p>
+                    </div>
+                </div> <!--category-box-->
+            </div>
+
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories1.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Accreditation Specialist</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text d-none">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories2.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Curriculum Experts</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text d-none">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories3.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Program Designers</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text d-none">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories4.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">LMS Experts</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text d-none">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories5.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Industry Experts</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories6.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Finance Experts</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories7.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Project Managers</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="categories-block">
-                    <div class="categories-img">
-                        <a href="#"><img src="{{ asset('assets/frontend/img/categories8.jpg') }}" /></a>
-                    </div>
-                    <div class="categories-text">
-                        <h3><a href="#">Scholarships Advisor</a></h3>
-                        <div class="categories-review">
-                            <div class="review">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="review-text">45 Review</div>
-                        </div>
-                    </div>
-                    <div class="categories-available d-flex align-items-start position-relative">
-                        <div class="available-img d-flex justify-content-start">
-                            <img class=" position-absolute exp-category"
-                                src="{{ asset('assets/frontend/img/available-img1.png') }}" />
-                            <img class=" position-absolute exp-categorym"
-                                src="{{ asset('assets/frontend/img/available-img2.png') }}" />
-                            <img class=" position-absolute exp-categoryl"
-                                src="{{ asset('assets/frontend/img/available-img3.png') }}" />
-                        </div>
-                        <div class="available-text">+ 120 Available</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="single-button d-flex justify-content-center edux-btn-mt">
-                <x-button.link href="{{ route('find.experts') }}" class="btn edux-btn-border-primary"
-                    text="View All Categories" />
+            <div class="col text-center">
+                <x-button.link
+                    href="{{ route('find.experts') }}"
+                    class="btn btn-outline-primary btn-md border-2"
+                    text="View All Experts"
+                    style="width: 235px"
+                />
             </div>
         </div>
     </div>
-</div>
+</section>
+

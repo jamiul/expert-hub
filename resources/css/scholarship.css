@@ -1,26 +1,26 @@
 .edux-scholarship-table {
     border: none;
     color: #191D24;
-  }
+}
 
 .edux-data-table > :not(caption) > * > * {
-    border-color:  rgba(0, 0, 0, 0.10);
+    border-color: rgba(0, 0, 0, 0.10);
     padding: 1rem;
 }
 
-.edux-data-table > thead > tr > th{
+.edux-data-table > thead > tr > th {
     padding-top: 25px;
     padding-bottom: 25px;
     color: rgba(48, 55, 68, 0.80);
     font-weight: 500;
 }
 
-.edux-data-table tr > td{
-    vertical-align:middle
+.edux-data-table tr > td {
+    vertical-align: middle
 }
 
-.edux-data-table tr > td h6{
-    color:#191D24;
+.edux-data-table tr > td h6 {
+    color: #191D24;
     font-size: 16px;
     font-weight: 500;
 }
@@ -40,12 +40,12 @@
     font-weight: 500;
 }
 
-.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon{
+.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon {
     max-width: 24px;
     flex: 0 0 24px;
 }
 
-.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon{
+.edux-scholarship-details-cell ul li span.edux-scholarship-table-details-icon {
     max-width: 24px;
     flex: 0 0 24px;
 }
@@ -59,14 +59,12 @@
     padding: 4px 10px;
 }
 
-.user-card-small{
-
-display: flex;
-gap: 8px;
-
+.user-card-small {
+    display: flex;
+    gap: 8px;
 }
 
-.user-card-info h5{
+.user-card-info h5 {
     color: #191D24;
     font-weight: 500;
 }
@@ -77,27 +75,28 @@ gap: 8px;
     font-weight: 500;
     text-decoration-line: underline;
     cursor: pointer;
-  }
+}
 
-  .edux-rating{
+.edux-rating {
     display: inline-flex;
-  }
+}
 
 
-  .edux-rating li svg{
+.edux-rating li svg {
     width: 16px;
     height: 16px;
-  }
+}
 
 
-  /* ==================================== Scholarship Single page ===================================== */
+/* ==================================== Scholarship Single page ===================================== */
 
-  .edux-sidebar-layout {
+.edux-sidebar-layout {
     display: grid;
     border-radius: 7px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
     grid-template-columns: auto;
 }
-  /* ==================================== Scholarship Single page ===================================== */
+
+/* ==================================== Scholarship Single page ===================================== */
 

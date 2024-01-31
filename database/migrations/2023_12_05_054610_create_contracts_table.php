@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('client_id');
             $table->foreignId('expert_id');
             $table->decimal('amount');
+            $table->decimal('escrow_amount');
             $table->text('message')->nullable();
             $table->string('status');
             $table->boolean('active')->default(1);

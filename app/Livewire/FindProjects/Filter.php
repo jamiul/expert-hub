@@ -122,7 +122,7 @@ class Filter extends Component
 
     public function render()
     {
-        $projectCategories = Expertise::skill()->isParent()->orderBy('name')->get();
+        $projectCategories = Expertise::expertise()->isParent()->orderBy('name')->get();
 
         return view('livewire.find-projects.filter', compact('projectCategories'));
     }

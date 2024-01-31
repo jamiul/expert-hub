@@ -69,6 +69,12 @@
         height: 100%;
         visibility: hidden;
     }
+
+    &.card-payment-method {
+        border-radius: 4px;
+        border: 1px solid rgba(0, 54, 227, 0.20);
+        background: rgba(0, 54, 227, 0.05);
+    }
 }
 
 .offered-service-card {
@@ -96,4 +102,10 @@
     grid-template-columns: 180px auto;
     gap: 20px;
     border: 1px solid $edu-border-color;
+}
+
+.user-small-card {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 8px;
 }

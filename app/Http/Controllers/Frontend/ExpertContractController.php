@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContractController extends Controller
+class ExpertContractController extends Controller
 {
     public function index()
     {
-        return view('frontend.contract.index');
+        return view('frontend.contract.expert.index');
     }
 }

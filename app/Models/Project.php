@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\OfferStatus;
 use App\Enums\ProjectStatus;
 use App\Enums\ProjectType;
 use Illuminate\Database\Eloquent\Model;
@@ -75,6 +76,16 @@ class Project extends Model implements HasMedia
         return $this->hasMany(Eoi::class);
     }
 
+    public function newEois()
+    {
+        return $this->eois()->whereDate('created_at', now())->get();
+    }
+
+    public function messagedEois()
+    {
+        return $this->eois()->where('is_messaged', true)->get();
+    }
+
     public function invitations()
     {
         return $this->hasMany(Invitation::class);
@@ -83,6 +94,16 @@ class Project extends Model implements HasMedia
     public function offers()
     {
         return $this->hasMany(Offer::class);
+    }
+
+    public function activeOffers()
+    {
+        return $this->offers()->where('status', OfferStatus::Pending);
+    }
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
     }
 
     public function currency()

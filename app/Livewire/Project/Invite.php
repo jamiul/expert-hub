@@ -17,6 +17,8 @@ use WireElements\Pro\Components\Modal\Modal;
 
 class Invite extends Modal
 {
+    public $projects;
+
     public $project;
 
     public $expert;
@@ -24,11 +26,16 @@ class Invite extends Modal
     public $project_id;
     public $message = 'Hello!'. PHP_EOL. 'I\'d like to invite you to take a look at the job I\'ve posted. Please submit a proposal if you\'re available and interested.' . PHP_EOL . 'Dr Mohammad R.';
 
-    public function mount(Profile $expert, Project $project)
+    public function mount(Profile $expert, $project)
     {
-        $this->project = $project;
-        $this->project_id = $project->id;
+        if($project){
+            $this->project = auth()->user()->profile->projects()->where('id', $project)->first();
+        }else{
+            $this->project = auth()->user()->profile->projects()->first();
+        }
+        $this->project_id = $this->project->id;
         $this->expert = $expert;
+        $this->projects = auth()->user()->profile->projects()->get();
     }
 
     public function inviteToProject()
@@ -48,6 +55,7 @@ class Invite extends Modal
         ]));
         toast('success', 'Invitation Sent Successfully', $this);
         $this->close();
+        //Todo Update invitation count
     }
 
     public function sendMessage()
