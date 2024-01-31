@@ -1182,6 +1182,7 @@ img.exp-categoryl {
     cursor: pointer;
     position: relative;
     transition: background-color 0.3s ease;
+    padding: 20px 0;
 }
 
 .skillsets .accordion .at-title:after {
@@ -1200,8 +1201,8 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-item {
     border-bottom: solid 1px #e7e5f0;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    /*margin-bottom: 20px;*/
+    /*padding-bottom: 20px;*/
 }
 
 .skillsets .accordion .at-item:last-child {
@@ -1220,7 +1221,7 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-tab ul {
     padding: 0;
-    margin: 20px 0 0;
+    margin: 0 0 20px;
 }
 
 .skillsets .accordion .at-tab ul li {
