@@ -712,14 +712,18 @@
         </div>
 
 
-      <div class="academic-content-training-area">
+      <div class="academic-content-training-area academic-border-top">
         <div class="live-zoom academic-zoom-area">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
 
                 <h4>Live via Zoom</h4>
               </div>
-              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
+              <div class="zoom-live-text">
+                <p class="mx-0">23 January 2024 - 28 April 2024</p>
+                <p class="my-0">10.15am  AEST, Sydney, Australia</p>
+                <p class="my-0">USD 995</p>
+            </div>
             </div>
 
 
@@ -786,7 +790,11 @@
 
                 <h4>Live via Zoom</h4>
               </div>
-              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
+              <div class="zoom-live-text">
+                <p class="mx-0">23 January 2024 - 28 April 2024</p>
+                <p class="my-0">10.15am  AEST, Sydney, Australia</p>
+                <p class="my-0">USD 995</p>
+            </div>
             </div>
 
 
@@ -851,9 +859,13 @@
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-speech.png') }}" alt=""></img>
 
-                <h4>Live via Zoom</h4>
+                <h4>Face to Face</h4>
               </div>
-              <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
+              <div class="zoom-live-text">
+                <p class="mx-0">23 January 2024 - 28 April 2024</p>
+                <p class="my-0">10.15am  AEST, Sydney, Australia</p>
+                <p class="my-0">USD 995</p>
+            </div>
             </div>
 
 

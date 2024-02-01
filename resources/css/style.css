@@ -992,9 +992,10 @@ img.exp-categoryl {
     border-bottom: solid 1px #d9dbea;
 }
 
-/* .academic-block .live-zoom {
+ .live-zoom {
     border-right: solid 1px #d9dbea;
-} */
+    min-width:239px;
+}
 
 /* .eudx-training{
     border-left: solid 1px #d9dbea;
@@ -1004,9 +1005,9 @@ img.exp-categoryl {
 } */
 .training-expert-card .expert-card-header ul.expert-meta li {
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 15px;
     position: relative;
-    color: rgba(48, 55, 68, 0.6);
+    color: rgba(48, 55, 68, 0.60);
     font-size: 13px;
     font-weight: 500;
 }
@@ -1026,7 +1027,7 @@ img.exp-categoryl {
 .live-zoom .zoom-icon h4 {
     margin: 0;
     font-size: 14px;
-    color: #303744;
+    color: #0036E3;
     font-weight: 500;
 }
 
@@ -1035,73 +1036,80 @@ img.exp-categoryl {
     justify-content: space-between;
     align-items: center;
     padding: 30px 25px 32px;
-    border-top: 1px solid  rgba(14, 0, 98, 0.10);
+    /* border-top: 1px solid  rgba(14, 0, 98, 0.10); */
     border-bottom: 1px solid rgba(14, 0, 98, 0.10);
 }
 
+.academic-border-top{
+    border-top: 1px solid  rgba(14, 0, 98, 0.10);
+}
 
-.academic-zoom-area {
+
+
+/* .academic-zoom-area {
     width: 100%;
     max-width: 239px;
     border-right: 1px solid  rgba(14, 0, 98, 0.10);
-}
+} */
 
-.academic-block .live-zoom p {
+
+
+.live-zoom p {
     margin: 15px 0 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.8px;
 }
 
-.academic-block .training h3 {
-    font-size: 19px;
-    color: #303744;
+.training h3 {
+    font-size: 16px;
+    color: #191D24;
     font-weight: 500;
     margin: 0;
 }
 
-.academic-block .training .training-text span {
+.training .training-text span {
     font-size: 16px;
     font-weight: 500;
     color: #303744b2;
 }
 
-.academic-block .training .training-text a {
+.training .training-text a {
     font-size: 16px;
     font-weight: 500;
     color: #0036e3;
     text-decoration: underline;
 }
 
-.academic-block .training .training-text a:hover {
+.training .training-text a:hover {
     color: #303744;
 }
 
-.academic-block .training .training-text a:last-child {
+ .training .training-text a:last-child {
     border-left: solid 1px #0e006280;
     padding-left: 8px;
     margin-left: 6px;
 }
 
-.academic-block .training h6 {
+.training h6 {
     margin: 0;
     font-size: 15px;
     font-weight: 400;
     color: #303744;
 }
 
-.academic-block .training h6 span {
+ .training h6 span {
     margin: 0;
     font-size: 15px;
     font-weight: 500;
     color: #303744;
 }
 
-.academic-block .training .training-text {
+.training .training-text {
     margin: 13px 0 20px;
 }
 
-.academic-block .training-button {
+ .training-button {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1118,7 +1126,7 @@ img.exp-categoryl {
     font-weight: 500;
 }
 
-.zoom-live-text span{
+.zoom-live-text p{
     gap: 18px;
     color:  #303744;
     font-size: 14px;
@@ -1165,7 +1173,7 @@ img.exp-categoryl {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin: 0px 40px 0px 24px;
+    margin: 0px 10px 0px 24px;
 }
 
 .academic-button-area {

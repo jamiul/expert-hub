@@ -9580,17 +9580,25 @@ header.client-header {
 
 @media only screen and (max-width: 1200px) {
 
-  .academic-content-training-area {
+
+  .eudx-training {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 25px 32px;
-    border-top: 1px solid  rgba(14, 0, 98, 0.10);
-    border-bottom: 1px solid rgba(14, 0, 98, 0.10);
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
+    margin: 0px;
 }
 
+.academic-content-training-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  border-top: 1px solid  rgba(14, 0, 98, 0.10);
+  border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
 
 
  .training-button {
