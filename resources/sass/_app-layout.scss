@@ -518,13 +518,21 @@ header {
                 }
             }
 
-            @media screen and (max-width: 1180px) {
+            @media screen and (max-width: 1180px) and (min-width: 500px) {
                 grid-template-columns: 158.9px auto 40px;
                 .header-menu-wrapper {
                     display: none;
                 }
-
-
+            }
+            @media screen and (max-width: 500px) {
+                grid-template-columns: 158.9px  40px;
+                justify-content: space-between;
+                .header-menu-wrapper {
+                    display: none;
+                }
+                .header-focus-menu {
+                    display: none;
+                }
             }
 
         }
@@ -602,22 +610,28 @@ header {
 
         &.mobile-menu-activated {
             position: relative;
+            @media screen and (max-width: 1180px) {
+                .header-menu-wrapper {
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: #fff;
+                    padding-bottom: 20px;
+                    border-top: 1px solid $edu-border-color;
 
-            .header-menu-wrapper {
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: #fff;
-                padding-bottom: 20px;
-                border-top: 1px solid $edu-border-color;
-
-                .header-special-menu {
-                    margin-right: auto;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
+                    .header-special-menu {
+                        margin-right: auto;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        @media screen and (max-width: 500px) {
+                            ul {
+                                flex-direction: column;
+                            }
+                        }
+                    }
                 }
             }
         }
