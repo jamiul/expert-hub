@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="balance-area">
                     <span class="available-balance">Balance: <span>${{ number_format($user->profile->balance, 2) }}</span> </span>
-                    <span class="screw-balance">Pending: <span>${{ number_format($user->profile->escrow_balance, 2) }}</span>  </span>
+                    <span class="screw-balance">Escrow Balance: <span>${{ number_format($user->profile->escrow_balance, 2) }}</span>  </span>
                 </div>
             </div>
 

@@ -21,6 +21,9 @@ class ExpertNotificationCount extends Component
     {
         $unread_notifications = auth()->user()->unreadNotifications()->get();
         $unreadCount          = auth()->user()->unreadNotifications()->count();
+        if($unreadCount == 0){
+            $unread_notifications = auth()->user()->notifications()->limit(5)->get();
+        }
 
         return view( 'livewire.expert-notification-count', compact( 'unread_notifications', 'unreadCount' ) );
     }

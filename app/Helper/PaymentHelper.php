@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\ClientTransaction;
+use App\Models\Contract;
 use App\Models\ExpertTransaction;
 use App\Models\Profile;
 use App\Models\User;
@@ -62,11 +63,19 @@ class PaymentHelper {
         }
     }
 
-    public static function calculateMilestoneCharge( $milestone_amount ) {
+    public static function calculateMilestoneCharge( $milestone_amount, $client_id = null, $expert_id = null ) {
         $service_charge = ( $milestone_amount * env( 'SERVICE_CHARGE' ) ) / 100;
 
         //todo: check if its first contact for that Expert and Client, if yes, add 3$ contract initialization fee
         $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
+        if($client_id && $expert_id){
+            $contract_count = Contract::where('client_id', $client_id)->where('expert_id', $expert_id)->count();
+            if($contract_count > 0 ){
+                $contract_initialization_fee = 0;
+            } else {
+                $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
+            }
+        }
 
         $net_total           = $milestone_amount + $service_charge + $contract_initialization_fee;
         $gst                 = ( $service_charge * env( 'GST' ) ) / 100;

@@ -208,8 +208,8 @@ class StripeController extends Controller {
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
             }
+
             //save to client transaction table
-            //todo: calculate client displayable transaction data
             if ( $reference_type == 'milestone' ) {
                 foreach (json_decode($reference_id) as $ref_id){
                     //update milestone status to funded.
@@ -223,12 +223,12 @@ class StripeController extends Controller {
                     $charge    = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
                     $profile   = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                    //parent transaction
+                    //parent transaction - credit card charge
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
                         'type'           => 'Payment',
-                        'description'    => "Paid from Mastercard 0026 to escrow for funding request xxxxxxxxx",
+                        'description'    => "Paid from Mastercard 0026 to escrow for funding request",
                         'client_id'      => $client_id,
                         'expert_id'      => null,
                         'amount'         => ( $paymentData->amount / 100 ),
@@ -269,7 +269,6 @@ class StripeController extends Controller {
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
 
-                    //todo: check if its first contract with that expert or not.
                     //contract initialization fee transaction
                     if ( $charge['contract_initialization_fee'] > 0 ) {
                         $contract_initialization_fee = $charge['contract_initialization_fee'];
@@ -319,28 +318,19 @@ class StripeController extends Controller {
                         'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
-
-                    /* milestone funded, update & send notification to expert*/
-
-//                    $transaction_data = [
-//                        'transaction_id' => $stripe_transaction->id,
-//                        'milestone_id'   => $ref_id,
-//                        'type'           => 'Fixed Price',
-//                        'description'    => "Funded for " . $milestone->title,
-//                        'client_id'      => $profile->user_id,
-//                        'expert_id'      => $expert_id,
-//                        'amount'         => $milestone_amount,
-//                        'charge_type'    => 'credit',
-//                        'parent'         => $stripe_transaction->id,
-//                        'status'         => 0
-//                    ];
-//                    PaymentHelper::createExpertTransaction( $transaction_data );
                 }
             }
 
-            //todo: add data to client specific transaction table
-            //todo: update milestone status
             //todo: send payment notification & email to Client, Expert & Admin
+            $client = User::find( $client_id );
+            $client->notify( new PaymentNotification( [
+                'title'   => "Card charged",
+                'message' => "Your credit card been charged " . $paymentData->amount / 100 . ' ' . $paymentData->currency,
+                'link'    => route( 'client.payment.billing' ),
+                'button'  => 'View Details',
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
+            ] ) );
+
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
@@ -555,7 +545,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -600,7 +590,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -645,7 +635,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
