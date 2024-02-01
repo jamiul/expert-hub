@@ -169,17 +169,17 @@ class StripeController extends Controller {
         try {
             $reference_id   = @$paymentData->metadata->reference_id; //milestone id
             $reference_type = @$paymentData->metadata->reference_type; //milestone
-            $contract_type = @$paymentData->metadata->contract_type; //offer/contract
-            $contract_id = @$paymentData->metadata->contract_id; //offer_id
-            $client_id = @$paymentData->metadata->client_id; //client_id
-            $expert_id = @$paymentData->metadata->expert_id; //expert_id
+            $contract_type  = @$paymentData->metadata->contract_type; //offer/contract
+            $contract_id    = @$paymentData->metadata->contract_id; //offer_id
+            $client_id      = @$paymentData->metadata->client_id; //client_id
+            $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
                 'payment_intent_id'      => $paymentData->id,
-                'reference_id'           => json_encode($reference_id),
+                'reference_id'           => json_encode( $reference_id ),
                 'reference_type'         => $reference_type,
                 'object'                 => $paymentData->object,
                 'amount'                 => $paymentData->amount,
@@ -203,15 +203,15 @@ class StripeController extends Controller {
             ] );
 
             //update offer status based on payment = pending / not accepted
-            if($contract_type == 'offer'){
-                $offer = Offer::find($contract_id);
+            if ( $contract_type == 'offer' ) {
+                $offer         = Offer::find( $contract_id );
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
             }
 
             //save to client transaction table
             if ( $reference_type == 'milestone' ) {
-                foreach (json_decode($reference_id) as $ref_id){
+                foreach ( json_decode( $reference_id ) as $ref_id ) {
                     //update milestone status to funded.
                     $milestone         = Milestone::find( $ref_id );
                     $milestone->status = MilestoneStatus::Funded;
@@ -220,8 +220,8 @@ class StripeController extends Controller {
                     $milestone_amount = $milestone->amount;;
 
                     //breakdown charge into pieces
-                    $charge    = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
-                    $profile   = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
+                    $charge  = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $offer->client_id, $offer->expert_id );
+                    $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
                     //parent transaction - credit card charge
                     $transaction_data = [
@@ -696,19 +696,19 @@ class StripeController extends Controller {
         //todo: save into transfer table
 
         //todo: update expert funded milestone status
-        if($reference_type == 'milestone'){
-            $milestone = Milestone::find($reference_id);
+        if ( $reference_type == 'milestone' ) {
+            $milestone = Milestone::find( $reference_id );
             $expert_id = $milestone->contract->expert_id;
 
             $profile = $milestone->contract->expert;
 
-            $balance = $profile->balance;
+            $balance        = $profile->balance;
             $escrow_balance = $profile->escrow_balance;
 
-            $balance += ($transfer->amount / 100);
-            $escrow_balance -= ($transfer->amount / 100);
+            $balance        += ( $transfer->amount / 100 );
+            $escrow_balance -= ( $transfer->amount / 100 );
 
-            $profile->balance = $balance;
+            $profile->balance        = $balance;
             $profile->escrow_balance = $escrow_balance;
             $profile->save();
 
@@ -717,9 +717,9 @@ class StripeController extends Controller {
             $milestone->save();
 
             //calculate expert balance & escrow
-            ExpertTransaction::where('milestone_id', $reference_id)->update([
-                'status'         => 1
-            ]);
+            ExpertTransaction::where( 'milestone_id', $reference_id )->update( [
+                'status' => 1
+            ] );
 
         }
     }

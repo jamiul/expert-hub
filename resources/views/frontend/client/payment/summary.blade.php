@@ -62,10 +62,12 @@
                                         <td>Marketplace fee ({{ env('SERVICE_CHARGE') }}%)</td>
                                         <td>{{ $contract->expert->currency }} {{ number_format($milestone_charges['service_charge'], 2) }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Contact initiation fee</td>
-                                        <td>{{ $contract->expert->currency }} {{ number_format($milestone_charges['contract_initialization_fee'], 2) }}</td>
-                                    </tr>
+                                    @if($milestone_charges['contract_initialization_fee'] > 0)
+                                        <tr>
+                                            <td>Contact initiation fee</td>
+                                            <td>{{ $contract->expert->currency }} {{ number_format($milestone_charges['contract_initialization_fee'], 2) }}</td>
+                                        </tr>
+                                    @endif
                                     <tr>
                                         <td>Estimate taxes ({{ env('GST') }}%)</td>
                                         <td>{{ $contract->expert->currency }} {{ number_format($milestone_charges['gst'], 2) }}</td>

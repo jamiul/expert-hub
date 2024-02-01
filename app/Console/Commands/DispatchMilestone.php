@@ -3,11 +3,14 @@
 namespace App\Console\Commands;
 
 use App\Enums\MilestoneStatus;
+use App\Models\ExpertTransaction;
 use App\Models\Milestone;
+use App\Models\Profile;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
-class DispatchMilestone extends Command
-{
+class DispatchMilestone extends Command {
     /**
      * The name and signature of the console command.
      *
@@ -25,21 +28,26 @@ class DispatchMilestone extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
-    {
-        $milestones = Milestone::where('status', MilestoneStatus::Approved)->whereDate('approved_at', '>=', \Carbon::now()->addDays(5))->get();
-        foreach ($milestones as $milestone){
+    public function handle() {
+        $milestones = Milestone::where( 'status', MilestoneStatus::Approved )
+                               ->whereDate( 'approved_at', '<=', Carbon::now()->addDays( 5 ) )
+                               ->get();
+
+        foreach ( $milestones as $milestone ) {
             //release fund to expert
-            $milestone_amount = $milestone->amount;
+            $milestone_amount     = $milestone->amount;
             $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
 
-            //todo: first store inside schedule transfer job then process it in 3 days.
-            $acceptMilestone = $this->stripe->transfers->create( [
+            $stripe = new \Stripe\StripeClient( [
+                "api_key" => env( 'STRIPE_SECRET' ),
+            ] );
+
+            $acceptMilestone = $stripe->transfers->create( [
                 'amount'         => $milestone_amount * 100,
                 'currency'       => $milestone->contract->expert->currency,
                 'destination'    => $CONNECTED_ACCOUNT_ID,
                 'transfer_group' => $CONNECTED_ACCOUNT_ID,
-                'metadata'                  => [
+                'metadata'       => [
                     'reference_id'   => $milestone->id,
                     'reference_type' => 'milestone'
                 ]

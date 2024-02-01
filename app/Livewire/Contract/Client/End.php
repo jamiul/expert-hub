@@ -51,7 +51,7 @@ class End extends Modal
                 'transaction_id' => null,
                 'milestone_id'   => $milestone->id,
                 'type'           => 'Fixed Price',
-                'description'    => "Funded for " . $milestone->title,
+                'description'    => "Invoice for " . $milestone->title,
                 'client_id'      => $this->contract->client->user_id,
                 'expert_id'      => $this->contract->expert->user_id,
                 'amount'         => $milestone->amount,
@@ -80,7 +80,7 @@ class End extends Modal
             'status' => ContractStatus::Ended,
             'reason' => $this->reason,
         ]);
-        
+
         toast('success', 'Contract ended successfully', $this);
         $this->dispatch('contract-ended');
         $this->close();
