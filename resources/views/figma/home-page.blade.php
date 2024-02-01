@@ -710,9 +710,10 @@
           <h4>Upcoming trainings</h4>
           <h2>Elevate your skills with trainings led by <br/> industry and academic leaders</h2>
         </div>
-        <div class="row">
-          <div class="col-md-2 col-sm-6 px-0">
-            <div class="live-zoom">
+
+
+      <div class="academic-content-training-area">
+        <div class="live-zoom academic-zoom-area">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
 
@@ -720,20 +721,19 @@
               </div>
               <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
-          </div>
-          <div class="col-md-8 col-sm-6">
-            <div class="training eudx-training">
+
+
+        <div class="training eudx-training">
               <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
 
-              <div class="row border-0">
+              <div class="row border-0 p-0">
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -748,12 +748,12 @@
                   </div>
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
+
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -761,7 +761,7 @@
                                 <li>Melbourne University</li>
                                 <li>Australia</li>
                             </ul>
-                        </div><!--expert-info-->
+                        </div>
 
                     </div>
                     </div>
@@ -769,19 +769,18 @@
               </div>
 
             </div>
-          </div>
-          <div class="col-md-2">
-            <div class="training-button">
+
+
+
+        <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
-          </div>
-        </div>
+      </div>
 
 
-        <div class="row">
-          <div class="col-md-2 col-sm-6 px-0">
-            <div class="live-zoom">
+      <div class="academic-content-training-area">
+        <div class="live-zoom academic-zoom-area">
               <div class="zoom-icon">
                 <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
 
@@ -789,20 +788,19 @@
               </div>
               <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
-          </div>
-          <div class="col-md-8 col-sm-6">
-            <div class="training eudx-training">
+
+
+        <div class="training eudx-training">
               <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
 
-              <div class="row border-0">
+              <div class="row border-0 p-0">
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -817,12 +815,12 @@
                   </div>
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
+
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -830,7 +828,7 @@
                                 <li>Melbourne University</li>
                                 <li>Australia</li>
                             </ul>
-                        </div><!--expert-info-->
+                        </div>
 
                     </div>
                     </div>
@@ -838,40 +836,38 @@
               </div>
 
             </div>
-          </div>
-          <div class="col-md-2">
-            <div class="training-button">
+
+
+
+
+        <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
-          </div>
-        </div>
+      </div>
 
-
-        <div class="row">
-          <div class="col-md-2 col-sm-6 px-0">
-            <div class="live-zoom">
+      <div class="academic-content-training-area">
+        <div class="live-zoom academic-zoom-area">
               <div class="zoom-icon">
-                <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
+                <img src="{{ asset('assets/frontend/img/zoom-speech.png') }}" alt=""></img>
 
                 <h4>Live via Zoom</h4>
               </div>
               <p class="zoom-live-text"> <span>23 January 2024 - 28 April 2024</span> <span>10.15am  AEST, Sydney, Australia</span> <span>USD 995</span> </p>
             </div>
-          </div>
-          <div class="col-md-8 col-sm-6">
-            <div class="training eudx-training">
+
+
+        <div class="training eudx-training">
               <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
 
-              <div class="row border-0">
+              <div class="row border-0 p-0">
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -886,12 +882,12 @@
                   </div>
                   <div class="col-md-6">
                     <div class="expert-card training-expert-card">
-                    <div class="expert-card-header mb-2">
-                        <div class="expert-thumb">
+                    <div class="expert-card-header">
+
                             <div class="expert-thumb-box">
                                 <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
                             </div>
-                        </div> <!--expert-thumb-->
+
                         <div class="expert-info">
                             <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
                             <ul class="expert-meta">
@@ -899,7 +895,7 @@
                                 <li>Melbourne University</li>
                                 <li>Australia</li>
                             </ul>
-                        </div><!--expert-info-->
+                        </div>
 
                     </div>
                     </div>
@@ -907,17 +903,18 @@
               </div>
 
             </div>
-          </div>
-          <div class="col-md-2">
-            <div class="training-button">
+
+
+
+
+        <div class="training-button">
               <a href="#">Registration</a>
               <a href="#">Read More</a>
             </div>
-          </div>
-        </div>
+      </div>
 
-<div class="row"></div>
-        <div class="academic-button">
+
+        <div class="academic-button mt-5">
           <a href="#">View All Training</a>
         </div>
       </div>
