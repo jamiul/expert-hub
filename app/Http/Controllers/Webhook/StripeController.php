@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Webhook;
 
+use App\Enums\MilestoneStatus;
+use App\Enums\OfferStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
@@ -9,6 +11,7 @@ use App\Models\ExpertPayout;
 use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
 use App\Models\Milestone;
+use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
@@ -199,12 +202,19 @@ class StripeController extends Controller {
                 'livemode'               => $paymentData->livemode
             ] );
 
+            //update offer status based on payment = pending / not accepted
+            if($contract_type == 'offer'){
+                $offer = Offer::find($contract_id);
+                $offer->status = OfferStatus::Pending;
+                $offer->save();
+            }
             //save to client transaction table
             //todo: calculate client displayable transaction data
             if ( $reference_type == 'milestone' ) {
                 foreach (json_decode($reference_id) as $ref_id){
+                    //update milestone status to funded.
                     $milestone         = Milestone::find( $ref_id );
-                    $milestone->status = 'Funded';
+                    $milestone->status = MilestoneStatus::Funded;
                     $milestone->save();
 
                     $milestone_amount = $milestone->amount;;
@@ -259,6 +269,7 @@ class StripeController extends Controller {
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
 
+                    //todo: check if its first contract with that expert or not.
                     //contract initialization fee transaction
                     if ( $charge['contract_initialization_fee'] > 0 ) {
                         $contract_initialization_fee = $charge['contract_initialization_fee'];
@@ -309,21 +320,21 @@ class StripeController extends Controller {
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
 
-
                     /* milestone funded, update & send notification to expert*/
-                    $transaction_data = [
-                        'transaction_id' => $stripe_transaction->id,
-                        'milestone_id'   => $ref_id,
-                        'type'           => 'Fixed Price',
-                        'description'    => "Funded for " . $milestone->title,
-                        'client_id'      => $profile->user_id,
-                        'expert_id'      => $expert_id,
-                        'amount'         => $milestone_amount,
-                        'charge_type'    => 'credit',
-                        'parent'         => $stripe_transaction->id,
-                        'status'         => 0
-                    ];
-                    PaymentHelper::createExpertTransaction( $transaction_data );
+
+//                    $transaction_data = [
+//                        'transaction_id' => $stripe_transaction->id,
+//                        'milestone_id'   => $ref_id,
+//                        'type'           => 'Fixed Price',
+//                        'description'    => "Funded for " . $milestone->title,
+//                        'client_id'      => $profile->user_id,
+//                        'expert_id'      => $expert_id,
+//                        'amount'         => $milestone_amount,
+//                        'charge_type'    => 'credit',
+//                        'parent'         => $stripe_transaction->id,
+//                        'status'         => 0
+//                    ];
+//                    PaymentHelper::createExpertTransaction( $transaction_data );
                 }
             }
 

@@ -54,7 +54,7 @@ class Wizard extends Component
             $this->expertises = Expertise::where('parent_id', $this->expert_category_id)->get();
         }
         $this->skills = $this->profile()->expertises->pluck('id')->toArray();
-        $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
+        $this->availableSkills = Expertise::skill()->isChild()->pluck('name', 'id')->toArray();
         $this->hourly_rate = $this->profile()->hourly_rate;
         $this->biography = $this->profile()->biography;
         $this->pictureUrl = $this->profile()->picture;

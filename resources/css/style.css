@@ -992,100 +992,124 @@ img.exp-categoryl {
     border-bottom: solid 1px #d9dbea;
 }
 
-/* .academic-block .live-zoom {
+ .live-zoom {
     border-right: solid 1px #d9dbea;
-} */
+    min-width:239px;
+}
 
-.eudx-training{
+/* .eudx-training{
     border-left: solid 1px #d9dbea;
     padding-left:20px;
     margin-left:0px;
 
-}
+} */
 .training-expert-card .expert-card-header ul.expert-meta li {
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 15px;
     position: relative;
-    color: rgba(48, 55, 68, 0.6);
+    color: rgba(48, 55, 68, 0.60);
     font-size: 13px;
     font-weight: 500;
 }
 
 
 
-.academic-block .live-zoom .zoom-icon {
+ .live-zoom .zoom-icon {
     display: flex;
     align-items: center;
 }
 
-.academic-block .live-zoom .zoom-icon img {
-    height: 10px;
+.live-zoom .zoom-icon img {
+    /* height: 10px; */
     margin-right: 11px;
 }
 
-.academic-block .live-zoom .zoom-icon h4 {
+.live-zoom .zoom-icon h4 {
     margin: 0;
     font-size: 14px;
-    color: #303744;
+    color: #0036E3;
     font-weight: 500;
 }
 
-.academic-block .live-zoom p {
+.academic-content-training-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 25px 32px;
+    /* border-top: 1px solid  rgba(14, 0, 98, 0.10); */
+    border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+}
+
+.academic-border-top{
+    border-top: 1px solid  rgba(14, 0, 98, 0.10);
+}
+
+
+
+/* .academic-zoom-area {
+    width: 100%;
+    max-width: 239px;
+    border-right: 1px solid  rgba(14, 0, 98, 0.10);
+} */
+
+
+
+.live-zoom p {
     margin: 15px 0 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.8px;
 }
 
-.academic-block .training h3 {
-    font-size: 19px;
-    color: #303744;
+.training h3 {
+    font-size: 16px;
+    color: #191D24;
     font-weight: 500;
     margin: 0;
 }
 
-.academic-block .training .training-text span {
+.training .training-text span {
     font-size: 16px;
     font-weight: 500;
     color: #303744b2;
 }
 
-.academic-block .training .training-text a {
+.training .training-text a {
     font-size: 16px;
     font-weight: 500;
     color: #0036e3;
     text-decoration: underline;
 }
 
-.academic-block .training .training-text a:hover {
+.training .training-text a:hover {
     color: #303744;
 }
 
-.academic-block .training .training-text a:last-child {
+ .training .training-text a:last-child {
     border-left: solid 1px #0e006280;
     padding-left: 8px;
     margin-left: 6px;
 }
 
-.academic-block .training h6 {
+.training h6 {
     margin: 0;
     font-size: 15px;
     font-weight: 400;
     color: #303744;
 }
 
-.academic-block .training h6 span {
+ .training h6 span {
     margin: 0;
     font-size: 15px;
     font-weight: 500;
     color: #303744;
 }
 
-.academic-block .training .training-text {
+.training .training-text {
     margin: 13px 0 20px;
 }
 
-.academic-block .training-button {
+ .training-button {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1102,7 +1126,7 @@ img.exp-categoryl {
     font-weight: 500;
 }
 
-.zoom-live-text span{
+.zoom-live-text p{
     gap: 18px;
     color:  #303744;
     font-size: 14px;
@@ -1114,10 +1138,10 @@ img.exp-categoryl {
     display: flex;
     flex-wrap: nowrap;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.academic-block .training-button a {
+.training-button a {
     transition: all 500ms;
     background: #0036e3;
     width: 180px;
@@ -1127,35 +1151,58 @@ img.exp-categoryl {
     text-align: center;
     line-height: 45px;
     border-radius: 4px;
-    margin-left: 12px;
+    /* margin-left: 12px; */
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     border: solid 2px #0036e3;
 }
-
-.academic-block .training-button a:hover {
-    background: #edf0f9;
-    color: #0036e3;
+.training-expert-card .expert-thumb-box img {
+    width: 44px;
 }
 
-.academic-block .training-button a:last-child {
+.eudx-training h5{
+    color:  #191D24;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom:0px
+}
+
+.eudx-training {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0px 10px 0px 24px;
+}
+
+.academic-button-area {
+    width: 100%;
+    max-width: 180px;
+}
+
+.training-button a:hover {
+    background:#002cb9;
+    color: #fff;
+}
+
+ .training-button a:last-child {
     background: #e8ebf699;
     color: #0036e3;
 }
 
-.academic-block .training-button a:last-child:hover {
+.training-button a:last-child:hover {
     background: #0036e3;
     border-color: #0036e3;
     color: #fff;
 }
 
-.academic-block .academic-button {
+ .academic-button {
     text-align: center;
     /* margin-top: 30px; */
 }
 
-.academic-block .academic-button a {
+ .academic-button a {
     transition: all 500ms;
     color: #0036e3;
     font-size: 15px;
@@ -1169,7 +1216,7 @@ img.exp-categoryl {
     border-radius: 4px;
 }
 
-.academic-block .academic-button a:hover {
+.academic-button a:hover {
     color: #fff;
     background: #0036e3;
 }
@@ -7381,6 +7428,9 @@ h2:after {
 
 }
 
+
+
+
 @media (min-width: 1200px) and (max-width: 1366px) {
     .product-slider .carousel-w .carousel-inner .item-text {
         width: 200px;
@@ -7717,8 +7767,12 @@ h2:after {
         margin: 0 0 12px;
     }
 
-    .academic-block .training {
-        margin: 30px 0;
+ .training {
+        margin: 0px 0;
+    }
+
+    .training-expert-card .expert-card-header {
+        margin-bottom: 20px;
     }
 
     .academic-block .training .training-text a {

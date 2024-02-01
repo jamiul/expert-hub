@@ -5919,9 +5919,9 @@ p.p-rote {
   border-right: solid 1px #d9dbea;
 }
 
-.training {
+/* .training {
   margin-left: 20px;
-}
+} */
 
 .academic-block .training .training-text {
   margin: 5px 0 10px !important;
@@ -9579,8 +9579,40 @@ header.client-header {
 }
 
 @media only screen and (max-width: 1200px) {
-.academic-block .live-zoom {
-  border-right: solid 1px #d9dbea;
+
+
+  .eudx-training {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0px;
+}
+
+.academic-content-training-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  border-top: 1px solid  rgba(14, 0, 98, 0.10);
+  border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+
+ .training-button {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+
+ .live-zoom {
+  border-right: none;
   width: 100% !important;
   display: flex;
   flex-direction: column;
@@ -9588,19 +9620,15 @@ header.client-header {
   min-width: 200px !important;
 }
 
-.academic-block .training-button {
-  text-align: right;
-  display: flex;
-}
 
-.academic-block .training h3 {
+.training h3 {
   font-size: 12px;
   color: #303744;
   font-weight: 500;
   margin: 0;
 }
 
-.academic-block .training .training-text a {
+ .training .training-text a {
   font-size: 12px;
   font-weight: 500;
   color: #0036E3;
@@ -9745,11 +9773,11 @@ header.client-header {
   display: flex;
   align-items: center;
 }
-.academic-block .training-button {
+ .training-button {
   text-align: right;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .academic-block .training h3 {
@@ -9991,7 +10019,7 @@ h3, .h3 {
 .academic-block .training-button {
   text-align: left;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .edux-billing-method-area {

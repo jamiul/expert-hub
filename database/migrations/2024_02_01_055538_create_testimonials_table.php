@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contracts', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id');
+            $table->foreignId('contract_id');
             $table->foreignId('client_id');
             $table->foreignId('expert_id');
-            $table->decimal('amount');
-            $table->decimal('escrow_amount');
-            $table->text('message')->nullable();
-            $table->string('status');
-            $table->string('reason')->nullable();
-            $table->tinyInteger('score')->nullable();
+            $table->foreignId('owner_id');
+            $table->longText('feedback')->nullable();
+            $table->tinyInteger('recommendation')->nullable();
+            $table->tinyInteger('skill')->nullable();
+            $table->tinyInteger('availability')->nullable();
+            $table->tinyInteger('communication')->nullable();
+            $table->tinyInteger('deadlines')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contracts');
+        Schema::dropIfExists('testimonials');
     }
 };
