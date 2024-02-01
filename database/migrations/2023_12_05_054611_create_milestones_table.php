@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->date('due_date')->nullable();
             $table->decimal('amount');
+            $table->dateTime('approved_at')->nullable();
             $table->string('status');
             $table->boolean('active')->default(1);
             $table->timestamps();

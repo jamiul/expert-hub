@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Offer\Expert;
 
+use App\Enums\ContractStatus;
 use App\Enums\OfferStatus;
 use App\Models\Contract;
 use App\Models\Offer;
@@ -18,18 +19,27 @@ class Show extends Component
     {
         $this->askForConfirmation(
             callback: function () {
-                Contract::create([
+                $escrow_amount = $this->offer->fundedMilestones()->sum('amount');
+                
+                $contract = Contract::create([
                     'project_id' => $this->offer->project_id,
                     'client_id' => $this->offer->client_id,
                     'expert_id' => $this->offer->expert_id,
                     'amount' => $this->offer->amount,
-                    'status' => 'Active',
+                    'escrow_amount' => $escrow_amount,
+                    'status' => ContractStatus::Active,
+                ]);
+                foreach($this->offer->fundedMilestones() as $milestone){
+                    $milestone->update(['contract_id' => $contract->id]);
+                }
+                $this->offer->expert->update([
+                    'escrow_balance' => ($this->offer->expert->escrow_balance + $escrow_amount)
                 ]);
 
                 $this->offer->update([
                     'status' => OfferStatus::Accepted,
                 ]);
-
+                //TODO Notification sending
                 toast('success', 'New Contract Started');
                 return redirect()->route('expert.contracts');
             },
