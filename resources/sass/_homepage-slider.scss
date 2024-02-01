@@ -175,12 +175,12 @@
 .homepage-slider-thumb-item {
     text-align: center;
     border: 1.098px solid #E7E5EF;
-    background: #FFF;
-    padding: 14px;
+    background-color: #E8EBF6;
+
     opacity: 0.55;
 
     img {
-        margin-bottom: 8px;
+
     }
 
     h4 {
@@ -188,7 +188,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: 120%;
-        margin: 0px;
+        margin: 0;
     }
 
     p {
@@ -196,5 +196,12 @@
         font-style: normal;
         font-weight: 400;
         margin: 0;
+    }
+
+    & > div {
+        &:last-child {
+            background-color: #ffffff;
+            padding: 14px;
+        }
     }
 }
