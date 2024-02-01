@@ -58,7 +58,7 @@
                                         </td>
                                         <td>
                                             <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
-                                            <p class="mb-1">Escrow: $1000.00</p>
+                                            <p class="mb-1">Escrow: ${{ $contract->escrow_amount }}</p>
                                         </td>
                                         <td>
                                             <div class="d-flex gap-3 align-item-center">
@@ -93,8 +93,7 @@
                                                         <a class="dropdown-item"  href="#">Contact Support</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" data-bs-toggle="modal"
-                                                            data-bs-target="#endContractModal" href="#">End Contact</a>
+                                                        <button class="dropdown-item" wire:click="$dispatch('modal.open', { component: 'contract.client.end', arguments: { contract: {{ $contract->id }} }})">End Contact</button>
                                                     </li>
                                                 </ul>
                                             </div>
