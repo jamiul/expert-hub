@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -20,8 +20,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -35,8 +34,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -51,8 +49,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -67,8 +64,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -83,8 +79,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -98,7 +93,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -112,7 +107,7 @@
                     </div>
                 </div> <!--category-box-->
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
