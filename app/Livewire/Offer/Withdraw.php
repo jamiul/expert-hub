@@ -15,7 +15,7 @@ class Withdraw extends Component
         $this->offer->update([
             'status' => OfferStatus::Withdrawn,
         ]);
-
+        $this->dispatch('offer-withdrawn');
         toast('success', 'The offer withdrawn successfully', $this);
     }
     
