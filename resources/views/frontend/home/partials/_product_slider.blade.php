@@ -1,7 +1,7 @@
 <div class="homepage-main-slider-wrapper">
     <div class="container">
         <div class="row align-items-end">
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <div class="hero-text">
                     <h2>Connect With Top Academic And Industry Experts For Your Project</h2>
                     <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xl-6 home-main-slider-col">
                 <div id="homepage-slider-main" class="owl-carousel homepage-slider-main">
                     @forelse ($experts as $expert)
 

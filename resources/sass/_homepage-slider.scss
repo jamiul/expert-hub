@@ -8,6 +8,14 @@
     .hero-text {
         padding: 100px 0 114px;
         max-width: 587px;
+        @media screen and (max-width: 1200px) {
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px 0;
+            .hero-button {
+                justify-content: center;
+            }
+        }
 
         h2 {
             font-size: 43px;
@@ -18,6 +26,12 @@
 
         p {
             margin: 16px 0 32px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .home-main-slider-col {
+            display: none;
         }
     }
 

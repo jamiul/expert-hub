@@ -497,9 +497,9 @@ $edu-admin-header-height: 76px;
 header {
     &.public-header {
         background-color: #ffffff;
-        //position: sticky;
-        //top: 0;
-        //z-index: 10;
+        position: sticky;
+        top: 0;
+        z-index: 10;
 
         .public-header-container {
             padding: 25px 12px;
