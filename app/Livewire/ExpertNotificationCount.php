@@ -19,7 +19,7 @@ class ExpertNotificationCount extends Component
 
     public function render()
     {
-        $unread_notifications = auth()->user()->unreadNotifications()->get();
+        $unread_notifications = auth()->user()->notifications()->limit(5)->get();
         $unreadCount          = auth()->user()->unreadNotifications()->count();
 
         return view( 'livewire.expert-notification-count', compact( 'unread_notifications', 'unreadCount' ) );
