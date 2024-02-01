@@ -1,8 +1,8 @@
 <section class="page-section training-section">
     <div class="container">
-        <div style="margin-bottom: 30px; max-width: 840px" class="section-title-wrapper text-center mx-auto">
+        <div style="margin-bottom: 40px; max-width: 840px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Upcoming trainings</h2>
-            <p class="section-title-lead">Elevate your skills with trainings led by industry and academic leaders</p>
+            <p class="section-title-lead">Elevate Your Skills With Trainings Led By Industry And Academic Leaders</p>
         </div>
 
         <div class="upcomming-training-wrapper">

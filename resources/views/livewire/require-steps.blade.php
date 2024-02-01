@@ -58,7 +58,7 @@
         </div>
 
 
-        <div style="margin-top: 50px" class="text-center">
+        <div style="margin-top: 36px" class="text-center">
             <a href="" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
         </div>
     </div>
