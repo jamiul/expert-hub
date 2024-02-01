@@ -1,4 +1,4 @@
-@extends('frontend.layouts.front-expert-dashboard-layout')
+@extends('frontend.layouts.figma', ['header' => 'client'])
 @section('content')
 @vite('resources/default/css/expert-profile.css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -8,29 +8,66 @@
 <div class="find-consultant-details">
       <div class="container profile__page">
         <div class="row g-0">
-          <div class=" col-offset-1 col-md-8">
-            <div class="create-trining-area">
-              <h6>Create Training</h6>
-              <x-form.input type="text" label="Training title?" wire:model="type" placeholder="Type" value="Foundations of PLS-SEM Using SmartPLS 4"/>
-              <x-form.choice-static wire:model="titles" label="Location">
-                <option value="Mr">Select options</option>
-                <option value="Mrs">Select options</option>
-                <option value="Dr">Select options</option>
-                <option value="Prof">Select options</option>
-            </x-form.choice-static>
-            <x-form.flatpicker label="Seminar Date" inline="true" name="datepicker"/>
+          <div class="edux-training-form">
 
-            <x-form.check wire:model="terms">
-            Automatic Consideration
-           </x-form.check>
-               <x-form.input type="text" label="Training Fee" wire:model="type" placeholder="Type" value="$800"/>
 
-               <x-form.choice-static wire:model="titles" label="Select multiple static" multiple>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Dr">Dr</option>
-                <option value="Prof">Prof</option>
-            </x-form.choice-static>
+          <h5>Create Training</h5>
+          <ul class="progress-bar-nav-horizontal">
+                        <li class="done-item"><strong> Course Info </strong></li>
+                        <li class="running-item"><strong> Course Schedule</strong></li>
+                        <li><strong> Course Details </strong></li>
+                        <li><strong> Summery </strong></li>
+                    </ul>
+          <div class="progress-step-content mt-20">
+
+          <x-form.input type="text" label="Training title?" wire:model="type" placeholder="Type" value="Foundations of PLS-SEM Using SmartPLS 4"/>
+          <x-form.input type="text" label="Training Fee" wire:model="type" placeholder="Type" value="$800"/>
+
+          <div class="row mt-5">
+              <div class="col-md-2 col-sm-6">
+                  <div class="team-block"> <a href="#">
+                          </a><div class="team-img position-relative"><a href="#">
+                          <img src="{{ asset('assets/frontend/img/jon-kelly.png') }}" alt="person">
+                          </a><a class="blog-close position-absolute"> <img class="" src="http://127.0.0.1:8000/assets/frontend/img/blog-admin/blog-close.png" alt="close"> </a> </div>
+                          <div class="hire-text">
+                              <h4>Marvin McKinney</h4>
+                              <p>Policy Expert</p>
+                          </div>
+                        </div>
+              </div>
+              <div class="col-md-2 col-sm-6">
+                  <div class="team-block">
+                      <div class="academic-single-item d-flex flex-column">
+                          <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#buildondemand">add</span> </a> </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+
+              <x-form.choice wire:model="titles" label="Training Category" multiple>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Dr">Dr</option>
+                  <option value="Prof">Prof</option>
+              </x-form.choice>
+
+              <x-form.choice wire:model="titles" label="Partner Institutes" multiple>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Dr">Dr</option>
+                  <option value="Prof">Prof</option>
+              </x-form.choice>
+
+              <x-form.choice wire:model="titles" label="Location" multiple>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Dr">Dr</option>
+                  <option value="Prof">Prof</option>
+              </x-form.choice>
+
+
+
+
             </div>
           </div>
         </div>
@@ -52,34 +89,3 @@
 
 
 
-
-
-@push('js')
-<!-- Expert profile Portfolio slide -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      $(".portfolioCaousel").owlCarousel({
-        items: 3,
-        autoplay:false,
-        autoplayTimeout: 5500,
-        autoplayHoverPause: true,
-        smartSpeed: 550,
-        loop: false,
-        margin: 20,
-        nav: true,
-        dots: true,
-        responsiveClass: true,
-        responsive: {
-            0: { items: 1 },
-            600: { items: 2 },
-            992: { items: 3 },
-            1200: { items: 3 }
-        },
-        navText: [
-          '<i class="fa-solid fa-chevron-left"></i>',
-          '<i class="fa-solid fa-chevron-right"></i>'
-        ]
-      });
-
-    </script>
-@endpush

@@ -5972,9 +5972,7 @@ select.top-input-control option::hover{
   padding: 7px 16px;
 }
 
-.selected{
-  display: none;
-}
+
 
 .mission-img.overlay-edit{
   max-width: 538px;
@@ -8298,6 +8296,15 @@ font-weight: 400;
   gap: 10px 0px !important;
 }
 
+.edux-schedule-input-single .available-time-select-col ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: column;
+}
+
 .edux-selected-slot li.edux-day-schedule {
   color: #191D24;
 
@@ -9337,6 +9344,15 @@ li.disabled {
   background: #FFF;
   padding: 24px;
   margin-top: 10px;
+}
+
+.edux-training-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 872px;
+  margin: 0 auto;
+  padding:56px;
 }
 /* ============================= Training Start Here ================================= */
 

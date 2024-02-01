@@ -33,6 +33,7 @@
                     <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pb-4">
+
                     <ul class="progress-bar-nav-horizontal">
                         <li class="done-item"><strong> Expertise </strong></li>
                         <li class="running-item"><strong> Service fees </strong></li>
@@ -164,7 +165,7 @@
                             </h6>
                             <p><a class="fw-medium text-decoration-underline" href="">Schedule Your Consultation</a>
                                 (Max 5 schedule per day)</p>
-                            <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
+                            <div class="available-schedule-input-wrapper edux-schedule-input edux-schedule-input-single mb-40">
 
                                 <div class="available-time-select-col eudx-time-select">
                                     <h6>Selected slot</h6>
