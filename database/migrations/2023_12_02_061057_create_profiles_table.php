@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('type')->index(); //App\Enums\ProfileType
+            $table->foreignId('expert_category_id')->nullable();
             $table->foreignId('expertise_id')->nullable();
             $table->string('stripe_acct_id')->nullable();
             $table->string('stripe_client_id')->nullable();
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('current_organization')->nullable();
             $table->decimal('balance', 12,2)->default(0);
             $table->decimal('escrow_balance', 12,2)->default(0);
+            $table->string('currency')->default('AUD');
             $table->string('status'); //App\Enums\ProfileStatus
             $table->boolean('active')->default(1);
             $table->timestamps();

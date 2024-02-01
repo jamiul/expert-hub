@@ -51,6 +51,11 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
 
 
+    //Find Training Page
+
+    Route::view('/expert-find-training', 'figma.expert-find-training-profile');
+    Route::view('/expert-create-training', 'figma.expert-create-training');
+
 
     //expert status
     Route::view('/expert-status', 'figma.expert-status');
@@ -93,6 +98,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-transaction', 'figma.expert-transaction');
     Route::view('/expert-payment-setting', 'figma.client-payment-setting');
     Route::view('/expert-payment-setting-notification', 'figma.client-payment-setting-notification');
+    Route::view('/expert-payment-setting-notification-empty', 'figma.client-payment-setting-notification-empty');
     Route::view('/expert-get-paid', 'figma.expert-get-paid');
 
 
@@ -121,6 +127,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/super-admin-scholarship-post', 'figma.admindashboardscholarshippost');
 
     Route::view('/super-admin-payment', 'figma.adminpayment');
+    // Route::view('/super-admin-payment-backup', 'figma.admin-payment-backup');
     Route::view('/super-admin-review', 'figma.adminpaymentprogress');
 
     //Expert Dashboard Login

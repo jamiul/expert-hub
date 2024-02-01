@@ -45,23 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="step step-2 mb-4">
-                                    <div 
-                                        class="main-form position-relative" 
-                                        x-data="{
-                                            description: $wire.description,
-                                            get characterCount() { 
-                                                if(this.description == null){
-                                                    return 0
-                                                }
-                                                return this.description.length;
-                                            }
-                                        }"
-                                    >
-                                    <x-form.textarea label="Project Description" x-model="description"  wire:model.blur="description" placeholder="Write Description">
-                                    </x-form.textarea>
-                                    <span class="edux-word-count"><span x-text="characterCount">0</span>/5000</span>
-                                        </div>
-                                    </div>
+                                    <x-form.countable-textarea label="Project Description"  wire:model.blur="description" placeholder="Write Description"/>
                                     <div
                                         wire:ignore
                                         x-data
@@ -113,12 +97,12 @@
                                         <div class="skills">
                                             <h3>What academic skills is required for this project?</h3>
                                             <p>List up to 10 key skills that represent your project. Academic experts will use these skills to match with projects aligned to their interests and expertise.</p>
-                                            <x-form.choice wire:model.change="selectedSkills" placeholder="Type the skills & hit enter" id="skills" multiple>
+                                            <x-form.choice wire:model.live="selectedSkills" placeholder="Type the skills & hit enter" id="skills" multiple>
                                                 @foreach ($availableSkills as $id => $name)
                                                     <option value="{{ $id }}">{{ $name }}</option>
                                                 @endforeach
                                             </x-form.choice>
-                                            <div class="text-sm">Suggestion skills:  <span class="text-sm fw-mwdium">Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></div>
+                                            <div class="text-sm">Suggestion skills:  <span class="text-sm fw-medium">Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</span></div>
                                         </div>
                                     </div>
                                 </div>

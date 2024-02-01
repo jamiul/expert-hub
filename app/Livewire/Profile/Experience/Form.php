@@ -23,10 +23,10 @@ class Form extends BaseForm
     #[Validate('required')]
     public $start_year = '';
 
-    #[Validate('nullable')]
+    #[Validate('nullable|gte:start_year')]
     public $end_year = '';
 
-    #[Validate('nullable')]
+    #[Validate('nullable|max:1000')]
     public $description = '';
 
     public $currentExperience = false;
