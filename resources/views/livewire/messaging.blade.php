@@ -53,6 +53,7 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
+                    @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count()  @endphp
                     <div class="chatbox-contact-person user-online  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
@@ -60,13 +61,12 @@
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
                                 <h6>{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h6>
-                                <time>7: 30 am</time>
+                                <time>{{ Carbon\Carbon::parse($conversation->conversation->messages->last()->created_at)->diffForHumans() }}</time>
                             </div>
                             <div class="last-message-hints">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias at
-                                    culpa</p>
+                                <p>{{$conversation->conversation->messages->last()->content}}</p>
                             </div>
-                            <span class="unread-message-count">2</span>
+                            <span class="{{$unreadMessageCount > 0 ? 'unread-message-count' : '' }}  ">{{ $unreadMessageCount > 0 ? $unreadMessageCount : ''  }}</span>
                         </div>
                     </div>
 
@@ -709,10 +709,10 @@
     
 </div>
 
-
+@script
 <script type="module">
     
-    let conversation_id = '{!! $currentConversation->id !!}';
+    let conversation_id = '{!! $currentConversation?->id !!}';
     
 
     // Livewire.on('conversationSelected', currentConversationId => {
@@ -721,16 +721,7 @@
     //     alert('livewire'+conversation_id);
     // })
 
-    //    @if(Session::has('sessionConversationId'))
-    //    alert('lsession has'+"{{ Session::get('sessionConversationId') }}");
-    //    @endif
-    // if ("{{ Session::get('sessionConversationId') }}") {
-    //     conversation_id = "{{session('sessionConversationId')}}";
-    //     alert('session'+conversation_id);
-    // }
-
-
-    //    console.log(Echo);
+    
 
 
     //    $wire.on('conversationSelected', ({currentConversationId}) => {
@@ -745,16 +736,8 @@
 
 
 
-    // $('.chatbox-contact-person').on('click', function() {
+    
 
-    //     conversation_id = $(this).data("conversation-id");
-
-    //     // scrollToBottom('.chatbox-message-list');
-    //     // alert({!!$currentConversation->id!!});
-
-
-
-    // })
 
     // Livewire.on('NewMessageCreated', () => {
     // // ...
@@ -763,14 +746,15 @@
     // })
 
     // WIll fix latter start
-    // $wire.on(`echo-private:messaging.${conversation_id},NewMessageCreated`, () => {
+    $wire.on(`echo-private:messaging.${conversation_id},NewMessageCreated`, () => {
 
-    //     // $wire.$refresh();
+        // $wire.$refresh();
+        scrollToBottom('.chatbox-message-list');
 
-    //     setTimeout(function () {
-    //     scrollToBottom('.chatbox-message-list');
-    //     }, 2000)
-    // });
+        // setTimeout(function () {
+        // scrollToBottom('.chatbox-message-list');
+        // }, 2000)
+    });
     // WIll fix latter end
 
 
@@ -817,3 +801,4 @@
 
     });
 </script>
+@endscript
