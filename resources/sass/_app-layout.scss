@@ -497,12 +497,13 @@ $edu-admin-header-height: 76px;
 header {
     &.public-header {
         background-color: #ffffff;
-        //position: sticky;
-        //top: 0;
-        //z-index: 10;
+        border-bottom: 1px solid $edu-border-color;
+        position: sticky;
+        top: 0;
+        z-index: 10;
 
         .public-header-container {
-            padding: 25px 12px;
+            padding: 12px;
             max-width: 1320px;
             margin: 0 auto;
             display: grid;
@@ -651,7 +652,7 @@ header {
             & > li {
                 list-style: none;
                 display: inline-block;
-                margin: 0.1rem 0;
+                margin: 0;
 
                 &.item-has-submenu {
                     position: relative;
@@ -711,7 +712,7 @@ header {
 
                 & > a {
                     display: flex;
-                    padding: 1rem 0;
+                    padding: 0.5rem 0;
                     color: $edu-headings-color;
                     font-size: 14px;
                     font-weight: 500;

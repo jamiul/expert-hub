@@ -1,28 +1,28 @@
 <div class="homepage-main-slider-wrapper">
     <div class="container">
         <div class="row align-items-end">
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <div class="hero-text">
                     <h2>Connect With Top Academic And Industry Experts For Your Project</h2>
                     <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
                         you with leaders in course accreditation, curriculum design, policy development, project
                         management and more. Choose ExpertGate when your most pivotal academic and industry projects
                         demand the best.</p>
-                    <div class="hero-button d-flex gap-3">
+                    <div class="hero-button-wrapper">
                         <x-button.link
                             href="{{ route('find.experts') }}"
-                            class="btn btn-primary edux-btn-primary"
+                            class="btn btn-primary btn-md"
                             text="Find an Expert"
                         />
                         <x-button.link
                             href="{{ route('auth.login') }}"
-                            class="btn edux-btn-border-primary"
+                            class="btn btn-outline-primary border-2 btn-md"
                             text="Become an Expert"
                         />
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xl-6 home-main-slider-col">
                 <div id="homepage-slider-main" class="owl-carousel homepage-slider-main">
                     @forelse ($experts as $expert)
 
