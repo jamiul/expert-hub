@@ -8,15 +8,15 @@
                         you with leaders in course accreditation, curriculum design, policy development, project
                         management and more. Choose ExpertGate when your most pivotal academic and industry projects
                         demand the best.</p>
-                    <div class="hero-button d-flex gap-3">
+                    <div class="hero-button-wrapper">
                         <x-button.link
                             href="{{ route('find.experts') }}"
-                            class="btn btn-primary edux-btn-primary"
+                            class="btn btn-primary btn-md"
                             text="Find an Expert"
                         />
                         <x-button.link
                             href="{{ route('auth.login') }}"
-                            class="btn edux-btn-border-primary"
+                            class="btn btn-outline-primary border-2 btn-md"
                             text="Become an Expert"
                         />
                     </div>
