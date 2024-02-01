@@ -10,6 +10,7 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 #[On('invitation-sent')]
+#[On('offer-withdrawn')]
 class Index extends Component
 {
     use InteractsWithConfirmationModal;

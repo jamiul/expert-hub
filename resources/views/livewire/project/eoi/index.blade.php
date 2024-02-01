@@ -15,7 +15,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'invite-expert' }"
-                            @click="activeTab = 'invite-expert'">Invite Expert ({{ $project->invitations->count() }})
+                            @click="activeTab = 'invite-expert'">Invite Expert ({{ $project->activeInvitations->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'offer' }"
@@ -204,7 +204,7 @@
                                     </button>
                                     <button class="tab-nav-item" @click="activeInvitedExpertTab = 'invited-experts'"
                                             :class="{ 'active': activeInvitedExpertTab === 'invited-experts' }">
-                                        Invited Experts ({{ $project->invitations->count() }})
+                                        Invited Experts ({{ $project->activeInvitations->count() }})
                                     </button>
                                     <button class="tab-nav-item"
                                             @click="activeInvitedExpertTab = 'my-hires-experts'"
@@ -231,7 +231,7 @@
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'invited-experts'">
                                         <div class="expert-wrapper">
-                                            @forelse ($project->invitations as $invitation)
+                                            @forelse ($project->activeInvitations as $invitation)
                                                 <x-expert.card :expert="$invitation->expert">
                                                     @livewire('favorite.expert', ['expert' => $invitation->expert])
                                                     <x-expert.decline wire:click="declineInvitation({{ $invitation->id }})"/>
@@ -307,7 +307,7 @@
                     </div>
                     <div x-show="activeTab === 'offer'" id="offer-tab-content">
                         <div class="expert-wrapper">
-                            @forelse ($project->activeOffers() as $offer)
+                            @forelse ($project->activeOffers as $offer)
                                 <x-expert.card :expert="$offer->expert">
                                     @livewire('offer.withdraw', ['offer' => $offer])
                                 </x-expert.card>
