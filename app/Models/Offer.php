@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\MilestoneStatus;
 use App\Enums\OfferStatus;
 use App\Enums\ProjectType;
 use Illuminate\Database\Eloquent\Model;
@@ -41,5 +42,10 @@ class Offer extends Model
     public function isFixed()
     {
         return $this->contract_type == ProjectType::Fixed;
+    }
+
+    public function fundedMilestones()
+    {
+        return $this->hasMany(Milestone::class)->where('status', MilestoneStatus::Funded)->get();
     }
 }

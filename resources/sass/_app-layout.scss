@@ -497,53 +497,55 @@ $edu-admin-header-height: 76px;
 header {
     &.public-header {
         background-color: #ffffff;
+        border-bottom: 1px solid $edu-border-color;
+        position: sticky;
+        top: 0;
+        z-index: 10;
 
         .public-header-container {
-            padding: 25px 12px;
+            padding: 12px;
             max-width: 1320px;
             margin: 0 auto;
             display: grid;
             align-items: center;
             gap: 42px;
-            grid-template-columns: 158.9px auto auto;
-            @media screen and (min-width: 1110px) {
+            @media screen and (min-width: 1180px) {
+                grid-template-columns: 158.9px auto;
                 .header-menu-trigger {
                     display: none;
                 }
-            }
-
-            @media screen and (max-width: 1110px) {
-                grid-template-columns: 158.9px auto 40px;
-                .main-header-nav {
+                .header-focus-menu {
                     display: none;
                 }
+            }
 
-                .header-special-menu {
-                    //border-top: 1px solid rgba(14, 0, 98, 0.10);
-                    //grid-column-start: 1;
-                    //grid-column-end: 4;
-
-                    ul {
-                        //justify-content: center;
-                    }
+            @media screen and (max-width: 1180px) and (min-width: 500px) {
+                grid-template-columns: 158.9px auto 40px;
+                .header-menu-wrapper {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: 500px) {
+                grid-template-columns: 158.9px  40px;
+                justify-content: space-between;
+                .header-menu-wrapper {
+                    display: none;
+                }
+                .header-focus-menu {
+                    display: none;
                 }
             }
 
         }
 
-        .main-header-nav {
-            ul {
-                gap: 27px;
-
-                li {
-                    a {
-                        font-size: 1rem;
-                        font-weight: normal;
-                    }
-                }
-            }
-
+        .header-menu-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 27px;
         }
+
 
         .header-special-menu {
             margin-left: auto;
@@ -576,13 +578,180 @@ header {
             }
         }
 
+        .header-focus-menu {
+            margin-left: auto;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 24px;
+                align-items: center;
+
+                li {
+                    list-style: none;
+                    display: inline-block;
+
+                    a {
+                        display: block;
+                        color: inherit;
+                    }
+
+                    &.header-focus-menu-active-item {
+                        a {
+                            background-color: $edu-primary-color;
+                            color: #ffffff;
+                            padding: 8px 27px;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+        }
+
         &.mobile-menu-activated {
-            .public-header-nav {
-                display: block;
+            position: relative;
+            @media screen and (max-width: 1180px) {
+                .header-menu-wrapper {
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: #fff;
+                    padding-bottom: 20px;
+                    border-top: 1px solid $edu-border-color;
+
+                    .header-special-menu {
+                        margin-right: auto;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        @media screen and (max-width: 500px) {
+                            ul {
+                                flex-direction: column;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+.header-main-menu {
+    & > ul {
+        margin: 0;
+        padding: 0;
+
+        @media screen and (min-width: 1180px) {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            & > li {
+                list-style: none;
+                display: inline-block;
+                margin: 0;
+
+                &.item-has-submenu {
+                    position: relative;
+
+                    & > a {
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        &:after {
+                            content: "";
+                            display: block;
+                            width: 24px;
+                            height: 24px;
+                            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M11.9997 14.6769C11.8791 14.6769 11.767 14.6577 11.6631 14.6192C11.5593 14.5807 11.4606 14.5147 11.367 14.4211L6.87276 9.92689C6.73429 9.78844 6.66346 9.6144 6.66026 9.40479C6.65704 9.19519 6.72788 9.01795 6.87276 8.87309C7.01763 8.7282 7.19326 8.65576 7.39966 8.65576C7.60606 8.65576 7.78169 8.7282 7.92656 8.87309L11.9997 12.9462L16.0728 8.87309C16.2112 8.73462 16.3852 8.66379 16.5949 8.66059C16.8045 8.65737 16.9817 8.7282 17.1266 8.87309C17.2714 9.01795 17.3439 9.19359 17.3439 9.39999C17.3439 9.60639 17.2714 9.78202 17.1266 9.92689L12.6323 14.4211C12.5388 14.5147 12.44 14.5807 12.3362 14.6192C12.2324 14.6577 12.1202 14.6769 11.9997 14.6769Z" fill="black"/></svg>') no-repeat center;
+                            background-size: cover;
+                            margin-left: auto;
+                        }
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 0.5rem 0;
+                        width: 250px;
+                        background: #ffffff;
+                        border-radius: 4px;
+                        border: 1px solid $edu-border-color;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        visibility: hidden;
+
+                        li {
+                            list-style: none;
+
+                            //border-bottom: 1px solid $edu-border-color;
+                            a {
+                                display: block;
+                                color: inherit;
+                                padding: 0.5rem 1rem;
+                                font-size: 14px;
+                                font-weight: 500;
+
+                                &:hover {
+                                    color: $edu-primary-color;
+                                    background-color: #0036E308;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            visibility: visible;
+                        }
+                    }
+                }
+
+                & > a {
+                    display: flex;
+                    padding: 0.5rem 0;
+                    color: $edu-headings-color;
+                    font-size: 14px;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1180px) {
+            padding: 20px 0;
+
+            li {
+                list-style: none;
+                display: block;
+                border-bottom: 1px solid $edu-border-color;
+
+                a {
+                    display: block;
+                    padding: 0.72rem 1.9rem;
+                    color: $edu-headings-color;
+                }
+
+                &.public-auth-nav-item {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: $edu-primary-color;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 
 .header-search {
     form {

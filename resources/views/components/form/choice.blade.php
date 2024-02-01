@@ -11,7 +11,7 @@
     'placeholder' => 'Type here to select',
     'searchPlaceholder' => 'Search Here',
 ])
-<div class="form-input-group form-multiselect @if($search) has-search @endif {{ $attributes->get('class') }} {{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? 'has-choice-error':'' }}">
+<div class="form-input-group choice-form-select @if($search) has-search @endif {{ $attributes->get('class') }} {{ $errors->has($attributes->whereStartsWith('wire:model')->first()) ? 'has-choice-error':'' }}">
 <div
     wire:ignore
     x-data="{
