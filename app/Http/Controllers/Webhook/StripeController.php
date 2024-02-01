@@ -708,9 +708,9 @@ class StripeController extends Controller {
         //todo: update expert funded milestone status
         if($reference_type == 'milestone'){
             $milestone = Milestone::find($reference_id);
-            $expert_id = $milestone->eoi->expert_id;
+            $expert_id = $milestone->contract->expert_id;
 
-            $profile = Profile::find($expert_id);
+            $profile = $milestone->contract->expert;
 
             $balance = $profile->balance;
             $escrow_balance = $profile->escrow_balance;
@@ -721,6 +721,10 @@ class StripeController extends Controller {
             $profile->balance = $balance;
             $profile->escrow_balance = $escrow_balance;
             $profile->save();
+
+            //update milestone status
+            $milestone->status = MilestoneStatus::Released;
+            $milestone->save();
 
             //calculate expert balance & escrow
             ExpertTransaction::where('milestone_id', $reference_id)->update([
