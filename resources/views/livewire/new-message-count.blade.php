@@ -4,7 +4,7 @@
         <span class="{{$unreadMessageCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadMessageCount }}</span>
         <x-icon.message-line />
     </a>
-    <div x-show="openDropdown === 'message'" class="header-dropdown">
+    <div x-show="openDropdown === 'message'" x-cloak class="header-dropdown">
         <div class="message-dropdown-inner">
             <div class="message-dropdown-item-wrapper">
             @forelse($unreadMessages as $unreadMessage)
