@@ -10,7 +10,7 @@
             @forelse($unreadMessages as $unreadMessage)
                 <div class="message-dropdown-item message-dropdown-item-unread" wire:key="{{ $unreadMessage->id }}" wire:click="markAsSeen({{ $unreadMessage->id }})"  >
                     <div class="message-dropdown-thumb">
-                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="" alt="avatar">
+                        <img src="{{$unreadMessage->message->profile->picture}}" class="" alt="avatar">
                     </div>
                     <div class="message-dropdown-info">
                         <p class="text-sm fw-medium message-dropdown-title">{{Str::limit($unreadMessage->message->content, $limit = 25, $end = '...')}}

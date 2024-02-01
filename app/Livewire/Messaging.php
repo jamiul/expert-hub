@@ -72,7 +72,7 @@ class Messaging extends Component
             $newMessageRecipient = MessageRecipient::with('conversation')->where('id', $recipientId)->first();
 
             if ($newMessageRecipient?->recipient_profile_id !== Auth::user()->profile->id) {
-                return;
+                return back();
             }
 
             $this->currentConversation = $newMessageRecipient->conversation; //only for selecting notification message conversation     
