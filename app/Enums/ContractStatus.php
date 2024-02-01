@@ -7,5 +7,6 @@ enum ContractStatus: string
     case Active = 'Active';
     case Hold = 'Hold';
     case Canceled = 'Canceled';
-    case Completed = 'Completed';
+    case Disputed = 'Disputed';
+    case Ended = 'Ended';
 }

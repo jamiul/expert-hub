@@ -58,7 +58,7 @@
                                         </td>
                                         <td>
                                             <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
-                                            <p class="mb-1">Escrow: $1000.00</p>
+                                            <p class="mb-1">Escrow: ${{ $contract->escrow_amount }}</p>
                                         </td>
                                         <td>
                                             <div class="d-flex gap-3 align-item-center">
