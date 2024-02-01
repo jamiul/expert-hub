@@ -132,7 +132,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{ $transactions->links() }}
+{{--                        {{ $transactions->links() }}--}}
                     </div>
                 </div>
             </div>
