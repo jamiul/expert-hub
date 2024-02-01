@@ -5,12 +5,10 @@
         <div class="container">
             <ul class="d-flex">
                 <li class="me-3">
-                    <a href="{{ route('client.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Payment
-                        Methods</a>
+                    <a href="{{ route('client.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Transaction History</a>
                 </li>
                 <li class="me-3">
-                    <a href="{{ route('client.payment.billing') }}"
-                       class="text-white fw-medium px-2 py-3 d-inline-block">Billing Report</a>
+                    <a href="{{ route('client.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Payment Methods</a>
                 </li>
             </ul>
         </div><!--.//container-->

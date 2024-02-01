@@ -21,7 +21,7 @@
                     <ul>
                         <li><a href="">My profile</a></li>
                         <li><a href="">Analytic</a></li>
-                        <li><a href="{{ route('client.payment.index') }}">Billings & Payment</a></li>
+                        <li><a href="{{ route('client.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
@@ -72,9 +72,9 @@
                     </a>
                 </li>
                 @livewire('expert-notification-count')
-                
+
                 <livewire:new-message-count />
-                
+
                 <!-- <<li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
 
