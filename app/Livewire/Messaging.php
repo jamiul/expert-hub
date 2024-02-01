@@ -78,6 +78,27 @@ class Messaging extends Component
             $this->currentConversation = $newMessageRecipient->conversation; //only for selecting notification message conversation     
         }
 
+        // Nel test start 
+        if (Route::current()->getName() == 'messaging.conversation') {
+
+            $conversationId = Route::current()->parameter('conversation_id');
+            // dd($conversationId);
+
+            $conversation = Conversation::with(['messages', 'messageRecipients'])->where('id', $conversationId)->first();
+
+            $unreadMessages = $conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at');
+
+            foreach ($unreadMessages as $unreadMessage) {
+                $unreadMessage->update(['seen_at' => Carbon::now()]);
+            }
+
+            $this->currentConversation = $conversation;
+            
+            // blade file will receive this - to get aware about new selected conversation
+            // $this->dispatch('conversationSelected', $this->currentConversation->id);
+        }
+        // Nel test end
+
         // Mark all unread message as read --either for first conversation (when user visit /messaging) or for selected conversation
         if ($this->currentConversation) {
             $unreadMessages = MessageRecipient::where('conversation_id', $this->currentConversation->id)
@@ -109,13 +130,13 @@ class Messaging extends Component
 
         $data = $this->validate();
         // toast('warning', 'Testing', $this);
-        
+
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
             'content' => $data['messageBody'],
             // 'content' => 'sss',
-            'content' => $data['messageBody'],            
+            'content' => $data['messageBody'],
             // 'content' => 'sss',
         ]);
 
@@ -144,7 +165,7 @@ class Messaging extends Component
             }
         }
 
-        NewMessageCreated::dispatch($this->currentConversation); 
+        NewMessageCreated::dispatch($this->currentConversation);
 
         // }); //TODO::Implement transaction -- end
 
@@ -157,13 +178,13 @@ class Messaging extends Component
         // "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
         $conversationMessageListeners = [];
 
-        $participants = Auth::user()->profile->participants; 
-        foreach($participants as $participant) {
+        $participants = Auth::user()->profile->participants;
+        foreach ($participants as $participant) {
             $conversationMessageListeners["echo-private:messaging.{$participant->conversation_id},NewMessageCreated"] =  'showNewMessage';
         }
 
-        return $conversationMessageListeners;        
-        
+        return $conversationMessageListeners;
+
         // return [
         //     "echo-private:messaging.{$this->currentConversation?->id},NewMessageCreated" => 'showNewMessage',
         //     // "echo-private:messaging.1,NewMessageCreated" => 'showNewMessage',
@@ -178,17 +199,17 @@ class Messaging extends Component
 
     // public function getListeners()
     // {
-          
-        
+
+
     //     return [
-            
+
     //         "echo-private:message-typing.{$this->currentConversation?->id}, .client-typo" => "topi",
     //     ];
     // }
 
     // #[On('echo-private:message-typing.{$this->currentConversation?->id}, .client-typing')]
     // #[On('echo-private:message-typing, client-typing')]
-    // #[On('echo-private:message-typing, .client-typo')]
+    // #[On('post-created')]
     // public function topi()
     // {
     //     dd('typing');
@@ -212,17 +233,32 @@ class Messaging extends Component
     }
 
 
+    /**
+     * TODO:
+     * For the time being this method is shortened and rest of the code taken into mount
+     * 
+     * */ 
+    // public function getConversationMessages($conversationId)
+    // {
+    //     $conversation = Conversation::with(['messages', 'messageRecipients'])->where('id', $conversationId)->first();
+
+    //     $unreadMessages = $conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at');
+
+    //     foreach ($unreadMessages as $unreadMessage) {
+    //         $unreadMessage->update(['seen_at' => Carbon::now()]);
+    //     }
+
+    //     $this->currentConversation = $conversation;
+
+    //     session(['sessionConversationId' => $this->currentConversation->id]);
+
+    //     // blade file will receive this - to get aware about new selected conversation
+    //     $this->dispatch('conversationSelected', $this->currentConversation->id); 
+    // }
+
     public function getConversationMessages($conversationId)
     {
-        $conversation = Conversation::with(['messages', 'messageRecipients'])->where('id', $conversationId)->first();
-
-        $unreadMessages = $conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at');
-
-        foreach ($unreadMessages as $unreadMessage) {
-            $unreadMessage->update(['seen_at' => Carbon::now()]);
-        }
-
-        $this->currentConversation = $conversation;
+        return redirect()->route('messaging.conversation', $conversationId);
     }
 
     // public function updated($propertyName)

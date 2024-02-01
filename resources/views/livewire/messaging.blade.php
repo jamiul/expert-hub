@@ -53,7 +53,7 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
-                    <div class="chatbox-contact-person user-online user-selected" data-conversation-id="{{$conversation->conversation->id}}" wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    <div class="chatbox-contact-person user-online  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
@@ -442,11 +442,11 @@
                         <!-- TODO:NEL: add message typing -->
 
                         <!-- <div class="chatbox-conversation-message message-typing d-none" wire:ignore> -->
-                        <div class="chatbox-conversation-message message-typing d-none" wire:ignore>
+                        <div class="chatbox-conversation-message message-typing d-none" id="message-typing" wire:ignore>
                             <div class="conversation-user-thumb">
                                 <img src="" id="message-writer" alt="">
                             </div>
-                            <div class="conversation-user-message " >
+                            <div class="conversation-user-message ">
                                 <div class="loader ">
                                     <svg height="10" width="40">
                                         <circle class="dot" cx="10" cy="5" r="3" style="fill:grey;" />
@@ -706,31 +706,84 @@
         </div>
 
     </div>
-
+    
 </div>
 
 
 <script type="module">
-
-let conversation_id =  $('.chatbox-contact-person').data("conversation-id");
-
-
-$('.chatbox-contact-person').on('click', function() {
     
-    conversation_id = $(this).data("conversation-id");           
-    })
+    let conversation_id = '{!! $currentConversation->id !!}';
+    
+
+    // Livewire.on('conversationSelected', currentConversationId => {
+
+    //     conversation_id = currentConversationId;
+    //     alert('livewire'+conversation_id);
+    // })
+
+    //    @if(Session::has('sessionConversationId'))
+    //    alert('lsession has'+"{{ Session::get('sessionConversationId') }}");
+    //    @endif
+    // if ("{{ Session::get('sessionConversationId') }}") {
+    //     conversation_id = "{{session('sessionConversationId')}}";
+    //     alert('session'+conversation_id);
+    // }
+
+
+    //    console.log(Echo);
+
+
+    //    $wire.on('conversationSelected', ({currentConversationId}) => {
+    //     // conversation_id = currentConversationId;
+    //         alert(currentConversationId);
+    //     });
 
 
 
 
-  
+
+
+
+
+    // $('.chatbox-contact-person').on('click', function() {
+
+    //     conversation_id = $(this).data("conversation-id");
+
+    //     // scrollToBottom('.chatbox-message-list');
+    //     // alert({!!$currentConversation->id!!});
+
+
+
+    // })
+
+    // Livewire.on('NewMessageCreated', () => {
+    // // ...
+    // console.log('new message');
+    // dd('created');
+    // })
+
+    // WIll fix latter start
+    // $wire.on(`echo-private:messaging.${conversation_id},NewMessageCreated`, () => {
+
+    //     // $wire.$refresh();
+
+    //     setTimeout(function () {
+    //     scrollToBottom('.chatbox-message-list');
+    //     }, 2000)
+    // });
+    // WIll fix latter end
+
+
+
+
     $('#messageBody').on('keydown', function() {
+
         
-        let channel = Echo.private("message-typing."+conversation_id);
-        
+        let channel = Echo.private("message-typing." + conversation_id);        
+
         setTimeout(() => {
             channel.whisper('typing', {
-                
+
                 conversation_id: conversation_id,
                 userImage: "{!! auth()->user()->profile->getFirstMediaUrl('picture') !!}"
             })
@@ -738,28 +791,29 @@ $('.chatbox-contact-person').on('click', function() {
     })
 
 
-  
+
     
-    Echo.private("message-typing."+conversation_id)
-            
-        .listenForWhisper('typing', (e) => {
-            console.log(e);
-            
-            if(e.conversation_id == conversation_id) {
-                $("#message-writer").attr("src",e.userImage);
-                $('.message-typing').removeClass('d-none')
-                
-            }else {
-                $('.message-typing').addClass('d-none')
-                
-            }
-            
-            setTimeout(() => {
-                $('.message-typing').addClass('d-none')
-               
-            }, 1000)
-
-
-        });
+    let listenChannel = Echo.private("message-typing." + conversation_id);
+      
+   
+    listenChannel.listenForWhisper('typing', (e) => {
         
+        if (e.conversation_id == conversation_id) {
+           
+            $("#message-writer").attr("src", e.userImage);
+            $('.message-typing').removeClass('d-none');
+            scrollToBottom('.chatbox-message-list');
+
+        } else {
+            $('.message-typing').addClass('d-none');
+            
+        }
+
+        setTimeout(() => {
+            $('.message-typing').addClass('d-none');
+
+        }, 1000)
+
+
+    });
 </script>

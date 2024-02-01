@@ -32,19 +32,11 @@ Broadcast::channel('messaging.{conversationId}', function ($user, $conversationI
 
 
 Broadcast::channel('message-typing.{conversationId}', function ($user, $conversationId) {
-
-    // var_dump($conversationId==session('conversationId'));
-    // dd('Hi');
-    // dd($conversationId);
-    // if($conversationId == session('conversationId')){
-    //    return true;
-    // }
-    // return false;
-
+    
     $conversationParticipants = Conversation::with('participants')->where('id', $conversationId)->first()->participants;
 
     foreach ($conversationParticipants as $participant) {
-        if ($user->profile->id === $participant->profile_id) {
+        if ($user->profile->id === $participant->profile_id) {            
             return true;
         }
     }
