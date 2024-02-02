@@ -70,20 +70,20 @@ class PaymentHelper {
     public static function calculateMilestoneCharge( $milestone_amount, $client_id = null, $expert_id = null ) {
         $service_charge = ( $milestone_amount * env( 'SERVICE_CHARGE' ) ) / 100;
 
-        //todo: check if its first contact for that Expert and Client, if yes, add 3$ contract initialization fee
+        //todo: check if its first milestone for a contact that Expert and Client, if yes, add 3$ contract initialization fee
         $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
-        if($client_id && $expert_id){
-            $contract_count = Contract::where('client_id', $client_id)->where('expert_id', $expert_id)->count();
-            if($contract_count > 0 ){
-                $contract_initialization_fee = 0;
-            } else {
-                $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
-            }
-        }
+//        if($client_id && $expert_id){
+//            $contract_count = Contract::where('client_id', $client_id)->where('expert_id', $expert_id)->count();
+//            if($contract_count > 0 ){
+//                $contract_initialization_fee = 0;
+//            } else {
+//                $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
+//            }
+//        }
 
         $net_total           = $milestone_amount + $service_charge + $contract_initialization_fee;
-        $gst                 = ( $service_charge * env( 'GST' ) ) / 100;
-        $payment_gateway_fee = ( ( $net_total + $gst ) * env( 'PAYMENT_GATEWAY_FEE' ) ) / 100;
+        $payment_gateway_fee = ( ( $net_total ) * env( 'PAYMENT_GATEWAY_FEE' ) ) / 100;
+        $gst                 = ( ( $service_charge + $contract_initialization_fee - $payment_gateway_fee) * env( 'GST' ) ) / 100;
 
         $gross_total = $net_total + $gst + $payment_gateway_fee;
 
@@ -94,6 +94,19 @@ class PaymentHelper {
             'gst'                         => $gst,
             'payment_gateway_fee'         => $payment_gateway_fee,
             'total_amount'                => $gross_total,
+        ];
+    }
+
+    public static function calculateExpertCharge($milestone_amount) {
+        $service_charge = ( $milestone_amount * env( 'EXPERT_SERVICE_CHARGE' ) ) / 100;
+        $net_total           = $milestone_amount - $service_charge;
+        $gross_total = $net_total + $service_charge;
+
+        return [
+            'milestone_amount'            => $milestone_amount,
+            'service_charge'              => $service_charge,
+            'net_total'              => $net_total,
+            'total_amount'                => $gross_total
         ];
     }
 
@@ -147,6 +160,12 @@ class PaymentHelper {
             }
             Profile::find( $transaction_data['expert_id'] )->update( [
                 'balance' => $balance
+            ] );
+
+            //remove fund from pending balance
+            $escrow_balance -= $transaction_data['amount'];
+            Profile::find( $transaction_data['expert_id'] )->update( [
+                'escrow_balance' => $escrow_balance
             ] );
         } else {
             if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'credit' ) {

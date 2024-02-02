@@ -47,6 +47,12 @@ class End extends Modal
                 'status' => MilestoneStatus::Approved,
                 'approved_at' => now(),
             ]);
+
+            //generate expert charge
+            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+            $milestone_amount = $milestone->amount;
+
+            //parent transaction
             $transaction_data = [
                 'transaction_id' => null,
                 'milestone_id'   => $milestone->id,
@@ -54,17 +60,36 @@ class End extends Modal
                 'description'    => "Invoice for " . $milestone->title,
                 'client_id'      => $this->contract->client->user_id,
                 'expert_id'      => $this->contract->expert->user_id,
-                'amount'         => $milestone->amount,
+                'amount'         => $milestone_amount,
                 'charge_type'    => 'credit',
                 'parent'         => null,
+                'status'         => 0,
+            ];
+            $transaction = PaymentHelper::createExpertTransaction($transaction_data);
+            $parent_id = $transaction->id;
+
+            //charge platform fee
+            $service_charge = $charge['service_charge'];
+            $transaction_data = [
+                'transaction_id' => null,
+                'milestone_id'   => $milestone->id,
+                'type'           => 'Service Fee',
+                'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
+                'client_id'      => $this->contract->client->user_id,
+                'expert_id'      => $this->contract->expert->user_id,
+                'amount'         => $service_charge,
+                'charge_type'    => 'debit',
+                'parent'         => $parent_id,
                 'status'         => 0,
             ];
             PaymentHelper::createExpertTransaction($transaction_data);
         }
         $releasing_amount = $this->contract->fundedMilestones()->sum('amount');
+
         $this->contract->client->update([
             'escrow_balance' => ($this->contract->client->escrow_balance - $releasing_amount),
         ]);
+
         $testimonial = Testimonial::create([
             'contract_id' => $this->contract->id,
             'client_id' => $this->contract->client_id,
@@ -76,10 +101,12 @@ class End extends Modal
             'communication' => $this->communication,
             'deadlines' => $this->deadlines,
         ]);
+
         $this->contract->update([
             'status' => ContractStatus::Ended,
             'reason' => $this->reason,
         ]);
+
 
         toast('success', 'Contract ended successfully', $this);
         $this->dispatch('contract-ended');
