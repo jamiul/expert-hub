@@ -38,9 +38,9 @@
                                 <li>Account</li>
                                 <li class="resticted">Resticted</li>
                                 <li>Payment</li>
-                                <li class="{{ $expert_stripe_account->charges_enabled ? 'enabled' : 'disabled' }}">{{ $expert_stripe_account->charges_enabled ? 'Enabled' : 'Disabled' }}</li>
+                                <li class="badge badge-pill {{ $expert_stripe_account->charges_enabled ? 'badge-outline-success' : 'badge-outline-danger' }}">{{ $expert_stripe_account->charges_enabled ? 'Enabled' : 'Disabled' }}</li>
                                 <li>Payouts</li>
-                                <li class="{{ $expert_stripe_account->payouts_enabled ? 'enabled' : 'disabled' }}">{{ $expert_stripe_account->payouts_enabled ? 'Enabled' : 'Disabled' }}</li>
+                                <li class="badge badge-pill {{ $expert_stripe_account->payouts_enabled ? 'badge-outline-success' : 'badge-outline-danger' }}">{{ $expert_stripe_account->payouts_enabled ? 'Enabled' : 'Disabled' }}</li>
                             </ul>
                         </div>
                     </div>
