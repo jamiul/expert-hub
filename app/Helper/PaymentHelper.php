@@ -163,10 +163,12 @@ class PaymentHelper {
             ] );
 
             //remove fund from pending balance
-            $escrow_balance -= $transaction_data['amount'];
-            Profile::find( $transaction_data['expert_id'] )->update( [
-                'escrow_balance' => $escrow_balance
-            ] );
+            if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'credit' ) {
+                $escrow_balance -= $transaction_data['amount'];
+                Profile::find( $transaction_data['expert_id'] )->update( [
+                    'escrow_balance' => $escrow_balance
+                ] );
+            }
         } else {
             if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'credit' ) {
                 $escrow_balance += $transaction_data['amount'];

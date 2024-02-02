@@ -723,7 +723,7 @@ class StripeController extends Controller {
             $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
 
             //parent transaction
-            $expert_payment = $charge['net_total'];
+            $expert_payment = $charge['total_amount'];
             $transaction_data = [
                 'transaction_id' => $stripe_transaction->id,
                 'milestone_id'   => $milestone->id,
