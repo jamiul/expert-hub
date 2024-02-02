@@ -103,7 +103,7 @@ class Create extends Component
             'deposit_amount' => $this->depositAmount(),
             'status' => OfferStatus::Draft,
         ]);
-        
+        $this->project = auth()->user()->profile->projects()->where('id', $this->project_id)->first();
         if ($this->project->isFixed()) {
             if ($this->milestoneType == 'multiple') {
                 foreach ($this->milestone_description as $key => $value) {
@@ -129,6 +129,14 @@ class Create extends Component
                 ]);
             }
         }
+
+        $conversation = createConversation(
+            $this->project->client,
+            $this->expert,
+            $this->project->client->user->full_name .' Sent an offer for ' . $offer->contract_title,
+            $this->project
+        );
+        toast('success', 'Offer Sent Successfully');
         return redirect()->route('client.payment.pay',['reference' => 'offer', 'id' => $offer->id]);
     }
 
