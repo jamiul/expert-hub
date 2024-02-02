@@ -169,17 +169,17 @@ class StripeController extends Controller {
         try {
             $reference_id   = @$paymentData->metadata->reference_id; //milestone id
             $reference_type = @$paymentData->metadata->reference_type; //milestone
-            $contract_type = @$paymentData->metadata->contract_type; //offer/contract
-            $contract_id = @$paymentData->metadata->contract_id; //offer_id
-            $client_id = @$paymentData->metadata->client_id; //client_id
-            $expert_id = @$paymentData->metadata->expert_id; //expert_id
+            $contract_type  = @$paymentData->metadata->contract_type; //offer/contract
+            $contract_id    = @$paymentData->metadata->contract_id; //offer_id
+            $client_id      = @$paymentData->metadata->client_id; //client_id
+            $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
                 'payment_intent_id'      => $paymentData->id,
-                'reference_id'           => json_encode($reference_id),
+                'reference_id'           => json_encode( $reference_id ),
                 'reference_type'         => $reference_type,
                 'object'                 => $paymentData->object,
                 'amount'                 => $paymentData->amount,
@@ -203,15 +203,15 @@ class StripeController extends Controller {
             ] );
 
             //update offer status based on payment = pending / not accepted
-            if($contract_type == 'offer'){
-                $offer = Offer::find($contract_id);
+            if ( $contract_type == 'offer' ) {
+                $offer         = Offer::find( $contract_id );
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
             }
+
             //save to client transaction table
-            //todo: calculate client displayable transaction data
             if ( $reference_type == 'milestone' ) {
-                foreach (json_decode($reference_id) as $ref_id){
+                foreach ( json_decode( $reference_id ) as $ref_id ) {
                     //update milestone status to funded.
                     $milestone         = Milestone::find( $ref_id );
                     $milestone->status = MilestoneStatus::Funded;
@@ -220,15 +220,15 @@ class StripeController extends Controller {
                     $milestone_amount = $milestone->amount;;
 
                     //breakdown charge into pieces
-                    $charge    = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
-                    $profile   = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
+                    $charge  = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $offer->client_id, $offer->expert_id );
+                    $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                    //parent transaction
+                    //parent transaction - credit card charge
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
                         'type'           => 'Payment',
-                        'description'    => "Paid from Mastercard 0026 to escrow for funding request xxxxxxxxx",
+                        'description'    => "Paid from Mastercard 0026 to escrow for funding request",
                         'client_id'      => $client_id,
                         'expert_id'      => null,
                         'amount'         => ( $paymentData->amount / 100 ),
@@ -269,7 +269,6 @@ class StripeController extends Controller {
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
 
-                    //todo: check if its first contract with that expert or not.
                     //contract initialization fee transaction
                     if ( $charge['contract_initialization_fee'] > 0 ) {
                         $contract_initialization_fee = $charge['contract_initialization_fee'];
@@ -319,28 +318,19 @@ class StripeController extends Controller {
                         'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
-
-                    /* milestone funded, update & send notification to expert*/
-
-//                    $transaction_data = [
-//                        'transaction_id' => $stripe_transaction->id,
-//                        'milestone_id'   => $ref_id,
-//                        'type'           => 'Fixed Price',
-//                        'description'    => "Funded for " . $milestone->title,
-//                        'client_id'      => $profile->user_id,
-//                        'expert_id'      => $expert_id,
-//                        'amount'         => $milestone_amount,
-//                        'charge_type'    => 'credit',
-//                        'parent'         => $stripe_transaction->id,
-//                        'status'         => 0
-//                    ];
-//                    PaymentHelper::createExpertTransaction( $transaction_data );
                 }
             }
 
-            //todo: add data to client specific transaction table
-            //todo: update milestone status
             //todo: send payment notification & email to Client, Expert & Admin
+            $client = User::find( $client_id );
+            $client->notify( new PaymentNotification( [
+                'title'   => "Card charged",
+                'message' => "Your credit card been charged " . $paymentData->amount / 100 . ' ' . $paymentData->currency,
+                'link'    => route( 'client.payment.billing' ),
+                'button'  => 'View Details',
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
+            ] ) );
+
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
@@ -555,7 +545,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -600,7 +590,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -645,7 +635,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -706,26 +696,30 @@ class StripeController extends Controller {
         //todo: save into transfer table
 
         //todo: update expert funded milestone status
-        if($reference_type == 'milestone'){
-            $milestone = Milestone::find($reference_id);
-            $expert_id = $milestone->eoi->expert_id;
+        if ( $reference_type == 'milestone' ) {
+            $milestone = Milestone::find( $reference_id );
+            $expert_id = $milestone->contract->expert_id;
 
-            $profile = Profile::find($expert_id);
+            $profile = $milestone->contract->expert;
 
-            $balance = $profile->balance;
+            $balance        = $profile->balance;
             $escrow_balance = $profile->escrow_balance;
 
-            $balance += ($transfer->amount / 100);
-            $escrow_balance -= ($transfer->amount / 100);
+            $balance        += ( $transfer->amount / 100 );
+            $escrow_balance -= ( $transfer->amount / 100 );
 
-            $profile->balance = $balance;
+            $profile->balance        = $balance;
             $profile->escrow_balance = $escrow_balance;
             $profile->save();
 
+            //update milestone status
+            $milestone->status = MilestoneStatus::Released;
+            $milestone->save();
+
             //calculate expert balance & escrow
-            ExpertTransaction::where('milestone_id', $reference_id)->update([
-                'status'         => 1
-            ]);
+            ExpertTransaction::where( 'milestone_id', $reference_id )->update( [
+                'status' => 1
+            ] );
 
         }
     }

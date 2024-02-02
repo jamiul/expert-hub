@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="/expert/profile/edit">My profile</a></li>
                         <li><a href="/figma/expert-status-analytics">Analytic</a></li>
-                        <li><a href="{{ route('expert.payment.index') }}">Billings & Payment</a></li>
+                        <li><a href="{{ route('expert.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
