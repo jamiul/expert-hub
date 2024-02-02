@@ -91,7 +91,7 @@ class End extends Modal
 
         $escrow_balance = ( $this->contract->client->escrow_balance - $releasing_amount);
 
-        $client = $this->contract->client->update([
+        Profile::find($this->contract->client_id)->update([
             'escrow_balance' => $escrow_balance
         ]);
 
