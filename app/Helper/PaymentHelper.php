@@ -51,10 +51,14 @@ class PaymentHelper {
                             'schedule'             => [ 'interval' => 'manual' ],
                             'statement_descriptor' => 'EduExHub'
                         ]
+                    ],
+                    'metadata' => [
+                        'user_id' => $user->id,
+                        'profile_id' => $user->profile->id
                     ]
                 ] );
 
-                $profile                 = Profile::where( 'user_id', $user->id )->first();
+                $profile                 = $user->profile;
                 $profile->stripe_acct_id = $connected_account->id;
                 $profile->save();
             } catch ( \Exception $ex ) {
