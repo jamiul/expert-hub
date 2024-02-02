@@ -50,7 +50,7 @@ class Login extends Component
 
         $this->redirect(
             session('url.intended', $this->getDashboardUrl()),
-            navigate: true
+            // navigate: true
         );
     }
 
