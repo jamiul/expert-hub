@@ -10,6 +10,7 @@ use App\Models\Profile;
 use App\Models\Testimonial;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
+use Log;
 
 class End extends Modal
 {
@@ -42,6 +43,9 @@ class End extends Modal
     public function endContract()
     {
         $this->validate();
+
+        $releasing_amount = $this->contract->fundedMilestones()->sum('amount');
+
         foreach ($this->contract->fundedMilestones() as $milestone) {
             $milestone->update([
                 'status' => MilestoneStatus::Approved,
@@ -84,10 +88,11 @@ class End extends Modal
             ];
             PaymentHelper::createExpertTransaction($transaction_data);
         }
-        $releasing_amount = $this->contract->fundedMilestones()->sum('amount');
 
-        $this->contract->client->update([
-            'escrow_balance' => ($this->contract->client->escrow_balance - $releasing_amount),
+        $escrow_balance = ( $this->contract->client->escrow_balance - $releasing_amount);
+
+        $client = $this->contract->client->update([
+            'escrow_balance' => $escrow_balance
         ]);
 
         $testimonial = Testimonial::create([
