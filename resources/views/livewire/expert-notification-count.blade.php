@@ -3,7 +3,7 @@
         <span class="{{$unreadCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadCount }}</span>
         <x-icon.bell/>
     </a>
-    <div class="header-dropdown" wire:ignore.self x-cloak x-show="openDropdown === 'notification'">
+    <div class="header-dropdown" wire:ignore.self x-cloak @click.outside="openDropdown = null" x-show="openDropdown === 'notification'">
         <div class="notification-dropdown-inner">
             <div class="notification-dropdown-item-wrapper">
                 @forelse($unread_notifications as $unread_notification)
