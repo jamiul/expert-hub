@@ -164,5 +164,31 @@ table {
         border-color: $edu-primary-color;
         color: $edu-primary-color;
     }
+
+    &.badge-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    &.badge-outline-success {
+        color: #369450;
+        border-color: #369450;
+    }
+
+    &.badge-outline-danger {
+        color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    &.badge-outline-warning {
+        color: #E9B911;
+        border-color: #E9B911;
+    }
+
+    &.badge-outline-info {
+        color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
 }
 
