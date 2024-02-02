@@ -47,7 +47,7 @@ class PaymentController extends Controller
         //check if there is any document requires
         $expert_stripe_account = $this->stripe->accounts->retrieve( $acct_id, [] );
 
-        dd($expert_stripe_account);
+//        dd($expert_stripe_account);
 
         $balance = $this->stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
 
