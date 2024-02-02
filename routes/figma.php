@@ -174,4 +174,6 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-eoi-view-with-expert-profile', 'figma.client-eoi-view-with-expert-profile');
     Route::view('/project/client-job-posts-deposit-payment', 'figma.client-job-posts-deposit-payment');
 
+    //Training
+    Route::view('/find-training', 'figma.find-training');
 });
