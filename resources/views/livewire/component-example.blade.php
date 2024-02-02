@@ -7,7 +7,9 @@
     </div>
     <form wire:submit="submit">
         <x-form.flatpicker label="Date picker" name="datepicker"/>
+
         <x-form.flatpicker label="Date picker" inline="true" name="datepicker"/>
+
         <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry"
                              :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
 
@@ -31,6 +33,7 @@
             <option value="Dr">Dr</option>
             <option value="Prof">Prof</option>
         </x-form.choice>
+
         <x-form.choice wire:model="title" label="Select Single" :search="false">
             <option value="">Select Title</option>
             <option value="Mr">Mr</option>
