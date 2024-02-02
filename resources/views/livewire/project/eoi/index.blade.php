@@ -149,7 +149,7 @@
                                                 <x-expert.card :url="route('client.eois.show',[$project, $eoi])" :expert="$eoi->expert">
                                                     <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                     <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
-                                                    <x-expert.message/>
+                                                    <x-expert.message wire:click="sendMessage({{ $eoi->id }})"/>
                                                     <x-expert.hire :expert="$eoi->expert" :eoi="$eoi" :project="$eoi->project"/>
                                                 </x-expert.card>
                                             @empty
