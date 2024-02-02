@@ -269,12 +269,19 @@ select.input-field-control {
     }
 }
 
-.choices__inner {
-    background-color: #fff !important;
-    border-color: $edu-border-color !important;
-}
 
 .choices {
+    &.is-focused {
+        .choices__inner {
+            border-color: #0036E3 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 89, 201, 0.1);
+        }
+    }
+
+    .choices__inner {
+        background-color: #fff !important;
+        border: 2px solid $edu-border-color !important;
+    }
 
     //Single Select
 
@@ -295,6 +302,14 @@ select.input-field-control {
                 }
             }
         }
+
+        .choices__item {
+            .choices__button {
+                display: none;
+            }
+        }
+
+
     }
 
     .choices__list--dropdown {
@@ -302,6 +317,7 @@ select.input-field-control {
         z-index: 2 !important;
         border: none !important;
         box-shadow: 0px 3px 6px 0px rgba(14, 0, 98, 0.1);
+        margin-top: 2px !important;
 
         input {
             @include input-field($height: 36px, $border-color: none);
