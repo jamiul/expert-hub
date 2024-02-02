@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="chatbox-wrapper">
         <div class="chatbox-contact-area">
@@ -54,20 +53,20 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
-                    <div class="chatbox-contact-person user-online user-selected" wire:key="{{ $conversation->id }}"  wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count()  @endphp
+                    <div class="chatbox-contact-person user-online  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
                                 <h6>{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h6>
-                                <time>7: 30 am</time>
+                                <time>{{ Carbon\Carbon::parse($conversation->conversation->messages->last()->created_at)->diffForHumans() }}</time>
                             </div>
                             <div class="last-message-hints">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias at
-                                    culpa</p>
+                                <p>{{$conversation->conversation->messages->last()->content}}</p>
                             </div>
-                            <span class="unread-message-count">2</span>
+                            <span class="{{$unreadMessageCount > 0 ? 'unread-message-count' : '' }}  ">{{ $unreadMessageCount > 0 ? $unreadMessageCount : ''  }}</span>
                         </div>
                     </div>
 
@@ -214,7 +213,7 @@
             </div>
         </div>
 
-        <div class="chatbox-content-area">
+        <div class="chatbox-content-area chatbox-conversation-summary-show">
             <div class="chatbox-recipient-area">
                 <div class="chatbox-recipient-inner">
                     <div class="chatbox-mobile-view-controller">
@@ -228,7 +227,7 @@
                         <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                     </div>
 
-                    
+
                     <div class="chatbox-recipient-info">
                         <h3>{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h3>
                         <p class="chatbox-recipient-time">5:32 AM GMT+6 | Australia </p>
@@ -254,11 +253,12 @@
             <div class="chatbox-conversation-area">
                 <div class="chatbox-conversation-inner">
                     <div class="chatbox-message-list">
-                        {{-- dd($conversationMessages) --}}
+                        {{-- dd($currentConversation->messages) --}}
                         <!-- TODO: Improve here, remove the if conditional -->
-                    @if($currentConversation)
-                    @forelse($currentConversation->messages as $conversationMessage)
-                        <div class="chatbox-conversation-message recipient-message" onclick="showMobileMessageAction(this)">
+                        @if($currentConversation)
+                        @forelse($currentConversation->messages as $conversationMessage)
+
+                        <div class="chatbox-conversation-message  {{ ($conversationMessage->sender_profile_id == auth()->user()->profile->id) ? 'recipient-message' : '' }} " onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
                                 <img src="{{-- asset('assets/frontend/img/chat-avatar.png') --}} {{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
                             </div>
@@ -268,10 +268,34 @@
                                     <time> {{ Carbon\Carbon::parse($conversationMessage->created_at)->diffForHumans() }}</time>
                                 </div>
                                 <div class="conversation-message-body">
+                                    @if(!$conversationMessage->has_attachment)
                                     <p>{{$conversationMessage->content}}</p>
+                                    @endif
+
+                                    @if($conversationMessage->has_attachment)
+                                    <div class="chatbox-uploaded-media-wrapper">
+                                        {{$conversationMessage->content}}
+                                        @forelse($conversationMessage->getMedia() as $file)
+                                        <div class="chatbox-uploaded-media-item">
+                                            <div>
+                                                <x-icon.file />
+                                            </div>
+                                            <div>
+                                                <a href="{{$file->getUrl()}}" download>{{$file->getAttribute('name')}}</a>
+                                            </div>
+                                        </div>
+                                        @empty
+
+                                        @endforelse
+
+                                    </div>
+                                    @endif
+
+
                                 </div>
                             </div>
-                            
+
+
                             <!-- TODO:NEL: add conversation-user-message-action -->
 
                             <div class="conversation-user-message-action">
@@ -328,7 +352,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -349,7 +373,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
@@ -370,7 +394,7 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -393,7 +417,7 @@
                         </div> -->
 
                         <!-- <div class="separator"><span>12 Oct 2023</span></div> -->
-                        
+
                         <!-- <div class="chatbox-conversation-message recipient-message">
                             <div class="conversation-user-thumb">
                                 <img src="{{ asset('assets/frontend/img/chat-avatar.png') }}" alt="avatar">
@@ -414,15 +438,16 @@
                             </div>
 
                         </div> -->
-                        
+
                         <!-- TODO:NEL: add message typing -->
 
-                        <div class="chatbox-conversation-message message-typing">
+                        <!-- <div class="chatbox-conversation-message message-typing d-none" wire:ignore> -->
+                        <div class="chatbox-conversation-message message-typing d-none" id="message-typing" wire:ignore>
                             <div class="conversation-user-thumb">
-                                <img src="{{ asset('assets/frontend/img/chat-avatar2.png') }}" alt="avatar">
+                                <img src="" id="message-writer" alt="">
                             </div>
-                            <div class="conversation-user-message">
-                                <div class="loader">
+                            <div class="conversation-user-message ">
+                                <div class="loader ">
                                     <svg height="10" width="40">
                                         <circle class="dot" cx="10" cy="5" r="3" style="fill:grey;" />
                                         <circle class="dot" cx="20" cy="5" r="3" style="fill:grey;" />
@@ -446,6 +471,31 @@
 
                         <textarea name="messageBody" id="messageBody" wire:keydown.enter.prevent="sendMessage" wire:model="messageBody" cols="30" rows="10" placeholder="Type your message..."></textarea>
 
+                        @if($messageAttachmentTemporaryUrls)
+                        {{-- dd($messageAttachment) --}}
+                        <div class="chatbox-uploaded-media-wrapper">
+                            @forelse($messageAttachmentTemporaryUrls as $key => $messageAttachmentTemporaryUrl)
+
+                            <div class="chatbox-uploaded-media-item">
+                                <div>
+                                    <x-icon.file />
+                                </div>
+                                <div>
+                                    <a href="{{ $messageAttachmentTemporaryUrl }}">{{$messageAttachment[$key]->getClientOriginalName()}}</a>
+
+                                </div>
+                                <!-- <button>
+                                    <x-icon.close />
+                                </button> -->
+                            </div>
+
+
+                            @empty
+
+                            @endforelse
+                        </div>
+                        @endif
+
 
                         <div class="chatbox-message-editor-helper">
                             <div class="message-editor-styling-action">
@@ -464,6 +514,13 @@
                                     <x-icon.code />
                                 </button>
                             </div>
+
+
+                            @error('messageAttachment.*')
+                            <div class="form-input-error-message">{{ $message }}</div>
+                            @enderror
+
+
                             <div class="message-editor-functional-action">
                                 {{-- <div class="dropdown d-inline-block">--}}
                                 {{-- <button class="icon-btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--}}
@@ -477,9 +534,11 @@
                                 {{-- </div>--}}
 
 
-                                <button class="icon-btn">
+                                <label class="icon-btn">
+                                    <input type="file" name="messageAttachment[]" id="messageAttachment" multiple wire:model.live="messageAttachment" class='d-none' onclick="toggleClasses('.chatbox-message-editor', 'media-uploaded')">
+
                                     <x-icon.attach-file />
-                                </button>
+                                </label>
                                 <div class="dropdown d-inline-block">
                                     <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown" aria-expanded="false">
                                         <x-icon.settings />
@@ -522,14 +581,15 @@
 
 
             </div>
+            @if($currentConversation)
             <div class="chatbox-conversation-summary">
                 <div class="chatbox-conversation-summary-inner">
                     <div class="chatbox-recipient-card user-online">
                         <div class="chatbox-recipient-card-thumb">
-                            <img src="{{$currentConversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
+                            <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
-                            
+
                             <h3 class="h6">{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name }}</h3>
                             <p>Chill Intuative | Australia</p>
                             <p>5:32 AM GMT+6 | Australia </p>
@@ -642,8 +702,103 @@
 
                 </div>
             </div>
+            @endif
         </div>
 
     </div>
+    
 </div>
 
+@script
+<script type="module">
+    
+    let conversation_id = '{!! $currentConversation?->id !!}';
+    
+
+    // Livewire.on('conversationSelected', currentConversationId => {
+
+    //     conversation_id = currentConversationId;
+    //     alert('livewire'+conversation_id);
+    // })
+
+    
+
+
+    //    $wire.on('conversationSelected', ({currentConversationId}) => {
+    //     // conversation_id = currentConversationId;
+    //         alert(currentConversationId);
+    //     });
+
+
+
+
+
+
+
+
+    
+
+
+    // Livewire.on('NewMessageCreated', () => {
+    // // ...
+    // console.log('new message');
+    // dd('created');
+    // })
+
+    // WIll fix latter start
+    $wire.on(`echo-private:messaging.${conversation_id},NewMessageCreated`, () => {
+
+        // $wire.$refresh();
+        scrollToBottom('.chatbox-message-list');
+
+        // setTimeout(function () {
+        // scrollToBottom('.chatbox-message-list');
+        // }, 2000)
+    });
+    // WIll fix latter end
+
+
+
+
+    $('#messageBody').on('keydown', function() {
+
+        
+        let channel = Echo.private("message-typing." + conversation_id);        
+
+        setTimeout(() => {
+            channel.whisper('typing', {
+
+                conversation_id: conversation_id,
+                userImage: "{!! auth()->user()->profile->getFirstMediaUrl('picture') !!}"
+            })
+        }, 300)
+    })
+
+
+
+    
+    let listenChannel = Echo.private("message-typing." + conversation_id);
+      
+   
+    listenChannel.listenForWhisper('typing', (e) => {
+        
+        if (e.conversation_id == conversation_id) {
+           
+            $("#message-writer").attr("src", e.userImage);
+            $('.message-typing').removeClass('d-none');
+            scrollToBottom('.chatbox-message-list');
+
+        } else {
+            $('.message-typing').addClass('d-none');
+            
+        }
+
+        setTimeout(() => {
+            $('.message-typing').addClass('d-none');
+
+        }, 1000)
+
+
+    });
+</script>
+@endscript

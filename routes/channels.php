@@ -29,3 +29,18 @@ Broadcast::channel('messaging.{conversationId}', function ($user, $conversationI
     
     return false;
 });
+
+
+Broadcast::channel('message-typing.{conversationId}', function ($user, $conversationId) {
+    
+    $conversationParticipants = Conversation::with('participants')->where('id', $conversationId)->first()->participants;
+
+    foreach ($conversationParticipants as $participant) {
+        if ($user->profile->id === $participant->profile_id) {            
+            return true;
+        }
+    }
+    
+    return false;
+  });
+  

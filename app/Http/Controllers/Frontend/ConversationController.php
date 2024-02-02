@@ -20,12 +20,29 @@ class ConversationController extends Controller
         return view('frontend.messaging.index');
     }
 
+    public function showConversation($conversationId)
+    {        
+        $conversationParticipants =  Conversation::where('id', $conversationId)->firstOrFail()->participants;
+        
+        foreach($conversationParticipants as $participant) {
+           if(Auth::user()->profile->id == $participant->profile_id){
+            return view('frontend.messaging.index');
+           } 
+        }
+        
+        return back();
+    }
+    
+
     public function store($id)
     {        
-        // if($id === Auth::user()->profile->id){
-        //     dd('please chose a different user other than current user');
-        // }
-        // dd($id);
+        
+        if($id == Auth::user()->profile->id){
+            return back();
+        }
+        
+        // dump($id);
+        // dd(Auth::user()->profile->id);
         
         DB::transaction(function () use ($id) {
             // dd($id);
@@ -44,7 +61,7 @@ class ConversationController extends Controller
                 'content' => "I want to discuss with you about a project"
             ]);
 
-            MessageRecipient::create(['conversation_id' => $conversation->id, 'message_id' => $message->id, 'recipient_profile_id' => 2]); //TODO:take participant profile id dynamically
+            MessageRecipient::create(['conversation_id' => $conversation->id, 'message_id' => $message->id, 'recipient_profile_id' => $id]); //TODO:take participant profile id dynamically
         });
 
         // ConversationCreated::dispatch();

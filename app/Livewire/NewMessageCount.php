@@ -15,7 +15,7 @@ class NewMessageCount extends Component
 
     public function render()
     {
-        $unreadMessages = MessageRecipient::with('message')->whereNull('seen_at')->where('recipient_profile_id', auth()->user()->profile->id)->get();
+        $unreadMessages = MessageRecipient::with('message')->whereNull('seen_at')->where('recipient_profile_id', auth()->user()->profile->id)->latest()->get();
         
         $unreadMessageCount = MessageRecipient::whereNull('seen_at')->where('recipient_profile_id', '=', auth()->user()->profile->id)->count();
         
