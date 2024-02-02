@@ -3,6 +3,7 @@
 namespace App\Livewire\Auth;
 
 use App\Enums\ProfileType;
+use App\Events\OnlineStatus;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
@@ -47,6 +48,8 @@ class Login extends Component
         RateLimiter::clear($this->throttleKey());
 
         session()->regenerate();
+
+        OnlineStatus::dispatch();
 
         $this->redirect(
             session('url.intended', $this->getDashboardUrl()),

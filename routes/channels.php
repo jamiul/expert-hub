@@ -43,4 +43,9 @@ Broadcast::channel('message-typing.{conversationId}', function ($user, $conversa
     
     return false;
   });
+
+Broadcast::channel('online-status', function ($user) {   
+        
+    return $user->profile;
+  });
   

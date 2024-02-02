@@ -53,8 +53,8 @@
                 <div class="chatbox-contact-list">
 
                     @forelse($currentUsersConversations as $conversation)
-                    @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count()  @endphp
-                    <div class="chatbox-contact-person user-online  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count() @endphp
+                    <div class="chatbox-contact-person  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
@@ -584,7 +584,8 @@
             @if($currentConversation)
             <div class="chatbox-conversation-summary">
                 <div class="chatbox-conversation-summary-inner">
-                    <div class="chatbox-recipient-card user-online">
+                    <!-- Adding user-online class according to pusher event -->
+                    <div class="chatbox-recipient-card profile-{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status">
                         <div class="chatbox-recipient-card-thumb">
                             <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
                         </div>
@@ -706,14 +707,13 @@
         </div>
 
     </div>
-    
+
 </div>
 
 @script
 <script type="module">
-    
     let conversation_id = '{!! $currentConversation?->id !!}';
-    
+
 
     // Livewire.on('conversationSelected', currentConversationId => {
 
@@ -721,7 +721,7 @@
     //     alert('livewire'+conversation_id);
     // })
 
-    
+
 
 
     //    $wire.on('conversationSelected', ({currentConversationId}) => {
@@ -736,7 +736,7 @@
 
 
 
-    
+
 
 
     // Livewire.on('NewMessageCreated', () => {
@@ -762,8 +762,8 @@
 
     $('#messageBody').on('keydown', function() {
 
-        
-        let channel = Echo.private("message-typing." + conversation_id);        
+
+        let channel = Echo.private("message-typing." + conversation_id);
 
         setTimeout(() => {
             channel.whisper('typing', {
@@ -776,21 +776,21 @@
 
 
 
-    
+
     let listenChannel = Echo.private("message-typing." + conversation_id);
-      
-   
+
+
     listenChannel.listenForWhisper('typing', (e) => {
-        
+
         if (e.conversation_id == conversation_id) {
-           
+
             $("#message-writer").attr("src", e.userImage);
             $('.message-typing').removeClass('d-none');
             scrollToBottom('.chatbox-message-list');
 
         } else {
             $('.message-typing').addClass('d-none');
-            
+
         }
 
         setTimeout(() => {
@@ -800,5 +800,34 @@
 
 
     });
+
+
+
+    // Online/Offline status 
+    
+    Echo.join('online-status')
+        .here((profiles) => {
+
+            
+            for (var i=0; i<profiles.length; i++){
+                if('{{auth()->user()->profile->id}}' != profiles[i].id) {
+                    $(".profile-"+profiles[i].id+"-status").addClass('user-online');
+                    console.log(".profile-"+profiles[i].id+"-status");
+                }
+            }
+        })
+        .joining((profile) => {            
+            
+            $(".profile-"+profile.id+"-status").addClass('user-online');
+        })
+        .leaving((profile) => {
+            
+            $(".profile-"+profile.id+"-status").removeClass('user-online');
+        })
+        .listen('OnlineStatus', (e) => {
+            console.log(e);
+        })
+
+    
 </script>
 @endscript
