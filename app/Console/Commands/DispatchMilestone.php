@@ -30,7 +30,7 @@ class DispatchMilestone extends Command {
      */
     public function handle() {
         $milestones = Milestone::where( 'status', MilestoneStatus::Approved )
-                               ->whereDate( 'approved_at', '<=', Carbon::now()->addDays( 5 ) )
+                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
                                ->get();
 
         foreach ( $milestones as $milestone ) {
