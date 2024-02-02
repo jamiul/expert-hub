@@ -393,3 +393,50 @@ $page-section-bg: #F1F3FA;
         width: 235px;
     }
 }
+
+.scholarship-block {
+    .scholarship-img {
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+            transition: 0.2s;
+        }
+
+        &:hover {
+            img {
+                scale: 1.1;
+            }
+        }
+    }
+
+    .scholarship-text {
+        h4 {
+            margin: 10px 0 2px;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 120%;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    color: #303744;
+                }
+            }
+        }
+
+        p {
+            color: #6E737C;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+
+    }
+}
+
+
+

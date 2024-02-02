@@ -12,8 +12,8 @@
                                 src="{{ $scholarship->university->logo ? $scholarship->university->logo : asset('assets/frontend/img/scholarship1.jpg') }}"/></a>
                     </div>
                     <div class="scholarship-text">
-                        <a href="#">{{ $scholarship->university->name }} | {{ $scholarship->country->name }}</a>
-                        <h4>Open for {{ $scholarship->student_type }}</h4>
+                        <h4><a href="#">{{ $scholarship->title }}</a></h4>
+                        <p>Open for {{ $scholarship->student_type }}</p>
                     </div>
                 </div>
             </div>
