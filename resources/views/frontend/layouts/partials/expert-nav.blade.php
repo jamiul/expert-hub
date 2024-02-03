@@ -188,7 +188,7 @@
                             </div>
                             <div class="dropdown-user-menu">
                                 <ul>
-                                    <li><a href="">
+                                    <li><a href="{{ route('expert.profile.edit') }}">
                                             <x-icon.user/>
                                             Profile</a></li>
                                     <li><a href="">
