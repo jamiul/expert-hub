@@ -24,7 +24,7 @@
                                         <div class="australia">Australia</div>
                                     </div>
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
+                                    <p>{{ $expert->expertField?->name }}</p>
                                     <p class="text-primary">Oxford University</p>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="">
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
+                                    <p>{{ $expert->expertField?->name }}</p>
                                     <p class="text-primary">Oxford University</p>
                                 </div>
                             </div>

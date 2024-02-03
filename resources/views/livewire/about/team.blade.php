@@ -22,7 +22,7 @@
                                 <h4>
                                     <a href="{{ route('expert.profile.show', $team2) }}">{{ $team2->user->full_name }}</a>
                                 </h4>
-                                <p>{{ $team2->expertField ? $team2->expertField->parent->name : '' }}</p>
+                                <p>{{ $team2->expertField?->name }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -38,7 +38,7 @@
                                 <h4>
                                     <a href="{{ route('expert.profile.show', $team3) }}">{{ $team3->user->full_name }} </a>
                                 </h4>
-                                <p>{{ $team3->expertField ? $team3->expertField->parent->name : '' }}</p>
+                                <p>{{ $team3->expertField?->name }}</p>
                             </div>
                         </div>
                     @endforeach
