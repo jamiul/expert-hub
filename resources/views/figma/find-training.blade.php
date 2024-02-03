@@ -593,7 +593,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="section-title-wrapper text-center mx-auto">
+                    <div style="margin-bottom: 10px" class="section-title-wrapper text-center  mx-auto">
                         <h2 class="section-title">Instructor</h2>
                         <p class="section-title-lead">Meet Our Top Instructor for Consultation</p>
                     </div>
@@ -610,7 +610,6 @@
                                     <p class="text-primary">Oxford University</p>
                                 </div>
                             </div>
-
 
 
                         </div>
