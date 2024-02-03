@@ -56,7 +56,7 @@
                     @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count() @endphp
                     <div class="chatbox-contact-person  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
                         <div class="chatbox-contact-thumb">
-                            <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
+                            <img class="rounded-circle" src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
@@ -224,7 +224,7 @@
 
                     @if($currentConversation)
                     <div class="chatbox-recipient-thumb">
-                        <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
+                        <img class="rounded-circle" src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                     </div>
 
 
@@ -260,7 +260,7 @@
 
                         <div class="chatbox-conversation-message  {{ ($conversationMessage->sender_profile_id == auth()->user()->profile->id) ? 'recipient-message' : '' }} " onclick="showMobileMessageAction(this)">
                             <div class="conversation-user-thumb">
-                                <img src="{{-- asset('assets/frontend/img/chat-avatar.png') --}} {{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
+                                <img class="rounded-circle" src="{{ $conversationMessage->profile->getFirstMediaUrl('picture') }}" alt="avatar">
                             </div>
                             <div class="conversation-user-message">
                                 <div class="conversation-message-header">
@@ -590,7 +590,7 @@
                             @php
                                 $receiver = $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first();
                             @endphp
-                            <img src="{{$receiver->profile->picture}} " alt="avatar">
+                            <img class="rounded-circle" src="{{$receiver->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
                             <h3 class="h6">{{ $receiver->profile->user->full_name }}</h3>
