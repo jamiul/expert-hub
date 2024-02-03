@@ -158,280 +158,433 @@
                             </div>
                         </div>
                         <div class="page-content p-0">
-                            <div class="project-list">
-                                <div class="project-list-card-item">
-                                    <div class="project-list-card-item-header">
-                                        <div class="project-item-title">
-                                            <h3 class="h6 d-flex gap-2 mb-0">
-                                                <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for
-                                                    Postgraduate
-                                                    public health
-                                                    unit
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div
-                                            class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
-                                            <div class="project-item-meta d-flex align-items-center gap-3">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.tag fill="#9196A2"/>
-                                                    Curriculum development
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.clock fill="#9196A2"/>
-                                                    15 hours ago
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.globe width="20" height="20" fill="#9196A2"/>
-                                                    USA
-                                                </div>
-                                            </div>
-                                            <div class="project-item-action d-flex align-items-center gap-2">
-                                                <div class="project-item-price">Hourly: <strong>$200.00</strong></div>
-                                                <div>
-                                                    <button class="icon-btn">
-                                                        <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
-                                                        <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
-                                                    </button>
-                                                </div>
-                                                <div>
-                                                    <button class="icon-btn">
-                                                        <x-icon.share fill="#0036E3"/>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="training-list">
+                                <div class="training-card bb-1">
+                                    <div class="training-card-title">
+                                        <h3 class="h6">
+                                            <a href="/figma/training/training-details-view">
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                            </a>
+                                        </h3>
                                     </div>
-                                    <div class="project-list-card-item-body">
-                                        <p class="mb-0">Our organisation is seeking a Scholarship Development Consultant
-                                            to lead a
-                                            project focused on improving access to higher education for students from
-                                            rural communities...... <a href="">More</a></p>
+                                    <div class="training-card-action">
+                                        <button x-data="{ isFavorited: false }"
+                                                class="btn btn-md btn-icon btn-outline-light btn-favorite"
+                                                :class="{ 'favorited': isFavorited }"
+                                                @click="isFavorited = !isFavorited">
+                                    <span class="heart-line">
+                                        <x-icon.heart fill="#0036E3"/>
+                                   </span>
+                                            <span class="heart-filled">
+                                                <x-icon.heart-filled/>
+                                    </span>
+                                        </button>
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            <x-icon.share fill="#0036E3"/>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]">
+                                                        <x-icon.linkedin/>
+                                                        Linkedin
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.facebook.com/sharer/sharer.php?u=[URL]">
+                                                        <x-icon.facebook/>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item">
+                                        <span class="me-2">
+                                            <x-icon.copy/>
+                                       </span>
+                                                        Copy Link
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                        <button class="btn btn-md btn-outline-primary border-2"> Registration</button>
                                     </div>
-                                    <div class="tag-list">
-                                        <a href="#" class="project-tag">Communication Skills</a>
-                                        <a href="#" class="project-tag">Industry Treds Awareness</a>
-                                        <a href="#" class="project-tag"> Research</a>
-                                        <a href="#" class="project-tag">System Research Development</a>
-                                        <a href="#" class="project-tag">Communication </a>
-                                        <a href="#" class="project-tag">Industry Treds</a>
-                                        <a href="#" class="project-tag">Educational Research</a>
-                                        <a href="#" class="project-tag">System Development</a>
-                                    </div>
-                                </div>
-
-
-                                <div class="project-list-card-item">
-                                    <div class="project-list-card-item-header">
-                                        <div class="project-item-title">
-                                            <h3 class="h6 d-flex gap-2 mb-0">
-                                                <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for
-                                                    Postgraduate
-                                                    public health
-                                                    unit
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div
-                                            class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
-                                            <div class="project-item-meta d-flex align-items-center gap-3">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.tag fill="#9196A2"/>
-                                                    Curriculum development
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.clock fill="#9196A2"/>
-                                                    15 hours ago
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.globe width="20" height="20" fill="#9196A2"/>
-                                                    USA
-                                                </div>
+                                    <div class="training-card-trainer-wrapper">
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
                                             </div>
-                                            <div class="project-item-action d-flex align-items-center gap-2">
-                                                <div class="project-item-price">Hourly: <strong>$200.00</strong></div>
-                                                <div>
-                                                    <button class="icon-btn favorited">
-                                                        <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
-                                                        <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
-                                                    </button>
-                                                </div>
-                                                <div>
-                                                    <button class="icon-btn">
-                                                        <x-icon.share fill="#0036E3"/>
-                                                    </button>
-                                                </div>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="project-list-card-item-body">
-                                        <p class="mb-0">Our organisation is seeking a Scholarship Development Consultant
-                                            to lead a
-                                            project focused on improving access to higher education for students from
-                                            rural communities...... <a href="">More</a></p>
-                                    </div>
-                                    <div class="tag-list">
-                                        <a href="#" class="project-tag">Communication Skills</a>
-                                        <a href="#" class="project-tag">Industry Treds Awareness</a>
-                                        <a href="#" class="project-tag"> Research</a>
-                                        <a href="#" class="project-tag">System Research Development</a>
-                                        <a href="#" class="project-tag">Communication </a>
-                                        <a href="#" class="project-tag">Industry Treds</a>
-                                        <a href="#" class="project-tag">Educational Research</a>
-                                        <a href="#" class="project-tag">System Development</a>
-                                    </div>
-                                </div>
-
-                                <div class="project-list-card-item">
-                                    <div class="project-list-card-item-header">
-                                        <div class="project-item-title">
-                                            <h3 class="h6 d-flex gap-2 mb-0">
-                                                <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for
-                                                    Postgraduate
-                                                    public health
-                                                    unit
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div
-                                            class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
-                                            <div class="project-item-meta d-flex align-items-center gap-3">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.tag fill="#9196A2"/>
-                                                    Curriculum development
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.clock fill="#9196A2"/>
-                                                    15 hours ago
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.globe width="20" height="20" fill="#9196A2"/>
-                                                    USA
-                                                </div>
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
                                             </div>
-                                            <div class="project-item-action d-flex align-items-center gap-2">
-                                                <div class="project-item-price">Hourly: <strong>$200.00</strong></div>
-                                                <div>
-                                                    <button class="icon-btn favorited">
-                                                        <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
-                                                        <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
-                                                    </button>
-                                                </div>
-                                                <div>
-                                                    <button class="icon-btn">
-                                                        <x-icon.share fill="#0036E3"/>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-list-card-item-body">
-                                        <p class="mb-0">Our organisation is seeking a Scholarship Development Consultant
-                                            to lead a
-                                            project focused on improving access to higher education for students from
-                                            rural communities...... <a href="">More</a></p>
-                                    </div>
-                                    <div class="tag-list">
-                                        <a href="#" class="project-tag">Communication Skills</a>
-                                        <a href="#" class="project-tag">Industry Treds Awareness</a>
-                                        <a href="#" class="project-tag"> Research</a>
-                                        <a href="#" class="project-tag">System Research Development</a>
-                                        <a href="#" class="project-tag">Communication </a>
-                                        <a href="#" class="project-tag">Industry Treds</a>
-                                        <a href="#" class="project-tag">Educational Research</a>
-                                        <a href="#" class="project-tag">System Development</a>
-                                    </div>
-                                </div>
-
-
-                                <div class="project-list-card-item">
-                                    <div class="project-list-card-item-header">
-                                        <div class="project-item-title">
-                                            <h3 class="h6 d-flex gap-2 mb-0">
-                                                <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                <a href="/figma/project-details-view"> Developing curriculum for
-                                                    Postgraduate
-                                                    public health
-                                                    unit
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div
-                                            class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
-                                            <div class="project-item-meta d-flex align-items-center gap-3">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.tag fill="#9196A2"/>
-                                                    Curriculum development
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.clock fill="#9196A2"/>
-                                                    15 hours ago
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <x-icon.globe width="20" height="20" fill="#9196A2"/>
-                                                    USA
-                                                </div>
-                                            </div>
-                                            <div class="project-item-action d-flex align-items-center gap-2">
-                                                <div class="project-item-price">Hourly: <strong>$200.00</strong></div>
-                                                <div>
-                                                    <button class="icon-btn favorited">
-                                                        <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
-                                                        <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
-                                                    </button>
-                                                </div>
-                                                <div>
-                                                    <button class="icon-btn">
-                                                        <x-icon.share fill="#0036E3"/>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="project-list-card-item-body">
-                                        <p class="mb-0">Our organisation is seeking a Scholarship Development Consultant
-                                            to lead a
-                                            project focused on improving access to higher education for students from
-                                            rural communities...... <a href="">More</a></p>
-                                    </div>
-                                    <div class="tag-list">
-                                        <a href="#" class="project-tag">Communication Skills</a>
-                                        <a href="#" class="project-tag">Industry Treds Awareness</a>
-                                        <a href="#" class="project-tag"> Research</a>
-                                        <a href="#" class="project-tag">System Research Development</a>
-                                        <a href="#" class="project-tag">Communication </a>
-                                        <a href="#" class="project-tag">Industry Treds</a>
-                                        <a href="#" class="project-tag">Educational Research</a>
-                                        <a href="#" class="project-tag">System Development</a>
-                                    </div>
-                                </div>
-
-                                <div class="pagination">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="pagination-left">
-                                                Showing 1 to 6 of
-                                                11 results
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="pagination-right">
-                                                <ul>
-                                                    <li> <x-icon.skip-previous/></li>
-                                                    <li> <x-icon.arrow-left/> </li>
-                                                    <li class="active"> 1 </li>
-                                                    <li> 2 </li>
-                                                    <li> <x-icon.arrow-right/> </li>
-                                                    <li> <x-icon.skip-next/> </li>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="training-card-description">
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
+                                            This intensive training session is for forward-thinking faculty, program directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just about building
+                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                            electrifying journey as... <a href="">More</a></p>
+                                    </div>
+                                    <div class="training-card-summary">
+                                        <div class="custom-table text-sm">
+                                            <div class="tr">
+                                                <div class="td">Seminar Dates</div>
+                                                <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Time & Location</div>
+                                                <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Mode</div>
+                                                <div class="td fw-medium">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div>
+                                                            <x-icon.video/>
+                                                        </div>
+                                                        <div> Face to Face</div>
+                                                    </div>
 
+                                                </div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Language</div>
+                                                <div class="td fw-medium">English</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Category</div>
+                                                <div class="td fw-medium">Research and Analysis</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Fee</div>
+                                                <div class="td fw-medium">USD 995</div>
+                                            </div>
+
+                                            <div class="tr">
+                                                <div class="td">Partner Institute</div>
+                                                <div class="td fw-medium">
+                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Oxford University</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="training-card bb-1">
+                                    <div class="training-card-title">
+                                        <h3 class="h6">
+                                            <a href="/figma/training/training-details-view">
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div class="training-card-action">
+                                        <button x-data="{ isFavorited: false }"
+                                                class="btn btn-md btn-icon btn-outline-light btn-favorite"
+                                                :class="{ 'favorited': isFavorited }"
+                                                @click="isFavorited = !isFavorited">
+                                    <span class="heart-line">
+                                        <x-icon.heart fill="#0036E3"/>
+                                   </span>
+                                            <span class="heart-filled">
+                                                <x-icon.heart-filled/>
+                                    </span>
+                                        </button>
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            <x-icon.share fill="#0036E3"/>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]">
+                                                        <x-icon.linkedin/>
+                                                        Linkedin
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.facebook.com/sharer/sharer.php?u=[URL]">
+                                                        <x-icon.facebook/>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item">
+                                        <span class="me-2">
+                                            <x-icon.copy/>
+                                       </span>
+                                                        Copy Link
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                        <button class="btn btn-md btn-outline-primary border-2"> Registration</button>
+                                    </div>
+                                    <div class="training-card-trainer-wrapper">
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="training-card-description">
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
+                                            This intensive training session is for forward-thinking faculty, program directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just about building
+                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                            electrifying journey as... <a href="">More</a></p>
+                                    </div>
+                                    <div class="training-card-summary">
+                                        <div class="custom-table text-sm">
+                                            <div class="tr">
+                                                <div class="td">Seminar Dates</div>
+                                                <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Time & Location</div>
+                                                <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Mode</div>
+                                                <div class="td fw-medium">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div>
+                                                            <x-icon.video/>
+                                                        </div>
+                                                        <div> Face to Face</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Language</div>
+                                                <div class="td fw-medium">English</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Category</div>
+                                                <div class="td fw-medium">Research and Analysis</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Fee</div>
+                                                <div class="td fw-medium">USD 995</div>
+                                            </div>
+
+                                            <div class="tr">
+                                                <div class="td">Partner Institute</div>
+                                                <div class="td fw-medium">
+                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Oxford University</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="training-card bb-1">
+                                    <div class="training-card-title">
+                                        <h3 class="h6">
+                                            <a href="/figma/training/training-details-view">
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div class="training-card-action">
+                                        <button x-data="{ isFavorited: false }"
+                                                class="btn btn-md btn-icon btn-outline-light btn-favorite"
+                                                :class="{ 'favorited': isFavorited }"
+                                                @click="isFavorited = !isFavorited">
+                                    <span class="heart-line">
+                                        <x-icon.heart fill="#0036E3"/>
+                                   </span>
+                                            <span class="heart-filled">
+                                                <x-icon.heart-filled/>
+                                    </span>
+                                        </button>
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            <x-icon.share fill="#0036E3"/>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]">
+                                                        <x-icon.linkedin/>
+                                                        Linkedin
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" target="_blank"
+                                                       href="https://www.facebook.com/sharer/sharer.php?u=[URL]">
+                                                        <x-icon.facebook/>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item">
+                                        <span class="me-2">
+                                            <x-icon.copy/>
+                                       </span>
+                                                        Copy Link
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </button>
+                                        <button class="btn btn-md btn-outline-primary border-2"> Registration</button>
+                                    </div>
+                                    <div class="training-card-trainer-wrapper">
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="user-small-card">
+                                            <div>
+                                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                                <ul class="user-meta">
+                                                    <li>Public Health</li>
+                                                    <li>Melbourne University</li>
+                                                    <li>Australia</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="training-card-description">
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
+                                            This intensive training session is for forward-thinking faculty, program directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just about building
+                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                            electrifying journey as... <a href="">More</a></p>
+                                    </div>
+                                    <div class="training-card-summary">
+                                        <div class="custom-table text-sm">
+                                            <div class="tr">
+                                                <div class="td">Seminar Dates</div>
+                                                <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Time & Location</div>
+                                                <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Mode</div>
+                                                <div class="td fw-medium">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div>
+                                                            <x-icon.video/>
+                                                        </div>
+                                                        <div> Face to Face</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Language</div>
+                                                <div class="td fw-medium">English</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Category</div>
+                                                <div class="td fw-medium">Research and Analysis</div>
+                                            </div>
+                                            <div class="tr">
+                                                <div class="td">Training Fee</div>
+                                                <div class="td fw-medium">USD 995</div>
+                                            </div>
+
+                                            <div class="tr">
+                                                <div class="td">Partner Institute</div>
+                                                <div class="td fw-medium">
+                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Oxford University</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagination">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="pagination-left">
+                                            Showing 1 to 6 of
+                                            11 results
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="pagination-right">
+                                            <ul>
+                                                <li>
+                                                    <x-icon.skip-previous/>
+                                                </li>
+                                                <li>
+                                                    <x-icon.arrow-left/>
+                                                </li>
+                                                <li class="active"> 1</li>
+                                                <li> 2</li>
+                                                <li>
+                                                    <x-icon.arrow-right/>
+                                                </li>
+                                                <li>
+                                                    <x-icon.skip-next/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -21,12 +21,14 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="separator"><span>Small Text Summary</span></div>
-                <p class="text-summary text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequuntur ea earum fugiat
+                <p class="text-summary text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+                    consequuntur ea earum fugiat
                     id, in ipsa nemo omnis praesentium quibusdam quidem rem repellendus soluta, sunt suscipit voluptas
                     voluptatum! Ad, architecto consequuntur delectus deleniti dolores dolorum natus quasi veniam
                     voluptates.</p>
                 <div class="separator"><span>Regular Text Summary</span></div>
-                <p class="text-summary text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequuntur ea earum fugiat
+                <p class="text-summary text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+                    ad consequuntur ea earum fugiat
                     id, in ipsa nemo omnis praesentium quibusdam quidem rem repellendus soluta, sunt suscipit voluptas
                     voluptatum! Ad, architecto consequuntur delectus deleniti dolores dolorum natus quasi veniam
                     voluptates.</p>
@@ -343,6 +345,151 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <h4 class="my-5  text-center">Training Card</h4>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="training-card">
+                    <div class="training-card-title">
+                        <h3 class="h6">
+                            <a href="/figma/training/training-details-view">
+                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="training-card-action">
+                        <button x-data="{ isFavorited: false }"
+                                class="btn btn-md btn-icon btn-outline-light btn-favorite"
+                                :class="{ 'favorited': isFavorited }"
+                                @click="isFavorited = !isFavorited">
+                                    <span class="heart-line">
+                                        <x-icon.heart fill="#0036E3"/>
+                                   </span>
+                            <span class="heart-filled">
+                                                <x-icon.heart-filled/>
+                                    </span>
+                        </button>
+                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            <x-icon.share fill="#0036E3"/>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" target="_blank"
+                                       href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]">
+                                        <x-icon.linkedin/>
+                                        Linkedin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" target="_blank"
+                                       href="https://www.facebook.com/sharer/sharer.php?u=[URL]">
+                                        <x-icon.facebook/>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item">
+                                        <span class="me-2">
+                                            <x-icon.copy/>
+                                       </span>
+                                        Copy Link
+                                    </a>
+                                </li>
+                            </ul>
+                        </button>
+                        <button class="btn btn-md btn-outline-primary border-2"> Registration</button>
+                    </div>
+                    <div class="training-card-trainer-wrapper">
+                        <div class="user-small-card">
+                            <div>
+                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                            </div>
+                            <div>
+                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                <ul class="user-meta">
+                                    <li>Public Health</li>
+                                    <li>Melbourne University</li>
+                                    <li>Australia</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="user-small-card">
+                            <div>
+                                <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                            </div>
+                            <div>
+                                <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                <ul class="user-meta">
+                                    <li>Public Health</li>
+                                    <li>Melbourne University</li>
+                                    <li>Australia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="training-card-description">
+                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
+                            This intensive training session is for forward-thinking faculty, program directors, and
+                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
+                            their students to become the next generation of disruptors. This is not just about building
+                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                            electrifying journey as... <a href="">More</a></p>
+                    </div>
+                    <div class="training-card-summary">
+                        <div class="custom-table text-sm">
+                            <div class="tr">
+                                <div class="td">Seminar Dates</div>
+                                <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">Time & Location</div>
+                                <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">Training Mode</div>
+                                <div class="td fw-medium">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div>
+                                            <x-icon.video/>
+                                        </div>
+                                        <div> Face to Face</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">Language</div>
+                                <div class="td fw-medium">English</div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">Training Category</div>
+                                <div class="td fw-medium">Research and Analysis</div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">Training Fee</div>
+                                <div class="td fw-medium">USD 995</div>
+                            </div>
+
+                            <div class="tr">
+                                <div class="td">Partner Institute</div>
+                                <div class="td fw-medium">
+                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                    <a class="text-decoration-underline" href="#">Oxford University</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h4 class="my-5  text-center">Pagination</h4>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="pagination">
@@ -377,6 +524,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     <hr class="my-5">
     <script>

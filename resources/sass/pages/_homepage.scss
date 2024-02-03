@@ -1,4 +1,6 @@
 $page-section-bg: #F1F3FA;
+@import "homepage-slider";
+
 .page-section {
     padding: 90px 0;
 
@@ -15,6 +17,7 @@ $page-section-bg: #F1F3FA;
     }
 
 }
+
 
 .section-title-wrapper {
     .section-title {
