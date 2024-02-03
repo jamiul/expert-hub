@@ -16,7 +16,9 @@
     </div>
 </section>
 
-<livewire:require-steps :$title />
+<div class="mb-60">
+    <livewire:require-steps :$title />
+</div>
 
 @endsection
 
