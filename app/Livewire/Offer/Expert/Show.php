@@ -47,6 +47,7 @@ class Show extends Component
                 'message' => 'Paragraph: Archetype lets designers like you very quickly and easily create consistent',
                 'confirm' => 'Accept',
                 'cancel' => 'Cancel',
+                'button' => 'btn-success',
             ],
         );
     }
