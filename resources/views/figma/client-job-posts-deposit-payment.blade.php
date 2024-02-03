@@ -18,7 +18,7 @@
                                         <div class="form-radio-title">
                                             <label class="" for="mastercard">
                                                 <span>
-                                                    <x-icon.logo-master/>
+                                                    <x-icon.logo-mastercard/>
                                                 </span>
                                                 Master ending in 8698
                                             </label>
