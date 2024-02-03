@@ -176,4 +176,5 @@ Route::group(['prefix' => 'figma'], function () {
 
     //Training
     Route::view('/find-training', 'figma.find-training');
+    Route::view('/training/training-details-view', 'figma.training-details-view');
 });

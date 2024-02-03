@@ -60,6 +60,17 @@
     }
 }
 
+.share-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.training-summary-widget {
+    display: grid;
+    gap: 12px;
+}
+
 .user-bio-edit-widget {
     .user-profile-picture {
         max-width: 167px;

@@ -564,6 +564,10 @@ header {
                     a {
                         display: block;
                         color: inherit;
+                        &:hover{
+                            font-weight: 500;
+                            color: $edu-primary-color;
+                        }
                     }
 
                     &.header-special-menu-active-item {
@@ -572,6 +576,10 @@ header {
                             color: #ffffff;
                             padding: 8px 27px;
                             border-radius: 4px;
+                            font-weight: 400;
+                            &:hover{
+                                background-color: $edu-primary-dark-color;
+                            }
                         }
                     }
                 }
@@ -595,6 +603,10 @@ header {
                     a {
                         display: block;
                         color: inherit;
+                        &:hover{
+                            font-weight: 500;
+                            color: $edu-primary-color;
+                        }
                     }
 
                     &.header-focus-menu-active-item {
@@ -603,6 +615,9 @@ header {
                             color: #ffffff;
                             padding: 8px 27px;
                             border-radius: 4px;
+                            &:hover{
+                                background-color: $edu-primary-dark-color;
+                            }
                         }
                     }
                 }
@@ -750,6 +765,9 @@ header {
                         align-items: center;
                         gap: 0.5rem;
                         color: $edu-primary-color;
+                        &:hover{
+                            color: $edu-primary-dark-color;
+                        }
                     }
                 }
             }
@@ -1144,7 +1162,8 @@ header {
                     font-size: 14px;
                     font-weight: 500;
 
-                    &:hover {
+                    &:hover{
+                        font-weight: 500;
                         color: $edu-primary-color;
                     }
                 }
