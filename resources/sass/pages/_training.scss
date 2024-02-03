@@ -48,3 +48,10 @@
         padding: 32px;
     }
 }
+
+.training-details-header {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: auto 46px;
+    align-items: center;
+}

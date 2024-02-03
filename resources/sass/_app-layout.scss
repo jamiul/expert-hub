@@ -577,6 +577,9 @@ header {
                             padding: 8px 27px;
                             border-radius: 4px;
                             font-weight: 400;
+                            &:hover{
+                                background-color: $edu-primary-dark-color;
+                            }
                         }
                     }
                 }
@@ -612,6 +615,9 @@ header {
                             color: #ffffff;
                             padding: 8px 27px;
                             border-radius: 4px;
+                            &:hover{
+                                background-color: $edu-primary-dark-color;
+                            }
                         }
                     }
                 }
@@ -759,6 +765,9 @@ header {
                         align-items: center;
                         gap: 0.5rem;
                         color: $edu-primary-color;
+                        &:hover{
+                            color: $edu-primary-dark-color;
+                        }
                     }
                 }
             }
