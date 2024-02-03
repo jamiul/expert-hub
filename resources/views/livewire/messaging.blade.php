@@ -54,7 +54,7 @@
 
                     @forelse($currentUsersConversations as $conversation)
                     @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count() @endphp
-                    <div class="chatbox-contact-person  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')">
+                    <div class="chatbox-contact-person  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')" wire:ignore>
                         <div class="chatbox-contact-thumb">
                             <img src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
@@ -585,7 +585,7 @@
             <div class="chatbox-conversation-summary">
                 <div class="chatbox-conversation-summary-inner">
                     <!-- Adding user-online class according to pusher event -->
-                    <div class="chatbox-recipient-card profile-{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status">
+                    <div class="chatbox-recipient-card profile-{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status" wire:ignore>
                         <div class="chatbox-recipient-card-thumb">
                             @php
                                 $receiver = $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first();
