@@ -9,10 +9,12 @@ use App\Enums\ProjectType;
 use App\Models\Milestone;
 use App\Models\Offer;
 use App\Models\Profile;
+use App\Notifications\SendOfferNotification;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Notification;
 
 class Create extends Component
 {
@@ -130,13 +132,6 @@ class Create extends Component
             }
         }
 
-        $conversation = createConversation(
-            $this->project->client,
-            $this->expert,
-            $this->project->client->user->full_name .' Sent an offer for ' . $offer->contract_title,
-            $this->project
-        );
-        toast('success', 'Offer Sent Successfully');
         return redirect()->route('client.payment.pay',['reference' => 'offer', 'id' => $offer->id]);
     }
 

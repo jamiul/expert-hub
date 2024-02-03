@@ -488,7 +488,7 @@
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
                                 @foreach ($endedContracts as $contract)
-                                <tr class="align-middle">
+                                <tr class="align-middle" wire:key="{{ $contract->id }}">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656</p>
                                         <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>

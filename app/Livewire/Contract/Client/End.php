@@ -8,9 +8,10 @@ use App\Helpers\PaymentHelper;
 use App\Models\Contract;
 use App\Models\Profile;
 use App\Models\Testimonial;
+use App\Notifications\ContractEndedNotification;
 use Livewire\Component;
-use WireElements\Pro\Components\Modal\Modal;
 use Log;
+use WireElements\Pro\Components\Modal\Modal;
 
 class End extends Modal
 {
@@ -112,9 +113,10 @@ class End extends Modal
             'reason' => $this->reason,
         ]);
 
-
+        $this->expert->user->notify(new ContractEndedNotification($this->contract));
         toast('success', 'Contract ended successfully', $this);
         $this->dispatch('contract-ended');
+        // return redirect()->route('client.contracts');
         $this->close();
     }
 
