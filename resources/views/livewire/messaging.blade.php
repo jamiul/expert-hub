@@ -587,15 +587,19 @@
                     <!-- Adding user-online class according to pusher event -->
                     <div class="chatbox-recipient-card profile-{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status">
                         <div class="chatbox-recipient-card-thumb">
-                            <img src="{{$currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}} " alt="avatar">
+                            @php
+                                $receiver = $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first();
+                            @endphp
+                            <img src="{{$receiver->profile->picture}} " alt="avatar">
                         </div>
                         <div class="chatbox-recipient-card-info">
-
-                            <h3 class="h6">{{ $currentConversation?->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name }}</h3>
-                            <p>Chill Intuative | Australia</p>
-                            <p>5:32 AM GMT+6 | Australia </p>
+                            <h3 class="h6">{{ $receiver->profile->user->full_name }}</h3>
+                            @if($receiver->profile->current_organization)
+                            <p>{{ $receiver->profile->current_organization}} | {{ $receiver->profile->user->country->name }}</p>
+                            @endif
+                            <p>{{ now()->timezone('Australia/Sydney')->format('h:i A') }} GMT{{ now()->timezone('Australia/Sydney')->format('p') }} | {{ $receiver->profile->user->country->name }} </p>
                             <ul>
-                                <li class="icon-briefcase">Marketing plan for our upcoming university commerce.</li>
+                                <li class="icon-briefcase">{{ $currentConversation->project() ?  $currentConversation->project()->title : ''}}</li>
                             </ul>
                         </div>
                     </div>

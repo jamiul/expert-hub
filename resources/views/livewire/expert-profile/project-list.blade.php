@@ -57,7 +57,7 @@
                                     {{ $project->type }}:&nbsp;
                                 </span>
                                 <span class="fw-medium text-muted">
-                                    ${{ $project->budget_start_amount . ' - ' . $project->budget_end_amount }}
+                                    ${{ $project->budget_start_amount }}
                                 </span>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown"
@@ -95,16 +95,8 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="desc text-dark fs-15">
-                            @if ($showReadMoreButton === $project->id)
-                                {{ $project->description }}
-                                <a href="#project-list-{{ $project->id }}" wire:click="readLess"
-                                    class="link">Less</a>
-                            @else
-                                {{ Str::limit($project->description, 235) }}
-                                <a href="#project-list-{{ $project->id }}" wire:click="readMore({{ $project->id }})"
-                                    class="link">More</a>
-                            @endif
+                        <div class="desc text-dark fs-15 text-summary">
+                            {{ $project->description }}
                         </div>
                         <div class="tag__list d-flex flex-wrap mt-3">
                             @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)
@@ -176,7 +168,7 @@
                                         {{ $project->type }}:&nbsp;
                                     </span>
                                     <span class="fw-medium text-muted">
-                                        ${{ $project->budget_start_amount . ' - ' . $project->budget_end_amount }}
+                                        ${{ $project->budget_start_amount }}
                                     </span>
                                     <div class="dropdown">
                                         <button class="btn btn-outline-light m-1" type="button"
@@ -214,16 +206,8 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="desc text-dark fs-15">
-                                @if ($showReadMoreButton === $project->id)
-                                    {{ $project->description }}
-                                    <a href="#project-list-{{ $project->id }}" wire:click="readLess"
-                                        class="link">Less</a>
-                                @else
-                                    {{ Str::limit($project->description, 235) }}
-                                    <a href="#project-list-{{ $project->id }}"
-                                        wire:click="readMore({{ $project->id }})" class="link">More</a>
-                                @endif
+                            <div class="desc text-dark fs-15 text-summary">
+                                {{ $project->description }}
                             </div>
                             <div class="tag__list d-flex flex-wrap mt-3">
                                 @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)
@@ -294,7 +278,7 @@
                                     {{ $project->type }}:&nbsp;
                                 </span>
                                 <span class="fw-medium text-muted">
-                                    ${{ $project->budget_start_amount . ' - ' . $project->budget_end_amount }}
+                                    ${{ $project->budget_start_amount }}
                                 </span>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button"
@@ -332,16 +316,8 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="desc text-dark fs-15">
-                            @if ($showReadMoreButton === $project->id)
-                                {{ $project->description }}
-                                <a href="#project-list-{{ $project->id }}" wire:click="readLess"
-                                    class="link">Less</a>
-                            @else
-                                {{ Str::limit($project->description, 235) }}
-                                <a href="#project-list-{{ $project->id }}"
-                                    wire:click="readMore({{ $project->id }})" class="link">More</a>
-                            @endif
+                        <div class="desc text-dark fs-15 text-summary">
+                            {{ $project->description }}
                         </div>
                         <div class="tag__list d-flex flex-wrap mt-3">
                             @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)

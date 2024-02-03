@@ -5,11 +5,8 @@
     </div>
     <div class="user-profile-info">
         <h3 class="h6">{{ $profile->user->full_name ?? '' }}</h3>
-        <p class="text-primary d-inline-flex align-items-center gap-3">
+        <p class="text-sm fw-medium text-muted">
             {{ $profile->expertField ? $profile->expertField->name : '' }}
-            <button class="icon-btn icon-btn-md border-1 border-gray-100 {{ ! $editable ? 'd-none' : '' }}">
-                <x-icon.edit />
-            </button>
         </p>
         <p class="text-sm d-flex align-items-center justify-content-center">
             <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"

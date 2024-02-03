@@ -5,23 +5,10 @@
         <div class="container">
             <ul class="d-flex">
                 <li class="me-3">
-                    <a href="{{ route('expert.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Billing Report</a>
+                    <a href="{{ route('expert.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Transaction History</a>
                 </li>
                 <li class="me-3">
-                    <a href="{{ route('expert.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Billing & Payment</a>
-                </li>
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.onboard') }}" class="text-white fw-medium px-2 py-3 d-inline-block">eKYC Information</a>
-                </li>
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.withdrawal') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Withdrawal Information</a>
-                </li>
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.withdraw') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Withdraw Now</a>
-                </li>
-                {{-- todo: move to dymaic milestone --}}
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.requestRelease') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Milestone Relesae Request</a>
+                    <a href="{{ route('expert.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Get Paid</a>
                 </li>
             </ul>
         </div><!--.//container-->

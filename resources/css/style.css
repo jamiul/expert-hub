@@ -924,30 +924,6 @@ img.exp-categoryl {
     margin-bottom: 0;
 }
 
-.scholarship .scholarship-block .scholarship-img img {
-    width: 100%;
-}
-
-.scholarship .scholarship-block .scholarship-text a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0036e3;
-    display: inline-block;
-    margin: 15px 0 6px;
-}
-
-.scholarship .scholarship-block .scholarship-text a:hover {
-    color: #303744;
-}
-
-.scholarship .scholarship-block .scholarship-text h4 {
-    margin: 0;
-    color: #303744b2;
-    font-size: 14px;
-    font-weight: 500;
-}
-
 .scholarship .scholarship-button {
     text-align: center;
     margin-top: 30px;

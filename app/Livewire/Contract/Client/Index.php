@@ -9,10 +9,12 @@ use Livewire\Component;
 class Index extends Component
 {
     public $contracts;
+    public $endedContracts;
 
     public function mount()
     {
         $this->contracts = auth()->user()->profile->clientContracts()->where('status', ContractStatus::Active)->get();
+        $this->endedContracts = auth()->user()->profile->clientContracts()->where('status', ContractStatus::Ended)->get();
     }
     public function render()
     {

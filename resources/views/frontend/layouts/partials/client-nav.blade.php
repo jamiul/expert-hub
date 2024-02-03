@@ -2,7 +2,7 @@
     <div class="main-header-container">
         {{-- @dd(auth()->user()->full_name) --}}
         <div class="header-logo">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('client.dashboard') }}">
                 <img src="{{ asset('logo/expert-gate-logo.png') }}"/>
             </a>
         </div>
@@ -19,7 +19,7 @@
                 <li class="item-has-submenu">
                     <a href="#">Reports</a>
                     <ul>
-                        <li><a href="">My profile</a></li>
+                        <li><a href="{{ route('client.profile.edit') }}">My profile</a></li>
                         <li><a href="">Analytic</a></li>
                         <li><a href="{{ route('client.payment.billing') }}">Billings & Payment</a></li>
                     </ul>

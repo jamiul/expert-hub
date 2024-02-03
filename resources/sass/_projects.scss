@@ -573,7 +573,7 @@
     .toggle-sidebar {
         position: absolute;
         left: -20px;
-        top: 50%;
+        top: 87px;
         background: #191D24;
     }
 
@@ -892,4 +892,15 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     height: 48px;
+}
+
+
+/**
+Used Expert Card at Invite Expert card
+So managed its gap by overwrite
+**/
+#invite-expert-tab-content {
+    .expert-card {
+        padding: 40px;
+    }
 }

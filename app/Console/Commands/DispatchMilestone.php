@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Enums\MilestoneStatus;
+use App\Helpers\PaymentHelper;
 use App\Models\ExpertTransaction;
 use App\Models\Milestone;
 use App\Models\Profile;
@@ -30,7 +31,7 @@ class DispatchMilestone extends Command {
      */
     public function handle() {
         $milestones = Milestone::where( 'status', MilestoneStatus::Approved )
-                               ->whereDate( 'approved_at', '<=', Carbon::now()->addDays( 5 ) )
+                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
                                ->get();
 
         foreach ( $milestones as $milestone ) {
@@ -38,12 +39,15 @@ class DispatchMilestone extends Command {
             $milestone_amount     = $milestone->amount;
             $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
 
+            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+            $net_total = $charge['net_total'];
+
             $stripe = new \Stripe\StripeClient( [
                 "api_key" => env( 'STRIPE_SECRET' ),
             ] );
 
             $acceptMilestone = $stripe->transfers->create( [
-                'amount'         => $milestone_amount * 100,
+                'amount'         => $net_total * 100,
                 'currency'       => $milestone->contract->expert->currency,
                 'destination'    => $CONNECTED_ACCOUNT_ID,
                 'transfer_group' => $CONNECTED_ACCOUNT_ID,
