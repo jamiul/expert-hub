@@ -1,4 +1,4 @@
-@extends('frontend.layouts.figma', ['header' => 'client'])
+@extends('frontend.layouts.figma', ['header' => 'expert'])
 @section('content')
 @vite('resources/default/css/expert-profile.css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -32,7 +32,7 @@
                     <a href="#">
                           </a><div class="team-img position-relative"><a href="#">
                           <img src="{{ asset('assets/frontend/img/jon-kelly.png') }}" alt="person">
-                          </a><a class="blog-close position-absolute"> <img class="" src="http://127.0.0.1:8000/assets/frontend/img/blog-admin/blog-close.png" alt="close"> </a> </div>
+                          </a><a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-close.png') }}" alt="close"> </a> </div>
                           <div class="hire-text edux-hire-text">
                               <h6>Marvin McKinney</h6>
                               <p>Curriculum Expert <br> Public Health <br> Australia</p>
