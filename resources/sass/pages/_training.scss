@@ -1,0 +1,50 @@
+.training-card {
+    display: grid;
+    grid-template-columns: auto 280px;
+    gap: 16px 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+        &.training-card-trainer-wrapper,
+        &.training-card-description,
+        &.training-card-summary {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+    .training-card-title {
+        a {
+            color: inherit;
+        }
+    }
+
+    .training-card-action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .training-card-trainer-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .training-card-summary {
+        .tr > .td {
+            &:first-child {
+                width: 155px;
+            }
+        }
+    }
+}
+
+.training-list {
+    .training-card {
+        padding: 32px;
+    }
+}

@@ -108,7 +108,7 @@
     background: #fff;
     z-index: 999;
     position: relative;
-    width: 85px;
+    /*width: 85px;*/
     display: inline-block;
     color: #303744;
     font-size: 15px;

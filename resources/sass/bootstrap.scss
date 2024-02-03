@@ -52,7 +52,11 @@
 //admin layout
 @import "projects";
 
-@import "pages/homepage";
+//admin layout
+@import "instructor-carousel";
 
-@import "homepage-slider";
+//Pages
+@import "pages/homepage";
+@import "pages/training";
+
 

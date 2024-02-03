@@ -1,20 +1,25 @@
 $page-section-bg: #F1F3FA;
-.page-section {
-    padding: 90px 0;
+@import "homepage-slider";
+section {
+    &.page-section {
+        padding: 90px 0;
 
-    &.work-steps-section {
-        background-color: $page-section-bg;
-    }
+        &.work-steps-section {
+            background-color: $page-section-bg;
+        }
 
-    &.team-section {
-        background-color: $page-section-bg;
-    }
+        &.team-section {
+            background-color: $page-section-bg;
+        }
 
-    &.training-section {
-        background-color: $page-section-bg;
+        &.training-section {
+            background-color: $page-section-bg;
+        }
     }
 
 }
+
+
 
 .section-title-wrapper {
     .section-title {

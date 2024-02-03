@@ -9,18 +9,19 @@
                 <div class="tabbable-panel company-speciality-tab">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button wire:click="$set('tab', 'client')"
-                                    class="nav-link {{ $tab == 'client' ? 'active' : '' }}"
-                                    type="button">For Clients
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
                             <button wire:click="$set('tab', 'expert')"
                                     class="nav-link {{ $tab == 'expert' ? 'active' : '' }}"
                                     type="button">
                                 For Experts
                             </button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button wire:click="$set('tab', 'client')"
+                                    class="nav-link {{ $tab == 'client' ? 'active' : '' }}"
+                                    type="button">For Clients
+                            </button>
+                        </li>
+
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show {{ $tab == 'client' ? 'active' : '' }}" id="home" role="tabpanel"

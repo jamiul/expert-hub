@@ -5,6 +5,7 @@
 'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 'tooltip' => null,
+
 ])
 <div
     x-data="{
