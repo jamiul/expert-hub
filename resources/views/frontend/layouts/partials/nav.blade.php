@@ -7,7 +7,7 @@
             <div class="header-menu-wrapper">
                 <nav class="header-main-menu">
                     <ul>
-                        <li>
+                        <li class="current-menu-item">
                             <a href="{{ route('find.experts') }}">{{ __('Experts') }}</a>
                         </li>
 
