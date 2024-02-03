@@ -719,7 +719,13 @@ header {
 
                     &:hover {
                         color: $edu-primary-color;
+                        font-weight: 500;
                     }
+                }
+
+                &.current-menu-item > a {
+                    color: $edu-primary-color;
+                    font-weight: 500;
                 }
             }
         }

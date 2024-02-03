@@ -10,7 +10,7 @@
                     @foreach ($expertFields->take($perRowExpert) as $expertField)
                         <div class="at-item">
                             <div class="at-title">
-                                <h2>{{ $expertField->name }}</h2>
+                                <h3>{{ $expertField->name }}</h3>
                             </div>
                             <div class="at-tab">
                                 <ul>
@@ -30,7 +30,7 @@
                     @foreach ($expertFields->skip($perRowExpert)->take($perRowExpert) as $expertField)
                         <div class="at-item">
                             <div class="at-title">
-                                <h2>{{ $expertField->name }}</h2>
+                                <h3>{{ $expertField->name }}</h3>
                             </div>
                             <div class="at-tab">
                                 <ul>
