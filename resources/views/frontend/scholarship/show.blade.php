@@ -100,7 +100,7 @@
             </div>
             <div class="row mt-60">
                 <div class="col text-center">
-                    @include('frontend.scholarship._instructor')
+                    {{-- @include('frontend.scholarship._instructor') --}}
                 </div>
             </div>
         </div>

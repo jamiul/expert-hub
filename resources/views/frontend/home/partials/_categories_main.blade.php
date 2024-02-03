@@ -127,12 +127,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <x-button.link
-                    href="{{ route('find.experts') }}"
-                    class="btn btn-outline-primary btn-md border-2"
-                    text="View All Experts"
-                    style="width: 235px"
-                />
+                <a href="{{ route('find.experts') }}" class="btn btn-outline-primary border-2 btn-md">View All Experts</a>
             </div>
         </div>
     </div>

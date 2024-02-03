@@ -9,8 +9,7 @@
             <div class="academic-content-training-area academic-border-top">
                 <div class="live-zoom academic-zoom-area">
                     <div class="zoom-icon">
-                        <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
-
+                        <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt="">
                         <h4>Live via Zoom</h4>
                     </div>
                     <div class="zoom-live-text">
