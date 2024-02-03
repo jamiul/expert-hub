@@ -16,7 +16,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Curriculum Development</a></h3>
-                        <p>Assist in developing engaging, effective curricula tailored to your educational needs.</p>
+                        <p>Work with industry and academic experts for a tailored curriculum, ensuring real-world learning experiences.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Course Accreditation</a></h3>
-                        <p>Help clients meet industry standards and gain official recognition for their programs.</p>
+                        <p>Access experts for course accreditation, ensuring compliance with regulations and national/international registration.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Learning Management System</a></h3>
-                        <p>Implement efficient Learning Management systems to streamline your educational processes.</p>
+                        <p>Collaborate with industry and academic experts to improve your LMS for optimised learning experiences.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -59,8 +59,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Policy Development</a></h3>
-                        <p>Provide valuable insights and guidance on policy development, analysis, and
-                            implementation.</p>
+                        <p>Access industry and academic experts for policy development, ensuring compliance with evolving standards.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -74,8 +73,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Research and Analysis</a></h3>
-                        <p>Offer rigorous research methodologies and data analysis to help you make informed decisions
-                            for business operations.</p>
+                        <p>Collaborate with experts for in-depth research and analysis, facilitating informed decision-making.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -89,7 +87,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Financial Management</a></h3>
-                        <p>Provide financial advice and strategies to optimise your organisation's financial health.</p>
+                        <p>Connect with experts to successfully navigate your project's financial landscape.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -103,7 +101,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Project Management</a></h3>
-                        <p>Ensure your projects are executed efficiently, on time, and within budget.</p>
+                        <p>Access experts for effective project management, ensuring success within resource constraints.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -118,8 +116,7 @@
                     </div>
                     <div class="category-info">
                         <h3><a href="#">Grants and Scholarships</a></h3>
-                        <p>Guide you through scholarship opportunities and application processes for educational
-                            funding.</p>
+                        <p>Access experts for comprehensive scholarship and grant guidance, facilitating funding access</p>
                     </div>
                 </div> <!--category-box-->
             </div>
