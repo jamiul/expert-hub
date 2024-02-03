@@ -1,3 +1,4 @@
+
 .filter-widget,
 .profile-widget,
 .profile-edit-widget,
@@ -12,6 +13,36 @@
     }
 }
 
+.sidebar-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 8px;
+
+    .h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        margin: 0;
+        padding: 0;
+        text-decoration: underline;
+        color: $edu-primary-color;
+    }
+}
+
+.filter-widget {
+    .form-input-icon {
+        svg {
+            path {
+                fill: #303744;
+            }
+        }
+    }
+}
 
 .profile-edit-widget {
     .widget-title {

@@ -7,9 +7,10 @@
                     <div class="sidebar-layout left-sidebar-layout find-projects-layout">
                         <div class="page-sidebar">
                             <div class="filter-widget border-bottom">
-                                <div class="d-flex justify-content-between">
-                                    <h4 class="h6 mb-0">Filter</h4>
-                                    <button class="btn btn-sm btn-link text-decoration-underline px-0 ">Clear filters
+                                <div class="sidebar-title-wrapper">
+                                    <h3 class="h6">Filter</h3>
+                                    <button class="btn btn-filter-reset">
+                                        Clear filters
                                     </button>
                                 </div>
                             </div>
@@ -18,92 +19,71 @@
                                                placeholder="Search by keyword"/>
                             </div>
                             <div class="filter-widget">
-                                <h4 class="widget-title">Project by Categories</h4>
-                                <div class="widget-accordion use-scroll-content">
-                                    <div class="widget-accordion-item">
-                                        <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                                            <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
-                                            Course Accreditations
-                                        </div>
-                                        <div class="widget-accordion-content">
-                                            <x-form.check wire:model="project-category" id="A01">
-                                                Accreditation Documentation
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A02">
-                                                Accreditation Process
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A03">
-                                                Accreditation Renewal
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A04">
-                                                Accreditation Reporting
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A05">
-                                                Accreditation Review
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A06">
-                                                Accreditation Documentation
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="A07">
-                                                Accreditation Documentation
-                                            </x-form.check>
-
-                                        </div>
-                                    </div>
-                                    <div class="widget-accordion-item">
-                                        <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                                            <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
-                                            Curriculum Development
-                                        </div>
-                                        <div class="widget-accordion-content">
-                                            <x-form.check wire:model="project-category" id="B01">
-                                                Accreditation Documentation
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B02">
-                                                Accreditation Process
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B03">
-                                                Accreditation Renewal
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B04">
-                                                Accreditation Reporting
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B05">
-                                                Accreditation Review
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B06">
-                                                Accreditation Documentation
-                                            </x-form.check>
-                                            <x-form.check wire:model="project-category" id="B07">
-                                                Accreditation Documentation
-                                            </x-form.check>
-
-                                        </div>
-                                    </div>
+                                <h4 class="widget-title">Training by Categories</h4>
+                                <div class="widget-content">
+                                    <x-form.check id="all">
+                                        Curriculum Development
+                                    </x-form.check>
+                                    <x-form.check id="agriculture">
+                                        Course Accreditation
+                                    </x-form.check>
+                                    <x-form.check id="architecture">
+                                        Learning Management System
+                                    </x-form.check>
+                                    <x-form.check id="Business">
+                                        Policy Development
+                                    </x-form.check>
+                                    <x-form.check id="Education">
+                                        Research and Analysis
+                                    </x-form.check>
+                                    <x-form.check id="Engineering">
+                                        Financial Management
+                                    </x-form.check>
+                                    <x-form.check id="EnvironmentalScience">
+                                        Project Management
+                                    </x-form.check>
+                                    <x-form.check id="Medicine">
+                                        Writing and Editing
+                                    </x-form.check>
+                                    <x-form.check id="Health">
+                                        Grants and Scholarships
+                                    </x-form.check>
                                 </div>
                             </div>
                             <div class="filter-widget">
-                                <h4 class="widget-title">Project Type</h4>
-                                <x-form.check class="mb-2" wire:model="fixed">
-                                    Fixed Price
-                                </x-form.check>
-                                <div class="widget-field-row">
-                                    <x-form.input class="input-field-md" type="text" wire:model="type"
-                                                  placeholder="Min"/>
-                                    <x-form.input class="input-field-md" type="text" wire:model="type"
-                                                  placeholder="Max"/>
-                                </div>
-
-                                <x-form.check class="mb-2 mt-1" wire:model="hourly">
-                                    Hourly
-                                </x-form.check>
-                                <div class="widget-field-row">
-                                    <x-form.input class="input-field-md  mb-0" type="text" wire:model="type"
-                                                  placeholder="Min"/>
-                                    <x-form.input class="input-field-md  mb-0" type="text" wire:model="type"
-                                                  placeholder="Max"/>
+                                <h4 class="widget-title">Training Date</h4>
+                                <div class="widget-content">
+                                    <x-form.flatpicker class="input-field-md" label="" name="datepicker"/>
                                 </div>
                             </div>
+                            <div class="filter-widget">
+                                <h4 class="widget-title">Training Mode</h4>
+                                <div class="widget-content">
+                                    <x-form.check id="all">
+                                        Live via Zoom
+                                    </x-form.check>
+                                    <x-form.check id="agriculture">
+                                        Face-to-Face
+                                    </x-form.check>
+                                </div>
+                            </div>
+                            <div class="filter-widget">
+                                <h4 class="widget-title">Language</h4>
+                                <div class="filter-widget-content">
+                                    <div class="form-input-group form-input-has-icon autocomplete-field input-field-md"
+                                         x-data="{ open: false }">
+                                        <div class="autocomplete-field-wrapper">
+                                            <input x-on:click="open = true" wire:model.live.debounce.500ms="country"
+                                                   name="country" id="country" class="form-input-field"
+                                                   placeholder="Search Language">
+                                            <span class="form-input-icon">
+                                               <x-icon.search/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             {{--                            <div class="filter-widget">--}}
                             {{--                                <h4 class="widget-title">Location</h4>--}}
                             {{--                                <x-form.autocomplete :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>--}}
@@ -114,19 +94,12 @@
                                     <div class="form-input-group form-input-has-icon autocomplete-field input-field-md"
                                          x-data="{ open: false }">
                                         <div class="autocomplete-field-wrapper">
-                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                                             <input x-on:click="open = true" wire:model.live.debounce.500ms="country"
                                                    name="country" id="country" class="form-input-field"
-                                                   placeholder="Search by Country">
+                                                   placeholder="Search Country">
                                             <span class="form-input-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                     width="24" height="24"
-                                                     viewBox="0 0 24 25" fill="none">
-                                                    <path fill="#ccc"
-                                                          d="M19.6 21.5L13.3 15.2C12.8 15.6 12.225 15.9167 11.575 16.15C10.925 16.3833 10.2333 16.5 9.5 16.5C7.68333 16.5 6.14583 15.8708 4.8875 14.6125C3.62917 13.3542 3 11.8167 3 10C3 8.18333 3.62917 6.64583 4.8875 5.3875C6.14583 4.12917 7.68333 3.5 9.5 3.5C11.3167 3.5 12.8542 4.12917 14.1125 5.3875C15.3708 6.64583 16 8.18333 16 10C16 10.7333 15.8833 11.425 15.65 12.075C15.4167 12.725 15.1 13.3 14.7 13.8L21 20.1L19.6 21.5ZM9.5 14.5C10.75 14.5 11.8125 14.0625 12.6875 13.1875C13.5625 12.3125 14 11.25 14 10C14 8.75 13.5625 7.6875 12.6875 6.8125C11.8125 5.9375 10.75 5.5 9.5 5.5C8.25 5.5 7.1875 5.9375 6.3125 6.8125C5.4375 7.6875 5 8.75 5 10C5 11.25 5.4375 12.3125 6.3125 13.1875C7.1875 14.0625 8.25 14.5 9.5 14.5Z"></path>
-                                                </svg>
+                                               <x-icon.search/>
                                             </span>
-                                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                                         </div>
                                         <div class="autocomplete-field-suggestion">
                                             <ul class="" x-show="open" x-on:click.outside="open = false"
@@ -163,7 +136,8 @@
                                     <div class="training-card-title">
                                         <h3 class="h6">
                                             <a href="/figma/training/training-details-view">
-                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of
+                                                Disruptors
                                             </a>
                                         </h3>
                                     </div>
@@ -179,7 +153,8 @@
                                                 <x-icon.heart-filled/>
                                     </span>
                                         </button>
-                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button"
+                                                data-bs-toggle="dropdown"
                                                 aria-expanded="false">
                                             <x-icon.share fill="#0036E3"/>
                                             <ul class="dropdown-menu dropdown-menu-end">
@@ -238,11 +213,16 @@
                                         </div>
                                     </div>
                                     <div class="training-card-description">
-                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
-                                            This intensive training session is for forward-thinking faculty, program directors, and
-                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
-                                            their students to become the next generation of disruptors. This is not just about building
-                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed
+                                            and delivered?
+                                            This intensive training session is for forward-thinking faculty, program
+                                            directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD
+                                            curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just
+                                            about building
+                                            a curriculum, it's about building the next generation of changemakers. Join
+                                            us in this
                                             electrifying journey as... <a href="">More</a></p>
                                     </div>
                                     <div class="training-card-summary">
@@ -283,7 +263,8 @@
                                             <div class="tr">
                                                 <div class="td">Partner Institute</div>
                                                 <div class="td fw-medium">
-                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Western Sydney
+                                                        University</a> |
                                                     <a class="text-decoration-underline" href="#">Oxford University</a>
                                                 </div>
                                             </div>
@@ -295,7 +276,8 @@
                                     <div class="training-card-title">
                                         <h3 class="h6">
                                             <a href="/figma/training/training-details-view">
-                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of
+                                                Disruptors
                                             </a>
                                         </h3>
                                     </div>
@@ -311,7 +293,8 @@
                                                 <x-icon.heart-filled/>
                                     </span>
                                         </button>
-                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button"
+                                                data-bs-toggle="dropdown"
                                                 aria-expanded="false">
                                             <x-icon.share fill="#0036E3"/>
                                             <ul class="dropdown-menu dropdown-menu-end">
@@ -370,11 +353,16 @@
                                         </div>
                                     </div>
                                     <div class="training-card-description">
-                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
-                                            This intensive training session is for forward-thinking faculty, program directors, and
-                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
-                                            their students to become the next generation of disruptors. This is not just about building
-                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed
+                                            and delivered?
+                                            This intensive training session is for forward-thinking faculty, program
+                                            directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD
+                                            curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just
+                                            about building
+                                            a curriculum, it's about building the next generation of changemakers. Join
+                                            us in this
                                             electrifying journey as... <a href="">More</a></p>
                                     </div>
                                     <div class="training-card-summary">
@@ -415,7 +403,8 @@
                                             <div class="tr">
                                                 <div class="td">Partner Institute</div>
                                                 <div class="td fw-medium">
-                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Western Sydney
+                                                        University</a> |
                                                     <a class="text-decoration-underline" href="#">Oxford University</a>
                                                 </div>
                                             </div>
@@ -427,7 +416,8 @@
                                     <div class="training-card-title">
                                         <h3 class="h6">
                                             <a href="/figma/training/training-details-view">
-                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors
+                                                Igniting the Spark: Designing PhD Curriculums for the Next Generation of
+                                                Disruptors
                                             </a>
                                         </h3>
                                     </div>
@@ -443,7 +433,8 @@
                                                 <x-icon.heart-filled/>
                                     </span>
                                         </button>
-                                        <button class="btn btn-md btn-icon btn-outline-light" type="button" data-bs-toggle="dropdown"
+                                        <button class="btn btn-md btn-icon btn-outline-light" type="button"
+                                                data-bs-toggle="dropdown"
                                                 aria-expanded="false">
                                             <x-icon.share fill="#0036E3"/>
                                             <ul class="dropdown-menu dropdown-menu-end">
@@ -502,11 +493,16 @@
                                         </div>
                                     </div>
                                     <div class="training-card-description">
-                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed and delivered?
-                                            This intensive training session is for forward-thinking faculty, program directors, and
-                                            administrators who want to ignite the spark of innovation in their PhD curriculums and equip
-                                            their students to become the next generation of disruptors. This is not just about building
-                                            a curriculum, it's about building the next generation of changemakers. Join us in this
+                                        <p class="mb-0">Are you ready to revolutionize the way PhD programs are designed
+                                            and delivered?
+                                            This intensive training session is for forward-thinking faculty, program
+                                            directors, and
+                                            administrators who want to ignite the spark of innovation in their PhD
+                                            curriculums and equip
+                                            their students to become the next generation of disruptors. This is not just
+                                            about building
+                                            a curriculum, it's about building the next generation of changemakers. Join
+                                            us in this
                                             electrifying journey as... <a href="">More</a></p>
                                     </div>
                                     <div class="training-card-summary">
@@ -547,7 +543,8 @@
                                             <div class="tr">
                                                 <div class="td">Partner Institute</div>
                                                 <div class="td fw-medium">
-                                                    <a class="text-decoration-underline" href="#">Western Sydney University</a> |
+                                                    <a class="text-decoration-underline" href="#">Western Sydney
+                                                        University</a> |
                                                     <a class="text-decoration-underline" href="#">Oxford University</a>
                                                 </div>
                                             </div>
