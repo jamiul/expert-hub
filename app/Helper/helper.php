@@ -28,3 +28,11 @@ function toast($type, $content, $livewireComponent=null)
         session()->flash('notify', ['type' => $type, 'content' => $content]);
     }
 }
+
+function activeRouteClass($routeName)
+{
+    if(Route::currentRouteName() === $routeName){
+        return 'current-menu-item';
+    }
+    return '';
+}

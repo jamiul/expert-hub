@@ -6,11 +6,8 @@ class TrainingController extends Controller
 {
     public function index()
     {
-        return view('frontend.training.landing-page');
+        return view('frontend.training.index');
     }
 
-    public function details($slug)
-    {
-        return view('frontend.training.details');
-    }
+    
 }

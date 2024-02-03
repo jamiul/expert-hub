@@ -200,7 +200,7 @@
 
         </div>
         <div class="view-all-training-btn-wrapper">
-            <x-button.link class="btn btn-outline-primary border-2 btn-md" href="{{ route('find-training') }}"
+            <x-button.link class="btn btn-outline-primary border-2 btn-md" href="#"
                            text="View All Training"/>
         </div>
     </div>

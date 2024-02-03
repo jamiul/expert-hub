@@ -2,25 +2,26 @@
     <div class="public-header-main">
         <div class="public-header-container">
             <div class="header-logo">
+                {{-- @dd(Route::currentRouteName()) --}}
                 <a href="{{ route('home') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}"/></a>
             </div>
             <div class="header-menu-wrapper">
                 <nav class="header-main-menu">
                     <ul>
-                        <li class="current-menu-item">
+                        <li class="{{ activeRouteClass('find.experts') }}">
                             <a href="{{ route('find.experts') }}">{{ __('Experts') }}</a>
                         </li>
 
-                        <li>
+                        <li class="{{ activeRouteClass('find.projects') }}">
                             <a href="{{ route('find.projects') }}">{{ __('Projects') }}</a>
                         </li>
-                        <li>
-                            <a href="#">{{ __('Trainings') }}</a>
+                        <li class="{{ activeRouteClass('find.trainings') }}">
+                            <a href="{{ route('find.trainings') }}">{{ __('Trainings') }}</a>
                         </li>
-                        <li>
+                        <li class="{{ activeRouteClass('scholarship-database') }}">
                             <a href="{{ route('scholarship-database') }}">{{ __('Scholarship Database') }}</a>
                         </li>
-                        <li>
+                        <li class="{{ activeRouteClass('about-us') }}">
                             <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
                         </li>
                     </ul>

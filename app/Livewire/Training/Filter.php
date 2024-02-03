@@ -57,9 +57,9 @@ class Filter extends Component
     {
         $languages = Language::all();
         $countries = Country::all();
-        $trainingModes = TrainingMode::all();
-        $categories = Skill::isParent()->with('childrens')->get();
+        // $trainingModes = TrainingMode::all();
+        // $categories = Skill::isParent()->with('childrens')->get();
 
-        return view('livewire.training.filter', compact('languages', 'countries', 'trainingModes', 'categories'));
+        return view('livewire.training.filter', compact('languages', 'countries'));
     }
 }
