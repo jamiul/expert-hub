@@ -589,87 +589,74 @@
             </div>
         </div>
     </section>
-    <div class="require-main find-projects-require-main project-instruction">
+    <section class="mb-60">
         <div class="container">
-            <div class="heading">
-                <h4>Require steps</h4>
-                <h2>The Work you Want, All in the One Place</h2>
-                <p>We are the largest, globally connected network of top academic talent, and we're prepared to tackle
-                    your most critical projects.</p>
-            </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="require-block">
-                        <div class="require-arrow">
-                            <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                        </div>
-                        <div class="require-img">
-                            <img src="<?php echo e(asset('assets/frontend/img/require1.png')); ?>">
-                            <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n1.png')); ?>">
-                        </div>
-                        <div class="require-text">
-                            <h3>Create a Profile</h3>
-                            <p>Highlight your skills and experience, show your portfolio, and set your ideal pay
-                                rate.</p>
+                <div class="col">
+                    <div class="section-title-wrapper text-center mx-auto">
+                        <h2 class="section-title">Instructor</h2>
+                        <p class="section-title-lead">Meet Our Top Instructor for Consultation</p>
+                    </div>
+                    <div class="instructor-carousel-wrapper">
+                        <div id="instructor-carousel" class="owl-carousel owl-theme">
+
+                            <div class="instructor-slider-item">
+                                <div class="slider-img">
+                                    <img src="{{ asset('assets/frontend/img/find-trad1.png') }}">
+                                </div>
+                                <div class="slider-info">
+                                    <h4>Darrell Steward</h4>
+                                    <p>Accreditation Specialist</p>
+                                    <p class="text-primary">Oxford University</p>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
+
+
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="require-block">
-                        <div class="require-arrow">
-                            <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                        </div>
-                        <div class="require-img">
-                            <img src="<?php echo e(asset('assets/frontend/img/require2.png')); ?>">
-                            <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n2.png')); ?>">
-                        </div>
-                        <div class="require-text">
-                            <h3>Submit Project <br> Interest</h3>
-                            <p>Review expressions of interest from our network of academic experts who are interested in
-                                working on your project.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="require-block">
-                        <div class="require-arrow">
-                            <img src="<?php echo e(asset('assets/frontend/img/require-arrow.png')); ?>">
-                        </div>
-                        <div class="require-img">
-                            <img src="<?php echo e(asset('assets/frontend/img/require3.png')); ?>">
-                            <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n3.png')); ?>">
-                        </div>
-                        <div class="require-text">
-                            <h3>Complete the <br> Project</h3>
-                            <p>Check steps off as you finish and work with your client if you have questions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="require-block">
-                        <div class="require-img">
-                            <img src="<?php echo e(asset('assets/frontend/img/require4.png')); ?>">
-                            <img class="number" src="<?php echo e(asset('assets/frontend/img/require-n4.png')); ?>">
-                        </div>
-                        <div class="require-text">
-                            <h3>Get paid <br> securely</h3>
-                            <p>Payment held in escrow until project is complete to your satisfection</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <a href="" class="btn btn-primary btn-md">Get Started</a>
             </div>
         </div>
-    </div>
-    <script>
-        function toggleAccordion(header) {
-            header.classList.toggle("accordion-item-active");
-            var content = header.nextElementSibling;
-            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
+    </section>
 
 @endsection
+@push('bottom_scripts')
+    <script>
+        jQuery(document).ready(function () {
+
+            jQuery("#instructor-carousel").owlCarousel({
+                autoplay: true,
+                loop: true,
+                nav: true,
+                center: true,
+                smartSpeed: 800,
+                dots: false,  // Enable dots navigation
+                items: 5,    // Set the number of items to 5
+                margin: 23,
+                responsive: {
+                    1200: {
+                        items: 5,
+                    },
+                    900: {
+                        items: 4,
+                    },
+                    600: {
+                        items: 3,
+                    },
+                    0: {
+                        items: 2
+                    }
+                },
+                navText: [
+                    '<span class="material-symbols-outlined">chevron_left</span>',
+                    '<span class="material-symbols-outlined">chevron_right</span>'
+                ],
+            });
+            console.log("I am working");
+
+        })
+    </script>
+@endpush
