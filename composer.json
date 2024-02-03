@@ -44,7 +44,8 @@
         },
         "files": [
             "app/Helper/helper.php",
-            "app/Helper/PaymentHelper.php"
+            "app/Helper/PaymentHelper.php",
+            "app/Helper/MessagingHelper.php"
         ]
     },
     "autoload-dev": {

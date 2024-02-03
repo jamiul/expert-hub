@@ -1,16 +1,15 @@
 <section class="page-section training-section">
     <div class="container">
         <div style="margin-bottom: 40px; max-width: 840px" class="section-title-wrapper text-center mx-auto">
-            <h2 class="section-title">Upcoming trainings</h2>
-            <p class="section-title-lead">Elevate Your Skills With Trainings Led By Industry And Academic Leaders</p>
+            <h2 class="section-title">Upcoming Training</h2>
+            <p class="section-title-lead">Elevate Your Skills With Training Led By Experts</p>
         </div>
 
         <div class="upcomming-training-wrapper">
             <div class="academic-content-training-area academic-border-top">
                 <div class="live-zoom academic-zoom-area">
                     <div class="zoom-icon">
-                        <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt=""></img>
-
+                        <img src="{{ asset('assets/frontend/img/zoom-icon.png') }}" alt="">
                         <h4>Live via Zoom</h4>
                     </div>
                     <div class="zoom-live-text">

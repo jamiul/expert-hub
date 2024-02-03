@@ -1,16 +1,20 @@
 <li>
-    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
-        <!-- <span>99</span> -->
+    <a class="icon-btn border" href="/messaging">
         <span class="{{$unreadMessageCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadMessageCount }}</span>
         <x-icon.message-line />
     </a>
-    <div x-show="openDropdown === 'message'" class="header-dropdown">
+    {{-- <a class="icon-btn border" @click="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
+        <!-- <span>99</span> -->
+        <span class="{{$unreadMessageCount > 0 ? '' : 'd-none'}}" wire:poll.keep-alive>{{ $unreadMessageCount }}</span>
+        <x-icon.message-line />
+    </a> --}}
+    <div x-show="openDropdown === 'message'" @click.outside="openDropdown = null" x-cloak class="header-dropdown">
         <div class="message-dropdown-inner">
             <div class="message-dropdown-item-wrapper">
             @forelse($unreadMessages as $unreadMessage)
                 <div class="message-dropdown-item message-dropdown-item-unread" wire:key="{{ $unreadMessage->id }}" wire:click="markAsSeen({{ $unreadMessage->id }})"  >
                     <div class="message-dropdown-thumb">
-                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}" class="" alt="avatar">
+                        <img src="{{$unreadMessage->message->profile->picture}}" class="" alt="avatar">
                     </div>
                     <div class="message-dropdown-info">
                         <p class="text-sm fw-medium message-dropdown-title">{{Str::limit($unreadMessage->message->content, $limit = 25, $end = '...')}}

@@ -15,7 +15,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'invite-expert' }"
-                            @click="activeTab = 'invite-expert'">Invite Expert ({{ $project->invitations->count() }})
+                            @click="activeTab = 'invite-expert'">Invite Expert ({{ $project->activeInvitations->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'offer' }"
@@ -149,7 +149,7 @@
                                                 <x-expert.card :url="route('client.eois.show',[$project, $eoi])" :expert="$eoi->expert">
                                                     <x-expert.shortlist wire:click="addToShortList({{ $eoi->id }})" />
                                                     <x-expert.archive wire:click="archive({{ $eoi->id }})"/>
-                                                    <x-expert.message/>
+                                                    <x-expert.message wire:click="sendMessage({{ $eoi->id }})"/>
                                                     <x-expert.hire :expert="$eoi->expert" :eoi="$eoi" :project="$eoi->project"/>
                                                 </x-expert.card>
                                             @empty
@@ -204,7 +204,7 @@
                                     </button>
                                     <button class="tab-nav-item" @click="activeInvitedExpertTab = 'invited-experts'"
                                             :class="{ 'active': activeInvitedExpertTab === 'invited-experts' }">
-                                        Invited Experts ({{ $project->invitations->count() }})
+                                        Invited Experts ({{ $project->activeInvitations->count() }})
                                     </button>
                                     <button class="tab-nav-item"
                                             @click="activeInvitedExpertTab = 'my-hires-experts'"
@@ -231,7 +231,7 @@
                                     </div>
                                     <div x-show="activeInvitedExpertTab === 'invited-experts'">
                                         <div class="expert-wrapper">
-                                            @forelse ($project->invitations as $invitation)
+                                            @forelse ($project->activeInvitations as $invitation)
                                                 <x-expert.card :expert="$invitation->expert">
                                                     @livewire('favorite.expert', ['expert' => $invitation->expert])
                                                     <x-expert.decline wire:click="declineInvitation({{ $invitation->id }})"/>
@@ -307,7 +307,7 @@
                     </div>
                     <div x-show="activeTab === 'offer'" id="offer-tab-content">
                         <div class="expert-wrapper">
-                            @forelse ($project->activeOffers() as $offer)
+                            @forelse ($project->activeOffers as $offer)
                                 <x-expert.card :expert="$offer->expert">
                                     @livewire('offer.withdraw', ['offer' => $offer])
                                 </x-expert.card>

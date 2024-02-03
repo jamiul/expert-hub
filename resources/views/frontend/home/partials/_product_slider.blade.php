@@ -3,22 +3,11 @@
         <div class="row align-items-end">
             <div class="col-xl-6">
                 <div class="hero-text">
-                    <h2>Connect With Top Academic And Industry Experts For Your Project</h2>
-                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
-                        you with leaders in course accreditation, curriculum design, policy development, project
-                        management and more. Choose ExpertGate when your most pivotal academic and industry projects
-                        demand the best.</p>
+                    <h2>Find Top Academic and Industry Experts for your project</h2>
+                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect you with leaders in course accreditation, curriculum design, policy development, project management and more. Choose ExpertGate when your most pivotal academic and industry projects demand the best.</p>
                     <div class="hero-button-wrapper">
-                        <x-button.link
-                            href="{{ route('find.experts') }}"
-                            class="btn btn-primary btn-md"
-                            text="Find an Expert"
-                        />
-                        <x-button.link
-                            href="{{ route('auth.login') }}"
-                            class="btn btn-outline-primary border-2 btn-md"
-                            text="Become an Expert"
-                        />
+                        <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
+                        <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become an Expert</a>
                     </div>
                 </div>
             </div>

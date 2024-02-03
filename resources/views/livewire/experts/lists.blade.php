@@ -27,12 +27,15 @@
                         <span class="heart-line"> <x-icon.heart fill="#0036E3"/></span>
                         <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
                     </button>
-                    <button class="btn btn-icon btn-outline-light m-1">
-                        <x-icon.message-line/>
-                    </button>
                     @auth
+                        <button class="btn btn-icon btn-outline-light m-1">
+                            <x-icon.message-line/>
+                        </button>
                         <button wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})" class="btn btn-md btn-outline-primary">Invite Project</button>
                     @else
+                        <a href="{{ route('auth.login') }}" class="btn btn-icon btn-outline-light m-1">
+                            <x-icon.message-line/>
+                        </a>
                         <a href="{{ route('auth.login') }}" class="btn btn-md btn-outline-primary">Invite Project</a>
                     @endauth
                 </div>

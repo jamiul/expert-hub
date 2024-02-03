@@ -19,4 +19,8 @@ class Milestone extends Model
     public function eoi() {
         return $this->belongsTo(Eoi::class);
     }
+
+    public function contract() {
+        return $this->belongsTo(Contract::class);
+    }
 }

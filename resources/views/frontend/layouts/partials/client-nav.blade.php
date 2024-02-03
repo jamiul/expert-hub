@@ -2,7 +2,7 @@
     <div class="main-header-container">
         {{-- @dd(auth()->user()->full_name) --}}
         <div class="header-logo">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('client.dashboard') }}">
                 <img src="{{ asset('logo/expert-gate-logo.png') }}"/>
             </a>
         </div>
@@ -19,9 +19,9 @@
                 <li class="item-has-submenu">
                     <a href="#">Reports</a>
                     <ul>
-                        <li><a href="">My profile</a></li>
+                        <li><a href="{{ route('client.profile.edit') }}">My profile</a></li>
                         <li><a href="">Analytic</a></li>
-                        <li><a href="{{ route('client.payment.index') }}">Billings & Payment</a></li>
+                        <li><a href="{{ route('client.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
@@ -72,9 +72,9 @@
                     </a>
                 </li>
                 @livewire('expert-notification-count')
-                
+
                 <livewire:new-message-count />
-                
+
                 <!-- <<li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
 
@@ -177,7 +177,7 @@
                         <img
                             src="{{ auth()->user()->profile->getFirstMediaUrl('picture') }}"/>
                     </a>
-                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" @click.outside="openDropdown = null" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img

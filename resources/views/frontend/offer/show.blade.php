@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="td">
                                                 <p class="mb-0 fw-medium">Category </p>
-                                                <p class="mb-0">{{ $offer->project->expertise->name }}Business Development</p>
+                                                <p class="mb-0">{{ $offer->project->expertise->name }}</p>
                                             </div>
                                             <div class="td">
                                                 <p class="mb-0 fw-medium">Offer Date</p>

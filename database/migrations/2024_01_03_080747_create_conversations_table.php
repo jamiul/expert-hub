@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('creator_profile_id');
+            $table->foreignId('reference_id')->nullable();
+            $table->string('reference_type')->nullable();
             $table->string('title');
             $table->boolean('active')->default(1);
             $table->timestamps();

@@ -6,13 +6,14 @@ use App\Enums\ContractStatus;
 use App\Enums\OfferStatus;
 use App\Models\Contract;
 use App\Models\Offer;
+use App\Notifications\AcceptedOfferNotification;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 
 class Show extends Component
 {
     use InteractsWithConfirmationModal;
-    
+
     public Offer $offer;
 
     public function accept()
@@ -20,7 +21,7 @@ class Show extends Component
         $this->askForConfirmation(
             callback: function () {
                 $escrow_amount = $this->offer->fundedMilestones()->sum('amount');
-                
+
                 $contract = Contract::create([
                     'project_id' => $this->offer->project_id,
                     'client_id' => $this->offer->client_id,
@@ -32,14 +33,12 @@ class Show extends Component
                 foreach($this->offer->fundedMilestones() as $milestone){
                     $milestone->update(['contract_id' => $contract->id]);
                 }
-                $this->offer->expert->update([
-                    'escrow_balance' => ($this->offer->expert->escrow_balance + $escrow_amount)
-                ]);
 
                 $this->offer->update([
                     'status' => OfferStatus::Accepted,
                 ]);
-                //TODO Notification sending
+
+                $this->offer->client->user->notify(new AcceptedOfferNotification($this->offer));
                 toast('success', 'New Contract Started');
                 return redirect()->route('expert.contracts');
             },
@@ -48,6 +47,7 @@ class Show extends Component
                 'message' => 'Paragraph: Archetype lets designers like you very quickly and easily create consistent',
                 'confirm' => 'Accept',
                 'cancel' => 'Cancel',
+                'button' => 'btn-success',
             ],
         );
     }
@@ -69,7 +69,7 @@ class Show extends Component
             ],
         );
     }
-    
+
     public function render()
     {
         return view('livewire.offer.expert.show');

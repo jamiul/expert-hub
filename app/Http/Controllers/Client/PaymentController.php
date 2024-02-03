@@ -91,7 +91,7 @@ class PaymentController extends Controller {
         }
         $milestone_amount = $milestones->sum('amount');
         //breakdown charge into pieces
-        $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+        $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
         return view( 'frontend.client.payment.summary', compact( 'payment_methods',
             'project',
@@ -177,7 +177,7 @@ class PaymentController extends Controller {
 
             $CONNECTED_ACCOUNT_ID = $contract->expert->stripe_acct_id;
 
-            $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+            $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
             $intent           = $this->stripe->paymentIntents->create( [
                 'customer'                  => $user->profile->stripe_client_id,
@@ -196,6 +196,8 @@ class PaymentController extends Controller {
                     'expert_id' => $contract->expert->user->id
                 ]
             ] );
+
+            toast('success', 'Offer Sent Successfully');
 
         } catch ( \Exception $ex ) {
             dd( $ex->getMessage() );

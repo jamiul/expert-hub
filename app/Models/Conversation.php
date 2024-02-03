@@ -30,4 +30,12 @@ class Conversation extends Model
     {
         return $this->belongsTo(Profile::class, 'creator_profile_id');
     }
+
+    public function project()
+    {
+        if($this->reference_id && $this->reference_type == Project::class){
+            return Project::find($this->reference_id);
+        }
+        return null;
+    }
 }

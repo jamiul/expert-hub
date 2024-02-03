@@ -53,7 +53,7 @@
                                 @endif
                             </div>
                             <div class="text-center">
-                                <a class="btn btn-md btn-primary" style="width: 218px" href="">Get Started</a>
+                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.registration') }}">Get Started</a>
                             </div>
                         </div>
                         <div class="tab-pane fade show {{ $tab == 'expert' ? 'active' : '' }}" id="profile"
@@ -84,7 +84,7 @@
                                 @endif
                             </div>
                             <div class="text-center">
-                                <a class="btn btn-md btn-primary" style="width: 218px" href="">Get Started</a>
+                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.registration') }}">Get Started</a>
                             </div>
                         </div>
                     </div>
