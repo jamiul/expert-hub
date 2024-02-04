@@ -110,6 +110,19 @@
     gap: 8px;
     align-items: center;
 
+    & > div {
+        &:first-child {
+            border-radius: 100%;
+            overflow: hidden;
+            background-color: #cccccc;
+            height: 40px;
+
+            img {
+                transform: scale(1.5);
+            }
+        }
+    }
+
     ul.user-meta {
         list-style: none;
         margin: 0;

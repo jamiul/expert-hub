@@ -8,6 +8,7 @@
 
     a {
         color: inherit;
+        display: block;
     }
 
     .expert-slider-item {
@@ -15,7 +16,9 @@
         text-align: center;
 
         .expert-slider-img {
-
+            background-color: #C8E0FD;
+            border-radius: 6px 6px 0 0;
+            overflow: hidden;
         }
 
         .expert-slider-info {

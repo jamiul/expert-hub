@@ -34,6 +34,16 @@
         gap: 24px;
     }
 
+    .training-card-description {
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 90px;
+        }
+    }
+
     .training-card-summary {
         .tr > .td {
             &:first-child {
@@ -128,6 +138,7 @@
         ul {
             margin-bottom: 16px;
             padding-left: 15px;
+
             li {
                 list-style: disc;
             }
