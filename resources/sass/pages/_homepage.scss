@@ -16,6 +16,14 @@ $page-section-bg: #F1F3FA;
     }
 }
 
+.page-section-bg {
+    background-color: $page-section-bg;
+}
+
+.page-section-sm {
+    padding: 70px 0;
+}
+
 .section-title-wrapper {
     .section-title {
         font-size: 0.875rem;

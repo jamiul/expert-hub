@@ -1,20 +1,21 @@
 // owl-carousel
-$(".owl-carousel").owlCarousel({
+jQuery('.expert-carousel-slider').owlCarousel({
     loop: true,
     margin: 20,
     nav: true,
     responsive: {
         0: {
-            items: 1,
+            items: 1
         },
         600: {
-            items: 3,
+            items: 3
         },
         1000: {
-            items: 5,
-        },
-    },
-});
+            items: 5
+        }
+    }
+})
+
 $(document).ready(function () {
     $(document).on("click", ".reset-filter", function (e) {
         $('.left-sidebar #dateInput, .left-sidebar .dateInput').val('');
