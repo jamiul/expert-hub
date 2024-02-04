@@ -151,9 +151,7 @@
     color: #303744;
 }
 
-.registration-checkboxes span.form-input-required {
-    display: none;
-}
+
 
 .edux-social-auth{
     display: flex;
