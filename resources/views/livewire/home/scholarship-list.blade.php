@@ -12,7 +12,7 @@
                                 src="{{ $scholarship->university->logo ? $scholarship->university->logo : asset('assets/frontend/img/scholarship1.jpg') }}"/></a>
                     </div>
                     <div class="scholarship-text">
-                        <h4><a href="{{ route('scholarship-database',['selectedUniversities[]' => $scholarship->university->name]) }}">{{ $scholarship->title }}</a></h4>
+                        <h3><a href="{{ route('scholarship-database',['selectedUniversities[]' => $scholarship->university->name]) }}">{{ $scholarship->title }}</a></h3>
                         <p>Open for {{ $scholarship->student_type }}</p>
                     </div>
                 </div>

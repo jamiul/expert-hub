@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<div class="homepage-slider-thumbnails-wrapper">
+<div class="homepage-slider-thumbnails-wrapper bg-white">
     <div class="container">
         <div class="row">
             <div class="col">
