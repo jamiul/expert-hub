@@ -1037,7 +1037,7 @@ img.exp-categoryl {
     line-height: 16.8px;
 }
 
-.training h3 {
+.training h5.expert-name {
     font-size: 16px;
     color: #191D24;
     font-weight: 500;
@@ -1137,11 +1137,11 @@ img.exp-categoryl {
     width: 44px;
 }
 
-.eudx-training h5{
-    color:  #191D24;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
+.eudx-training h3{
+    /*color:  #191D24;*/
+    /*font-size: 19px;*/
+    /*font-style: normal;*/
+    /*font-weight: 500;*/
     margin-bottom:0px
 }
 
@@ -1149,7 +1149,7 @@ img.exp-categoryl {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin: 0px 10px 0px 24px;
+    margin: 0 16px 0 24px;
 }
 
 .academic-button-area {
@@ -1279,8 +1279,8 @@ img.exp-categoryl {
     padding-bottom: 0;
 }
 
-.skillsets .accordion .at-title h2 {
-    font-size: 15px;
+.skillsets .accordion .at-title h3 {
+    font-size: 16px;
     font-weight: 500;
     color: #303744;
     margin: 0;

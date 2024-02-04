@@ -177,7 +177,7 @@
                         <img
                             src="{{ auth()->user()->profile->getFirstMediaUrl('picture') }}"/>
                     </a>
-                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" @click.outside="openDropdown = null" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img

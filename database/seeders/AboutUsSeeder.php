@@ -31,8 +31,8 @@ class AboutUsSeeder extends Seeder
             'mission_description' => '2U believes in the power of high-quality online education to create a better future for all. Through edX, our online learning platform, we see a world where learners everywhere have access to…
 
             2U believes in the power of high-quality online education to create a better future for all. Through edX, our online learning platform, we see a world where learners everywhere have access to…2U believes in the power of high-quality online education to create a better future for all. Through edX, our online learning platform, we see a world where learners everywhere have access to…2U believes in the power of high-quality online education to create a better future for all. Through edX, our online learning platform, we see a world where learners everywhere have access to',
-            'apart_subtitle' => 'Expert Gate set',
-            'apart_title' => 'what sets Expert Gate apart?',
+            'apart_subtitle' => 'CHOOSE EXPERTGATE',
+            'apart_title' => 'Why Choose ExpertGate?',
             'team_title' => 'Build on Demand Teams for your Education Institution',
             'team_subtitle' => 'TEAM',
             'team_description' => 'Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time. Hire in under 48 hours. Scale up or',

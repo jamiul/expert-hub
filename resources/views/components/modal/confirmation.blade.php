@@ -1,4 +1,4 @@
-<x-modal.form action="confirm">
+<x-modal.form action="confirm" close="Cancel">
     <x-slot name="title">{{ $prompt['title'] }}</x-slot>
     <p>{{ $prompt['message'] }}</p>
     @if($tableData)
@@ -36,6 +36,6 @@
         </div>
     @endif
     <x-slot name="button">
-        <button type="submit" class="btn btn-danger">{{ $prompt['confirm'] }}</button>
+        <button type="submit" class="btn {{ $prompt['button'] ?  $prompt['button'] : 'btn-danger' }}">{{ $prompt['confirm'] }}</button>
     </x-slot>
 </x-modal.form>

@@ -197,6 +197,8 @@ class PaymentController extends Controller {
                 ]
             ] );
 
+            toast('success', 'Offer Sent Successfully');
+
         } catch ( \Exception $ex ) {
             dd( $ex->getMessage() );
         }

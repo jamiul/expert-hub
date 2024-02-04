@@ -17,6 +17,7 @@ use App\Models\Profile;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Notifications\PaymentNotification;
+use App\Notifications\SendOfferNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Log;
@@ -207,6 +208,13 @@ class StripeController extends Controller {
                 $offer         = Offer::find( $contract_id );
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
+                $conversation = createConversation(
+                    $offer->client,
+                    $offer->expert,
+                    $offer->client->user->full_name . ' Sent an offer for ' . $offer->contract_title,
+                    $offer->project
+                );
+                $offer->expert->user->notify(new SendOfferNotification($offer));
             }
 
             //save to client transaction table

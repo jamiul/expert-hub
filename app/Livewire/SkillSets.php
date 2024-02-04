@@ -20,8 +20,8 @@ class SkillSets extends Component
 
     public function mount()
     {
-        $this->expertFields = Expertise::expertise()->isParent()->orderBy('name')->get();
-        $this->expertSkills = Expertise::skill()->isParent()->orderBy('name')->get();
+        $this->expertFields = Expertise::expertise()->isParent()->orderBy('id')->get();
+        $this->expertSkills = Expertise::skill()->isParent()->orderBy('id')->get();
         $this->expertFieldsCount = $this->expertFields->count();
         $this->expertSkillsCount = $this->expertSkills->count();
     }

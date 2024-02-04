@@ -4,7 +4,7 @@ namespace App\Livewire\Training;
 
 use App\Models\Training;
 use App\Repositories\TrainingRepository;
-use Carbon;
+use Illuminate\Support\Carbon;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -16,17 +16,16 @@ class Lists extends Component
     public $limit = 4;
 
     public $filtersArray;
-    public $trainingRepository;
 
     public function __construct()
     {
         $this->filtersArray = request()->only(
             'search',
-            'skillCategories',
-            'trainingDate',
-            'trainingMode',
-            'language',
-            'country'
+            'categories',
+            'date',
+            'mode',
+            'selectedLanguages',
+            'selectedCountries'
         );
     }
 
@@ -42,54 +41,37 @@ class Lists extends Component
         $this->resetPage();
     }
 
-    public function updateFavorite(string|int $id, bool $status)
-    {
-        $trainingRepository = app(TrainingRepository::class);
-        $trainingRepository->updateFavorite($id, $status);
-    }
-
     public function render()
     {
-        $trainings = Training::with([
-            'language', 'trainingDates', 'trainingMode',
-            'trainingInstructors.user', 'projectCategory',
-        ])->withCount('userFavorite');
+        $trainings = Training::query();
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $trainings = $trainings->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
         }
-        if (isset($this->filtersArray['skillCategories']) && $this->filtersArray['skillCategories']) {
-            $trainings = $trainings
-                ->select('trainings.*')
-                ->join('skills', 'trainings.skill_id', '=', 'skills.id')
-                ->whereIn('skills.name', $this->filtersArray['skillCategories']);
-        }
-        if (isset($this->filtersArray['trainingDate']) && $this->filtersArray['trainingDate']) {
-            $trainingDate = $this->filtersArray['trainingDate'];
-            $trainingDate = Carbon::parse($trainingDate)->format('Y-m-d');
 
-            $trainings = $trainings->whereHas('trainingDates', function ($q) use ($trainingDate) {
-                $q->whereDate('date_start', '<=', $trainingDate);
-                $q->whereDate('date_end', '>=', $trainingDate);
+        if (isset($this->filtersArray['categories']) && $this->filtersArray['categories']) {
+            $trainings = $trainings->whereHas('category', function($query){
+                $query->whereIn('name', $this->filtersArray['categories']);
             });
         }
-        if (isset($this->filtersArray['trainingMode']) && $this->filtersArray['trainingMode']) {
-            $trainings = $trainings
-                ->select('trainings.*')
-                ->join('training_modes', 'trainings.training_mode_id', '=', 'training_modes.id')
-                ->whereIn('training_modes.name', $this->filtersArray['trainingMode']);
+        if (isset($this->filtersArray['date']) && $this->filtersArray['date']) {
+            $trainingDate = Carbon::parse($this->filtersArray['date']);
+            $trainings = $trainings->whereDate('start_date', '>', $trainingDate);
         }
-        if (isset($this->filtersArray['language']) && $this->filtersArray['language']) {
-            $trainings = $trainings
-                ->select('trainings.*')
-                ->join('languages', 'trainings.language_id', '=', 'languages.id')
-                ->where('languages.name', $this->filtersArray['language']);
+        if (isset($this->filtersArray['mode']) && $this->filtersArray['mode']) {
+            $trainings = $trainings->whereIn('mode', $this->filtersArray['mode']);
         }
-        if (isset($this->filtersArray['country']) && $this->filtersArray['country']) {
-            $trainings = $trainings
-                ->select('trainings.*')
-                ->join('countries', 'trainings.country_id', '=', 'countries.id')
-                ->whereIn('countries.name', $this->filtersArray['country']);
+
+        if (isset($this->filtersArray['selectedLanguages']) && $this->filtersArray['selectedLanguages']) {
+            $trainings = $trainings->whereHas('language', function($query){
+                $query->whereIn('name', $this->filtersArray['selectedLanguages']);
+            });
+        }
+
+        if (isset($this->filtersArray['selectedCountries']) && $this->filtersArray['selectedCountries']) {
+            $trainings = $trainings->whereHas('country', function($query){
+                $query->whereIn('name', $this->filtersArray['selectedCountries']);
+            });
         }
 
         $trainings = $trainings->paginate($this->limit);

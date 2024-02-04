@@ -2,16 +2,15 @@
     <div class="container">
         <div style="margin-bottom:34px; max-width: 700px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Experts</h2>
-            <p class="section-title-lead">Explore The Expertise Of Our Academic And Industry Leaders</p>
+            <p class="section-title-lead">Discover Skillsets Of Our Experts</p>
         </div>
-
         <div class="row">
             <div class="col-lg-6">
                 <div class="accordion">
                     @foreach ($expertFields->take($perRowExpert) as $expertField)
                         <div class="at-item">
                             <div class="at-title">
-                                <h2>{{ $expertField->name }}</h2>
+                                <h3>{{ $expertField->name }}</h3>
                             </div>
                             <div class="at-tab">
                                 <ul>
@@ -31,7 +30,7 @@
                     @foreach ($expertFields->skip($perRowExpert)->take($perRowExpert) as $expertField)
                         <div class="at-item">
                             <div class="at-title">
-                                <h2>{{ $expertField->name }}</h2>
+                                <h3>{{ $expertField->name }}</h3>
                             </div>
                             <div class="at-tab">
                                 <ul>
@@ -44,10 +43,8 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
