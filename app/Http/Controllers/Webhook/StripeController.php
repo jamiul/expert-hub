@@ -79,6 +79,12 @@ class StripeController extends Controller {
                 $this->__paymentGeneric( $paymentMethod );
                 break;
 
+                //============= connect ==============//
+            case 'account.updated': //connect account status update
+                $account = $event->data->object;
+                $this->__accountUpdated($account);
+                break;
+
             case 'payout.created': //payout to expert's external bank account created
                 $payout = $event->data->object;
                 $this->__payoutCreated( $payout );
@@ -456,6 +462,11 @@ class StripeController extends Controller {
     /*
      * connect webhooks
      * */
+
+    private function __accountUpdated($account) {
+        Log::info($account);
+    }
+
     private function __externalAccountCreate( $paymentMethod ) {
         try {
             $stripe_customer_id = $paymentMethod->account;

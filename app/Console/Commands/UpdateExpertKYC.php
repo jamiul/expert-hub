@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Enums\ProfileType;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Console\Command;
 
@@ -32,15 +33,12 @@ class UpdateExpertKYC extends Command
                 "api_key" => env( 'STRIPE_SECRET' ),
             ] );
 
-            $experts = User::whereHas('profile', function ($q){
-                $q->where('type', ProfileType::Expert);
-                $q->whereNotNull('stripe_acct_id');
-            })->toSql();
-            dd($experts);
+            $experts = Profile::expert()->whereNotNull('stripe_acct_id')->get();
 
             foreach ( $experts as $expert){
-                $expert_acct = $stripe->accounts->retrieve( $acct_id, [] );
+                $expert_acct = $stripe->accounts->retrieve( $expert->stripe_acct_id, [] );
 
+                dd($expert_acct);
                 //todo: update eKYC form status for expert
             }
         } catch (\Exception $ex){
