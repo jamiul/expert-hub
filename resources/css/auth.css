@@ -178,3 +178,7 @@
     width: 100%;
     justify-content: center;
 }
+
+.registration-checkboxes .form-check-group{
+    margin-bottom: 24px;
+}
