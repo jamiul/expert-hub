@@ -62,22 +62,9 @@ The first day of the course provides a profound introduction to latent variable 
                 'status' => 'Active',
             ];
             $training_id = DB::table('trainings')->insertGetId($trainingData);
-            TrainingInstructor::create([
-                'training_id' => $training_id,
-                'expert_id' => 2,
-            ]);
-            TrainingInstructor::create([
-                'training_id' => $training_id,
-                'expert_id' => 3,
-            ]);
-            TrainingPartner::create([
-                'training_id' => $training_id,
-                'partner_id' => 2,
-            ]);
-            TrainingPartner::create([
-                'training_id' => $training_id,
-                'partner_id' => 3,
-            ]);
+            $training = Training::find($training_id);
+            $training->instructors()->sync([2,3]);
+            $training->partners()->sync([2,3]);
         }
     }
 }

@@ -150,3 +150,33 @@
 .verify-email .verify-link ul li a:hover {
     color: #303744;
 }
+
+
+
+.edux-social-auth{
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.social-auth-item {
+    display: flex;
+    width: 50%;
+}
+
+.edux-social-auth .social-auth-item a {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: #303744;
+    transition: 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.registration-checkboxes .form-check-group{
+    margin-bottom: 24px;
+}

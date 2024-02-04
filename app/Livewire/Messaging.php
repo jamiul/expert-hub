@@ -14,13 +14,15 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\File;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 use Route;
 
 class Messaging extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, WithPagination;
 
     public $messageBody;
     public $currentConversation;
@@ -28,6 +30,11 @@ class Messaging extends Component
     // public $files = [];
     public $messageAttachment = [];
     public $messageAttachmentTemporaryUrls = [];
+    public $filtersArray;
+    #[Url()]
+    public $search = null;
+    
+    public $filterType = null;
 
 
     public function rules()
@@ -93,7 +100,7 @@ class Messaging extends Component
             }
 
             $this->currentConversation = $conversation;
-            
+
             // blade file will receive this - to get aware about new selected conversation
             // $this->dispatch('conversationSelected', $this->currentConversation->id);
         }
@@ -237,7 +244,7 @@ class Messaging extends Component
      * TODO:
      * For the time being this method is shortened and rest of the code taken into mount
      * 
-     * */ 
+     * */
     // public function getConversationMessages($conversationId)
     // {
     //     $conversation = Conversation::with(['messages', 'messageRecipients'])->where('id', $conversationId)->first();
@@ -292,10 +299,76 @@ class Messaging extends Component
         // dump($this->messageAttachmentUrls);
     }
 
+    public function filter($filterType=null)
+    {        
+        $this->filterType = $filterType;
+        
+        if ($filterType == 'all'){
+            $this->resetFilter();
+            return;
+        }         
+        
+        $filters = [
+            'search' => $this->search,
+            'filterType' => $this->filterType,
+            
+        ];
+                
+        $this->doFilter($filters);
+    }
+
+    public function resetFilter()
+    {
+        $this->search = '';
+        $this->filterType = null;
+
+        $this->filter();
+    }
+
+    public function doFilter($filters) 
+    {        
+        $this->filtersArray = $filters;
+        $this->resetPage();
+    }
+
+    public function updatedSearch()
+    {        
+        $this->filter();
+    }
+
 
     public function render()
-    {
-        $currentUsersConversations = Participant::with('conversation.messages')->where('profile_id', Auth::user()->profile->id)->get();
+    {        
+        $participants = Participant::where('profile_id', Auth::user()->profile->id)->get();   
+           
+        foreach ($participants as $participant) {             
+            $currentUsersConversations = $participant->conversation->with(['participants.profile.user', 'messages']); 
+        }
+        
+        if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
+            
+            $currentUsersConversations = $currentUsersConversations->whereHas('participants', function($query){
+                $query->whereHas('profile', function($query){
+                    $query->whereHas('user', function($query){
+                        $query->where('title', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('first_name', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('last_name', 'like', '%' . $this->filtersArray['search'] . '%');
+                    });
+                });
+            });
+        }
+
+        if (isset($this->filtersArray['filterType']) && $this->filtersArray['filterType']=='unread') {
+            
+            $currentUsersConversations = $currentUsersConversations->whereHas('messages', function($query){
+                $query->whereHas('messageRecipients', function($query){
+                    
+                        $query->whereNull('seen_at');
+                   
+                });
+            });
+        }
+        
+        $currentUsersConversations = $currentUsersConversations->get();
+        
         return view('livewire.messaging', compact('currentUsersConversations'));
     }
 }
