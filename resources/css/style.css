@@ -1037,7 +1037,7 @@ img.exp-categoryl {
     line-height: 16.8px;
 }
 
-.training h3 {
+.training h5.expert-name {
     font-size: 16px;
     color: #191D24;
     font-weight: 500;
@@ -1137,11 +1137,11 @@ img.exp-categoryl {
     width: 44px;
 }
 
-.eudx-training h5{
-    color:  #191D24;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
+.eudx-training h3{
+    /*color:  #191D24;*/
+    /*font-size: 19px;*/
+    /*font-style: normal;*/
+    /*font-weight: 500;*/
     margin-bottom:0px
 }
 
