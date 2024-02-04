@@ -1,21 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <!-- sub menu start -->
-    <nav class="bg-primary sub__nav">
-        <div class="container">
-            <ul class="d-flex">
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.billing') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Transaction History</a>
-                </li>
-                <li class="me-3">
-                    <a href="{{ route('expert.payment.index') }}" class="text-white fw-medium px-2 py-3 d-inline-block">Get Paid</a>
-                </li>
-            </ul>
-        </div><!--.//container-->
-    </nav>
-    <!-- sub menu end -->
-
-
     <section class="client-dashboard mx-auto my-5">
         <div class="container">
 

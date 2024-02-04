@@ -42,6 +42,19 @@ class PaymentController extends Controller
     }
 
     /*
+     * List of transactions /payment/billing-report
+     * */
+    public function billingReport() {
+        $user = auth()->user();
+
+        $this->__checkStripeConnect();
+
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+
+        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
+    }
+
+    /*
      * Expert detailed onboard submit eKYC /payment/onboard
      * */
     public function onboard( Request $request )
@@ -354,19 +367,6 @@ class PaymentController extends Controller
         );
 
         dd( $payout );
-    }
-
-    /*
-     * List of transactions /payment/billing-report
-     * */
-    public function billingReport() {
-        $user = auth()->user();
-
-        $this->__checkStripeConnect();
-
-        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
-
-        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
     }
 
     public function refundMilestone($milestone_id) {
