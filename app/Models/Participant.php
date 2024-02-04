@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -18,6 +19,6 @@ class Participant extends Model
 
     public function profile()
     {
-        return $this->belongsTo(Profile::class);
-    }
+        return $this->belongsTo(Profile::class, 'profile_id');
+    }    
 }
