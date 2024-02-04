@@ -20,7 +20,7 @@
                         <div class="usertype-icon">
                             <img src="{{ asset('assets/frontend/img/register2.png') }}">
                         </div>
-                        <p>I’m an Client</p>
+                        <p>I’m a Client</p>
                     </div>
                     <input x-on:click="buttonText = 'Apply as a Client'" class="form-check-input" type="radio" wire:model.live="type" value="{{ App\Enums\ProfileType::Client->value }}">
                 </label>
@@ -109,12 +109,10 @@
                             @endforeach
                         </x-form.choice>
                         <div class="registration-checkboxes">
-                            <x-form.check wire:model.boolean.change="terms_agreed" required>
+                            <x-form.check wire:model.boolean.change="terms_agreed">
                                 Yes, I understand and agree to the <a target="_blank" href="{{ route('terms-of-service') }}">EduEXHub Terms of Service</a>,
                                 including the <a target="_blank" href="{{ route('user-agreement') }}">User Agreement</a> and <a target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
                             </x-form.check>
-
-
                         </div>
                         <div class="d-grid mt-3">
                             <button class="btn btn-md btn-primary" type="submit">Create Account</button>
