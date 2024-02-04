@@ -1,8 +1,8 @@
 <section class="page-section speciality-section bg-white">
     <div class="container">
         <div style="" class="section-title-wrapper text-center mb-40">
-            <h2 class="section-title">{{ Str::upper($subtitle) }}</h2>
-            <p class="section-title-lead">{{ Str::headline($title) }}</p>
+            <h2 class="section-title">{{ $subtitle }}</h2>
+            <p class="section-title-lead">{{ $title }}</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
