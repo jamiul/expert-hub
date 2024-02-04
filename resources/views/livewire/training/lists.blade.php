@@ -1,6 +1,6 @@
 <div class="page-content p-0">
     <div class="training-list">
-        @foreach ($trainings as $training)
+        @forelse ($trainings as $training)
         <div class="training-card bb-1">
             <div class="training-card-title">
                 <h3 class="h6">
@@ -70,7 +70,7 @@
                 @endforeach
             </div>
             <div class="training-card-description">
-                <p class="mb-0">{{ $training->summary }}<a href="">More</a></p>
+                <p class="mb-0 text-summary">{{ $training->summary }}<a href="">More</a></p>
             </div>
             <div class="training-card-summary">
                 <div class="custom-table text-sm">
@@ -91,7 +91,6 @@
                                 </div>
                                 <div> {{ $training->mode }}</div>
                             </div>
-
                         </div>
                     </div>
                     <div class="tr">
@@ -106,7 +105,6 @@
                         <div class="td">Training Fee</div>
                         <div class="td fw-medium">USD {{ $training->fee }}</div>
                     </div>
-
                     <div class="tr">
                         <div class="td">Partner Institute</div>
                         <div class="td fw-medium">
@@ -115,40 +113,12 @@
                             @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <x-empty/>
+        @endforelse
     </div>
-    <div class="pagination">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="pagination-left">
-                    Showing 1 to 6 of
-                    11 results
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="pagination-right">
-                    <ul>
-                        <li>
-                            <x-icon.skip-previous/>
-                        </li>
-                        <li>
-                            <x-icon.arrow-left/>
-                        </li>
-                        <li class="active"> 1</li>
-                        <li> 2</li>
-                        <li>
-                            <x-icon.arrow-right/>
-                        </li>
-                        <li>
-                            <x-icon.skip-next/>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{ $trainings->links() }}
 </div>
