@@ -8,7 +8,7 @@
     & > div {
         padding: 32px;
 
-        &.page-sidebar{
+        &.page-sidebar {
             background-color: #FCFCFF;
         }
     }
@@ -24,6 +24,7 @@
 
     .page-sidebar {
         border-right: 1px solid $edu-border-color;
+        border-radius: 7px 0 0 7px;
     }
 }
 
@@ -38,6 +39,7 @@
     .page-sidebar {
         border-left: 1px solid $edu-border-color;
         order: 2;
+        border-radius: 0 7px 7px 0;
     }
 }
 

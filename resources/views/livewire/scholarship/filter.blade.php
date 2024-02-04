@@ -1,4 +1,4 @@
-<div class="scholarship-database-filter-col">
+<div class="scholarship-database-filter-col page-sidebar">
     <div class="scholarship-database-content-search-wrapper pb-3">
         <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Search Scholarships"/>
     </div>
