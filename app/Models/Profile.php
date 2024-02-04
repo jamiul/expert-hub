@@ -53,7 +53,7 @@ class Profile extends Model implements HasMedia
 
     public function participants()
     {
-        return $this->hasMany(Participant::class);
+        return $this->hasMany(Participant::class, 'profile_id');
     }
 
     public function languages():BelongsToMany
