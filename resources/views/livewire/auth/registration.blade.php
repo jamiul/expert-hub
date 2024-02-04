@@ -39,8 +39,8 @@
                         <h1 class="h4">Sign Up</h1>
                     </div>
                     <form wire:submit="save">
-                        <div class="social-auth col-items-3">
-                            <div>
+                        <div class="social-auth  edux-social-auth">
+                            <div class="social-auth-item">
                                 <a href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
@@ -60,18 +60,8 @@
                                     Google
                                 </a>
                             </div>
-                            <div>
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                            viewBox="0 0 25 25" fill="none">
-                                        <path
-                                            d="M12.0061 7.52292C11.1301 7.52292 9.77414 6.48542 8.34614 6.52292C6.46214 6.54792 4.73414 7.66042 3.76214 9.42292C1.80614 12.9604 3.25814 18.1854 5.16614 21.0604C6.10214 22.4604 7.20614 24.0354 8.67014 23.9854C10.0741 23.9229 10.6021 23.0354 12.3061 23.0354C13.9981 23.0354 14.4781 23.9854 15.9661 23.9479C17.4781 23.9229 18.4381 22.5229 19.3621 21.1104C20.4301 19.4854 20.8741 17.9104 20.8981 17.8229C20.8621 17.8104 17.9581 16.6479 17.9221 13.1479C17.8981 10.2229 20.2141 8.82292 20.3221 8.76042C19.0021 6.74792 16.9741 6.52292 16.2661 6.47292C14.4181 6.32292 12.8701 7.52292 12.0061 7.52292ZM15.1261 4.57292C15.9061 3.59792 16.4221 2.23542 16.2781 0.885422C15.1621 0.935422 13.8181 1.66042 13.0141 2.63542C12.2941 3.49792 11.6701 4.88542 11.8381 6.21042C13.0741 6.31042 14.3461 5.54792 15.1261 4.57292Z"
-                                            fill="black"/>
-                                    </svg>
-                                    Apple
-                                </a>
-                            </div>
-                            <div>
+
+                            <div  class="social-auth-item">
                                 <a href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
@@ -109,7 +99,7 @@
                             <x-form.input type="text" label="Last Name" wire:model.blur="last_name" placeholder="Your last name"/>
                         </div>
                         <x-form.input type="email" label="Email Address" wire:model.live.debounce.1000="email" placeholder="name@example.com"/>
-                        <x-form.input type="tel" label="Phone" wire:model.blur="phone" placeholder="your phone number"/>
+                        <x-form.input type="tel" label="Phone(Optional)" wire:model.blur="phone" placeholder="your phone number"/>
                         <x-form.password type="password" label="Password" wire:model.live.debounce="password" placeholder="Your password (8 or more characters)"/>
                         <x-form.password type="password" label="Confirm Password" wire:model.live.debounce="password_confirmation" placeholder="Your password (8 or more characters)"/>
                         <x-form.choice label="Country" wire:model.change="country_id">
@@ -119,13 +109,12 @@
                             @endforeach
                         </x-form.choice>
                         <div class="registration-checkboxes">
-                            <x-form.check wire:model.boolean="send_tips">
-                                Send me emails with tips on how to find projects that fit my expertise.
-                            </x-form.check>
                             <x-form.check wire:model.boolean.change="terms_agreed" required>
                                 Yes, I understand and agree to the <a target="_blank" href="{{ route('terms-of-service') }}">EduEXHub Terms of Service</a>,
                                 including the <a target="_blank" href="{{ route('user-agreement') }}">User Agreement</a> and <a target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
                             </x-form.check>
+
+
                         </div>
                         <div class="d-grid mt-3">
                             <button class="btn btn-md btn-primary" type="submit">Create Account</button>
