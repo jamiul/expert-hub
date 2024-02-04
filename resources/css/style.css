@@ -1149,7 +1149,7 @@ img.exp-categoryl {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin: 0px 10px 0px 24px;
+    margin: 0 16px 0 24px;
 }
 
 .academic-button-area {
