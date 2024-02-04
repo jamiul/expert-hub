@@ -32,7 +32,7 @@
                             <p class="lead-sm fw-medium text-black mb-2">Services</p>
                             <ul class="link__list">
                                 <li> <a href="{{ route('expert.profile.edit') }}">Consultation ({{ $consultationCount }})</a> </li>
-                                <li> <a href="{{ route('find-training') }}">Training ({{ $trainingCount }})</a> </li>
+                                <li> <a href="{{ route('find.trainings') }}">Training ({{ $trainingCount }})</a> </li>
                             </ul>
                         </div>
                         <!--.//item-->
