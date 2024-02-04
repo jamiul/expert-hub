@@ -2,7 +2,7 @@
     <div class="container">
         <div style="margin-bottom: 40px; max-width: 840px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Upcoming Training</h2>
-            <p class="section-title-lead">Elevate Your Skills With Training Led By Experts</p>
+            <p class="section-title-lead">Elevate your skills with trainings led by industry and academic leaders</p>
         </div>
 
         <div class="upcomming-training-wrapper">
@@ -21,7 +21,7 @@
 
 
                 <div class="training eudx-training">
-                    <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+                    <h3 class="h6">Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h3>
 
                     <div class="row border-0 p-0">
                         <div class="col-md-6">
@@ -31,7 +31,7 @@
                                         <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
                                     </div>
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
                                             <li>Public Health</li>
                                             <li>Melbourne University</li>
@@ -49,9 +49,8 @@
                                         <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
                                     </div>
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
-                                            <li>Public Health</li>
                                             <li>Melbourne University</li>
                                             <li>Australia</li>
                                         </ul>
@@ -85,7 +84,7 @@
 
 
                 <div class="training eudx-training">
-                    <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+                    <h3 class="h6">Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h3>
 
                     <div class="row border-0 p-0">
                         <div class="col-md-6">
@@ -95,9 +94,8 @@
                                         <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
                                     </div>
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
-                                            <li>Public Health</li>
                                             <li>Melbourne University</li>
                                             <li>Australia</li>
                                         </ul>
@@ -113,9 +111,8 @@
                                         <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
                                     </div>
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
-                                            <li>Public Health</li>
                                             <li>Melbourne University</li>
                                             <li>Australia</li>
                                         </ul>
@@ -148,7 +145,7 @@
 
 
                 <div class="training eudx-training">
-                    <h5>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h5>
+                    <h3 class="h6">Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h3>
                     <div class="row border-0 p-0">
                         <div class="col-md-6">
                             <div class="expert-card training-expert-card">
@@ -158,9 +155,8 @@
                                     </div>
 
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
-                                            <li>Public Health</li>
                                             <li>Melbourne University</li>
                                             <li>Australia</li>
                                         </ul>
@@ -178,9 +174,8 @@
                                     </div>
 
                                     <div class="expert-info">
-                                        <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
+                                        <h5 class="expert-name mb-0">Professor Miles Esther</h5>
                                         <ul class="expert-meta">
-                                            <li>Public Health</li>
                                             <li>Melbourne University</li>
                                             <li>Australia</li>
                                         </ul>

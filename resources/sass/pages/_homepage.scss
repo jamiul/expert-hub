@@ -1,25 +1,20 @@
 $page-section-bg: #F1F3FA;
 @import "homepage-slider";
-section {
-    &.page-section {
-        padding: 90px 0;
+.page-section {
+    padding: 90px 0;
 
-        &.work-steps-section {
-            background-color: $page-section-bg;
-        }
-
-        &.team-section {
-            background-color: $page-section-bg;
-        }
-
-        &.training-section {
-            background-color: $page-section-bg;
-        }
+    &.work-steps-section {
+        background-color: $page-section-bg;
     }
 
+    &.team-section {
+        background-color: $page-section-bg;
+    }
+
+    &.training-section {
+        background-color: $page-section-bg;
+    }
 }
-
-
 
 .section-title-wrapper {
     .section-title {
@@ -36,6 +31,7 @@ section {
         font-weight: 500;
         line-height: 120%;
         margin-bottom: 0.5rem;
+        text-transform: capitalize;
     }
 
     .section-title-summary {
@@ -126,8 +122,6 @@ section {
         }
 
         h3 {
-            font-size: 19px;
-            font-weight: 500;
             line-height: 111.5%;
             max-width: 140px;
             margin: 0 auto 10px;
@@ -185,9 +179,6 @@ section {
     }
 
     h3 {
-        font-size: 19px;
-        font-style: normal;
-        font-weight: 500;
         line-height: 137%;
         margin-bottom: 8px;
 
@@ -321,9 +312,6 @@ section {
         grid-template-columns: 20px auto;
 
         h3 {
-            font-size: 19px;
-            font-weight: 500;
-            line-height: 120%;
             margin-bottom: 10px;
         }
 
@@ -416,7 +404,7 @@ section {
     }
 
     .scholarship-text {
-        h4 {
+        h3 {
             margin: 10px 0 2px;
             font-size: 16px;
             font-weight: 500;

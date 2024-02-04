@@ -1,4 +1,4 @@
-<section class="page-section speciality-section">
+<section class="page-section speciality-section bg-white">
     <div class="container">
         <div style="" class="section-title-wrapper text-center mb-40">
             <h2 class="section-title">{{ Str::upper($subtitle) }}</h2>
@@ -37,7 +37,7 @@
                                                     <img src="{{ $apart->iconImage() }}" alt="">
                                                 </div>
                                                 <div class="company-speciality-content">
-                                                    <h3>{{ $apart->set_title }}</h3>
+                                                    <h3 class="h6">{{ $apart->set_title }}</h3>
                                                     @if ($showReadMoreButton === $apart->id)
                                                         <p>{{ $apart->description }}</p>
                                                         <a href="#eduexhub-set" wire:click="readLess">Show Less</a>
@@ -69,7 +69,7 @@
                                                     <img src="{{ $apart->iconImage() }}" alt="">
                                                 </div>
                                                 <div class="company-speciality-content">
-                                                    <h3>{{ $apart->set_title }}</h3>
+                                                    <h3 class="h6">{{ $apart->set_title }}</h3>
                                                     @if ($showReadMoreButton === $apart->id)
                                                         <p>{{ $apart->description }}</p>
                                                         <a href="#eduexhub-set" wire:click="readLess">Show Less</a>
