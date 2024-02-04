@@ -29,7 +29,7 @@ class Create extends Component
     public $expertise_id;
 
     public $availableSkills = [];
-    public $skillLimit = 10;
+    public $skillLimit = 8;
     public $selectedSkills = [];
     public $skill = '';
 
@@ -41,7 +41,7 @@ class Create extends Component
     public function mount(Project $project)
     {
         $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
-        $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
+        $this->availableSkills = Expertise::skill()->isChild()->pluck('name', 'id')->toArray();
         $this->project = $project;
         $this->title = $this->project->title;
         $this->description = $this->project->description;
@@ -138,7 +138,7 @@ class Create extends Component
             'expertise_id' => ['required'],
             'title' => ['required', 'string', 'max:255', 'min:15'],
             'description' => ['required', 'max:5000', 'min:500'],
-            'selectedSkills' => ['required', 'array', 'max:10', 'min:1'],
+            'selectedSkills' => ['required', 'array', 'max:8', 'min:1'],
             'type' => ['required'],
             'budget_start_amount' => ['required', 'numeric','max:50000', 'min:50'],
             'budget_end_amount' => ['nullable', 'numeric'],
@@ -158,7 +158,7 @@ class Create extends Component
     public function updatedSelectedSkills()
     {
         $this->validate([
-            'selectedSkills' => ['required', 'array', 'max:10', 'min:1'],
+            'selectedSkills' => ['required', 'array', 'max:8', 'min:1'],
         ]);
     }
     public function updated($propertyName)

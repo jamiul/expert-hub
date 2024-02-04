@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             $profile_id = DB::table('profiles')->insertGetId([
                 'user_id' => $user_id,
                 'type' => $user['type'],
-                'status' => ProfileStatus::Draft->name,
+                'status' => ProfileStatus::Approved->name,
             ]);
             if ($user['type'] == ProfileType::Client->value) {
                 $profile = Profile::find($profile_id);
