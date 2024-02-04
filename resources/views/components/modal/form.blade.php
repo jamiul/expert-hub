@@ -1,5 +1,6 @@
 @props([
     'action',
+    'close' => 'Close'
 ])
 <div class="bg-white shadow-lg p-40 mx-auto rounded">
     <div class="wep-modal-header">
@@ -11,7 +12,7 @@
         {{ $slot }}
 
         <div class="wep-modal-footer border-top pt-4 d-flex gap-3 justify-content-end mt-4">
-            <button wire:click="$dispatch('modal.close')" type="button" class="btn btn-outline-light">Close</button>
+            <button wire:click="$dispatch('modal.close')" type="button" class="btn btn-outline-light">{{ $close }}</button>
             {{ $button }}
         </div>
     </form>

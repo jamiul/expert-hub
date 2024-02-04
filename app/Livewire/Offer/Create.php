@@ -9,10 +9,12 @@ use App\Enums\ProjectType;
 use App\Models\Milestone;
 use App\Models\Offer;
 use App\Models\Profile;
+use App\Notifications\SendOfferNotification;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Notification;
 
 class Create extends Component
 {
@@ -103,7 +105,7 @@ class Create extends Component
             'deposit_amount' => $this->depositAmount(),
             'status' => OfferStatus::Draft,
         ]);
-        
+        $this->project = auth()->user()->profile->projects()->where('id', $this->project_id)->first();
         if ($this->project->isFixed()) {
             if ($this->milestoneType == 'multiple') {
                 foreach ($this->milestone_description as $key => $value) {
@@ -129,6 +131,7 @@ class Create extends Component
                 ]);
             }
         }
+
         return redirect()->route('client.payment.pay',['reference' => 'offer', 'id' => $offer->id]);
     }
 

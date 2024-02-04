@@ -103,16 +103,6 @@
   color: var(--dark);
 }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-  color: #303744;
-}
-a:hover {
-  color: var(--primary);
-}
-
 ul {
   padding-left: 0;
   margin-bottom: 0;

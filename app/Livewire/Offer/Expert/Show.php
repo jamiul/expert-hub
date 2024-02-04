@@ -6,6 +6,7 @@ use App\Enums\ContractStatus;
 use App\Enums\OfferStatus;
 use App\Models\Contract;
 use App\Models\Offer;
+use App\Notifications\AcceptedOfferNotification;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 
@@ -36,7 +37,8 @@ class Show extends Component
                 $this->offer->update([
                     'status' => OfferStatus::Accepted,
                 ]);
-                //TODO Notification sending
+
+                $this->offer->client->user->notify(new AcceptedOfferNotification($this->offer));
                 toast('success', 'New Contract Started');
                 return redirect()->route('expert.contracts');
             },
@@ -45,6 +47,7 @@ class Show extends Component
                 'message' => 'Paragraph: Archetype lets designers like you very quickly and easily create consistent',
                 'confirm' => 'Accept',
                 'cancel' => 'Cancel',
+                'button' => 'btn-success',
             ],
         );
     }

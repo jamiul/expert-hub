@@ -181,7 +181,7 @@ class Create extends Component
         $this->project->client->user->notify(new EOIClientNotification([
             'title'   => 'New Eoi Submitted',
             'message' => '',
-            'link'    => $this->project->slug,
+            'link'    => route('client.eois.index', $this->project->id),
             'button' => 'View proposal',
             'avatar'  => auth()->user()->profile->picture,
         ]));

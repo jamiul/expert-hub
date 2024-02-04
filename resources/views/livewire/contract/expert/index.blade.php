@@ -23,7 +23,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'completed-contract' }"
-                            @click="activeTab = 'completed-contract'">Completed (34)
+                            @click="activeTab = 'completed-contract'">Completed ({{ $endedContracts->count() }})
                     </button>
 
                 </div>
@@ -488,12 +488,12 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
+                                @foreach ($endedContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Assistance Required for Chemical Engineering</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
+                                        <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                        <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to {{ $contract->updated_at->format('M y') }}</p>
                                     </td>
                                     <td>
                                         <button
@@ -503,18 +503,17 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <p class="mb-1">Fixed: $100.00/hr</p>
+                                        <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
                                     </td>
                                     <td>
                                         <div class="d-flex gap-3 align-item-center">
                                             <div class="expert-thumb">
                                                 <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
+                                                        src="{{ $contract->client->picture }}"/>
                                             </div>
                                             <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class="mb-0">Public Health </p>
+                                                <p class="fw-medium project-expert-name mb-0">{{ $contract->client->user->full_name }}</p>
+                                                <p class="mb-0">{{ $contract->client->current_organization }}</p>
                                                 <div class="star-ratings">
                                                     <x-icon.star-fill/>
                                                     <x-icon.star-fill/>
@@ -526,7 +525,7 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                @endforeach
 
                             </table>
                         </div>

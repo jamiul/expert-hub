@@ -3,10 +3,8 @@
 namespace App\Livewire\Training;
 
 use App\Models\Country;
+use App\Models\Expertise;
 use App\Models\Language;
-use App\Models\ProjectCategory;
-use App\Models\Skill;
-use App\Models\TrainingMode;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -16,26 +14,36 @@ class Filter extends Component
     #[Url()]
     public $search = '';
     #[Url()]
-    public $skillCategories = [];
+    public $categories = [];
     #[Url()]
-    public $trainingDate = '';
+    public $date = '';
     #[Url()]
-    public $trainingMode = [];
+    public $mode = [];
     #[Url()]
-    public $language = '';
+    public $selectedLanguages = [];
+    public $language;
+    public $languages;
     #[Url()]
-    public $country = [];
+    public $selectedCountries = [];
+    public $country;
+    public $countries;
 
-    #[On('parent-filter')]
+    public function mount()
+    {
+        $this->countries = Country::get();
+        $this->languages = Language::get();
+        // $this->date = now()->format('d M Y');
+    }
+
     public function filter()
     {
         $filters = [
             'search' => $this->search,
-            'skillCategories' => $this->skillCategories,
-            'trainingDate' => $this->trainingDate,
-            'trainingMode' => $this->trainingMode,
-            'language' => $this->language,
-            'country' => $this->country,
+            'categories' => $this->categories,
+            'date' => $this->date,
+            'mode' => $this->mode,
+            'selectedLanguages' => $this->selectedLanguages,
+            'selectedCountries' => $this->selectedCountries,
         ];
 
         $this->dispatch('training-filter', $filters);
@@ -44,22 +52,82 @@ class Filter extends Component
     public function resetFilter()
     {
         $this->search = '';
-        $this->skillCategories = [];
-        $this->trainingDate = '';
-        $this->trainingMode = [];
-        $this->language = '';
-        $this->country = [];
+        $this->categories = [];
+        $this->date = '';
+        $this->mode = [];
+        $this->selectedLanguages = [];
+        $this->selectedCountries = [];
 
+        $this->filter();
+    }
+
+    public function updatedCountry()
+    {
+        if ($this->country) {
+            $this->countries = Country::where('name', 'like', '%' . $this->country . '%')
+                ->whereNotIn('name', $this->selectedCountries)
+                ->limit(5)
+                ->get();
+        } else {
+            $this->setCountries();
+        }
+    }
+
+    public function setCountries()
+    {
+        $this->countries = Country::whereNotIn('name', $this->selectedCountries)->limit(5)->get();
+    }
+
+    public function selectCountry($name)
+    {
+        $country = Country::where('name', $name)->first();
+        $this->selectedCountries[] = $country->name;
+        $this->setCountries();
+        $this->filter();
+    }
+
+    public function removeCountry($name)
+    {
+        $this->selectedCountries = array_diff($this->selectedCountries, [$name]);
+        $this->setCountries();
+        $this->filter();
+    }
+
+    public function updatedLanguage()
+    {
+        if ($this->language) {
+            $this->languages = Language::where('name', 'like', '%' . $this->language . '%')
+                ->whereNotIn('name', $this->selectedLanguages)
+                ->limit(5)
+                ->get();
+        } else {
+            $this->setLanguages();
+        }
+    }
+
+    public function setLanguages()
+    {
+        $this->languages = Language::whereNotIn('name', $this->selectedLanguages)->limit(5)->get();
+    }
+
+    public function selectLanguage($name)
+    {
+        $language = Language::where('name', $name)->first();
+        $this->selectedLanguages[] = $language->name;
+        $this->setLanguages();
+        $this->filter();
+    }
+
+    public function removeLanguage($name)
+    {
+        $this->selectedLanguages = array_diff($this->selectedLanguages, [$name]);
+        $this->setLanguages();
         $this->filter();
     }
 
     public function render()
     {
-        $languages = Language::all();
-        $countries = Country::all();
-        $trainingModes = TrainingMode::all();
-        $categories = Skill::isParent()->with('childrens')->get();
-
-        return view('livewire.training.filter', compact('languages', 'countries', 'trainingModes', 'categories'));
+        $availableCategories = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
+        return view('livewire.training.filter', compact('availableCategories'));
     }
 }

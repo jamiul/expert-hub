@@ -38,6 +38,7 @@ class Registration extends Component {
     public ?bool $terms_agreed;
 
     public function mount() {
+        $this->type = ProfileType::Expert->value;
         $this->titles    = Title::pluck( 'name' )->toArray();
         $this->countries = Country::pluck( 'name', 'id' )->toArray();
     }

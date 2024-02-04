@@ -1,0 +1,136 @@
+.training-card {
+    display: grid;
+    grid-template-columns: auto 280px;
+    gap: 16px 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+        &.training-card-trainer-wrapper,
+        &.training-card-description,
+        &.training-card-summary {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+    .training-card-title {
+        a {
+            color: inherit;
+        }
+    }
+
+    .training-card-action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .training-card-trainer-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .training-card-summary {
+        .tr > .td {
+            &:first-child {
+                width: 155px;
+            }
+        }
+    }
+}
+
+.training-list {
+    .training-card {
+        padding: 32px;
+    }
+}
+
+.training-details-header {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: auto 46px;
+    align-items: center;
+
+}
+
+.page-content-accordion-wrapper {
+
+    .page-content-accordion-item {
+        border: 1px solid $edu-border-color;
+        padding: 24px 40px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+
+        &.accordion-item-active {
+            .page-content-accordion-title {
+                h3 {
+                    color: $edu-primary-color;
+                }
+
+                button {
+                    border-color: $edu-primary-color;
+                    background: $edu-primary-color;
+                    transform: rotate(0deg);
+
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-content-accordion-title {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: auto 32px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        h3 {
+            margin: 0;
+        }
+
+        button {
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            border: 1px solid $edu-border-color;
+            box-shadow: 2px 2px 8px rgba(0, 16, 74, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            transition: 0.2s;
+            transform: rotate(-180deg);
+        }
+    }
+
+    .page-content-accordion-body {
+        margin-top: 8px;
+
+        ol {
+            margin: 0;
+            padding-left: 15px;
+
+            li {
+                list-style: inherit;
+            }
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 15px;
+            li {
+                list-style: disc;
+            }
+        }
+    }
+}

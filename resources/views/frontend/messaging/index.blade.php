@@ -88,7 +88,7 @@
     }
 
     // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Initial call to set the class based on the window size
         updateClass();
 
@@ -97,11 +97,11 @@
     });
 
     function scrollToBottom(selectorElement) {
-        let selector = document.querySelector(selectorElement);        
+        let selector = document.querySelector(selectorElement);
         selector.scrollTop = selector.scrollHeight;
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
         scrollToBottom('.chatbox-message-list');
 
     }, 500)

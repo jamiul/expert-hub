@@ -7,7 +7,7 @@
         <div class="notification-dropdown-inner">
             <div class="notification-dropdown-item-wrapper">
                 @forelse($unread_notifications as $unread_notification)
-                    <div class="notification-dropdown-item {{ ($unread_notification->unread()) ? 'notification-dropdown-item-unread' : '' }}" wire:click="markAsRead('{{ $unread_notification->id }}')">
+                    <div class="notification-dropdown-item cursor-pointer {{ ($unread_notification->unread()) ? 'notification-dropdown-item-unread' : '' }}" wire:click="markAsRead('{{ $unread_notification->id }}')">
                         <div class="notification-dropdown-thumb">
                             <img
                                 src="{{ $unread_notification->data['avatar']  }}"

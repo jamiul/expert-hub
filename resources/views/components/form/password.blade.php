@@ -4,7 +4,7 @@
     'id' => $attributes->whereStartsWith('wire:model')->first(),
     'required' => false,
 ])
-<div 
+<div
     class="form-input-group password-input {{ $attributes->get('class') }}"
     x-data="{ show: false }"
 >
@@ -19,8 +19,8 @@
             :type="show ? 'text' : 'password'"
         >
         <span x-on:click="show = !show" class="form-input-icon">
-            <span x-show="show === false"><x-icon.visibility/></span>
-            <span x-show="show === true"><x-icon.visibility-off/></span></span>
+            <span x-show="show === false"><x-icon.visibility-off/></span>
+            <span x-show="show === true"><x-icon.visibility fill="#A1A0A5"/></span></span>
         </span>
     </div>
     @error($attributes->whereStartsWith('wire:model')->first())

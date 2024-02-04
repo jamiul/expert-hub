@@ -33,7 +33,7 @@ class ExpertiseSeeder extends Seeder
             $parentData = [];
             foreach ($parents as $parent) {
                 $parentData[] = [
-                    'name' => $parent,
+                    'name' => trim($parent),
                     'parent_id' => null,
                     'is_skill' => $isSkill,
                 ];
@@ -50,7 +50,7 @@ class ExpertiseSeeder extends Seeder
                     if ($child) {
                         $childData[] = [
                             'name' => $child,
-                            'parent_id' => $parentIdLookup[$parent],
+                            'parent_id' => $parentIdLookup[trim($parent)],
                             'is_skill' => $isSkill,
                         ];
                     }
