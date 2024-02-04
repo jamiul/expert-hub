@@ -4,7 +4,7 @@
         <div class="training-card bb-1">
             <div class="training-card-title">
                 <h3 class="h6">
-                    <a href="/figma/training/training-details-view">
+                    <a href="{{ route('trainings.show', $training) }}">
                         {{ $training->title }}
                     </a>
                 </h3>
@@ -56,14 +56,14 @@
                 @foreach ($training->instructors as $instructor)
                 <div class="user-small-card">
                     <div>
-                        <img src="{{ $instructor->profile->picture }}"/>
+                        <img src="{{ $instructor->picture }}"/>
                     </div>
                     <div>
-                        <h4 class="text-base mb-0">{{ $instructor->profile->user->full_name }}</h4>
+                        <h4 class="text-base mb-0">{{ $instructor->user->full_name }}</h4>
                         <ul class="user-meta">
-                            <li>{{ $instructor->profile->expertField->name }}</li>
+                            <li>{{ $instructor->expertField->name }}</li>
                             <li>Melbourne University</li>
-                            <li>{{ $instructor->profile->user->country->name }}</li>
+                            <li>{{ $instructor->user->country->name }}</li>
                         </ul>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         <div class="td">Partner Institute</div>
                         <div class="td fw-medium">
                             @foreach ($training->partners as $partner)
-                                <a class="text-decoration-underline" href="#">{{ $partner->university->name }}</a> @if (!$loop->last)|@endif
+                                <a class="text-decoration-underline" href="#">{{ $partner->name }}</a> @if (!$loop->last)|@endif
                             @endforeach
                         </div>
                     </div>

@@ -136,7 +136,7 @@
             <div class="academic-content-training-area">
                 <div class="live-zoom academic-zoom-area">
                     <div class="zoom-icon">
-                        <img src="{{ asset('assets/frontend/img/zoom-speech.png') }}" alt=""></img>
+                        <img src="{{ asset('assets/frontend/img/zoom-speech.png') }}" alt="">
                         <h4>Face to Face</h4>
                     </div>
                     <div class="zoom-live-text">

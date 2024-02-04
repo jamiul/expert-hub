@@ -40,11 +40,11 @@ class Training extends Model
 
     public function instructors()
     {
-        return $this->hasMany(TrainingInstructor::class);
+        return $this->belongsToMany(Profile::class, 'training_instructors', 'training_id', 'expert_id');
     }
 
     public function partners()
     {
-        return $this->hasMany(TrainingPartner::class);
+        return $this->belongsToMany(University::class, 'training_partners', 'training_id', 'partner_id');
     }
 }
