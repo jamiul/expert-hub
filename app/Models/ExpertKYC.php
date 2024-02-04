@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class ExpertKYC extends Model implements HasMedia 
+class ExpertKYC extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
@@ -15,5 +15,10 @@ class ExpertKYC extends Model implements HasMedia
     protected $table = 'expert_kyc';
 
     protected $guarded = [];
+
+    protected $casts = [
+        'future_requirements' => 'array',
+        'requirements' => 'array'
+    ];
 
 }
