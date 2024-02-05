@@ -1,12 +1,12 @@
 <section class="page-section page-section-bg company-mission-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="section-image">
-                    <img src="{{ $about ? $about->missionImage() : '' }}"></img>
+                    <img src="{{ asset('assets/frontend/img/company-mission.jpg') }}"/>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
 
                 <div class="section-content">
                     <div style="margin-bottom: 24px" class="section-title-wrapper">
