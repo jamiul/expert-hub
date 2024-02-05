@@ -149,12 +149,12 @@ class Wizard extends Component
         ExpertKYC::updateOrCreate(
             ['user_id' => $user->id],
             [
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
-                'email' => $user->email,
                 'country' => $user->country->name,
-                'individual_dob' => Carbon::parse($this->dob),
+                'individual_first_name' => $user->first_name,
+                'individual_last_name' => $user->last_name,
+                'individual_email' => $user->email,
                 'individual_gender' => $this->gender,
+                'individual_dob' => Carbon::parse($this->dob),
                 'individual_phone' => $user->phone,
                 'individual_registered_address_country' => $user->country->name,
                 'individual_registered_address_state' => $this->state,
