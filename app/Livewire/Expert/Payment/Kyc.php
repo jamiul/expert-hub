@@ -12,8 +12,10 @@ class Kyc extends Modal
         $user = auth()->user();
 
         if ( $user->profile->stripe_acct_id == '' ) {
-            dd('no account');
+            return toast('error','no account', $this);
         }
+
+        dd($user->expert_kyc);
 
         return view('livewire.expert.payment.kyc');
     }

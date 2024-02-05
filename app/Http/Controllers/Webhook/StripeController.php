@@ -876,7 +876,8 @@ class StripeController extends Controller {
             ], [
                 'future_requirements' => $person->future_requirements,
                 'requirements' => $person->requirements,
-                'verification' => $person->verification
+                'verification' => $person->verification,
+                'status' => $person->verification->status
             ]);
         } catch (\Exception $ex){
             Log::info($ex->getMessage());

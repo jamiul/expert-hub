@@ -134,9 +134,8 @@
 
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-{{--                            @if($user->expert_kyc->requirements && $user->expert_kyc->requirements['disabled_reason'])--}}
+                            @if($user->expert_kyc->requirements && $user->expert_kyc->requirements['disabled_reason'])
                                 <div class="require-action table-responsive">
-
                                     <table class="table transaction-all-require">
                                         <thead class="t-history">
                                         <tr>
