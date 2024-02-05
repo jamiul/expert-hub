@@ -1,0 +1,32 @@
+.inner-page-banner {
+    background: #E8EBF6;
+
+    .page-title-wrapper {
+        padding: 90px 0;
+
+        h1 {
+            line-height: 125%;
+        }
+    }
+}
+
+.company-mission-section {
+    @media screen and (min-width: 1320px) {
+        .section-content {
+            padding-left: 50px;
+        }
+
+    }
+}
+
+.company-story {
+    @media screen and (min-width: 1320px) {
+        .section-content {
+            padding-right: 50px;
+        }
+        .section-image {
+            text-align: right;
+        }
+    }
+}
+

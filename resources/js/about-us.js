@@ -1,4 +1,4 @@
-$('.owl-carousel').owlCarousel({
+jQuery('.expert-carousel-slider').owlCarousel({
     loop: true,
     margin: 20,
     nav: true,

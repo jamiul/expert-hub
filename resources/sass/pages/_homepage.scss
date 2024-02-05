@@ -1,5 +1,5 @@
 $page-section-bg: #F1F3FA;
-@import "homepage-slider";
+
 .page-section {
     padding: 90px 0;
 
@@ -14,6 +14,14 @@ $page-section-bg: #F1F3FA;
     &.training-section {
         background-color: $page-section-bg;
     }
+}
+
+.page-section-bg {
+    background-color: $page-section-bg;
+}
+
+.page-section-sm {
+    padding: 70px 0;
 }
 
 .section-title-wrapper {

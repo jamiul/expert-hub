@@ -61,7 +61,6 @@
                     <div>
                         <h4 class="text-base mb-0">{{ $instructor->user->full_name }}</h4>
                         <ul class="user-meta">
-                            <li>{{ $instructor->expertField->name }}</li>
                             <li>Melbourne University</li>
                             <li>{{ $instructor->user->country->name }}</li>
                         </ul>
@@ -70,21 +69,21 @@
                 @endforeach
             </div>
             <div class="training-card-description">
-                <p class="mb-0 text-summary">{{ $training->summary }}<a href="">More</a></p>
+                <p class="mb-0">{{ $training->summary }}<a href="">More</a></p>
             </div>
             <div class="training-card-summary">
                 <div class="custom-table text-sm">
                     <div class="tr">
                         <div class="td">Seminar Dates</div>
-                        <div class="td fw-medium">{{ $training->start_date->format('d M Y') }} - {{ $training->end_date->format('d M Y') }}</div>
+                        <div class="td">{{ $training->start_date->format('d M Y') }} - {{ $training->end_date->format('d M Y') }}</div>
                     </div>
                     <div class="tr">
                         <div class="td">Time & Location</div>
-                        <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                        <div class="td">10.15am AEST, Sydney, Australia</div>
                     </div>
                     <div class="tr">
                         <div class="td">Training Mode</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             <div class="d-flex align-items-center gap-2">
                                 <div>
                                     <x-icon.video/>
@@ -95,19 +94,19 @@
                     </div>
                     <div class="tr">
                         <div class="td">Language</div>
-                        <div class="td fw-medium">{{ $training->language->name }}</div>
+                        <div class="td">{{ $training->language->name }}</div>
                     </div>
                     <div class="tr">
                         <div class="td">Training Category</div>
-                        <div class="td fw-medium">{{ $training->category->name }}</div>
+                        <div class="td">{{ $training->category->name }}</div>
                     </div>
                     <div class="tr">
                         <div class="td">Training Fee</div>
-                        <div class="td fw-medium">USD {{ $training->fee }}</div>
+                        <div class="td">USD {{ $training->fee }}</div>
                     </div>
                     <div class="tr">
                         <div class="td">Partner Institute</div>
-                        <div class="td fw-medium">
+                        <div class="td">
                             @foreach ($training->partners as $partner)
                                 <a class="text-decoration-underline" href="#">{{ $partner->name }}</a> @if (!$loop->last)|@endif
                             @endforeach
