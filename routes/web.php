@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Expert\PaymentController;
+use App\Http\Controllers\ExpertAnalyticsController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Frontend\Auth\EmailVerificationController;
@@ -11,10 +12,10 @@ use App\Http\Controllers\Frontend\ClientContractController;
 use App\Http\Controllers\Frontend\ClientDashboardController;
 use App\Http\Controllers\Frontend\ClientProfileController;
 use App\Http\Controllers\Frontend\ClientProjectController;
-use App\Http\Controllers\Frontend\ExpertContractController;
 use App\Http\Controllers\Frontend\ConversationController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\EoiController;
+use App\Http\Controllers\Frontend\ExpertContractController;
 use App\Http\Controllers\Frontend\ExpertController;
 use App\Http\Controllers\Frontend\ExpertDashboardController;
 use App\Http\Controllers\Frontend\ExpertEoiController;
@@ -79,6 +80,7 @@ Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show']
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
 Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
 Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');
+Route::get('/expert/analytics', [ExpertAnalyticsController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.analytics');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
