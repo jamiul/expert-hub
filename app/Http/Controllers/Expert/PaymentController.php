@@ -38,20 +38,20 @@ class PaymentController extends Controller
      * */
     public function index()
     {
+        return view( 'frontend.expert.payment.index' );
+    }
+
+    /*
+     * List of transactions /payment/billing-report
+     * */
+    public function billingReport() {
         $user = auth()->user();
 
         $this->__checkStripeConnect();
 
-        $acct_id = $user->profile->stripe_acct_id;
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
 
-        //check if there is any document requires
-        $expert_stripe_account = $this->stripe->accounts->retrieve( $acct_id, [] );
-
-//        dd($expert_stripe_account);
-
-        $balance = $this->stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
-
-        return view( 'frontend.expert.payment.index', compact( 'expert_stripe_account', 'balance' ) );
+        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
     }
 
     /*
@@ -367,19 +367,6 @@ class PaymentController extends Controller
         );
 
         dd( $payout );
-    }
-
-    /*
-     * List of transactions /payment/billing-report
-     * */
-    public function billingReport() {
-        $user = auth()->user();
-
-        $this->__checkStripeConnect();
-
-        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
-
-        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
     }
 
     public function refundMilestone($milestone_id) {

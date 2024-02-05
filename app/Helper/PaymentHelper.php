@@ -12,14 +12,15 @@ use Log;
 class PaymentHelper {
 
     public static function expertRegisterToStripe( User $user ) {
+        $api_key = env( 'STRIPE_SECRET' );
+        $stripe  = new \Stripe\StripeClient( [
+            "api_key" => $api_key,
+        ] );
+
+        $country = $user->country->code;
+
         if ( $user->profile->stripe_acct_id == '' ) {
             try {
-                $api_key = env( 'STRIPE_SECRET' );
-                $stripe  = new \Stripe\StripeClient( [
-                    "api_key" => $api_key,
-                ] );
-
-                $country = $user->country->code;
                 $url     = route( 'expert.profile.show', $user->profile );
                 //todo: only for local use, while moving to live, change it
                 $url = 'http://test.eduexperthub.com';
@@ -40,7 +41,19 @@ class PaymentHelper {
                     'individual'       => [
                         'first_name' => $user->first_name,
                         'last_name'  => $user->last_name,
-                        'email'      => $user->email
+                        'email'      => $user->email,
+                        'address' => [
+                            'city'        => $user->expert_kyc->individual_registered_address_city,
+                            'line1'       => $user->expert_kyc->individual_registered_address_line1,
+                            'line2'       => $user->expert_kyc->individual_registered_address_line2,
+                            'postal_code' => $user->expert_kyc->individual_registered_address_postal_code,
+                            'state'       => $user->expert_kyc->individual_registered_address_state,
+                        ],
+                        'dob'     => [
+                            'day'   => date( 'd', strtotime( $user->expert_kyc->individual_dob ) ),
+                            'month' => date( 'm', strtotime( $user->expert_kyc->individual_dob ) ),
+                            'year'  => date( 'Y', strtotime( $user->expert_kyc->individual_dob ) )
+                        ]
                     ],
                     'tos_acceptance'   => [
                         'ip'   => \Request::ip(),
@@ -62,6 +75,43 @@ class PaymentHelper {
                 $profile->stripe_acct_id = $connected_account->id;
                 $profile->save();
             } catch ( \Exception $ex ) {
+                return [
+                    'status' => false,
+                    'message' => $ex->getMessage()
+                ];
+                error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
+            }
+        } else {
+            $acct_id = $user->profile->stripe_acct_id;
+            try {
+                $acc_update = $stripe->accounts->update(
+                    $acct_id,
+                    [
+                        'individual'       => [
+                            'first_name' => $user->first_name,
+                            'last_name'  => $user->last_name,
+                            'email'      => $user->email,
+                            'address' => [
+                                'city'        => $user->expert_kyc->individual_registered_address_city,
+                                'line1'       => $user->expert_kyc->individual_registered_address_line1,
+                                'line2'       => $user->expert_kyc->individual_registered_address_line2,
+                                'postal_code' => $user->expert_kyc->individual_registered_address_postal_code,
+                                'state'       => $user->expert_kyc->individual_registered_address_state,
+                            ],
+//                            'phone'   => $user->expert_kyc->individual_phone,
+                            'dob'     => [
+                                'day'   => date( 'd', strtotime( $user->expert_kyc->individual_dob ) ),
+                                'month' => date( 'm', strtotime( $user->expert_kyc->individual_dob ) ),
+                                'year'  => date( 'Y', strtotime( $user->expert_kyc->individual_dob ) )
+                            ]
+                        ],
+                    ]
+                );
+            } catch (\Exception $ex){
+                return [
+                    'status' => false,
+                    'message' => $ex->getMessage()
+                ];
                 error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
             }
         }
