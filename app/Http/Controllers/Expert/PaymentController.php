@@ -99,6 +99,7 @@ class PaymentController extends Controller
                 $profile->save();
 
             } catch ( \Exception $ex ) {
+                return toast('error', $ex->getMessage(), $this);
                 error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
             }
         }

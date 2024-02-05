@@ -20,7 +20,6 @@
                     <ul>
                         <li><a href="/expert/profile/edit">My profile</a></li>
                         <li><a href="/figma/expert-status-analytics">Analytic</a></li>
-                        <li><a href="{{ route('expert.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
@@ -29,6 +28,14 @@
                     <ul>
                         <li><a href="">My Consultation</a></li>
                         <li><a href="">My Training</a></li>
+                    </ul>
+                </li>
+
+                <li class="item-has-submenu">
+                    <a href="#">Billings & Payment</a>
+                    <ul>
+                        <li><a href="{{ route('expert.payment.billing') }}">Transaction History</a></li>
+                        <li><a href="{{ route('expert.payment.index') }}">Get Paid</a></li>
                     </ul>
                 </li>
             </ul>
