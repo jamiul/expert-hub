@@ -983,9 +983,8 @@ img.exp-categoryl {
     display: inline-block;
     padding-right: 15px;
     position: relative;
-    color: rgba(48, 55, 68, 0.60);
-    font-size: 13px;
-    font-weight: 500;
+    color: #303744;
+    font-size: 14px;
 }
 
 
@@ -1032,8 +1031,8 @@ img.exp-categoryl {
 
 .live-zoom p {
     margin: 15px 0 0;
-    font-size: 14px;
-    font-weight: 400;
+    /*font-size: 14px;*/
+    /*font-weight: 400;*/
     line-height: 16.8px;
 }
 
@@ -1104,10 +1103,10 @@ img.exp-categoryl {
 
 .zoom-live-text p{
     gap: 18px;
-    color:  #303744;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
+    /*color:  #303744;*/
+    /*font-size: 14px;*/
+    /*font-style: normal;*/
+    /*font-weight: 500;*/
 }
 
 .training-expert-card .expert-card-header {
@@ -1325,9 +1324,6 @@ footer .footer .footer-block h3 {
     margin: 0 0 30px;
 }
 
-footer .footer .footer-block h3:hover {
-    color: #1ba6f8;
-}
 
 footer .footer .footer-block ul {
     padding: 0;
