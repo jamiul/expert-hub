@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile;
 
+use App\Enums\ProfileStatus;
 use App\Helpers\PaymentHelper;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
@@ -122,6 +123,9 @@ class Wizard extends Component
                     ->usingName($this->picture->getClientOriginalName())
                     ->toMediaCollection('picture');
             }
+            $this->profile()->update([
+                'status' => ProfileStatus::InReview,
+            ]);
             return redirect()->route('expert.dashboard');
         }
 
@@ -133,6 +137,13 @@ class Wizard extends Component
 
     public function saveKyc()
     {
+        $this->validate([
+            'dob' => ['required'],
+            'address_line_1' => ['required'],
+            'city' => ['required'],
+            'postcode' => ['required'],
+            'state' => ['required'],
+        ]);
         $user = User::find(auth()->user()->id);
 
         ExpertKYC::updateOrCreate(
@@ -152,8 +163,7 @@ class Wizard extends Component
             ]
         );
 
-        //todo: submit kyc to stripe
-        PaymentHelper::expertRegisterToStripe($user);
+        return PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function saveStepOne()
@@ -190,7 +200,6 @@ class Wizard extends Component
                 $required,
                 'image',
                 File::image()->max(1 * 1024),
-                Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
         ];
     }

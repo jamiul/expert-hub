@@ -69,7 +69,7 @@ class Lists extends Component
         }
         if (isset($this->filtersArray['studyArea']) && $this->filtersArray['studyArea']) {
             $scholarships = $scholarships->whereHas('studyAreas', function ($query) {
-                $query->whereIn('expertise_id', $this->filtersArray['studyArea']);
+                $query->whereIn('study_field_id', $this->filtersArray['studyArea']);
             });
         }
         if (isset($this->filtersArray['studentType']) && $this->filtersArray['studentType']) {

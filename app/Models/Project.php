@@ -72,6 +72,11 @@ class Project extends Model implements HasMedia
             ->withTimestamps();
     }
 
+    public function scopePublished($query)
+    {
+        return $query->where('status', ProjectStatus::Published);
+    }
+
     public function eois()
     {
         return $this->hasMany(Eoi::class);

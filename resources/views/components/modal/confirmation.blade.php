@@ -36,6 +36,6 @@
         </div>
     @endif
     <x-slot name="button">
-        <button type="submit" class="btn {{ $prompt['button'] ?  $prompt['button'] : 'btn-danger' }}">{{ $prompt['confirm'] }}</button>
+        <button type="submit" class="btn {{ isset($prompt['button']) ?  $prompt['button'] : 'btn-danger' }}">{{ $prompt['confirm'] }}</button>
     </x-slot>
 </x-modal.form>

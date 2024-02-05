@@ -53,7 +53,7 @@ class Lists extends Component
 
     public function render()
     {
-        $projects = Project::with('client', 'expertise', 'skills');
+        $projects = Project::published()->with('client', 'expertise', 'skills');
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $projects = $projects->where('title', 'like', '%' . $this->filtersArray['search'] . '%');

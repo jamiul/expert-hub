@@ -21,7 +21,6 @@
                     <ul>
                         <li><a href="{{ route('client.profile.edit') }}">My profile</a></li>
                         <li><a href="">Analytic</a></li>
-                        <li><a href="{{ route('client.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
@@ -34,7 +33,13 @@
                 <li>
                     <a href="/find-training">Trainings</a>
                 </li>
-
+                <li class="item-has-submenu">
+                    <a href="#">Billings & Payment</a>
+                    <ul>
+                        <li><a href="{{ route('client.payment.billing') }}">Transaction History</a></li>
+                        <li><a href="{{ route('client.payment.index') }}">Payment Settings</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
