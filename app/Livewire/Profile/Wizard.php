@@ -200,7 +200,6 @@ class Wizard extends Component
                 $required,
                 'image',
                 File::image()->max(1 * 1024),
-                Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
         ];
     }
