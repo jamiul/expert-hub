@@ -509,6 +509,10 @@ header {
             display: grid;
             align-items: center;
             gap: 42px;
+            @media screen and (min-width: 1320px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
             @media screen and (min-width: 1180px) {
                 grid-template-columns: 158.9px auto;
                 .header-menu-trigger {
@@ -948,7 +952,6 @@ header {
             align-items: center;
             // justify-content: space-between;
             padding: 20px;
-
             @media screen and (min-width: 1300px) {
                 grid-template-columns: 180px auto auto min-content;
                 padding-left: 50px;
