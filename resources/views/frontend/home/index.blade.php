@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <livewire:about.team />
+                    @livewire('about.team')
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                 <h2 class="section-title">CHOOSE EXPERTGATE</h2>
                 <p class="section-title-lead">Why Choose ExpertGate?</p>
             </div>
-            <livewire:about.apart-set/>
+            @livewire('about.apart-set')
         </div>
     </section>
     @include('frontend.home.partials._academic_block')

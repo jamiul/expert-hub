@@ -89,7 +89,7 @@
                 <h2 class="section-title">CHOOSE EXPERTGATE</h2>
                 <p class="section-title-lead">Explore the expertise of our <br/> academic and industry leaders</p>
             </div>
-            <livewire:about.apart-set/>
+            @livewire('about.apart-set')
         </div>
     </section>
     <section class="page-section team-section">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <livewire:about.team/>
+                    @livewire('about.team')
                 </div>
             </div>
         </div>
