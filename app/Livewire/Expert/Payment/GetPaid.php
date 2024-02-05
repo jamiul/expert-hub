@@ -10,8 +10,6 @@ class GetPaid extends Component
     {
         $user = auth()->user();
 
-//        dd($user->expert_kyc->requirements);
-
         return view('livewire.expert.payment.get-paid', [
             'user' => $user
         ] );
