@@ -126,7 +126,8 @@ class Wizard extends Component
             $this->profile()->update([
                 'status' => ProfileStatus::InReview,
             ]);
-            return redirect()->route('expert.dashboard');
+            toast('success', "Profile Details Saved Successfully");
+            return redirect()->route('expert.profile.edit');
         }
 
         if ($this->currentStep < 6) {
