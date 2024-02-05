@@ -49,6 +49,7 @@ return new class extends Migration
             $table->string('status');
             $table->json('future_requirements')->nullable();
             $table->json('requirements')->nullable();
+            $table->json('verification')->nullable();
             $table->boolean('charges_enabled')->nullable();
             $table->boolean('details_submitted')->nullable();
             $table->boolean('payouts_enabled')->nullable();

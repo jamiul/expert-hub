@@ -18,7 +18,8 @@ class ExpertKYC extends Model implements HasMedia
 
     protected $casts = [
         'future_requirements' => 'array',
-        'requirements' => 'array'
+        'requirements' => 'array',
+        'verification' => 'array'
     ];
 
 }

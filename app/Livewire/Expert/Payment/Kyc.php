@@ -9,6 +9,12 @@ class Kyc extends Modal
 {
     public function render()
     {
+        $user = auth()->user();
+
+        if ( $user->profile->stripe_acct_id == '' ) {
+            dd('no account');
+        }
+
         return view('livewire.expert.payment.kyc');
     }
 }

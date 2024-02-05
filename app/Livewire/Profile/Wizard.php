@@ -108,7 +108,10 @@ class Wizard extends Component
             }
         }
         if($this->currentStep == 5){
-            $this->saveKyc();
+            $result = $this->saveKyc();
+            if(isset($result['status']) && !$result['status']){
+                return toast('warning', $result['message'], $this);
+            }
         }
         if ($this->currentStep == 6) {
             $this->validate([
@@ -152,8 +155,7 @@ class Wizard extends Component
             ]
         );
 
-        //todo: submit kyc to stripe
-        PaymentHelper::expertRegisterToStripe($user);
+        return PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function saveStepOne()

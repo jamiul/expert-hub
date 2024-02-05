@@ -7,6 +7,7 @@ use App\Enums\OfferStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
+use App\Models\ExpertKYC;
 use App\Models\ExpertPayout;
 use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
@@ -59,30 +60,52 @@ class StripeController extends Controller {
                 $this->__paymentMethodDetached( $paymentMethod );
                 break;
 
-            case 'account.external_account.created':
-                $paymentMethod = $event->data->object;
-                $this->__externalAccountCreate( $paymentMethod );
-                break;
-
-            case 'account.external_account.deleted':
-                $paymentMethod = $event->data->object;
-                $this->__deleteExternalAccount( $paymentMethod );
-                break;
-
             case 'charge.refunded': //refund to client if theres any refund request
                 $charge = $event->data->object;
                 $this->__chargeRefund( $charge );
                 break;
 
-            case 'balance.available': //after any debit / credit occurs balance updated
+            //============= CONNECT WEBHOOKS ==============//
+            case 'account.application.authorized':
+                $this->__handleApplicationAuthorized( $event );
+                break;
+            case 'account.application.deauthorized': //Occurs when a user disconnects from your account and can be used to trigger required cleanup on your server.
+                $this->__handleApplicationDeauthorized( $event );
+                break;
+
+            case 'account.external_account.created':
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountCreated( $paymentMethod );
+                break;
+
+            case 'account.external_account.updated': //Occurs when a bank account or debit card attached to a connected account is updated, which can impact payouts.
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountUpdated( $paymentMethod );
+                break;
+
+            case 'account.external_account.deleted':
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountDeleted( $paymentMethod );
+                break;
+
+            case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                $account = $event->data->object;
+                $this->__accountUpdated($account);
+                break;
+
+            case 'balance.available': //Occurs when your Stripe balance has been updated (for example, when funds you’ve added from your bank account are available for transfer to your connected account).
                 $paymentMethod = $event->data->object;
                 $this->__paymentGeneric( $paymentMethod );
                 break;
 
-                //============= connect ==============//
-            case 'account.updated': //connect account status update
+            case 'person.created': //connect account status update
                 $account = $event->data->object;
-                $this->__accountUpdated($account);
+                $this->__personCreated($account);
+                break;
+
+            case 'person.updated': //connect account status update
+                $account = $event->data->object;
+                $this->__personCreated($account);
                 break;
 
             case 'payout.created': //payout to expert's external bank account created
@@ -118,10 +141,6 @@ class StripeController extends Controller {
             case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
                 $transfer = $event->data->object;
                 $this->__transferReversed( $transfer );
-                break;
-
-            case 'account.application.authorized':
-                $this->__handleApplicationAuthorized( $event );
                 break;
 
             default:
@@ -169,7 +188,14 @@ class StripeController extends Controller {
      * after any debit / credit occurs balance updated
      * */
     private function __paymentGeneric( $paymentMethod ) {
-        Log::info( $paymentMethod );
+        Log::info($paymentMethod);
+        try {
+
+        } catch (\Exception $ex){
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
     }
 
     private function __paymentReceived( $paymentData ) {
@@ -347,7 +373,7 @@ class StripeController extends Controller {
             ] ) );
 
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -415,7 +441,7 @@ class StripeController extends Controller {
 
 
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -426,37 +452,44 @@ class StripeController extends Controller {
             //delete users payment method if exists.
             PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
     }
 
     private function __chargeRefund( $paymentData ) {
-        $stripe_transaction = Transaction::updateOrCreate( [
-            'charge_id' => $paymentData->id
-        ], [
-            'payment_intent_id'      => $paymentData->payment_intent,
-            'object'                 => $paymentData->object,
-            'amount'                 => $paymentData->amount,
-            'amount_captured'        => $paymentData->amount_captured,
-            'amount_refunded'        => $paymentData->amount_refunded,
-            'application_fee_amount' => $paymentData->application_fee_amount,
-            'currency'               => $paymentData->currency,
-            'customer_id'            => $paymentData->customer,
-            'description'            => $paymentData->description,
-            'latest_charge_id'       => $paymentData->latest_charge_id,
-            'on_behalf_of'           => $paymentData->on_behalf_of,
-            'payment_method'         => $paymentData->payment_method,
-            'payment_method_types'   => @$paymentData->payment_method_types[0],
-            'transfer_group'         => $paymentData->transfer_group,
-            'metadata'               => json_encode( $paymentData->metadata ),
-            'created_time'           => $paymentData->created ? Carbon::createFromTimestamp( $paymentData->created )->format( 'Y-m-d H:i:s' ) : null,
-            'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp( $paymentData->canceled_at )->format( 'Y-m-d H:i:s' ) : null,
-            'cancellation_reason'    => $paymentData->cancellation_reason,
-            'refunded'               => $paymentData->refunded,
-            'status'                 => $paymentData->status,
-            'livemode'               => $paymentData->livemode
-        ] );
+        try {
+            $stripe_transaction = Transaction::updateOrCreate( [
+                'charge_id' => $paymentData->id
+            ], [
+                'payment_intent_id'      => $paymentData->payment_intent,
+                'object'                 => $paymentData->object,
+                'amount'                 => $paymentData->amount,
+                'amount_captured'        => $paymentData->amount_captured,
+                'amount_refunded'        => $paymentData->amount_refunded,
+                'application_fee_amount' => $paymentData->application_fee_amount,
+                'currency'               => $paymentData->currency,
+                'customer_id'            => $paymentData->customer,
+                'description'            => $paymentData->description,
+                'latest_charge_id'       => $paymentData->latest_charge_id,
+                'on_behalf_of'           => $paymentData->on_behalf_of,
+                'payment_method'         => $paymentData->payment_method,
+                'payment_method_types'   => @$paymentData->payment_method_types[0],
+                'transfer_group'         => $paymentData->transfer_group,
+                'metadata'               => json_encode( $paymentData->metadata ),
+                'created_time'           => $paymentData->created ? Carbon::createFromTimestamp( $paymentData->created )->format( 'Y-m-d H:i:s' ) : null,
+                'canceled_at'            => $paymentData->canceled_at ? Carbon::createFromTimestamp( $paymentData->canceled_at )->format( 'Y-m-d H:i:s' ) : null,
+                'cancellation_reason'    => $paymentData->cancellation_reason,
+                'refunded'               => $paymentData->refunded,
+                'status'                 => $paymentData->status,
+                'livemode'               => $paymentData->livemode
+            ] );
+        } catch (\Exception $ex){
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
     }
 
     /*
@@ -465,9 +498,16 @@ class StripeController extends Controller {
 
     private function __accountUpdated($account) {
         Log::info($account);
+        try {
+
+        } catch (\Exception $ex){
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
     }
 
-    private function __externalAccountCreate( $paymentMethod ) {
+    private function __externalAccountCreated( $paymentMethod ) {
         try {
             $stripe_customer_id = $paymentMethod->account;
             $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
@@ -499,17 +539,55 @@ class StripeController extends Controller {
                 'status'              => $paymentMethod->status
             ] );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
     }
 
-    private function __deleteExternalAccount( $paymentMethod ) {
+    private function __externalAccountUpdated( $paymentMethod ) {
+        try {
+            $stripe_customer_id = $paymentMethod->account;
+            $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
+
+            //delete users payment method if exists.
+            ExpertWithdrawal::where( 'user_id', $user_id )->where( 'fingerprint', $paymentMethod->fingerprint )->delete();
+
+            $is_default = 0;
+            if ( ! ExpertWithdrawal::where( 'user_id', $user_id )->where( 'is_default', 1 )->count() ) {
+                $is_default = 1;
+            }
+
+            ExpertWithdrawal::updateOrCreate( [
+                'user_id'     => $user_id,
+                'fingerprint' => $paymentMethod->fingerprint
+            ], [
+                'source_type'         => $paymentMethod->object,
+                'bank_id'             => $paymentMethod->id,
+                'account_holder_name' => $paymentMethod->account_holder_name,
+                'account_holder_type' => $paymentMethod->account_holder_type,
+                'account_type'        => $paymentMethod->account_type,
+                'bank_name'           => $paymentMethod->bank_name,
+                'country'             => $paymentMethod->country,
+                'currency'            => $paymentMethod->currency,
+                'last4'               => $paymentMethod->last4,
+                'routing_number'      => $paymentMethod->routing_number,
+                'is_default'          => $is_default,
+                'status'              => $paymentMethod->status
+            ] );
+        } catch ( \Exception $ex ) {
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
+    }
+
+    private function __externalAccountDeleted( $paymentMethod ) {
         try {
             ExpertWithdrawal::where( 'bank_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -564,7 +642,7 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -609,7 +687,7 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -654,7 +732,7 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -696,7 +774,7 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
+            echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -706,77 +784,105 @@ class StripeController extends Controller {
      * when money transferred to expert's stripe account
      * */
     private function __transferCreated( $transfer ) {
-        $reference_id   = @$transfer->metadata->reference_id; //milestone id
-        $reference_type = @$transfer->metadata->reference_type; //milestone
+        try {
+            $reference_id   = @$transfer->metadata->reference_id; //milestone id
+            $reference_type = @$transfer->metadata->reference_type; //milestone
 
-        $stripe_transaction = Transaction::updateOrCreate( [
-            'charge_id' => $transfer->destination_payment
-        ], [
-            'transfer_id' => $transfer->id,
-            'object'                 => $transfer->object,
-            'reference_id'           => json_encode( $reference_id ),
-            'reference_type'         => $reference_type,
-            'amount'                 => $transfer->amount,
-            'amount_reversed' => $transfer->amount_reversed,
-            'currency'               => $transfer->currency,
-            'customer_id'            => $transfer->destination,
-            'description'            => $transfer->description,
-            'balance_transaction'       => $transfer->balance_transaction,
-            'transfer_group'         => $transfer->transfer_group,
-            'metadata'               => json_encode( $transfer->metadata ),
-            'created_time'           => $transfer->created ? Carbon::createFromTimestamp( $transfer->created )->format( 'Y-m-d H:i:s' ) : null,
-            'reversed'                 => $transfer->reversed,
-            'livemode'               => $transfer->livemode
-        ] );
+            $stripe_transaction = Transaction::updateOrCreate( [
+                'charge_id' => $transfer->destination_payment
+            ], [
+                'transfer_id' => $transfer->id,
+                'object'                 => $transfer->object,
+                'reference_id'           => json_encode( $reference_id ),
+                'reference_type'         => $reference_type,
+                'amount'                 => $transfer->amount,
+                'amount_reversed' => $transfer->amount_reversed,
+                'currency'               => $transfer->currency,
+                'customer_id'            => $transfer->destination,
+                'description'            => $transfer->description,
+                'balance_transaction'       => $transfer->balance_transaction,
+                'transfer_group'         => $transfer->transfer_group,
+                'metadata'               => json_encode( $transfer->metadata ),
+                'created_time'           => $transfer->created ? Carbon::createFromTimestamp( $transfer->created )->format( 'Y-m-d H:i:s' ) : null,
+                'reversed'                 => $transfer->reversed,
+                'livemode'               => $transfer->livemode
+            ] );
 
-        //todo: update expert funded milestone status
-        if ( $reference_type == 'milestone' ) {
-            $milestone = Milestone::find( $reference_id );
-            $client_id = $milestone->contract->client_id;
-            $expert_id = $milestone->contract->expert_id;
+            //todo: update expert funded milestone status
+            if ( $reference_type == 'milestone' ) {
+                $milestone = Milestone::find( $reference_id );
+                $client_id = $milestone->contract->client_id;
+                $expert_id = $milestone->contract->expert_id;
 
-            //clean pending transactions
-            ExpertTransaction::where('milestone_id', $milestone->id)->forceDelete();
+                //clean pending transactions
+                ExpertTransaction::where('milestone_id', $milestone->id)->forceDelete();
 
-            //calculate expert charge
-            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+                //calculate expert charge
+                $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
 
-            //parent transaction
-            $expert_payment = $charge['total_amount'];
-            $transaction_data = [
-                'transaction_id' => $stripe_transaction->id,
-                'milestone_id'   => $milestone->id,
-                'type'           => 'Fixed Price',
-                'description'    => "Invoice for " . $milestone->title,
-                'client_id'      => $client_id,
-                'expert_id'      => $expert_id,
-                'amount'         => $expert_payment,
-                'charge_type'    => 'credit',
-                'parent'         => null,
-                'status'         => 1,
-            ];
-            $transaction = PaymentHelper::createExpertTransaction($transaction_data);
-            $parent_id = $transaction->id;
+                //parent transaction
+                $expert_payment = $charge['total_amount'];
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $milestone->id,
+                    'type'           => 'Fixed Price',
+                    'description'    => "Invoice for " . $milestone->title,
+                    'client_id'      => $client_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $expert_payment,
+                    'charge_type'    => 'credit',
+                    'parent'         => null,
+                    'status'         => 1,
+                ];
+                $transaction = PaymentHelper::createExpertTransaction($transaction_data);
+                $parent_id = $transaction->id;
 
-            //charge platform fee
-            $service_charge = $charge['service_charge'];
-            $transaction_data = [
-                'transaction_id' => $stripe_transaction->id,
-                'milestone_id'   => $milestone->id,
-                'type'           => 'Service Fee',
-                'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
-                'client_id'      => $client_id,
-                'expert_id'      => $expert_id,
-                'amount'         => $service_charge,
-                'charge_type'    => 'debit',
-                'parent'         => $parent_id,
-                'status'         => 1,
-            ];
-            PaymentHelper::createExpertTransaction($transaction_data);
+                //charge platform fee
+                $service_charge = $charge['service_charge'];
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $milestone->id,
+                    'type'           => 'Service Fee',
+                    'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
+                    'client_id'      => $client_id,
+                    'expert_id'      => $expert_id,
+                    'amount'         => $service_charge,
+                    'charge_type'    => 'debit',
+                    'parent'         => $parent_id,
+                    'status'         => 1,
+                ];
+                PaymentHelper::createExpertTransaction($transaction_data);
 
-            //update milestone status
-            $milestone->status = MilestoneStatus::Released;
-            $milestone->save();
+                //update milestone status
+                $milestone->status = MilestoneStatus::Released;
+                $milestone->save();
+            }
+        } catch (\Exception $ex){
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
+    }
+
+    private function __personCreated($person) {
+        Log::info($person);
+        try {
+            $stripe_customer_id = $person->account;
+            $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
+
+            $kyc = ExpertKYC::updateOrCreate([
+                'user_id' => $user_id
+            ], [
+                'future_requirements' => $person->future_requirements,
+                'requirements' => $person->requirements,
+                'verification' => $person->verification
+            ]);
+        } catch (\Exception $ex){
+            Log::info($ex->getMessage());
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
         }
     }
 
@@ -789,6 +895,25 @@ class StripeController extends Controller {
     }
 
     private function __handleApplicationAuthorized( $account ) {
+        Log::info($account);
+        try {
+            if ( ! empty( $account->account ) ) {
+                $stripe          = new \Stripe\StripeClient( env( 'STRIPE_SECRET' ) );
+                $connect_account = $stripe->accounts->retrieve( $account->account,
+                    []
+                );
+//                Log::info( $connect_account );
+//                date('Y-m-d H:i:s', $connect_account->created)
+            }
+        } catch ( \Exception $ex ) {
+            echo $ex->getMessage();
+            http_response_code( $ex->getCode() );
+            exit();
+        }
+    }
+
+    private function __handleApplicationDeauthorized( $account ) {
+        Log::info($account);
         try {
             if ( ! empty( $account->account ) ) {
                 $stripe          = new \Stripe\StripeClient( env( 'STRIPE_SECRET' ) );
