@@ -151,8 +151,11 @@ class Wizard extends Component
             ['user_id' => $user->id],
             [
                 'country' => $user->country->name,
-                'individual_dob' => Carbon::parse($this->dob),
+                'individual_first_name' => $user->first_name,
+                'individual_last_name' => $user->last_name,
+                'individual_email' => $user->email,
                 'individual_gender' => $this->gender,
+                'individual_dob' => Carbon::parse($this->dob),
                 'individual_phone' => $user->phone,
                 'individual_registered_address_country' => $user->country->name,
                 'individual_registered_address_state' => $this->state,
@@ -160,7 +163,7 @@ class Wizard extends Component
                 'individual_registered_address_postal_code' => $this->postcode,
                 'individual_registered_address_line1' => $this->address_line_1,
                 'individual_registered_address_line2' => $this->address_line_2,
-                'status' => 1,
+                'status' => 'unverified',
             ]
         );
 
