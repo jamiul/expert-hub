@@ -15,7 +15,7 @@ class Kyc extends Modal
             return toast('error','no account', $this);
         }
 
-        dd($user->expert_kyc);
+//        dd($user->expert_kyc);
 
         return view('livewire.expert.payment.kyc');
     }
