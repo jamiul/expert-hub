@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Expert Gate</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('logo/expert-gate-favicon.ico') }}">
-        @vite('resources/sass/bootstrap.scss')
+        @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/client-dashboard.css')

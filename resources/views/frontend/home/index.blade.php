@@ -75,8 +75,15 @@
             </div>
         </div>
     </section>
-
-    <livewire:about.apart-set :title="$aboutUsDTO->apart_title" :subtitle="$aboutUsDTO->apart_subtitle"/>
+    <section class="page-section speciality-section bg-white">
+        <div class="container">
+            <div style="" class="section-title-wrapper text-center mb-40">
+                <h2 class="section-title">CHOOSE EXPERTGATE</h2>
+                <p class="section-title-lead">Why Choose ExpertGate?</p>
+            </div>
+            <livewire:about.apart-set/>
+        </div>
+    </section>
     @include('frontend.home.partials._academic_block')
     <div class="scholarship bg-white">
         @livewire('home.scholarship-list')

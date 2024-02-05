@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile;
 
+use App\Enums\ProfileStatus;
 use App\Helpers\PaymentHelper;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
@@ -108,10 +109,7 @@ class Wizard extends Component
             }
         }
         if($this->currentStep == 5){
-            $result = $this->saveKyc();
-            if(isset($result['status']) && !$result['status']){
-                return toast('warning', $result['message'], $this);
-            }
+            $this->saveKyc();
         }
         if ($this->currentStep == 6) {
             $this->validate([
@@ -125,6 +123,9 @@ class Wizard extends Component
                     ->usingName($this->picture->getClientOriginalName())
                     ->toMediaCollection('picture');
             }
+            $this->profile()->update([
+                'status' => ProfileStatus::InReview,
+            ]);
             return redirect()->route('expert.dashboard');
         }
 
@@ -136,6 +137,13 @@ class Wizard extends Component
 
     public function saveKyc()
     {
+        $this->validate([
+            'dob' => ['required'],
+            'address_line_1' => ['required'],
+            'city' => ['required'],
+            'postcode' => ['required'],
+            'state' => ['required'],
+        ]);
         $user = User::find(auth()->user()->id);
 
         ExpertKYC::updateOrCreate(
