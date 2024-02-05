@@ -31,7 +31,7 @@
                     <a href="{{ route('scholarship-database') }}">Scholarships</a>
                 </li>
                 <li>
-                    <a href="/find-training">Trainings</a>
+                    <a href="{{ route('find.trainings') }}">Trainings</a>
                 </li>
                 <li class="item-has-submenu">
                     <a href="#">Billings & Payment</a>
@@ -80,103 +80,6 @@
 
                 <livewire:new-message-count />
 
-                <!-- <<li>
-                    <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'message') ? null : 'message'" href="#">
-
-                        <span>99</span>
-                        <x-icon.message-line/>
-                    </a>
-                    <div x-cloak x-show="openDropdown === 'message'" class="header-dropdown">
-                        <div class="message-dropdown-inner">
-                            <div class="message-dropdown-item-wrapper">
-                                <div class="message-dropdown-item message-dropdown-item-unread">
-                                    <div class="message-dropdown-thumb">
-                                        <img
-                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                            class="" alt="avatar">
-                                    </div>
-                                    <div class="message-dropdown-info">
-                                        <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
-                                            invitation</p>
-                                        <p class="text-sm message-dropdown-body">
-                                            <span
-                                                class="message-dropdown-message">A wonderful serenity has taken</span>
-                                            <span class="message-dropdown-time">1m</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="message-dropdown-item">
-                                    <div class="message-dropdown-thumb">
-                                        <img
-                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                            class="" alt="avatar">
-                                    </div>
-                                    <div class="message-dropdown-info">
-                                        <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
-                                            invitation</p>
-                                        <p class="text-sm message-dropdown-body">
-                                            <span
-                                                class="message-dropdown-message">A wonderful serenity has taken</span>
-                                            <span class="message-dropdown-time">1m</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="message-dropdown-item">
-                                    <div class="message-dropdown-thumb">
-                                        <img
-                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                            class="" alt="avatar">
-                                    </div>
-                                    <div class="message-dropdown-info">
-                                        <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
-                                            invitation</p>
-                                        <p class="text-sm message-dropdown-body">
-                                            <span
-                                                class="message-dropdown-message">A wonderful serenity has taken</span>
-                                            <span class="message-dropdown-time">1m</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="message-dropdown-item">
-                                    <div class="message-dropdown-thumb">
-                                        <img
-                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                            class="" alt="avatar">
-                                    </div>
-                                    <div class="message-dropdown-info">
-                                        <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
-                                            invitation</p>
-                                        <p class="text-sm message-dropdown-body">
-                                            <span
-                                                class="message-dropdown-message">A wonderful serenity has taken</span>
-                                            <span class="message-dropdown-time">1m</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="message-dropdown-item">
-                                    <div class="message-dropdown-thumb">
-                                        <img
-                                            src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
-                                            class="" alt="avatar">
-                                    </div>
-                                    <div class="message-dropdown-info">
-                                        <p class="text-sm fw-medium message-dropdown-title">Jhon accept your
-                                            invitation</p>
-                                        <p class="text-sm message-dropdown-body">
-                                            <span
-                                                class="message-dropdown-message">A wonderful serenity has taken</span>
-                                            <span class="message-dropdown-time">1m</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="/figma/client-chatbox-new" class="message-dropdown-view-all">
-                                <x-icon.message-line fill="#C8C5D4"/>
-                                View All Message
-                            </a>
-                        </div>
-                    </div>
-                </li> -->
                 <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img
@@ -190,7 +93,7 @@
                             </div>
                             <div class="dropdown-user-info mb-3">
                                 <h3 class="h6 mb-1">{{ auth()->user()->full_name }}</h3>
-                                <p class="text-sm">Sydney Islamic business school</p>
+                                <p class="text-sm">{{ auth()->user()->profile->current_organization }}</p>
                             </div>
                             <div class="dropdown-user-profile-status  mb-3">
                                 <input type="radio" name="user-profile-status" id="user-profile-offline">
