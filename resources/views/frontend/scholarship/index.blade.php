@@ -1,10 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <section class="mt-60">
+    <section class="page-section-sm pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="sidebar-layout left-sidebar-layout scholarship-database-page-layout">
+                    <div class="sidebar-layout left-sidebar-layout scholarship-database-layout">
                         @livewire('scholarship.filter')
                         @livewire('scholarship.lists')
                     </div>

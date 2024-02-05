@@ -1,8 +1,6 @@
 <div class="scholarship-database-filter-col page-sidebar">
-    <div class="scholarship-database-content-search-wrapper pb-3">
-        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Search Scholarships"/>
-    </div>
-    <div class="filter-widget mb-40 border-bottom">
+
+    <div class="filter-widget border-bottom">
         <div class="d-flex justify-content-between">
             <h4 class="h6 mb-0">Filter</h4>
             <button wire:click="resetFilter" class="btn btn-sm btn-link text-decoration-underline px-0 ">
@@ -10,7 +8,10 @@
             </button>
         </div>
     </div>
-    <div class="filter-widget mb-40">
+    <div class="filter-widget">
+        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Search Scholarships"/>
+    </div>
+    <div class="filter-widget">
         <h6 class="filter-widget-title">Study Level</h6>
         <div class="filter-widget-content">
             @foreach($levels as $level)
