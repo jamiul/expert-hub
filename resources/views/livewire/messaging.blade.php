@@ -51,21 +51,23 @@
                 </div>
 
                 <div class="chatbox-contact-list">
+                    @if ($currentUsersConversations)
 
                     @forelse($currentUsersConversations as $conversation)
                     
-                    @php $unreadMessageCount = $conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count() @endphp
-                    <div class="chatbox-contact-person  {{ $conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')" wire:ignore>
+                    @php $unreadMessageCount = $conversation->conversation->messageRecipients->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at')->count() @endphp
+                    
+                    <div class="chatbox-contact-person  {{ $conversation->conversation->id == $currentConversation->id ? 'user-selected' : '' }}  profile-{{ $conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->id}}-status"  wire:key="{{ $conversation->id }}" wire:click="getConversationMessages('{{ $conversation->conversation->id }}')" onclick="toggleClasses('.chatbox-wrapper', 'chatbox-mobile-view-activated')" wire:ignore>
                         <div class="chatbox-contact-thumb">
-                            <img class="rounded-circle" src="{{$conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
+                            <img class="rounded-circle" src="{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->picture}}" alt="avatar">
                         </div>
                         <div class="chatbox-contact-info">
                             <div class="chatbox-contact-info-header">
-                                <h6>{{$conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h6>
-                                <time>{{ Carbon\Carbon::parse($conversation->messages->last()->created_at)->diffForHumans() }}</time>
+                                <h6>{{$conversation->conversation->participants->where('profile_id', '!=', Auth::user()->profile->id)->first()->profile->user->full_name}}</h6>
+                                <time>{{ Carbon\Carbon::parse($conversation->conversation->messages->last()->created_at)->diffForHumans() }}</time>
                             </div>
                             <div class="last-message-hints">
-                                <p>{{$conversation->messages->last()->content}}</p>
+                                <p>{{$conversation->conversation->messages->last()->content}}</p>
                             </div>
                             <span class="{{$unreadMessageCount > 0 ? 'unread-message-count' : '' }}  ">{{ $unreadMessageCount > 0 ? $unreadMessageCount : ''  }}</span>
                         </div>
@@ -74,6 +76,8 @@
                     @empty
 
                     @endforelse
+
+                    @endif
 
                     <!-- <div class="chatbox-contact-person user-away">
                             <div class="chatbox-contact-thumb">

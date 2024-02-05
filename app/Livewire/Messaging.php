@@ -26,14 +26,14 @@ class Messaging extends Component
 
     public $messageBody;
     public $currentConversation;
-    // public $currentConversationCreator;
+    public $currentUsersConversations;
     // public $files = [];
     public $messageAttachment = [];
     public $messageAttachmentTemporaryUrls = [];
     public $filtersArray;
     #[Url()]
     public $search = null;
-    
+
     public $filterType = null;
 
 
@@ -299,21 +299,21 @@ class Messaging extends Component
         // dump($this->messageAttachmentUrls);
     }
 
-    public function filter($filterType=null)
-    {        
+    public function filter($filterType = null)
+    {
         $this->filterType = $filterType;
-        
-        if ($filterType == 'all'){
+
+        if ($filterType == 'all') {
             $this->resetFilter();
             return;
-        }         
-        
+        }
+
         $filters = [
             'search' => $this->search,
             'filterType' => $this->filterType,
-            
+
         ];
-                
+
         $this->doFilter($filters);
     }
 
@@ -325,50 +325,51 @@ class Messaging extends Component
         $this->filter();
     }
 
-    public function doFilter($filters) 
-    {        
+    public function doFilter($filters)
+    {
         $this->filtersArray = $filters;
         $this->resetPage();
     }
 
     public function updatedSearch()
-    {        
+    {
         $this->filter();
     }
 
 
     public function render()
-    {        
-        $participants = Participant::where('profile_id', Auth::user()->profile->id)->get();   
-           
-        foreach ($participants as $participant) {             
-            $currentUsersConversations = $participant->conversation->with(['participants.profile.user', 'messages']); 
-        }
-        
+    {
+        $this->currentUsersConversations = Participant::with(['conversation', 'conversation.messageRecipients', 'profile.user'])
+            ->where('profile_id', Auth::user()->profile->id);
+
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
-            
-            $currentUsersConversations = $currentUsersConversations->whereHas('participants', function($query){
-                $query->whereHas('profile', function($query){
-                    $query->whereHas('user', function($query){
-                        $query->where('title', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('first_name', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('last_name', 'like', '%' . $this->filtersArray['search'] . '%');
+
+            $this->currentUsersConversations = $this->currentUsersConversations->whereHas('conversation', function ($query) {
+                $query->whereHas('participants', function ($query) {
+                    $query->whereHas('profile', function ($query) {
+                        $query->whereHas('user', function ($query) {
+                            $query->where('title', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('first_name', 'like', '%' . $this->filtersArray['search'] . '%')->orWhere('last_name', 'like', '%' . $this->filtersArray['search'] . '%');
+                        });
                     });
                 });
             });
         }
 
-        if (isset($this->filtersArray['filterType']) && $this->filtersArray['filterType']=='unread') {
-            
-            $currentUsersConversations = $currentUsersConversations->whereHas('messages', function($query){
-                $query->whereHas('messageRecipients', function($query){
-                    
-                        $query->whereNull('seen_at');
-                   
+
+        if (isset($this->filtersArray['filterType']) && $this->filtersArray['filterType'] == 'unread') {
+
+            $this->currentUsersConversations = $this->currentUsersConversations->whereHas('conversation', function ($query) {
+                $query->whereHas('messages', function ($query) {
+                    $query->whereHas('messageRecipients', function ($query) {
+
+                        $query->where('recipient_profile_id', Auth::user()->profile->id)->whereNull('seen_at');
+                    });
                 });
             });
         }
-        
-        $currentUsersConversations = $currentUsersConversations->get();
-        
-        return view('livewire.messaging', compact('currentUsersConversations'));
+
+        $this->currentUsersConversations = $this->currentUsersConversations->get();
+
+        return view('livewire.messaging');
     }
 }
