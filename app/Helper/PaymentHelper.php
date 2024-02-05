@@ -42,18 +42,6 @@ class PaymentHelper {
                         'first_name' => $user->first_name,
                         'last_name'  => $user->last_name,
                         'email'      => $user->email,
-                        'address' => [
-                            'city'        => $user->expert_kyc->individual_registered_address_city,
-                            'line1'       => $user->expert_kyc->individual_registered_address_line1,
-                            'line2'       => $user->expert_kyc->individual_registered_address_line2,
-                            'postal_code' => $user->expert_kyc->individual_registered_address_postal_code,
-                            'state'       => $user->expert_kyc->individual_registered_address_state,
-                        ],
-                        'dob'     => [
-                            'day'   => date( 'd', strtotime( $user->expert_kyc->individual_dob ) ),
-                            'month' => date( 'm', strtotime( $user->expert_kyc->individual_dob ) ),
-                            'year'  => date( 'Y', strtotime( $user->expert_kyc->individual_dob ) )
-                        ]
                     ],
                     'tos_acceptance'   => [
                         'ip'   => \Request::ip(),
