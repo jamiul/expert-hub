@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\InvitationStatus;
 use App\Enums\OfferStatus;
 use App\Enums\ProjectStatus;
 use App\Enums\ProjectType;
@@ -89,6 +90,11 @@ class Project extends Model implements HasMedia
     public function invitations()
     {
         return $this->hasMany(Invitation::class);
+    }
+
+    public function activeInvitations()
+    {
+        return $this->hasMany(Invitation::class)->where('status', InvitationStatus::Pending);
     }
 
     public function offers()

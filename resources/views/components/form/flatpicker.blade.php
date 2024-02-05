@@ -5,6 +5,8 @@
 'id' => $attributes->whereStartsWith('wire:model')->first(),
 'required' => false,
 'tooltip' => null,
+'minDate' => null,
+'maxDate' => null,
 ])
 <div
     x-data="{
@@ -12,14 +14,19 @@
         init() {
             let picker = flatpickr(this.$refs.picker, {
                 {{-- mode: 'range', --}}
-        dateFormat: 'd M Y',
-        defaultDate: this.value,
-        inline: {{ $inline }},
-        onChange: (date, dateString) => {
-            this.value = dateString.split(' to ')
-        }
-    })
-
+            @if($minDate)
+            minDate: '{{ $minDate }}',
+            @endif
+            @if($maxDate)
+            maxDate: '{{ $maxDate }}',
+            @endif
+            dateFormat: 'd M Y',
+            defaultDate: this.value,
+            inline: {{ $inline }},
+            onChange: (date, dateString) => {
+                this.value = dateString.split(' to ')
+            }
+        })
     this.$watch('value', () => picker.setDate(this.value))
 },
 }"

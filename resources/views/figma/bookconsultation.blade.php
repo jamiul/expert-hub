@@ -19,6 +19,7 @@
     </div>
   </div>
 </section>
+
 <!-- Modal : Add Work Experience-->
 <div class="modal fade" id="addConsultation" tabindex="-1" aria-labelledby="addConsultationLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg flat-modal">

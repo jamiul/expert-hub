@@ -54,7 +54,7 @@ class Wizard extends Component
             $this->expertises = Expertise::where('parent_id', $this->expert_category_id)->get();
         }
         $this->skills = $this->profile()->expertises->pluck('id')->toArray();
-        $this->availableSkills = Expertise::isChild()->pluck('name', 'id')->toArray();
+        $this->availableSkills = Expertise::skill()->isChild()->pluck('name', 'id')->toArray();
         $this->hourly_rate = $this->profile()->hourly_rate;
         $this->biography = $this->profile()->biography;
         $this->pictureUrl = $this->profile()->picture;
@@ -112,7 +112,7 @@ class Wizard extends Component
         }
         if ($this->currentStep == 6) {
             $this->validate([
-                'biography' => ['required'],
+                'biography' => ['required', 'min:500', 'max:2000'],
                 'picture' => $this->rules()['picture'],
             ]);
             $this->profile()->update(['biography' => $this->biography]);
@@ -185,7 +185,7 @@ class Wizard extends Component
             'expertise_id' => ['required'],
             'skills' => ['required', 'array'],
             'hourly_rate' => ['required', 'numeric', 'min:50', 'max:1000'],
-            'biography' => ['required'],
+            'biography' => ['required', 'min:500', 'max:2000'],
             'picture' => [
                 $required,
                 'image',

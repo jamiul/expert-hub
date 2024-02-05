@@ -20,6 +20,8 @@ return new class extends Migration
             $table->decimal('escrow_amount');
             $table->text('message')->nullable();
             $table->string('status');
+            $table->string('reason')->nullable();
+            $table->tinyInteger('score')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

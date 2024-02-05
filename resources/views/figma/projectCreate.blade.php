@@ -50,12 +50,12 @@
                                 </div>
 
 
-                                <div class="step step-2 mb-4">
-                                    <div class="main-form position-relative">
-                                    <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
-                                        Write description
-                                    </x-form.textarea>
-                                    <span class="edux-word-count">0/1000</span>
+                                    <div class="step step-2 mb-4">
+                                        <div class="main-form position-relative">
+                                            <x-form.textarea label="Project Description" wire:model="bio" placeholder="Bio">
+                                                Write description
+                                            </x-form.textarea>
+                                            <span class="edux-word-count">0/1000</span>
                                         </div>
                                     </div>
 

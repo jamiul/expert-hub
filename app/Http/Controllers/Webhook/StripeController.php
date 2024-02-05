@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Webhook;
 
+use App\Enums\MilestoneStatus;
+use App\Enums\OfferStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
@@ -9,11 +11,13 @@ use App\Models\ExpertPayout;
 use App\Models\ExpertTransaction;
 use App\Models\ExpertWithdrawal;
 use App\Models\Milestone;
+use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Notifications\PaymentNotification;
+use App\Notifications\SendOfferNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Log;
@@ -95,14 +99,14 @@ class StripeController extends Controller {
                 $this->__payoutPaid( $payout );
                 break;
 
-            case 'transfer.created': //when money transferred to expert's stripe account
-                $paymentMethod = $event->data->object;
-                $this->__transferCreated( $paymentMethod );
-                break;
-
             case 'payment.created':
                 $transfer = $event->data->object;
                 $this->__paymentGeneric( $transfer );
+                break;
+
+            case 'transfer.created': //when money transferred to expert's stripe account
+                $paymentMethod = $event->data->object;
+                $this->__transferCreated( $paymentMethod );
                 break;
 
             case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
@@ -166,13 +170,17 @@ class StripeController extends Controller {
         try {
             $reference_id   = @$paymentData->metadata->reference_id; //milestone id
             $reference_type = @$paymentData->metadata->reference_type; //milestone
+            $contract_type  = @$paymentData->metadata->contract_type; //offer/contract
+            $contract_id    = @$paymentData->metadata->contract_id; //offer_id
+            $client_id      = @$paymentData->metadata->client_id; //client_id
+            $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
                 'payment_intent_id'      => $paymentData->id,
-                'reference_id'           => $reference_id,
+                'reference_id'           => json_encode( $reference_id ),
                 'reference_type'         => $reference_type,
                 'object'                 => $paymentData->object,
                 'amount'                 => $paymentData->amount,
@@ -195,137 +203,143 @@ class StripeController extends Controller {
                 'livemode'               => $paymentData->livemode
             ] );
 
+            //update offer status based on payment = pending / not accepted
+            if ( $contract_type == 'offer' ) {
+                $offer         = Offer::find( $contract_id );
+                $offer->status = OfferStatus::Pending;
+                $offer->save();
+                $conversation = createConversation(
+                    $offer->client,
+                    $offer->expert,
+                    $offer->client->user->full_name . ' Sent an offer for ' . $offer->contract_title,
+                    $offer->project
+                );
+                $offer->expert->user->notify(new SendOfferNotification($offer));
+            }
+
             //save to client transaction table
-            //todo: calculate client displayable transaction data
             if ( $reference_type == 'milestone' ) {
-                $milestone         = Milestone::find( $reference_id );
-                $milestone->status = 'Funded';
-                $milestone->save();
+                foreach ( json_decode( $reference_id ) as $ref_id ) {
+                    //update milestone status to funded.
+                    $milestone         = Milestone::find( $ref_id );
+                    $milestone->status = MilestoneStatus::Funded;
+                    $milestone->save();
 
-                $milestone_amount = $milestone->amount;
-                $expert_id        = $milestone->eoi->expert->user->id;
+                    $milestone_amount = $milestone->amount;;
 
-                //breakdown charge into pieces
-                $charge    = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
-                $profile   = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
-                $client_id = $profile->user_id;
+                    //breakdown charge into pieces
+                    $charge  = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $offer->client_id, $offer->expert_id );
+                    $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                //parent transaction
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Payment',
-                    'description'    => "Paid from Mastercard 0026 to escrow for funding request xxxxxxxxx",
-                    'client_id'      => $client_id,
-                    'expert_id'      => null,
-                    'amount'         => ( $paymentData->amount / 100 ),
-                    'charge_type'    => 'credit',
-                    'parent'         => null,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
-
-                //escrow transaction
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Fixed Price',
-                    'description'    => "Funding request for " . $milestone->eoi->project->title,
-                    'client_id'      => $client_id,
-                    'expert_id'      => $expert_id,
-                    'amount'         => $milestone_amount,
-                    'charge_type'    => 'debit',
-                    'parent'         => $stripe_transaction->id,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
-
-                //service fee transaction
-                $service_fee      = $charge['service_charge'];
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Service Fee',
-                    'description'    => "Funding request for Fixed Price - Ref ID $stripe_transaction->id",
-                    'client_id'      => $client_id,
-                    'expert_id'      => $expert_id,
-                    'amount'         => $service_fee,
-                    'charge_type'    => 'debit',
-                    'parent'         => $stripe_transaction->id,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                PaymentHelper::createClientTransaction( $transaction_data );
-
-                //contract initialization fee transaction
-                if ( $charge['contract_initialization_fee'] > 0 ) {
-                    $contract_initialization_fee = $charge['contract_initialization_fee'];
-                    $transaction_data            = [
+                    //parent transaction - credit card charge
+                    $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
-                        'milestone_id'   => $reference_id,
-                        'type'           => 'Contract Initialization Fee',
-                        'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $stripe_transaction->id",
+                        'milestone_id'   => $ref_id,
+                        'type'           => 'Payment',
+                        'description'    => "Paid from Visa 0077 to escrow for funding request",
+                        'client_id'      => $client_id,
+                        'expert_id'      => null,
+                        'amount'         => ( $paymentData->amount / 100 ),
+                        'charge_type'    => 'credit',
+                        'parent'         => null,
+                        'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                    ];
+                    $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+                    $parent_id = $transaction->id;
+
+                    //escrow transaction
+                    $transaction_data = [
+                        'transaction_id' => $stripe_transaction->id,
+                        'milestone_id'   => $ref_id,
+                        'type'           => 'Fixed Price',
+                        'description'    => "Funding request for " . $milestone->title,
+                        'client_id'      => $client_id,
+                        'expert_id'      => $expert_id,
+                        'amount'         => $milestone_amount,
+                        'charge_type'    => 'debit',
+                        'parent'         => $parent_id,
+                        'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                    ];
+                    $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+
+                    //service fee transaction
+                    $service_fee      = $charge['service_charge'];
+                    $transaction_data = [
+                        'transaction_id' => $stripe_transaction->id,
+                        'milestone_id'   => $ref_id,
+                        'type'           => 'Service Fee',
+                        'description'    => "Funding request for Fixed Price - Ref ID $parent_id",
+                        'client_id'      => $client_id,
+                        'expert_id'      => $expert_id,
+                        'amount'         => $service_fee,
+                        'charge_type'    => 'debit',
+                        'parent'         => $parent_id,
+                        'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                    ];
+                    PaymentHelper::createClientTransaction( $transaction_data );
+
+                    //contract initialization fee transaction
+                    if ( $charge['contract_initialization_fee'] > 0 ) {
+                        $contract_initialization_fee = $charge['contract_initialization_fee'];
+                        $transaction_data            = [
+                            'transaction_id' => $stripe_transaction->id,
+                            'milestone_id'   => $ref_id,
+                            'type'           => 'Contract Initialization Fee',
+                            'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $parent_id",
+                            'client_id'      => $profile->user_id,
+                            'expert_id'      => $expert_id,
+                            'amount'         => $contract_initialization_fee,
+                            'charge_type'    => 'debit',
+                            'parent'         => $parent_id,
+                            'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                        ];
+                        PaymentHelper::createClientTransaction( $transaction_data );
+                    }
+
+                    //payment gateway fee transaction
+//                    $gateway_fee      = $charge['payment_gateway_fee'];
+//                    $transaction_data = [
+//                        'transaction_id' => $stripe_transaction->id,
+//                        'milestone_id'   => $ref_id,
+//                        'type'           => 'Payment Gateway Fee',
+//                        'description'    => "Payment Gateway Fee for Fixed Price - Ref ID $stripe_transaction->id",
+//                        'client_id'      => $profile->user_id,
+//                        'expert_id'      => $expert_id,
+//                        'amount'         => $gateway_fee,
+//                        'charge_type'    => 'debit',
+//                        'parent'         => $stripe_transaction->id,
+//                        'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+//                    ];
+//                    PaymentHelper::createClientTransaction( $transaction_data );
+
+                    //gst transaction
+                    $gst              = $charge['gst'];
+                    $transaction_data = [
+                        'transaction_id' => $stripe_transaction->id,
+                        'milestone_id'   => $ref_id,
+                        'type'           => 'GST',
+                        'description'    => "GST for Fixed Price - Ref ID $parent_id",
                         'client_id'      => $profile->user_id,
                         'expert_id'      => $expert_id,
-                        'amount'         => $contract_initialization_fee,
+                        'amount'         => $gst,
                         'charge_type'    => 'debit',
-                        'parent'         => $stripe_transaction->id,
+                        'parent'         => $parent_id,
                         'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                     ];
                     PaymentHelper::createClientTransaction( $transaction_data );
                 }
-
-                //payment gateway fee transaction
-                $gateway_fee      = $charge['payment_gateway_fee'];
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Payment Gateway Fee',
-                    'description'    => "Payment Gateway Fee for Fixed Price - Ref ID $stripe_transaction->id",
-                    'client_id'      => $profile->user_id,
-                    'expert_id'      => $expert_id,
-                    'amount'         => $gateway_fee,
-                    'charge_type'    => 'debit',
-                    'parent'         => $stripe_transaction->id,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                PaymentHelper::createClientTransaction( $transaction_data );
-
-                //gst transaction
-                $gst              = $charge['gst'];
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'GST',
-                    'description'    => "GST for Fixed Price - Ref ID $stripe_transaction->id",
-                    'client_id'      => $profile->user_id,
-                    'expert_id'      => $expert_id,
-                    'amount'         => $gst,
-                    'charge_type'    => 'debit',
-                    'parent'         => $stripe_transaction->id,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                PaymentHelper::createClientTransaction( $transaction_data );
-
-
-                /* milestone funded, update & send notification to expert*/
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Fixed Price',
-                    'description'    => "Funded for " . $milestone->eoi->project->title,
-                    'client_id'      => $profile->user_id,
-                    'expert_id'      => $expert_id,
-                    'amount'         => $milestone_amount,
-                    'charge_type'    => 'credit',
-                    'parent'         => $stripe_transaction->id,
-                    'status'         => 0
-                ];
-                PaymentHelper::createExpertTransaction( $transaction_data );
             }
 
-            //todo: add data to client specific transaction table
-            //todo: update milestone status
             //todo: send payment notification & email to Client, Expert & Admin
+            $client = User::find( $client_id );
+            $client->notify( new PaymentNotification( [
+                'title'   => "Card charged",
+                'message' => "Your credit card been charged " . $paymentData->amount / 100 . ' ' . $paymentData->currency,
+                'link'    => route( 'client.payment.billing' ),
+                'button'  => 'View Details',
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
+            ] ) );
+
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
@@ -392,21 +406,20 @@ class StripeController extends Controller {
                 'is_default' => $is_default,
                 'livemode'   => $paymentMethod->livemode
             ] );
+
+
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
         }
-        Log::info( $paymentMethod );
     }
 
     private function __paymentMethodDetached( $paymentMethod ) {
-        Log::info( $paymentMethod->id );
         try {
             //delete users payment method if exists.
             PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
             http_response_code( $ex->getCode() );
             exit();
         }
@@ -444,7 +457,6 @@ class StripeController extends Controller {
      * connect webhooks
      * */
     private function __externalAccountCreate( $paymentMethod ) {
-        Log::info( $paymentMethod );
         try {
             $stripe_customer_id = $paymentMethod->account;
             $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
@@ -538,7 +550,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -583,7 +595,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -628,7 +640,7 @@ class StripeController extends Controller {
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
                 'link'    => route( 'expert.payment.withdraw' ),
                 'button'  => 'Make another withdraw',
-                'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
@@ -686,30 +698,74 @@ class StripeController extends Controller {
         $reference_id   = @$transfer->metadata->reference_id; //milestone id
         $reference_type = @$transfer->metadata->reference_type; //milestone
 
-        //todo: save into transfer table
+        $stripe_transaction = Transaction::updateOrCreate( [
+            'charge_id' => $transfer->destination_payment
+        ], [
+            'transfer_id' => $transfer->id,
+            'object'                 => $transfer->object,
+            'reference_id'           => json_encode( $reference_id ),
+            'reference_type'         => $reference_type,
+            'amount'                 => $transfer->amount,
+            'amount_reversed' => $transfer->amount_reversed,
+            'currency'               => $transfer->currency,
+            'customer_id'            => $transfer->destination,
+            'description'            => $transfer->description,
+            'balance_transaction'       => $transfer->balance_transaction,
+            'transfer_group'         => $transfer->transfer_group,
+            'metadata'               => json_encode( $transfer->metadata ),
+            'created_time'           => $transfer->created ? Carbon::createFromTimestamp( $transfer->created )->format( 'Y-m-d H:i:s' ) : null,
+            'reversed'                 => $transfer->reversed,
+            'livemode'               => $transfer->livemode
+        ] );
 
         //todo: update expert funded milestone status
-        if($reference_type == 'milestone'){
-            $milestone = Milestone::find($reference_id);
-            $expert_id = $milestone->eoi->expert_id;
+        if ( $reference_type == 'milestone' ) {
+            $milestone = Milestone::find( $reference_id );
+            $client_id = $milestone->contract->client_id;
+            $expert_id = $milestone->contract->expert_id;
 
-            $profile = Profile::find($expert_id);
+            //clean pending transactions
+            ExpertTransaction::where('milestone_id', $milestone->id)->forceDelete();
 
-            $balance = $profile->balance;
-            $escrow_balance = $profile->escrow_balance;
+            //calculate expert charge
+            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
 
-            $balance += ($transfer->amount / 100);
-            $escrow_balance -= ($transfer->amount / 100);
+            //parent transaction
+            $expert_payment = $charge['total_amount'];
+            $transaction_data = [
+                'transaction_id' => $stripe_transaction->id,
+                'milestone_id'   => $milestone->id,
+                'type'           => 'Fixed Price',
+                'description'    => "Invoice for " . $milestone->title,
+                'client_id'      => $client_id,
+                'expert_id'      => $expert_id,
+                'amount'         => $expert_payment,
+                'charge_type'    => 'credit',
+                'parent'         => null,
+                'status'         => 1,
+            ];
+            $transaction = PaymentHelper::createExpertTransaction($transaction_data);
+            $parent_id = $transaction->id;
 
-            $profile->balance = $balance;
-            $profile->escrow_balance = $escrow_balance;
-            $profile->save();
+            //charge platform fee
+            $service_charge = $charge['service_charge'];
+            $transaction_data = [
+                'transaction_id' => $stripe_transaction->id,
+                'milestone_id'   => $milestone->id,
+                'type'           => 'Service Fee',
+                'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
+                'client_id'      => $client_id,
+                'expert_id'      => $expert_id,
+                'amount'         => $service_charge,
+                'charge_type'    => 'debit',
+                'parent'         => $parent_id,
+                'status'         => 1,
+            ];
+            PaymentHelper::createExpertTransaction($transaction_data);
 
-            //calculate expert balance & escrow
-            ExpertTransaction::where('milestone_id', $reference_id)->update([
-                'status'         => 1
-            ]);
-
+            //update milestone status
+            $milestone->status = MilestoneStatus::Released;
+            $milestone->save();
         }
     }
 
@@ -728,7 +784,7 @@ class StripeController extends Controller {
                 $connect_account = $stripe->accounts->retrieve( $account->account,
                     []
                 );
-                Log::info( $connect_account );
+//                Log::info( $connect_account );
 //                date('Y-m-d H:i:s', $connect_account->created)
             }
         } catch ( \Exception $ex ) {

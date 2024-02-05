@@ -1,7 +1,7 @@
 <header class="main-header">
     <div class="main-header-container">
         <div class="header-logo">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('expert.dashboard') }}">
                 <img src="{{ asset('logo/expert-gate-logo.png') }}"/>
             </a>
         </div>
@@ -10,8 +10,9 @@
                 <li class="item-has-submenu">
                     <a href="#">Projects</a>
                     <ul>
-                        <li><a href="/figma/project/client-job-posts">My project</a></li>
-                        <li><a href="/find-projects">Find project</a></li>
+                        <li><a href="{{ route('find.projects') }}">Find project</a></li>
+                        <li><a href="{{ route('expert.eois.index') }}">My Eois</a></li>
+                        <li><a href="{{ route('expert.contracts') }}">My Contracts</a></li>
                     </ul>
                 </li>
                 <li class="item-has-submenu">
@@ -19,7 +20,7 @@
                     <ul>
                         <li><a href="/expert/profile/edit">My profile</a></li>
                         <li><a href="/figma/expert-status-analytics">Analytic</a></li>
-                        <li><a href="{{ route('expert.payment.index') }}">Billings & Payment</a></li>
+                        <li><a href="{{ route('expert.payment.billing') }}">Billings & Payment</a></li>
                     </ul>
                 </li>
 
@@ -30,10 +31,6 @@
                         <li><a href="">My Training</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="/find-training">Trainings</a>
-                </li>
-
             </ul>
         </nav>
 
@@ -173,7 +170,7 @@
                         <img
                             src="{{ auth()->user()->profile->picture }}"/>
                     </a>
-                    <div x-cloak x-show="openDropdown === 'profile'" class="header-dropdown">
+                    <div x-cloak x-show="openDropdown === 'profile'" @click.outside="openDropdown = null" class="header-dropdown">
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
@@ -191,7 +188,7 @@
                             </div>
                             <div class="dropdown-user-menu">
                                 <ul>
-                                    <li><a href="">
+                                    <li><a href="{{ route('expert.profile.edit') }}">
                                             <x-icon.user/>
                                             Profile</a></li>
                                     <li><a href="">

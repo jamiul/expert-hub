@@ -513,7 +513,7 @@
                             <div class="chatbox-uploaded-media-wrapper">
                                 <div class="chatbox-uploaded-media-item">
                                     <div>
-                                        <x-icon.file-pdf/>
+                                        <x-icon.file/>
                                     </div>
                                     <div>
                                         T451898021.pdf
@@ -565,9 +565,10 @@
                                     {{--                                    </div>--}}
 
 
-                                    <button class="icon-btn" onclick="toggleClasses('.chatbox-message-editor', 'media-uploaded')">
+                                    <label class="icon-btn" onclick="toggleClasses('.chatbox-message-editor', 'media-uploaded')">
+                                    <input type="file" multiple class='d-none'>
                                         <x-icon.attach-file/>
-                                    </button>
+</label>
                                     <div class="dropdown d-inline-block">
                                         <button class="icon-btn" id="chatbox-editor-settings" data-bs-toggle="dropdown"
                                                 aria-expanded="false">

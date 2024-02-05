@@ -11,7 +11,7 @@ class ApartSet extends Component
     public $title = '';
     public $subtitle = '';
     public $showReadMoreButton = null;
-    public $tab = 'client';
+    public $tab = 'expert';
 
     public function mount()
     {

@@ -45,7 +45,13 @@ class Invite extends Modal
             'project_id' => $this->project_id,
             'status' => InvitationStatus::Pending
         ]);
-        $this->sendMessage();
+        createConversation(
+            auth()->user()->profile,
+            $this->expert,
+            $this->message,
+            $this->project
+        );
+        // $this->sendMessage();
         $this->expert->user->notify(new ProjectInvitationNotification([
             'title'   => 'Invitation to submit EOI',
             'message' => 'Submit EOI to this project',
@@ -54,6 +60,7 @@ class Invite extends Modal
             'avatar'  => auth()->user()->profile->picture,
         ]));
         toast('success', 'Invitation Sent Successfully', $this);
+        $this->dispatch('invitation-sent');
         $this->close();
         //Todo Update invitation count
     }

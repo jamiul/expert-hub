@@ -5907,9 +5907,9 @@ p.p-rote {
 
 }
 
-.live-zoom {
+/* .live-zoom {
   max-width: 220px !important;
-}
+} */
 
 .academic-block.academic-blog .live-zoom {
   border-right: none !important
@@ -5919,9 +5919,9 @@ p.p-rote {
   border-right: solid 1px #d9dbea;
 }
 
-.training {
+/* .training {
   margin-left: 20px;
-}
+} */
 
 .academic-block .training .training-text {
   margin: 5px 0 10px !important;
@@ -5972,9 +5972,7 @@ select.top-input-control option::hover{
   padding: 7px 16px;
 }
 
-.selected{
-  display: none;
-}
+
 
 .mission-img.overlay-edit{
   max-width: 538px;
@@ -8304,6 +8302,15 @@ font-weight: 400;
   gap: 10px 0px !important;
 }
 
+.edux-schedule-input-single .available-time-select-col ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: column;
+}
+
 .edux-selected-slot li.edux-day-schedule {
   color: #191D24;
 
@@ -9301,6 +9308,194 @@ li.disabled {
   margin-bottom:0px;
 }
 
+.consultation-with-area {
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #FFF;
+}
+
+/* ============================= Training Start Here ================================= */
+.training-speaker-title-area {
+  display: flex;
+  justify-content: space-between;
+}
+.training-speaker-option {
+  display: flex;
+  justify-content: space-between;
+  gap:8px;
+
+}
+
+.training-speaker-option span{
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  border: 2px solid #EBEFF7;
+}
+
+.training-expert-card .scholarship-details .custom-table .tr .td:first-child {
+  width: 145px;
+}
+
+.training-speaker-area {
+  border-radius: 8px;
+  border: 3px solid rgba(0, 54, 227, 0.04);
+  background: #FFF;
+  padding: 24px;
+  margin-top: 10px;
+}
+
+.edux-training-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 872px;
+  margin: 0 auto;
+  padding:56px;
+  border: solid 1px #E7E5EF;
+  border-radius: 8px;
+  background: #FFF;
+}
+
+.create-training-button-area {
+  display: flex;
+  justify-content: space-between;
+}
+.create-training-button-area .btn{
+  max-width:265px;
+}
+
+.team-block.edux-team-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 192px;
+    border-radius: 4px;
+    border: 1.098px solid  #E7E5EF;
+    background: #FFF;
+}
+
+
+
+.edux-hire-text h6 {
+  color: #191D24;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.80rem;
+}
+
+.edux-hire-text p {
+  color: rgba(25, 29, 36, 0.70);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  text-align:center;
+}
+.seminar-date-area .flatpickr-input {
+    width: 308px;
+}
+
+
+.eudx-expert-card-header-info h6{
+  color:  #191D24;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+.eudx-expert-card-header-info ul.project-expert-meta li {
+  display: inline-block;
+  padding-right: 15px;
+  position: relative;
+  color: rgba(48, 55, 68, 0.6);
+  font-size: 13px;
+}
+
+.fw-medium-currency{
+  color:#191D24;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.eudx-tag-list a {
+  font-size: 12px;
+font-style: normal;
+font-weight: 500;
+
+  }
+
+  .edux-project-expert-card {
+    padding: 15px 0px !important;
+}
+
+.edux-project-expert-card:hover {
+    border-radius: 4px;
+    background: rgba(0, 54, 227, 0.07);
+    backdrop-filter: blur(1px);
+}
+
+.btn.eudx-btn-addback {
+  display: none;
+  padding: 0px 16px 0px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  background: #0036E3;
+  min-width: 129px;
+  flex-direction: row;
+  height: 24px;
+  color: #fff;
+  color: #FFF;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+}
+
+.edux-project-expert-card:hover  .btn.eudx-btn-addback{
+  display: flex;
+}
+
+
+
+.edux-create-training-plus {
+  border-radius: 24px;
+  border: 2px solid  rgba(14, 0, 98, 0.10);
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.edux-create-training-plus svg {
+  width:18px;
+  height:18px;
+}
+.time-picker-area input {
+    border-radius: 4px;
+    border: 2px solid rgba(48, 55, 68, 0.15);
+    width: 217px;
+    height: 44px;
+}
+/* ============================= Training Start Here ================================= */
+
 
   /* ============================================ Expert Profile End ============================================= */
 
@@ -9540,8 +9735,40 @@ header.client-header {
 }
 
 @media only screen and (max-width: 1200px) {
-.academic-block .live-zoom {
-  border-right: solid 1px #d9dbea;
+
+
+  .eudx-training {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0px;
+}
+
+.academic-content-training-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  border-top: 1px solid  rgba(14, 0, 98, 0.10);
+  border-bottom: 1px solid rgba(14, 0, 98, 0.10);
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+
+ .training-button {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+
+ .live-zoom {
+  border-right: none;
   width: 100% !important;
   display: flex;
   flex-direction: column;
@@ -9549,19 +9776,15 @@ header.client-header {
   min-width: 200px !important;
 }
 
-.academic-block .training-button {
-  text-align: right;
-  display: flex;
-}
 
-.academic-block .training h3 {
+.training h3 {
   font-size: 12px;
   color: #303744;
   font-weight: 500;
   margin: 0;
 }
 
-.academic-block .training .training-text a {
+ .training .training-text a {
   font-size: 12px;
   font-weight: 500;
   color: #0036E3;
@@ -9706,11 +9929,11 @@ header.client-header {
   display: flex;
   align-items: center;
 }
-.academic-block .training-button {
+ .training-button {
   text-align: right;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .academic-block .training h3 {
@@ -9952,7 +10175,7 @@ h3, .h3 {
 .academic-block .training-button {
   text-align: left;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .edux-billing-method-area {

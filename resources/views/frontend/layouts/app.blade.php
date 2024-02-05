@@ -60,5 +60,36 @@
         @stack('bottom_scripts')
         <x-toaster/>
         @include('frontend.layouts.notify')
+        <script>
+    function setRating(element) {
+        // Add "active" class to the clicked element
+        element.classList.add("active");
+
+        // Get the parent element and its data-category attribute
+        var parentElement = element.parentElement;
+        var category = parentElement.getAttribute("data-category");
+
+        // Get all the siblings of the parent element
+        var siblings = Array.from(parentElement.children);
+
+        // Remove "active" class from all siblings
+        siblings.forEach(function (sibling) {
+            if (sibling !== element) {
+                sibling.classList.remove("active");
+            }
+        });
+
+        // Add "rating-selected" class to the parent element
+        parentElement.classList.add("rating-selected");
+
+        // Log the selected rating and category (for demonstration purposes)
+        console.log(
+            "Category:",
+            category,
+            "Rating:",
+            element.previousElementSibling.value
+        );
+    }
+</script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-<section class="page-section category-grid-section">
+<section class="page-section category-grid-section bg-white">
     <div class="container">
         <div style="margin-bottom: 71px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Categories</h2>
@@ -6,7 +6,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -15,13 +15,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Curriculum Development</a></h3>
-                        <p>Assist in developing engaging, effective curricula tailored to your educational needs.</p>
+                        <h3 class="h6"><a href="#">Curriculum Development</a></h3>
+                        <p>Work with industry and academic experts for a tailored curriculum, ensuring real-world
+                            learning experiences.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -30,13 +30,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Course Accreditation</a></h3>
-                        <p>Help clients meet industry standards and gain official recognition for their programs.</p>
+                        <h3 class="h6"><a href="#">Course Accreditation</a></h3>
+                        <p>Access experts for course accreditation, ensuring compliance with regulations and
+                            national/international registration.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -46,13 +46,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Learning Management System</a></h3>
-                        <p>Implement efficient Learning Management systems to streamline your educational processes.</p>
+                        <h3 class="h6"><a href="#">Learning Management System</a></h3>
+                        <p>Collaborate with industry and academic experts to improve your LMS for optimised learning
+                            experiences.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -61,14 +61,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Policy Development</a></h3>
-                        <p>Provide valuable insights and guidance on policy development, analysis, and
-                            implementation.</p>
+                        <h3 class="h6"><a href="#">Policy Development</a></h3>
+                        <p>Access industry and academic experts for policy development, ensuring compliance with
+                            evolving standards.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -77,14 +76,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Research and Analysis</a></h3>
-                        <p>Offer rigorous research methodologies and data analysis to help you make informed decisions
-                            for business operations.</p>
+                        <h3 class="h6"><a href="#">Research and Analysis</a></h3>
+                        <p>Collaborate with experts for in-depth research and analysis, facilitating informed
+                            decision-making.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -93,12 +91,12 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Financial Management</a></h3>
-                        <p>Provide financial advice and strategies to optimise your organisation's financial health.</p>
+                        <h3 class="h6"><a href="#">Financial Management</a></h3>
+                        <p>Connect with experts to successfully navigate your project's financial landscape.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -107,12 +105,13 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Project Management</a></h3>
-                        <p>Ensure your projects are executed efficiently, on time, and within budget.</p>
+                        <h3 class="h6"><a href="#">Project Management</a></h3>
+                        <p>Access experts for effective project management, ensuring success within resource
+                            constraints.</p>
                     </div>
                 </div> <!--category-box-->
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="category-box">
                     <div class="category-image">
                         <a href="">
@@ -122,9 +121,9 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3><a href="#">Grants and Scholarships</a></h3>
-                        <p>Guide you through scholarship opportunities and application processes for educational
-                            funding.</p>
+                        <h3 class="h6"><a href="#">Grants and Scholarships</a></h3>
+                        <p>Access experts for comprehensive scholarship and grant guidance, facilitating funding
+                            access</p>
                     </div>
                 </div> <!--category-box-->
             </div>
@@ -132,12 +131,8 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <x-button.link
-                    href="{{ route('find.experts') }}"
-                    class="btn btn-outline-primary btn-md border-2"
-                    text="View All Experts"
-                    style="width: 235px"
-                />
+                <a href="{{ route('find.experts') }}" class="btn btn-outline-primary border-2 btn-md">View All
+                    Experts</a>
             </div>
         </div>
     </div>

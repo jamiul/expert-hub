@@ -1,28 +1,17 @@
 <div class="homepage-main-slider-wrapper">
     <div class="container">
         <div class="row align-items-end">
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <div class="hero-text">
-                    <h2>Connect With Top Academic And Industry Experts For Your Project</h2>
-                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
-                        you with leaders in course accreditation, curriculum design, policy development, project
-                        management and more. Choose ExpertGate when your most pivotal academic and industry projects
-                        demand the best.</p>
-                    <div class="hero-button d-flex gap-3">
-                        <x-button.link
-                            href="{{ route('find.experts') }}"
-                            class="btn btn-primary edux-btn-primary"
-                            text="Find an Expert"
-                        />
-                        <x-button.link
-                            href="{{ route('auth.login') }}"
-                            class="btn edux-btn-border-primary"
-                            text="Become an Expert"
-                        />
+                    <h2>Find Top Academic and Industry Experts for your project</h2>
+                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect you with leaders in course accreditation, curriculum design, policy development, project management and more. Choose ExpertGate when your most pivotal academic and industry projects demand the best.</p>
+                    <div class="hero-button-wrapper">
+                        <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
+                        <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become an Expert</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xl-6 home-main-slider-col">
                 <div id="homepage-slider-main" class="owl-carousel homepage-slider-main">
                     @forelse ($experts as $expert)
 
@@ -35,7 +24,7 @@
                                         <div class="australia">Australia</div>
                                     </div>
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
+                                    <p>{{ $expert->expertField?->name }}</p>
                                     <p class="text-primary">Oxford University</p>
                                 </a>
                             </div>
@@ -49,7 +38,7 @@
         </div>
     </div>
 </div>
-<div class="homepage-slider-thumbnails-wrapper">
+<div class="homepage-slider-thumbnails-wrapper bg-white">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -62,7 +51,7 @@
                                 </div>
                                 <div class="">
                                     <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
+                                    <p>{{ $expert->expertField?->name }}</p>
                                     <p class="text-primary">Oxford University</p>
                                 </div>
                             </div>
@@ -81,101 +70,84 @@
     <script>
         jQuery(document).ready(function () {
 
-            var bigimage = $("#homepage-slider-main");
-            var thumbs = $("#homepage-slider-thumbnails");
-            //var totalslides = 10;
-            var syncedSecondary = true;
+            var thumbSlider = $("#homepage-slider-thumbnails");
+            var mainSlider = $("#homepage-slider-main");
 
-            bigimage
-                .owlCarousel({
-                    items: 1,
-                    slideSpeed: 2000,
-                    nav: false,
-                    autoplay: true,
-                    dots: false,
-                    loop: true,
-                    responsiveRefreshRate: 200,
-                    navText: [
-                        '<i class="fa fa-arrow-left" aria-hidden="true">Left</i>',
-                        '<i class="fa fa-arrow-right" aria-hidden="true">Right</i>'
-                    ]
-                })
-                .on("changed.owl.carousel", syncPosition);
+            var slider1FirstSlideIndex;
+            var prevIndex = 0;
 
-            thumbs
-                .on("initialized.owl.carousel", function () {
-                    thumbs
-                        .find(".owl-item")
-                        .eq(0)
-                        .addClass("current");
-                })
-                .owlCarousel({
-                    items: 5,
-                    dots: false,
-                    nav: true,
-                    navText: [
-                        '<span class="material-symbols-outlined">chevron_left</span>',
-                        '<span class="material-symbols-outlined">chevron_right</span>'
-                    ],
-                    smartSpeed: 200,
-                    slideSpeed: 500,
-                    slideBy: 1,
-                    responsiveRefreshRate: 100,
-                    margin: 23,
-                })
-                .on("changed.owl.carousel", syncPosition2);
-
-            function syncPosition(el) {
-                //if loop is set to false, then you have to uncomment the next line
-                //var current = el.item.index;
-
-                //to disable loop, comment this block
-                var count = el.item.count - 1;
-                var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
-
-                if (current < 0) {
-                    current = count;
+            // slider1
+            thumbSlider.owlCarousel({
+                autoplay: true,
+                loop: true,
+                nav: true,
+                center: true,
+                smartSpeed: 800,
+                dots: false,  // Enable dots navigation
+                items: 5,    // Set the number of items to 5
+                margin: 23,
+                responsive: {
+                    1200: {
+                        items: 5,
+                    },
+                    900: {
+                        items: 4,
+                    },
+                    600: {
+                        items: 3,
+                    },
+                    0: {
+                        items: 2
+                    }
+                },
+                navText: [
+                    '<span class="material-symbols-outlined">chevron_left</span>',
+                    '<span class="material-symbols-outlined">chevron_right</span>'
+                ],
+                onInitialized: function (event) {
+                    slider1FirstSlideIndex = event.item.index;
+                },
+                onTranslate: function (event) {
+                    sliderSync(event);
                 }
-                if (current > count) {
-                    current = 0;
-                }
-                //to this
-                thumbs
-                    .find(".owl-item")
-                    .removeClass("current")
-                    .eq(current)
-                    .addClass("current");
-                var onscreen = thumbs.find(".owl-item.active").length - 1;
-                var start = thumbs
-                    .find(".owl-item.active")
-                    .first()
-                    .index();
-                var end = thumbs
-                    .find(".owl-item.active")
-                    .last()
-                    .index();
+            });
 
-                if (current > end) {
-                    thumbs.data("owl.carousel").to(current, 100, true);
-                }
-                if (current < start) {
-                    thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+            function sliderSync(event) {
+                var index = event.item.index;
+                var loop = event.relatedTarget.options.loop;
+                var slider2CloneCount = event.relatedTarget.clones().length / 2;
+
+                if(loop) {
+                    if(index < slider1FirstSlideIndex) { // if active slide is clone
+                        mainSlider.trigger('prev.owl.carousel');
+                    } else {
+                        mainSlider.trigger('to.owl.carousel', index - slider2CloneCount);
+                    }
+
+                    prevIndex = event.item.index; // to determine the direction
+
+                } else {
+                    mainSlider.trigger('to.owl.carousel', index);
                 }
             }
-
-            function syncPosition2(el) {
-                if (syncedSecondary) {
-                    var number = el.item.index;
-                    bigimage.data("owl.carousel").to(number, 100, true);
-                }
-            }
-
-            thumbs.on("click", ".owl-item", function (e) {
-                e.preventDefault();
-                var number = $(this).index();
-                bigimage.data("owl.carousel").to(number, 300, true);
+            // Add click event handler to slider2 items
+            mainSlider.on('click', '.owl-item', function(e){
+                var index = $(this).index();
+                thumbSlider.trigger('to.owl.carousel', index);
+            });
+            // slider2
+            mainSlider.owlCarousel({
+                loop: true,
+                nav: false,
+                dots: false,  // Enable dots navigation
+                smartSpeed: 800,
+                touchDrag: false,
+                mouseDrag: false,
+                pullDrag: false,
+                items: 1
             });
 
         });
+
     </script>
 @endpush

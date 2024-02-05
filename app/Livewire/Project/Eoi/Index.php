@@ -3,12 +3,16 @@
 namespace App\Livewire\Project\Eoi;
 
 use App\Enums\InvitationStatus;
+use App\Models\Conversation;
+use App\Models\Eoi;
 use App\Models\Invitation;
 use App\Models\Profile;
 use App\Models\Project;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
-
+#[On('invitation-sent')]
+#[On('offer-withdrawn')]
 class Index extends Component
 {
     use InteractsWithConfirmationModal;
@@ -69,6 +73,26 @@ class Index extends Component
                 'cancel' => 'Cancel',
             ],
         );
+    }
+
+    public function sendMessage(Eoi $eoi)
+    {
+        $conversation = Conversation::query()
+            ->where('creator_profile_id', $eoi->project->client->id)
+            ->where('reference_id', $eoi->project->id)
+            ->wherehas('participants', function($query) use($eoi){
+                $query->where('profile_id', $eoi->expert->id);
+            })
+            ->first();
+        if(is_null($conversation)){
+            $conversation = createConversation(
+                $eoi->project->client,
+                $eoi->expert,
+                'Lets discuss about ' . $eoi->project->title,
+                $eoi->project
+            );
+        }
+        return redirect()->route('messaging.conversation', $conversation->id);
     }
 
     public function render()

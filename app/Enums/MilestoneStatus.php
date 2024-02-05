@@ -9,4 +9,5 @@ enum MilestoneStatus: string
     case Funded = 'Funded';
     case Declined = 'Declined';
     case Approved = 'Approved';
+    case Released = 'Released';
 }

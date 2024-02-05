@@ -48,7 +48,12 @@ class Profile extends Model implements HasMedia
 
     public function conversations()
     {
-        return $this->hasMany(Conversation::class);
+        return $this->hasMany(Conversation::class, 'creator_profile_id');
+    }
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class, 'profile_id');
     }
 
     public function languages():BelongsToMany
@@ -94,12 +99,15 @@ class Profile extends Model implements HasMedia
 
     public function scopeClient($query)
     {
-        return $query->where('type', ProfileType::Client);
+        return $query
+            ->where('type', ProfileType::Client);
     }
 
     public function scopeExpert($query)
     {
-        return $query->where('type', ProfileType::Expert);
+        return $query
+            ->where('type', ProfileType::Expert)
+            ->where('status', ProfileStatus::Approved);
     }
 
     public function savedProjects()

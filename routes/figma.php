@@ -51,6 +51,11 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
 
 
+    //Find Training Page
+
+    Route::view('/expert-find-training', 'figma.expert-find-training-profile');
+    Route::view('/expert-create-training', 'figma.expert-create-training');
+
 
     //expert status
     Route::view('/expert-status', 'figma.expert-status');
@@ -122,7 +127,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/super-admin-scholarship-post', 'figma.admindashboardscholarshippost');
 
     Route::view('/super-admin-payment', 'figma.adminpayment');
-    Route::view('/super-admin-payment-backup', 'figma.admin-payment-backup');
+    // Route::view('/super-admin-payment-backup', 'figma.admin-payment-backup');
     Route::view('/super-admin-review', 'figma.adminpaymentprogress');
 
     //Expert Dashboard Login
@@ -169,4 +174,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/project/client-eoi-view-with-expert-profile', 'figma.client-eoi-view-with-expert-profile');
     Route::view('/project/client-job-posts-deposit-payment', 'figma.client-job-posts-deposit-payment');
 
+    //Training
+    Route::view('/find-training', 'figma.find-training');
+    Route::view('/training/training-details-view', 'figma.training-details-view');
 });

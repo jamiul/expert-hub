@@ -199,12 +199,16 @@
                     <div class="filter-widget">
                         <h4 class="widget-title">Project by Categories</h4>
                         <div class="widget-accordion use-scroll-content">
-                            <div class="widget-accordion-item">
-                                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
+                            <div class="widget-accordion-item" x-data="{ isOpen: false }"
+                                 :class="{ 'accordion-item-active': isOpen }">
+                                <div class="widget-accordion-title" x-on:click="isOpen = !isOpen">
                                     <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
-                                    Course Accreditations
+                                    <div class="widget-accordion-title-inner">
+                                        Course Accreditations
+                                    </div>
                                 </div>
-                                <div class="widget-accordion-content">
+                                <div x-show="isOpen" class="widget-accordion-content">
+                                    <!-- Content goes here -->
                                     <x-form.check wire:model="project-category" id="A01">
                                         Accreditation Documentation
                                     </x-form.check>
@@ -229,12 +233,16 @@
 
                                 </div>
                             </div>
-                            <div class="widget-accordion-item">
-                                <div class="widget-accordion-title" onclick="toggleAccordion(this)">
-                                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
-                                    Curriculum Development
+                            <div class="widget-accordion-item" x-data="{ isOpen: false }"
+                                 :class="{ 'accordion-item-active': isOpen }">
+                                <div class="widget-accordion-title" x-on:click="isOpen = !isOpen">
+                                    <x-form.check class="m-0 gap-0" wire:model="project-category" id="B"/>
+                                    <div>
+                                        Curriculum Development
+                                    </div>
                                 </div>
-                                <div class="widget-accordion-content">
+                                <div x-show="isOpen" class="widget-accordion-content">
+                                    <!-- Content goes here -->
                                     <x-form.check wire:model="project-category" id="B01">
                                         Accreditation Documentation
                                     </x-form.check>
@@ -256,45 +264,12 @@
                                     <x-form.check wire:model="project-category" id="B07">
                                         Accreditation Documentation
                                     </x-form.check>
-
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="filter-widget">
 
-
-
-                        <div class="filter-widget">
-                            <div x-data="{ expandedCategory: 'courseAccreditations' }" class="widget-accordion use-scroll-content">
-                                <div class="widget-accordion-item">
-                                    <div x-on:click="expandedCategory = 'courseAccreditations'" :class="{ 'accordion-item-active': expandedCategory === 'courseAccreditations' }" class="widget-accordion-title" role="button">
-                                        <x-form.check class="m-0 gap-0" wire:model="project-category" id="A"/>
-                                        <div class="widget-accordion-title-inner">
-                                            Course Accreditations
-                                        </div>
-                                    </div>
-                                    <div x-show="expandedCategory === 'courseAccreditations'" class="widget-accordion-content">
-                                        <!-- Content goes here -->
-                                        content
-                                    </div>
-                                </div>
-                                <div class="widget-accordion-item">
-                                    <div x-on:click="expandedCategory = 'courseDevelopment'" :class="{ 'accordion-item-active': expandedCategory === 'courseDevelopment' }" class="widget-accordion-title" role="button">
-                                        <x-form.check class="m-0 gap-0" wire:model="project-category" id="B"/>
-                                        <div>
-                                            Curriculum Development
-                                        </div>
-                                    </div>
-                                    <div x-show="expandedCategory === 'courseDevelopment'" class="widget-accordion-content">
-                                        <!-- Content goes here -->
-                                        content
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                     <div class="filter-widget">
                         <div class="d-flex gap-3 justify-content-between mb-2">
                             <h4 class="widget-title mb-0">Project Type</h4>

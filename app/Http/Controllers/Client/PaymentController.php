@@ -91,7 +91,7 @@ class PaymentController extends Controller {
         }
         $milestone_amount = $milestones->sum('amount');
         //breakdown charge into pieces
-        $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+        $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
         return view( 'frontend.client.payment.summary', compact( 'payment_methods',
             'project',
@@ -159,30 +159,53 @@ class PaymentController extends Controller {
 
         //create payment intent
         try {
-            $milestone = Milestone::find(1);
-            $milestone_amount = $milestone->amount;
-            $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->stripe_acct_id;
+            $reference = $request->reference;
+            if($reference == 'contract'){
+                $contract = Contract::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+                $milestones = Milestone::where('contract_id', $contract->id)->where('status', 'Want to Pay')->get();
+                $project = $contract->project;
+                $redirect = route('contract.show', $contract->id);
+            } else if($reference == 'offer'){
+                $contract = Offer::where('id', $request->id)->where( 'client_id', $user->profile->id )->firstOrFail();
+                $milestones = Milestone::where('offer_id', $contract->id)->where('status', 'Want to Pay')->get();
+                $project = $contract->project;
+                $redirect = route('offers.show', $contract->id);
+            } else {
+                abort(404);
+            }
+            $milestone_amount = $milestones->sum('amount');
 
-            $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount );
+            $CONNECTED_ACCOUNT_ID = $contract->expert->stripe_acct_id;
+
+            $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
+
             $intent           = $this->stripe->paymentIntents->create( [
                 'customer'                  => $user->profile->stripe_client_id,
                 'confirm' => true,
                 'off_session' => true,
-                'amount'                    => number_format($charge['total_amount'], 2) * 100,
-                'currency'                  => 'aud',
+                'amount'                    => round(number_format($charge['total_amount'], 2, '.', '') * 100),
+                'currency'                  => $user->profile->currency,
                 'transfer_group'            => $CONNECTED_ACCOUNT_ID,
                 'payment_method'            => $request->payment_method_id,
                 'metadata'                  => [
-                    'reference_id'   => $milestone->id,
-                    'reference_type' => 'milestone'
+                    'reference_id'   => $milestones->pluck('id')->toJson(),
+                    'reference_type' => 'milestone',
+                    'contract_type' => $reference,
+                    'contract_id' => $contract->id,
+                    'client_id' => $user->id,
+                    'expert_id' => $contract->expert->user->id
                 ]
             ] );
+
+            toast('success', 'Offer Sent Successfully');
 
         } catch ( \Exception $ex ) {
             dd( $ex->getMessage() );
         }
 
         return response()->json( [
+            'redirect' => $redirect,
+            'intent' => $intent,
             'clientSecret' => $intent->client_secret
         ] );
     }

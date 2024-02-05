@@ -57,8 +57,8 @@ Route::view('/privacy-policy', 'privacy-policy')->name('privacy-policy');
 
 Route::get('/find-experts', [FindExpertController::class, 'index'])->name('find.experts');
 Route::get('/find-experts/professor-michael-kassiou', [ExpertController::class, 'view'])->name('find-experts.details'); //@TODO remove the name
-Route::get('/find-training', [TrainingController::class, 'index'])->name('find-training');
-Route::get('/find-training/{slug}', [TrainingController::class, 'details'])->name('find-training.details');
+Route::get('/find-trainings', [TrainingController::class, 'index'])->name('find.trainings');
+Route::get('/trainings/{training}', [TrainingController::class, 'show'])->name('trainings.show');
 Route::get('/find-projects', [FindProjectController::class, 'index'])->name('find.projects');
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
@@ -110,6 +110,7 @@ Route::get( '/notification-settings', [
 // Nel test
 Route::get('/conversation/create/{id}', [ConversationController::class, 'store'])->middleware('auth')->name('conversation.create');
 Route::get('/messaging/{id?}', [ConversationController::class, 'index'])->middleware('auth')->name('messaging');
+Route::get('/conversation/{conversation_id}', [ConversationController::class, 'showConversation'])->middleware('auth')->name('messaging.conversation');
 // Webhooks
 Route::group(['prefix' => 'webhooks'], function (){
     Route::post( 'stripe', [StripeController::class, 'receiveWebhook'] );
