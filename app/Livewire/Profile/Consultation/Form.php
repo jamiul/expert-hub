@@ -20,19 +20,20 @@ class Form extends BaseForm
     public $imageUrl = '';
     public $confirmSlots = [];
 
-    #[Validate('required')]
-    public $expertise_id = '';
-
     #[Validate('nullable')]
     public $profile_id;
+    #[Validate('nullable')]
+    public $expertise_id = '';
+    #[Validate('array')]
+    public $expertise_skills = '';
 
-    #[Validate('required')]
+    #[Validate('nullable')]
     public $hourly_rate = '';
 
-    #[Validate('required')]
+    #[Validate('nullable')]
     public $time_zone = '';
 
-    #[Validate('required')]
+    #[Validate('nullable')]
     public $description = '';
 
     #[Validate('nullable')]
@@ -41,8 +42,7 @@ class Form extends BaseForm
     #[Validate('nullable|image|max:1024')]
     public $image;
 
-    #[Validate('array')]
-    public $expertise_skills = '';
+
     #[Validate('nullable')]
     public $date = '';
 
@@ -60,11 +60,50 @@ class Form extends BaseForm
         $this->timezoneIndetifiers = DateTimeZone::listIdentifiers();
     }
 
+    public function saveExpertise()
+    {
+        $this->validate([
+            'profile_id' => 'nullable',
+            'expertise_id' => 'required',
+            'expertise_skills' => 'required',
+        ]);
+
+        // $this->consultation = $this->profile()->consultation()->updateOrCreate(Arr::except($validated,['expertise_skills', 'date', 'time']));
+        // $this->consultation->skills()->attach($validated['expertise_skills'], ['active' => true]);
+    }
+
+    public function saveServiceFee()
+    {
+        $this->validate([
+            'hourly_rate' => 'required'
+        ]);
+    }
+
+    public function saveAvailability()
+    {
+        $this->validate([
+            'date' => 'required',
+            'time' => 'required',
+            'time_zone' => 'required'
+        ]);
+
+    }
+
+    public function saveSummary()
+    {
+        $this->validate([
+            'description' => 'required',
+            'image' => 'nullable'
+        ]);
+    }
+
     public function add()
     {
+        // dd('add');
         $data = $this->validate();
         $data['profile_id'] = $this->profile()->id;
 
+        // dd($data);
         $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'date', 'time']));
 
         if (!is_null($this->image)) {

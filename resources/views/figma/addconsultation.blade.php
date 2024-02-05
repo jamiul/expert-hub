@@ -171,6 +171,10 @@
                                     <h6>Selected slot</h6>
                                     <ul class="edux-selected-slot">
                                         <div class="row edux-padding-xs">
+                                            <li class="edux-day-schedule">Monday</li>
+                                            <li>01.00 AM</li>
+                                        </div>
+                                        <div class="row edux-padding-xs">
                                             <li class="edux-day-schedule">Friday</li>
                                             <li>01.00 AM</li>
                                             <li>10:00 AM</li>
@@ -188,6 +192,10 @@
                                             <li>05:00 PM</li>
                                             <li>09:00 PM</li>
                                             <li>09:00 PM</li>
+                                        </div>
+                                        <div class="row edux-padding-xs">
+                                            <li class="edux-day-schedule">Sunday</li>
+                                            <li>01.00 AM</li>
                                         </div>
                                     </ul>
                                 </div>

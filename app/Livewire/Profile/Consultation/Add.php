@@ -14,6 +14,7 @@ class Add extends Modal
     use WithFileUploads;
     public Form $form;
 
+    public int $currentStep = 1;
     public $editable = false;
     public $expertSkills;
 
@@ -54,6 +55,19 @@ class Add extends Modal
     public function profile()
     {
         return auth()->user()->profile;
+    }
+
+    public function next()
+    {
+        if($this->currentStep === 1) {
+            $this->form->saveExpertise();
+        }
+        if($this->currentStep === 2){
+            $this->form->saveServiceFee();
+        }
+        if ($this->currentStep < 6) {
+            $this->currentStep += 1;
+        }
     }
 
 

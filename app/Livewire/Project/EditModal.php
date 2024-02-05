@@ -91,7 +91,7 @@ class EditModal extends Modal
     {
         $media->delete();
     }
-    
+
     public function render()
     {
         return view('livewire.project.edit-modal');
