@@ -8,6 +8,7 @@ use App\Enums\Scholarship\StudyLevel;
 use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Scholarship;
+use App\Models\StudyField;
 use App\Models\University;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
@@ -69,22 +70,22 @@ class ScholarshipSeeder extends Seeder
             DB::table('scholarship_fund_types')->insert($scholarshipFundData);
 
             $scholarshipAreaData = [];
-            $expertiseLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
+            $studyAreaLookup = StudyField::pluck('id', 'name')->toArray();
             if($scholarship['study_area'] == 'All'){
-                $expertises = $expertiseLookup;
-                foreach ($expertises as $expertise) {
+                $studyAreas = $studyAreaLookup;
+                foreach ($studyAreas as $studyArea) {
                     $scholarshipAreaData[] = [
                         'scholarship_id' => $scholarship_id,
-                        'expertise_id' => $expertise,
+                        'study_field_id' => $studyArea,
                     ];
                 }
             }else{
                 foreach (explode(',', $scholarship['study_area']) as $scholarshipArea) {
-                    $expertiseId = $expertiseLookup[trim($scholarshipArea)] ?? null;
-                    if($expertiseId){
+                    $studyAreaId = $studyAreaLookup[trim($scholarshipArea)] ?? null;
+                    if($studyAreaId){
                         $scholarshipAreaData[] = [
                             'scholarship_id' => $scholarship_id,
-                            'expertise_id' => $expertiseId,
+                            'study_field_id' => $studyAreaId,
                         ];
                     }
                 }

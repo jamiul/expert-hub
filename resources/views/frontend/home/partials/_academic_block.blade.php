@@ -155,8 +155,7 @@
 
         </div>
         <div class="view-all-training-btn-wrapper">
-            <x-button.link class="btn btn-outline-primary border-2 btn-md" href="#"
-                           text="View All Training"/>
+            <a href="{{ route('find.trainings') }}" class="btn btn-outline-primary border-2 btn-md">View All Training</a>
         </div>
     </div>
 </section>

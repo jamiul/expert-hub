@@ -167,8 +167,7 @@
                 </li> -->
                 <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
-                        <img
-                            src="{{ auth()->user()->profile->picture }}"/>
+                        <img src="{{ auth()->user()->profile->picture ? auth()->user()->profile->picture : asset('dummy-user.png')}}"/>
                     </a>
                     <div x-cloak x-show="openDropdown === 'profile'" @click.outside="openDropdown = null" class="header-dropdown">
                         <div class="profile-dropdown-inner">

@@ -42,7 +42,7 @@
                                                 @if($training->mode == \App\Enums\TrainingMode::Zoom)
                                                 <x-icon.video fill="#0036E3"/>
                                                 @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
-                                                <img src="{{ asset('assets/frontend/img/zoom-speech.png') }}" alt="">
+                                                <x-icon.face-to-face fill="#0036E3"/>
                                                 @endif
                                             </div>
                                             <div>

@@ -85,9 +85,13 @@
                         <div class="td">Training Mode</div>
                         <div class="td">
                             <div class="d-flex align-items-center gap-2">
+                                @if($training->mode == \App\Enums\TrainingMode::Zoom)
                                 <div>
                                     <x-icon.video/>
                                 </div>
+                                @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
+                                <x-icon.face-to-face/>
+                                @endif
                                 <div> {{ $training->mode }}</div>
                             </div>
                         </div>
