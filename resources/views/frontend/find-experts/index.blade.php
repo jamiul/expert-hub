@@ -43,13 +43,6 @@
 @endsection
 
 @push('bottom_scripts')
-    <script>
-        function toggleAccordion(header) {
-            header.classList.toggle("accordion-item-active");
-            var content = header.nextElementSibling;
-            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
     @vite('resources/js/expert.js')
     @vite('resources/js/find-project.js')
 @endpush
