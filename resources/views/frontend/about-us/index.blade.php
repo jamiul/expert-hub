@@ -29,7 +29,29 @@
 
     @include('frontend.about-us.partials._mission')
     @include('frontend.about-us.partials._eduexhub')
-    @include('frontend.about-us.partials._team')
+
+    <section class="page-section team-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="section-title-wrapper">
+                        <h2 class="section-title">AVAILABILITY & SECURITY</h2>
+                        <p class="section-title-lead">We’re There Every Step of The Way</p>
+                        <p class="section-title-summary">
+                            Our platform provides a seamless journey from project posting to completion, ensuring you
+                            find the perfect match for your needs. With our escrow payment system, your funds are held
+                            securely until you're satisfied with the project's outcome.
+                        </p>
+                         <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <livewire:about.team/>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @include('frontend.about-us.partials._story')
 @endsection
 
