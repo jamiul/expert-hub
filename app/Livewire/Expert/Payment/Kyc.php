@@ -7,6 +7,9 @@ use WireElements\Pro\Components\Modal\Modal;
 
 class Kyc extends Modal
 {
+
+    public $expert_kyc;
+
     public function render()
     {
         $user = auth()->user();
@@ -15,7 +18,7 @@ class Kyc extends Modal
             return toast('error','no account', $this);
         }
 
-//        dd($user->expert_kyc);
+        $this->expert_kyc = $user->expert_kyc;
 
         return view('livewire.expert.payment.kyc');
     }
