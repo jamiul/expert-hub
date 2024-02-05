@@ -149,6 +149,9 @@ class Wizard extends Component
         ExpertKYC::updateOrCreate(
             ['user_id' => $user->id],
             [
+                'first_name' => $user->first_name,
+                'last_name' => $user->last_name,
+                'email' => $user->email,
                 'country' => $user->country->name,
                 'individual_dob' => Carbon::parse($this->dob),
                 'individual_gender' => $this->gender,
@@ -159,7 +162,7 @@ class Wizard extends Component
                 'individual_registered_address_postal_code' => $this->postcode,
                 'individual_registered_address_line1' => $this->address_line_1,
                 'individual_registered_address_line2' => $this->address_line_2,
-                'status' => 1,
+                'status' => 'unverified',
             ]
         );
 
