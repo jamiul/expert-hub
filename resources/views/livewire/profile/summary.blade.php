@@ -5,9 +5,19 @@
     </div>
     <div class="user-profile-info">
         <h3 class="h6">{{ $profile->user->full_name ?? '' }}</h3>
+        @if(auth()->user()->isExpert())
         <p class="text-sm fw-medium text-muted">
             {{ $profile->expertField ? $profile->expertField->name : '' }}
         </p>
+        @endif
+        @if(auth()->user()->isClient())
+        <p class="text-sm fw-medium">
+            {{ $profile->current_role ?? '' }}
+        </p>
+        <p class="text-sm fw-medium">
+            {{ $profile->current_organization ?? '' }}
+        </p>
+        @endif
         <p class="text-sm d-flex align-items-center justify-content-center">
             <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
                 viewBox="0 0 25 24" fill="none">

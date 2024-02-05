@@ -18,7 +18,8 @@ class Create extends Modal
 
     public function mount()
     {
-        $this->availableLanguages = Language::pluck('name', 'id')->toArray();
+        $selectedLanguages = auth()->user()->profile->languages->pluck('id')->toArray();
+        $this->availableLanguages = Language::whereNotIn('id', $selectedLanguages)->pluck('name', 'id')->toArray();
     }
 
     public function addLanguage()
