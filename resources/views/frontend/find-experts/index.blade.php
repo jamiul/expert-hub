@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <section class="mt-60">
+    <section class="page-section-sm pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -23,7 +23,7 @@
                 <div class="col">
                     <div style="margin-bottom: 18px" class="section-title-wrapper mx-auto text-center">
                         <h2 class="section-title">EXPERTS</h2>
-                        <p class="section-title-lead">Meet Our Top Experts For Consultation</p>
+                        <p class="section-title-lead">Meet Our Top Experts</p>
                     </div>
                 </div>
             </div>

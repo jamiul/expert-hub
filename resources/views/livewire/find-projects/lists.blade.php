@@ -78,7 +78,10 @@
             </div>
         </div>
         @empty
-            <x-empty />
+            <div class="p-40">
+                <x-empty />
+            </div>
+
         @endforelse
 
     </div>
