@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Expert Gate</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('logo/expert-gate-favicon.ico') }}">
-        @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
+        @vite('resources/sass/bootstrap.scss')
         @vite('resources/css/app.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/client-dashboard.css')
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="auth-nav d-flex align-items-center">
-                        <a href="/"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
+                        <a href="{{ route('expert.dashboard') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
                     </nav>
                 </div>
             </div>

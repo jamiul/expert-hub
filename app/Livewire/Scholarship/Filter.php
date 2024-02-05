@@ -12,6 +12,7 @@ use App\Models\ScholarshipLevel;
 use App\Models\ScholarshipType;
 use App\Models\ScholarshipUniversity;
 use App\Models\StudyArea;
+use App\Models\StudyField;
 use App\Models\University;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -151,7 +152,7 @@ class Filter extends Component
     public function render()
     {
         $levels = StudyLevel::cases();
-        $studyAreas = Expertise::expertise()->isParent()->get();
+        $studyAreas = StudyField::get();
         $scholarshipTypes = FundType::cases();
         $studentTypes = StudentType::cases();
         

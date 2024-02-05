@@ -36,6 +36,7 @@ class ProjectList extends Component
     {
         return 'livewire.pagination';
     }
+    
     public function toggleShowMore()
     {
         $this->showMore = !$this->showMore;
@@ -43,7 +44,7 @@ class ProjectList extends Component
 
     public function render()
     {
-        $projects = Project::with('client', 'expertise', 'skills');
+        $projects = Project::published()->with('client', 'expertise', 'skills');
         $projects = $projects->orderByDesc('id')->paginate($this->perPage);
 
         $favoriteProjectIDs = Favourite::where('loveable_type', 'App\Models\Project')
