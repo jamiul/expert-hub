@@ -4,7 +4,7 @@
     border-bottom: 1px solid $edu-border-color;
 
     .project-list-card-item-header {
-        padding-bottom: 1rem;
+        padding-bottom: 7px;
         border-bottom: 1px solid $edu-border-color;
 
         .project-item-title {
@@ -17,6 +17,7 @@
 
         .project-item-meta-wrapper {
             font-size: 14px;
+            color: #6E737C;
 
             .icon-btn {
                 border-radius: 4px;
@@ -56,6 +57,30 @@
                 }
             }
 
+            .btn {
+                width: 24px;
+                height: 24px;
+                padding: 0;
+
+                &.btn-favorite:hover {
+                    background-color: transparent;
+
+                    .heart-line {
+                        display: none;
+                    }
+
+                    .heart-filled {
+                        display: block;
+                    }
+
+                    svg {
+                        path {
+                            fill: $edu-primary-color;
+                        }
+                    }
+                }
+            }
+
             .project-item-price {
                 strong {
                     color: rgba(25, 29, 36, 0.70);;
@@ -66,6 +91,21 @@
                 flex-wrap: wrap;
 
             }
+        }
+    }
+
+    .project-item-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            font-weight: 500;
         }
     }
 

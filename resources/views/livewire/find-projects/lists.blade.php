@@ -5,23 +5,23 @@
             <div class="project-list-card-item-header">
                 <div class="project-item-title">
                     <h3 class="h6 d-flex gap-2 mb-0">
-                        <x-icon.briefcase width="20" height="20" fill="#9196A2" />
+                        <x-icon.briefcase width="24" height="24" fill="#9196A2" />
                         <a href="{{ route('projects.show', $project) }}">
                             {{ $project->title }}
                         </a>
                     </h3>
                 </div>
                 <div class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
-                    <div class="project-item-meta d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center gap-2">
+                    <div class="project-item-meta">
+                        <div class="">
                             <x-icon.tag fill="#9196A2" />
                             {{ $project->expertise->name ?? '' }}
                         </div>
-                        <div class="d-flex align-items-center gap-2">
+                        <div class="">
                             <x-icon.clock fill="#9196A2" />
                             {{ $project->created_at->diffForHumans() }}
                         </div>
-                        <div class="d-flex align-items-center gap-2">
+                        <div class="">
                             <x-icon.globe width="20" height="20" fill="#9196A2" />
                             {{ $project->client->user->country->name ?? '' }}
                         </div>
@@ -78,10 +78,7 @@
             </div>
         </div>
         @empty
-            <div class="p-40">
-                <x-empty />
-            </div>
-
+            <x-empty />
         @endforelse
 
     </div>
