@@ -1,6 +1,6 @@
 <section class="page-section bg-white company-story">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-7">
                 <div style="margin-bottom: 24px" class="section-title-wrapper">
                     <h2 class="section-title">{{ Str::upper($aboutUsDTO->story_subtitle) }}</h2>
