@@ -368,7 +368,7 @@ class Messaging extends Component
             });
         }
 
-        $this->currentUsersConversations = $this->currentUsersConversations->get();
+        $this->currentUsersConversations = $this->currentUsersConversations->latest()->get();
 
         return view('livewire.messaging');
     }
