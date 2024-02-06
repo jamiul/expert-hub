@@ -12,7 +12,7 @@
 
                         <div class="chard-number d-flex flex-column">
                             <h6>Personal Account</h6>
-                            <p>card ends: ****{{ $method->last4 }} in {{ $method->currency }}</p>
+                            <p>account ends with {{ $method->last4 }} in {{ $method->currency }}</p>
                         </div>
                     </div>
 
