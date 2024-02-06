@@ -191,7 +191,9 @@ class Kyc extends Modal {
 
         $this->expert_kyc = $user->expert_kyc;
 
-        return view( 'livewire.expert.payment.kyc' );
+        return view( 'livewire.expert.payment.kyc', [
+            'user' => $user
+        ] );
     }
 
     public function rules() {
