@@ -939,7 +939,7 @@ class StripeController extends Controller {
                 'charges_enabled'     => $person->charges_enabled ? 1 : 0,
                 'payouts_enabled'     => $person->payouts_enabled ? 1 : 0,
                 'details_submitted'   => $person->details_submitted ? 1 : 0,
-                'status'              => $person->verification->status
+                'status'              => $person->verification->status == 'pending' ? 0 : 1
             ] );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
