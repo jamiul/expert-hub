@@ -484,9 +484,10 @@ class StripeController extends Controller {
     }
 
     private function __chargeRefund( $paymentData ) {
+        Log::info($paymentData);
         try {
-            $reference_id   = @$paymentData->metadata->reference_id; //milestone id
-            $reference_type = @$paymentData->metadata->reference_type; //milestone
+            $reference_id   = @$paymentData->metadata->contract_id; // id
+            $reference_type = @$paymentData->metadata->contract_type; //offer
             $client_id      = @$paymentData->metadata->client_id; //client_id
 
             //create refund transaction for client
@@ -527,7 +528,7 @@ class StripeController extends Controller {
                     'client_id'      => $client_id,
                     'expert_id'      => null,
                     'amount'         => ( $paymentData->amount_refunded / 100 ),
-                    'charge_type'    => 'debit',
+                    'charge_type'    => 'credit',
                     'parent'         => null,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                 ];
@@ -544,6 +545,7 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
+            Log::info($ex->getMessage());
             echo $ex->getMessage();
             http_response_code( $ex->getCode() );
             exit();
