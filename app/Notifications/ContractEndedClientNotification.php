@@ -2,24 +2,25 @@
 
 namespace App\Notifications;
 
+use App\Models\Contract;
+use App\Models\Offer;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ProjectDisputeNotification extends Notification
+class ContractEndedClientNotification extends Notification
 {
     use Queueable;
+
+    private Contract $contract;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct( $data )
+    public function __construct( Contract $contract )
     {
-        $this->title   = $data['title'];
-        $this->message = $data['message'];
-        $this->link    = $data['link'];
-        $this->avatar  = $data['avatar'];
+        $this->contract = $contract;
     }
 
     /**
@@ -38,9 +39,9 @@ class ProjectDisputeNotification extends Notification
     public function toMail( object $notifiable ): MailMessage
     {
         return ( new MailMessage )
-            ->line( $this->title )
-            ->line( $this->message )
-            ->action( 'See Message', $this->link )
+            ->line('Contract Ended' )
+            ->line('Your contract ended by ' . $this->contract->client->user->full_name )
+            ->action('View Contract', route('expert.contracts') )
             ->line( 'Thank you for using our application!' );
     }
 
@@ -52,10 +53,11 @@ class ProjectDisputeNotification extends Notification
     public function toArray( object $notifiable ): array
     {
         return [
-            'title'   => $this->title,
-            'message' => $this->message,
-            'link'    => $this->link,
-            'avatar'  => $this->avatar
+            'title'   => 'Contract Ended',
+            'message' => 'Your contract ended by ' . $this->contract->expert->user->full_name,
+            'link'    => route('client.contracts'),
+            'button'    => 'View Contract',
+            'avatar'  => $this->contract->expert->picture,
         ];
     }
 }

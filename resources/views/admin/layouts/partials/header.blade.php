@@ -107,24 +107,24 @@
                 </div>
             </li>
             <li class="admin-profile-menu">
-                <a @click="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
+                <a @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                     <span>
-                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}">
+                        <img src="{{ asset('/dummy-user.png') }}">
                     </span>
                     <span>
-                          <p class="admin-user-name">Professor Michael Kassiou</p>
-                          <p class="admin-user-role">Curriculum Expert</p>
+                          <p class="admin-user-name">{{ auth('admin')->user()->fullName }}</p>
+                          <p class="admin-user-role">Admin</p>
                     </span>
                 </a>
                 <div x-show="openDropdown === 'profile'" class="header-dropdown">
                     <div class="profile-dropdown-inner">
                         <div class="dropdown-user-thumbnail mb-3">
                             <img
-                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"/>
+                                src="{{ asset('/dummy-user.png') }}"/>
                         </div>
                         <div class="dropdown-user-info  mb-3">
-                            <h3 class="h6 mb-1">Dr. Darrell Steward</h3>
-                            <p class="text-sm">Sydney Islamic business school</p>
+                            <h3 class="h6 mb-1">{{ auth('admin')->user()->fullName }}</h3>
+                            <p class="text-sm">Admin</p>
                         </div>
                         <div class="dropdown-user-profile-status  mb-3">
                             <input type="radio" name="user-profile-status" id="user-profile-offline">

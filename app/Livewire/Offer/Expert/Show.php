@@ -44,7 +44,7 @@ class Show extends Component
             },
             prompt: [
                 'title' => 'Accept offer?',
-                'message' => 'Paragraph: Archetype lets designers like you very quickly and easily create consistent',
+                'message' => 'Are you sure to accept the offer?',
                 'confirm' => 'Accept',
                 'cancel' => 'Cancel',
                 'button' => 'btn-success',
