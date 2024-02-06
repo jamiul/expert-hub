@@ -6,8 +6,7 @@ use App\Models\ExpertWithdrawal;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
-class GetPaid extends Modal
-{
+class GetPaid extends Modal {
 
     public $expert;
 
@@ -28,11 +27,11 @@ class GetPaid extends Modal
 
         $acct_id = $user->profile->stripe_acct_id;
 
-        $amount = $this->amount * 100;
+        $amount    = $this->amount * 100;
         $reference = $this->reference;
 
-        $bank_info = ExpertWithdrawal::where('user_id', $user->id)
-                                     ->where('bank_id', $this->withdrawal_method)
+        $bank_info = ExpertWithdrawal::where( 'user_id', $user->id )
+                                     ->where( 'bank_id', $this->withdrawal_method )
                                      ->first();
 
         try {
@@ -43,16 +42,16 @@ class GetPaid extends Modal
             $stripe->payouts->create( [
 //                'source_type' => 'bank_account',
                 'destination' => $bank_info->bank_id,
-                'amount'   => $amount,
-                'currency' => $bank_info->currency,
+                'amount'      => $amount,
+                'currency'    => $bank_info->currency,
                 'description' => $reference
-            ], ['stripe_account' => $acct_id] );
+            ], [ 'stripe_account' => $acct_id ] );
 
-            toast('success', 'Withdraw request was successful.', $this);
-        } catch (\Stripe\Exception\InvalidRequestException $ex) {
-            return toast('warning', $ex->getMessage(), $this);
-        } catch (\Exception $ex){
-            return toast('warning', $ex->getMessage(), $this);
+            toast( 'success', 'Withdraw request was successful.', $this );
+        } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+            return toast( 'warning', $ex->getMessage(), $this );
+        } catch ( \Exception $ex ) {
+            return toast( 'warning', $ex->getMessage(), $this );
         }
 
         $this->close();
@@ -61,23 +60,23 @@ class GetPaid extends Modal
     public function updatedAmountType() {
         $user = auth()->user();
 
-        if($this->amount_type == 'fixed'){
+        if ( $this->amount_type == 'fixed' ) {
             $this->amount = $user->profile->balance;
         }
 
-        $amt = doubleval($this->amount);
+        $amt = doubleval( $this->amount );
 
-        if($amt > 0){
-            $this->total_amount = number_format($amt - 1, 2);
-        } else if($amt == 0) {
+        if ( $amt > 0 ) {
+            $this->total_amount = number_format( $amt - 1, 2 );
+        } else if ( $amt == 0 ) {
             $this->total_amount = $amt;
         }
     }
 
     public function updatedAmount() {
-        $amt = doubleval($this->amount);
-        if($amt >= 0){
-            $this->total_amount = number_format( $amt - 1, 2);
+        $amt = doubleval( $this->amount );
+        if ( $amt >= 0 ) {
+            $this->total_amount = number_format( $amt - 1, 2 );
         } else {
             $this->total_amount = 0;
         }
@@ -89,9 +88,10 @@ class GetPaid extends Modal
 
     public function rules() {
         $user = auth()->user();
+
         return [
             'withdrawal_method' => 'required',
-            'amount' => 'required|lt:' . $user->profile->balance
+            'amount'            => 'required|lt:' . $user->profile->balance
         ];
     }
 
@@ -101,14 +101,13 @@ class GetPaid extends Modal
         $this->amount = $user->profile->balance;
     }
 
-    public function render()
-    {
+    public function render() {
         $user = auth()->user();
 
         $this->expert = $user->profile;
 
         $this->withdrawal_methods = $user->expert_withdrawal;
 
-        return view('livewire.expert.payment.withdraw.get-paid');
+        return view( 'livewire.expert.payment.withdraw.get-paid' );
     }
 }

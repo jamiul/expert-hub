@@ -6,8 +6,7 @@ use App\Models\WithdrawSchedule;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
-class Schedule extends Modal
-{
+class Schedule extends Modal {
     public $withdrawal_methods;
 
     public $preferred_payment_schedule;
@@ -22,17 +21,17 @@ class Schedule extends Modal
         $this->validate();
         $user = auth()->user();
 
-        WithdrawSchedule::updateOrCreate([
+        WithdrawSchedule::updateOrCreate( [
             'user_id' => $user->id
         ], [
-            'expert_withdrawal_id' => $this->withdrawal_method,
+            'expert_withdrawal_id'       => $this->withdrawal_method,
             'preferred_payment_schedule' => $this->preferred_payment_schedule,
-            'balance_reach' => $this->balance_reach,
-            'minimum_reserve' => $this->minimum_reserve,
-            'status' => true
-        ]);
+            'balance_reach'              => $this->balance_reach,
+            'minimum_reserve'            => $this->minimum_reserve,
+            'status'                     => true
+        ] );
 
-        toast('success', 'Schedule updated', $this);
+        toast( 'success', 'Schedule updated', $this );
 
         $this->close();
     }
@@ -43,9 +42,9 @@ class Schedule extends Modal
 
     public function rules() {
         return [
-            'withdrawal_method' => 'required',
+            'withdrawal_method'          => 'required',
             'preferred_payment_schedule' => 'required',
-            'balance_reach' => 'required'
+            'balance_reach'              => 'required'
         ];
     }
 
@@ -58,14 +57,14 @@ class Schedule extends Modal
 
         $withdraw_schedule = $user->withdraw_schedule;
 
-        $this->withdrawal_method = $withdraw_schedule?->expert_withdrawal_id;
+        $this->withdrawal_method          = $withdraw_schedule?->expert_withdrawal_id;
         $this->preferred_payment_schedule = $withdraw_schedule?->preferred_payment_schedule;
-        $this->balance_reach = $withdraw_schedule?->balance_reach;
-        $this->minimum_reserve = $withdraw_schedule?->minimum_reserve;
+        $this->balance_reach              = $withdraw_schedule?->balance_reach;
+        $this->minimum_reserve            = $withdraw_schedule?->minimum_reserve;
     }
-    public function render()
-    {
 
-        return view('livewire.expert.payment.withdraw.schedule');
+    public function render() {
+
+        return view( 'livewire.expert.payment.withdraw.schedule' );
     }
 }

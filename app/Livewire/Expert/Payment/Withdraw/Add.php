@@ -6,8 +6,7 @@ use App\Livewire\Expert\Payment\GetPaid;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
-class Add extends Modal
-{
+class Add extends Modal {
     public $country = 'AU';
 
     public $currency = 'AUD';
@@ -43,10 +42,10 @@ class Add extends Modal
                     'account_number'      => $this->account_number,
                 ],
             ] );
-        } catch (\Stripe\Exception\InvalidRequestException $ex) {
-            return toast('warning', $ex->getMessage(), $this);
-        } catch (\Exception $ex){
-            return toast('warning', $ex->getMessage(), $this);
+        } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+            return toast( 'warning', $ex->getMessage(), $this );
+        } catch ( \Exception $ex ) {
+            return toast( 'warning', $ex->getMessage(), $this );
         }
 
         if ( $bank_token->id ) {
@@ -55,35 +54,34 @@ class Add extends Modal
                     $user->profile->stripe_acct_id,
                     [ 'external_account' => $bank_token->id ]
                 );
-            } catch (\Stripe\Exception\InvalidRequestException $ex) {
-                return toast('warning', $ex->getMessage(), $this);
-            } catch (\Exception $ex){
-                return toast('warning', $ex->getMessage(), $this);
+            } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+                return toast( 'warning', $ex->getMessage(), $this );
+            } catch ( \Exception $ex ) {
+                return toast( 'warning', $ex->getMessage(), $this );
             }
 
             if ( $paymentMethod ) {
-                toast('success', 'Bank information added successfully.', $this);
+                toast( 'success', 'Bank information added successfully.', $this );
             }
         }
 
-        $this->dispatch('refresh')->to(GetPaid::class);
+        $this->dispatch( 'refresh' )->to( GetPaid::class );
 
         $this->close();
     }
 
     public function rules() {
         return [
-            'country'  => 'required',
-            'currency' => 'required',
+            'country'             => 'required',
+            'currency'            => 'required',
             'account_holder_name' => 'required',
             'account_holder_type' => 'required',
-            'routing_number' => 'required',
-            'account_number' => 'required'
+            'routing_number'      => 'required',
+            'account_number'      => 'required'
         ];
     }
 
-    public function render()
-    {
-        return view('livewire.expert.payment.withdraw.add');
+    public function render() {
+        return view( 'livewire.expert.payment.withdraw.add' );
     }
 }
