@@ -71,10 +71,14 @@
                     {{ $project->description }}
                 </p>
             </div>
-            <div class="tag-list">
+
+            <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
                 @foreach ($project->skills as $skill)
-                    <a href="#" class="project-tag">{{ $skill->name }}</a>
+                    <span class="tag">{{ $skill->name }}</span>
                 @endforeach
+                @if ($project->skills->count() > 4)
+                    <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                @endif
             </div>
         </div>
         @empty
