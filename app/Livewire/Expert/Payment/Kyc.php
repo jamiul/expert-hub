@@ -93,14 +93,14 @@ class Kyc extends Modal {
                 'individual_registered_address_state'       => $this->address_state,
                 'individual_registered_address_postal_code' => $this->address_postal_code,
                 'individual_registered_address_country'     => $this->address_country,
-                'details_submitted' => $acc_update->details_submitted,
-                'payouts_enabled' => $acc_update->payouts_enabled,
-                'charges_enabled' => $acc_update->charges_enabled,
-                'requirements' => $acc_update->requirements,
-                'future_requirements' => $acc_update->future_requirements
+                'details_submitted'                         => $acc_update->details_submitted,
+                'payouts_enabled'                           => $acc_update->payouts_enabled,
+                'charges_enabled'                           => $acc_update->charges_enabled,
+                'requirements'                              => $acc_update->requirements,
+                'future_requirements'                       => $acc_update->future_requirements
             ] );
 
-            if ( $this->document_front) {
+            if ( $this->document_front ) {
                 $this->expert_kyc->addMedia( $this->document_front )->toMediaCollection( 'individual_verification_document_front' );
 
                 $fp    = fopen( $this->expert_kyc->getMedia( 'individual_verification_document_front' )->last()->getPath(), 'r' );
@@ -113,7 +113,7 @@ class Kyc extends Modal {
 
                 fclose( $fp );
             }
-            if ( $this->document_back) {
+            if ( $this->document_back ) {
                 $this->expert_kyc->addMedia( $this->document_back )->toMediaCollection( 'individual_verification_document_back' );
 
                 $fp    = fopen( $this->expert_kyc->getMedia( 'individual_verification_document_back' )->last()->getPath(), 'r' );
@@ -126,10 +126,10 @@ class Kyc extends Modal {
                 fclose( $fp );
             }
 
-            dd([
+            dd( [
                 $this->document_front,
                 $this->document_back
-            ]);
+            ] );
 
             if ( $this->additional_document_front ) {
                 $user_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'individual_verification_additional_document_front' );
@@ -158,7 +158,7 @@ class Kyc extends Modal {
 
             toast( 'success', 'Information submitted successfully', $this );
 
-            $this->dispatch('refresh', GetPaid::class);
+            $this->dispatch( 'refresh', GetPaid::class );
 
             $this->close();
         } catch ( \Exception $ex ) {
@@ -191,31 +191,37 @@ class Kyc extends Modal {
 
         $this->expert_kyc = $user->expert_kyc;
 
-        return view( 'livewire.expert.payment.kyc' );
+        return view( 'livewire.expert.payment.kyc', [
+            'user' => $user
+        ] );
     }
 
     public function rules() {
         return [
-            'individual_first_name' => 'required',
-            'individual_last_name'  => 'required',
-            'dob'                   => 'required',
-            'address_line1'         => 'required',
-            'address_city'          => 'required',
-            'address_state'         => 'required',
-            'address_postal_code'   => 'required',
-            'address_country'       => 'required',
-            'phone'                 => 'required',
-            'document_front' => [ 'nullable',
-                File::types(['jpg','png','jpeg', 'pdf'])
+            'individual_first_name'     => 'required',
+            'individual_last_name'      => 'required',
+            'dob'                       => 'required',
+            'address_line1'             => 'required',
+            'address_city'              => 'required',
+            'address_state'             => 'required',
+            'address_postal_code'       => 'required',
+            'address_country'           => 'required',
+            'phone'                     => 'required',
+            'document_front'            => [
+                'nullable',
+                File::types( [ 'jpg', 'png', 'jpeg', 'pdf' ] )
             ],
-            'document_back' => [ 'nullable',
-                File::types(['jpg','png','jpeg', 'pdf'])
+            'document_back'             => [
+                'nullable',
+                File::types( [ 'jpg', 'png', 'jpeg', 'pdf' ] )
             ],
-            'additional_document_front' => [ 'nullable',
-                File::types(['jpg','png','jpeg', 'pdf'])
+            'additional_document_front' => [
+                'nullable',
+                File::types( [ 'jpg', 'png', 'jpeg', 'pdf' ] )
             ],
-            'additional_document_back' => [ 'nullable',
-                File::types(['jpg','png','jpeg', 'pdf'])
+            'additional_document_back'  => [
+                'nullable',
+                File::types( [ 'jpg', 'png', 'jpeg', 'pdf' ] )
             ]
         ];
     }
