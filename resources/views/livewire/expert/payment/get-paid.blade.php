@@ -1,4 +1,11 @@
 <div>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+    </script>
+
     <section class="my-60">
         <div class="container">
             <div class="edux-billing-method-card-area">
@@ -75,7 +82,7 @@
                                         <p class="mb-0 title text-primary fw-medium">{{ $user->profile->balance }} {{ $user->profile->currency }}</p>
                                     </div>
                                     <div class="col-4 text-end get-paid-end">
-                                        <button onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add'})"
+                                        <button onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.get-paid'})"
                                             class="btn btn-primary fs-15 fw-medium large__btn">Get Paid Now</button>
                                     </div>
                                 </div>
@@ -92,11 +99,13 @@
                                         </svg>
                                     </button>
                                 </p>
-                                <p class="text-black mb-3">
-                                    Weekly (next on Oct 18) <br>
-                                    Only when balance is $1,000.00 or more. <a href="#" class="text-primary text-decoration-underline fw-medium">View payment calendar</a>
-                                </p>
-                                <p class="text-black mb-0" >Direct to Local Bank (BDT) - Account ending in 1001</p>
+                                @if($withdraw_schedule)
+                                    <p class="text-black mb-3">
+                                        {{ $withdraw_schedule->preferred_payment_schedule }} (next on Oct 18) <br>
+                                        Only when balance is ${{ $withdraw_schedule->balance_reach  }} or more. <a href="#" class="text-primary text-decoration-underline fw-medium">View payment calendar</a>
+                                    </p>
+                                    <p class="text-black mb-0" >account ends with {{ $withdraw_schedule->expert_withdrawal->last4 }} in {{ $withdraw_schedule->expert_withdrawal->currency }}</p>
+                                @endif
                             </div>
 
                             <div class="mt-4 p-3 p-sm-4 border rounded-4">
@@ -165,18 +174,18 @@
                                                 </td>
                                             </tr>
 {{--                                        @endif--}}
-{{--                                        @if($user->expert_kyc->requirements['past_due'])--}}
-                                            <tr class="edux-pending-payment">
-                                                <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
-                                                <td style="vertical-align: middle;">Past Due</td>
-                                                <td style="vertical-align: middle;">{{ (@$user->expert_kyc->requirements['current_deadline']) ? Carbon::parse($user->expert_kyc->requirements['current_deadline'])->format('Y/m/d') : '' }}</td>
-                                                <td style="vertical-align: middle;"  class="edux-tbl-action">
-                                                    <a onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add' })"
-                                                       class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
+                                            @if($expert_withdrawal->count()  == 0)
+                                                <tr class="edux-pending-payment">
+                                                    <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
+                                                    <td style="vertical-align: middle;">Past Due</td>
+                                                    <td style="vertical-align: middle;">{{ (@$user->expert_kyc->requirements['current_deadline']) ? Carbon::parse($user->expert_kyc->requirements['current_deadline'])->format('Y/m/d') : '' }}</td>
+                                                    <td style="vertical-align: middle;"  class="edux-tbl-action">
+                                                        <a onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add' })"
+                                                           class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
 
-                                                </td>
-                                            </tr>
-{{--                                        @endif--}}
+                                                    </td>
+                                                </tr>
+                                            @endif
                                         </tbody>
                                     </table>
 

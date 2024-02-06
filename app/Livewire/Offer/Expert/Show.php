@@ -56,9 +56,19 @@ class Show extends Component
     {
         $this->askForConfirmation(
             callback: function (){
-                $this->offer->update([
-                    'status' => OfferStatus::Declined,
-                ]);
+//                $this->offer->update([
+//                    'status' => OfferStatus::Declined,
+//                ]);
+
+                //todo: refund customer
+                dd($this->offer);
+//                $refund = $this->stripe->refunds->create([
+//                    'payment_intent' => $payment_intent_id,
+//                    'amount' => 10 * 100
+//                ]);
+
+                //todo: notify customer
+
                 toast('success', 'Offer Declined!');
             },
             prompt: [

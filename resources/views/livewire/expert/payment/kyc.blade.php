@@ -1,6 +1,6 @@
 <x-modal>
     <x-slot name="title"></x-slot>
-    <form id="payment-form">
+    <form wire:submit="submitKYC">
         <ul class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-homeupdate" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Required Fields</button>
@@ -13,134 +13,118 @@
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-homeupdate" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                @if(in_array('first_name', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="First Name" wire:model="individual_first_name" placeholder="First Name" />
+                @endif
+                @if(in_array('last_name', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="Last Name" wire:model="individual_last_name" placeholder="Last Name" />
+                @endif
+                @if(in_array('dob.day', $expert_kyc->requirements['currently_due']))
+                    <x-form.flatpicker label="Date of Birth" wire:model="dob" />
+                @endif
+                @if(in_array('address.line1', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="Address Line 1" wire:model="address_line1" placeholder="Address Line 1"/>
+                @endif
+                @if(in_array('address.line2', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="Address Line 2" wire:model="address_line2" placeholder="Address Line 2"/>
+                @endif
+                @if(in_array('address.city', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="City" wire:model="address_city" placeholder="City"/>
+                @endif
+                @if(in_array('address.state', $expert_kyc->requirements['currently_due']))
+                    <x-form.choice wire:model="address_state" label="State">
+                        <option value="">Select State</option>
+                        @foreach ($availableStates as $state)
+                            <option value="{{ $state->name }}">{{ $state->name }}</option>
+                        @endforeach
+                    </x-form.choice>
+                @endif
+                @if(in_array('address.postal_code', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="Postcode" wire:model="address_postal_code" placeholder="Postcode"/>
+                @endif
+                @if(in_array('country', $expert_kyc->requirements['currently_due']))
+                    <x-form.choice readonly wire:model="address_country" label="Country">
+                        <option value="">Select Country</option>
+                        <option value="Australia">Australia</option>
+                    </x-form.choice>
+                @endif
 
-                <x-form.flatpicker label="Date of birth" name="datepicker"/>
+                @if(in_array('phone', $expert_kyc->requirements['currently_due']))
+                    <x-form.input type="text" label="Phone number" wire:model="phone" placeholder="+61 111 111 111" />
+                @endif
+                @if(in_array('ssn_last_4', $expert_kyc->requirements['currently_due']))
+                    {{--                                <x-form.input type="text" label="Personal ID Number" wire:model="" placeholder="Type" />--}}
+                @endif
+                @if(in_array('individual.verification.document', $expert_kyc->requirements['currently_due']))
+                    <h6 class="mb-2 mt-5">Upload Identity Verification Document
+                        <div class="tooltip-wrapper bottom-left">
+                            <i>
+                                <x-icon.info fill="#0059C9"/>
+                            </i>
+                            <div class="tooltip-content">Upload Identity Verification Document eg: Passport, Driver Licence, Photo Card, Proof of Age card etc
+                            </div>
+                        </div>
+                    </h6>
 
-                <x-form.select label="Home Address" wire:model="title">
-                    <option value="">Select Country</option>
-                    <option value="Mr">Select Country</option>
-                    <option value="Mrs">Select Country</option>
-                    <option value="Dr">Select Country</option>
-                    <option value="Prof">Select Country</option>
-                </x-form.select>
-
-                <x-form.select label="Currency" wire:model="title">
-                    <option value="">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                </x-form.select>
-
-                <x-form.input type="text" label="Account Holder Name" wire:model="type" placeholder="Type" value="Write Full Name"/>
-
-                <x-form.select label="Account Holder Type" wire:model="title">
-                    <option value="">individual</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                </x-form.select>
-
-                <x-form.select label="Account Type" wire:model="title">
-                    <option value="">savings</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                </x-form.select>
-                <x-form.input type="text" label="Routing Number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-                <x-form.input type="text" label="Account Number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-
-                <!-- Button area End Here -->
-
+                    <div class="row">
+                        <div class="col-md-6">
+                            <x-form.input type="file" label="Verification Document Front" wire:model="document_front" />
+                            <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>jpg, png, pdf</span></p>
+                            @error('document_front') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <x-form.input type="file" label="Verification Document Back" wire:model="document_back" />
+                            <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>jpg, png, pdf</span></p>
+                            @error('document_back') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+                @endif
             </div>
             <div class="tab-pane fade" id="pills-profileupdate" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <x-form.input type="text" label="First Name" wire:model="individual_first_name" placeholder="First Name" />
 
-                <x-form.select label="Legal Name" wire:model="title">
-                    <option value="">Full Name</option>
-                    <option value="Mr">Select Country</option>
-                    <option value="Mrs">Select Country</option>
-                    <option value="Dr">Select Country</option>
-                    <option value="Prof">Select Country</option>
-                </x-form.select>
+                <x-form.input type="text" label="Last Name" wire:model="individual_last_name" placeholder="Last Name" />
 
-                <x-form.select label="Email Address" wire:model="title">
-                    <option value="">Email Address</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                    <option value="Select Currency">Select Currency</option>
-                </x-form.select>
+                <x-form.flatpicker label="Date of Birth" wire:model="dob" />
 
-                <x-form.input type="text" label="Account Holder Name" wire:model="type" placeholder="Type" value="Write Full Name"/>
+                <x-form.input type="text" label="Address Line 1" wire:model="address_line1" placeholder="Address Line 1"/>
+                <x-form.input type="text" label="Address Line 2" wire:model="address_line2" placeholder="Address Line 2"/>
+                <x-form.input type="text" label="City" wire:model="address_city" placeholder="City"/>
+                <x-form.choice wire:model="address_state" label="State">
+                    <option value="">Select State</option>
+                    @foreach ($availableStates as $state)
+                        <option value="{{ $state->name }}">{{ $state->name }}</option>
+                    @endforeach
+                </x-form.choice>
+                <x-form.input type="text" label="Postcode" wire:model="address_postal_code" placeholder="Postcode"/>
+                <x-form.choice readonly wire:model="address_country" label="Country">
+                    <option value="">Select Country</option>
+                    <option value="Australia">Australia</option>
+                </x-form.choice>
 
-                <x-form.select label="Account Holder Type" wire:model="title">
-                    <option value="">individual</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                    <option value="Account Holder Type">Account Holder Type</option>
-                </x-form.select>
+                <x-form.input type="text" label="Phone number" wire:model="phone" placeholder="+61 111 111 111" />
+                {{--                <x-form.input type="text" label="Personal ID Number" wire:model="type" placeholder="Type" />--}}
 
-                <x-form.input type="text" label="" wire:model="type" placeholder="Type" value="Address Line 1"/>
-                <x-form.input type="text" label="" wire:model="type" placeholder="Type" value="Address Line 2"/>
-                <x-form.input type="text" label="" wire:model="type" placeholder="Type" value="City"/>
-                <x-form.select label="Account Type" wire:model="title">
-                    <option value="">State</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                </x-form.select>
-                <x-form.input type="text" label="" wire:model="type" placeholder="Type" value="Postal Code"/>
-
-                <x-form.select label="Account Type" wire:model="title">
-                    <option value="">savings</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                    <option value="Account Type">Account Type</option>
-                </x-form.select>
-                <x-form.input type="text" label="Routing Number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-                <x-form.input type="text" label="Account Number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-                <x-form.input type="text" label="Phone number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-                <x-form.input type="text" label="Personal ID Number" wire:model="type" placeholder="Type" value="1234 5678 9012 3456"/>
-
-
-                <h6 class="mb-2 mt-5">Upload Consultation Service Picture
+                <h6 class="mb-2 mt-5">Upload Identity Verification Document
                     <div class="tooltip-wrapper bottom-left">
                         <i>
                             <x-icon.info fill="#0059C9"/>
                         </i>
-                        <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Eum, placeat!
+                        <div class="tooltip-content">Upload Identity Verification Document eg: Passport, Driver Licence, Photo Card, Proof of Age card etc
                         </div>
                     </div>
                 </h6>
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="image-upload-flat">
-                            <label for="upload-file" class="text-center">
-                                <span> <x-icon.document-upload fill="#0059C999"/> </span>
-                                <span class="fw-medium">Click to upload Front Side</span>
-                                <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here</span>
-
-                            </label>
-                            <input type="file" id="upload-file" class="d-none">
-                        </div>
+                        <x-form.input type="file" label="Verification Document Front" wire:model="document_front_full" />
+                        <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>jpg, png, pdf</span></p>
+                        @error('document_front_full') <span class="error">{{ $message }}</span> @enderror
                     </div>
                     <div class="col-md-6">
-                        <div class="image-upload-flat">
-                            <label for="upload-file" class="text-center">
-                                <span> <x-icon.document-upload fill="#0059C999"/> </span>
-                                <span class="fw-medium">Click to upload Back Side</span>
-                                <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here </span>
-
-                            </label>
-                            <input type="file" id="upload-file" class="d-none">
-                        </div>
+                        <x-form.input type="file" label="Verification Document Back" wire:model="document_back_full" />
+                        <p class="mt-2 mb-0 edux-supported-file">Supported files type: <span>jpg, png, pdf</span></p>
+                        @error('document_back_full') <span class="error">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
