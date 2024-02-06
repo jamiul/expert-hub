@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scholarship_study_area', function (Blueprint $table) {
             $table->id();
             $table->foreignId('scholarship_id');
-            $table->foreignId('expertise_id');
+            $table->foreignId('study_field_id');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

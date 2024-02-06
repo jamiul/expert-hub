@@ -509,6 +509,10 @@ header {
             display: grid;
             align-items: center;
             gap: 42px;
+            @media screen and (min-width: 1320px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
             @media screen and (min-width: 1180px) {
                 grid-template-columns: 158.9px auto;
                 .header-menu-trigger {
@@ -564,7 +568,9 @@ header {
                     a {
                         display: block;
                         color: inherit;
-                        &:hover{
+                        font-size: 14px;
+
+                        &:hover {
                             font-weight: 500;
                             color: $edu-primary-color;
                         }
@@ -577,7 +583,8 @@ header {
                             padding: 8px 27px;
                             border-radius: 4px;
                             font-weight: 400;
-                            &:hover{
+
+                            &:hover {
                                 background-color: $edu-primary-dark-color;
                             }
                         }
@@ -603,7 +610,8 @@ header {
                     a {
                         display: block;
                         color: inherit;
-                        &:hover{
+
+                        &:hover {
                             font-weight: 500;
                             color: $edu-primary-color;
                         }
@@ -615,7 +623,8 @@ header {
                             color: #ffffff;
                             padding: 8px 27px;
                             border-radius: 4px;
-                            &:hover{
+
+                            &:hover {
                                 background-color: $edu-primary-dark-color;
                             }
                         }
@@ -765,7 +774,8 @@ header {
                         align-items: center;
                         gap: 0.5rem;
                         color: $edu-primary-color;
-                        &:hover{
+
+                        &:hover {
                             color: $edu-primary-dark-color;
                         }
                     }
@@ -942,7 +952,6 @@ header {
             align-items: center;
             // justify-content: space-between;
             padding: 20px;
-
             @media screen and (min-width: 1300px) {
                 grid-template-columns: 180px auto auto min-content;
                 padding-left: 50px;
@@ -1162,7 +1171,7 @@ header {
                     font-size: 14px;
                     font-weight: 500;
 
-                    &:hover{
+                    &:hover {
                         font-weight: 500;
                         color: $edu-primary-color;
                     }

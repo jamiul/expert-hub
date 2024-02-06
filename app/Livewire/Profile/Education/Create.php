@@ -5,6 +5,7 @@ namespace App\Livewire\Profile\Education;
 use App\Livewire\Profile\Education\Form;
 use App\Models\Degree;
 use App\Models\Expertise;
+use App\Models\StudyField;
 use App\Models\University;
 use WireElements\Pro\Components\Modal\Modal;
 
@@ -21,7 +22,7 @@ class Create extends Modal
     {
         $this->institutions = University::where('country_id', 12)->get();
         $this->degrees = Degree::get();
-        $this->fields = Expertise::expertise()->isChild()->get();
+        $this->fields = StudyField::get();
         $this->years = years();
     }
 

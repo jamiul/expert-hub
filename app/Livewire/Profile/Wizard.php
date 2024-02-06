@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Profile;
 
+use App\Enums\ProfileStatus;
 use App\Helpers\PaymentHelper;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
@@ -122,7 +123,11 @@ class Wizard extends Component
                     ->usingName($this->picture->getClientOriginalName())
                     ->toMediaCollection('picture');
             }
-            return redirect()->route('expert.dashboard');
+            $this->profile()->update([
+                'status' => ProfileStatus::InReview,
+            ]);
+            toast('success', "Profile Details Saved Successfully");
+            return redirect()->route('expert.profile.edit');
         }
 
         if ($this->currentStep < 6) {
@@ -133,14 +138,24 @@ class Wizard extends Component
 
     public function saveKyc()
     {
+        $this->validate([
+            'dob' => ['required'],
+            'address_line_1' => ['required'],
+            'city' => ['required'],
+            'postcode' => ['required'],
+            'state' => ['required'],
+        ]);
         $user = User::find(auth()->user()->id);
 
         ExpertKYC::updateOrCreate(
             ['user_id' => $user->id],
             [
                 'country' => $user->country->name,
-                'individual_dob' => Carbon::parse($this->dob),
+                'individual_first_name' => $user->first_name,
+                'individual_last_name' => $user->last_name,
+                'individual_email' => $user->email,
                 'individual_gender' => $this->gender,
+                'individual_dob' => Carbon::parse($this->dob),
                 'individual_phone' => $user->phone,
                 'individual_registered_address_country' => $user->country->name,
                 'individual_registered_address_state' => $this->state,
@@ -148,12 +163,11 @@ class Wizard extends Component
                 'individual_registered_address_postal_code' => $this->postcode,
                 'individual_registered_address_line1' => $this->address_line_1,
                 'individual_registered_address_line2' => $this->address_line_2,
-                'status' => 1,
+                'status' => 'unverified',
             ]
         );
 
-        //todo: submit kyc to stripe
-        PaymentHelper::expertRegisterToStripe($user);
+        return PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function saveStepOne()
@@ -190,7 +204,6 @@ class Wizard extends Component
                 $required,
                 'image',
                 File::image()->max(1 * 1024),
-                Rule::dimensions()->maxWidth(1000)->maxHeight(1000)->ratio(1),
             ],
         ];
     }

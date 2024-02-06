@@ -12,14 +12,15 @@ use Log;
 class PaymentHelper {
 
     public static function expertRegisterToStripe( User $user ) {
+        $api_key = env( 'STRIPE_SECRET' );
+        $stripe  = new \Stripe\StripeClient( [
+            "api_key" => $api_key,
+        ] );
+
+        $country = $user->country->code;
+
         if ( $user->profile->stripe_acct_id == '' ) {
             try {
-                $api_key = env( 'STRIPE_SECRET' );
-                $stripe  = new \Stripe\StripeClient( [
-                    "api_key" => $api_key,
-                ] );
-
-                $country = $user->country->code;
                 $url     = route( 'expert.profile.show', $user->profile );
                 //todo: only for local use, while moving to live, change it
                 $url = 'http://test.eduexperthub.com';
@@ -40,7 +41,7 @@ class PaymentHelper {
                     'individual'       => [
                         'first_name' => $user->first_name,
                         'last_name'  => $user->last_name,
-                        'email'      => $user->email
+                        'email'      => $user->email,
                     ],
                     'tos_acceptance'   => [
                         'ip'   => \Request::ip(),
@@ -62,6 +63,10 @@ class PaymentHelper {
                 $profile->stripe_acct_id = $connected_account->id;
                 $profile->save();
             } catch ( \Exception $ex ) {
+                return [
+                    'status' => false,
+                    'message' => $ex->getMessage()
+                ];
                 error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
             }
         }

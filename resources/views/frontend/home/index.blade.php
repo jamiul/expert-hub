@@ -58,8 +58,32 @@
     </div>
 
     @include('frontend.home.partials._categories_main')
-    <livewire:about.team />
-    <livewire:about.apart-set :title="$aboutUsDTO->apart_title" :subtitle="$aboutUsDTO->apart_subtitle"/>
+    <section class="page-section team-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="section-title-wrapper">
+                        <h2 class="section-title">BUILD A TEAM</h2>
+                        <p class="section-title-lead">Create an On-Demand Team with ExpertGate</p>
+                        <p class="section-title-summary">At ExpertGate, we not only provide access to a global network of academic and industry experts but also empower you to build your own expert team tailored to your project's needs. Whether it's for a university or an organisation, our platform simplifies the process of assembling a team of specialists, making it an easy, secure, and effective collaboration.</p>
+                        {{-- <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Get Started</a> --}}
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    @livewire('about.team')
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section speciality-section bg-white">
+        <div class="container">
+            <div style="" class="section-title-wrapper text-center mb-40">
+                <h2 class="section-title">CHOOSE EXPERTGATE</h2>
+                <p class="section-title-lead">Why Choose ExpertGate?</p>
+            </div>
+            @livewire('about.apart-set')
+        </div>
+    </section>
     @include('frontend.home.partials._academic_block')
     <div class="scholarship bg-white">
         @livewire('home.scholarship-list')

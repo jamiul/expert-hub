@@ -1,17 +1,19 @@
 <div class="page-sidebar">
+    <div class="filter-widget">
+        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Projects..."/>
+    </div>
+
     <div class="filter-widget border-bottom">
-        <div class="d-flex justify-content-between">
-            <h4 class="h6 mb-0">Filter</h4>
-            <button wire:click="resetFilter" class="btn btn-sm btn-link text-decoration-underline px-0 ">
+        <div class="sidebar-title-wrapper">
+            <h3 class="h6">Filter</h3>
+            <button  wire:click="resetFilter" class="btn btn-filter-reset">
                 Clear filters
             </button>
         </div>
     </div>
+
     <div class="filter-widget">
-        <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Projects..."/>
-    </div>
-    <div class="filter-widget">
-        <h4 class="widget-title">Project by Categories</h4>
+        <h4 class="widget-title">Projects By Category</h4>
         <div class="widget-accordion use-scroll-content">
 
             @foreach ($projectCategories as $expertSkill)

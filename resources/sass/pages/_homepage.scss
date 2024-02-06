@@ -21,7 +21,7 @@ $page-section-bg: #F1F3FA;
 }
 
 .page-section-sm {
-    padding: 70px 0;
+    padding: 50px 0;
 }
 
 .section-title-wrapper {
@@ -100,7 +100,7 @@ $page-section-bg: #F1F3FA;
                 height: 22px;
                 //background-color: #DADBEB;
                 position: absolute;
-                left: calc(-100% - 30px);
+                left: calc(-100% - 36px);
                 background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="24" viewBox="0 0 221 24" fill="none"><path d="M220.061 13.0607C220.646 12.4749 220.646 11.5251 220.061 10.9394L210.515 1.39342C209.929 0.80763 208.979 0.80763 208.393 1.39342C207.808 1.9792 207.808 2.92895 208.393 3.51474L216.879 12L208.393 20.4853C207.808 21.0711 207.808 22.0208 208.393 22.6066C208.979 23.1924 209.929 23.1924 210.515 22.6066L220.061 13.0607ZM-1.31134e-07 13.5L219 13.5L219 10.5L1.31134e-07 10.5L-1.31134e-07 13.5Z" fill="%23DADBEB"/></svg>') no-repeat right center;
                 @media screen and (min-width: 1000px) and (max-width: 1200px) {
                     left: calc(-100% - 20px);

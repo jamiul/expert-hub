@@ -26,6 +26,7 @@ return new class extends Migration
             $table->decimal('balance', 12,2)->default(0);
             $table->decimal('escrow_balance', 12,2)->default(0);
             $table->string('currency')->default('AUD');
+            $table->string('timezone')->default('Australia/Sydney');
             $table->string('status'); //App\Enums\ProfileStatus
             $table->boolean('active')->default(1);
             $table->timestamps();

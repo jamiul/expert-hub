@@ -1,4 +1,4 @@
-<section class="page-section-sm bg-white bb-1">
+<section class="page-section bg-white bb-1">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">

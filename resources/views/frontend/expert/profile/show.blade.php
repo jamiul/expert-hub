@@ -11,7 +11,7 @@
                         <div class="page-sidebar">
                             <div class="profile-widget user-bio-widget">
                                 <div class="user-profile-picture">
-                                    <img src="{{ $expert->picture }}">
+                                    <img src="{{ $expert->picture ? $expert->picture : asset('dummy-user.png')}}">
                                     <button>Edit</button>
                                 </div>
                                 <div class="user-profile-info">

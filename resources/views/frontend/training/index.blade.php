@@ -1,15 +1,13 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <section class="mt-60">
+    <section class="page-section-sm">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="sidebar-layout left-sidebar-layout find-projects-layout">
-
+                    <div class="sidebar-layout left-sidebar-layout find-training-layout">
                         @livewire('training.filter')
                         @livewire('training.lists')
-
                     </div>
                 </div>
             </div>

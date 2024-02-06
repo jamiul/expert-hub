@@ -36,7 +36,7 @@ class Scholarship extends Model
 
     public function studyAreas()
     {
-        return $this->belongsToMany(Expertise::class, 'scholarship_study_area')
+        return $this->belongsToMany(StudyField::class, 'scholarship_study_area')
             ->withPivot('active')
             ->wherePivot('active', 1)
             ->withTimestamps();
