@@ -13,7 +13,7 @@
 
         <button
             wire:click="$dispatch('modal.open', { component: 'profile.consultation.add'})"
-            class="icon-btn icon-btn-md border">
+            class="icon-btn icon-btn-md border {{ count($consultations) == 3 ? 'd-none' : '' }}">
             <x-icon.add />
         </button>
 

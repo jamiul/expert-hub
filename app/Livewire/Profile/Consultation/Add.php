@@ -65,8 +65,25 @@ class Add extends Modal
         if($this->currentStep === 2){
             $this->form->saveServiceFee();
         }
+        if($this->currentStep === 3){
+            $this->form->saveAvailability();
+        }
+        if($this->currentStep === 4){
+            $this->form->saveSummary();
+        }
+        if($this->currentStep === 5){
+            $this->form->previewService();
+        }
+
         if ($this->currentStep < 6) {
             $this->currentStep += 1;
+        }
+    }
+
+    public function back()
+    {
+        if ($this->currentStep > 1) {
+            $this->currentStep -= 1;
         }
     }
 

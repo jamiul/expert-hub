@@ -3,11 +3,13 @@
 namespace App\Livewire\Profile\Consultation;
 
 use DateTimeZone;
+use App\Models\Expertise;
 use Illuminate\Support\Arr;
 use App\Models\Consultation;
 use Livewire\WithFileUploads;
 use Livewire\Form as BaseForm;
 use App\Models\ConsultationSlot;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Validate;
 
 class Form extends BaseForm
@@ -19,6 +21,9 @@ class Form extends BaseForm
     public $total_fee = '';
     public $imageUrl = '';
     public $confirmSlots = [];
+
+    public $previewExpertise = '';
+    public $expertiseSkills = [];
 
     #[Validate('nullable')]
     public $profile_id;
@@ -39,7 +44,7 @@ class Form extends BaseForm
     #[Validate('nullable')]
     public $status = '';
 
-    #[Validate('nullable|image|max:1024')]
+    #[Validate('nullable|image')]
     public $image;
 
 
@@ -66,44 +71,57 @@ class Form extends BaseForm
             'profile_id' => 'nullable',
             'expertise_id' => 'required',
             'expertise_skills' => 'required',
+        ],[
+            'expertise_id.required' => 'Please Add Consultation Title.',
+            'expertise_skills.required' => 'Please Add Consultation Skillsets.',
         ]);
 
-        // $this->consultation = $this->profile()->consultation()->updateOrCreate(Arr::except($validated,['expertise_skills', 'date', 'time']));
-        // $this->consultation->skills()->attach($validated['expertise_skills'], ['active' => true]);
     }
 
     public function saveServiceFee()
     {
         $this->validate([
             'hourly_rate' => 'required'
+        ],[
+            'hourly_rate.required' => 'Please add hourly rate.'
         ]);
     }
 
     public function saveAvailability()
     {
         $this->validate([
-            'date' => 'required',
-            'time' => 'required',
-            'time_zone' => 'required'
+            'time_zone' => 'nullable',
+            'date' => 'nullable'
         ]);
-
     }
 
     public function saveSummary()
     {
+        $data = $this->validate();
+        $this->previewExpertise = Expertise::where('id', $data['expertise_id'])->value('name');
+        $this->expertiseSkills = Expertise::whereIn('id', $data['expertise_skills'])->get();
+
         $this->validate([
-            'description' => 'required',
-            'image' => 'nullable'
+            'description' => 'required|max:200',
+            'image' => 'required|max:2048'
+        ],[
+            'description.required' => 'Please add Description.',
+            'image.required' => 'Please add image.'
         ]);
+    }
+
+    #[Computed]
+    public function previewService()
+    {
+        $data = $this->validate();
+
     }
 
     public function add()
     {
-        // dd('add');
         $data = $this->validate();
         $data['profile_id'] = $this->profile()->id;
 
-        // dd($data);
         $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'date', 'time']));
 
         if (!is_null($this->image)) {
@@ -209,6 +227,7 @@ class Form extends BaseForm
     public function update()
     {
         $data = $this->validate();
+        // dd($data);
         $data['time'] = $this->selectedHours;
         $data['profile_id'] = $this->profile()->id;
 

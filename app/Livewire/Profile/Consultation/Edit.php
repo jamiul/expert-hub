@@ -16,6 +16,7 @@ class Edit extends Modal
     public int|Consultation $consultation;
     public Form $form;
 
+    public int $currentStep = 1;
     public $editable = true;
     public $expertSkills;
 
@@ -31,6 +32,36 @@ class Edit extends Modal
         $this->expertSkills = Expertise::skill()->isParent()->get();
         $this->hours = HoursHelper::create('00:00', '23:00', 60, 'g:i A');
         $this->timezoneIndetifiers = DateTimeZone::listIdentifiers( DateTimeZone::AUSTRALIA  );
+    }
+
+    public function next()
+    {
+        if($this->currentStep === 1) {
+            $this->form->saveExpertise();
+        }
+        if($this->currentStep === 2){
+            $this->form->saveServiceFee();
+        }
+        if($this->currentStep === 3){
+            $this->form->saveAvailability();
+        }
+        if($this->currentStep === 4){
+            $this->form->saveSummary();
+        }
+        if($this->currentStep === 5){
+            $this->form->previewService();
+        }
+
+        if ($this->currentStep < 6) {
+            $this->currentStep += 1;
+        }
+    }
+
+    public function back()
+    {
+        if ($this->currentStep > 1) {
+            $this->currentStep -= 1;
+        }
     }
 
     public function editSlot($hour)
