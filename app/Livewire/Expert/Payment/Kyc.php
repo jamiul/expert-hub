@@ -99,7 +99,12 @@ class Kyc extends Modal {
                 'requirements'                              => $acc_update->requirements,
                 'future_requirements'                       => $acc_update->future_requirements
             ] );
-
+            dd([
+                $this->document_front,
+                $this->document_back,
+                $this->document_front_full,
+                $this->document_back_full
+            ]);
             if ( $this->document_front ) {
                 $this->expert_kyc->addMedia( $this->document_front )->toMediaCollection( 'individual_verification_document_front' );
 
@@ -126,34 +131,31 @@ class Kyc extends Modal {
                 fclose( $fp );
             }
 
-            dd( [
-                $this->document_front,
-                $this->document_back
-            ] );
+            
 
             if ( $this->additional_document_front ) {
-                $user_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'individual_verification_additional_document_front' );
+                $this->expert_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'individual_verification_additional_document_front' );
 
-                $fp = fopen( $user_kyc->getMedia( 'individual_verification_additional_document_front' )->last()->getPath(), 'r' );
+                $fp = fopen($this->expert_kyc->getMedia( 'individual_verification_additional_document_front' )->last()->getPath(), 'r' );
                 $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp,
                 ], [
                     "stripe_account" => $acct_id
                 ] );
-                fclose();
+                fclose($fp);
             }
             if ( $this->additional_document_back ) {
-                $user_kyc->addMediaFromRequest( 'additional_document_back' )->toMediaCollection( 'individual_verification_additional_document_back' );
+                $this->expert_kyc->addMediaFromRequest( 'additional_document_back' )->toMediaCollection( 'individual_verification_additional_document_back' );
 
-                $fp = fopen( $user_kyc->getMedia( 'individual_verification_additional_document_back' )->last()->getPath(), 'r' );
+                $fp = fopen($this->expert_kyc->getMedia( 'individual_verification_additional_document_back' )->last()->getPath(), 'r' );
                 $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp,
                 ], [
                     "stripe_account" => $acct_id
                 ] );
-                fclose();
+                fclose($fp);
             }
 
             toast( 'success', 'Information submitted successfully', $this );

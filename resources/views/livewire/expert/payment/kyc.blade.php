@@ -1,7 +1,7 @@
 <x-modal.form action="submitKYC">
     <x-slot name="title">Add missing information for {{ $user->first_name }} {{ $user->last_name }}</x-slot>
     <p>Receive payments, withdrawal are disabled for this account until more information is added for {{ $user->first_name }} {{ $user->last_name }}</p>
-    <ul class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
+    <ul wire:ignore class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-homeupdate" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Required Fields</button>
         </li>
@@ -12,7 +12,7 @@
 
 
     <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-homeupdate" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+        <div wire:ignore.self class="tab-pane fade show active" id="pills-homeupdate" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
             @if(in_array('first_name', $expert_kyc->requirements['currently_due']))
                 <x-form.input type="text" label="First Name" wire:model="individual_first_name" placeholder="First Name" />
             @endif
@@ -80,7 +80,7 @@
                 </div>
             @endif
         </div>
-        <div class="tab-pane fade" id="pills-profileupdate" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+        <div wire:ignore.self class="tab-pane fade" id="pills-profileupdate" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
             <x-form.input type="text" label="First Name" wire:model="individual_first_name" placeholder="First Name" />
 
             <x-form.input type="text" label="Last Name" wire:model="individual_last_name" placeholder="Last Name" />

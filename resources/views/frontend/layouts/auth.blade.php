@@ -19,7 +19,11 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="auth-nav d-flex align-items-center">
+                        @auth
                         <a href="{{ route('expert.dashboard') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
+                        @else
+                        <a href="{{ route('home') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
+                        @endauth
                     </nav>
                 </div>
             </div>
