@@ -179,28 +179,32 @@ class PaymentController extends Controller {
 
             $charge = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
-            $intent = $this->stripe->paymentIntents->create( [
-                'customer'       => $user->profile->stripe_client_id,
-                'confirm'        => true,
-                'off_session'    => true,
-                'amount'         => round( number_format( $charge['total_amount'], 2, '.', '' ) * 100 ),
-                'currency'       => $user->profile->currency,
-                'transfer_group' => $CONNECTED_ACCOUNT_ID,
-                'payment_method' => $request->payment_method_id,
-                'metadata'       => [
-                    'reference_id'   => $milestones->pluck( 'id' )->toJson(),
-                    'reference_type' => 'milestone',
-                    'contract_type'  => $reference,
-                    'contract_id'    => $contract->id,
-                    'client_id'      => $user->id,
-                    'expert_id'      => $contract->expert->user->id
-                ]
-            ] );
+            if($CONNECTED_ACCOUNT_ID){
+                $intent = $this->stripe->paymentIntents->create( [
+                    'customer'       => $user->profile->stripe_client_id,
+                    'confirm'        => true,
+                    'off_session'    => true,
+                    'amount'         => round( number_format( $charge['total_amount'], 2, '.', '' ) * 100 ),
+                    'currency'       => $user->profile->currency,
+                    'transfer_group' => $CONNECTED_ACCOUNT_ID,
+                    'payment_method' => $request->payment_method_id,
+                    'metadata'       => [
+                        'reference_id'   => $milestones->pluck( 'id' )->toJson(),
+                        'reference_type' => 'milestone',
+                        'contract_type'  => $reference,
+                        'contract_id'    => $contract->id,
+                        'client_id'      => $user->id,
+                        'expert_id'      => $contract->expert->user->id
+                    ]
+                ] );
+            } else {
+                return toast('warning', 'Account is not active to recveive payment');
+            }
 
             toast( 'success', 'Offer Sent Successfully' );
 
         } catch ( \Exception $ex ) {
-            dd( $ex->getMessage() );
+            return toast( 'warning', $ex->getMessage() );
         }
 
         return response()->json( [

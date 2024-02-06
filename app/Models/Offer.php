@@ -48,4 +48,9 @@ class Offer extends Model
     {
         return $this->hasMany(Milestone::class)->where('status', MilestoneStatus::Funded)->get();
     }
+
+    public function transactions() {
+        return $this->morphMany(Transaction::class, 'reference');
+    }
+
 }

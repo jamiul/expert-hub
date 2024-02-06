@@ -227,13 +227,18 @@ class StripeController extends Controller {
             $client_id      = @$paymentData->metadata->client_id; //client_id
             $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
+            if($contract_type == 'offer'){
+                $reference = 'App\Models\Offer';
+            }else if($contract_type == 'contract'){
+                $reference = 'App\Models\Contract';
+            }
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
                 'payment_intent_id'      => $paymentData->id,
-                'reference_id'           => json_encode( $reference_id ),
-                'reference_type'         => $reference_type,
+                'reference_id'           => $contract_id,
+                'reference_type'         => $reference,
                 'object'                 => $paymentData->object,
                 'amount'                 => $paymentData->amount,
                 'amount_capturable'      => $paymentData->amount_capturable,
@@ -256,7 +261,7 @@ class StripeController extends Controller {
             ] );
 
             //update offer status based on payment = pending / not accepted
-            if ( $contract_type == 'offer' ) {
+            if ( $contract_type == "offer" ) {
                 $offer         = Offer::find( $contract_id );
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
@@ -480,6 +485,13 @@ class StripeController extends Controller {
 
     private function __chargeRefund( $paymentData ) {
         try {
+            $reference_id   = @$paymentData->metadata->reference_id; //milestone id
+            $reference_type = @$paymentData->metadata->reference_type; //milestone
+            $client_id      = @$paymentData->metadata->client_id; //client_id
+
+            //create refund transaction for client
+            //parent transaction - credit card charge
+
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->id
             ], [
@@ -505,6 +517,32 @@ class StripeController extends Controller {
                 'status'                 => $paymentData->status,
                 'livemode'               => $paymentData->livemode
             ] );
+
+            if($reference_type == "offer"){
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Refund',
+                    'description'    => "Refund for escrow amount",
+                    'client_id'      => $client_id,
+                    'expert_id'      => null,
+                    'amount'         => ( $paymentData->amount_refunded / 100 ),
+                    'charge_type'    => 'debit',
+                    'parent'         => null,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+                $parent_id        = $transaction->id;
+            }
+
+            $client = User::find( $client_id );
+            $client->notify( new PaymentNotification( [
+                'title'   => "Refunded",
+                'message' => "Refunded " . $paymentData->amount_refunded / 100 . ' ' . $paymentData->currency,
+                'link'    => route( 'client.payment.billing' ),
+                'button'  => 'View Details',
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
+            ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
             http_response_code( $ex->getCode() );
@@ -528,7 +566,7 @@ class StripeController extends Controller {
             ], [
                 'future_requirements' => $account->future_requirements,
                 'requirements'        => $account->requirements,
-                'status'              => $account->requirements->status == 'active' ? 1 : 0
+                'status'              => $account->requirements->status
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
@@ -914,7 +952,7 @@ class StripeController extends Controller {
                 'charges_enabled'     => $account->charges_enabled ? 1 : 0,
                 'payouts_enabled'     => $account->payouts_enabled ? 1 : 0,
                 'details_submitted'   => $account->details_submitted ? 1 : 0,
-                'status'              => $account->requirements->status == 'active' ? 1 : 0
+                'status'              => $account->requirements->status
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
@@ -939,7 +977,7 @@ class StripeController extends Controller {
                 'charges_enabled'     => $person->charges_enabled ? 1 : 0,
                 'payouts_enabled'     => $person->payouts_enabled ? 1 : 0,
                 'details_submitted'   => $person->details_submitted ? 1 : 0,
-                'status'              => $person->verification->status == 'pending' ? 0 : 1
+                'status'              => $person->verification->status
             ] );
         } catch ( \Exception $ex ) {
             Log::info( $ex->getMessage() );
