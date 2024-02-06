@@ -28,6 +28,7 @@
                     <span>Services</span> </a>
                 <ul>
                     <li class="current-menu-item"><a href="{{ route('admin.projects') }}">Projects</a></li>
+                    <li><a href="{{ route('admin.contracts.index') }}">Contracts</a></li>
                     <li><a href="#" class="inner-link">Trainings</a></li>
                     <li><a href="{{ route('admin.scholarships.index') }}">Scholarsips</a></li>
                 </ul>

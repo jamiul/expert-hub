@@ -69,41 +69,60 @@ class StripeController extends Controller {
             case 'account.application.authorized':
                 $this->__handleApplicationAuthorized( $event );
                 break;
+
             case 'account.application.deauthorized': //Occurs when a user disconnects from your account and can be used to trigger required cleanup on your server.
                 $this->__handleApplicationDeauthorized( $event );
                 break;
 
             case 'account.external_account.created':
+                Log::info($event->type);
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountCreated( $paymentMethod );
                 break;
 
             case 'account.external_account.updated': //Occurs when a bank account or debit card attached to a connected account is updated, which can impact payouts.
+                Log::info($event->type);
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountUpdated( $paymentMethod );
                 break;
 
             case 'account.external_account.deleted':
+                Log::info($event->type);
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountDeleted( $paymentMethod );
                 break;
 
+            case 'capability.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info($event->type);
+                $account = $event->data->object;
+                $this->__capabilityUpdated($account);
+                break;
+
+            case 'account.created': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info($event->type);
+                $account = $event->data->object;
+                $this->__accountUpdated($account);
+                break;
+
             case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info($event->type);
                 $account = $event->data->object;
                 $this->__accountUpdated($account);
                 break;
 
             case 'balance.available': //Occurs when your Stripe balance has been updated (for example, when funds you’ve added from your bank account are available for transfer to your connected account).
                 $paymentMethod = $event->data->object;
-                $this->__paymentGeneric( $paymentMethod );
+                $this->__paymentGeneric( $event );
                 break;
 
             case 'person.created': //connect account status update
+                Log::info($event->type);
                 $account = $event->data->object;
                 $this->__personCreated($account);
                 break;
 
             case 'person.updated': //connect account status update
+                Log::info($event->type);
                 $account = $event->data->object;
                 $this->__personCreated($account);
                 break;
@@ -130,7 +149,7 @@ class StripeController extends Controller {
 
             case 'payment.created':
                 $transfer = $event->data->object;
-                $this->__paymentGeneric( $transfer );
+                $this->__paymentGeneric( $event );
                 break;
 
             case 'transfer.created': //when money transferred to expert's stripe account
@@ -144,6 +163,7 @@ class StripeController extends Controller {
                 break;
 
             default:
+                $this->__paymentGeneric( $event );
                 echo 'Received unknown event type ' . $event->type;
         }
         http_response_code( 200 );
@@ -496,10 +516,20 @@ class StripeController extends Controller {
      * connect webhooks
      * */
 
-    private function __accountUpdated($account) {
+    private function __capabilityUpdated($account) {
         Log::info($account);
         try {
+            $stripe_customer_id = $account->account;
+            $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
 
+            $kyc = ExpertKYC::updateOrCreate([
+                'user_id' => $user_id
+            ], [
+                'future_requirements' => $account->future_requirements,
+                'requirements' => $account->requirements,
+                'status' => $account->requirements->status == 'active' ? 1 : 0
+            ]);
         } catch (\Exception $ex){
             echo $ex->getMessage();
             http_response_code( $ex->getCode() );
@@ -877,6 +907,9 @@ class StripeController extends Controller {
                 'future_requirements' => $person->future_requirements,
                 'requirements' => $person->requirements,
                 'verification' => $person->verification,
+                'charges_enabled' => $person->charges_enabled,
+                'payouts_enabled' => $person->payouts_enabled,
+                'details_submitted' => $person->details_submitted,
                 'status' => $person->verification->status
             ]);
         } catch (\Exception $ex){

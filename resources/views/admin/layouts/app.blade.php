@@ -16,6 +16,7 @@
         @vite('resources/css/client-dashboard.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
+        @vite('resources/css/scholarship.css')
         <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
     </head>
     <body>

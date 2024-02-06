@@ -40,6 +40,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(ExpertWithdrawal::class);
     }
 
+    public function withdraw_schedule() {
+        return $this->hasOne(WithdrawSchedule::class);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
