@@ -24,30 +24,25 @@
                         <p class="section-title-lead">About us</p>
                     </div>
                     <p>
-                        Welcome to ExpertGate, your one-stop platform for connecting with top academic experts across
-                        various fields and disciplines. We cater to diverse clients: universities, businesses, students,
-                        and media outlets.
+                        ExpertGate is your one-stop platform for connecting with top academic and industry experts across various fields and disciplines. We cater to diverse clients, including educational institutions, industries, media outlets, and students.
                     </p>
                     <p>
-                        For universities, ExpertGate is an invaluable resource for policy development, curriculum
-                        design, course accreditation, and program design expertise. Businesses and organisations can
-                        leverage our platform to find experts to assist with organisational policies, learning
-                        management systems, and project management. Students seeking to develop their research and
-                        writing skills or needing advice on scholarships will find the guidance they need from our
-                        experts. Media outlets can access our expert hub for media interviews or insights into various
-                        academic fields.
+                        For educational institutions, ExpertGate serves as an invaluable resource for policy development, curriculum design, course accreditation, program design, and expertise in Learning Management Systems (LMS).
                     </p>
                     <p>
-                        Our global platform transcends borders, providing an international perspective that's invaluable
-                        in addressing educational challenges and opportunities. We offer extensive services catering to
-                        a wide spectrum of needs, including curriculum development, policy formulation, scholarship
-                        advice, and complete educational project management.
+                        Businesses and organisations from diverse industries can leverage our platform to find experts to assist with organisational policies, learning management systems, and project management.
                     </p>
                     <p>
-                        Navigating our platform is easy, thanks to our intuitive user interface. You can effortlessly
-                        post academic projects, review expressions of interest from top academic experts, and make
-                        informed decisions aligned with your goals. Plus, we prioritise security by holding payments in
-                        escrow until project completion, ensuring satisfaction in every collaboration. 
+                        Media outlets can access our expert hub for media interviews or insights into various fields.
+                    </p>
+                    <p>
+                        Students can access scholarships using our worldwide scholarships database and connect with scholarship experts to receive guidance in their search for the right scholarship for them.
+                    </p>
+                    <p>
+                        We offer unique training opportunities for both academia and industry in areas including employee policy development, course designs for learning management systems, employee soft-skills development, and more. Our global platform transcends borders, providing an international perspective that's invaluable in addressing educational challenges and opportunities.
+                    </p>
+                    <p>
+                        Navigating our platform is easy, thanks to our intuitive user interface. You can effortlessly post projects, review expressions of interest from top academic and industry experts, and make informed decisions aligned with your goals. Plus, we prioritise security by holding payments in escrow until project completion, ensuring satisfaction in every collaboration."
                     </p>
                 </div>
             </div>
