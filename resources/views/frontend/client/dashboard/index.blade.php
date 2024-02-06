@@ -229,15 +229,26 @@
         </div>
     </div>
 </section>
-
-    <div class="team about-team">
-        <livewire:about.team />
+<section style="background:none!important;" class="page-section team-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">TEAM</h2>
+                    <p class="section-title-lead">Build on Demand Teams for your Education Institution</p>
+                    <p class="section-title-summary">
+                        Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time.
+Hire in under 48 hours. Scale up or
+                    </p>
+                        <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                @livewire('about.team')
+            </div>
+        </div>
     </div>
-    <style>
-        .team.about-team section{
-            background:none!important;
-        }
-    </style>
+</section>
 @endsection
 @push('bottom_scripts')
     <script>
