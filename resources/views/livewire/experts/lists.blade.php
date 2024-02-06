@@ -46,7 +46,7 @@
             <div class="expert-card-body">
                 <div class="d-flex gap-3 align-items-center">
                     <div><strong class="fw-medium">${{ $expert->hourly_rate }} </strong>/ hr</div>
-                    <div class="star-ratings">
+                    <div class="star-ratings d-none">
                         <x-icon.star-fill/>
                         <x-icon.star-fill/>
                         <x-icon.star-fill/>
