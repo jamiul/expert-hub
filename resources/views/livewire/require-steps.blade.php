@@ -14,7 +14,7 @@
                     <img src="<?php echo e(asset('assets/frontend/img/step-post-project.svg')); ?>">
                 </div>
                 <div class="work-steps-content">
-                    <h3>Post Your
+                    <h3 class="h6">Post Your
                         Project</h3>
                     <p>Whether it's a university, organisational or personal project, our academic and industry experts
                         are here to help.</p>
@@ -26,7 +26,7 @@
                     <img src="<?php echo e(asset('assets/frontend/img/step-interest.svg')); ?>">
                 </div>
                 <div class="work-steps-content">
-                    <h3>Expressions of Interest</h3>
+                    <h3 class="h6">Expressions of Interest</h3>
                     <p>Highly-qualified academic and industry experts will express interest if they are available to
                         contribute to your project.</p>
                 </div>
@@ -37,7 +37,7 @@
                     <img src="<?php echo e(asset('assets/frontend/img/step-perfect-match.svg')); ?>">
                 </div>
                 <div class="work-steps-content">
-                    <h3>Choose Your
+                    <h3 class="h6">Choose Your
                         Perfect Match</h3>
                     <p>Make an informed choice by selecting the academic or industry expert who aligns best with your
                         project requirements.</p>
@@ -49,7 +49,7 @@
                     <img src="<?php echo e(asset('assets/frontend/img/step-pay.svg')); ?>">
                 </div>
                 <div class="work-steps-content">
-                    <h3 style="max-width: 120px">Pay Securely</h3>
+                    <h3 class="h6" style="max-width: 120px">Pay Securely</h3>
                     <p>Book with confidence as your payment is held securely in escrow until the project is completed to
                         your satisfaction.</p>
                 </div>

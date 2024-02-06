@@ -127,21 +127,6 @@ img {
     gap: 8px;
 }
 
-//Padding Space
-.p-40 {
-    padding: 40px;
-}
-
-.px-40 {
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.py-40 {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
 .p-20 {
     padding: 20px;
 }
@@ -164,6 +149,35 @@ img {
     padding-bottom: 20px;
 }
 
+.my-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+
+//Padding Space
+.p-40 {
+    padding: 40px;
+}
+
+.px-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.py-40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 //Margin Space
 .m-40 {
     margin: 40px;
@@ -183,19 +197,6 @@ img {
     margin-bottom: 40px;
 }
 
-.my-20 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
 .mt-40 {
     margin-top: 40px;
 }
@@ -211,6 +212,10 @@ img {
 
 .mb-60 {
     margin-bottom: 60px;
+}
+
+.pb-90 {
+    padding-bottom: 90px;
 }
 
 .social-auth {

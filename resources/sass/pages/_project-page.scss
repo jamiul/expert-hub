@@ -1,0 +1,14 @@
+.find-project-section {
+    padding-bottom: 90px;
+}
+
+.project-work-steps {
+    .work-steps-wrapper {
+        padding-bottom: 16px;
+        border-bottom: 1px solid $edu-border-color;
+
+        & + div {
+            margin-top: 24px !important;
+        }
+    }
+}

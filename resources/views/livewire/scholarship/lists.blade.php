@@ -1,4 +1,4 @@
-<div class="scholarship-database-content-col">
+<div class="page-content p-0">
     <div class="scholarship-database-content-list">
         @forelse ($scholarships as $scholarship)
             <div class="scholarship-database-content-list-item">
@@ -53,7 +53,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a class="btn btn-outline-primary m-1" href="{{ route('find.experts') }}">Find Experts</a>
+                        <a class="btn btn-outline-primary border-2 m-1" href="{{ route('find.experts') }}">Find Experts</a>
                     </div>
                 </div>
                 <div class="scholarship-details">
@@ -84,7 +84,7 @@
                             <div class="td">Scholarship Website</div>
                             <div class="td">
                                 @if($scholarship->link)
-                                    <a target="_blank" class="text-decoration-underline"
+                                    <a target="_blank" class="text-decoration-underline fw-medium"
                                        href="{{ $scholarship->link }}">Click Here</a>
                                 @endif
                             </div>

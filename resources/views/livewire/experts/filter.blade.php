@@ -1,11 +1,11 @@
 <div>
-    <div class="search-block">
+    <div class="filter-widget">
         <x-form.search class="input-field-md" wire:model.live.debounce="search" placeholder="Find Expert..."/>
     </div>
-    <div class="filter-widget border-bottom pt-3">
-        <div class="d-flex justify-content-between">
-            <h4 class="h6 mb-0">Filter</h4>
-            <button wire:click="resetFilter" class="btn btn-sm btn-link text-decoration-underline px-0 ">
+    <div class="filter-widget border-bottom">
+        <div class="sidebar-title-wrapper">
+            <h3 class="h6">Filter</h3>
+            <button  wire:click="resetFilter" class="btn btn-filter-reset">
                 Clear filters
             </button>
         </div>
