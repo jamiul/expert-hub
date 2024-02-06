@@ -63,7 +63,7 @@
                             {{--                            </div>--}}
 
                             <div class="edux-paypal-visa-billing">
-                                @if(!in_array('external_account', $user->expert_kyc->requirements['past_due']) || $user->expert_kyc->verification['status'] == 'unverified')
+                                @if(in_array('external_account', $user->expert_kyc->requirements['past_due']) || $user->expert_kyc->verification['status'] == 'unverified')
                                     <div class="alert edux-alert alert-danger" role="alert">
                                         <x-icon.info/>
                                         <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>

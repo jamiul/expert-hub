@@ -30,7 +30,7 @@
 
     <div class="mb-4">
         <x-form.select wire:model="balance_reach" label="Only Disperse When Minimum Balance Is">
-            <option value="" selected disabled>select balance</option>
+            <option value="">select balance</option>
             <option value="1000">$1000.00 or more</option>
             <option value="500">$500.00 or more</option>
         </x-form.select>

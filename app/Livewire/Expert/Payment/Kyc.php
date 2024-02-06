@@ -91,9 +91,9 @@ class Kyc extends Modal {
                 'individual_registered_address_state'       => $this->address_state,
                 'individual_registered_address_postal_code' => $this->address_postal_code,
                 'individual_registered_address_country'     => $this->address_country,
-                'details_submitted'                         => $acc_update->details_submitted ? 1 : 0,
-                'payouts_enabled'                           => $acc_update->payouts_enabled ? 1 : 0,
-                'charges_enabled'                           => $acc_update->charges_enabled ? 1 : 0,
+                'details_submitted'                         => $acc_update->details_submitted,
+                'payouts_enabled'                           => $acc_update->payouts_enabled,
+                'charges_enabled'                           => $acc_update->charges_enabled,
                 'requirements'                              => $acc_update->requirements,
                 'future_requirements'                       => $acc_update->future_requirements
             ] );
@@ -208,18 +208,19 @@ class Kyc extends Modal {
                 );
             }
 
-//            $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
-//
-//            $expert_kyc = ExpertKYC::updateOrCreate( [
-//                'user_id' => $user->id
-//            ], [
-//                'details_submitted'                         => $expert_stripe_account->details_submitted,
-//                'payouts_enabled'                           => $expert_stripe_account->payouts_enabled,
-//                'charges_enabled'                           => $expert_stripe_account->charges_enabled,
-//                'requirements'                              => $expert_stripe_account->requirements,
-//                'future_requirements'                       => $expert_stripe_account->future_requirements,
-//                'verification' => $expert_stripe_account->verification
-//            ] );
+            $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
+
+            $expert_kyc = ExpertKYC::updateOrCreate( [
+                'user_id' => $user->id
+            ], [
+                'details_submitted'                         => $expert_stripe_account->details_submitted,
+                'payouts_enabled'                           => $expert_stripe_account->payouts_enabled,
+                'charges_enabled'                           => $expert_stripe_account->charges_enabled,
+                'requirements'                              => $expert_stripe_account->requirements,
+                'future_requirements'                       => $expert_stripe_account->future_requirements,
+                'verification' => $expert_stripe_account->verification,
+                'status'                       => $expert_stripe_account->status
+            ] );
 
             toast( 'success', 'Information submitted successfully', $this );
 

@@ -213,7 +213,8 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -399,7 +400,8 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -467,7 +469,8 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -478,7 +481,8 @@ class StripeController extends Controller {
             PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -545,9 +549,9 @@ class StripeController extends Controller {
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
-            Log::info($ex->getMessage());
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -572,7 +576,8 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -610,7 +615,8 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -648,7 +654,8 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -658,7 +665,8 @@ class StripeController extends Controller {
             ExpertWithdrawal::where( 'bank_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -713,7 +721,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -758,7 +767,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -803,7 +813,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -845,7 +856,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -863,7 +875,7 @@ class StripeController extends Controller {
             ], [
                 'transfer_id'         => $transfer->id,
                 'object'              => $transfer->object,
-                'reference_id'        => json_encode( $reference_id ),
+                'reference_id'        => $reference_id,
                 'reference_type'      => $reference_type,
                 'amount'              => $transfer->amount,
                 'amount_reversed'     => $transfer->amount_reversed,
@@ -929,7 +941,8 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -947,18 +960,19 @@ class StripeController extends Controller {
                 'default_currency'    => $account->default_currency,
                 'business_type'       => $account->business_type,
                 'tos_acceptance_date' => $account->tos_acceptance->date,
-                'tos_acceptance_id'   => $account->tos_acceptance->ip,
+                'tos_acceptance_ip'   => $account->tos_acceptance->ip,
                 'future_requirements' => $account->future_requirements,
                 'requirements'        => $account->requirements,
                 'verification'        => $account->verification,
-                'charges_enabled'     => $account->charges_enabled ? 1 : 0,
-                'payouts_enabled'     => $account->payouts_enabled ? 1 : 0,
-                'details_submitted'   => $account->details_submitted ? 1 : 0,
+                'charges_enabled'     => $account->charges_enabled,
+                'payouts_enabled'     => $account->payouts_enabled,
+                'details_submitted'   => $account->details_submitted,
                 'status'              => $account->requirements->status
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -976,15 +990,15 @@ class StripeController extends Controller {
                 'future_requirements' => $person->future_requirements,
                 'requirements'        => $person->requirements,
                 'verification'        => $person->verification,
-                'charges_enabled'     => $person->charges_enabled ? 1 : 0,
-                'payouts_enabled'     => $person->payouts_enabled ? 1 : 0,
-                'details_submitted'   => $person->details_submitted ? 1 : 0,
+                'charges_enabled'     => $person->charges_enabled,
+                'payouts_enabled'     => $person->payouts_enabled,
+                'details_submitted'   => $person->details_submitted,
                 'status'              => $person->verification->status
             ] );
         } catch ( \Exception $ex ) {
-            Log::info( $ex->getMessage() );
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info( $ex->getMessage() );
+            http_response_code( 500 );
             exit();
         }
     }
@@ -1010,7 +1024,8 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -1028,7 +1043,8 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
