@@ -63,7 +63,7 @@
                             {{--                            </div>--}}
 
                             <div class="edux-paypal-visa-billing">
-                                @if($user->expert_kyc->requirements && $user->expert_kyc->requirements['past_due'])
+                                @if(!in_array('external_account', $user->expert_kyc->requirements['past_due']) || $user->expert_kyc->verification['status'] == 'unverified')
                                     <div class="alert edux-alert alert-danger" role="alert">
                                         <x-icon.info/>
                                         <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>
@@ -163,7 +163,7 @@
                                         {{--                                            @endforeach--}}
                                         {{--                                        </ul>--}}
                                         {{--                                    @endif--}}
-{{--                                        @if(in_array('external_account', $user->expert_kyc->requirements['past_due']))--}}
+                                        @if($user->expert_kyc->verification['status'] == 'unverified')
                                             <tr class="edux-pending-payment">
                                                 <td class="balance-text"> <span class="fw-medium">Add missing information for {{ $user->expert_kyc->individual_first_name }} {{ $user->expert_kyc->individual_last_name }}</span> <br/> <span>Onboarding and verification</span> </td>
                                                 <td style="vertical-align: middle;">Past Due</td>
@@ -173,19 +173,19 @@
                                                        class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
                                                 </td>
                                             </tr>
-{{--                                        @endif--}}
-                                            @if($expert_withdrawal->count()  == 0)
-                                                <tr class="edux-pending-payment">
-                                                    <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
-                                                    <td style="vertical-align: middle;">Past Due</td>
-                                                    <td style="vertical-align: middle;">{{ (@$user->expert_kyc->requirements['current_deadline']) ? Carbon::parse($user->expert_kyc->requirements['current_deadline'])->format('Y/m/d') : '' }}</td>
-                                                    <td style="vertical-align: middle;"  class="edux-tbl-action">
-                                                        <a onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add' })"
-                                                           class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
+                                        @endif
+                                        @if(in_array('external_account', $user->expert_kyc->requirements['past_due']))
+                                            <tr class="edux-pending-payment">
+                                                <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
+                                                <td style="vertical-align: middle;">Past Due</td>
+                                                <td style="vertical-align: middle;">{{ (@$user->expert_kyc->requirements['current_deadline']) ? Carbon::parse($user->expert_kyc->requirements['current_deadline'])->format('Y/m/d') : '' }}</td>
+                                                <td style="vertical-align: middle;"  class="edux-tbl-action">
+                                                    <a onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add' })"
+                                                       class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
 
-                                                    </td>
-                                                </tr>
-                                            @endif
+                                                </td>
+                                            </tr>
+                                        @endif
                                         </tbody>
                                     </table>
 
