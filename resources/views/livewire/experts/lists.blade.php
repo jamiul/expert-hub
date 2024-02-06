@@ -31,7 +31,10 @@
                         <button class="btn btn-icon btn-outline-light m-1">
                             <x-icon.message-line/>
                         </button>
-                        <button wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})" class="btn btn-md btn-outline-primary">Invite Project</button>
+                        <button
+                            wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})"
+                            class="btn btn-md btn-outline-primary">Invite Project
+                        </button>
                     @else
                         <a href="{{ route('auth.login') }}" class="btn btn-icon btn-outline-light m-1">
                             <x-icon.message-line/>
@@ -58,30 +61,34 @@
 
                     </p>
                 </div>
-                <div class="tag-list expert-tag-list">
+                <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $expert->expertises->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
                     @foreach ($expert->expertises as $expertise)
-                        <a href="#" class="expert-tag">{{ $expertise->name }}</a>
+                        <span class="tag">{{ $expertise->name }}</span>
                     @endforeach
+                    @if ($expert->expertises->count() > 4)
+                        <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $expert->expertises->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                    @endif
                 </div>
+
             </div>
         </div>
 
-                        {{-- @if($expert->expertises->count() > 4)
-                        <span class="collapse" id="{{ $expert->user->username }}">
-                            @foreach ($expert->expertises as $expertise)
-                                @if($loop->index >= 4)
-                                <a href="#" class="fs-13 fw-medium rounded-pill">{{ $expertise->name }}</a>
-                                @endif
-                            @endforeach
-                        </span>
-                        <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#{{ $expert->user->username }}" aria-expanded="false" aria-controls="contentTag1">
-                            <span class="count">+{{ $expert->expertises->count() - 4 }} More</span>
-                            <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
-                        </a>
-                        @endif --}}
+        {{-- @if($expert->expertises->count() > 4)
+        <span class="collapse" id="{{ $expert->user->username }}">
+            @foreach ($expert->expertises as $expertise)
+                @if($loop->index >= 4)
+                <a href="#" class="fs-13 fw-medium rounded-pill">{{ $expertise->name }}</a>
+                @endif
+            @endforeach
+        </span>
+        <a class="fs-13 fw-medium rounded-pill collapse__btn collapsed" data-bs-toggle="collapse" href="#{{ $expert->user->username }}" aria-expanded="false" aria-controls="contentTag1">
+            <span class="count">+{{ $expert->expertises->count() - 4 }} More</span>
+            <span class="less"> <i class="fa-solid fa-chevron-up"></i> Show Less </span>
+        </a>
+        @endif --}}
 
     @empty
-        <x-empty />
+        <x-empty/>
     @endforelse
     <hr>
     {{ $experts->onEachSide(1)->links() }}
