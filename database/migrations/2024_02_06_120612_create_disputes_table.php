@@ -11,27 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('milestones', function (Blueprint $table) {
+        Schema::create('disputes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('eoi_id')->nullable();
-            $table->foreignId('offer_id')->nullable();
-            $table->foreignId('contract_id')->nullable();
-            $table->string('title');
-            $table->date('due_date')->nullable();
-            $table->decimal('amount');
-            $table->dateTime('declined_at')->nullable();
-            $table->dateTime('approved_at')->nullable();
+            $table->foreignId('contract_id');
+            $table->string('reason');
+            $table->text('description')->nullable();
+            $table->string('winner')->nullable();
+            $table->foreignId('profile_id')->nullable();
             $table->string('status');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('milestones');
+        Schema::dropIfExists('disputes');
     }
 };
