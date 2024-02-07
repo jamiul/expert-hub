@@ -11,4 +11,9 @@ class Transaction extends Model
 
     protected $guarded = [];
 
+    public function reference()
+    {
+        return $this->morphTo();
+    }
+
 }

@@ -10,6 +10,7 @@ use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Log;
 
 class DispatchMilestone extends Command {
     /**
@@ -31,7 +32,7 @@ class DispatchMilestone extends Command {
      */
     public function handle() {
         $milestones = Milestone::where( 'status', MilestoneStatus::Approved )
-                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
+//                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
                                ->get();
 
         foreach ( $milestones as $milestone ) {
@@ -56,6 +57,8 @@ class DispatchMilestone extends Command {
                     'reference_type' => 'milestone'
                 ]
             ] );
+
+            Log::info($acceptMilestone);
         }
     }
 }
