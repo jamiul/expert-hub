@@ -18,6 +18,9 @@ class Show extends Component
 
     public function accept()
     {
+        if($this->offer->status != OfferStatus::Pending){
+            return toast('warning', 'Offer Withdrawn', $this);
+        }
         $this->askForConfirmation(
             callback: function () {
                 $escrow_amount = $this->offer->fundedMilestones()->sum('amount');
