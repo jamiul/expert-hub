@@ -55,7 +55,7 @@ hr {
 }
 
 .container {
-    @media screen and (max-width: 990px) {
+    @media screen and (max-width: 1200px) {
         max-width: unset;
     }
     @media screen and (min-width: 1320px) {
@@ -193,6 +193,11 @@ table {
         color: #17a2b8;
         border-color: #17a2b8;
     }
-
 }
 
+//Alert ALERT Alert (Temporary solution for http://127.0.0.1:8000/expert/contracts)
+.project-tab {
+    .table-responsive {
+        overflow: visible;
+    }
+}
