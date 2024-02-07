@@ -3,8 +3,6 @@ $edu-admin-sm-sidebar-width: 70px;
 $edu-admin-header-height: 76px;
 
 .admin-layout {
-
-
     & > .admin-header {
         position: fixed;
         top: 0;
@@ -475,22 +473,6 @@ $edu-admin-header-height: 76px;
 
     .links a:hover svg path {
         fill: var(--primary);
-    }
-}
-
-
-.title-page-wrapper {
-    border-radius: 8px;
-    border: 1px solid rgba(14, 0, 98, 0.10);
-    background: #FFF;
-
-    .title-page-header {
-        padding: 30px 40px;
-        color: $edu-headings-color;
-    }
-
-    .title-page-body {
-        position: relative;
     }
 }
 

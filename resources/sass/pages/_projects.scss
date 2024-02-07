@@ -309,34 +309,6 @@
     }
 }
 
-.tab-nav {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid $edu-border-color;
-
-    .tab-nav-item {
-        padding: 13px 16px;
-        background-color: transparent;
-        border: none;
-
-        &.active {
-            background-color: #0036E3;
-            color: white;
-        }
-    }
-}
-
-.project-tab, .edux-fill-tab {
-    .tab-nav {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
-    .page-content {
-        padding: 40px !important;
-    }
-}
-
 .project-expert-card {
     display: flex;
     gap: 1rem;
@@ -459,51 +431,6 @@
     color: $edu-primary-color !important;
 }
 
-.star-ratings {
-    display: flex;
-
-    svg {
-        width: 16px;
-        height: 16px;
-
-        path {
-            fill: #E9B911;
-        }
-    }
-}
-
-.project-secondary-tab {
-    .secondary-tab-nav {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid $edu-border-color;
-        padding-left: 40px;
-        padding-right: 40px;
-        gap: 10px;
-
-        .tab-nav-item {
-            padding: 13px 5px;
-            background-color: transparent;
-            border: none;
-            position: relative;
-
-            &.active {
-                color: $edu-primary-color;
-
-                &:after {
-                    content: "";
-                    display: block;
-                    height: 3px;
-                    width: 100%;
-                    background-color: $edu-primary-color;
-                    position: absolute;
-                    bottom: -2px;
-                    left: 0;
-                }
-            }
-        }
-    }
-}
 
 .large-search-form {
     padding: 16px 40px;
@@ -522,74 +449,6 @@
     }
 }
 
-
-.btn {
-    &.btn-icon {
-        height: 46px;
-        width: 46px;
-        padding: 5px !important;
-        border-width: 2px;
-
-        &.btn-outline-light {
-            border-color: rgba(14, 0, 98, 0.10);
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        &:hover {
-            background-color: $edu-primary-color;
-
-            & > svg {
-                path {
-                    fill: white;
-                }
-            }
-
-        }
-    }
-}
-
-.btn-favorite {
-    span {
-        &.heart-line {
-            display: block;
-        }
-
-        &.heart-filled {
-            display: none;
-        }
-    }
-
-    &.favorited {
-        span {
-            &.heart-line {
-                display: none;
-            }
-
-            &.heart-filled {
-                display: block;
-            }
-        }
-
-
-        path {
-            fill: $edu-primary-color;
-        }
-
-    }
-
-    &:hover {
-        background-color: $edu-primary-color;
-        color: white;
-
-        path {
-            fill: white;
-        }
-    }
-}
 
 .project-eoi-trams-condition {
     a {

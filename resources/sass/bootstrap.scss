@@ -4,69 +4,52 @@
 // Bootstrap PGK
 @import 'bootstrap/scss/bootstrap';
 
-// Bootstrap
-@import "bootstrap-overwrite";
 
 //Application Global
+@import "typography";
 @import "global";
 
-//Application Cards
-@import 'cards';
 
-//Application Modals
-@import 'modal';
+//Component
+@import 'components/alerts';
+@import "components/badges";
+@import "components/buttons";
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/modal';
+@import 'components/pagination';
+@import "components/spacing";
+@import "components/star-ratings";
+@import "components/step-progress-bar";
+@import "components/tables";
+@import "components/tabs";
+@import "components/tags";
+@import "components/tooltip";
 
-//Application Form Input
-@import 'forms';
+//Structure
+@import "structure/admin-layout";
+@import "structure/headers";
+@import "structure/footer";
+@import "structure/page-layout";
+@import "structure/sidebar-widget";
 
-//Application Alert
-@import 'alerts';
-
-//Application Pagination
-@import 'pagination';
-
-//User Auth
-@import "auth";
-
-//User Profile Setup
-@import "user-profile-setup";
-
-//scholarship-database-page
-@import "sidebar-widget";
-
-//scholarship-database-page
-@import "wep-modal-plugin-overwrite";
-
-//chatbox-page
-@import "chatbox";
-
-//admin layout
-@import "page-layout";
-
-//Application headers
-@import "headers";
-
-//Application Footer
-@import "footer";
-
-//Notifications Page
-@import "notifications";
-
-//admin layout
-@import "app-layout";
-
-//admin layout
-@import "projects";
-
-//Slider
-@import "expert-carousel";
-@import "pages/homepage-slider";
+//Plugin
+@import "plugins/expert-carousel";
+@import "plugins/homepage-carousel";
+@import "plugins/wep-modal-plugin-overwrite";
+@import "plugins/bootstrap-overwrite";
 
 //Pages
-@import "pages/homepage";
-@import "pages/training";
 @import "pages/about-page";
-@import "pages/scholarship-database";
-@import "pages/project-page";
+@import "pages/auth-page";
+@import "pages/chatbox-page";
 @import "pages/expert-page";
+@import "pages/home-page";
+@import "pages/notifications-page";
+@import "pages/project-page";
+@import "pages/projects";
+@import "pages/scholarship-database";
+@import "pages/training-page";
+@import "pages/user-profile-setup";
+
 
