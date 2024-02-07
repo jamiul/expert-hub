@@ -712,7 +712,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -758,7 +758,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -804,7 +804,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -847,7 +847,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );
