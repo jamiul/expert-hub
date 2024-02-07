@@ -69,43 +69,62 @@ class StripeController extends Controller {
             case 'account.application.authorized':
                 $this->__handleApplicationAuthorized( $event );
                 break;
+
             case 'account.application.deauthorized': //Occurs when a user disconnects from your account and can be used to trigger required cleanup on your server.
                 $this->__handleApplicationDeauthorized( $event );
                 break;
 
             case 'account.external_account.created':
+                Log::info( $event->type );
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountCreated( $paymentMethod );
                 break;
 
             case 'account.external_account.updated': //Occurs when a bank account or debit card attached to a connected account is updated, which can impact payouts.
+                Log::info( $event->type );
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountUpdated( $paymentMethod );
                 break;
 
             case 'account.external_account.deleted':
+                Log::info( $event->type );
                 $paymentMethod = $event->data->object;
                 $this->__externalAccountDeleted( $paymentMethod );
                 break;
 
-            case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
+            case 'capability.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info( $event->type );
                 $account = $event->data->object;
-                $this->__accountUpdated($account);
+                $this->__capabilityUpdated( $account );
+                break;
+
+            case 'account.created': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__accountUpdated( $account );
+                break;
+
+            case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__accountUpdated( $account );
                 break;
 
             case 'balance.available': //Occurs when your Stripe balance has been updated (for example, when funds you’ve added from your bank account are available for transfer to your connected account).
                 $paymentMethod = $event->data->object;
-                $this->__paymentGeneric( $paymentMethod );
+                $this->__paymentGeneric( $event );
                 break;
 
             case 'person.created': //connect account status update
+                Log::info( $event->type );
                 $account = $event->data->object;
-                $this->__personCreated($account);
+                $this->__personCreated( $account );
                 break;
 
             case 'person.updated': //connect account status update
+                Log::info( $event->type );
                 $account = $event->data->object;
-                $this->__personCreated($account);
+                $this->__personCreated( $account );
                 break;
 
             case 'payout.created': //payout to expert's external bank account created
@@ -130,7 +149,7 @@ class StripeController extends Controller {
 
             case 'payment.created':
                 $transfer = $event->data->object;
-                $this->__paymentGeneric( $transfer );
+                $this->__paymentGeneric( $event );
                 break;
 
             case 'transfer.created': //when money transferred to expert's stripe account
@@ -144,6 +163,7 @@ class StripeController extends Controller {
                 break;
 
             default:
+                $this->__paymentGeneric( $event );
                 echo 'Received unknown event type ' . $event->type;
         }
         http_response_code( 200 );
@@ -188,12 +208,13 @@ class StripeController extends Controller {
      * after any debit / credit occurs balance updated
      * */
     private function __paymentGeneric( $paymentMethod ) {
-        Log::info($paymentMethod);
+        Log::info( $paymentMethod );
         try {
 
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -207,13 +228,18 @@ class StripeController extends Controller {
             $client_id      = @$paymentData->metadata->client_id; //client_id
             $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
+            if($contract_type == 'offer'){
+                $reference = 'App\Models\Offer';
+            }else if($contract_type == 'contract'){
+                $reference = 'App\Models\Contract';
+            }
             //save to generic transaction table
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->latest_charge
             ], [
                 'payment_intent_id'      => $paymentData->id,
-                'reference_id'           => json_encode( $reference_id ),
-                'reference_type'         => $reference_type,
+                'reference_id'           => $contract_id,
+                'reference_type'         => $reference,
                 'object'                 => $paymentData->object,
                 'amount'                 => $paymentData->amount,
                 'amount_capturable'      => $paymentData->amount_capturable,
@@ -236,7 +262,7 @@ class StripeController extends Controller {
             ] );
 
             //update offer status based on payment = pending / not accepted
-            if ( $contract_type == 'offer' ) {
+            if ( $contract_type == "offer" ) {
                 $offer         = Offer::find( $contract_id );
                 $offer->status = OfferStatus::Pending;
                 $offer->save();
@@ -246,7 +272,7 @@ class StripeController extends Controller {
                     $offer->client->user->full_name . ' Sent an offer for ' . $offer->contract_title,
                     $offer->project
                 );
-                $offer->expert->user->notify(new SendOfferNotification($offer));
+                $offer->expert->user->notify( new SendOfferNotification( $offer ) );
             }
 
             //save to client transaction table
@@ -277,7 +303,7 @@ class StripeController extends Controller {
                         'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
                     ];
                     $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
-                    $parent_id = $transaction->id;
+                    $parent_id        = $transaction->id;
 
                     //escrow transaction
                     $transaction_data = [
@@ -374,7 +400,8 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -442,7 +469,8 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -453,13 +481,22 @@ class StripeController extends Controller {
             PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
 
     private function __chargeRefund( $paymentData ) {
+        Log::info($paymentData);
         try {
+            $reference_id   = @$paymentData->metadata->contract_id; // id
+            $reference_type = @$paymentData->metadata->contract_type; //offer
+            $client_id      = @$paymentData->metadata->client_id; //client_id
+
+            //create refund transaction for client
+            //parent transaction - credit card charge
+
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->id
             ], [
@@ -485,9 +522,36 @@ class StripeController extends Controller {
                 'status'                 => $paymentData->status,
                 'livemode'               => $paymentData->livemode
             ] );
-        } catch (\Exception $ex){
+
+            if($reference_type == "offer"){
+                $transaction_data = [
+                    'transaction_id' => $stripe_transaction->id,
+                    'milestone_id'   => $reference_id,
+                    'type'           => 'Refund',
+                    'description'    => "Refund for escrow amount",
+                    'client_id'      => $client_id,
+                    'expert_id'      => null,
+                    'amount'         => ( $paymentData->amount_refunded / 100 ),
+                    'charge_type'    => 'credit',
+                    'parent'         => null,
+                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                ];
+                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+                $parent_id        = $transaction->id;
+            }
+
+            $client = User::find( $client_id );
+            $client->notify( new PaymentNotification( [
+                'title'   => "Refunded",
+                'message' => "Refunded " . $paymentData->amount_refunded / 100 . ' ' . $paymentData->currency,
+                'link'    => route( 'client.payment.billing' ),
+                'button'  => 'View Details',
+                'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
+            ] ) );
+        } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -496,13 +560,24 @@ class StripeController extends Controller {
      * connect webhooks
      * */
 
-    private function __accountUpdated($account) {
-        Log::info($account);
+    private function __capabilityUpdated( $account ) {
+        Log::info( $account );
         try {
+            $stripe_customer_id = $account->account;
+            $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
 
-        } catch (\Exception $ex){
+            $kyc = ExpertKYC::updateOrCreate( [
+                'user_id' => $user_id
+            ], [
+                'future_requirements' => $account->future_requirements,
+                'requirements'        => $account->requirements,
+                'status'              => $account->requirements->status
+            ] );
+        } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -540,7 +615,8 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -578,7 +654,8 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -588,7 +665,8 @@ class StripeController extends Controller {
             ExpertWithdrawal::where( 'bank_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -643,7 +721,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -688,7 +767,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -733,7 +813,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -775,7 +856,8 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
@@ -791,21 +873,21 @@ class StripeController extends Controller {
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $transfer->destination_payment
             ], [
-                'transfer_id' => $transfer->id,
-                'object'                 => $transfer->object,
-                'reference_id'           => json_encode( $reference_id ),
-                'reference_type'         => $reference_type,
-                'amount'                 => $transfer->amount,
-                'amount_reversed' => $transfer->amount_reversed,
-                'currency'               => $transfer->currency,
-                'customer_id'            => $transfer->destination,
-                'description'            => $transfer->description,
-                'balance_transaction'       => $transfer->balance_transaction,
-                'transfer_group'         => $transfer->transfer_group,
-                'metadata'               => json_encode( $transfer->metadata ),
-                'created_time'           => $transfer->created ? Carbon::createFromTimestamp( $transfer->created )->format( 'Y-m-d H:i:s' ) : null,
-                'reversed'                 => $transfer->reversed,
-                'livemode'               => $transfer->livemode
+                'transfer_id'         => $transfer->id,
+                'object'              => $transfer->object,
+                'reference_id'        => $reference_id,
+                'reference_type'      => $reference_type,
+                'amount'              => $transfer->amount,
+                'amount_reversed'     => $transfer->amount_reversed,
+                'currency'            => $transfer->currency,
+                'customer_id'         => $transfer->destination,
+                'description'         => $transfer->description,
+                'balance_transaction' => $transfer->balance_transaction,
+                'transfer_group'      => $transfer->transfer_group,
+                'metadata'            => json_encode( $transfer->metadata ),
+                'created_time'        => $transfer->created ? Carbon::createFromTimestamp( $transfer->created )->format( 'Y-m-d H:i:s' ) : null,
+                'reversed'            => $transfer->reversed,
+                'livemode'            => $transfer->livemode
             ] );
 
             //todo: update expert funded milestone status
@@ -815,13 +897,13 @@ class StripeController extends Controller {
                 $expert_id = $milestone->contract->expert_id;
 
                 //clean pending transactions
-                ExpertTransaction::where('milestone_id', $milestone->id)->forceDelete();
+                ExpertTransaction::where( 'milestone_id', $milestone->id )->forceDelete();
 
                 //calculate expert charge
-                $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+                $charge = PaymentHelper::calculateExpertCharge( $milestone->amount );
 
                 //parent transaction
-                $expert_payment = $charge['total_amount'];
+                $expert_payment   = $charge['total_amount'];
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
@@ -834,11 +916,11 @@ class StripeController extends Controller {
                     'parent'         => null,
                     'status'         => 1,
                 ];
-                $transaction = PaymentHelper::createExpertTransaction($transaction_data);
-                $parent_id = $transaction->id;
+                $transaction      = PaymentHelper::createExpertTransaction( $transaction_data );
+                $parent_id        = $transaction->id;
 
                 //charge platform fee
-                $service_charge = $charge['service_charge'];
+                $service_charge   = $charge['service_charge'];
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
@@ -851,38 +933,72 @@ class StripeController extends Controller {
                     'parent'         => $parent_id,
                     'status'         => 1,
                 ];
-                PaymentHelper::createExpertTransaction($transaction_data);
+                PaymentHelper::createExpertTransaction( $transaction_data );
 
                 //update milestone status
                 $milestone->status = MilestoneStatus::Released;
                 $milestone->save();
             }
-        } catch (\Exception $ex){
+        } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
 
-    private function __personCreated($person) {
-        Log::info($person);
+    private function __accountUpdated( $account ) {
+        Log::info( $account );
+        try {
+            $stripe_customer_id = $account->account;
+            $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
+            $user_id            = $customer->user_id;
+
+            $kyc = ExpertKYC::updateOrCreate( [
+                'user_id' => $user_id
+            ], [
+                'default_currency'    => $account->default_currency,
+                'business_type'       => $account->business_type,
+                'tos_acceptance_date' => $account->tos_acceptance->date,
+                'tos_acceptance_ip'   => $account->tos_acceptance->ip,
+                'future_requirements' => $account->future_requirements,
+                'requirements'        => $account->requirements,
+                'verification'        => $account->verification,
+                'charges_enabled'     => $account->charges_enabled,
+                'payouts_enabled'     => $account->payouts_enabled,
+                'details_submitted'   => $account->details_submitted,
+                'status'              => $account->requirements->status
+            ] );
+        } catch ( \Exception $ex ) {
+            echo $ex->getMessage();
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
+            exit();
+        }
+    }
+
+    private function __personCreated( $person ) {
+        Log::info( $person );
         try {
             $stripe_customer_id = $person->account;
             $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
             $user_id            = $customer->user_id;
 
-            $kyc = ExpertKYC::updateOrCreate([
+            $kyc = ExpertKYC::updateOrCreate( [
                 'user_id' => $user_id
             ], [
                 'future_requirements' => $person->future_requirements,
-                'requirements' => $person->requirements,
-                'verification' => $person->verification,
-                'status' => $person->verification->status
-            ]);
-        } catch (\Exception $ex){
-            Log::info($ex->getMessage());
+                'requirements'        => $person->requirements,
+                'verification'        => $person->verification,
+                'charges_enabled'     => $person->charges_enabled,
+                'payouts_enabled'     => $person->payouts_enabled,
+                'details_submitted'   => $person->details_submitted,
+                'status'              => $person->verification->status
+            ] );
+        } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info( $ex->getMessage() );
+            http_response_code( 500 );
             exit();
         }
     }
@@ -896,7 +1012,7 @@ class StripeController extends Controller {
     }
 
     private function __handleApplicationAuthorized( $account ) {
-        Log::info($account);
+        Log::info( $account );
         try {
             if ( ! empty( $account->account ) ) {
                 $stripe          = new \Stripe\StripeClient( env( 'STRIPE_SECRET' ) );
@@ -908,13 +1024,14 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }
 
     private function __handleApplicationDeauthorized( $account ) {
-        Log::info($account);
+        Log::info( $account );
         try {
             if ( ! empty( $account->account ) ) {
                 $stripe          = new \Stripe\StripeClient( env( 'STRIPE_SECRET' ) );
@@ -926,7 +1043,8 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            http_response_code( $ex->getCode() );
+            Log::info($ex->getMessage());
+            http_response_code( 500 );
             exit();
         }
     }

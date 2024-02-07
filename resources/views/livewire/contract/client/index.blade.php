@@ -11,7 +11,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'dispute-contract' }"
-                            @click="activeTab = 'dispute-contract'">Dispute (3)
+                            @click="activeTab = 'dispute-contract'">Dispute ({{ $disputedContracts->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'on-hold-contract' }"
@@ -57,7 +57,7 @@
                                             <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
                                         </td>
                                         <td>
-                                            <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
+                                            <p class="mb-1 fw-medium">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                             <p class="mb-1">Escrow: ${{ $contract->escrow_amount }}</p>
                                         </td>
                                         <td>
@@ -84,10 +84,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" data-bs-toggle="modal"
-                                                            data-bs-target="#disputeModal" href="#">
-                                                            Dispute
-                                                        </a>
+                                                        <button class="dropdown-item" wire:click="$dispatch('modal.open', { component: 'contract.client.submit-dispute', arguments: { contract: {{ $contract->id }} }})">Dispute</button>
                                                     </li>
                                                     <li>
                                                         <a class="dropdown-item"  href="#">Contact Support</a>
@@ -128,70 +125,16 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Assistance Required for Chemical Engineering</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-                                        <button class="btn btn-link p-0 text-decoration-underline">Reason for
-                                            dispute
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Client</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Contact Support</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @foreach ($disputedContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656 </p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
+                                        <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                        <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
 
                                     </td>
                                     <td>
-                                        <p class="mb-1">Fixed: $1000.00</p>
+                                        <p class="mb-1">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                         <button class="btn btn-link p-0 text-decoration-underline">Reason for
                                             dispute
                                         </button>
@@ -200,12 +143,11 @@
                                         <div class="d-flex gap-3 align-item-center">
                                             <div class="expert-thumb">
                                                 <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant3.png') }}"/>
+                                                        src="{{ $contract->expert->picture }}"/>
                                             </div>
                                             <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
+                                                <p class="fw-medium project-expert-name mb-0">{{ $contract->expert->user->full_name }}</p>
+                                                <p class=" mb-0">{{ $contract->expert->expertField->name }}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -217,14 +159,14 @@
                                                 <x-icon.three-dots/>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li>
+                                                {{-- <li>
                                                     <a class="dropdown-item"
                                                         href="/figma/project/view-expert-work-dairy">
                                                         View Work Dairy</a>
-                                                </li>
+                                                </li> --}}
                                                 <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Client</a>
+                                                    <a class="dropdown-item" href="#">Message
+                                                        Expert</a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#">Contact Support</a>
@@ -234,7 +176,7 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                @endforeach
                             </table>
                         </div>
 

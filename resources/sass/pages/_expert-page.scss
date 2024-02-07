@@ -34,8 +34,19 @@
             }
         }
 
+        .expert-info {
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
         .expert-card-action {
             margin-left: auto;
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
 
         .expert-profile-flag {
@@ -134,13 +145,4 @@
         font-weight: 500;
     }
 
-    .tag-list {
-        &.expert-tag-list {
-            .expert-tag {
-                background-color: #F4F6F9;
-                color: #6E737C;
-                font-size: 0.8125rem;
-            }
-        }
-    }
 }

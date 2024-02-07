@@ -22,4 +22,8 @@ class ExpertKYC extends Model implements HasMedia
         'verification' => 'array'
     ];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 }

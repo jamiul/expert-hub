@@ -52,7 +52,7 @@ return new class extends Migration
             $table->json('future_requirements')->nullable();
             $table->json('requirements')->nullable();
             $table->json('verification')->nullable();
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

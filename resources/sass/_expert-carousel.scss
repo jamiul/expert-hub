@@ -1,9 +1,14 @@
 .expert-carousel-slider {
     position: relative;
 
+    @media screen and (max-width: 1320px) {
+        margin-bottom: 24px;
+    }
 
     .owl-stage-outer {
-        min-height: 315px;
+        @media screen and (min-width: 1320px) {
+            min-height: 315px;
+        }
     }
 
     a {
@@ -22,11 +27,15 @@
         }
 
         .expert-slider-info {
-            box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px 0px #0e00621f;
             padding: 14px 8px !important;
             border-radius: 0 0 6px 6px;
 
-
+            @media screen and (min-width: 1320px) {
+                box-shadow: 14.755319595336914px 13.202128410339355px 37.27659606933594px 0px #0e00621f;
+            }
+            @media screen and (max-width: 1320px) {
+                border: 1px solid $edu-border-color;
+            }
         }
     }
 
@@ -60,19 +69,24 @@
             margin: 0 !important;
             box-shadow: 4.393333435058594px 4.393333435058594px 17.573333740234375px 0px #0e00621a;
             font-size: 25px !important;
+            position: absolute;
+            top: 36%;
 
             &.owl-prev {
-                position: absolute;
                 left: -20px;
-                top: 36%;
                 transform: translateY(-36%);
+                @media screen and (max-width: 1320px) {
+                    left: 0;
+                }
             }
 
             &.owl-next {
                 position: absolute;
                 right: -20px;
-                top: 36%;
                 transform: translateY(-36%);
+                @media screen and (max-width: 1320px) {
+                    right: 0
+                }
             }
 
             &:hover {

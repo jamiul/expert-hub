@@ -665,6 +665,24 @@ ul.progress-bar-nav-horizontal {
             color: $edu-min-gray-color;
             font-size: 0.8125rem;
         }
+
+
+    }
+    .all-tags-trigger {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        border: 2px solid #EBEFF7;
+        padding: 2px 12px;
+        border-radius: 42px;
+        background-color: #fff;
+        color: #555C68;
+    }
+    &.showing-less-tag {
+        .tag {
+            &:nth-child(n+5) {
+                display: none;
+            }
+        }
     }
 }
 

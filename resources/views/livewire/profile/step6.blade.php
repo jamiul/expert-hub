@@ -5,7 +5,7 @@
         profile. Ensure that it conveys meaningful information you would like the client to know
         about you before engaging in your project
     </p>
-    <x-form.countable-textarea rows="5" cols="10" name="biography" wire:model.blur="biography" placeholder="e.g. Brief 1000 words summary about your expertise."/>
+    <x-form.countable-textarea rows="5" cols="10" max="2000" name="biography" wire:model.blur="biography" placeholder="e.g. Brief 2000 words summary about your expertise."/>
 
     <h6 class="mb-2 mt-5">Upload your profile picture</h6>
     <p class="mb-5">Please upload the image you would like to appear in your profile</p>
