@@ -26,7 +26,7 @@
                             </ul>
                         </div>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active table-responsive" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="tab-pane fade show active " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                                 <div class="edux-top-search-area">
                                     <div class="eudx-top-search">
                                         <x-form.search wire:model="skill" placeholder="Search by ID"/>
@@ -98,7 +98,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div style="padding-bottom: 150px;" class="tab-pane fade table-responsive" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                            <div style="padding-bottom: 150px;" class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                                 <div class="edux-top-search-area">
                                     <div class="eudx-top-search">
                                         <x-form.search wire:model="skill" placeholder="Search by ID"/>
@@ -189,7 +189,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade table-responsive" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                             <div class="edux-top-search-area">
                                 <div class="eudx-top-search">
                                     <x-form.search wire:model="skill" placeholder="Search by ID"/>
@@ -633,7 +633,7 @@
                             </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade table-responsive" id="pills-contact-complete2" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="tab-pane fade " id="pills-contact-complete2" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                             <div class="edux-top-search-area">
                                 <div class="eudx-top-search">
                                     <x-form.search wire:model="skill" placeholder="Search by ID"/>
@@ -1105,7 +1105,7 @@
                             </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade table-responsive" id="pills-contact-complete" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="tab-pane fade " id="pills-contact-complete" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                             <div class="edux-top-search-area">
                                 <div class="eudx-top-search">
                                     <x-form.search wire:model="skill" placeholder="Search by ID"/>
