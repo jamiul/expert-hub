@@ -61,7 +61,7 @@ class Show extends Component
 //                ]);
 
                 //todo: refund customer
-                dd($this->offer);
+//                dd($this->offer);
 //                $refund = $this->stripe->refunds->create([
 //                    'payment_intent' => $payment_intent_id,
 //                    'amount' => 10 * 100
