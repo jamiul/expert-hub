@@ -101,9 +101,10 @@ class Form extends BaseForm
         $this->previewExpertise = Expertise::where('id', $data['expertise_id'])->value('name');
         $this->expertiseSkills = Expertise::whereIn('id', $data['expertise_skills'])->get();
 
+        $requiredOrNull = $this->imageUrl == '' ? 'required' : 'nullable';
         $this->validate([
             'description' => 'required|max:200',
-            'image' => 'required|max:2048'
+            'image' => $requiredOrNull.'|max:2048'
         ],[
             'description.required' => 'Please add Description.',
             'image.required' => 'Please add image.'

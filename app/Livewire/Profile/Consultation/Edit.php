@@ -30,7 +30,8 @@ class Edit extends Modal
         $this->form->set($consultation);
         $this->expertFields = Expertise::expertise()->isParent()->get();
         $this->expertSkills = Expertise::skill()->isParent()->get();
-        $this->hours = HoursHelper::create('00:00', '23:00', 60, 'g:i A');
+        $this->hours = hoursHelper();
+
         $this->timezoneIndetifiers = DateTimeZone::listIdentifiers( DateTimeZone::AUSTRALIA  );
     }
 
