@@ -33,13 +33,16 @@ class Invite extends Modal
         }else{
             $this->project = auth()->user()->profile->projects()->first();
         }
-        $this->project_id = $this->project->id;
+        $this->project_id = $this->project?->id;
         $this->expert = $expert;
         $this->projects = auth()->user()->profile->projects()->get();
     }
 
     public function inviteToProject()
     {
+        $this->validate([
+            'project_id' => ['required'],
+        ]);
         $invitation = Invitation::create([
             'expert_id' => $this->expert->id,
             'project_id' => $this->project_id,

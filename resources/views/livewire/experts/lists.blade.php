@@ -31,10 +31,14 @@
                         <button class="btn btn-icon btn-outline-light m-1">
                             <x-icon.message-line/>
                         </button>
+                        @if(auth()->user()->profile->projects()->count() == 0)
+                            <a href="{{ route('projects.create') }}" class="btn btn-md btn-outline-primary">Invite Project</a>
+                        @else
                         <button
                             wire:click="$dispatch('modal.open', {component: 'project.invite', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})"
                             class="btn btn-md btn-outline-primary">Invite Project
                         </button>
+                        @endif
                     @else
                         <a href="{{ route('auth.login') }}" class="btn btn-icon btn-outline-light m-1">
                             <x-icon.message-line/>
