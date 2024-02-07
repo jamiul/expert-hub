@@ -19,6 +19,8 @@ class ClientProfileController extends Controller
 
     public function edit()
     {
-        return view('frontend.client.profile.edit');
+        return view('frontend.client.profile.edit',[
+            'profile' => auth()->user()->profile,
+        ]);
     }
 }

@@ -15,6 +15,8 @@ class Index extends Component
             'contracts' => auth()->user()->profile->clientContracts()->where('status', ContractStatus::Active)->get(),
             'endedContracts' => auth()->user()->profile->clientContracts()->where('status', ContractStatus::Ended)->get(),
             'disputedContracts' => auth()->user()->profile->clientContracts()->where('status', ContractStatus::Disputed)->get(),
+            'holdContracts' => auth()->user()->profile->clientContracts()->where('status', ContractStatus::Hold)->get(),
+            'calceledContracts' => auth()->user()->profile->clientContracts()->where('status', ContractStatus::Canceled)->get(),
         ]);
     }
 }

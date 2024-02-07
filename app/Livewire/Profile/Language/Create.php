@@ -28,6 +28,7 @@ class Create extends Modal
         $this->profile()->languages()->attach($data['language_id'], ['proficiency' => $data['proficiency']]);
         $this->reset();
         $this->dispatch('refresh')->to(\App\Livewire\Profile\Language::class);
+        $this->dispatch('refresh')->to(\App\Livewire\Profile\Edit\Language::class);
         $this->close();
     }
 

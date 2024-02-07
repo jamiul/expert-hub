@@ -58,6 +58,21 @@ class Contract extends Model
         $query->where('status', ContractStatus::Disputed);
     }
 
+    public function scopeHold($query)
+    {
+        $query->where('status', ContractStatus::Hold);
+    }
+
+    public function scopeCanceled($query)
+    {
+        $query->where('status', ContractStatus::Canceled);
+    }
+
+    public function scopeEnded($query)
+    {
+        $query->where('status', ContractStatus::Ended);
+    }
+
     public function disputes()
     {
         return $this->hasMany(Dispute::class);
