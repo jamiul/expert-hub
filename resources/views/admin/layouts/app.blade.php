@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>EduExHub</title>
+        <title>Expert Gate</title>
         <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@2.x.x/dist/alpine-clipboard.js" defer></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         @vite(['resources/sass/bootstrap.scss', 'resources/js/app.js'])
@@ -16,6 +16,7 @@
         @vite('resources/css/client-dashboard.css')
         @vite('resources/css/auth.css')
         @vite('resources/css/components.css')
+        @vite('resources/css/scholarship.css')
         <link rel="stylesheet" href="{{ asset('vendor/wire-elements-pro/css/bootstrap-overlay-component.css') }}">
     </head>
     <body>

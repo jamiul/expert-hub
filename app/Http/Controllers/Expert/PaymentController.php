@@ -12,8 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Stripe\Exception\InvalidRequestException;
 
-class PaymentController extends Controller
-{
+class PaymentController extends Controller {
     public $api_key = null;
 
     public $stripe = null;
@@ -33,11 +32,11 @@ class PaymentController extends Controller
             return redirect()->route( 'expert.payment.onboard' );
         }
     }
+
     /*
      * Display summary of Experts Payment & Billing /payment
      * */
-    public function index()
-    {
+    public function index() {
         return view( 'frontend.expert.payment.index' );
     }
 
@@ -49,16 +48,15 @@ class PaymentController extends Controller
 
         $this->__checkStripeConnect();
 
-        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby('id', 'desc')->latest()->paginate(5);
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id )->orderby( 'id', 'desc' )->latest()->paginate( 5 );
 
-        return view( 'frontend.expert.payment.billing-report', compact('transactions', 'user') );
+        return view( 'frontend.expert.payment.billing-report', compact( 'transactions', 'user' ) );
     }
 
     /*
      * Expert detailed onboard submit eKYC /payment/onboard
      * */
-    public function onboard( Request $request )
-    {
+    public function onboard( Request $request ) {
         $user = auth()->user();
 
         //first create stripe connect account if there is no account
@@ -89,7 +87,7 @@ class PaymentController extends Controller
                     'settings'         => [
                         'payouts' => [
                             'schedule'             => [ 'interval' => 'manual' ],
-                            'statement_descriptor' => 'EduExHub'
+                            'statement_descriptor' => 'Expert Gate'
                         ]
                     ]
                 ] );
@@ -99,7 +97,7 @@ class PaymentController extends Controller
                 $profile->save();
 
             } catch ( \Exception $ex ) {
-                return toast('error', $ex->getMessage(), $this);
+                return toast( 'error', $ex->getMessage(), $this );
                 error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
             }
         }
@@ -153,7 +151,7 @@ class PaymentController extends Controller
                         'file'    => $fp
                     ], [
                         "stripe_account" => $acct_id
-                    ]);
+                    ] );
 
                     fclose( $fp );;
                 }
@@ -166,7 +164,7 @@ class PaymentController extends Controller
                         'file'    => $fp
                     ], [
                         "stripe_account" => $acct_id
-                    ]);
+                    ] );
                     fclose( $fp );
                 }
 
@@ -179,7 +177,7 @@ class PaymentController extends Controller
                         'file'    => $fp,
                     ], [
                         "stripe_account" => $acct_id
-                    ]);
+                    ] );
                     fclose();
                 }
                 if ( $request->hasFile( 'additional_document_back' ) && $request->file( 'additional_document_back' )->isValid() ) {
@@ -191,7 +189,7 @@ class PaymentController extends Controller
                         'file'    => $fp,
                     ], [
                         "stripe_account" => $acct_id
-                    ]);
+                    ] );
                     fclose();
                 }
 
@@ -222,8 +220,7 @@ class PaymentController extends Controller
     /*
      * lists of withdrawal method & Add new withdrawal method /payment/withdrawal-methods
      * */
-    public function withdrawalMethod( Request $request )
-    {
+    public function withdrawalMethod( Request $request ) {
         $user = auth()->user();
 
         $this->__checkStripeConnect();
@@ -240,16 +237,18 @@ class PaymentController extends Controller
                         'account_number'      => $request->account_number,
                     ],
                 ] );
-            } catch (\Stripe\Exception\InvalidRequestException $ex) {
-                error_log($ex->getMessage());
-                return redirect()->back()->withErrors([
+            } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+                error_log( $ex->getMessage() );
+
+                return redirect()->back()->withErrors( [
                     'message' => $ex->getMessage()
-                ])->withInput($request->all());
-            } catch (\Exception $ex){
-                error_log($ex->getMessage());
-                return redirect()->back()->withErrors([
+                ] )->withInput( $request->all() );
+            } catch ( \Exception $ex ) {
+                error_log( $ex->getMessage() );
+
+                return redirect()->back()->withErrors( [
                     'message' => $ex->getMessage()
-                ])->withInput($request->all());
+                ] )->withInput( $request->all() );
             }
 
             if ( $bank_token->id ) {
@@ -258,16 +257,18 @@ class PaymentController extends Controller
                         $user->profile->stripe_acct_id,
                         [ 'external_account' => $bank_token->id ]
                     );
-                } catch (\Stripe\Exception\InvalidRequestException $ex) {
-                    error_log($ex->getMessage());
-                    return redirect()->back()->withErrors([
+                } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+                    error_log( $ex->getMessage() );
+
+                    return redirect()->back()->withErrors( [
                         'message' => $ex->getMessage()
-                    ])->withInput($request->all());
-                } catch (\Exception $ex){
-                    error_log($ex->getMessage());
-                    return redirect()->back()->withErrors([
+                    ] )->withInput( $request->all() );
+                } catch ( \Exception $ex ) {
+                    error_log( $ex->getMessage() );
+
+                    return redirect()->back()->withErrors( [
                         'message' => $ex->getMessage()
-                    ])->withInput($request->all());
+                    ] )->withInput( $request->all() );
                 }
 
                 if ( $paymentMethod ) {
@@ -276,17 +277,16 @@ class PaymentController extends Controller
             }
         }
 
-        return view( 'frontend.expert.payment.withdrawal', compact('user') );
+        return view( 'frontend.expert.payment.withdrawal', compact( 'user' ) );
     }
 
     /*
      * Withdraw fund /payment/withdraw
      * */
-    public function withdraw(Request $request)
-    {
+    public function withdraw( Request $request ) {
         $user = auth()->user();
 
-        $withdrawal_methods = ExpertWithdrawal::where('user_id', $user->id)->get();
+        $withdrawal_methods = ExpertWithdrawal::where( 'user_id', $user->id )->get();
 
         $this->__checkStripeConnect();
 
@@ -295,46 +295,48 @@ class PaymentController extends Controller
         $balance = $this->stripe->balance->retrieve( [], [ 'stripe_account' => $acct_id ] );
 
         if ( $request->isMethod( 'post' ) ) {
-            $amount = $request->amount * 100;
-            $reference = $request->reference;
-            $save_reference = isset($request->save_reference) ? 1 : 0;
+            $amount         = $request->amount * 100;
+            $reference      = $request->reference;
+            $save_reference = isset( $request->save_reference ) ? 1 : 0;
 
-            $bank_info = ExpertWithdrawal::where('user_id', $user->id)
-                                         ->where('bank_id', $request->bank_id)
+            $bank_info = ExpertWithdrawal::where( 'user_id', $user->id )
+                                         ->where( 'bank_id', $request->bank_id )
                                          ->first();
 
             $payout = $this->stripe->payouts->create( [
 //                'source_type' => 'bank_account',
                 'destination' => $bank_info->bank_id,
-                'amount'   => $amount,
-                'currency' => $bank_info->currency,
+                'amount'      => $amount,
+                'currency'    => $bank_info->currency,
                 'description' => $reference
-            ], ['stripe_account' => $acct_id] );
+            ], [ 'stripe_account' => $acct_id ] );
 
             try {
 
 
                 return redirect()->route( 'expert.payment' )->with( [ 'message' => 'Withdraw request was successful.' ] );
-            } catch (\Stripe\Exception\InvalidRequestException $ex) {
-                error_log($ex->getMessage());
-                return redirect()->back()->withErrors([
+            } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+                error_log( $ex->getMessage() );
+
+                return redirect()->back()->withErrors( [
                     'message' => $ex->getMessage()
-                ])->withInput($request->all());
-            } catch (\Exception $ex){
-                error_log($ex->getMessage());
-                return redirect()->back()->withErrors([
+                ] )->withInput( $request->all() );
+            } catch ( \Exception $ex ) {
+                error_log( $ex->getMessage() );
+
+                return redirect()->back()->withErrors( [
                     'message' => $ex->getMessage()
-                ])->withInput($request->all());
+                ] )->withInput( $request->all() );
             }
         }
 
-        return view( 'frontend.expert.payment.withdraw', compact('user', 'withdrawal_methods', 'balance') );
+        return view( 'frontend.expert.payment.withdraw', compact( 'user', 'withdrawal_methods', 'balance' ) );
     }
 
     /*
      * Request client to release a milestone
      * */
-    public function requestRelease(Request $request) {
+    public function requestRelease( Request $request ) {
         $user = auth()->user();
 
         if ( $request->isMethod( 'post' ) ) {
@@ -342,14 +344,13 @@ class PaymentController extends Controller
 
         }
 
-        return view( 'frontend.expert.payment.request_relesae', compact('user') );
+        return view( 'frontend.expert.payment.request_relesae', compact( 'user' ) );
     }
 
     /*
      * Admin will create payout
      * */
-    public function payout()
-    {
+    public function payout() {
         $user = auth()->user();
 
         $this->__checkStripeConnect();
@@ -370,34 +371,33 @@ class PaymentController extends Controller
         dd( $payout );
     }
 
-    public function refundMilestone($milestone_id) {
+    public function refundMilestone( $milestone_id ) {
         $refund_amount = 100;
 
         //reverse already paid fund from freelancer to client
         $transfer_refund = $this->stripe->transfers->createReversal(
             'tr_1OaeGSBkKAerzo32ibZwrltw',
-            ['amount' => 9000]
+            [ 'amount' => 9000 ]
         );
 
-        dd($transfer_refund);
+        dd( $transfer_refund );
     }
 
 
-    public function refundToCustomer($milestone_id) {
+    public function refundToCustomer( $milestone_id ) {
         $payment_intent_id = "pi_3Oa9AnBkKAerzo320Zq0g2uK";
 
-        $refund = $this->stripe->refunds->create([
+        $refund = $this->stripe->refunds->create( [
             'payment_intent' => $payment_intent_id,
-            'amount' => 10 * 100
-        ]);
-        dd($refund);
+            'amount'         => 10 * 100
+        ] );
+        dd( $refund );
     }
 
     /*
      * temp: create account session
      * */
-    public function accountSession()
-    {
+    public function accountSession() {
         $stripe = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );

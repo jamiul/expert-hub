@@ -18,6 +18,9 @@ class Show extends Component
 
     public function accept()
     {
+        if($this->offer->status != OfferStatus::Pending){
+            return toast('warning', 'Offer Withdrawn', $this);
+        }
         $this->askForConfirmation(
             callback: function () {
                 $escrow_amount = $this->offer->fundedMilestones()->sum('amount');
@@ -44,7 +47,7 @@ class Show extends Component
             },
             prompt: [
                 'title' => 'Accept offer?',
-                'message' => 'Paragraph: Archetype lets designers like you very quickly and easily create consistent',
+                'message' => 'Are you sure to accept the offer?',
                 'confirm' => 'Accept',
                 'cancel' => 'Cancel',
                 'button' => 'btn-success',
@@ -56,9 +59,19 @@ class Show extends Component
     {
         $this->askForConfirmation(
             callback: function (){
-                $this->offer->update([
-                    'status' => OfferStatus::Declined,
-                ]);
+//                $this->offer->update([
+//                    'status' => OfferStatus::Declined,
+//                ]);
+
+                //todo: refund customer
+//                dd($this->offer);
+//                $refund = $this->stripe->refunds->create([
+//                    'payment_intent' => $payment_intent_id,
+//                    'amount' => 10 * 100
+//                ]);
+
+                //todo: notify customer
+
                 toast('success', 'Offer Declined!');
             },
             prompt: [

@@ -1,4 +1,11 @@
 <div>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+    </script>
+
     <section class="my-60">
         <div class="container">
             <div class="edux-billing-method-card-area">
@@ -8,7 +15,7 @@
                         <div class="account-action">
                             <ul>
                                 <li>Account</li>
-                                <li class="badge badge-pill {{ $user->expert_kyc->details_submitted ? 'badge-outline-success' : 'badge-outline-danger' }}">{{ $user->expert_kyc->details_submitted ? 'Success' : 'Resticted' }}</li>
+                                <li class="badge badge-pill {{ $user->expert_kyc->status == 'active' ? 'badge-outline-success' : 'badge-outline-danger' }}">{{ $user->expert_kyc->status == 'active' ? 'Active' : 'Inactive' }}</li>
                                 <li>Receive Payment</li>
                                 <li class="badge badge-pill {{ $user->expert_kyc->charges_enabled ? 'badge-outline-success' : 'badge-outline-warning' }}">{{ $user->expert_kyc->charges_enabled ? 'Enabled' : 'Disabled' }}</li>
                                 <li>Withdrawal</li>
@@ -19,7 +26,7 @@
 
                     <ul class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">OverView</button>
+                            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Required Actions</button>
@@ -55,18 +62,32 @@
                             {{--                                </div>--}}
                             {{--                            </div>--}}
 
-                            <div class="edux-paypal-visa-billing">
-                                @if($user->expert_kyc->requirements && $user->expert_kyc->requirements['past_due'])
-                                    <div class="alert edux-alert alert-danger" role="alert">
-                                        <x-icon.info/>
-                                        <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>
-                                        <button type="button" class="view-requirement close"
-                                                data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile">
-                                            View Requirements
-                                        </button>
-                                    </div>
-                                @endif
-                            </div>
+                            @if($user->expert_kyc->requirements)
+                                <div class="edux-paypal-visa-billing">
+                                    @php
+                                        $disabled_reason = $user->expert_kyc->requirements['disabled_reason'];
+                                        if($disabled_reason){
+                                            if($disabled_reason == 'requirements.past_due'){
+                                                $reasons = $user->expert_kyc->requirements['past_due'];
+                                            } else if($disabled_reason == 'requirements.fields_needed') {
+                                                $reasons = $user->expert_kyc->requirements['currently_due'];
+                                            }
+                                        }
+                                        $reasons = $user->expert_kyc->requirements['currently_due'];
+                                    @endphp
+
+                                    @if($disabled_reason)
+                                        <div class="alert edux-alert alert-danger" role="alert">
+                                            <x-icon.info/>
+                                            <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>
+                                            <button type="button" class="view-requirement close"
+                                                    data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile">
+                                                View Requirements
+                                            </button>
+                                        </div>
+                                    @endif
+                                </div>
+                            @endif
 
                             <div class="mt-4 p-3 p-sm-4 border rounded-4">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -75,7 +96,7 @@
                                         <p class="mb-0 title text-primary fw-medium">{{ $user->profile->balance }} {{ $user->profile->currency }}</p>
                                     </div>
                                     <div class="col-4 text-end get-paid-end">
-                                        <button onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.add'})"
+                                        <button onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.get-paid'})"
                                             class="btn btn-primary fs-15 fw-medium large__btn">Get Paid Now</button>
                                     </div>
                                 </div>
@@ -92,11 +113,13 @@
                                         </svg>
                                     </button>
                                 </p>
-                                <p class="text-black mb-3">
-                                    Weekly (next on Oct 18) <br>
-                                    Only when balance is $1,000.00 or more. <a href="#" class="text-primary text-decoration-underline fw-medium">View payment calendar</a>
-                                </p>
-                                <p class="text-black mb-0" >Direct to Local Bank (BDT) - Account ending in 1001</p>
+                                @if($withdraw_schedule)
+                                    <p class="text-black mb-3">
+                                        {{ $withdraw_schedule->preferred_payment_schedule }} (next on Oct 18) <br>
+                                        Only when balance is ${{ $withdraw_schedule->balance_reach  }} or more. <a href="#" class="text-primary text-decoration-underline fw-medium">View payment calendar</a>
+                                    </p>
+                                    <p class="text-black mb-0" >account ends with {{ $withdraw_schedule->expert_withdrawal->last4 }} in {{ $withdraw_schedule->expert_withdrawal->currency }}</p>
+                                @endif
                             </div>
 
                             <div class="mt-4 p-3 p-sm-4 border rounded-4">
@@ -134,7 +157,18 @@
 
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                            @if($user->expert_kyc->requirements && $user->expert_kyc->requirements['past_due'])
+                            @if($user->expert_kyc->requirements['past_due'] || $user->expert_kyc->requirements['currently_due'])
+                                @if($user->expert_kyc->requirements['errors'])
+                                    <div class="alert edux-alert alert-danger" role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path fill="#191D24" d="M11 17H13V11H11V17ZM12 9C12.2833 9 12.5208 8.90417 12.7125 8.7125C12.9042 8.52083 13 8.28333 13 8C13 7.71667 12.9042 7.47917 12.7125 7.2875C12.5208 7.09583 12.2833 7 12 7C11.7167 7 11.4792 7.09583 11.2875 7.2875C11.0958 7.47917 11 7.71667 11 8C11 8.28333 11.0958 8.52083 11.2875 8.7125C11.4792 8.90417 11.7167 9 12 9ZM12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22Z"></path>
+                                        </svg>
+                                        @foreach($user->expert_kyc->requirements['errors'] as $err)
+                                            <p><strong>{{ $err['reason'] }}</strong></p>
+                                        @endforeach
+                                    </div>
+                                @endif
+
                                 <div class="require-action table-responsive">
                                     <table class="table transaction-all-require">
                                         <thead class="t-history">
@@ -146,15 +180,7 @@
                                         </tr>
                                         </thead>
                                         <tbody class="">
-                                        {{--                                    @if($user->expert_kyc->requirements->errors)--}}
-                                        {{--                                        errors:--}}
-                                        {{--                                        <ul>--}}
-                                        {{--                                            @foreach($user->expert_kyc->requirements->errors as $err)--}}
-                                        {{--                                                <li>{{ $err->reason }}</li>--}}
-                                        {{--                                            @endforeach--}}
-                                        {{--                                        </ul>--}}
-                                        {{--                                    @endif--}}
-{{--                                        @if(in_array('external_account', $user->expert_kyc->requirements['past_due']))--}}
+                                        @if(($disabled_reason && $disabled_reason == 'requirements.fields_needed') || in_array('individual.verification.document', $user->expert_kyc->requirements['currently_due']))
                                             <tr class="edux-pending-payment">
                                                 <td class="balance-text"> <span class="fw-medium">Add missing information for {{ $user->expert_kyc->individual_first_name }} {{ $user->expert_kyc->individual_last_name }}</span> <br/> <span>Onboarding and verification</span> </td>
                                                 <td style="vertical-align: middle;">Past Due</td>
@@ -164,8 +190,9 @@
                                                        class="btn btn-primary fs-15 fw-medium large__btn">Update</a>
                                                 </td>
                                             </tr>
-{{--                                        @endif--}}
-{{--                                        @if($user->expert_kyc->requirements['past_due'])--}}
+                                        @endif
+
+                                        @if($reasons && in_array('external_account', $reasons))
                                             <tr class="edux-pending-payment">
                                                 <td class="balance-text"> <span class="fw-medium">Add a bank account </span> <br/> <span>Onboarding and verification</span> </td>
                                                 <td style="vertical-align: middle;">Past Due</td>
@@ -176,7 +203,7 @@
 
                                                 </td>
                                             </tr>
-{{--                                        @endif--}}
+                                        @endif
                                         </tbody>
                                     </table>
 

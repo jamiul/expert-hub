@@ -98,33 +98,19 @@
                         <div class="desc text-dark fs-15 text-summary">
                             {{ $project->description }}
                         </div>
-                        <div class="tag__list d-flex flex-wrap mt-3">
-                            @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    {{ $skill->name }}
-                                </a>
-                                @if ($project->skills->count() > 3 && $loop->last)
-                                    <a wire:click="toggleShowMore"
-                                        class="fs-13 fw-medium rounded-pill collapse__btn collapsed {{ $project->skills->count() < 3 ? 'd-none' : '' }}"
-                                        href="#contentTag">
-                                        <span class="count">
-                                            {{ $showMore ? 'Show Less' : '+' . $project->skills->count() - 3 . ' More' }}
-                                        </span>
-                                    </a>
-                                @endif
-                            @empty
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    __{{ 'No data' }}
-                                </a>
-                            @endforelse
+                        <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                            @foreach ($project->skills as $skill)
+                                <span class="tag">{{ $skill->name }}</span>
+                            @endforeach
+                            @if ($project->skills->count() > 4)
+                                <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                            @endif
                         </div>
                     </li>
                 @empty
                     <x-empty />
                 @endforelse
-
             </ul>
-
             {{ $projects->links() }}
         </div>
         <!--.//feed__tab End Here-->
@@ -209,25 +195,13 @@
                             <div class="desc text-dark fs-15 text-summary">
                                 {{ $project->description }}
                             </div>
-                            <div class="tag__list d-flex flex-wrap mt-3">
-                                @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    {{ $skill->name }}
-                                </a>
-                                @if ($project->skills->count() > 3 && $loop->last)
-                                    <a wire:click="toggleShowMore"
-                                        class="fs-13 fw-medium rounded-pill collapse__btn collapsed {{ $project->skills->count() < 3 ? 'd-none' : '' }}"
-                                        href="#contentTag">
-                                        <span class="count">
-                                            {{ $showMore ? 'Show Less' : '+' . $project->skills->count() - 3 . ' More' }}
-                                        </span>
-                                    </a>
+                            <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                                @foreach ($project->skills as $skill)
+                                    <span class="tag">{{ $skill->name }}</span>
+                                @endforeach
+                                @if ($project->skills->count() > 4)
+                                    <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
                                 @endif
-                            @empty
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    __{{ 'No data' }}
-                                </a>
-                            @endforelse
                             </div>
                         </li>
                     @empty
@@ -319,33 +293,19 @@
                         <div class="desc text-dark fs-15 text-summary">
                             {{ $project->description }}
                         </div>
-                        <div class="tag__list d-flex flex-wrap mt-3">
-                            @forelse ($showMore ? $project->skills : $project->skills->take(3) as $skill)
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    {{ $skill->name }}
-                                </a>
-                                @if ($project->skills->count() > 3 && $loop->last)
-                                    <a wire:click="toggleShowMore"
-                                        class="fs-13 fw-medium rounded-pill collapse__btn collapsed {{ $project->skills->count() < 3 ? 'd-none' : '' }}"
-                                        href="#contentTag">
-                                        <span class="count">
-                                            {{ $showMore ? 'Show Less' : '+' . $project->skills->count() - 3 . ' More' }}
-                                        </span>
-                                    </a>
-                                @endif
-                            @empty
-                                <a href="#" class="fs-13 fw-medium rounded-pill">
-                                    __{{ 'No data' }}
-                                </a>
-                            @endforelse
+                        <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                            @foreach ($project->skills as $skill)
+                                <span class="tag">{{ $skill->name }}</span>
+                            @endforeach
+                            @if ($project->skills->count() > 4)
+                                <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                            @endif
                         </div>
                     </li>
                 @empty
                     <x-empty />
                 @endforelse
-
             </ul>
-
             {{ $favoriteProjects->links() }}
         </div>
         <!--.//savedJobs-->

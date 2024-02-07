@@ -684,11 +684,13 @@
                         <x-form.input type="text" label="Project" wire:model="type" placeholder="Type"
                                       value="Policy Development Assistance Required for Chemical Engineering"
                                       disabled/>
-                        <x-form.select label="Reason of dispute" wire:model="title">
+                        <x-form.select label="Reason of dispute" wire:model="reason">
                             <option value="">Select a reason</option>
-                            <option value="Mr">Lorem ipsum dolor sit amet.</option>
+                            @foreach ($reasons as $reason)
+                                <option value="{{ $reason }}">{{ $reason }}</option>
+                            @endforeach
                         </x-form.select>
-                        <x-form.textarea label="Description" wire:model="bio" placeholder="" row="5"/>
+                        <x-form.countable-textarea label="Description" wire:model="description" placeholder="" row="5"/>
                         <div class="image-upload-flat mb-3">
                             <label for="upload-file" class="text-center">
                                 <span> <x-icon.document-upload fill="#0059C999"/> </span>

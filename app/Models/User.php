@@ -40,6 +40,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(ExpertWithdrawal::class);
     }
 
+    public function withdraw_schedule() {
+        return $this->hasOne(WithdrawSchedule::class);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
@@ -58,5 +62,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isExpert()
     {
         return $this->active_profile === ProfileType::Expert;
+    }
+
+    public function client_transaction()
+    {
+        return $this->hasMany(ClientTransaction::class, 'client_id');
     }
 }

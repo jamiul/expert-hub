@@ -1,0 +1,100 @@
+footer {
+    .footer {
+        background: #002ec0;
+        padding: 70px 0;
+    }
+
+    .footer-block {
+        h3 {
+            transition: all 500ms;
+            color: #fff;
+            font-size: 19px;
+            font-weight: 500;
+            margin: 0 0 30px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    font-size: 14px;
+                    color: #fff;
+                    font-weight: 400;
+                    text-decoration: none;
+                    display: inline-block;
+                    width: 100%;
+
+                    &:hover {
+                        text-decoration: underline;
+                        font-weight: 500;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .play {
+        float: right;
+
+        .footer-play img {
+            margin-right: 4px;
+        }
+    }
+
+}
+
+
+.footer-bottom {
+    background: #012bb0;
+    padding: 20px 0;
+
+    .footer-left p {
+        margin: 0;
+        color: #fff;
+        font-size: 14px;
+        line-height: 40px;
+    }
+
+    .footer-icon {
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: right;
+
+            li {
+                display: inline-block;
+                margin-left: 2px;
+
+                a {
+                    color: #fff;
+                    border: solid 1px #ffffff33;
+                    width: 40px;
+                    height: 40px;
+                    display: inline-flex;
+                    line-height: 40px;
+                    text-align: center;
+                    border-radius: 100%;
+                    font-size: 16px;
+                    transition: all 500ms;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        color: #0036e3;
+                        background: #fff;
+
+                        svg path {
+                            fill: #0036e3;
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 col-sm-9">
+                <div class="col-lg-9">
                     <div class="footer-menu">
                         <div class="row">
                             <div class="col-md-3 col-sm-3">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-lg-3">
                     <div class="footer-block play">
                         <h3>Download Apps</h3>
                         <div class="footer-play">

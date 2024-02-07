@@ -8,8 +8,10 @@ use App\Models\ExpertTransaction;
 use App\Models\Milestone;
 use App\Models\Profile;
 use App\Models\User;
+use App\Notifications\PaymentNotification;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Log;
 
 class DispatchMilestone extends Command {
     /**
@@ -31,31 +33,49 @@ class DispatchMilestone extends Command {
      */
     public function handle() {
         $milestones = Milestone::where( 'status', MilestoneStatus::Approved )
-                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
+//                               ->whereDate( 'approved_at', '>=', Carbon::now()->addMinutes( 5 ) )
                                ->get();
 
         foreach ( $milestones as $milestone ) {
-            //release fund to expert
-            $milestone_amount     = $milestone->amount;
-            $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
+            try {
+                //release fund to expert
+                $milestone_amount     = $milestone->amount;
+                $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
 
-            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
-            $net_total = $charge['net_total'];
+                $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+                $net_total = $charge['net_total'];
 
-            $stripe = new \Stripe\StripeClient( [
-                "api_key" => env( 'STRIPE_SECRET' ),
-            ] );
+                $stripe = new \Stripe\StripeClient( [
+                    "api_key" => env( 'STRIPE_SECRET' ),
+                ] );
 
-            $acceptMilestone = $stripe->transfers->create( [
-                'amount'         => $net_total * 100,
-                'currency'       => $milestone->contract->expert->currency,
-                'destination'    => $CONNECTED_ACCOUNT_ID,
-                'transfer_group' => $CONNECTED_ACCOUNT_ID,
-                'metadata'       => [
-                    'reference_id'   => $milestone->id,
-                    'reference_type' => 'milestone'
-                ]
-            ] );
+                $acceptMilestone = $stripe->transfers->create( [
+                    'amount'         => $net_total * 100,
+                    'currency'       => $milestone->contract->expert->currency,
+                    'destination'    => $CONNECTED_ACCOUNT_ID,
+                    'transfer_group' => $CONNECTED_ACCOUNT_ID,
+                    'metadata'       => [
+                        'reference_id'   => $milestone->id,
+                        'reference_type' => 'milestone'
+                    ]
+                ] );
+
+                $milestone->update([
+                    'status' => MilestoneStatus::Released
+                ]);
+
+                Log::info($acceptMilestone);
+            } catch (\Exception $ex){
+                $milestone->contract->expert->user->notify(new PaymentNotification([
+                        'title'   => 'Client trying to pay you milestone',
+                        'message' => 'A client is trying to pay you milestone. Please submit KYC to verify your account and receive payment',
+                        'link'    => route('expert.payment.index'),
+                        'button' => 'Submit KYC',
+                        'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' )
+                    ]
+                ));
+                Log::error($ex);
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ class PaymentHelper {
                     'settings'         => [
                         'payouts' => [
                             'schedule'             => [ 'interval' => 'manual' ],
-                            'statement_descriptor' => 'EduExHub'
+                            'statement_descriptor' => 'Expert Gate'
                         ]
                     ],
                     'metadata' => [
@@ -131,6 +131,12 @@ class PaymentHelper {
 
         if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'debit' ) {
             $escrow_balance = $profile->escrow_balance + $transaction_data['amount'];
+            Profile::find( $transaction_data['client_id'] )->update( [
+                'escrow_balance' => $escrow_balance
+            ] );
+        }
+        if ( $transaction_data['type'] == 'Refund' && $transaction_data['charge_type'] == 'credit' ) {
+            $escrow_balance = $profile->escrow_balance - $transaction_data['amount'];
             Profile::find( $transaction_data['client_id'] )->update( [
                 'escrow_balance' => $escrow_balance
             ] );

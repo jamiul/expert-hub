@@ -68,7 +68,7 @@
                                          <div class="tr">
                                              <div class="td">
                                                  <p class="mb-0 fw-medium">Offer by: Dr Mohammad Riyadh </p>
-                                                 <p class="mb-0">EduExHub</p>
+                                                 <p class="mb-0">Expert Gate</p>
                                              </div>
                                              <div class="td">
                                                  <p class="mb-0 fw-medium">Hourly </p>

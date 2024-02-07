@@ -1,18 +1,21 @@
 .training-card {
     display: grid;
-    grid-template-columns: auto 280px;
     gap: 16px 24px;
     justify-content: space-between;
     align-items: center;
 
-    & > div {
-        &.training-card-trainer-wrapper,
-        &.training-card-description,
-        &.training-card-summary {
-            grid-column-start: 1;
-            grid-column-end: 3;
+    @media screen and (min-width: 1000px) {
+        grid-template-columns: auto 280px;
+        & > div {
+            &.training-card-trainer-wrapper,
+            &.training-card-description,
+            &.training-card-summary {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
         }
     }
+
 
     .training-card-title {
         a {
@@ -25,6 +28,10 @@
         align-items: center;
         justify-content: flex-end;
         gap: 8px;
+        @media screen and (max-width: 1000px) {
+            order: 5;
+            //justify-content: center;
+        }
     }
 
     .training-card-trainer-wrapper {
@@ -154,6 +161,14 @@
     @media screen and (min-width: 1320px) {
         padding: 30px;
     }
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+        .training-small-card-info {
+            //order: 3;
+            //grid-column-start: 1;
+            //grid-column-end: 3;
+        }
+    }
 
     .training-small-card-schedule {
         border-right: 1px solid $edu-border-color;
@@ -173,6 +188,26 @@
                 margin-bottom: 0;
             }
         }
+
+        @media screen and (max-width: 800px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+            gap: 1rem;
+            padding: 0;
+            border-right: 0;
+            p {
+                margin: 0 !important;
+
+                &:nth-child(4) {
+                    order: -1;
+                }
+
+                &:nth-child(1) {
+                    order: -1;
+                }
+            }
+        }
     }
 
     .training-small-card-info {
@@ -187,12 +222,27 @@
 
     .training-small-card-action {
         align-self: center;
+        @media screen and (max-width: 800px) {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .btn {
+                margin: 0 !important;
+            }
+        }
     }
 
     .training-small-card-trainers {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+
         gap: 24px;
+        @media screen and (min-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+        }
+        @media screen and (max-width: 1000px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 
     .user-small-card {

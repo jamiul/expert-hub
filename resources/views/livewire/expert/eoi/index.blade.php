@@ -30,7 +30,7 @@
                     <div x-show="activeTab === 'eoi-sent-tab'" id="eoi-sent-tab-content">
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table edux-table-extra-padding">
-                                @foreach ($eois as $eoi)
+                                @forelse ($eois as $eoi)
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1 fw-medium">
@@ -45,14 +45,16 @@
                                             <p class="mb-1">${{ $eoi->amount }}</p>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
                     </div>
                     <div x-show="activeTab === 'invitation-received-tab'" id="invitation-received-tab-content">
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table edux-table-extra-padding">
-                                @foreach ($invitations as $invitation)
+                                @forelse ($invitations as $invitation)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1 fw-medium">
@@ -60,24 +62,26 @@
                                                 {{ $invitation->project->title }}
                                             </a>
                                         </p>
-                                        <p class="mb-1">{{ $eoi->created_at->diffForHumans() }}</p>
+                                        <p class="mb-1">{{ $invitation->created_at->diffForHumans() }}</p>
                                     </td>
                                     <td>
                                         <span class="edux-batch-viewed">Viewed</span>
                                     </td>
                                     <td>
-                                        <p class="mb-1 fw-medium">{{ $eoi->project->type->value }}</p>
-                                        <p class="mb-1">${{ $eoi->amount }}</p>
+                                        <p class="mb-1 fw-medium">{{ $invitation->project->type->value }}</p>
+                                        <p class="mb-1">${{ $invitation->project->budget_start_amount }}</p>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
                     </div>
                     <div x-show="activeTab === 'invitation-for-meeting-tab'" id="invitation-for-meeting-tab">
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table edux-table-extra-padding">
-                                @foreach ($interviewing as $interview)
+                                @forelse ($interviewing as $interview)
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1 fw-medium">
@@ -92,14 +96,16 @@
                                             <p class="mb-1">${{ $interview->amount }}</p>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
                     </div>
                     <div x-show="activeTab === 'offer-tab'" id="offer-tab-content">
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table edux-table-extra-padding">
-                                @foreach ($offers as $offer)
+                                @forelse ($offers as $offer)
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1 fw-medium">
@@ -114,14 +120,16 @@
                                             <p class="mb-1">${{ $offer->amount }}</p>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
                     </div>
                     <div x-show="activeTab === 'saved-projects-tab'" id="saved-projects-tab-content">
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-                                @foreach ($savedProjects as $project)
+                                @forelse ($savedProjects as $project)
                                     <tr class="align-middle">
                                         <div class="project-list-card-item">
                                             <div class="project-list-card-item-header">
@@ -179,7 +187,9 @@
                                             </div>
                                         </div>
                                     </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
                     </div>

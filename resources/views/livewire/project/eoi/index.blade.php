@@ -291,9 +291,8 @@
                                     <div x-show="activeInvitedExpertTab === 'saved-experts'">
                                         <div class="expert-wrapper">
                                             @forelse ($savedExperts as $expert)
-                                                <x-expert.card :expert="$invitation->expert">
-                                                    @livewire('favorite.expert', ['expert' => $invitation->expert])
-                                                    <x-expert.decline wire:click="declineInvitation({{ $invitation->id }})"/>
+                                                <x-expert.card :expert="$expert">
+                                                    @livewire('favorite.expert', ['expert' => $expert])
                                                     <x-expert.hire focus="true" :expert="$expert" :project="$project"/>
                                                 </x-expert.card>
                                             @empty

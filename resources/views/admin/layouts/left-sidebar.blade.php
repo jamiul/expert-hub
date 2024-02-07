@@ -173,6 +173,6 @@
 
     </ul><!--ull-->
     <div class="copy__right text-white text-center border-top small">
-        © copyright eduexhub 2024
+        © copyright Expert Gate 2024
     </div>
 </div><!--.//content-->
