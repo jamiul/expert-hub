@@ -19,7 +19,7 @@ class Book extends Modal
 
     public function bookConsultation()
     {
-        $this->form->bookSlot();
+        $this->form->add();
     }
 
     public function filterDate()
@@ -27,9 +27,10 @@ class Book extends Modal
         $this->form->pickDate();
     }
 
-    public function setSlot($time)
+    public function setSlot($id,$time)
     {
-        $this->form->selectedSlot($time);
+        // dd($id,$time);
+        $this->form->selectedSlot($id, $time);
     }
     public function render()
     {

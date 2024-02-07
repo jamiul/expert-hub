@@ -6,6 +6,7 @@ use App\Models\Profile;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Frontend\Controller;
+use App\Models\Consultation;
 use App\Models\User;
 
 class ExpertProfileController extends Controller
@@ -36,5 +37,10 @@ class ExpertProfileController extends Controller
         }
 
         abort(404);
+    }
+
+    public function viewConsultation(Consultation $consultation)
+    {
+        return view('frontend.expert.profile.consultation', compact('consultation'));
     }
 }

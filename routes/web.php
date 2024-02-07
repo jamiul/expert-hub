@@ -77,6 +77,7 @@ Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middle
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
+Route::get('/expert/consultation/{consultation}', [ExpertProfileController::class, 'viewConsultation'])->name('expert.consultation.show');
 Route::get('/expert/dashboard', [ExpertDashboardController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.dashboard');
 Route::get('/expert/eois', [ExpertEoiController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.eois.index');
 Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.contracts');

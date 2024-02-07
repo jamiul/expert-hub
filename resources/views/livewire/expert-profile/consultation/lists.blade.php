@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="prof-text">
-                        <h6>{{ $consultation->expertField->name }}</h6>
+                        <a href="{{ route('expert.consultation.show', $consultation) }}"><h6>{{ $consultation->expertField->name }}</h6></a>
                         <strong>
                             <p>${{ $consultation->hourly_rate }}/1 hrs</p>
                         </strong>

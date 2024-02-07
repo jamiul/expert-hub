@@ -22,11 +22,14 @@
         <div class="slot-item-area">
             <h6>{{ $form->formattedDate }}</h6>
             <div class="slot-item">
+                @php
+                    $selectedTimesArray = is_array($form->selectedTimes) ? $form->selectedTimes : $form->selectedTimes->toArray();
+                @endphp
                 @forelse ($form->availabeSlots as $day => $times)
-                    @foreach ($times as $time)
+                    @foreach ($times as $key => $time)
                         <div
-                            wire:click="setSlot('{{ $time }}')"
-                            class="single-slot {{ in_array($time, $form->selectedTimes) ? 'slot-fill' : ''}}"
+                            wire:click="setSlot('{{ $key }}', '{{ $time }}')"
+                            class="single-slot {{ in_array($time, $selectedTimesArray) || ($form->selectedTimes instanceof Illuminate\Support\Collection && $form->selectedTimes->contains($time)) ? 'slot-fill' : '' }}"
                         >
                             <span>{{ $time }}</span>
                         </div>
