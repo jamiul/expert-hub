@@ -41,7 +41,7 @@ class Create extends Component
     public function mount(Project $project)
     {
         $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
-        $this->availableSkills = Expertise::skill()->isChild()->pluck('name', 'id')->toArray();
+        $this->availableSkills = Expertise::skill()->isChild()->pluck('id', 'name')->toArray();
         $this->project = $project;
         $this->title = $this->project->title;
         $this->description = $this->project->description;

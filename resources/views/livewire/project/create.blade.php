@@ -98,7 +98,7 @@
                                             <h3>What academic skills is required for this project?</h3>
                                             <p>List up to 10 key skills that represent your project. Academic experts will use these skills to match with projects aligned to their interests and expertise.</p>
                                             <x-form.choice wire:model.live="selectedSkills" placeholder="Type the skills & hit enter" id="skills" multiple>
-                                                @foreach ($availableSkills as $id => $name)
+                                                @foreach ($availableSkills as $name => $id)
                                                     <option value="{{ $id }}">{{ $name }}</option>
                                                 @endforeach
                                             </x-form.choice>
