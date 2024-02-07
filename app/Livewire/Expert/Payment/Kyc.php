@@ -44,10 +44,6 @@ class Kyc extends Modal {
 
     public $additional_document_back;
 
-    public $document_front_full;
-
-    public $document_back_full;
-
     public function submitKYC() {
         $this->validate();
 
@@ -99,9 +95,9 @@ class Kyc extends Modal {
             ] );
 
             if ( $this->document_front ) {
-                $expert_kyc->addMedia( $this->document_front )->toMediaCollection( 'individual_verification_document_front' );
+                $expert_kyc->addMedia( $this->document_front )->toMediaCollection( 'document_front' );
 
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_document_front' )->last()->getPath(), 'r' );
+                $fp   = fopen( $expert_kyc->getMedia( 'document_front' )->first()->getPath(), 'r' );
                 $file = $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp
@@ -117,48 +113,11 @@ class Kyc extends Modal {
                 );
             }
 
-            if ( $this->document_front_full ) {
-                $expert_kyc->addMedia( $this->document_front_full )->toMediaCollection( 'individual_verification_document_front' );
-
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_document_front' )->last()->getPath(), 'r' );
-                $file = $stripe->files->create( [
-                    'purpose' => 'identity_document',
-                    'file'    => $fp
-                ], [
-                    "stripe_account" => $acct_id
-                ] );
-
-                fclose( $fp );
-
-                $stripe->accounts->update(
-                    $acct_id,
-                    [ 'individual' => [ 'verification' => [ 'document' => [ 'front' => $file->id ] ] ] ]
-                );
-
-            }
 
             if ( $this->document_back ) {
-                $expert_kyc->addMedia( $this->document_back )->toMediaCollection( 'individual_verification_document_back' );
+                $expert_kyc->addMedia( $this->document_back )->toMediaCollection( 'document_back' );
 
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_document_back' )->last()->getPath(), 'r' );
-                $file = $stripe->files->create( [
-                    'purpose' => 'identity_document',
-                    'file'    => $fp
-                ], [
-                    "stripe_account" => $acct_id
-                ] );
-                fclose( $fp );
-
-                $stripe->accounts->update(
-                    $acct_id,
-                    [ 'individual' => [ 'verification' => [ 'document' => [ 'back' => $file->id ] ] ] ]
-                );
-            }
-
-            if ( $this->document_back_full ) {
-                $expert_kyc->addMedia( $this->document_back_full )->toMediaCollection( 'individual_verification_document_back' );
-
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_document_back' )->last()->getPath(), 'r' );
+                $fp   = fopen( $expert_kyc->getMedia( 'document_back' )->first()->getPath(), 'r' );
                 $file = $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp
@@ -174,9 +133,9 @@ class Kyc extends Modal {
             }
 
             if ( $this->additional_document_front ) {
-                $expert_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'individual_verification_additional_document_front' );
+                $expert_kyc->addMediaFromRequest( 'additional_document_front' )->toMediaCollection( 'additional_document_front' );
 
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_additional_document_front' )->last()->getPath(), 'r' );
+                $fp   = fopen( $expert_kyc->getMedia( 'additional_document_front' )->first()->getPath(), 'r' );
                 $file = $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp,
@@ -191,9 +150,9 @@ class Kyc extends Modal {
                 );
             }
             if ( $this->additional_document_back ) {
-                $expert_kyc->addMediaFromRequest( 'additional_document_back' )->toMediaCollection( 'individual_verification_additional_document_back' );
+                $expert_kyc->addMediaFromRequest( 'additional_document_back' )->toMediaCollection( 'additional_document_back' );
 
-                $fp   = fopen( $expert_kyc->getMedia( 'individual_verification_additional_document_back' )->last()->getPath(), 'r' );
+                $fp   = fopen( $expert_kyc->getMedia( 'additional_document_back' )->first()->getPath(), 'r' );
                 $file = $stripe->files->create( [
                     'purpose' => 'identity_document',
                     'file'    => $fp,
@@ -208,21 +167,21 @@ class Kyc extends Modal {
                 );
             }
 
-            $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
+//            $expert_stripe_account = $stripe->accounts->retrieve( $acct_id, [] );
+//
+//            $expert_kyc = ExpertKYC::updateOrCreate( [
+//                'user_id' => $user->id
+//            ], [
+//                'details_submitted'                         => $expert_stripe_account->details_submitted,
+//                'payouts_enabled'                           => $expert_stripe_account->payouts_enabled,
+//                'charges_enabled'                           => $expert_stripe_account->charges_enabled,
+//                'requirements'                              => $expert_stripe_account->requirements,
+//                'future_requirements'                       => $expert_stripe_account->future_requirements,
+//                'verification' => $expert_stripe_account->verification,
+//                'status'                       => $expert_stripe_account->status
+//            ] );
 
-            $expert_kyc = ExpertKYC::updateOrCreate( [
-                'user_id' => $user->id
-            ], [
-                'details_submitted'                         => $expert_stripe_account->details_submitted,
-                'payouts_enabled'                           => $expert_stripe_account->payouts_enabled,
-                'charges_enabled'                           => $expert_stripe_account->charges_enabled,
-                'requirements'                              => $expert_stripe_account->requirements,
-                'future_requirements'                       => $expert_stripe_account->future_requirements,
-                'verification' => $expert_stripe_account->verification,
-                'status'                       => $expert_stripe_account->status
-            ] );
-
-            toast( 'success', 'Information submitted successfully', $this );
+            toast( 'success', 'Information submitted successfully. Please allow us 72 hours to verify your documents.', $this );
 
             $this->dispatch( 'refresh', GetPaid::class );
 

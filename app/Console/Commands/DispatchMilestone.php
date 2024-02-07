@@ -36,29 +36,33 @@ class DispatchMilestone extends Command {
                                ->get();
 
         foreach ( $milestones as $milestone ) {
-            //release fund to expert
-            $milestone_amount     = $milestone->amount;
-            $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
+            try {
+                //release fund to expert
+                $milestone_amount     = $milestone->amount;
+                $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
 
-            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
-            $net_total = $charge['net_total'];
+                $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+                $net_total = $charge['net_total'];
 
-            $stripe = new \Stripe\StripeClient( [
-                "api_key" => env( 'STRIPE_SECRET' ),
-            ] );
+                $stripe = new \Stripe\StripeClient( [
+                    "api_key" => env( 'STRIPE_SECRET' ),
+                ] );
 
-            $acceptMilestone = $stripe->transfers->create( [
-                'amount'         => $net_total * 100,
-                'currency'       => $milestone->contract->expert->currency,
-                'destination'    => $CONNECTED_ACCOUNT_ID,
-                'transfer_group' => $CONNECTED_ACCOUNT_ID,
-                'metadata'       => [
-                    'reference_id'   => $milestone->id,
-                    'reference_type' => 'milestone'
-                ]
-            ] );
+                $acceptMilestone = $stripe->transfers->create( [
+                    'amount'         => $net_total * 100,
+                    'currency'       => $milestone->contract->expert->currency,
+                    'destination'    => $CONNECTED_ACCOUNT_ID,
+                    'transfer_group' => $CONNECTED_ACCOUNT_ID,
+                    'metadata'       => [
+                        'reference_id'   => $milestone->id,
+                        'reference_type' => 'milestone'
+                    ]
+                ] );
 
-            Log::info($acceptMilestone);
+                Log::info($acceptMilestone);
+            } catch (\Exception $ex){
+                Log::error($ex);
+            }
         }
     }
 }
