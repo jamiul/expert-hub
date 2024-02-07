@@ -63,4 +63,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->active_profile === ProfileType::Expert;
     }
+
+    public function client_transaction()
+    {
+        return $this->hasMany(ClientTransaction::class, 'client_id');
+    }
 }
