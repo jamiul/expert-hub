@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
 //        $schedule->command('inspire')->hourly();
-        $schedule->command('update-expert-kyc')->everyOddHour();
+        $schedule->command('update-expert-kyc')->hourly();
 
         $schedule->command('dispatch-milestones')->everyMinute();
     }
