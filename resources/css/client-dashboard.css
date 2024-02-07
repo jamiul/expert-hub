@@ -8188,6 +8188,12 @@ font-weight: 400;
   font-style: normal;
   font-weight: 500;
 }
+
+.consultation-button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 /* ============================== Add Consultant End Here ============================= */
 /* ============================== Book Consultant Start Here ============================= */
 .edux-slot-count{
