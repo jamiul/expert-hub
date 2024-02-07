@@ -22,12 +22,14 @@
 //Application Alert
 @import 'alerts';
 
+//Application Pagination
+@import 'pagination';
+
 //User Auth
 @import "auth";
 
 //User Profile Setup
 @import "user-profile-setup";
-
 
 //scholarship-database-page
 @import "sidebar-widget";
@@ -40,6 +42,12 @@
 
 //admin layout
 @import "page-layout";
+
+//Application headers
+@import "headers";
+
+//Application Footer
+@import "footer";
 
 //Notifications Page
 @import "notifications";

@@ -968,9 +968,9 @@ img.exp-categoryl {
     border-bottom: solid 1px #d9dbea;
 }
 
- .live-zoom {
+.live-zoom {
     border-right: solid 1px #d9dbea;
-    min-width:239px;
+    min-width: 239px;
 }
 
 /* .eudx-training{
@@ -988,8 +988,7 @@ img.exp-categoryl {
 }
 
 
-
- .live-zoom .zoom-icon {
+.live-zoom .zoom-icon {
     display: flex;
     align-items: center;
 }
@@ -1015,10 +1014,9 @@ img.exp-categoryl {
     border-bottom: 1px solid rgba(14, 0, 98, 0.10);
 }
 
-.academic-border-top{
-    border-top: 1px solid  rgba(14, 0, 98, 0.10);
+.academic-border-top {
+    border-top: 1px solid rgba(14, 0, 98, 0.10);
 }
-
 
 
 /* .academic-zoom-area {
@@ -1026,7 +1024,6 @@ img.exp-categoryl {
     max-width: 239px;
     border-right: 1px solid  rgba(14, 0, 98, 0.10);
 } */
-
 
 
 .live-zoom p {
@@ -1060,7 +1057,7 @@ img.exp-categoryl {
     color: #303744;
 }
 
- .training .training-text a:last-child {
+.training .training-text a:last-child {
     border-left: solid 1px #0e006280;
     padding-left: 8px;
     margin-left: 6px;
@@ -1073,7 +1070,7 @@ img.exp-categoryl {
     color: #303744;
 }
 
- .training h6 span {
+.training h6 span {
     margin: 0;
     font-size: 15px;
     font-weight: 500;
@@ -1084,7 +1081,7 @@ img.exp-categoryl {
     margin: 13px 0 20px;
 }
 
- .training-button {
+.training-button {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1095,13 +1092,13 @@ img.exp-categoryl {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    color:  #303744;
+    color: #303744;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
 }
 
-.zoom-live-text p{
+.zoom-live-text p {
     gap: 18px;
     /*color:  #303744;*/
     /*font-size: 14px;*/
@@ -1132,16 +1129,17 @@ img.exp-categoryl {
     font-weight: 500;
     border: solid 2px #0036e3;
 }
+
 .training-expert-card .expert-thumb-box img {
     width: 44px;
 }
 
-.eudx-training h3{
+.eudx-training h3 {
     /*color:  #191D24;*/
     /*font-size: 19px;*/
     /*font-style: normal;*/
     /*font-weight: 500;*/
-    margin-bottom:0px
+    margin-bottom: 0px
 }
 
 .eudx-training {
@@ -1157,11 +1155,11 @@ img.exp-categoryl {
 }
 
 .training-button a:hover {
-    background:#002cb9;
+    background: #002cb9;
     color: #fff;
 }
 
- .training-button a:last-child {
+.training-button a:last-child {
     background: #e8ebf699;
     color: #0036e3;
 }
@@ -1172,12 +1170,12 @@ img.exp-categoryl {
     color: #fff;
 }
 
- .academic-button {
+.academic-button {
     text-align: center;
     /* margin-top: 30px; */
 }
 
- .academic-button a {
+.academic-button a {
     transition: all 500ms;
     color: #0036e3;
     font-size: 15px;
@@ -1310,7 +1308,7 @@ img.exp-categoryl {
     text-decoration: underline;
     font-weight: 500;
 }
-
+/**
 footer .footer {
     background: #002ec0;
     padding: 70px 0;
@@ -1341,7 +1339,6 @@ footer .footer .footer-block ul li a {
     text-decoration: none;
     display: inline-block;
     width: 100%;
-    /*transition: all 0.2s;*/
 }
 
 footer .footer .footer-block ul li a:hover {
@@ -1404,7 +1401,7 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
     fill: #0036e3;
     background: #fff;
 }
-
+**/
 .about-mission {
     background: #f1f3fa;
     padding: 90px 0;
@@ -2562,7 +2559,7 @@ span:last-child {
     color: #303744;
     text-decoration: none;
 }
-
+/*
 .pagination {
     width: 100%;
     margin: 25px 0 30px;
@@ -2576,6 +2573,7 @@ span:last-child {
 .pagination .col-md-8 {
     width: 70%;
 }
+
 
 .pagination .pagination-left {
     color: #303744;
@@ -2591,7 +2589,6 @@ span:last-child {
 
 .pagination .pagination-right ul li {
     margin-left: 2px;
-    /* display: inline-block; */
 }
 
 .pagination .pagination-right ul li a:hover {
@@ -2618,7 +2615,7 @@ span:last-child {
     font-size: 14px;
     justify-content: center;
 }
-
+*/
 .pagination .row {
     display: flex;
     align-items: center;
@@ -7261,8 +7258,6 @@ h2:after {
 }
 
 
-
-
 @media (min-width: 1200px) and (max-width: 1366px) {
     .product-slider .carousel-w .carousel-inner .item-text {
         width: 200px;
@@ -7599,7 +7594,7 @@ h2:after {
         margin: 0 0 12px;
     }
 
- .training {
+    .training {
         margin: 0px 0;
     }
 
