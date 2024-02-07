@@ -62,7 +62,7 @@
                                         <div>
                                             <p class="text-sm fw-medium mt-1 mb-0">Doctor of Philosophy</p>
                                             <p class="text-sm mb-0">Public Health</p>
-                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                            <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                             <p class="text-sm fw-medium mb-1">1995 - 2000</p>
                                         </div>
                                         <div class="ms-auto">
@@ -79,7 +79,7 @@
                                         <div>
                                             <p class="text-sm fw-medium mt-1 mb-0">Master’s</p>
                                             <p class="text-sm mb-0">Public Health</p>
-                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                            <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                             <p class="text-sm fw-medium mb-1">1993 -1995</p>
                                         </div>
                                         <div class="ms-auto">
@@ -96,7 +96,7 @@
                                         <div>
                                             <p class="text-sm fw-medium mt-1 mb-0">Bachelor</p>
                                             <p class="text-sm mb-0">Public Health</p>
-                                            <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                            <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                             <p class="text-sm fw-medium mb-1">1989 - 1993</p>
                                         </div>
                                         <div class="ms-auto">

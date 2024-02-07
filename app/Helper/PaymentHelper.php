@@ -50,7 +50,7 @@ class PaymentHelper {
                     'settings'         => [
                         'payouts' => [
                             'schedule'             => [ 'interval' => 'manual' ],
-                            'statement_descriptor' => 'EduExHub'
+                            'statement_descriptor' => 'Expert Gate'
                         ]
                     ],
                     'metadata' => [
