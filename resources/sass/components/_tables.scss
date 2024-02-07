@@ -1,0 +1,39 @@
+table {
+    &.table-extra-padding {
+        tr {
+            td {
+                padding: 30px;
+
+                &:first-child {
+                    padding-left: 40px;
+                }
+
+                &:last-child {
+                    padding-right: 40px;
+                }
+            }
+        }
+    }
+}
+
+.custom-table {
+    display: table;
+    width: 100%;
+
+    & > .tr {
+        display: table-row;
+
+        & > .td {
+            display: table-cell;
+            padding: 4px;
+        }
+    }
+}
+
+
+//Alert ALERT Alert (Temporary solution for http://127.0.0.1:8000/expert/contracts)
+.project-tab {
+    .table-responsive {
+        overflow: visible;
+    }
+}

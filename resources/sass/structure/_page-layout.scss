@@ -56,3 +56,19 @@
     justify-content: center;
     padding: 80px 0;
 }
+
+
+.title-page-wrapper {
+    border-radius: 8px;
+    border: 1px solid rgba(14, 0, 98, 0.10);
+    background: #FFF;
+
+    .title-page-header {
+        padding: 30px 40px;
+        color: $edu-headings-color;
+    }
+
+    .title-page-body {
+        position: relative;
+    }
+}
