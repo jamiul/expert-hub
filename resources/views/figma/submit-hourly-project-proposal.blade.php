@@ -141,7 +141,7 @@
                                 </div>
                             </div>
                             <x-form.check wire:model="terms" class="mt-20 project-eoi-trams-condition">
-                                Yes, I understand and agree to the <a href="">EduEXHub Terms of Service</a>, including
+                                Yes, I understand and agree to the <a href="">Expert Gate Terms of Service</a>, including
                                 the
                                 <a href="">User Agreement</a> and <a href="">Privacy Policy</a>.
                             </x-form.check>

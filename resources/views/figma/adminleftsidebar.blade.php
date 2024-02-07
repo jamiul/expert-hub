@@ -75,6 +75,6 @@
         </ul>
     </div>
     <div class="sidebar-footer">
-        &copy; copyright eduexhub 2024
+        &copy; copyright Expert Gate 2024
     </div>
 </div>

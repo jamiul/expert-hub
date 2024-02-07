@@ -148,13 +148,13 @@
                                     <li>
                                         <div class="form-check">
                                             <input type="checkbox" name="check1" id="check1" class="form-check-input">
-                                            <label for="check1" class="form-check-label">EduExHub has a tip to help me start</label>
+                                            <label for="check1" class="form-check-label">Expert Gate has a tip to help me start</label>
                                         </div>
                                     </li> 
                                     <li>
                                         <div class="form-check">
                                             <input type="checkbox" name="check2" id="check2" class="form-check-input">
-                                            <label for="check2" class="form-check-label">Notify me of EduExHub events happening in my local area</label>
+                                            <label for="check2" class="form-check-label">Notify me of Expert Gate events happening in my local area</label>
                                         </div>
                                     </li> 
                                     <li>
@@ -177,18 +177,18 @@
                                     <li>
                                         <div class="form-check">
                                             <input type="checkbox" name="checkid" id="checkid" class="form-check-input">
-                                            <label for="checkid" class="form-check-label">Send recommendations if I qualify as top EduExHub expert</label>
+                                            <label for="checkid" class="form-check-label">Send recommendations if I qualify as top Expert Gate expert</label>
                                         </div>
                                     </li>  
                                 </ul>
                             </li>
                             <li class="p-4"> 
-                                <p class="fw-medium text-black mb-4">Communications from EduExHub</p>
+                                <p class="fw-medium text-black mb-4">Communications from Expert Gate</p>
                                 <ul>
                                     <li>
                                         <div class="form-check">
                                             <input type="checkbox" name="communication" id="communication" class="form-check-input">
-                                            <label for="communication" class="form-check-label">Send me genuinely useful emails every now and then to help me get the most out of EduExHub</label>
+                                            <label for="communication" class="form-check-label">Send me genuinely useful emails every now and then to help me get the most out of Expert Gate</label>
                                         </div>
                                     </li>  
                                 </ul>

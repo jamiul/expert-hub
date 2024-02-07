@@ -71,7 +71,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -113,7 +113,7 @@
                                         <p class="mb-0 small text-dark">$1000 in Escrow</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -152,7 +152,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -194,7 +194,7 @@
                                         <p class="mb-0 small text-dark">$1000 in Escrow</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -233,7 +233,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -275,7 +275,7 @@
                                         <p class="mb-0 small text-dark">$1000 in Escrow</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -323,7 +323,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -361,7 +361,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -410,7 +410,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -448,7 +448,7 @@
                                         <p class="mb-0 small text-dark">$100.00/hr, 25 hrs weekly limit</p>
                                         <div class="mt-4">
                                             <p class="fw-medium text-black small mb-0">Hired by: Dr Mohammad Riyadh </p>
-                                            <p class="mb-0 small text-dark">EduExHub</p>
+                                            <p class="mb-0 small text-dark">Expert Gate</p>
                                         </div>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center justify-content-end">

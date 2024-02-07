@@ -7,7 +7,7 @@
   <div class="register">
       <div class="container">
         <div class="register-form">
-          <h3>Log in to EduExHub</h3>
+          <h3>Log in to Expert Gate</h3>
 
           <div class="container">
               <form id="form" action="/">

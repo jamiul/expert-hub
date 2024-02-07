@@ -86,9 +86,9 @@
                     </svg>
                   </button>
                 </h3>
-                <p>PhD in Public Health, Infectious Diseases <span>EduExHub University</span> 1995 - 2000</p>
-                <p>Master’s in Public Health <span>EduExHub University</span> 1993 - 1995</p>
-                <p>Bachelor in Public Health <span>EduExHub University</span> 1989 - 1993</p>
+                <p>PhD in Public Health, Infectious Diseases <span>Expert Gate University</span> 1995 - 2000</p>
+                <p>Master’s in Public Health <span>Expert Gate University</span> 1993 - 1995</p>
+                <p>Bachelor in Public Health <span>Expert Gate University</span> 1989 - 1993</p>
               </div>
             </div>
           </div>

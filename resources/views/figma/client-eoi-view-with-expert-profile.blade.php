@@ -63,17 +63,17 @@
                         <div class="widget-content">
                             <div class="user-education-box-item edux-border-bottom">
                                 <p class="text-sm fw-medium mt-1 mb-0">PhD in Public Health</p>
-                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                 <p class="text-sm mb-1"><strong>1995 - 2000</strong></p>
                             </div>
                             <div class="user-education-box-item edux-border-bottom">
                                 <p class="text-sm fw-medium mt-1 mb-0">Master’s in Public Health</p>
-                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                 <p class="text-sm mb-1"><strong>1993 -1995</strong></p>
                             </div>
                             <div class="user-education-box-item mb-0">
                                 <p class="text-sm fw-medium mt-1 mb-0">Bachelor in Public Health</p>
-                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm fst-italic mb-0">Expert Gate University</p>
                                 <p class="text-sm mb-1"><strong>1989 - 1993</strong></p>
                             </div>
                         </div>

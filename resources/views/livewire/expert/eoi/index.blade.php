@@ -58,9 +58,9 @@
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1 fw-medium">
-                                            <a href="{{ route('projects.show', $invitation->project) }}">
+                                            {{-- <a href="{{ route('projects.show', $invitation->project) }}">
                                                 {{ $invitation->project->title }}
-                                            </a>
+                                            </a> --}}
                                         </p>
                                         <p class="mb-1">{{ $eoi->created_at->diffForHumans() }}</p>
                                     </td>
@@ -85,9 +85,9 @@
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1 fw-medium">
-                                                <a href="{{ route('projects.show', $interview->project) }}">
+                                                {{-- <a href="{{ route('projects.show', $interview->project) }}">
                                                     {{ $interview->project->title }}
-                                                </a>
+                                                </a> --}}
                                             </p>
                                             <p class="mb-1">{{ $interview->created_at->diffForHumans() }}</p>
                                         </td>
