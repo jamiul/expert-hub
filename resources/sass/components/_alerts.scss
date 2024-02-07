@@ -67,4 +67,8 @@
             }
         }
     }
+
+    &.alert-light {
+        border: 1px solid $edu-border-color;
+    }
 }
