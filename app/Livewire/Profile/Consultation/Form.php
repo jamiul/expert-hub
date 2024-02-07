@@ -49,14 +49,12 @@ class Form extends BaseForm
 
 
     #[Validate('nullable')]
-    public $date = '';
+    public $day = '';
 
     #[Validate('nullable')]
     public $time;
     public $selectedHours = [];
     public $timezoneIndetifiers = [];
-
-    public $day;
     public $daysInWeek = ['Select Day','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     public function mount()
@@ -81,7 +79,7 @@ class Form extends BaseForm
     public function saveServiceFee()
     {
         $this->validate([
-            'hourly_rate' => 'required'
+            'hourly_rate' => ['required', 'numeric', 'min:50', 'max:1000'],
         ],[
             'hourly_rate.required' => 'Please add hourly rate.'
         ]);
@@ -91,7 +89,7 @@ class Form extends BaseForm
     {
         $this->validate([
             'time_zone' => 'nullable',
-            'date' => 'nullable'
+            'day' => 'nullable'
         ]);
     }
 
@@ -103,7 +101,7 @@ class Form extends BaseForm
 
         $requiredOrNull = $this->imageUrl == '' ? 'required' : 'nullable';
         $this->validate([
-            'description' => 'required|max:200',
+            'description' => 'required|max:2000',
             'image' => $requiredOrNull.'|max:2048'
         ],[
             'description.required' => 'Please add Description.',
@@ -123,7 +121,7 @@ class Form extends BaseForm
         $data = $this->validate();
         $data['profile_id'] = $this->profile()->id;
 
-        $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'date', 'time']));
+        $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'day', 'time','image']));
 
         if (!is_null($this->image)) {
 
@@ -149,7 +147,7 @@ class Form extends BaseForm
                 $slots[] = [
                     'consultation_id' => $consultationId,
                     'profile_id' => $this->profile()->id,
-                    'date' => $day,
+                    'day' => $day,
                     'time' => $time,
                     'status' => 'available'
                 ];
@@ -209,18 +207,18 @@ class Form extends BaseForm
         $this->description = $consultation->description;
         $this->imageUrl = $consultation->image;
         $this->expertise_skills = $consultation->skills->pluck('id');
-        $this->confirmSlots = $consultation->slots->groupBy('date')->mapWithKeys(function ($slots) {
-            return [$slots->first()['date'] => $slots->pluck('time', 'id')->toArray()];
+        $this->confirmSlots = $consultation->slots->groupBy('day')->mapWithKeys(function ($slots) {
+            return [$slots->first()['day'] => $slots->pluck('time', 'id')->toArray()];
         })->toArray();
 
-        $this->date = "";
+        $this->day = "";
 
     }
 
     public function updatedDate()
     {
         if(! is_null($this->consultation)){
-            $filteredSlots = $this->consultation->slots->where('date', $this->date);
+            $filteredSlots = $this->consultation->slots->where('day', $this->day);
             $this->selectedHours = $filteredSlots->pluck('time');
         }
     }
@@ -232,7 +230,7 @@ class Form extends BaseForm
         $data['time'] = $this->selectedHours;
         $data['profile_id'] = $this->profile()->id;
 
-        $this->consultation->update(Arr::except($data, ['expertise_skills', 'date', 'time']));
+        $this->consultation->update(Arr::except($data, ['expertise_skills', 'day', 'time']));
 
         if (!is_null($this->image)) {
             $this->consultation->addMedia($this->image->getRealPath())
@@ -251,18 +249,18 @@ class Form extends BaseForm
         if (!isset($this->confirmSlots) || !is_array($this->confirmSlots)) {
             $this->confirmSlots = [];
         }
-        if (empty($this->date)) {
-            $this->date = "Monday";
+        if (empty($this->day)) {
+            $this->day = "Monday";
         }
 
-        $this->confirmSlots[$this->date] = $this->selectedHours;
+        $this->confirmSlots[$this->day] = $this->selectedHours;
         $this->resetSlots();
     }
 
 
     public function resetSlots()
     {
-        $this->date = '';
+        $this->day = '';
         $this->selectedHours = [];
     }
 

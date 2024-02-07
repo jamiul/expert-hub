@@ -1,14 +1,17 @@
-<x-modal.form action="{{ $currentStep === 5 ? 'addConsultation' : '#' }}">
+<x-modal>
     <x-slot name="title">Add Consultation</x-slot>
-    @include('livewire.profile.consultation.form')
-    <x-slot name="button">
-        <button wire:click="back" type="button" class="btn btn-outline-light">Back</button>
-        <button
-            wire:click="next"
-            class="btn btn-primary {{ $currentStep === 5 ? 'd-none' : '' }}"
-        >
-        {{ $currentStep === 4 ? 'Preview Service' : 'Save & Continue' }}
-        </button>
-        <button type="submit" class="btn btn-primary {{ $currentStep < 5 ? 'd-none' : '' }}">Create Service</button>
-    </x-slot>
-</x-modal.form>
+    <form wire:submit="addConsultation">
+        @include('livewire.profile.consultation.form')
+        <div class="wep-modal-footer border-top pt-4 d-flex gap-3 justify-content-end mt-4">
+            <button wire:click="back" type="button" class="btn btn-outline-light">Back</button>
+            <button
+            type="button"
+                wire:click="next"
+                class="btn btn-primary {{ $currentStep === 5 ? 'd-none' : '' }}"
+            >
+            {{ $currentStep === 4 ? 'Preview Service' : 'Save & Continue' }}
+            </button>
+            <button type="submit" class="btn btn-primary {{ $currentStep < 5 ? 'd-none' : '' }}">Create Service</button>
+        </div>
+    </form>
+</x-modal>
