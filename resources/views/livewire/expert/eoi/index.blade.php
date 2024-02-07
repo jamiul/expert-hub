@@ -69,7 +69,7 @@
                                     </td>
                                     <td>
                                         <p class="mb-1 fw-medium">{{ $invitation->project->type->value }}</p>
-                                        <p class="mb-1">${{ $invitation->amount }}</p>
+                                        <p class="mb-1">${{ $invitation->project->budget_start_amount }}</p>
                                     </td>
                                 </tr>
                                 @empty
