@@ -572,7 +572,7 @@ class StripeController extends Controller {
             ], [
                 'future_requirements' => $account->future_requirements,
                 'requirements'        => $account->requirements,
-                'status'              => $account->requirements->status
+                'status'              => $account->status
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
@@ -959,15 +959,16 @@ class StripeController extends Controller {
             ], [
                 'default_currency'    => $account->default_currency,
                 'business_type'       => $account->business_type,
+
                 'tos_acceptance_date' => $account->tos_acceptance->date,
                 'tos_acceptance_ip'   => $account->tos_acceptance->ip,
+
                 'future_requirements' => $account->future_requirements,
                 'requirements'        => $account->requirements,
-                'verification'        => $account->verification,
+
                 'charges_enabled'     => $account->charges_enabled,
                 'payouts_enabled'     => $account->payouts_enabled,
-                'details_submitted'   => $account->details_submitted,
-                'status'              => $account->requirements->status
+                'details_submitted'   => $account->details_submitted
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
@@ -984,17 +985,24 @@ class StripeController extends Controller {
             $customer           = Profile::where( 'stripe_acct_id', $stripe_customer_id )->firstOrFail();
             $user_id            = $customer->user_id;
 
-            $kyc = ExpertKYC::updateOrCreate( [
-                'user_id' => $user_id
-            ], [
-                'future_requirements' => $person->future_requirements,
-                'requirements'        => $person->requirements,
-                'verification'        => $person->verification,
-                'charges_enabled'     => $person->charges_enabled,
-                'payouts_enabled'     => $person->payouts_enabled,
-                'details_submitted'   => $person->details_submitted,
-                'status'              => $person->verification->status
-            ] );
+//            $stripe = new \Stripe\StripeClient( [
+//                "api_key" => env( 'STRIPE_SECRET' ),
+//            ] );
+//            $expert_stripe_account = $stripe->accounts->retrieve( $stripe_customer_id, [] );
+//
+//            Log::info($expert_stripe_account);
+//
+//            $kyc = ExpertKYC::updateOrCreate( [
+//                'user_id' => $user_id
+//            ], [
+//                'future_requirements' => $expert_stripe_account->future_requirements,
+//                'requirements'        => $expert_stripe_account->requirements,
+//                'verification'        => $person->verification,
+//                'charges_enabled'     => $expert_stripe_account->charges_enabled,
+//                'payouts_enabled'     => $expert_stripe_account->payouts_enabled,
+//                'details_submitted'   => $expert_stripe_account->details_submitted,
+//                'status'              => $person->verification->status
+//            ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
             Log::info( $ex->getMessage() );
