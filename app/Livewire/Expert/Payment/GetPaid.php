@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Expert\Payment;
 
+use App\Helpers\PaymentHelper;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -21,6 +22,8 @@ class GetPaid extends Component {
         $user                    = auth()->user();
         $this->expert_withdrawal = $user->expert_withdrawal;
         $this->withdraw_schedule = $user->withdraw_schedule;
+
+        PaymentHelper::expertRegisterToStripe($user);
     }
 
     public function render() {
