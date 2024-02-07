@@ -61,7 +61,7 @@ class Add extends Modal {
             }
 
             if ( $paymentMethod ) {
-                toast( 'success', 'Bank information added successfully.', $this );
+                toast( 'success', 'Bank information added successfully. Please allow us 72 hours to verify your information.', $this );
             }
         }
 

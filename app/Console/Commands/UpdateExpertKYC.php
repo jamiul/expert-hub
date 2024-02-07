@@ -8,6 +8,7 @@ use App\Models\Profile;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Log;
 
 class UpdateExpertKYC extends Command
 {
@@ -48,11 +49,8 @@ class UpdateExpertKYC extends Command
                     'payouts_enabled'                           => $expert_acct->payouts_enabled,
                     'charges_enabled'                           => $expert_acct->charges_enabled,
                     'requirements'                              => $expert_acct->requirements,
-                    'future_requirements'                       => $expert_acct->future_requirements,
-                    'status'                       => $expert_acct->status
+                    'future_requirements'                       => $expert_acct->future_requirements
                 ] );
-
-                dd($expert_kyc);
             }
         } catch (\Exception $ex){
             error_log($ex->getMessage());

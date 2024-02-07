@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('profile_id');
             $table->foreignId('expertise_id');
-            $table->string('hourly_rate');
-            $table->string('time_zone');
-            $table->text('description');
-            $table->string('status');
+            $table->string('hourly_rate')->nullable();
+            $table->string('time_zone')->nullable();
+            $table->text('description')->nullable();
+            $table->string('status')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

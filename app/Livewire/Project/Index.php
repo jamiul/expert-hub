@@ -3,11 +3,13 @@
 namespace App\Livewire\Project;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 
 class Index extends Component
 {
     use InteractsWithConfirmationModal;
+    use WithPagination;
     
     public function deleteProject($id)
     {
@@ -24,10 +26,17 @@ class Index extends Component
             ],
         );
     }
+
+    public function paginationView()
+    {
+        return 'livewire.pagination';
+    }
+
     public function render()
     {
+        $projects = auth()->user()->profile->projects()->orderByDesc('id')->paginate(5);
         return view('livewire.project.index',[
-            'projects' => auth()->user()->profile->projects()->orderByDesc('id')->get()
+            'projects' => $projects,
         ]);
     }
 }

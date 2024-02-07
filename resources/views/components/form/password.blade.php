@@ -19,8 +19,8 @@
             :type="show ? 'text' : 'password'"
         >
         <span x-on:click="show = !show" class="form-input-icon">
-            <span x-show="show === false"><x-icon.visibility-off/></span>
-            <span x-show="show === true"><x-icon.visibility fill="#A1A0A5"/></span></span>
+            <span x-cloak x-show="show === false"><x-icon.visibility-off/></span>
+            <span x-cloak x-show="show === true"><x-icon.visibility/></span></span>
         </span>
     </div>
     @error($attributes->whereStartsWith('wire:model')->first())

@@ -59,13 +59,9 @@ class PaymentController extends Controller {
      * List of transactions /payment/billing-report
      * */
     public function billingReport() {
-        $user = auth()->user();
-
         $this->__setStripeCustomer();
 
-        $transactions = ClientTransaction::where( 'client_id', $user->id )->orderby( 'id', 'desc' )->latest()->get();
-
-        return view( 'frontend.client.payment.billing-report', compact( 'transactions', 'user' ) );
+        return view( 'frontend.client.payment.billing-report' );
     }
 
     /*
