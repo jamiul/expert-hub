@@ -59,6 +59,10 @@ class DispatchMilestone extends Command {
                     ]
                 ] );
 
+                $milestone->update([
+                    'status' => MilestoneStatus::Released
+                ]);
+
                 Log::info($acceptMilestone);
             } catch (\Exception $ex){
                 Log::error($ex);
