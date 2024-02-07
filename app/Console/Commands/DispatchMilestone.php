@@ -8,6 +8,7 @@ use App\Models\ExpertTransaction;
 use App\Models\Milestone;
 use App\Models\Profile;
 use App\Models\User;
+use App\Notifications\PaymentNotification;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Log;
@@ -65,6 +66,14 @@ class DispatchMilestone extends Command {
 
                 Log::info($acceptMilestone);
             } catch (\Exception $ex){
+                $milestone->contract->expert->user->notify(new PaymentNotification([
+                        'title'   => 'Client trying to pay you milestone',
+                        'message' => 'A client is trying to pay you milestone. Please submit KYC to verify your account and receive payment',
+                        'link'    => route('expert.payment.index'),
+                        'button' => 'Submit KYC',
+                        'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' )
+                    ]
+                ));
                 Log::error($ex);
             }
         }
