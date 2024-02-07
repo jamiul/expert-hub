@@ -116,7 +116,6 @@ class End extends Modal
         $this->expert->user->notify(new ContractEndedNotification($this->contract));
         toast('success', 'Contract ended successfully', $this);
         $this->dispatch('contract-ended');
-        // return redirect()->route('client.contracts');
         $this->close();
     }
 

@@ -3,9 +3,12 @@
 namespace App\Console\Commands;
 
 use App\Enums\ProfileType;
+use App\Models\ExpertKYC;
 use App\Models\Profile;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Log;
 
 class UpdateExpertKYC extends Command
 {
@@ -38,8 +41,16 @@ class UpdateExpertKYC extends Command
             foreach ( $experts as $expert){
                 $expert_acct = $stripe->accounts->retrieve( $expert->stripe_acct_id, [] );
 
-                dd($expert_acct);
                 //todo: update eKYC form status for expert
+                $expert_kyc = ExpertKYC::updateOrCreate( [
+                    'user_id' => $expert->user_id
+                ], [
+                    'details_submitted'                         => $expert_acct->details_submitted,
+                    'payouts_enabled'                           => $expert_acct->payouts_enabled,
+                    'charges_enabled'                           => $expert_acct->charges_enabled,
+                    'requirements'                              => $expert_acct->requirements,
+                    'future_requirements'                       => $expert_acct->future_requirements
+                ] );
             }
         } catch (\Exception $ex){
             error_log($ex->getMessage());

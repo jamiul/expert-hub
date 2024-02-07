@@ -11,15 +11,15 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'dispute-contract' }"
-                            @click="activeTab = 'dispute-contract'">Dispute (3)
+                            @click="activeTab = 'dispute-contract'">Dispute ({{ $disputedContracts->count()}})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'on-hold-contract' }"
-                            @click="activeTab = 'on-hold-contract'">On hold (34)
+                            @click="activeTab = 'on-hold-contract'">On hold ({{ $holdContracts->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'cancel-contract' }"
-                            @click="activeTab = 'cancel-contract'">Cancel (34)
+                            @click="activeTab = 'cancel-contract'">Cancel ({{ $calceledContracts->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'completed-contract' }"
@@ -49,7 +49,7 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-                                @foreach ($contracts as $contract)
+                                @forelse ($contracts as $contract)
                                     <tr class="align-middle">
                                         <td>
                                             <p class="mb-1">ID: 7557uy8675656</p>
@@ -57,7 +57,7 @@
                                             <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
                                         </td>
                                         <td>
-                                            <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
+                                            <p class="mb-1 fw-medium">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                             <p class="mb-1">Escrow: ${{ $contract->escrow_amount }}</p>
                                         </td>
                                         <td>
@@ -68,6 +68,7 @@
                                                 </div>
                                                 <div class="expert-info">
                                                     <p class="fw-medium project-expert-name mb-0">{{ $contract->client->user->full_name }}</p>
+                                                    <p class=" mb-0">{{ $contract->client->current_organization }}</p>
                                                 </div>
                                             </div>
                                         </td>
@@ -100,13 +101,15 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
 
-                        <div class="text-center py-40">
+                        {{-- <div class="text-center py-40">
                             Pagination here
-                        </div>
+                        </div> --}}
                     </div>
                     <div x-show="activeTab === 'dispute-contract'" id="dispute-tab-content">
                         <div class="seller-admin-project-filter py-20 px-40 border-bottom">
@@ -129,70 +132,16 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Assistance Required for Chemical Engineering</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-                                        <button class="btn btn-link p-0 text-decoration-underline">Reason for
-                                            dispute
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Client</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Contact Support</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @forelse ($disputedContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656 </p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
+                                        <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                        <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
 
                                     </td>
                                     <td>
-                                        <p class="mb-1">Fixed: $1000.00</p>
+                                        <p class="mb-1">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                         <button class="btn btn-link p-0 text-decoration-underline">Reason for
                                             dispute
                                         </button>
@@ -201,12 +150,11 @@
                                         <div class="d-flex gap-3 align-item-center">
                                             <div class="expert-thumb">
                                                 <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant3.png') }}"/>
+                                                        src="{{ $contract->client->picture }}"/>
                                             </div>
                                             <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
+                                                <p class="fw-medium project-expert-name mb-0">{{ $contract->client->user->full_name }}</p>
+                                                <p class=" mb-0">{{ $contract->client->current_organization }}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -219,29 +167,25 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
+                                                    <a class="dropdown-item" href="#">Message
                                                         Client</a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item" href="#">Contact Support</a>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </td>
                                 </tr>
-
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
 
-                        <div class="text-center py-40">
+                        {{-- <div class="text-center py-40">
                             Pagination here
-                        </div>
+                        </div> --}}
                     </div>
                     <div x-show="activeTab === 'on-hold-contract'" id="on-hold-tab-content">
                         <div class="seller-admin-project-filter py-20 px-40 border-bottom">
@@ -264,70 +208,16 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Assistance Required for Chemical Engineering</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-                                        <button class="btn btn-link p-0 text-decoration-underline">Reason for
-                                            on-hold
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="icon-btn border" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                <x-icon.three-dots/>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                        href="/figma/project/view-expert-work-dairy">
-                                                        View Work Dairy</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
-                                                        Client</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">Contact Support</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @forelse ($holdContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656 </p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
+                                        <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                        <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
 
                                     </td>
                                     <td>
-                                        <p class="mb-1">Fixed: $1000.00</p>
+                                        <p class="mb-1">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                         <button class="btn btn-link p-0 text-decoration-underline">Reason for
                                             on-hold
                                         </button>
@@ -336,16 +226,14 @@
                                         <div class="d-flex gap-3 align-item-center">
                                             <div class="expert-thumb">
                                                 <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant3.png') }}"/>
+                                                        src="{{ $contract->client->picture }}"/>
                                             </div>
                                             <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
+                                                <p class="fw-medium project-expert-name mb-0">{{ $contract->client->user->full_name }}</p>
+                                                <p class=" mb-0">{{ $contract->client->current_organization }}</p>
                                             </div>
                                         </div>
                                     </td>
-
                                     <td>
                                         <div class="dropdown">
                                             <button class="icon-btn border" data-bs-toggle="dropdown"
@@ -353,11 +241,11 @@
                                                 <x-icon.three-dots/>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li>
+                                                {{-- <li>
                                                     <a class="dropdown-item"
                                                         href="/figma/project/view-expert-work-dairy">
                                                         View Work Dairy</a>
-                                                </li>
+                                                </li> --}}
                                                 <li>
                                                     <a class="dropdown-item" href="/figma/client-chatbox-new/">Message
                                                         Client</a>
@@ -370,13 +258,15 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
 
-                        <div class="text-center py-40">
+                        {{-- <div class="text-center py-40">
                             Pagination here
-                        </div>
+                        </div> --}}
                     </div>
                     <div x-show="activeTab === 'cancel-contract'" id="cancel-tab-content">
                         <div class="seller-admin-project-filter py-20 px-40 border-bottom">
@@ -399,46 +289,15 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-
-                                <tr class="align-middle">
-                                    <td>
-                                        <p class="mb-1">ID: 7557uy8675656</p>
-                                        <p class="mb-1 fw-medium">Assistance Required for Chemical Engineering</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-                                    </td>
-                                    <td>
-                                        <p class="mb-1 fw-medium">Total: 1:40 hrs $140</p>
-                                        <p class="mb-1">$100.00/hr, 25 hrs weekly limit</p>
-                                        <button class="btn btn-link p-0 text-decoration-underline">Reason for
-                                            cancel
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex gap-3 align-item-center">
-                                            <div class="expert-thumb">
-                                                <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
-                                            </div>
-                                            <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @forelse ($calceledContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656 </p>
-                                        <p class="mb-1 fw-medium">Policy Development Assistance Required for
-                                            Chemical
-                                            Engineering Industry</p>
-                                        <p class="mb-1">From: Sep 23 to Present</p>
-
+                                        <p class="mb-1 fw-medium">{{ $contract->project->title }}</p>
+                                        <p class="mb-1">From: {{ $contract->created_at->format('M y') }} to Present</p>
                                     </td>
                                     <td>
-                                        <p class="mb-1">Fixed: $1000.00</p>
+                                        <p class="mb-1">{{ $contract->project->type }}: ${{ $contract->amount }}</p>
                                         <button class="btn btn-link p-0 text-decoration-underline">Reason for
                                             cancel
                                         </button>
@@ -447,25 +306,23 @@
                                         <div class="d-flex gap-3 align-item-center">
                                             <div class="expert-thumb">
                                                 <img style="width: 40px"
-                                                        src="{{ asset('assets/frontend/img/consultant3.png') }}"/>
+                                                        src="{{ $contract->client->picture }}"/>
                                             </div>
                                             <div class="expert-info">
-                                                <p class="fw-medium project-expert-name mb-0">Dr Mohammad
-                                                    Riyadh </p>
-                                                <p class=" mb-0">Public Health </p>
+                                                <p class="fw-medium project-expert-name mb-0">{{ $contract->client->user->full_name }}</p>
+                                                <p class=" mb-0">{{ $contract->client->current_organization }}</p>
                                             </div>
                                         </div>
                                     </td>
-
-
                                 </tr>
-
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
-
-                        <div class="text-center py-40">
+                        {{-- <div class="text-center py-40">
                             Pagination here
-                        </div>
+                        </div> --}}
                     </div>
                     <div x-show="activeTab === 'completed-contract'" id="completed-tab-content">
                         <div class="seller-admin-project-filter py-20 px-40 border-bottom">
@@ -488,7 +345,7 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table text-sm table-extra-padding seller-project-table">
-                                @foreach ($endedContracts as $contract)
+                                @forelse ($endedContracts as $contract)
                                 <tr class="align-middle">
                                     <td>
                                         <p class="mb-1">ID: 7557uy8675656</p>
@@ -525,19 +382,18 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach
-
+                                @empty
+                                <x-empty/>
+                                @endforelse
                             </table>
                         </div>
 
-                        <div class="text-center py-40">
+                        {{-- <div class="text-center py-40">
                             Pagination here
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </section>

@@ -9,9 +9,8 @@
     </h6>
 
     <div class="edux-select-options position-relative">
-        <x-form.textarea wire:model.defer="form.description"
-            placeholder="e.g. Brief 300 words summary about your expertise." />
-        <span class="edux-total-select-count">0/200</span>
+        <x-form.countable-textarea max="2000" model="description" wire:model.defer="form.description"
+            placeholder="e.g. Brief maximum 2000 characters summary about your expertise." />
     </div>
 
     <h6 class="mb-2 mt-5">Upload Consultation Service Picture

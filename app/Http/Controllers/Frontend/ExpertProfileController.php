@@ -22,7 +22,9 @@ class ExpertProfileController extends Controller
 
     public function edit()
     {
-        return view('frontend.expert.profile.edit');
+        return view('frontend.expert.profile.edit', [
+            'profile' => auth()->user()->profile,
+        ]);
     }
 
     public function show(Profile $profile)

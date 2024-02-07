@@ -1,0 +1,13 @@
+//Note: Rating input features at form component
+.star-ratings {
+    display: flex;
+
+    svg {
+        width: 16px;
+        height: 16px;
+
+        path {
+            fill: #E9B911;
+        }
+    }
+}

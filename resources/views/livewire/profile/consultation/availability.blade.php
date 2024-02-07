@@ -53,8 +53,8 @@
 </div>
 <div class="mb-40">
     <x-form.select
-        name="date"
-        wire:model="form.date"
+        name="day"
+        wire:model="form.day"
         wire:change="filterDay"
         class="edux-timezoon"
         label="Select day"

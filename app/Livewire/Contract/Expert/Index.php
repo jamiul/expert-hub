@@ -12,6 +12,9 @@ class Index extends Component
         return view('livewire.contract.expert.index',[
             'contracts' => auth()->user()->profile->expertContracts()->where('status', ContractStatus::Active)->get(),
             'endedContracts' => auth()->user()->profile->expertContracts()->where('status', ContractStatus::Ended)->get(),
+            'disputedContracts' => auth()->user()->profile->expertContracts()->where('status', ContractStatus::Disputed)->get(),
+            'holdContracts' => auth()->user()->profile->expertContracts()->where('status', ContractStatus::Hold)->get(),
+            'calceledContracts' => auth()->user()->profile->expertContracts()->where('status', ContractStatus::Canceled)->get(),
         ]);
     }
 }

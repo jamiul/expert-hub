@@ -1,3 +1,8 @@
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
 .form-input-group select {
     appearance: none;
 }
@@ -463,7 +468,7 @@
 .item-has-submenu ul,
 .header-dropdown,
 .header-search-activated {
-    z-index: 2;
+    z-index: 3;
 }
 
 .px-30 {
