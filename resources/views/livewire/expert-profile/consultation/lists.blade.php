@@ -18,8 +18,12 @@
                     <div class="prof-img">
                         <img
                             src="{{ $consultation->image }}"></img>
-                        <button class="btn btn-primary btn-md w-100 mt-2" data-bs-toggle="modal"
-                            data-bs-target="#bookConsultation">Book Now</button>
+                            <button
+                                wire:click="$dispatch('modal.open', { component: 'expert-profile.consultation.book', arguments: { consultation: {{ $consultation->id }} }})"
+                                class="btn btn-primary btn-md w-100 mt-2"
+                            >
+                                Book Now
+                            </button>
                     </div>
                 </div>
                 <div class="col-md-9">
