@@ -29,21 +29,21 @@
                                 </div>
 
                                 <div class="short-by-select-reverse">
-                                    <x-form.choice-static wire:model="titles" label="">
-                                        <option value="Mr">All Transaction</option>
-                                        <option value="Mrs">All Transaction</option>
-                                        <option value="Dr">All Transaction</option>
-                                        <option value="Prof">All Transaction</option>
-                                    </x-form.choice-static>
+                                    <x-form.select wire:model.change="type" label="">
+                                        <option value="">All Transaction</option>
+                                        @foreach($types as $type)
+                                            <option>{{ $type->value }}</option>
+                                        @endforeach
+                                    </x-form.select>
                                 </div>
 
                                 <div class="short-by-select-reverse">
-                                    <x-form.choice-static wire:model="titles" label="">
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">AAll Experts</option>
-                                    </x-form.choice-static>
+                                    <x-form.select wire:model.change="customer" label="">
+                                        <option value="">All Experts</option>
+                                        @foreach($experts as $expert)
+                                            <option value="{{ $expert->expert_id }}">{{ @$expert->expert->fullname }}</option>
+                                        @endforeach
+                                    </x-form.select>
                                 </div>
 
                             </div>
@@ -115,7 +115,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{--                        {{ $transactions->links() }}--}}
+                        {{ $transactions->onEachSide(1)->links() }}
                     </div>
                 </div>
             </div>
