@@ -494,12 +494,18 @@ class StripeController extends Controller {
 
             //create refund transaction for client
             //parent transaction - credit card charge
-
+            if ( $reference_type == 'offer' ) {
+                $reference = 'App\Models\Offer';
+            } else if ( $reference_type == 'contract' ) {
+                $reference = 'App\Models\Contract';
+            }
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $paymentData->id
             ], [
                 'payment_intent_id'      => $paymentData->payment_intent,
                 'object'                 => $paymentData->object,
+                'reference_id'        => $reference_id,
+                'reference_type'      => $reference,
                 'amount'                 => $paymentData->amount,
                 'amount_captured'        => $paymentData->amount_captured,
                 'amount_refunded'        => $paymentData->amount_refunded,
@@ -903,13 +909,21 @@ class StripeController extends Controller {
             $reference_id   = @$transfer->metadata->reference_id; //milestone id
             $reference_type = @$transfer->metadata->reference_type; //milestone
 
+            if ( $reference_type == 'offer' ) {
+                $reference = 'App\Models\Offer';
+            } else if ( $reference_type == 'contract' ) {
+                $reference = 'App\Models\Contract';
+            } else if ( $reference_type == 'milestone' ) {
+                $reference = 'App\Models\Milestone';
+            }
+
             $stripe_transaction = Transaction::updateOrCreate( [
                 'charge_id' => $transfer->destination_payment
             ], [
                 'transfer_id'         => $transfer->id,
                 'object'              => $transfer->object,
                 'reference_id'        => $reference_id,
-                'reference_type'      => $reference_type,
+                'reference_type'      => $reference,
                 'amount'              => $transfer->amount,
                 'amount_reversed'     => $transfer->amount_reversed,
                 'currency'            => $transfer->currency,
