@@ -87,6 +87,11 @@ class Profile extends Model implements HasMedia
         return $this->hasMany(Consultation::class);
     }
 
+    public function trainings()
+    {
+        return $this->hasMany(Training::class, 'expert_id');
+    }
+
     public function experiences()
     {
         return $this->hasMany(Experience::class);

@@ -24,7 +24,7 @@ class Invite extends Modal
     public $expert;
 
     public $project_id;
-    public $message = 'Hello!'. PHP_EOL. 'I\'d like to invite you to take a look at the job I\'ve posted. Please submit a proposal if you\'re available and interested.' . PHP_EOL . 'Dr Mohammad R.';
+    public $message = '';
 
     public function mount(Profile $expert, $project)
     {
@@ -36,6 +36,7 @@ class Invite extends Modal
         $this->project_id = $this->project?->id;
         $this->expert = $expert;
         $this->projects = auth()->user()->profile->projects()->get();
+        $this->message = 'Hello!' . PHP_EOL . 'I\'d like to invite you to take a look at the job I\'ve posted. Please submit a proposal if you\'re available and interested.' . PHP_EOL . auth()->user()->full_name;
     }
 
     public function inviteToProject()
@@ -43,6 +44,7 @@ class Invite extends Modal
         $this->validate([
             'project_id' => ['required'],
         ]);
+        $this->project = Project::find($this->project_id);
         $invitation = Invitation::create([
             'expert_id' => $this->expert->id,
             'project_id' => $this->project_id,
@@ -54,37 +56,12 @@ class Invite extends Modal
             $this->message,
             $this->project
         );
-        // $this->sendMessage();
-        $this->expert->user->notify(new ProjectInvitationNotification([
-            'title'   => 'Invitation to submit EOI',
-            'message' => 'Submit EOI to this project',
-            'link'    => route('eoi.create', $this->project_id),
-            'button' => 'view invitation',
-            'avatar'  => auth()->user()->profile->picture,
-        ]));
+
+        $this->expert->user->notify(new ProjectInvitationNotification($this->project));
         toast('success', 'Invitation Sent Successfully', $this);
         $this->dispatch('invitation-sent');
         $this->close();
         //Todo Update invitation count
-    }
-
-    public function sendMessage()
-    {
-        $authUser = Auth::user();
-        $participantProfileIDs = [$authUser->profile->id, $this->expert->id]; //TODO:receive the second user from UI
-
-        $conversation = Conversation::create(['creator_profile_id' => $authUser->profile->id, 'title' => $authUser->first_name]);
-
-        foreach ($participantProfileIDs as $participantProfileID) {
-            Participant::create(['conversation_id' => $conversation->id, 'profile_id' => $participantProfileID]);
-        }
-
-        $message = Message::create([
-            'conversation_id' => $conversation->id, 'sender_profile_id' => $authUser->profile->id,
-            'content' => $this->message,
-        ]);
-
-        MessageRecipient::create(['conversation_id' => $conversation->id, 'message_id' => $message->id, 'recipient_profile_id' => $this->expert->id]);
     }
 
     public function render()

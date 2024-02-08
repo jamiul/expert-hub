@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Language;
+use App\Models\Profile;
 use App\Models\State;
 use App\Models\Training;
 use App\Models\TrainingInstructor;
@@ -36,8 +37,10 @@ The first day of the course provides a profound introduction to latent variable 
         $stateLookup = State::pluck('id', 'name')->toArray();
         $languageLookup = Language::pluck('id', 'name')->toArray();
         $categoryLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
+        $expert = Profile::find(2);
         foreach($keyedData as $data){
             $trainingData = [
+                'expert_id' => $expert->id,
                 'title' => $data['title'],
                 'fee' => $data['fee'],
                 'country_id' => isset($countryLookup[$data['country']]) ? $countryLookup[$data['country']] : null,

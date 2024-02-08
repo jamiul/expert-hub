@@ -49,6 +49,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-public-profile', 'figma.expert-public-profile');
     Route::view('/user-consultation-booking-not-valuable', 'figma.not-available-expert-public-profile');
     Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
+    Route::view('/expert-public-profile-v2', 'figma.expert-profile-update');
 
 
     //Find Training Page
@@ -100,6 +101,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-payment-setting-notification', 'figma.client-payment-setting-notification');
     Route::view('/expert-payment-setting-notification-empty', 'figma.client-payment-setting-notification-empty');
     Route::view('/expert-get-paid', 'figma.expert-get-paid');
+    Route::view('/invoice', 'figma.all-invoice');
 
 
     // Route::view('/client-tax-information', 'figma.client-tax-information');

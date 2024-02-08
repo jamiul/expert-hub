@@ -3,6 +3,7 @@
 namespace App\Livewire\Project;
 
 use App\Enums\InvitationStatus;
+use App\Models\Conversation;
 use App\Models\Invitation;
 use App\Models\Project;
 use Livewire\Component;
@@ -53,6 +54,20 @@ class Show extends Component
                 'cancel' => 'Cancel',
             ],
         );
+    }
+
+    public function chatWithClient()
+    {
+        $conversation = Conversation::query()
+            ->where('creator_profile_id', $this->project->client->id)
+            ->where('reference_id', $this->project->id)
+            ->wherehas('participants', function ($query) {
+                $query->where('profile_id', $this->invitedToSubmitEoi->expert->id);
+            })
+            ->first();
+        if($conversation){
+            return redirect()->route('messaging.conversation', $conversation);
+        }
     }
 
     public function render()

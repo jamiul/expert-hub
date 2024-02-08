@@ -74,15 +74,15 @@
             <div class="training-card-summary">
                 <div class="custom-table text-sm">
                     <div class="tr">
-                        <div class="td">Seminar Dates</div>
+                        <div class="td fw-medium">Seminar Dates</div>
                         <div class="td">{{ $training->start_date->format('d M Y') }} - {{ $training->end_date->format('d M Y') }}</div>
                     </div>
                     <div class="tr">
-                        <div class="td">Time & Location</div>
+                        <div class="td fw-medium">Time & Location</div>
                         <div class="td">10.15am AEST, Sydney, Australia</div>
                     </div>
                     <div class="tr">
-                        <div class="td">Training Mode</div>
+                        <div class="td fw-medium">Training Mode</div>
                         <div class="td">
                             <div class="d-flex align-items-center gap-2">
                                 @if($training->mode == \App\Enums\TrainingMode::Zoom)
@@ -97,19 +97,19 @@
                         </div>
                     </div>
                     <div class="tr">
-                        <div class="td">Language</div>
+                        <div class="td fw-medium">Language</div>
                         <div class="td">{{ $training->language->name }}</div>
                     </div>
                     <div class="tr">
-                        <div class="td">Training Category</div>
+                        <div class="td fw-medium">Training Category</div>
                         <div class="td">{{ $training->category->name }}</div>
                     </div>
                     <div class="tr">
-                        <div class="td">Training Fee</div>
+                        <div class="td fw-medium">Training Fee</div>
                         <div class="td">USD {{ $training->fee }}</div>
                     </div>
                     <div class="tr">
-                        <div class="td">Partner Institute</div>
+                        <div class="td fw-medium">Partner Institute</div>
                         <div class="td">
                             @foreach ($training->partners as $partner)
                                 <a class="text-decoration-underline" href="#">{{ $partner->name }}</a> @if (!$loop->last)|@endif

@@ -6,7 +6,9 @@
         <button class="btn btn-danger" wire:click="showNotification('danger')">Danger Notification</button>
     </div>
     <form wire:submit="submit">
+        <x-form.timepicker label="Time picker" name="timepicker" wire:model="timepicker"/>
         <x-form.flatpicker label="Date picker" name="datepicker"/>
+        <x-form.flatpicker label="Date Range picker" :dateRange="true" name="datepicker"/>
 
         <x-form.flatpicker label="Date picker" inline="true" name="datepicker"/>
 

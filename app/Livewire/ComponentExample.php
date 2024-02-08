@@ -11,6 +11,7 @@ class ComponentExample extends Component
 {
     public array $names = [];
     public $email = '';
+    public $timepicker = '';
     public $countries = [];
     public $selectedCountries = [];
 
@@ -41,6 +42,6 @@ class ComponentExample extends Component
 
     public function submit()
     {
-        dd($this->names);
+        dd($this->timepicker);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Project;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -11,15 +12,14 @@ class ProjectInvitationNotification extends Notification
 {
     use Queueable;
 
+    private Project $project;
+
     /**
      * Create a new notification instance.
      */
-    public function __construct( $data )
+    public function __construct(Project $project )
     {
-        $this->title   = $data['title'];
-        $this->message = $data['message'];
-        $this->link    = $data['link'];
-        $this->avatar  = $data['avatar'];
+        $this->project = $project;
     }
 
     /**
@@ -37,11 +37,11 @@ class ProjectInvitationNotification extends Notification
      */
     public function toMail( object $notifiable ): MailMessage
     {
-        return ( new MailMessage )
-            ->line( $this->title )
-            ->line( $this->message )
-            ->action( 'See Message', $this->link )
-            ->line( 'Thank you for using our application!' );
+        return ( new MailMessage );
+            // ->line( $this->title )
+            // ->line( $this->message )
+            // ->action( 'See Message', $this->link )
+            // ->line( 'Thank you for using our application!' );
     }
 
     /**
@@ -52,10 +52,11 @@ class ProjectInvitationNotification extends Notification
     public function toArray( object $notifiable ): array
     {
         return [
-            'title'   => $this->title,
-            'message' => $this->message,
-            'link'    => $this->link,
-            'avatar'  => $this->avatar
+            'title'   => 'Invitation to submit EOI',
+            'message' => 'Submit EOI to this project',
+            'link'    => route('eoi.create', $this->project),
+            'button'  => 'View invitation',
+            'avatar'  => $this->project->client->picture ?: asset('dummy-user.png'),
         ];
     }
 }

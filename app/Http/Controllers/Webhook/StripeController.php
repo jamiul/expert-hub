@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Webhook;
 
+use App\Enums\ExpertTransactionType;
 use App\Enums\MilestoneStatus;
 use App\Enums\OfferStatus;
+use App\Enums\ClientTransactionType;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
@@ -210,7 +212,7 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -225,9 +227,9 @@ class StripeController extends Controller {
             $client_id      = @$paymentData->metadata->client_id; //client_id
             $expert_id      = @$paymentData->metadata->expert_id; //expert_id
 
-            if($contract_type == 'offer'){
+            if ( $contract_type == 'offer' ) {
                 $reference = 'App\Models\Offer';
-            }else if($contract_type == 'contract'){
+            } else if ( $contract_type == 'contract' ) {
                 $reference = 'App\Models\Contract';
             }
             //save to generic transaction table
@@ -290,7 +292,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Payment',
+                        'type'           => ClientTransactionType::Payment,
                         'description'    => "Paid from Visa 0077 to escrow for funding request",
                         'client_id'      => $client_id,
                         'expert_id'      => null,
@@ -306,7 +308,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Fixed Price',
+                        'type'           => ClientTransactionType::FixedPrice,
                         'description'    => "Funding request for " . $milestone->title,
                         'client_id'      => $client_id,
                         'expert_id'      => $expert_id,
@@ -322,7 +324,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Service Fee',
+                        'type'           => ClientTransactionType::ServiceFee,
                         'description'    => "Funding request for Fixed Price - Ref ID $parent_id",
                         'client_id'      => $client_id,
                         'expert_id'      => $expert_id,
@@ -339,7 +341,7 @@ class StripeController extends Controller {
                         $transaction_data            = [
                             'transaction_id' => $stripe_transaction->id,
                             'milestone_id'   => $ref_id,
-                            'type'           => 'Contract Initialization Fee',
+                            'type'           => ClientTransactionType::ContractInitializationFee,
                             'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $parent_id",
                             'client_id'      => $profile->user_id,
                             'expert_id'      => $expert_id,
@@ -372,7 +374,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'GST',
+                        'type'           => ClientTransactionType::GST,
                         'description'    => "GST for Fixed Price - Ref ID $parent_id",
                         'client_id'      => $profile->user_id,
                         'expert_id'      => $expert_id,
@@ -397,7 +399,7 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -466,7 +468,7 @@ class StripeController extends Controller {
 
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -478,14 +480,13 @@ class StripeController extends Controller {
             PaymentMethod::where( 'stripe_payment_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
     }
 
     private function __chargeRefund( $paymentData ) {
-        Log::info($paymentData);
         try {
             $reference_id   = @$paymentData->metadata->contract_id; // id
             $reference_type = @$paymentData->metadata->contract_type; //offer
@@ -520,34 +521,69 @@ class StripeController extends Controller {
                 'livemode'               => $paymentData->livemode
             ] );
 
-            if($reference_type == "offer"){
-                $transaction_data = [
-                    'transaction_id' => $stripe_transaction->id,
-                    'milestone_id'   => $reference_id,
-                    'type'           => 'Refund',
-                    'description'    => "Refund for escrow amount",
-                    'client_id'      => $client_id,
-                    'expert_id'      => null,
-                    'amount'         => ( $paymentData->amount_refunded / 100 ),
-                    'charge_type'    => 'credit',
-                    'parent'         => null,
-                    'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
-                ];
-                $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
-                $parent_id        = $transaction->id;
+            $offer             = Offer::find( $reference_id );
+            $funded_milestones = $offer->fundedMilestones()->sum( 'amount' );
+            $refunded_amount   = ( $paymentData->amount_refunded / 100 );
+
+
+            foreach ($offer->fundedMilestones() as $milestone){
+                $milestone->update([
+                    'status' => MilestoneStatus::Canceled
+                ]);
+            }
+
+            if($funded_milestones > 0){
+                $charge = PaymentHelper::calculateRefundedAmount( $funded_milestones, $refunded_amount );
+
+                $milestone_amount = $charge['milestone_amount'];
+                if ( $reference_type == "offer" ) {
+                    $transaction_data = [
+                        'transaction_id'   => $stripe_transaction->id,
+                        'milestone_id'     => $reference_id,
+                        'type'             => ClientTransactionType::Refund,
+                        'description'      => "Refund for Fixed Price",
+                        'client_id'        => $client_id,
+                        'expert_id'        => null,
+                        'amount'           => $refunded_amount,
+                        'milestone_amount' => $milestone_amount,
+                        'charge_type'      => 'credit',
+                        'parent'           => null,
+                        'status'           => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                    ];
+                    $transaction      = PaymentHelper::createClientTransaction( $transaction_data );
+                    $parent_id        = $transaction->id;
+
+                    //contract initialization fee transaction
+                    if ( $charge['refund_fee'] > 0 ) {
+                        $refund_fee       = $charge['refund_fee'];
+                        $transaction_data = [
+                            'transaction_id' => $stripe_transaction->id,
+                            'milestone_id'   => $reference_id,
+                            'type'           => ClientTransactionType::RefundFee,
+                            'description'    => "Refunded Fee for Fixed Price - Ref ID $parent_id",
+                            'client_id'      => $client_id,
+                            'expert_id'      => null,
+                            'amount'         => $refund_fee,
+                            'charge_type'    => 'debit',
+                            'parent'         => $parent_id,
+                            'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
+                        ];
+                        PaymentHelper::createClientTransaction( $transaction_data );
+                    }
+                }
             }
 
             $client = User::find( $client_id );
             $client->notify( new PaymentNotification( [
                 'title'   => "Refunded",
-                'message' => "Refunded " . $paymentData->amount_refunded / 100 . ' ' . $paymentData->currency,
+                'message' => "Refunded " . number_format($paymentData->amount_refunded / 100, 2) . ' ' . $paymentData->currency,
                 'link'    => route( 'client.payment.billing' ),
                 'button'  => 'View Details',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -573,7 +609,7 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -612,7 +648,7 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -651,7 +687,7 @@ class StripeController extends Controller {
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -662,7 +698,7 @@ class StripeController extends Controller {
             ExpertWithdrawal::where( 'bank_id', $paymentMethod->id )->delete();
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -696,8 +732,8 @@ class StripeController extends Controller {
             $transaction_data = [
                 'transaction_id' => $expertpayout->id,
                 'milestone_id'   => null,
-                'type'           => 'Withdrawal',
-                'description'    => "Wire Transfer ($payout->currency) xxxx-$withdrawalMethod->last4",
+                'type'           => ExpertTransactionType::Withdrawal,
+                'description'    => "Wire Transfer to Direct to Local Bank ($payout->currency) - Account ending in $withdrawalMethod->last4",
                 'client_id'      => null,
                 'expert_id'      => $user_id,
                 'amount'         => $payout->amount / 100,
@@ -718,7 +754,7 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -764,7 +800,7 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -810,7 +846,7 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -853,7 +889,7 @@ class StripeController extends Controller {
             ] ) );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -904,7 +940,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
-                    'type'           => 'Fixed Price',
+                    'type'           => ExpertTransactionType::FixedPrice,
                     'description'    => "Invoice for " . $milestone->title,
                     'client_id'      => $client_id,
                     'expert_id'      => $expert_id,
@@ -921,7 +957,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
-                    'type'           => 'Service Fee',
+                    'type'           => ExpertTransactionType::FixedPrice,
                     'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
                     'client_id'      => $client_id,
                     'expert_id'      => $expert_id,
@@ -938,7 +974,7 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -954,8 +990,8 @@ class StripeController extends Controller {
             $kyc = ExpertKYC::updateOrCreate( [
                 'user_id' => $user_id
             ], [
-                'default_currency'    => $account->default_currency,
-                'business_type'       => $account->business_type,
+                'default_currency' => $account->default_currency,
+                'business_type'    => $account->business_type,
 
                 'tos_acceptance_date' => $account->tos_acceptance->date,
                 'tos_acceptance_ip'   => $account->tos_acceptance->ip,
@@ -963,13 +999,13 @@ class StripeController extends Controller {
                 'future_requirements' => $account->future_requirements,
                 'requirements'        => $account->requirements,
 
-                'charges_enabled'     => $account->charges_enabled,
-                'payouts_enabled'     => $account->payouts_enabled,
-                'details_submitted'   => $account->details_submitted
+                'charges_enabled'   => $account->charges_enabled,
+                'payouts_enabled'   => $account->payouts_enabled,
+                'details_submitted' => $account->details_submitted
             ] );
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -1029,7 +1065,7 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }
@@ -1048,7 +1084,7 @@ class StripeController extends Controller {
             }
         } catch ( \Exception $ex ) {
             echo $ex->getMessage();
-            Log::info($ex->getMessage());
+            Log::info( $ex->getMessage() );
             http_response_code( 500 );
             exit();
         }

@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use App\Enums\ClientTransactionType;
+use App\Enums\ExpertTransactionType;
 use App\Models\ClientTransaction;
 use App\Models\Contract;
 use App\Models\ExpertTransaction;
@@ -21,7 +23,7 @@ class PaymentHelper {
 
         if ( $user->profile->stripe_acct_id == '' ) {
             try {
-                $url     = route( 'expert.profile.show', $user->profile );
+                $url = route( 'expert.profile.show', $user->profile );
                 //todo: only for local use, while moving to live, change it
                 $url = 'http://test.eduexperthub.com';
 
@@ -53,8 +55,8 @@ class PaymentHelper {
                             'statement_descriptor' => 'Expert Gate'
                         ]
                     ],
-                    'metadata' => [
-                        'user_id' => $user->id,
+                    'metadata'         => [
+                        'user_id'    => $user->id,
                         'profile_id' => $user->profile->id
                     ]
                 ] );
@@ -64,7 +66,7 @@ class PaymentHelper {
                 $profile->save();
             } catch ( \Exception $ex ) {
                 return [
-                    'status' => false,
+                    'status'  => false,
                     'message' => $ex->getMessage()
                 ];
                 error_log( "An error occurred when calling the Stripe API to create an account session: {$ex->getMessage()}" );
@@ -88,7 +90,7 @@ class PaymentHelper {
 
         $net_total           = $milestone_amount + $service_charge + $contract_initialization_fee;
         $payment_gateway_fee = ( ( $net_total ) * env( 'PAYMENT_GATEWAY_FEE' ) ) / 100;
-        $gst                 = ( ( $service_charge + $contract_initialization_fee - $payment_gateway_fee) * env( 'GST' ) ) / 100;
+        $gst                 = ( ( $service_charge + $contract_initialization_fee - $payment_gateway_fee ) * env( 'GST' ) ) / 100;
 
         $gross_total = $net_total + $gst + $payment_gateway_fee;
 
@@ -102,41 +104,63 @@ class PaymentHelper {
         ];
     }
 
-    public static function calculateExpertCharge($milestone_amount) {
-        $service_charge = ( $milestone_amount * env( 'EXPERT_SERVICE_CHARGE' ) ) / 100;
-        $net_total           = $milestone_amount - $service_charge;
-        $gross_total = $net_total + $service_charge;
+    public static function calculateRefundedAmount( $milestone_amount, $refunded, $client_id = null, $expert_id = null ) {
+        $service_charge              = ( $milestone_amount * env( 'SERVICE_CHARGE' ) ) / 100;
+        $contract_initialization_fee = env( 'CONTRACT_INITIALIZATION_FEE' );
+        $net_total                   = $milestone_amount + $service_charge + $contract_initialization_fee;
+        $payment_gateway_fee         = ( ( $net_total ) * env( 'PAYMENT_GATEWAY_FEE' ) ) / 100;
+        $gst                         = ( ( $service_charge + $contract_initialization_fee - $payment_gateway_fee ) * env( 'GST' ) ) / 100;
+
+        $gross_total = $net_total + $gst + $payment_gateway_fee;
+        $refund_fee  = $gross_total - $refunded;
 
         return [
-            'milestone_amount'            => $milestone_amount,
-            'service_charge'              => $service_charge,
-            'net_total'              => $net_total,
-            'total_amount'                => $gross_total
+            'refund_fee'       => $refund_fee,
+            'refunded'         => $refunded,
+            'milestone_amount' => $milestone_amount,
+        ];
+    }
+
+    public static function calculateExpertCharge( $milestone_amount ) {
+        $service_charge = ( $milestone_amount * env( 'EXPERT_SERVICE_CHARGE' ) ) / 100;
+        $net_total      = $milestone_amount - $service_charge;
+        $gross_total    = $net_total + $service_charge;
+
+        return [
+            'milestone_amount' => $milestone_amount,
+            'service_charge'   => $service_charge,
+            'net_total'        => $net_total,
+            'total_amount'     => $gross_total
         ];
     }
 
     public static function createClientTransaction( $transaction_data ) {
 
         $profile = Profile::find( $transaction_data['client_id'] );
+        $balance = $profile->balance;
 
-        if ( $transaction_data['charge_type'] == 'debit' ) {
-            $balance = $profile->balance - $transaction_data['amount'];
+        if(($transaction_data['type'] == ClientTransactionType::Refund) || ($transaction_data['type'] == ClientTransactionType::RefundFee) ){
+
         } else {
-            $balance = $profile->balance + $transaction_data['amount'];
+            if ( $transaction_data['charge_type'] == 'debit' ) {
+                $balance = $balance - $transaction_data['amount'];
+            } else {
+                $balance = $balance + $transaction_data['amount'];
+            }
+
+            Profile::find( $transaction_data['client_id'] )->update( [
+                'balance' => $balance
+            ] );
         }
 
-        Profile::find( $transaction_data['client_id'] )->update( [
-            'balance' => $balance
-        ] );
-
-        if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'debit' ) {
+        if ( $transaction_data['type'] == ClientTransactionType::FixedPrice && $transaction_data['charge_type'] == 'debit' ) {
             $escrow_balance = $profile->escrow_balance + $transaction_data['amount'];
             Profile::find( $transaction_data['client_id'] )->update( [
                 'escrow_balance' => $escrow_balance
             ] );
         }
-        if ( $transaction_data['type'] == 'Refund' && $transaction_data['charge_type'] == 'credit' ) {
-            $escrow_balance = $profile->escrow_balance - $transaction_data['amount'];
+        if ( $transaction_data['type'] == ClientTransactionType::Refund && $transaction_data['charge_type'] == 'credit' ) {
+            $escrow_balance = $profile->escrow_balance - $transaction_data['milestone_amount'];
             Profile::find( $transaction_data['client_id'] )->update( [
                 'escrow_balance' => $escrow_balance
             ] );
@@ -174,14 +198,14 @@ class PaymentHelper {
             ] );
 
             //remove fund from pending balance
-            if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'credit' ) {
+            if ( $transaction_data['type'] == ExpertTransactionType::FixedPrice && $transaction_data['charge_type'] == 'credit' ) {
                 $escrow_balance -= $transaction_data['amount'];
                 Profile::find( $transaction_data['expert_id'] )->update( [
                     'escrow_balance' => $escrow_balance
                 ] );
             }
         } else {
-            if ( $transaction_data['type'] == 'Fixed Price' && $transaction_data['charge_type'] == 'credit' ) {
+            if ( $transaction_data['type'] == ExpertTransactionType::FixedPrice && $transaction_data['charge_type'] == 'credit' ) {
                 $escrow_balance += $transaction_data['amount'];
                 Profile::find( $transaction_data['expert_id'] )->update( [
                     'escrow_balance' => $escrow_balance

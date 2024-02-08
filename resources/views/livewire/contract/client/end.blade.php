@@ -19,6 +19,9 @@
     </x-form.select>
 
     <p class="input-field-label mb-1">How much you likely to recommend this expert?</p>
+    @error('recommendation')
+        <div class="form-input-error-message w-100">{{ $message }}</div>
+    @enderror
     <div class="recommendation-input-wrapper">
         <div class="recommendation-input-labels">
             <div>😟 Not at all</div>
@@ -38,93 +41,101 @@
             <div><input type="radio" wire:model="recommendation" value="10" id="10"><label for="10">10</label></div>
         </div>
     </div>
-    <div wire:ignore class="rating-input-wrapper my-3">
+    <div class="rating-input-wrapper my-3">
         <div class="rating-input-label">
-            Feedback to Expert {{ $skill }}
+            Feedback to Expert
         </div>
-        <div class="rating-input-field-wrapper">
+        @error('skill')
+            <div class="form-input-error-message w-100">{{ $message }}</div>
+        @enderror
+        <div wire:ignore class="rating-input-field-wrapper">
             <div class="rating-input-field" data-category="Skill">
-                <input type="radio" wire:model="skill" value="1" id="skill-1" />
+                
+                <input type="radio" wire:change="updateTotalScore" wire:model="skill" value="1" id="skill-1" />
                 <label for="skill-1" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="skill" value="2" id="skill-2" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="skill" value="2" id="skill-2" />
                 <label for="skill-2" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="skill" value="3" id="skill-3" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="skill" value="3" id="skill-3" />
                 <label for="skill-3" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="skill" value="4" id="skill-4" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="skill" value="4" id="skill-4" />
                 <label for="skill-4" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="skill" value="5" id="skill-5" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="skill" value="5" id="skill-5" />
                 <label for="skill-5" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
             </div>
             <div> Skill</div>
         </div>
-
-        <div class="rating-input-field-wrapper">
+        @error('availability')
+            <div class="form-input-error-message w-100">{{ $message }}</div>
+        @enderror
+        <div wire:ignore class="rating-input-field-wrapper">
             <div class="rating-input-field" data-category="Availability">
-                <input type="radio" wire:model="availability" value="1" id="availability-1" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="availability" value="1" id="availability-1" />
                 <label for="availability-1" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="availability" value="2" id="availability-2" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="availability" value="2" id="availability-2" />
                 <label for="availability-2" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="availability" value="3" id="availability-3" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="availability" value="3" id="availability-3" />
                 <label for="availability-3" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="availability" value="4" id="availability-4" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="availability" value="4" id="availability-4" />
                 <label for="availability-4" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="availability" value="5" id="availability-5" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="availability" value="5" id="availability-5" />
                 <label for="availability-5" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
             </div>
             <div> Availability</div>
         </div>
-
-        <div class="rating-input-field-wrapper">
+        @error('communication')
+            <div class="form-input-error-message w-100">{{ $message }}</div>
+        @enderror
+        <div wire:ignore class="rating-input-field-wrapper">
             <div class="rating-input-field" data-category="Communication">
-                <input type="radio" wire:model="communication" value="1" id="communication-1" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="communication" value="1" id="communication-1" />
                 <label for="communication-1" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="communication" value="2" id="communication-2" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="communication" value="2" id="communication-2" />
                 <label for="communication-2" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="communication" value="3" id="communication-3" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="communication" value="3" id="communication-3" />
                 <label for="communication-3" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="communication" value="4" id="communication-4" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="communication" value="4" id="communication-4" />
                 <label for="communication-4" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="communication" value="5" id="communication-5" />
+                <input type="radio" wire:change="updateTotalScore" wire:model="communication" value="5" id="communication-5" />
                 <label for="communication-5" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
@@ -132,36 +143,39 @@
             <div> Communication</div>
         </div>
 
-        <div class="rating-input-field-wrapper">
+        @error('deadlines')
+            <div class="form-input-error-message w-100">{{ $message }}</div>
+        @enderror
+        <div wire:ignore class="rating-input-field-wrapper">
             <div class="rating-input-field" data-category="Deadlines">
-                <input type="radio" wire:model="deadlines" value="1" id="availability-1" />
+                <input type="radio" wire:change="updateTotalScore" wire:change="updateTotalScore" wire:model="deadlines" value="1" id="deadlines-1" />
                 <label for="deadlines-1" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="deadlines" value="2" id="deadlines-2" />
+                <input type="radio" wire:change="updateTotalScore" wire:change="updateTotalScore" wire:model="deadlines" value="2" id="deadlines-2" />
                 <label for="deadlines-2" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="deadlines" value="3" id="deadlines-3" />
+                <input type="radio" wire:change="updateTotalScore" wire:change="updateTotalScore" wire:model="deadlines" value="3" id="deadlines-3" />
                 <label for="deadlines-3" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="deadlines" value="4" id="deadlines-4" />
+                <input type="radio" wire:change="updateTotalScore" wire:change="updateTotalScore" wire:model="deadlines" value="4" id="deadlines-4" />
                 <label for="deadlines-4" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
 
-                <input type="radio" wire:model="deadlines" value="5" id="deadlines-5" />
+                <input type="radio" wire:change="updateTotalScore" wire:change="updateTotalScore" wire:model="deadlines" value="5" id="deadlines-5" />
                 <label for="deadlines-5" onclick="setRating(this)">
                     <x-icon.star-fill fill="#E7E5EF" />
                 </label>
             </div>
             <div> Set Reasobavle Deadlines</div>
         </div>
-        <div class="rating-input-total"> <span class="fw-medium">Total Score:</span>  <x-icon.star-fill width="16" height="16" fill="#EAA800"/> <span>5.0</span></div>
+        <div class="rating-input-total"> <span class="fw-medium">Total Score:</span>  <x-icon.star-fill width="16" height="16" fill="#EAA800"/> <span>{{ $this->totalScore }}</span></div>
     </div>
     {{-- <x-form.check wire:model="terms">
         If any check thing we need

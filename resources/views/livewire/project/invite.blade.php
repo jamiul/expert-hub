@@ -8,8 +8,6 @@
             <option style="width:100px;" value="{{ $project->id }}">{{ $project->title }}</option>
         @endforeach
     </x-form.choice>
-    <p class="modal-form-instruction">Want to talk to Professor Mile Esther about your project? <a
-            href="">Schedule a consultation</a></p>
     <x-slot name="button">
         <button type="submit" class="btn btn-primary">Send Invitation</button>
     </x-slot>

@@ -73,6 +73,11 @@ class Contract extends Model
         $query->where('status', ContractStatus::Ended);
     }
 
+    public function testimonial()
+    {
+        return Testimonial::where('contract_id', $this->id)->first();
+    }
+
     public function disputes()
     {
         return $this->hasMany(Dispute::class);

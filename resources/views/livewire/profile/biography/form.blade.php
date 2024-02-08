@@ -1,1 +1,1 @@
-<x-form.textarea label="Description" wire:model.blur="form.biography" placeholder="Biography" />
+<x-form.countable-textarea label="Description" max="2000" model="biography" wire:model.blur="form.biography" placeholder="Biography" />

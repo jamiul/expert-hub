@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Client\Payment;
 
-use App\Enums\TransactionType;
+use App\Enums\ClientTransactionType;
+use App\Exports\ClientTransactionExport;
 use App\Models\ClientTransaction;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Report extends Component
 {
@@ -22,12 +25,61 @@ class Report extends Component
 
     public $type;
 
+    public $date;
+
     public $experts;
 
     public $customer;
 
-    public function updatedType() {
+    public function downloadCsv() {
+        $user = auth()->user();
+        $transactions = ClientTransaction::where( 'client_id', $user->id );
 
+        if($this->type){
+            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+        }
+
+        if($this->customer){
+            $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
+        }
+
+        $transactions = $transactions->orderby( 'id', 'desc' )->get();
+        $data = $transactions->toArray();
+
+        return Excel::download(new ClientTransactionExport($data), 'invoice.csv');
+    }
+
+    public function downloadInvoices() {
+        $user = auth()->user();
+        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        if($this->type){
+            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+        }
+
+        if($this->customer){
+            $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
+        }
+
+        $transactions = $transactions->orderby( 'id', 'desc' )->get();
+        $data = $transactions->toArray();
+
+        try {
+            $pdfContent = Pdf::loadView('pdf.invoice', $data)->output();
+            return response()->streamDownload(
+                fn () => print($pdfContent),
+                "invoice.pdf"
+            );
+        } catch (\Exception $ex){
+            toast('warning', $ex->getMessage(), $this);
+        }
     }
 
     public function mount() {
@@ -49,16 +101,20 @@ class Report extends Component
         $transactions = ClientTransaction::where( 'client_id', $user->id );
 
         if($this->type){
-            $transactions = $transactions->where('type', TransactionType::from($this->type));
+            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
         }
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
         }
 
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
+        }
+
         $transactions = $transactions->orderby( 'id', 'desc' )->paginate($this->perPage);
 
-        $this->types = TransactionType::cases();
+        $this->types = ClientTransactionType::cases();
         $this->experts = ClientTransaction::with('expert')->where('client_id', $user->id)->get()->unique('expert_id');
 
         return view('livewire.client.payment.report', [

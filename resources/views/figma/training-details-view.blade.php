@@ -238,8 +238,8 @@
                                                 <li>Identify the qualities and thought processes that distinguish
                                                     disruptive thinkers and innovators.
                                                 </li>
-                                                <li>Analyze the impact of disruptors on various domains, including
-                                                    science, technology, business, and society.
+                                                <li>Analyze the impact of disruptors on various domains, including
+                                                    science, technology, business, and society.
                                                 </li>
                                                 <li>Explain the challenges and opportunities associated with fostering a
                                                     culture of disruption within academia.
@@ -254,10 +254,10 @@
                                                     development of disruptive mindsets and skillsets.
                                                 </li>
                                                 <li> Assess the effectiveness of current curriculum elements in
-                                                    promoting critical thinking, creativity, and risk-taking.
+                                                    promoting critical thinking, creativity, and risk-taking.
                                                 </li>
                                                 <li> Identify opportunities for incorporating innovative teaching
-                                                    methods, interdisciplinary collaboration, and real-world
+                                                    methods, interdisciplinary collaboration, and real-world
                                                     problem-solving into PhD programs.
                                                 </li>
                                             </ul>
@@ -267,12 +267,12 @@
                                                 disruptive potential.
                                             </li>
                                             <ul>
-                                                <li> Develop a curriculum element (e.g., course, workshop, research
+                                                <li> Develop a curriculum element (e.g., course, workshop, research
                                                     project) that specifically targets the development of disruptive
                                                     thinking and innovation skills.
                                                 </li>
-                                                <li> Justify the chosen approach based on learning theories, best
-                                                    practices, and the specific needs of your field.
+                                                <li> Justify the chosen approach based on learning theories, best
+                                                    practices, and the specific needs of your field.
                                                 </li>
                                                 <li> Articulate the anticipated outcomes and potential impact of your
                                                     proposed curriculum component.
@@ -333,14 +333,14 @@
                                             Generation of Disruptors</p>
                                         <p>Module 1: Defining the Disruptor</p>
                                         <ul>
-                                            <li>Week 1: Who are the Disruptors? Identifying key characteristics and
+                                            <li>Week 1: Who are the Disruptors? Identifying key characteristics and
                                                 mindsets.
                                             </li>
                                             <ul>
                                                 <li> Case studies of disruptive thinkers and innovators across various
                                                     fields.
                                                 </li>
-                                                <li> The impact of disruptors on science, technology, business, and
+                                                <li> The impact of disruptors on science, technology, business, and
                                                     society.
                                                 </li>
                                                 <li> Challenges and opportunities in fostering a culture of disruption
@@ -350,8 +350,8 @@
                                         </ul>
 
                                         <ul>
-                                            <li> Week 2: The Disruptor's Toolkit: Cultivating critical
-                                                thinking, creativity, and risk-taking.
+                                            <li> Week 2: The Disruptor's Toolkit: Cultivating critical
+                                                thinking, creativity, and risk-taking.
                                             </li>
                                             <ul>
                                                 <li>Frameworks for analyzing complex problems and generating innovative
@@ -369,7 +369,7 @@
                                         <ul>
                                             <li>
 
-                                                Week 3: A Critical Lens: Examining traditional PhD programs through a
+                                                Week 3: A Critical Lens: Examining traditional PhD programs through a
                                                 disruption lens.
                                                 <ul>
                                                     <li> Identifying areas where current curriculums may hinder
@@ -386,15 +386,15 @@
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li> Week 4: Reimagining the PhD Journey: Opportunities for disruptive
+                                            <li> Week 4: Reimagining the PhD Journey: Opportunities for disruptive
                                                 innovation.
                                             </li>
                                             <ul>
                                                 <li> Showcasing examples of existing innovative PhD programs around the
                                                     world.
                                                 </li>
-                                                <li> Exploring emerging trends in doctoral education, such as
-                                                    interdisciplinarity, real-world engagement, and personalized
+                                                <li> Exploring emerging trends in doctoral education, such as
+                                                    interdisciplinarity, real-world engagement, and personalized
                                                     learning.
                                                 </li>
                                                 <li> Identifying potential areas for disruption within your own field's
@@ -405,7 +405,7 @@
                                         <p>Module 3: Sparking the Disruption</p>
                                         <ul>
                                             <li>
-                                                Week 5: Design Thinking for Disruptors: Building your curriculum
+                                                Week 5: Design Thinking for Disruptors: Building your curriculum
                                                 innovation toolkit.
                                             </li>
                                             <ul>
@@ -419,7 +419,7 @@
                                         </ul>
                                         <ul>
                                             <li>
-                                                Week 6: Collaborative Ignition: Refining your disruptor curriculum
+                                                Week 6: Collaborative Ignition: Refining your disruptor curriculum
                                                 through peer exchange.
                                                 <ul>
                                                     <li>Sharing and receiving constructive feedback on individual
@@ -459,45 +459,45 @@
 
                                         <p class="mb-0">Formative Assessments:</p>
                                         <ul>
-                                            <li> Weekly Discussion Forums: Each module will have a discussion forum
-                                                where participants can engage with the course material, share their
-                                                insights, and provide feedback to their peers. Participation in these
+                                            <li> Weekly Discussion Forums: Each module will have a discussion forum
+                                                where participants can engage with the course material, share their
+                                                insights, and provide feedback to their peers. Participation in these
                                                 forums will be assessed based on the quality and depth of
-                                                contributions, demonstrating critical thinking and engagement with the
+                                                contributions, demonstrating critical thinking and engagement with the
                                                 course content.
                                             </li>
-                                            <li> Case Study Analyses: Participants will be required to analyze
+                                            <li> Case Study Analyses: Participants will be required to analyze
                                                 real-world case studies of disruptive PhD programs and identify key
-                                                areas of success and potential challenges. These analyses will be
-                                                assessed based on the ability to apply course concepts, present a clear
-                                                and well-supported argument, and engage in constructive critique.
+                                                areas of success and potential challenges. These analyses will be
+                                                assessed based on the ability to apply course concepts, present a clear
+                                                and well-supported argument, and engage in constructive critique.
                                             </li>
-                                            <li> Collaborative Design Sprints: Participants will work in small groups to
+                                            <li> Collaborative Design Sprints: Participants will work in small groups to
                                                 complete design sprints focused on specific disruptive curriculum
-                                                elements. These sprints will be assessed based on the group's ability to
-                                                collaborate effectively, apply design thinking principles, and develop
+                                                elements. These sprints will be assessed based on the group's ability to
+                                                collaborate effectively, apply design thinking principles, and develop
                                                 innovative solutions.
                                             </li>
-                                            <li> Peer Feedback: Participants will provide and receive feedback on their
-                                                curriculum design projects throughout the course. This feedback will be
-                                                assessed based on its constructiveness, relevance to the learning
-                                                outcomes, and alignment with best practices in curriculum design.
+                                            <li> Peer Feedback: Participants will provide and receive feedback on their
+                                                curriculum design projects throughout the course. This feedback will be
+                                                assessed based on its constructiveness, relevance to the learning
+                                                outcomes, and alignment with best practices in curriculum design.
                                             </li>
                                         </ul>
 
                                         <p class="mb-0">Summative Assessments:</p>
                                         <ul>
-                                            <li> Curriculum Design Project: The culminating project of the course will
+                                            <li> Curriculum Design Project: The culminating project of the course will
                                                 be the development of a novel PhD curriculum component that cultivates
-                                                disruptive potential. This project will be assessed based on its
-                                                clarity, creativity, alignment with learning outcomes, justification for
-                                                chosen approach, and potential impact on PhD education.
+                                                disruptive potential. This project will be assessed based on its
+                                                clarity, creativity, alignment with learning outcomes, justification for
+                                                chosen approach, and potential impact on PhD education.
                                             </li>
-                                            <li> Final Reflection Paper: Participants will submit a reflection paper
-                                                summarizing their key takeaways from the course, their personal growth
-                                                in understanding disruptive pedagogy, and their plans for implementing
-                                                disruptive elements in their own professional contexts. This paper will
-                                                be assessed based on its depth of reflection, critical thinking, and
+                                            <li> Final Reflection Paper: Participants will submit a reflection paper
+                                                summarizing their key takeaways from the course, their personal growth
+                                                in understanding disruptive pedagogy, and their plans for implementing
+                                                disruptive elements in their own professional contexts. This paper will
+                                                be assessed based on its depth of reflection, critical thinking, and
                                                 articulation of a clear action plan.
                                             </li>
                                         </ul>
@@ -536,24 +536,24 @@
                                         <ol>
                                             <li> Promote active learning and engagement:
                                                 <ul>
-                                                    <li> Case studies and real-world examples: Analyze successful and
+                                                    <li> Case studies and real-world examples: Analyze successful and
                                                         unsuccessful attempts at disruptive curriculum design in various
                                                         fields.
                                                     </li>
-                                                    <li> Collaborative design sprints: Work in small groups to apply
+                                                    <li> Collaborative design sprints: Work in small groups to apply
                                                         design
                                                         thinking principles to develop innovative curriculum elements.
                                                     </li>
-                                                    <li> Role-playing and simulations: Experience different perspectives
+                                                    <li> Role-playing and simulations: Experience different perspectives
                                                         and
                                                         challenges related to implementing disruptive curriculum
                                                         changes.
                                                     </li>
-                                                    <li> Interactive guest lectures: Learn from leading experts in
+                                                    <li> Interactive guest lectures: Learn from leading experts in
                                                         disruptive
                                                         pedagogy and PhD education.
                                                     </li>
-                                                    <li> Online discussions and forums: Share ideas, ask questions, and
+                                                    <li> Online discussions and forums: Share ideas, ask questions, and
                                                         provide
                                                         feedback to peers in a dynamic online environment.
                                                     </li>
@@ -561,19 +561,19 @@
                                             </li>
                                             <li>Deepen understanding and application of key concepts:</li>
                                             <ul>
-                                                <li> Mini-lectures and presentations: Gain foundational knowledge on
-                                                    disruptive thinking, curriculum design, and relevant frameworks.
+                                                <li> Mini-lectures and presentations: Gain foundational knowledge on
+                                                    disruptive thinking, curriculum design, and relevant frameworks.
                                                 </li>
-                                                <li> Annotated bibliographies and curated resources: Explore further
+                                                <li> Annotated bibliographies and curated resources: Explore further
                                                     readings and resources to expand your understanding.
                                                 </li>
-                                                <li> Individual reflection exercises: Reflect on your personal learning
+                                                <li> Individual reflection exercises: Reflect on your personal learning
                                                     journey and connect course concepts to your own context.
                                                 </li>
-                                                <li> Peer feedback and review sessions: Receive constructive feedback
+                                                <li> Peer feedback and review sessions: Receive constructive feedback
                                                     and refine your curriculum design project throughout the course.
                                                 </li>
-                                                <li> Action planning workshops: Develop concrete plans for implementing
+                                                <li> Action planning workshops: Develop concrete plans for implementing
                                                     disruptive elements in your own professional setting.
                                                 </li>
 
@@ -581,19 +581,19 @@
 
                                             <li>Encourage collaboration and community building:</li>
                                             <ul>
-                                                <li> Small group activities and discussions: Share diverse perspectives
+                                                <li> Small group activities and discussions: Share diverse perspectives
                                                     and learn from each other's experiences.
                                                 </li>
-                                                <li> Collaborative online platforms: Utilize shared
-                                                    documents, wikis, and other tools to work together on projects.
+                                                <li> Collaborative online platforms: Utilize shared
+                                                    documents, wikis, and other tools to work together on projects.
                                                 </li>
-                                                <li> Networking opportunities: Connect with peers from various
+                                                <li> Networking opportunities: Connect with peers from various
                                                     backgrounds and build a supportive community.
                                                 </li>
-                                                <li> Mentorship program: (Optional) Connect with experienced educators
+                                                <li> Mentorship program: (Optional) Connect with experienced educators
                                                     for personalized guidance and support.
                                                 </li>
-                                                <li> Final symposium or showcase: Present your final curriculum design
+                                                <li> Final symposium or showcase: Present your final curriculum design
                                                     projects and celebrate collective learning.
                                                 </li>
                                             </ul>
@@ -643,40 +643,40 @@
                                         <p class="mb-0"> Prescribed Textbook:</p>
                                         <ul>
 
-                                            <li> It's uncommon for online courses to have a single prescribed
-                                                textbook, especially in a dynamic field like curriculum
-                                                design. Instructors often prefer to curate a selection of readings and
+                                            <li> It's uncommon for online courses to have a single prescribed
+                                                textbook, especially in a dynamic field like curriculum
+                                                design. Instructors often prefer to curate a selection of readings and
                                                 resources based on current trends and their own expertise.
                                             </li>
-                                            <li> Instead of a textbook, the course might utilize open educational
-                                                resources (OERs) or articles from academic journals and
-                                                publications. This helps keep costs down and ensures participants have
+                                            <li> Instead of a textbook, the course might utilize open educational
+                                                resources (OERs) or articles from academic journals and
+                                                publications. This helps keep costs down and ensures participants have
                                                 access to the latest research and best practices.
                                             </li>
-                                            <li> If there is a recommended textbook, you can usually find it listed on
+                                            <li> If there is a recommended textbook, you can usually find it listed on
                                                 the course syllabus or learning management system.
                                             </li>
                                         </ul>
                                         <p class="mb-0">Software:</p>
                                         <ul>
                                             <li> The software needed for this course will likely depend on the specific
-                                                activities and collaborative tools used. Popular options for online
+                                                activities and collaborative tools used. Popular options for online
                                                 courses include:
                                             </li>
                                             <ul>
-                                                <li> Video conferencing platforms like Zoom or Google Meet for
+                                                <li> Video conferencing platforms like Zoom or Google Meet for
                                                     communication
                                                     and presentations.
                                                 </li>
-                                                <li> Collaboration tools like Google Docs, Miro, or Trello for group
+                                                <li> Collaboration tools like Google Docs, Miro, or Trello for group
                                                     work
                                                     and project management.
                                                 </li>
-                                                <li> Reference management software like Mendeley or Zotero for
+                                                <li> Reference management software like Mendeley or Zotero for
                                                     organizing
                                                     and citing sources.
                                                 </li>
-                                                <li> Design thinking tools like Figma or Adobe XD for visually
+                                                <li> Design thinking tools like Figma or Adobe XD for visually
                                                     representing
                                                     curriculum elements.
                                                 </li>
@@ -691,16 +691,16 @@
                                             Here are some additional tips for finding the right resources:
                                         </p>
                                         <ul>
-                                            <li> Consult the course syllabus: This document will often outline any
-                                                required or recommended textbooks, software, and other resources.
+                                            <li> Consult the course syllabus: This document will often outline any
+                                                required or recommended textbooks, software, and other resources.
                                             </li>
-                                            <li> Contact the instructor: If you have any questions about the specific
-                                                resources needed for the course, feel free to reach out to the
+                                            <li> Contact the instructor: If you have any questions about the specific
+                                                resources needed for the course, feel free to reach out to the
                                                 instructor directly.
                                             </li>
-                                            <li> Explore online resources: Many universities and libraries offer free
-                                                access to academic journals, articles, and other educational
-                                                materials. There are also numerous OER repositories available online.
+                                            <li> Explore online resources: Many universities and libraries offer free
+                                                access to academic journals, articles, and other educational
+                                                materials. There are also numerous OER repositories available online.
                                             </li>
                                         </ul>
                                         <p>Remember, the most important thing is to choose resources that are relevant,
@@ -725,49 +725,49 @@
                                             Foundational Texts on Disruptive Thinking and Innovation:
                                         </p>
                                         <ul>
-                                            <li> The Innovator's Dilemma by Clayton M. Christensen: Explores the concept
+                                            <li> The Innovator's Dilemma by Clayton M. Christensen: Explores the concept
                                                 of disruptive innovation and how established companies can adapt to
                                                 survive.
                                             </li>
-                                            <li> Mindset: The New Psychology of Success by Carol Dweck: Examines the
+                                            <li> Mindset: The New Psychology of Success by Carol Dweck: Examines the
                                                 power of growth mindset and its impact on learning and innovation.
                                             </li>
-                                            <li> Thinkertoys: A Handbook of Creative-Thinking Techniques by Michael
-                                                Michalko: Provides practical tools and exercises to stimulate creative
+                                            <li> Thinkertoys: A Handbook of Creative-Thinking Techniques by Michael
+                                                Michalko: Provides practical tools and exercises to stimulate creative
                                                 thinking and problem-solving.
                                             </li>
                                         </ul>
                                         <p class="mb-0">Resources on Curriculum Design and PhD Education:</p>
                                         <ul>
                                             <li>Designing for Deeper Learning: How Educators Can Use Understanding by
-                                                Design to Create Meaningful Learning Experiences by David A. Kolb and
-                                                Janet S. Frye: Offers a framework for designing effective and engaging
+                                                Design to Create Meaningful Learning Experiences by David A. Kolb and
+                                                Janet S. Frye: Offers a framework for designing effective and engaging
                                                 curriculum experiences.
                                             </li>
                                             <li>The Next Generation of Doctoral Programs: Breaking Through to Innovation
-                                                and Interdisciplinarity by Susan Frost and Michael W. Matthews: Explores
-                                                trends and best practices in PhD education, emphasizing innovation and
+                                                and Interdisciplinarity by Susan Frost and Michael W. Matthews: Explores
+                                                trends and best practices in PhD education, emphasizing innovation and
                                                 interdisciplinarity.
                                             </li>
-                                            <li>Developing Doctoral Students for Leadership and Success by James I. Doi
-                                                and Elizabeth C. Ettinger: Provides guidance on fostering leadership
+                                            <li>Developing Doctoral Students for Leadership and Success by James I. Doi
+                                                and Elizabeth C. Ettinger: Provides guidance on fostering leadership
                                                 skills and developing successful PhD programs.
                                             </li>
 
                                         </ul>
                                         <p class="mb-0">Articles and Reports on Disruptive PhD Programs:</p>
                                         <ul>
-                                            <li>"Reimagining the PhD: A Framework for Change" by The Association of
-                                                American Universities: A report outlining key principles for designing
+                                            <li>"Reimagining the PhD: A Framework for Change" by The Association of
+                                                American Universities: A report outlining key principles for designing
                                                 innovative PhD programs.
                                             </li>
                                             <li>"The Disruptive Doctoral Student: Cultivating a Growth Mindset for the
-                                                Next Generation of Scholars" by Beth A. Godwyn and Jeffrey
-                                                A. Robinson: Discusses the importance of cultivating a growth mindset in
+                                                Next Generation of Scholars" by Beth A. Godwyn and Jeffrey
+                                                A. Robinson: Discusses the importance of cultivating a growth mindset in
                                                 PhD students for success in a changing academic landscape.
                                             </li>
                                             <li>"Designing a Disruptive Curriculum for PhD Education in the 21st
-                                                Century" by Michael W. Matthews: Explores specific examples of
+                                                Century" by Michael W. Matthews: Explores specific examples of
                                                 disruptive curriculum elements in various PhD programs.
                                             </li>
                                         </ul>
@@ -776,10 +776,10 @@
                                             <li>Websites:</li>
                                             <ul>
                                                 <li> Stanford Center for Design
-                                                    Thinking: [https://dschool.stanford.edu/]
+                                                    Thinking: [https://dschool.stanford.edu/]
                                                 </li>
-                                                <li> Association of American Universities: [https://www.aau.org/]</li>
-                                                <li> The Chronicle of Higher Education: [https://www.chronicle.com/]
+                                                <li> Association of American Universities: [https://www.aau.org/]</li>
+                                                <li> The Chronicle of Higher Education: [https://www.chronicle.com/]
                                                 </li>
                                             </ul>
                                             <li>Journals:</li>
