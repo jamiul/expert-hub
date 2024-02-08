@@ -12,4 +12,6 @@ enum TransactionType: string
     case GST = 'GST';
 
     case Refund = 'Refund';
+
+    case Withdrawal = 'Withdrawal';
 }
