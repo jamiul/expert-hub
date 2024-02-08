@@ -51,6 +51,7 @@ class UpdateExpertKYC extends Command
                     'requirements'                              => $expert_acct->requirements,
                     'future_requirements'                       => $expert_acct->future_requirements
                 ] );
+                Log::info($expert_acct . ' KYC updated.');
             }
         } catch (\Exception $ex){
             error_log($ex->getMessage());

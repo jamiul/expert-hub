@@ -3,11 +3,13 @@
 namespace App\Livewire\Client\Payment;
 
 use App\Enums\ClientTransactionType;
+use App\Exports\ClientTransactionExport;
 use App\Models\ClientTransaction;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Report extends Component
 {
@@ -23,17 +25,16 @@ class Report extends Component
 
     public $type;
 
+    public $date;
+
     public $experts;
 
     public $customer;
 
-    public function updatedType() {
-
-    }
-
     public function downloadCsv() {
         $user = auth()->user();
         $transactions = ClientTransaction::where( 'client_id', $user->id );
+
         if($this->type){
             $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
         }
@@ -42,8 +43,14 @@ class Report extends Component
             $transactions = $transactions->where('expert_id', $this->customer);
         }
 
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
+        }
+
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
         $data = $transactions->toArray();
+
+        return Excel::download(new ClientTransactionExport($data), 'invoice.csv');
     }
 
     public function downloadInvoices() {
@@ -55,6 +62,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -95,6 +106,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->paginate($this->perPage);

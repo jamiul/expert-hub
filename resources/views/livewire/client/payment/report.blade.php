@@ -25,7 +25,7 @@
                             <div class="date-item">
 
                                 <div class="study-level-balance">
-                                    <x-form.flatpicker label="" name="datepicker"/>
+                                    <x-form.flatpicker :dateRange="true" label="" wire:model.change="date"/>
                                 </div>
 
                                 <div class="short-by-select-reverse">
