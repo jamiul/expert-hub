@@ -100,7 +100,7 @@ class Create extends Component
         // $this->validate();
         
         $training = Training::create([
-
+            'expert_id' => auth()->user()->profile->id,
             'title' => $this->trainingTitle,
             'fee' => $this->trainingFee,
             'country_id' => $this->countryId,
