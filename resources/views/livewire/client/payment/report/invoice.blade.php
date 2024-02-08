@@ -51,8 +51,12 @@
             <div class="dingle-ref-content-download">
                 <span class="ref-id fw-medium">More info</span>
 
-                <p><button wire:click="downloadInvoice" wire:loading.attr="disabled">
-                        <span wire:loading.remove>Download Invoice</span>
+                <p><button wire:click="downloadInvoice" wire:loading.attr="disabled" class="btn-download">
+                        <span class="download-svg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+              <path d="M12 16.5L7 11.5L8.4 10.05L11 12.65V4.5H13V12.65L15.6 10.05L17 11.5L12 16.5ZM6 20.5C5.45 20.5 4.97917 20.3042 4.5875 19.9125C4.19583 19.5208 4 19.05 4 18.5V15.5H6V18.5H18V15.5H20V18.5C20 19.05 19.8042 19.5208 19.4125 19.9125C19.0208 20.3042 18.55 20.5 18 20.5H6Z" fill="#0036E3"/>
+            </svg>
+            </span>
+                        <span class="csv-text" wire:loading.remove>Download Invoice</span>
                         <div wire:loading>
                             Downloading Report...
                         </div>
