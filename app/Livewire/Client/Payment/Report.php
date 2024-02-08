@@ -23,23 +23,26 @@ class Report extends Component
 
     public $type;
 
+    public $date;
+
     public $experts;
 
     public $customer;
 
-    public function updatedType() {
-
-    }
-
     public function downloadCsv() {
         $user = auth()->user();
         $transactions = ClientTransaction::where( 'client_id', $user->id );
+
         if($this->type){
             $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
         }
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -55,6 +58,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -95,6 +102,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->paginate($this->perPage);
