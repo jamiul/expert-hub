@@ -354,10 +354,23 @@
                                     </td>
                                     <td>
                                         <button
-                                            class="p-1 btn btn-link border-bottom-primary d-flex align-middle gap-2 rounded-0">
+                                        data-bs-toggle="modal" data-bs-target="#commentsRating-{{ $contract->id }}"
+                                            class="p-1 btn btn-link d-flex align-middle gap-2 rounded-0">
                                             <x-icon.comment-fill width="20" height="20" fill="#0036E3"/>
                                             Comment & rating
                                         </button>
+                                        <div class="modal fade" id="commentsRating-{{ $contract->id }}" tabindex="-1" aria-labelledby="commentsRatingModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog  modal-dialog-centered">
+                                                <div class="modal-content dropdown-comments-dispute px-4">
+                                                    <div class="modal-header border-0 p-0 ">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="comment-text">
+                                                        <p class="mb-2">{{ $contract->testimonial()->feedback }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td>
                                         <p class="mb-1 fw-medium">{{ $contract->project->type }}: {{ $contract->amount }}</p>
@@ -371,13 +384,6 @@
                                             <div class="expert-info">
                                                 <p class="fw-medium project-expert-name mb-0">{{ $contract->expert->user->full_name }}</p>
                                                 <p class="mb-0">{{ $contract->expert->expertField->name }}</p>
-                                                <div class="star-ratings">
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                    <x-icon.star-fill/>
-                                                </div>
                                             </div>
                                         </div>
                                     </td>
