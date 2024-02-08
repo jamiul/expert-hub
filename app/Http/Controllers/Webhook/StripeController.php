@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webhook;
 
 use App\Enums\MilestoneStatus;
 use App\Enums\OfferStatus;
+use App\Enums\TransactionType;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
@@ -290,7 +291,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Payment',
+                        'type'           => TransactionType::Payment,
                         'description'    => "Paid from Visa 0077 to escrow for funding request",
                         'client_id'      => $client_id,
                         'expert_id'      => null,
@@ -306,7 +307,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Fixed Price',
+                        'type'           => TransactionType::FixedPrice,
                         'description'    => "Funding request for " . $milestone->title,
                         'client_id'      => $client_id,
                         'expert_id'      => $expert_id,
@@ -322,7 +323,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'Service Fee',
+                        'type'           => TransactionType::ServiceFee,
                         'description'    => "Funding request for Fixed Price - Ref ID $parent_id",
                         'client_id'      => $client_id,
                         'expert_id'      => $expert_id,
@@ -339,7 +340,7 @@ class StripeController extends Controller {
                         $transaction_data            = [
                             'transaction_id' => $stripe_transaction->id,
                             'milestone_id'   => $ref_id,
-                            'type'           => 'Contract Initialization Fee',
+                            'type'           => TransactionType::ContractInitializationFee,
                             'description'    => "Contract Initialization Fee for Fixed Price - Ref ID $parent_id",
                             'client_id'      => $profile->user_id,
                             'expert_id'      => $expert_id,
@@ -372,7 +373,7 @@ class StripeController extends Controller {
                     $transaction_data = [
                         'transaction_id' => $stripe_transaction->id,
                         'milestone_id'   => $ref_id,
-                        'type'           => 'GST',
+                        'type'           => TransactionType::GST,
                         'description'    => "GST for Fixed Price - Ref ID $parent_id",
                         'client_id'      => $profile->user_id,
                         'expert_id'      => $expert_id,
@@ -524,7 +525,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $reference_id,
-                    'type'           => 'Refund',
+                    'type'           => TransactionType::Refund,
                     'description'    => "Refund for escrow amount",
                     'client_id'      => $client_id,
                     'expert_id'      => null,
@@ -696,7 +697,7 @@ class StripeController extends Controller {
             $transaction_data = [
                 'transaction_id' => $expertpayout->id,
                 'milestone_id'   => null,
-                'type'           => 'Withdrawal',
+                'type'           => TransactionType::Withdrawal,
                 'description'    => "Wire Transfer ($payout->currency) xxxx-$withdrawalMethod->last4",
                 'client_id'      => null,
                 'expert_id'      => $user_id,
@@ -904,7 +905,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
-                    'type'           => 'Fixed Price',
+                    'type'           => TransactionType::FixedPrice,
                     'description'    => "Invoice for " . $milestone->title,
                     'client_id'      => $client_id,
                     'expert_id'      => $expert_id,
@@ -921,7 +922,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
-                    'type'           => 'Service Fee',
+                    'type'           => TransactionType::FixedPrice,
                     'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
                     'client_id'      => $client_id,
                     'expert_id'      => $expert_id,
