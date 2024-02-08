@@ -15,7 +15,7 @@
                         </a>
                     </div>
                     <div class="category-info">
-                        <h3 class="h6"><a href="#">Curriculum Development</a></h3>
+                        <h3 class="h6"><a href="{{ route('find.experts') }}">Curriculum Development</a></h3>
                         <p>Work with industry and academic experts for a tailored curriculum, ensuring real-world
                             learning experiences.</p>
                     </div>

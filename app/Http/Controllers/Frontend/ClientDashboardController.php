@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Frontend\Controller;
 use App\Models\Profile;
+use App\Models\Project;
 
 class ClientDashboardController extends Controller
 {

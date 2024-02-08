@@ -985,7 +985,7 @@ button.btn.btn-xs.btn-success.btn-preview.active {
 
 .hourly-rate-area {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 12px;
     padding: 8px 0;
 }
