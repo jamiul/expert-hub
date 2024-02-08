@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum TransactionType: string
+enum ClientTransactionType: string
 {
     case Payment = 'Payment';
 
@@ -15,6 +15,4 @@ enum TransactionType: string
     case GST = 'GST';
 
     case Refund = 'Refund';
-
-    case Withdrawal = 'Withdrawal';
 }

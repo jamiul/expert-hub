@@ -14,4 +14,8 @@ class ExpertTransaction extends Model
     public function client() {
         return $this->belongsTo(User::class, 'client_id', 'id');
     }
+
+    public function expert() {
+        return $this->belongsTo(User::class, 'expert_id', 'id');
+    }
 }
