@@ -18,5 +18,10 @@ class TrainingController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('frontend.training.create');
+    }
+
     
 }
