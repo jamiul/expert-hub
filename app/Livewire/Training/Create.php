@@ -124,8 +124,12 @@ class Create extends Component
         $training = Training::find($training->id);
         $training->instructors()->sync(auth()->user()->profile->id);
         $training->partners()->sync($this->partnerInstituteId);
+        
+        
         toast('success', "Training Details Saved Successfully");
-        $this->reset();
+        return redirect()->route('trainings.show', $training);
+        // $this->reset();
+
     }
 
     
