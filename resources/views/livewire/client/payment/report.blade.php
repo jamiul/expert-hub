@@ -39,9 +39,14 @@
 
                                 <div class="short-by-select-reverse">
                                     <x-form.select wire:model.change="customer" label="">
-                                        <option value="">All Experts</option>
                                         @foreach($experts as $expert)
-                                            <option value="{{ $expert->expert_id }}">{{ @$expert->expert->fullname }}</option>
+                                            <option value="{{ $expert->expert_id }}">
+                                                @if(!$expert->expert_id)
+                                                    All Experts
+                                                @else
+                                                    {{ @$expert->expert->fullname }}
+                                                @endif
+                                            </option>
                                         @endforeach
                                     </x-form.select>
                                 </div>
