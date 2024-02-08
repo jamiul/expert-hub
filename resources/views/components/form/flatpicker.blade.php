@@ -11,7 +11,7 @@
 ])
 <div
     x-data="{
-        value: ['{{date('Y/m/d')}}'],
+        value: ['{{now()->format('d M Y')}}'],
         init() {
             let picker = flatpickr(this.$refs.picker, {
             @if($dateRange)
