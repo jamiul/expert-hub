@@ -525,12 +525,11 @@ class StripeController extends Controller {
             $funded_milestones = $offer->fundedMilestones()->sum( 'amount' );
             $refunded_amount   = ( $paymentData->amount_refunded / 100 );
 
-            try {
-                $offer->fundedMilestones()->update([
+
+            foreach ($offer->fundedMilestones() as $milestone){
+                $milestone->update([
                     'status' => MilestoneStatus::Canceled
                 ]);
-            } catch (\Exception $ex){
-                error_log($ex->getMessage());
             }
 
             if($funded_milestones > 0){
