@@ -26,15 +26,15 @@
 
                     <ul class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
+                            <button class="nav-link {{ ($tab_active == 'home') ? 'active' : ''}}" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Required Actions</button>
+                            <button class="nav-link {{ ($tab_active == 'requirements') ? 'active' : ''}}" id="pills-requirements-tab" data-bs-toggle="pill" data-bs-target="#pills-requirements" type="button" role="tab" aria-controls="pills-requirements" aria-selected="false">Required Actions</button>
                         </li>
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="tab-pane fade {{ ($tab_active == 'home') ? 'show active' : ''}}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                             @if($user->expert_kyc->requirements)
                                 <div class="edux-paypal-visa-billing">
                                     @php
@@ -53,8 +53,7 @@
                                         <div class="alert edux-alert alert-danger" role="alert">
                                             <x-icon.info/>
                                             <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>
-                                            <button type="button" class="view-requirement close"
-                                                    data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile">
+                                            <button type="button" class="view-requirement close" wire:click="tabChange('requirements')">
                                                 View Requirements
                                             </button>
                                         </div>
@@ -132,7 +131,7 @@
                             <!-- Button area End Here -->
 
                         </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="tab-pane fade {{ ($tab_active == 'requirements') ? 'show active' : ''}}" id="pills-requirements" role="tabpanel" aria-labelledby="pills-requirements-tab" tabindex="0">
                             @if($user->expert_kyc->requirements['past_due'] || $user->expert_kyc->requirements['currently_due'])
                                 @if($user->expert_kyc->requirements['errors'])
                                     <div class="alert edux-alert alert-danger" role="alert">

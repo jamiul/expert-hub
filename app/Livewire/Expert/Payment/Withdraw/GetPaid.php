@@ -16,7 +16,7 @@ class GetPaid extends Modal {
 
     public $amount;
 
-    public $total_amount = 0;
+    public $total_amount=0;
 
     public $withdrawal_method = null;
 
@@ -34,27 +34,31 @@ class GetPaid extends Modal {
                                      ->where( 'bank_id', $this->withdrawal_method )
                                      ->first();
 
-        try {
-            $stripe = new \Stripe\StripeClient( [
-                "api_key" => env( 'STRIPE_SECRET' ),
-            ] );
+        if($amount <= $user->profile->balance){
+            try {
+                $stripe = new \Stripe\StripeClient( [
+                    "api_key" => env( 'STRIPE_SECRET' ),
+                ] );
 
-            $stripe->payouts->create( [
+                $stripe->payouts->create( [
 //                'source_type' => 'bank_account',
-                'destination' => $bank_info->bank_id,
-                'amount'      => $amount,
-                'currency'    => $bank_info->currency,
-                'description' => $reference,
-                'metadata' => [
-                    'expert_id' => $user->id
-                ]
-            ], [ 'stripe_account' => $acct_id ] );
+                    'destination' => $bank_info->bank_id,
+                    'amount'      => $amount,
+                    'currency'    => $bank_info->currency,
+                    'description' => $reference,
+                    'metadata' => [
+                        'expert_id' => $user->id
+                    ]
+                ], [ 'stripe_account' => $acct_id ] );
 
-            toast( 'success', 'Withdraw request was successful.', $this );
-        } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
-            return toast( 'warning', $ex->getMessage(), $this );
-        } catch ( \Exception $ex ) {
-            return toast( 'warning', $ex->getMessage(), $this );
+                toast( 'success', 'Withdraw request was successful.', $this );
+            } catch ( \Stripe\Exception\InvalidRequestException $ex ) {
+                return toast( 'warning', $ex->getMessage(), $this );
+            } catch ( \Exception $ex ) {
+                return toast( 'warning', $ex->getMessage(), $this );
+            }
+        } else {
+            return toast( 'warning', 'Amount must be less than or equal to your available balance', $this );
         }
 
         $this->close();
@@ -94,7 +98,7 @@ class GetPaid extends Modal {
 
         return [
             'withdrawal_method' => 'required',
-            'amount'            => 'required|lt:' . $user->profile->balance
+            'amount'            => "required|lte:{$user->profile->balance}"
         ];
     }
 

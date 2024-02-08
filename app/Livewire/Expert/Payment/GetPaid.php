@@ -16,10 +16,16 @@ class GetPaid extends Component {
 
     public $last_withdrawal;
 
+    public $tab_active = 'home';
+
     #[On( 'refresh' )]
     public function refreshBank() {
         $user                    = auth()->user();
         $this->expert_withdrawal = $user->expert_withdrawal;
+    }
+
+    public function tabChange($tab) {
+        $this->tab_active = $tab;
     }
 
     public function mount() {
