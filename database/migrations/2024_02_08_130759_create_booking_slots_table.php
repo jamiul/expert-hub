@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('eoi_id')->nullable();
             $table->foreignId('offer_id')->nullable();
-            $table->foreignId('contract_id')->nullable();
+            $table->foreignId('consultation_booking_id')->nullable();
             $table->string('title');
             $table->dateTime('consultation_time')->nullable();
             $table->date('due_date')->nullable();

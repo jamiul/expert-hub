@@ -20,6 +20,7 @@ class Book extends Modal
     public function bookConsultation()
     {
         $this->form->add();
+        $this->close();
     }
 
     public function filterDate()

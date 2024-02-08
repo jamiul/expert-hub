@@ -249,9 +249,6 @@ class Form extends BaseForm
         if (!isset($this->confirmSlots) || !is_array($this->confirmSlots)) {
             $this->confirmSlots = [];
         }
-        if (empty($this->day)) {
-            $this->day = "Monday";
-        }
 
         $this->confirmSlots[$this->day] = $this->selectedHours;
         $this->resetSlots();

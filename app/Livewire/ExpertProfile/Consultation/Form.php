@@ -3,6 +3,7 @@
 namespace App\Livewire\ExpertProfile\Consultation;
 
 use Carbon\Carbon;
+use App\Models\BookingSlot;
 use App\Models\Consultation;
 use Livewire\Form as BaseForm;
 use App\Models\ConsultationBooking;
@@ -33,23 +34,25 @@ class Form extends BaseForm
 
     public function add()
     {
-        // dd($this->date, $this->selectedTimes, $this->timeIds);
-        // foreach ($this->timeIds as $day => $times) {
-            // dd($times);
-            foreach ($this->timeIds  as $time) {
-                $slots[] = [
-                    'slot_id' => $time,
-                    'profile_id' => 2,
-                    'note' => 'note',
-                    'status' => 'pending',
-                    'active' => true,
-                ];
-            }
-        // }
+        $consultation_bookings = ConsultationBooking::create([
+            'consultation_id' => $this->consultation->id,
+            'client_id' => auth()->user()->id,
+            // 'expert_id' => $this->consultation->expert->id,
+            'amount' => $this->consultation->hourly_rate * count($this->timeIds),
+            'status' => 'pending'
+        ]);
 
-        // dd($slots);
+        foreach ($this->timeIds  as $time) {
+            BookingSlot::create([
+                'consultation_booking_id' => $consultation_bookings->id,
+                'title' => 'This is a title',
+                'consultation_time' => Carbon::parse($this->date)->format('Y-m-d'),
+                'amount' => $this->consultation->hourly_rate,
+                'status' => 'pending',
+            ]);
+        }
 
-        ConsultationBooking::insert($slots);
+        return redirect()->route('client.payment.pay',['reference' => 'consultation', 'id' => $consultation_bookings->id]);
     }
 
     public function pickDate()
@@ -64,7 +67,6 @@ class Form extends BaseForm
                 return [];
             }
         })->toArray();
-
     }
 
     //@TODO optimize the code
@@ -85,8 +87,13 @@ class Form extends BaseForm
             });
         } else {
             $this->selectedTimes[] = $time;
-            $this->timeIds [] = $id;
+            $this->timeIds[] = $id;
         }
+    }
+
+    public function profile()
+    {
+        return auth()->user()->profile;
     }
     public function render()
     {
