@@ -1,0 +1,836 @@
+@extends('frontend.layouts.figma', ['header' => 'expert'])
+@section('content')
+@vite('resources/default/css/expert-profile.css')
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<div class="find-consultant-details">
+      <div class="container profile__page edux-profile-page">
+        <div class="edux-billing-method-area">
+        <div class="col">
+        <div class="sidebar-layout left-sidebar-layout find-projects-layout">
+        <div class="page-sidebar">
+                    <div class="profile-widget user-bio-widget">
+                        <div class="user-profile-picture">
+                            <img src="{{ asset('assets/frontend/img/Mask-img1.png') }}">
+                            <button>Edit</button>
+                        </div>
+                        <div class="user-profile-info">
+                            <h3 class="h6">Professor Michael Kassiou</h3>
+                            <p class="text-primary">Public Health</p>
+                            <p class="text-sm d-flex align-items-center justify-content-center">
+                                <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
+                                     viewBox="0 0 25 24"
+                                     fill="none">
+                                    <path
+                                        d="M12.5009 11.8654C12.9985 11.8654 13.4239 11.6882 13.7771 11.3339C14.1303 10.9795 14.3069 10.5536 14.3069 10.056C14.3069 9.55839 14.1297 9.133 13.7754 8.7798C13.4211 8.4266 12.9951 8.25 12.4975 8.25C11.9999 8.25 11.5745 8.42717 11.2213 8.7815C10.8681 9.13583 10.6915 9.56179 10.6915 10.0594C10.6915 10.557 10.8687 10.9824 11.223 11.3356C11.5774 11.6888 12.0033 11.8654 12.5009 11.8654ZM12.4992 19.5135C14.4556 17.7622 15.9527 16.0824 16.9906 14.474C18.0284 12.8657 18.5473 11.457 18.5473 10.2481C18.5473 8.42498 17.9681 6.92627 16.8098 5.7519C15.6515 4.57753 14.2146 3.99035 12.4992 3.99035C10.7838 3.99035 9.34698 4.57753 8.18865 5.7519C7.03031 6.92627 6.45115 8.42498 6.45115 10.2481C6.45115 11.457 6.97006 12.8657 8.00787 14.474C9.04571 16.0824 10.5428 17.7622 12.4992 19.5135ZM12.4992 21.5096C9.98257 19.3288 8.0954 17.2993 6.8377 15.4211C5.58001 13.5429 4.95117 11.8186 4.95117 10.2481C4.95117 7.94038 5.69765 6.07213 7.1906 4.64328C8.68353 3.21443 10.4531 2.5 12.4992 2.5C14.5454 2.5 16.3149 3.21443 17.8078 4.64328C19.3008 6.07213 20.0473 7.94038 20.0473 10.2481C20.0473 11.8186 19.4184 13.5429 18.1607 15.4211C16.903 17.2993 15.0159 19.3288 12.4992 21.5096Z"
+                                        fill="#191D24" fill-opacity="0.5"/>
+                                </svg>
+                                <sapn> Sydney, Australia</sapn>
+                            </p>
+                            <p class="text-sm d-flex align-items-center justify-content-center">
+                                <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
+                                     viewBox="0 0 25 24"
+                                     fill="none">
+                                    <path
+                                        d="M15.9731 16.5269L17.0269 15.4731L13.25 11.6959V6.99998H11.75V12.3038L15.9731 16.5269ZM12.5016 21.5C11.1877 21.5 9.95268 21.2506 8.79655 20.752C7.6404 20.2533 6.63472 19.5765 5.7795 18.7217C4.92427 17.8669 4.24721 16.8616 3.74833 15.706C3.24944 14.5504 3 13.3156 3 12.0017C3 10.6877 3.24933 9.45268 3.748 8.29655C4.24667 7.1404 4.92342 6.13472 5.77825 5.2795C6.6331 4.42427 7.63834 3.74721 8.79398 3.24833C9.94959 2.74944 11.1844 2.5 12.4983 2.5C13.8122 2.5 15.0473 2.74933 16.2034 3.248C17.3596 3.74667 18.3652 4.42342 19.2205 5.27825C20.0757 6.1331 20.7527 7.13834 21.2516 8.29398C21.7505 9.44959 22 10.6844 22 11.9983C22 13.3122 21.7506 14.5473 21.252 15.7034C20.7533 16.8596 20.0765 17.8652 19.2217 18.7205C18.3669 19.5757 17.3616 20.2527 16.206 20.7516C15.0504 21.2505 13.8156 21.5 12.5016 21.5ZM12.5 20C14.7166 20 16.6041 19.2208 18.1625 17.6625C19.7208 16.1041 20.5 14.2166 20.5 12C20.5 9.78331 19.7208 7.89581 18.1625 6.33748C16.6041 4.77914 14.7166 3.99998 12.5 3.99998C10.2833 3.99998 8.39581 4.77914 6.83748 6.33748C5.27914 7.89581 4.49998 9.78331 4.49998 12C4.49998 14.2166 5.27914 16.1041 6.83748 17.6625C8.39581 19.2208 10.2833 20 12.5 20Z"
+                                        fill="#191D24" fill-opacity="0.5"/>
+                                </svg>
+                                <span> 10.15am AEST</span>
+                            </p>
+
+                            <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                              Invite to Project
+                            </button>
+                              <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                  <path d="M6.5 14H14.5V12H6.5V14ZM6.5 11H18.5V9H6.5V11ZM6.5 8H18.5V6H6.5V8ZM2.5 22V4C2.5 3.45 2.69583 2.97917 3.0875 2.5875C3.47917 2.19583 3.95 2 4.5 2H20.5C21.05 2 21.5208 2.19583 21.9125 2.5875C22.3042 2.97917 22.5 3.45 22.5 4V16C22.5 16.55 22.3042 17.0208 21.9125 17.4125C21.5208 17.8042 21.05 18 20.5 18H6.5L2.5 22ZM5.65 16H20.5V4H4.5V17.125L5.65 16Z" fill="#0036E3"/>
+                                </svg>
+                                Chat with Michael
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                    <h4 class="widget-title">Languages</h4>
+                    <div class="widget-content text-sm">
+                            <div class="d-flex gap-2 align-items-center py-1">
+                            <x-icon.globe fill="#0036E3"/>
+                                <div>
+                                    <p class="m-0 fw-medium">Proficient in English</p>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                    <div class="profile-widget user-skills-widget">
+                        <h4 class="widget-title">Skillsets</h4>
+
+                        <div class="user-profile-skills">
+                            <ul>
+                                <li>Public Health</li>
+                                <li>Infectious Diseases</li>
+                                <li>Curriculum Development</li>
+                                <li>Educational Assessment</li>
+                                <li>+5 More</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="profile-widget user-education-widget">
+                        <h4 class="widget-title">Education </h4>
+                        <div class="widget-content">
+                            <div class="user-education-box-item edux-border-bottom">
+                                <p class="text-sm fw-medium mt-1 mb-0">PhD in Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1"> <strong>1995 - 2000</strong> </p>
+                            </div>
+                            <div class="user-education-box-item edux-border-bottom">
+                                <p class="text-sm fw-medium mt-1 mb-0">Master’s in Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1"> <strong>1993 -1995</strong> </p>
+                            </div>
+                            <div class="user-education-box-item mb-0">
+                                <p class="text-sm fw-medium mt-1 mb-0">Bachelor in Public Health</p>
+                                <p class="text-sm fst-italic mb-0">EduExHub University</p>
+                                <p class="text-sm mb-1"> <strong>1989 - 1993</strong> </p>
+                            </div>
+
+                            <div class="user-education-box-item mb-0 mt-4">
+                                <p class="text-lg fw-medium mt-2 mb-0 edux-social"><x-icon.linkedin fill="#0036E3"/> LinkedIn</p>
+                                <p class="text-lg fw-medium mt-3 mb-0 edux-social"><x-icon.briefcase fill="#0036E3"/> Work Profile</p>
+                                <p class="text-lg fw-medium mt-3 mb-0 edux-social"> <x-icon.briefcase fill="#0036E3"/> Google Scholar </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+              <div class="page-content">
+
+                <div class="consultant-details border-0 p-0 shadow-none">
+                  <div class="consultant-details-left">
+                    <h3 class="d-inline-flex align-items-center">
+                      <span>About</span>
+                    </h3>
+                  </div>
+                  <p>Prof. Michael is an accomplished Curriculum Development Specialist with a distinguished career in education and a track record of providing consultation services. Holding a PhD in Curriculum and Instruction, Prof. Michael has dedicated expertise in designing innovative curricula, enhancing student engagement, and conducting research on educational best practices particularly in public health education. With a background in curriculum coordination, consultation, and a strong commitment to education, Prof. Michael has made significant contributions to the field. <a href="#" class="edux-read-more">More</a></p>
+                </div>
+
+
+
+                <div class="consultant-prof edux-consultant-prof card card-24">
+
+              <div class="d-flex gap-2 align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M3.99998 18.9999V7.99993V18.6922V18.5913V18.9999ZM4.3077 20.4999C3.80257 20.4999 3.375 20.3249 3.025 19.9749C2.675 19.6249 2.5 19.1973 2.5 18.6922V8.30765C2.5 7.80252 2.675 7.37495 3.025 7.02495C3.375 6.67495 3.80257 6.49995 4.3077 6.49995H8.5V4.80768C8.5 4.30256 8.675 3.875 9.025 3.525C9.375 3.175 9.80257 3 10.3077 3H13.6923C14.1974 3 14.625 3.175 14.975 3.525C15.325 3.875 15.5 4.30256 15.5 4.80768V6.49995H19.6923C20.1974 6.49995 20.625 6.67495 20.975 7.02495C21.325 7.37495 21.5 7.80252 21.5 8.30765V12.5442C21.2705 12.3852 21.0323 12.2474 20.7855 12.1307C20.5387 12.0141 20.2769 11.9102 20 11.8192V8.30765C20 8.2179 19.9711 8.14417 19.9134 8.08647C19.8557 8.02877 19.782 7.99993 19.6923 7.99993H4.3077C4.21795 7.99993 4.14423 8.02877 4.08653 8.08647C4.02883 8.14417 3.99998 8.2179 3.99998 8.30765V18.6922C3.99998 18.7819 4.02883 18.8557 4.08653 18.9134C4.14423 18.9711 4.21795 18.9999 4.3077 18.9999H11.575C11.6186 19.2666 11.676 19.5233 11.7471 19.7701C11.8183 20.0169 11.9064 20.2601 12.0116 20.4999H4.3077ZM9.99998 6.49995H14V4.80768C14 4.71793 13.9711 4.6442 13.9134 4.5865C13.8557 4.5288 13.782 4.49995 13.6923 4.49995H10.3077C10.218 4.49995 10.1442 4.5288 10.0865 4.5865C10.0288 4.6442 9.99998 4.71793 9.99998 4.80768V6.49995ZM18 22.4999C16.7513 22.4999 15.6891 22.0621 14.8135 21.1865C13.9378 20.3108 13.5 19.2486 13.5 17.9999C13.5 16.7512 13.9378 15.6891 14.8135 14.8134C15.6891 13.9378 16.7513 13.5 18 13.5C19.2487 13.5 20.3109 13.9378 21.1865 14.8134C22.0621 15.6891 22.5 16.7512 22.5 17.9999C22.5 19.2486 22.0621 20.3108 21.1865 21.1865C20.3109 22.0621 19.2487 22.4999 18 22.4999ZM18.4423 17.8191V15.0576H17.5577V18.1807L19.65 20.273L20.2731 19.6499L18.4423 17.8191Z" fill="#0036E3"/>
+                </svg>
+                    <h3 class="h5 mb-0">Consultation</h3>
+                    <button class="icon-btn">
+                        <x-icon.info fill="#C8C5D4"/>
+                    </button>
+                </div>
+                <div class="consultant-prof1 card-body border-0 edux-border-bottom pt-3">
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <div class="prof-img">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt1.jpg') }}"></img>
+                        <button class="btn btn-primary btn-md w-100 mt-2" data-bs-toggle="modal" data-bs-target="#bookConsultation">Book Now</button>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="prof-text">
+                        <h6>Architecture history</h6>
+                        <strong><p>$120/1 hrs</p></strong>
+                        <div class="profp1"><p class="mb-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p></div>
+                        <div class="user-profile-skills">
+                            <ul>
+                                <li>Accreditation Documentation</li>
+                                <li>Accreditation Process</li>
+                                <li>Educational Expertise</li>
+                                <li>Instructionḁl Design</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="consultant-prof1 card-body border-0">
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <div class="prof-img">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/book-exprt1.jpg') }}"></img>
+                        <button class="btn btn-primary btn-md w-100 mt-2"  data-bs-toggle="modal" data-bs-target="#bookConsultation">Book Now</button>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="prof-text">
+                        <h6>Architecture history</h6>
+                        <strong><p>$120/1 hrs</p></strong>
+                        <div class="profp1"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec</p></div>
+                        <div class="user-profile-skills">
+                            <ul>
+                                <li>Accreditation Documentation</li>
+                                <li>Accreditation Process</li>
+                                <li>Educational Expertise</li>
+                                <li>Instructionḁl Design</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie/>
+                                                <h3 class="h5 mb-0">Work Experience</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body py-3 ps-0 pb-2">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class="">Director of Curriculum Development</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>Mar 2015 - Mar 2020</strong>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                <p class="mb-0">As a Director of Curriculum Development at the Public Health
+                                                    Institute of Sydney, I have played a pivotal
+                                                    role in shaping the education landscape. My responsibilities include
+                                                   <span class="edux-read-more"> ... More</span></p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card card-24 border-0">
+                                            <div class="card-body pt-0 ps-0">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class="">Director of Curriculum Development</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>Mar 2015 - Mar 2020</strong>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                <p>As a Director of Curriculum Development at the Public Health
+                                                    Institute of Sydney, I have played a pivotal
+                                                    role in shaping the education landscape. My responsibilities include
+                                                   <span class="edux-read-more"> ... More</span></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie/>
+                                                <h3 class="h5 mb-0 current-project-active">Current Project</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body py-3 ps-0 pb-2">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class=""> Public Health Institute of Sydney, Sydney, Australia</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>2015 - Present</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p>I led a groundbreaking project in collaboration with Public Health Institute of Sydney to develop an innovative public health curriculum. This project aimed to revamp the university's existing curriculum to align with the latest research, pedagogical trends, and industry demands. Key highlights of this project included:</p>
+                                                <p>Conducting a comprehensive needs assessment to identify gaps in the current curriculum and the evolving requirements of the public health field.</p>
+                                                <p>Collaborating with a team of subject matter experts to design a competency-based curriculum that emphasised practical skills and interdisciplinary learning.</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card card-24 border-0">
+                                            <div class="card-body pt-0 ps-0">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class="">International Public Health Education Consortium</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>2018- Present</strong>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                <p>In this role, I contributed to the advancement of public health education and curriculum development by:</p>
+                                                <p>
+                                                  Collaborating with a diverse team of international researchers to collect and analyse data from a wide range of universities and public health programs. Evaluating curriculum structures, content, pedagogical approaches, and assessment methods to identify commonalities, differences, and best practices. Conducting surveys and interviews with faculty members and students to gather
+                                                  qualitative insights into the effectiveness of various curricular models.
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie/>
+                                                <h3 class="h5 mb-0">Previous Projects (0)</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body py-3 ps-0 pb-2">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class=""> Public Health Institute of Sydney, Sydney, Australia</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>2015 - Present</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p>I led a groundbreaking project in collaboration with Public Health Institute of Sydney to develop an innovative public health curriculum. This project aimed to revamp the university's existing curriculum to align with the latest research, pedagogical trends, and industry demands. Key highlights of this project included:</p>
+                                                <p>Conducting a comprehensive needs assessment to identify gaps in the current curriculum and the evolving requirements of the public health field.</p>
+                                                <p>Collaborating with a team of subject matter experts to design a competency-based curriculum that emphasised practical skills and interdisciplinary learning.</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card card-24 border-0">
+                                            <div class="card-body pt-0 ps-0">
+                                                <div class="d-flex gap-3 justify-content-sm-between">
+                                                    <div class="mb-2">
+                                                        <h6 class="">International Public Health Education Consortium</h6>
+                                                        <p class="mb-0"><i> Public Health Institute of Sydney, Sydney,
+                                                                Australia </i> | <strong>2018- Present</strong>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                <p>In this role, I contributed to the advancement of public health education and curriculum development by:</p>
+                                                <p>
+                                                  Collaborating with a diverse team of international researchers to collect and analyse data from a wide range of universities and public health programs. Evaluating curriculum structures, content, pedagogical approaches, and assessment methods to identify commonalities, differences, and best practices. Conducting surveys and interviews with faculty members and students to gather
+                                                  qualitative insights into the effectiveness of various curricular models.
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
+                                            <div class="d-flex gap-2 align-items-center">
+                                            <x-icon.listening fill="#0036E3"/>
+                                                <h3 class="h5 mb-0">Conferences and Media Interview</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                              with Activists</a></p>
+                                              <p class="mb-2">Public Health Institute of Sydney</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Conference</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Mic Drop Moments: Elon Musk Unveils Bold Space Exploration Plans in Interview</a></p>
+                                              <p class="mb-2">Public Health Institute of Sydney</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Conference</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Deep Dives & Hot Takes: Exploring AI Ethics at Industry Conference & Interview with Leading Expert</a></p>
+                                              <p class="mb-2">Fox News</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Media</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Fireside Chats & Panel Discussions: Unveiling Cybersecurity Trends at DEF CON</a></p>
+                                              <p class="mb-2">CNN</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Media</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+              <div class="consultant-work mb-5">
+
+                <div class="d-flex gap-2 align-items-center">
+                  <x-icon.batch width="32" height="32" fill="#0036E3"/>
+                    <h3 class="h5 mb-0">Awards and Honors</h3>
+                    <button class="icon-btn">
+                        <x-icon.info fill="#C8C5D4"/>
+                    </button>
+                </div>
+
+
+                <div class="mt-4">
+                  <div class="owl-carousel portfolioCaousel">
+                    <div class="portfolio__card">
+                      <figure class="position-relative">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
+                      </figure>
+                      <h4 class="fs-6 fw-medium title">
+                        <a href="#">Comparative Analysis of Public Health Curricula</a>
+                      </h4>
+                      <div class="tags">
+                        <span>Public Health</span>
+                        <span>Infectious Diseases</span>
+                      </div>
+                    </div>
+                    <div class="portfolio__card">
+                      <figure class="position-relative">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
+                      </figure>
+                      <h4 class="fs-6 fw-medium title">
+                        <a href="#">Comparative Analysis of Public Health Curricula</a>
+                      </h4>
+                      <div class="tags">
+                        <span>Public Health</span>
+                        <span>Infectious Diseases</span>
+                      </div>
+                    </div>
+                    <div class="portfolio__card">
+                      <figure class="position-relative">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
+                      </figure>
+
+
+
+                      <h4 class="fs-6 fw-medium title">
+                        <a href="#">Comparative Analysis of Public Health Curricula</a>
+                      </h4>
+                      <div class="tags">
+                        <span>Public Health</span>
+                        <span>Infectious Diseases</span>
+                      </div>
+                    </div>
+                    <div class="portfolio__card">
+                      <figure class="position-relative">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
+                      </figure>
+                      <h4 class="fs-6 fw-medium title">
+                        <a href="#">Comparative Analysis of Public Health Curricula</a>
+                      </h4>
+                      <div class="tags">
+                        <span>Public Health</span>
+                        <span>Infectious Diseases</span>
+                      </div>
+                    </div>
+                    <div class="portfolio__card">
+                      <figure class="position-relative">
+                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
+                      </figure>
+                      <h4 class="fs-6 fw-medium title">
+                        <a href="#">Comparative Analysis of Public Health Curricula</a>
+                      </h4>
+                      <div class="tags">
+                        <span>Public Health</span>
+                        <span>Infectious Diseases</span>
+                      </div>
+                    </div>
+                  </div><!--.//carousel-->
+                </div>
+
+
+
+              </div> <!-- Consultant work-->
+
+
+              <div class="consultant-testimonial">
+                <h3 class="mb-1"><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/quote.svg') }}"></img>Recommendation<button class="icon-btn">
+                        <x-icon.info fill="#C8C5D4"/>
+                    </button></h3>
+                <div class="testimonial-text">
+                  <p>Prof. Michael Kassiou played a pivotal role in the development of our university curriculum. His expertise, creativity, and dedication to ensuring our program met the highest standards were truly outstanding. We are grateful for his contributions and highly recommend his services to any educational institution.</p>
+                  <div class="testimonial-block">
+                    <div class="testimonial-img">
+                      <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/testimonial-img1.jpg') }}"></img>
+                    </div>
+                    <div class="testimonial-con">
+                      <h4>Prof. David Smith</h4>
+                      <p>Dean | School of Business | Sydney Islamic Business School</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-text testimonialnone">
+                  <p>Prof. Michael Kassiou played a pivotal role in the development of our university curriculum. His expertise, creativity, and dedication to ensuring our program met the highest standards were truly outstanding. We are grateful for his contributions and highly recommend his services to any educational institution.</p>
+                  <div class="testimonial-block">
+                    <div class="testimonial-img">
+                      <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/testimonial-img1.jpg') }}"></img>
+                    </div>
+                    <div class="testimonial-con">
+                      <h4>Dr. Danial</h4>
+                      <p>Dean | School of Business | Sydney Islamic Business School</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-button">
+                  <a href="#">More Testimonial
+                  <x-icon.chevron-right fill="#0036E3"/>
+              </a>
+                </div>
+              </div>
+
+
+              </div>
+              <!-- page Content end here -->
+
+        </div>
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+<!-- ===================== Work Experience Modal start Here ====================== -->
+
+        <div class="modal fade" id="WorkExperienceForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-add-expert">
+            <div class="modal-content modal-content-expert">
+              <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body border-0 pt-0">
+
+              <div class="consultant-work-add">
+                  <h3>
+                   <span class="add-exp-img"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img></span>
+                    <span class="add-exp-text">Add Work Experience</span>
+                  </h3>
+                </div>
+                <form>
+                  <div class="mb-4">
+                    <label for="recipient-name" class="col-form-label expert-for-label">Name of institution</label>
+                      <select class="form-select form-select-lg mb-3 add-expert-select" aria-label=".form-select-lg example">
+                        <option selected>Select an institution</option>
+                        <option value="1">Select an institution</option>
+                        <option value="2">Select an institution</option>
+                        <option value="3">Select an institution</option>
+                      </select>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="recipient-name" class="col-form-label expert-for-label pt-0">Role / Job title</label>
+                      <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                        <option selected>Select an institution</option>
+                        <option value="1">Select an institution</option>
+                        <option value="2">Select an institution</option>
+                        <option value="3">Select an institution</option>
+                      </select>
+                  </div>
+                    <div class="row mb-2">
+                      <h3 class="start-end">Start date</h3>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label expert-for-label">Month</label>
+                            <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                              <option selected>Select month</option>
+                              <option value="1">Select month</option>
+                              <option value="2">Select month</option>
+                              <option value="3">Select month</option>
+                            </select>
+                        </div>
+                      <div class="col-md-6">
+                        <label for="recipient-name" class="col-form-label expert-for-label">Year</label>
+                        <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                          <option selected>Select Year</option>
+                          <option value="1">Select Year</option>
+                          <option value="2">Select Year</option>
+                          <option value="3">Select Year</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mb-2">
+                      <h3 class="start-end">End date</h3>
+                        <div class="col-md-6">
+                            <label for="recipient-name" class="col-form-label expert-for-label">Month</label>
+                            <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                              <option selected>Select month</option>
+                              <option value="1">Select month</option>
+                              <option value="2">Select month</option>
+                              <option value="3">Select month</option>
+                            </select>
+                        </div>
+                      <div class="col-md-6">
+                        <label for="recipient-name" class="col-form-label expert-for-label">Year</label>
+                        <select class="form-select form-select-lg mb-3  add-expert-select" aria-label=".form-select-lg example">
+                          <option selected>Select Year</option>
+                          <option value="1">Select Year</option>
+                          <option value="2">Select Year</option>
+                          <option value="3">Select Year</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12">
+                            <div class="form-check form-check-all">
+                              <input class="form-check-input" type="checkbox" id="gridCheck">
+                              <label class="form-check-label expert-for-label" for="gridCheck">
+                              I currently work here
+                              </label>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="row mt-4">
+                    <h3 class="start-end">Description</h3>
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label textarea-for-label">Add a simple description of your responsibilities and achievements in this role.</label>
+                          <textarea class="form-control expert-text-area" id="exampleFormControlTextarea1" rows="3">Include a few brief details about what you did in this role.
+                          </textarea>
+                        </div>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn btn-primary btn-exp-save">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ===================== Work Experience Modal start Here ====================== -->
+
+
+
+
+<!-- ===================== Work Experience Modal start Here ====================== -->
+
+        <div class="modal fade" id="addPortfolio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-add-expert">
+            <div class="modal-content modal-content-expert">
+              <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body border-0 pt-0">
+              <div class="consultant-work-add">
+                  <h3>
+                   <span class="add-exp-img"> <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/work_history.svg') }}"></img></span>
+                    <span class="add-exp-text">Add Portfolio</span>
+                  </h3>
+                </div>
+                <form>
+                <div class="row mt-4">
+                  <div class="col-md-12">
+                      <div class="upload-area">
+                      <label>
+                         <div class="upload-item">
+                            <img src="{{ asset('/assets/frontend/img/upload.png') }}"></img>
+                            <h4>Clik to upload or drag & drop</h4>
+                            <p>Drag & drop any images or documents that might be helpful in explaining your brief here</p>
+                         </div>
+                          <input type="file" style="visibility: hidden;"/>
+                      </label>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="mb-4 position-relative">
+                        <label for="exampleInputEmail1" class="form-label position-absolute add-title-label">Title of the project</label>
+                        <input type="text" class="form-control add-expert-select" id="" aria-describedby="emailHelp" placeholder="Type project title">
+                       </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="mb-3 position-relative">
+                        <label for="exampleInputEmail1" class="form-label position-absolute category-label">Category</label>
+                        <input type="text" class="form-control add-expert-select" id="" aria-describedby="emailHelp" placeholder="Type the skills & hit enter">
+                       </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="suggestion-area">
+                      <p><span class="suggestion-skill">Suggestion skills: </span> Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design, Research and Analysis, skill development</p>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn btn-primary btn-exp-save">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ===================== Work Experience Modal start Here ====================== -->
+
+
+        <!-- Modal : Add Work Experience-->
+<div class="modal fade" id="bookConsultation" tabindex="-1" aria-labelledby="addConsultationLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg flat-modal">
+    <div class="modal-content open-date-picker">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title pt-3 px-0" id="exampleModalLabel">Booking A Curriculum development</h5>
+        <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pb-4">
+        <div class="form-input-group form-input-has-icon ">
+          <div class="icon-field-wrapper">
+            <input name="skill" id="skill" class="form-input-field" wire:model="skill" placeholder="Total slot">
+            <span class="form-input-icon edux-slot-count"> 3 </span>
+          </div>
+        </div>
+        <div class="mb-40">
+          <div class="available-schedule-slot mb-40">
+
+            <x-form.flatpicker label="" inline="true" name="datepicker"/>
+
+            <div class="slot-item-area">
+              <h6>Wednesday, 15th Oct </h6>
+              <div class="slot-item">
+                <div class="single-slot">
+                  <span>1:00 AM</span>
+                </div>
+                <div class="multi-slot">
+                  <div class="single-slot slot-border">
+                    <span>1:00 AM</span>
+                  </div>
+                  <div class="single-slot slot-fill">
+                    <span>1:00 AM</span>
+                  </div>
+                </div>
+                <div class="single-slot">
+                  <span>3:00 AM</span>
+                </div>
+                <div class="single-slot">
+                  <span>4:00 AM</span>
+                </div>
+                <div class="single-slot">
+                  <span>4:00 AM</span>
+                </div>
+                <div class="single-slot">
+                  <span>4:00 AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="edux-select-options position-relative d-none">
+          <x-form.textarea label="Note" wire:model="bio" placeholder="Bio"> Select options </x-form.textarea>
+          <span class="edux-total-select-count">0/200</span>
+        </div>
+        <div class="modal-footer px-0 pb-0 pt-3">
+          <button type="button" class="btn btn-secondary edux-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary eudx-btn-save">Book a Consultation</button>
+          <button type="button" class="btn  eudx-btn-back d-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z" fill="#191D24" fill-opacity="0.7" />
+            </svg> Back </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--End Modal -->
+
+
+
+
+
+@endsection
+
+
+@push('bottom_scripts')
+<!-- Expert profile Portfolio slide -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      $(".portfolioCaousel").owlCarousel({
+        items: 3,
+        autoplay:false,
+        autoplayTimeout: 5500,
+        autoplayHoverPause: true,
+        smartSpeed: 550,
+        loop: false,
+        margin: 20,
+        nav: true,
+        dots: true,
+        responsiveClass: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            992: { items: 3 },
+            1200: { items: 3 }
+        },
+
+      });
+
+    </script>
+@endpush
+
