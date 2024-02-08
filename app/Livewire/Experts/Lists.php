@@ -69,7 +69,10 @@ class Lists extends Component
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $experts = $experts->whereHas('user', function($query){
-                $query->where('first_name', 'like', '%' . $this->filtersArray['search'] . '%');
+                $query
+                    ->where('first_name', 'like', '%' . $this->filtersArray['search'] . '%')
+                    ->orWhere('last_name', 'like', '%' . $this->filtersArray['search'] . '%')
+                    ->orWhere('title', 'like', '%' . $this->filtersArray['search'] . '%');
             });
         };
         if (isset($this->filtersArray['fields']) && $this->filtersArray['fields']) {

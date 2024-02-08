@@ -64,6 +64,8 @@ class DispatchMilestone extends Command {
                     'status' => MilestoneStatus::Released
                 ]);
 
+                Log::info($CONNECTED_ACCOUNT_ID . ' payment released.');
+
                 Log::info($acceptMilestone);
             } catch (\Exception $ex){
                 $milestone->contract->expert->user->notify(new PaymentNotification([

@@ -9,6 +9,7 @@ use App\Models\Contract;
 use App\Models\Profile;
 use App\Models\Testimonial;
 use App\Notifications\ContractEndedNotification;
+use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Log;
 use WireElements\Pro\Components\Modal\Modal;
@@ -117,6 +118,19 @@ class End extends Modal
         toast('success', 'Contract ended successfully', $this);
         $this->dispatch('contract-ended');
         $this->close();
+    }
+
+    public function updateTotalScore()
+    {
+        $this->totalScore();
+    }
+
+    #[Computed()]
+    public function totalScore()
+    {
+        $total = ($this->skill + $this->availability + $this->communication + $this->deadlines + $this->deadlines);
+        $average = $total/5;
+        return $average;
     }
 
     public function rules()

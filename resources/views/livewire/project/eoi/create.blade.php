@@ -34,12 +34,12 @@
                                 </div>
                             </div>
                             <div class="project-item-action d-flex align-items-center gap-2">
-                                <div>
+                                {{-- <div>
                                     <button class="btn btn-icon btn-outline-light btn-favorite">
                                         <span class="heart-line"><x-icon.heart fill="#0036E3"/></span>
                                         <span class="heart-filled"><x-icon.heart-filled fill="#0036E3"/></span>
                                     </button>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

@@ -28,6 +28,7 @@ class Create extends Component
     public $availableExpertiseFields = [];
     public $expertise_id;
 
+    public $suggestedSkills;
     public $availableSkills = [];
     public $skillLimit = 8;
     public $selectedSkills = [];
@@ -42,6 +43,7 @@ class Create extends Component
     {
         $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
         $this->availableSkills = Expertise::skill()->isChild()->pluck('id', 'name')->toArray();
+        $this->suggestedSkills = Expertise::skill()->isChild()->limit(8)->pluck('name');
         $this->project = $project;
         $this->title = $this->project->title;
         $this->description = $this->project->description;
@@ -122,13 +124,7 @@ class Create extends Component
     {
         $experts = Profile::expert()->with('user')->get();
         $experts->each(function($expert){
-            $expert->user->notify(new ProjectPostNotification([
-                'title'   => 'New Project posted',
-                'message' => $this->project->description,
-                'link'    => route('projects.show', $this->project),
-                'button' => 'View project',
-                'avatar'  => Auth::user()->profile->picture,
-            ]));
+            $expert->user->notify(new ProjectPostNotification($this->project));
         });
     }
 

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
-class Invite extends Modal
+class InviteMessage extends Modal
 {
     public $projects;
 
@@ -28,9 +28,9 @@ class Invite extends Modal
 
     public function mount(Profile $expert, $project)
     {
-        if($project){
+        if ($project) {
             $this->project = auth()->user()->profile->projects()->where('id', $project)->first();
-        }else{
+        } else {
             $this->project = auth()->user()->profile->projects()->first();
         }
         $this->project_id = $this->project?->id;
@@ -39,33 +39,33 @@ class Invite extends Modal
         $this->message = 'Hello!' . PHP_EOL . 'I\'d like to invite you to take a look at the job I\'ve posted. Please submit a proposal if you\'re available and interested.' . PHP_EOL . auth()->user()->full_name;
     }
 
-    public function inviteToProject()
+    public function inviteToDiscuss()
     {
         $this->validate([
             'project_id' => ['required'],
         ]);
         $this->project = Project::find($this->project_id);
-        $invitation = Invitation::create([
-            'expert_id' => $this->expert->id,
-            'project_id' => $this->project_id,
-            'status' => InvitationStatus::Pending
-        ]);
-        createConversation(
-            auth()->user()->profile,
-            $this->expert,
-            $this->message,
-            $this->project
-        );
+        $conversation = Conversation::query()
+            ->where('creator_profile_id', $this->project->client->id)
+            ->where('reference_id', $this->project->id)
+            ->wherehas('participants', function ($query) {
+                $query->where('profile_id', $this->expert->id);
+            })
+            ->first();
+        if (is_null($conversation)) {
+            $conversation = createConversation(
+                auth()->user()->profile,
+                $this->expert,
+                $this->message,
+                $this->project
+            );
+        }
 
-        $this->expert->user->notify(new ProjectInvitationNotification($this->project));
-        toast('success', 'Invitation Sent Successfully', $this);
-        $this->dispatch('invitation-sent');
-        $this->close();
-        //Todo Update invitation count
+        return redirect()->route('messaging.conversation', $conversation);
     }
 
     public function render()
     {
-        return view('livewire.project.invite');
+        return view('livewire.project.invite-message');
     }
 }

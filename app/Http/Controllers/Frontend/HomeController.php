@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\AboutUs;
-use App\Models\Profile;
 use App\DTO\AboutUsData;
 use App\Http\Controllers\Frontend\Controller;
+use App\Models\AboutUs;
+use App\Models\Profile;
+use App\Models\Training;
 
 class HomeController extends Controller
 {
@@ -29,12 +30,13 @@ class HomeController extends Controller
         $teamList = $this->fetchProfileData($aboutUsDTO->team_list);
 
         $requireTitle = "Search Academic Expert Made Easy";
-
+        $latestTrainings = Training::orderBy('id','desc')->limit(3)->get();
         return view('frontend.home.index', compact(
             'aboutUsDTO',
             'experts',
             'teamList',
-            'requireTitle'
+            'requireTitle',
+            'latestTrainings'
         ));
     }
 

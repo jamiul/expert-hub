@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="balance-area">
                     <span class="available-balance">Balance: <span>${{ number_format($balance, 2) }}</span> </span>
-                    <span class="screw-balance">Escrow Balance: <span>${{ number_format($escrow_balance, 2) }}</span>  </span>
+                    <span class="screw-balance">Pending Balance: <span>${{ number_format($pending_balance, 2) }}</span>  </span>
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
                             <div class="date-item">
 
                                 <div class="study-level-balance">
-                                    <x-form.flatpicker :dateRange="true" label="" wire:model.change="date"/>
+                                    <x-form.flatpicker :dateRange="true" label="" name="datepicker"/>
                                 </div>
 
                                 <div class="short-by-select-reverse">
@@ -39,12 +39,12 @@
 
                                 <div class="short-by-select-reverse">
                                     <x-form.select wire:model.change="customer" label="">
-                                        @foreach($experts as $expert)
-                                            <option value="{{ $expert->expert_id }}">
-                                                @if(!$expert->expert_id)
+                                        @foreach($clients as $client)
+                                            <option value="{{ $client->client_id }}">
+                                                @if(!$client->client_id)
                                                     All Experts
                                                 @else
-                                                    {{ @$expert->expert->fullname }}
+                                                    {{ @$client->client->fullname }}
                                                 @endif
                                             </option>
                                         @endforeach
@@ -81,6 +81,7 @@
                 </div>
             </div>
             <!-- short area start Here -->
+
             @if($transactions->count() > 0)
                 <div class="row">
                     <div class="col-12">
@@ -91,19 +92,19 @@
                                     <th scope="col">Date</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Expert</th>
+                                    <th scope="col">Client</th>
                                     <th scope="col">Amount / Balance</th>
                                     <th scope="col">Ref ID</th>
                                 </tr>
                                 </thead>
                                 <tbody class="">
-                                @foreach($transactions as $data)
 
-                                    <tr>
+                                @foreach($transactions as $data)
+                                    <tr @if($data->status == 0) class="edux-pending-payment" @endif>
                                         <td style="vertical-align: middle;">{{ $data->created_at->format('M d, Y') }}</td>
                                         <td style="vertical-align: middle;">{{ $data->type }}</td>
                                         <td class="balance-text">{{ $data->description }}</td>
-                                        <td style="vertical-align: middle;">{{ @$data->expert->first_name }} {{ @$data->expert->last_name }}</td>
+                                        <td style="vertical-align: middle;">{{ @$data->client->first_name }} {{ @$data->client->last_name }}</td>
                                         <td style="vertical-align: middle;">
                                         <span class="fw-bold">
                                             $
@@ -114,8 +115,11 @@
                                             @endif
                                              /
                                         </span> ${{ number_format($data->balance, 2) }}
+                                            @if($data->status == 0)
+                                                <br/> <span class="edux-pending">Pending</span>
+                                            @endif
                                         </td>
-                                        <td style="vertical-align: middle;"><a href="#" onClick="Livewire.dispatch('modal.open', { component: 'client.payment.report.invoice', arguments: {transaction_id: {{ $data->id }} } })" class="edux-ref-id">{{ $data->id }}</a></td>
+                                        <td style="vertical-align: middle;"><a href="#" onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.report.invoice', arguments: {transaction_id: {{ $data->id }} } })" class="edux-ref-id">{{ $data->id }}</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -125,7 +129,6 @@
                     </div>
                 </div>
             @endif
-
         </div>
     </section>
 </div>

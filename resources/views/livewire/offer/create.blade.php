@@ -200,21 +200,21 @@
                                         tranquil existence</p>
                                 </div>
                             </div>
-                            <div class="card card-24 mb-40">
+                            {{-- <div class="card card-24 mb-40">
                                 <div class="card-body">
                                     <h3 class="h6 mb-3">Work Details</h3>
                                     <p>A wonderful serenity has taken possession of my entire soul, like these sweet
                                         mornings of spring which I enjoy with my whole heart. I am alone, and feel the
                                         charm of existence in this spot, which was created for the bliss of souls like
                                         mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
-                                        tranquil... <a href="" class="text-decoration-underline">More</a></p>
+                                        tranquil</p>
                                     <input type="file" id="upload-file" class="d-none">
                                     <label for="upload-file"
                                             class="btn btn-outline-gray btn-rounded d-inline-flex align-items-center">
                                         <span style="transform: rotate(40deg)"><x-icon.attach-file
                                                 fill="#A1A0A5"/></span> Attach File</label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <x-form.check wire:model.live="terms">
                                 Yes, I understand and agree to the EduExHub Terms of Service, including the User
                                 Agreement and Privacy Policy.
