@@ -10,4 +10,8 @@ class ConsultationBooking extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function consultation() {
+        return $this->belongsTo(Consultation::class);
+    }
 }
