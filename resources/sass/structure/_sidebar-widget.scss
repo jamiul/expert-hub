@@ -80,6 +80,7 @@
         border-radius: 100%;
         margin: 0 auto;
 
+
         &:hover {
             button {
                 bottom: 0;
@@ -99,6 +100,7 @@
             font-weight: 500;
             font-size: 0.875rem;
             transition: 0.2s;
+            width: 100%;
         }
     }
 
