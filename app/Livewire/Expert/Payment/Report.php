@@ -3,11 +3,13 @@
 namespace App\Livewire\Expert\Payment;
 
 use App\Enums\ExpertTransactionType;
+use App\Exports\ExpertTransactionExport;
 use App\Models\ExpertTransaction;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Report extends Component
 {
@@ -35,7 +37,7 @@ class Report extends Component
 
     public function downloadCsv() {
         $user = auth()->user();
-        $transactions = ExpertTransaction::where( 'expert_id', $user->id );
+        $transactions = ExpertTransaction::select(['created_at', 'type', 'description', 'client', 'amount', 'balance'])->where( 'expert_id', $user->id );
         if($this->type){
             $transactions = $transactions->where('type', ExpertTransactionType::from($this->type));
         }
@@ -50,6 +52,8 @@ class Report extends Component
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
         $data = $transactions->toArray();
+
+        return Excel::download(new ExpertTransactionExport($data), 'invoice.csv');
     }
 
     public function downloadInvoices() {

@@ -3,11 +3,13 @@
 namespace App\Livewire\Client\Payment;
 
 use App\Enums\ClientTransactionType;
+use App\Exports\ClientTransactionExport;
 use App\Models\ClientTransaction;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Report extends Component
 {
@@ -47,6 +49,8 @@ class Report extends Component
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
         $data = $transactions->toArray();
+
+        return Excel::download(new ClientTransactionExport($data), 'invoice.csv');
     }
 
     public function downloadInvoices() {
