@@ -19,7 +19,7 @@ class Create extends Component
     public $trainingTitle;
     public $trainingFee;
     public $expertiseId;
-    public $partnerInstituteId;
+    public $partnerInstituteId = [];
     public $countryId;
     public $stateId;
     public $countries;
@@ -45,6 +45,8 @@ class Create extends Component
     public $availableExpertiseFields;
     public $partnerInstitutes;
 
+    public $currentStep = 1;
+
     public function mount()
     {
         $this->countries = Country::pluck('name', 'id')->toArray();
@@ -58,27 +60,29 @@ class Create extends Component
     {
         return [
 
-            'trainingTitle' => ['required'],
-            'trainingFee' => ['required', 'integer'],
-            'expertiseId' => ['nullable', 'exists:expertises,id'],
-            'partnerInstituteId' => ['nullable', 'exists:universities,id'],
-            'countryId' => ['nullable', 'exists:countries,id'],
-            'stateId' => ['nullable', 'exists:states,id'],            
-            'startDate' => ['nullable', 'date_format:d M Y'],
-            'startTime' => ['nullable', 'date_format:h:i A'],
-            'endDate' => ['nullable', 'date_format:d M Y'],
-            'endTime' => ['nullable', 'date_format:h:i A'],
-            'trainingMode' => ['nullable', Rule::in(TrainingMode::cases())],
-            'link' => ['nullable', 'url'],
-            'languageId' => ['nullable', 'exists:languages,id'],
-            'summary' => ['nullable', 'string', 'max:200'],
-            'outline' => ['nullable', 'string', 'max:200'],
-            'outcomes' => ['nullable', 'string', 'max:200'],
-            'assesments' => ['nullable', 'string', 'max:200'],
-            'activities' => ['nullable', 'string', 'max:200'],
-            'resources' => ['nullable', 'string', 'max:200'],
-            'prescribedMaterials' => ['nullable', 'string', 'max:200'],
-            'recommendedReading' => ['nullable', 'string', 'max:200'],
+            // 'trainingTitle' => ['required'],
+            // 'trainingFee' => ['required', 'integer'],
+            // 'expertiseId' => ['nullable', 'exists:expertises,id'],
+            // 'partnerInstituteId' => ['nullable', 'exists:universities,id'],
+            
+            // 'countryId' => ['nullable', 'exists:countries,id'],
+            // 'stateId' => ['nullable', 'exists:states,id'],            
+            // 'startDate' => ['nullable', 'date_format:d M Y'],
+            // 'startTime' => ['nullable', 'date_format:H:i'],
+            // 'endDate' => ['nullable', 'date_format:d M Y', 'after_or_equal:startDate'],
+            // 'endTime' => ['nullable', 'date_format:H:i'],
+            // 'trainingMode' => ['nullable', Rule::in(TrainingMode::cases())],
+            // 'link' => ['nullable', 'url'],
+            // 'languageId' => ['nullable', 'exists:languages,id'],
+
+            // 'summary' => ['nullable', 'string', 'max:200'],
+            // 'outline' => ['nullable', 'string', 'max:200'],
+            // 'outcomes' => ['nullable', 'string', 'max:200'],
+            // 'assesments' => ['nullable', 'string', 'max:200'],
+            // 'activities' => ['nullable', 'string', 'max:200'],
+            // 'resources' => ['nullable', 'string', 'max:200'],
+            // 'prescribedMaterials' => ['nullable', 'string', 'max:200'],
+            // 'recommendedReading' => ['nullable', 'string', 'max:200'],
         ];
     }
 
@@ -93,7 +97,7 @@ class Create extends Component
 
     public function submitForm()
     {        
-        $this->validate();
+        // $this->validate();
         
         $training = Training::create([
 
@@ -123,13 +127,114 @@ class Create extends Component
 
         $training = Training::find($training->id);
         $training->instructors()->sync(auth()->user()->profile->id);
-        $training->partners()->sync($this->partnerInstituteId);
-        
-        
-        toast('success', "Training Details Saved Successfully");
-        return redirect()->route('trainings.show', $training);
-        // $this->reset();
+        $training->partners()->sync($this->partnerInstituteId);        
 
+        return redirect()->route('trainings.show', $training);
+    }
+
+    public function validateStepOne()
+    {
+        $this->validate([
+
+            'trainingTitle' => ['required'],
+            'trainingFee' => ['required', 'integer'],
+            'expertiseId' => ['nullable', 'exists:expertises,id'],
+            'partnerInstituteId' => ['nullable', 'exists:universities,id'],
+        ]);        
+    }
+
+    public function validateStepTwo()
+    {
+        $this->validate([
+
+            'countryId' => ['nullable', 'exists:countries,id'],
+            'stateId' => ['nullable', 'exists:states,id'],            
+            'startDate' => ['nullable', 'date_format:d M Y'],
+            'startTime' => ['nullable', 'date_format:H:i'],
+            'endDate' => ['nullable', 'date_format:d M Y', 'after_or_equal:startDate'],
+            'endTime' => ['nullable', 'date_format:H:i'],
+            'trainingMode' => ['nullable', Rule::in(TrainingMode::cases())],
+            'link' => ['nullable', 'url'],
+            'languageId' => ['nullable', 'exists:languages,id'],
+        ]);
+        
+        
+    }
+
+    public function validateStepThree()
+    {
+        $this->validate([
+
+            'summary' => ['nullable', 'string', 'max:2000'],
+            'outline' => ['nullable', 'string', 'max:2000'],
+            'outcomes' => ['nullable', 'string', 'max:2000'],
+            'assesments' => ['nullable', 'string', 'max:2000'],
+            'activities' => ['nullable', 'string', 'max:2000'],
+            'resources' => ['nullable', 'string', 'max:2000'],
+            'prescribedMaterials' => ['nullable', 'string', 'max:2000'],
+            'recommendedReading' => ['nullable', 'string', 'max:2000'],
+        ]);
+        
+        
+    }
+
+    public function validateStepFour()
+    {
+        $this->validate([
+
+            'summary' => ['nullable', 'string', 'max:2000'],
+            'outline' => ['nullable', 'string', 'max:2000'],
+            'outcomes' => ['nullable', 'string', 'max:2000'],
+            'assesments' => ['nullable', 'string', 'max:2000'],
+            'activities' => ['nullable', 'string', 'max:2000'],
+            'resources' => ['nullable', 'string', 'max:2000'],
+            'prescribedMaterials' => ['nullable', 'string', 'max:2000'],
+            'recommendedReading' => ['nullable', 'string', 'max:2000'],
+        ]);
+        
+        
+    }
+
+    public function next()
+    {
+
+        if ($this->currentStep == 1) {
+            
+            $this->validateStepOne();            
+        }
+
+        
+        if ($this->currentStep == 2) {
+            
+            $this->validateStepTwo();
+        }
+
+        if ($this->currentStep == 3) {
+            
+            $this->validateStepThree();
+        }
+
+        if ($this->currentStep == 4) {
+            
+            $this->validateStepFour();
+            $this->submitForm();
+        }
+
+        // if ($this->currentStep == 5) {
+            
+        //     $this->submitForm();
+        // }      
+        
+        if ($this->currentStep < 4) {
+            $this->currentStep += 1;
+        }
+    }
+
+    public function back()
+    {
+        if ($this->currentStep > 1) {
+            $this->currentStep -= 1;
+        }
     }
 
     

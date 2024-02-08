@@ -7,193 +7,43 @@
 
                     <h5>Create Training</h5>
                     <ul class="progress-bar-nav-horizontal">
-                        <li class="done-item"><strong>Course Info </strong></li>
-                        <li class="running-item"><strong> Course Schedule</strong></li>
-                        <li><strong> Course Details </strong></li>
-                        <li><strong> Summery </strong></li>
+                        <li class="@if($currentStep > 1) done-item @endif @if($currentStep == 1) running-item @endif"><strong>Course Info </strong></li>
+                        <li class="@if($currentStep > 2) done-item @endif @if($currentStep == 2) running-item @endif"><strong> Course Schedule</strong></li>
+                        <li class="@if($currentStep > 3) done-item @endif @if($currentStep == 3) running-item @endif"><strong> Course Details </strong></li>
+                        <li class="@if($currentStep > 4) done-item @endif @if($currentStep == 4) running-item @endif"><strong> Summery </strong></li>
                     </ul>
 
 
 
                     <div class="progress-step-content mt-20">
 
-                        <x-form.input type="text" label="Training title?" wire:model="trainingTitle" placeholder="Training title" />
+                        
+                        @if($currentStep === 1)
+                        @include('livewire.training.create-training-step1')
+                        @endif
+
+                        
 
 
-                        <x-form.input type="text" label="Training Fee" wire:model="trainingFee" placeholder="Training fee" />
+                        @if($currentStep === 2)
+                        @include('livewire.training.create-training-step2')
+                        @endif
 
-                        <div class="row my-3 gap-3">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="team-block edux-team-block">
-                                    <a href="#">
-                                    </a>
-                                    <div class="team-img position-relative"><a href="#">
-                                            <img src="{{ asset('assets/frontend/img/jon-kelly.png') }}" alt="person">
-                                        </a><a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-close.png') }}" alt="close"> </a> </div>
-                                    <div class="hire-text edux-hire-text">
-                                        <h6>Marvin McKinney</h6>
-                                        <p>Curriculum Expert <br> Public Health <br> Australia</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team-block">
-                                    <div class="academic-single-item d-flex flex-column">
-                                        <div class="admin-add-more"> <a href="#"> <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#addConsultation">add</span> </a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @if($currentStep === 3)
+                        @include('livewire.training.create-training-step3')
+                        @endif
 
+                        @if($currentStep === 4)
+                        @include('livewire.training.create-training-step4')
+                        @endif
 
-                        <x-form.select label="Training Category" wire:model="expertiseId">
-                            <option>Choose</option>
-                            @foreach ($availableExpertiseFields as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                            @endforeach
-                        </x-form.select>
-
-
-                        <x-form.select wire:model="partnerInstituteId" label="Partner Institutes">
-                            <option>Choose</option>
-                            @foreach ($partnerInstitutes as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                            @endforeach
-                        </x-form.select>
-
-                        <x-form.select wire:model="countryId" label="Country">
-                            <option>Choose</option>
-                            @foreach ($countries as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                            @endforeach
-                        </x-form.select>
-
-                        <x-form.select wire:model="stateId" label="State" >
-                        <option >Choose</option>
-                            @foreach ($states as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
-                            @endforeach
-
-                        </x-form.select>
-
-                        <div class="seminar-date-area">
-
-                            <x-form.flatpicker label="Start Date" wire:model="startDate" name="datepicker" />
-                        </div>
-
-
-                        <div class="time-picker-area my-3">
-                            <x-form.input type="text" wire:model="startTime" placeholder="Start Time" />
-                        </div>
-
-                        <div class="seminar-date-area">
-
-                            <x-form.flatpicker label="End Date" wire:model="endDate" name="datepicker" />
-                        </div>
-
-
-                        <div class="time-picker-area my-3">
-                            <x-form.input type="text" wire:model="endTime" placeholder="End Time" />
-                        </div>
-
-
-
-                        <x-form.select label="Select Training Mode" wire:model="trainingMode">
-                        <option >Choose</option>
-                            @foreach (App\Enums\TrainingMode::cases() as $trainingMode)
-                            <option value="{{ $trainingMode->value }}">{{ $trainingMode->value }}</option>
-                            @endforeach
-                        </x-form.select>
-
-                        <x-form.input type="text" label="Zoom Link" wire:model="link" placeholder="Type" />
-
-                        <x-form.select label="Select Training Language" wire:model="languageId">
-                        <option >Choose</option>
-                            @foreach ($languages as $language)
-                            <option value="{{ $language->id }}">{{ $language->name }}</option>
-                            @endforeach
-                            <!-- <option value="French">French</option>
-                <option value="English">English</option>
-                <option value="English">English</option>
-                <option value="English">English</option>
-                <option value="French">French</option> -->
-                        </x-form.select>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Summary of the Course" wire:model="summary" placeholder="Summary">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Course Outline" wire:model="outline" placeholder="Outline">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Learning Outcomes" wire:model="outcomes" placeholder="Outcomes">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Assessments" wire:model="assesments" placeholder="Assesments">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Teaching and learning Activities" wire:model="activities" placeholder="Activities">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Learning Recourses" wire:model="resources" placeholder="Resources">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Prescribed Textbook and Software" wire:model="prescribedMaterials" placeholder="Prescribed Materials">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
-
-                        <div class="step step-2 mb-4">
-                            <div class="main-form position-relative">
-                                <x-form.textarea label="Recommended Reading" wire:model="recommendedReading" placeholder="Recommended Reading">
-                                    Write description
-                                </x-form.textarea>
-                                <span class="edux-word-count">0/200</span>
-                            </div>
-                        </div>
+                        
 
                         <div class="create-training-button-area">
-                            <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">Cancel</button>
-                            <button class="btn btn-primary btn-md w-100" wire:click="submitForm">Preview</button>
+                            
+                            <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon" wire:click="back">Back</button>
+                            
+                            <button class="btn btn-primary btn-md w-100" wire:click="next">{{$currentStep < 4 ? 'Continue' : 'Save'}}</button>
                         </div>
 
                     </div>
