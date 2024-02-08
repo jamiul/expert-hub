@@ -2,7 +2,7 @@
     <div class="container">
         <div style="margin-bottom:34px; max-width: 700px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Experts</h2>
-            <p class="section-title-lead">Discover Skillsets Of Our Experts</p>
+            <p class="section-title-lead">Discover Our Experts</p>
         </div>
         <div class="row">
             <div class="col-lg-6">

@@ -69,6 +69,31 @@
                 </div>
             </div>
         @endif
+
+        @if(in_array('individual.verification.additional_document', $user->expert_kyc->requirements['currently_due']))
+            <h6 class="mb-2 mt-5">Upload Additional Verification Document
+                <div class="tooltip-wrapper bottom-left">
+                    <i>
+                        <x-icon.info fill="#0059C9"/>
+                    </i>
+                    <div class="tooltip-content">Upload Identity Verification Document eg: Passport, Driver Licence, Photo Card, Proof of Age card etc
+                    </div>
+                </div>
+            </h6>
+
+            <div class="row" wire:ignore>
+                <div class="col-md-6">
+                    <x-form.input type="file" label="Additional Document Front" wire:model="additional_document_front" />
+                    <p class="mt-2 mb-0 edux-supported-file">The uploaded file needs to be a color image (smaller than 8,000px by 8,000px), in JPG, PNG, or PDF format, and less than 10 MB in size.</p>
+                    @error('additional_document_front') <span class="error">{{ $message }}</span> @enderror
+                </div>
+                <div class="col-md-6">
+                    <x-form.input type="file" label="Additional Document Back" wire:model="additional_document_back" />
+                    <p class="mt-2 mb-0 edux-supported-file">The uploaded file needs to be a color image (smaller than 8,000px by 8,000px), in JPG, PNG, or PDF format, and less than 10 MB in size.</p>
+                    @error('additional_document_back') <span class="error">{{ $message }}</span> @enderror
+                </div>
+            </div>
+        @endif
     </div>
 
     <x-slot name="button">

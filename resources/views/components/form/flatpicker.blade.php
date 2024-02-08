@@ -7,13 +7,16 @@
 'tooltip' => null,
 'minDate' => null,
 'maxDate' => null,
+'dateRange' => false,
 ])
 <div
     x-data="{
-        value: ['{{date('Y/m/d')}}'],
+        value: ['{{now()->format('d M Y')}}'],
         init() {
             let picker = flatpickr(this.$refs.picker, {
-                {{-- mode: 'range', --}}
+            @if($dateRange)
+            mode: 'range',
+            @endif
             @if($minDate)
             minDate: '{{ $minDate }}',
             @endif
