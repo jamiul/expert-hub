@@ -87,4 +87,8 @@ class Contract extends Model
     {
         return $this->disputes->where('status', DisputeStatus::Open)->first();
     }
+
+    public function transactions() {
+        return $this->morphMany(Transaction::class, 'reference');
+    }
 }
