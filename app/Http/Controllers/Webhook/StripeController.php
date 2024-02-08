@@ -576,7 +576,7 @@ class StripeController extends Controller {
             $client = User::find( $client_id );
             $client->notify( new PaymentNotification( [
                 'title'   => "Refunded",
-                'message' => "Refunded " . $paymentData->amount_refunded / 100 . ' ' . $paymentData->currency,
+                'message' => "Refunded " . number_format($paymentData->amount_refunded / 100, 2) . ' ' . $paymentData->currency,
                 'link'    => route( 'client.payment.billing' ),
                 'button'  => 'View Details',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),

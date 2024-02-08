@@ -24,7 +24,7 @@ class Invoice extends Modal
                 "invoice.pdf"
             );
         } catch (\Exception $ex){
-            dd($ex->getMessage());
+            toast('warning', $ex->getMessage(), $this);
         }
     }
 

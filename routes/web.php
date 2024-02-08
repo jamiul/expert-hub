@@ -122,28 +122,17 @@ Route::group(['prefix' => 'webhooks'], function (){
 
 Route::group([ 'middleware' => ['auth', 'expert'], 'prefix' => 'expert', 'as' => 'expert.'], function (){
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-    Route::any('/payment/onboard', [PaymentController::class, 'onboard'])->name('payment.onboard');
-    Route::any('/payment/withdrawal-methods', [PaymentController::class, 'withdrawalMethod'])->name('payment.withdrawal');
-    Route::any('/payment/withdraw', [PaymentController::class, 'withdraw'])->name('payment.withdraw');
-    Route::any('/payment/request-release', [PaymentController::class, 'requestRelease'])->name('payment.requestRelease');
     Route::get('/payment/billing-report', [PaymentController::class, 'billingReport'])->name('payment.billing');
 
     //refund make
     Route::get('/payment/refund/{milestone_id}', [PaymentController::class, 'refundMilestone'])->name('payment.refundMilestone');
-    Route::get('/payment/refund-client/{milestone_id}', [PaymentController::class, 'refundToCustomer'])->name('payment.refundToCustomer');
-    //temp
-    Route::post('/payment/account-session', [PaymentController::class, 'accountSession'])->name('payment.account_session');
 });
 
 Route::group([ 'middleware' => ['auth', 'client'], 'prefix' => 'client', 'as' => 'client.'], function (){
     Route::any('/pay', [\App\Http\Controllers\Client\PaymentController::class, 'pay'])->name('payment.pay');
     Route::get('/payment', [\App\Http\Controllers\Client\PaymentController::class, 'index'])->name('payment.index');
     Route::get('/payment/billing-report', [\App\Http\Controllers\Client\PaymentController::class, 'billingReport'])->name('payment.billing');
-    Route::get('/payment/accept-milestone', [\App\Http\Controllers\Client\PaymentController::class, 'acceptMilestone'])->name('payment.acceptMilestone');
     Route::post('/payment/create-payment-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createPaymentIntent'])->name('payment.createPaymentIntent');
     Route::post('/payment/create-setup-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createSetupIntent'])->name('payment.createSetupIntent');
     Route::post('/payment/charge-card-off-session', [\App\Http\Controllers\Client\PaymentController::class, 'chargeCardOffsession'])->name('payment.chargeCardOffsession');
-
-    Route::post('/payment/make-default', [\App\Http\Controllers\Client\PaymentController::class, 'makeDefault'])->name('payment.makeDefault');
-    Route::post('/payment/detach-card', [\App\Http\Controllers\Client\PaymentController::class, 'detachCard'])->name('payment.detachCard');
 });
