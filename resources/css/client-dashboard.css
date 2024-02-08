@@ -9106,13 +9106,6 @@ table.edux-table-extra-padding td:last-child {
     margin-bottom: 10px;
 }
 
-.edux-ref-content-area {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-bottom: 1px solid #E7E5EF;
-    padding: 12px 0px;
-}
 
 .dingle-ref-item {
     display: flex;
@@ -9133,65 +9126,13 @@ table.edux-table-extra-padding td:last-child {
     width: 50%;
 }
 
-.edux-modal-dialog-invoice {
-    max-width: 1665px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.dingle-ref-item-invoice {
-    display: flex;
-    /* justify-content: space-between; */
-    flex-direction: column;
-    width: 50%;
-    /* gap: 12px; */
-}
-
-.dingle-ref-item-invoice-price {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    border-radius: 8px;
-    border: 1px solid rgba(14, 0, 98, 0.10);
-    background: #FFF;
-    padding: 24px;
-}
-
-.dingle-ref-item-invoice-price p {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form-invoice {
-
-    display: flex;
-    justify-content: space-between;
-
-}
 
 .dingle-ref-item-invoice p {
     display: flex;
     justify-content: space-between;
 }
 
-.dingle-ref-content-total {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 4px 4px 0px 0px;
-    border-top: 1px solid #E7E5EF;
-    border-right: 1px solid #E7E5EF;
-    border-left: 1px solid #E7E5EF;
-    background: #F1F3FA;
-    flex: 1 0 0;
-    color: #6E737C;
-    font-family: Colfax;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 137%;
-    padding: 16px;
-}
+
 
 .dingle-ref-item-price {
     display: flex;
