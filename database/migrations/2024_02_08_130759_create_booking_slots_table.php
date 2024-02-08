@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultation_bookings', function (Blueprint $table) {
+        Schema::create('booking_slots', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('consultation_id');
-            // $table->morphs('contract_type'); //@TODO
-            $table->foreignId('client_id');
-            // $table->foreignId('expert_id');
+            $table->foreignId('eoi_id')->nullable();
+            $table->foreignId('offer_id')->nullable();
+            $table->foreignId('consultation_booking_id')->nullable();
+            $table->string('title');
+            $table->dateTime('consultation_time')->nullable();
+            $table->date('due_date')->nullable();
             $table->decimal('amount');
-            $table->decimal('escrow_amount')->nullable();
-            $table->text('message')->nullable();
+            $table->dateTime('declined_at')->nullable();
+            $table->dateTime('approved_at')->nullable();
             $table->string('status');
-            $table->string('reason')->nullable();
-            $table->tinyInteger('score')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consultation_bookings');
+        Schema::dropIfExists('booking_slots');
     }
 };
