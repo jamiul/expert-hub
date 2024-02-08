@@ -51,9 +51,9 @@ class Report extends Component
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
-        $data = $transactions->toArray();
+//        $data = $transactions->toArray();
 
-        return Excel::download(new ExpertTransactionExport($data), 'invoice.csv');
+        return Excel::download(new ExpertTransactionExport($transactions), 'invoice.csv');
     }
 
     public function downloadInvoices() {

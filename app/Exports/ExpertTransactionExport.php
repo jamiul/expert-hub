@@ -2,30 +2,20 @@
 
 namespace App\Exports;
 
-use App\Models\ExpertTransaction;
-use Maatwebsite\Excel\Concerns\FromArray;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
 
-class ExpertTransactionExport implements FromArray
-{
+class ExpertTransactionExport implements FromView {
 
     protected $invoices;
 
-    public function __construct(array $invoices)
-    {
+    public function __construct( $invoices ) {
         $this->invoices = $invoices;
     }
 
-    public function array(): array
-    {
-        return $this->invoices;
-    }
-
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
-    {
-        return $this->invoices->all();
+    public function view(): View {
+        return view( 'exports.invoice-expert', [
+            'invoices' => $this->invoices
+        ] );
     }
 }
