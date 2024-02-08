@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Enums\MilestoneStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
+use App\Models\BookingSlot;
 use App\Models\ClientTransaction;
+use App\Models\Consultation;
+use App\Models\ConsultationBooking;
 use App\Models\Contract;
 use App\Models\Milestone;
 use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
+use App\Models\Training;
+use App\Models\TrainingParticipant;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -46,13 +52,9 @@ class PaymentController extends Controller {
      * List of payment methods /payment
      * */
     public function index() {
-        $user = auth()->user();
-
         $this->__setStripeCustomer();
 
-        $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
-
-        return view( 'frontend.client.payment.index', compact( 'payment_methods' ) );
+        return view( 'frontend.client.payment.index' );
     }
 
     /*
@@ -76,16 +78,39 @@ class PaymentController extends Controller {
         $reference = $request->reference;
         if ( $reference == 'contract' ) {
             $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
+            $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
+
+            $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'offer' ) {
             $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
+            $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
+
+            $milestone_amount = $milestones->sum( 'amount' );
+        } else if ( $reference == 'consultation' ) {
+            $contract   = Consultation::where( 'id', $request->id )->firstOrFail();
+            $project   = ConsultationBooking::where( 'consultation_id', $contract->id )->firstOrFail();
+            $milestones   = BookingSlot::where( 'consultation_booking_id', $project->id )->where( 'status', 'pending' )->get();
+
+            $project->title = $contract->expertField->name;
+
+            $milestones->map(function ($q){
+                $q->title = $q->consultation_time;
+            });
+            $milestone_amount = $milestones->sum( 'amount' );
+        } else if($reference == 'training'){
+            $project = TrainingParticipant::where( 'id', $request->id )->firstOrFail();
+            $milestones = TrainingParticipant::where( 'id', $request->id )->get();
+            $contract = $project->training;
+
+            $project->title = $project->training->title;
+
+            $milestone_amount = $milestones->sum( 'amount' );
         } else {
             abort( 404 );
         }
-        $milestone_amount = $milestones->sum( 'amount' );
+
         //breakdown charge into pieces
         $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
@@ -237,74 +262,6 @@ class PaymentController extends Controller {
         return response()->json( [
             'clientSecret' => $intent->client_secret
         ] );
-    }
-
-    /*
-     * Make customer card default /payment/make-default
-     * */
-    public function makeDefault( Request $request ) {
-        $user = auth()->user();
-
-        $this->stripe->customers->update(
-            $user->profile->stripe_client_id,
-            [
-                'invoice_settings' => [
-                    'default_payment_method' => $request->payment_method_id
-                ]
-            ]
-        );
-        PaymentMethod::where( 'user_id', $user->id )->update( [
-            'is_default' => 0
-        ] );
-        PaymentMethod::where( 'user_id', $user->id )->where( 'stripe_payment_id', $request->payment_method_id )->update( [
-            'is_default' => 1
-        ] );
-
-        return response()->json( [
-            'status'  => 'success',
-            'message' => "Card set as default."
-        ] );
-    }
-
-    /*
-     * remove customer card from his account /payment/detach-card
-     * */
-    public function detachCard( Request $request ) {
-        $user = auth()->user();
-
-        $this->stripe->paymentMethods->detach(
-            $request->payment_method_id,
-            []
-        );
-
-        return response()->json( [
-            'status'  => 'success',
-            'message' => "Card removed successfully."
-        ] );
-    }
-
-    /*
-     * Accept requested milestone /payment/accept-milestone
-     * */
-    public function acceptMilestone() {
-        $milestone            = Milestone::find( 1 );
-        $milestone_amount     = $milestone->amount;
-        $CONNECTED_ACCOUNT_ID = $milestone->eoi->expert->stripe_acct_id;
-
-        //todo: first store inside schedule transfer job then process it in 3 days.
-        $acceptMilestone = $this->stripe->transfers->create( [
-            'amount'         => $milestone_amount * 100,
-            'currency'       => 'aud',
-            'destination'    => $CONNECTED_ACCOUNT_ID,
-            'transfer_group' => $CONNECTED_ACCOUNT_ID,
-            'metadata'       => [
-                'reference_id'   => $milestone->id,
-                'reference_type' => 'milestone'
-            ]
-        ] );
-        //todo: save transfer into db and implement through webhook
-
-        dd( $acceptMilestone );
     }
 
 }

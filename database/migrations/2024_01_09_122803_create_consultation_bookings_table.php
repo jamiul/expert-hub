@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('consultation_bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('slot_id');
-            $table->foreignId('profile_id');
-            $table->text('note');
+            $table->foreignId('consultation_id');
+            // $table->morphs('contract_type'); //@TODO
+            $table->foreignId('client_id');
+            // $table->foreignId('expert_id');
+            $table->decimal('amount');
+            $table->decimal('escrow_amount')->nullable();
+            $table->text('message')->nullable();
             $table->string('status');
+            $table->string('reason')->nullable();
+            $table->tinyInteger('score')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();

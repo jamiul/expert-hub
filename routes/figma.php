@@ -49,6 +49,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-public-profile', 'figma.expert-public-profile');
     Route::view('/user-consultation-booking-not-valuable', 'figma.not-available-expert-public-profile');
     Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
+    Route::view('/expert-public-profile-v2', 'figma.expert-profile-update');
 
 
     //Find Training Page

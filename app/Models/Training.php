@@ -28,6 +28,11 @@ class Training extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class, 'expert_id');
+    }
+
     public function language()
     {
         return $this->belongsTo(Language::class);

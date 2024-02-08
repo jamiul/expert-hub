@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('expert_id');
             $table->string('title');
             $table->decimal('fee')->nullable();
             $table->foreignId('country_id')->nullable();
