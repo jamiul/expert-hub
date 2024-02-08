@@ -34,7 +34,7 @@
     </div>
     <div class="expert-team-interview-notice">
         <img src="{{ asset('assets/frontend/img/interview-icon.png') }}">
-        <p>You can hire experts directly here for <a href="#">TV interview</a> or <a
-                href="#">Keynote Speakers</a></p>
+        <p>You can hire experts directly here for <a href="{{ route('find.experts') }}">TV interview</a> or <a
+                href="{{ route('find.experts') }}">Keynote Speakers</a></p>
     </div>
 </div>

@@ -1,80 +1,66 @@
-<div>
-    <ul class="nav nav-tabs px-4 pt-4" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button wire:click="$set('tab', 'feed')" class="nav-link {{ $tab == 'feed' ? 'active' : '' }}" type="button">
-                My Feed
-            </button>
+<div class="pt-20" x-data="{ activeTab: 'myFeed' }">
+
+    <ul class="secondary-tab-nav" role="tablist">
+        <li x-on:click="activeTab = 'myFeed'" :class="{ 'tab-nav-item': true, 'active': activeTab === 'myFeed' }">
+            My Feed
         </li>
-        <li class="nav-item" role="presentation">
-            <button wire:click="$set('tab', 'best')" class="nav-link {{ $tab == 'best' ? 'active' : '' }}"
-                type="button">
-                Best Match
-            </button>
+        <li x-on:click="activeTab = 'bestMatch'" :class="{ 'tab-nav-item': true, 'active': activeTab === 'bestMatch' }">
+            Best Match
         </li>
-        <li class="nav-item" role="presentation">
-            <button wire:click="$set('tab', 'save')" class="nav-link {{ $tab == 'save' ? 'active' : '' }}"
-                type="button">
-                Saved Jobs
-            </button>
+        <li x-on:click="activeTab = 'savedJobs'" :class="{ 'tab-nav-item': true, 'active': activeTab === 'savedJobs' }">
+            Saved Jobs
         </li>
-    </ul> <!-- Tab panes -->
+    </ul>
     <div class="tab-content">
-        <!--.//feed__tab start Here-->
-        <div class="tab-pane {{ $tab == 'feed' ? 'active' : '' }}" id="feedTab" role="tabpanel"
-            aria-labelledby="feedTab-tab">
-            <ul class="feed__list">
-                @forelse ($projects as $project)
-                    <li class="feed__card tranisition" id="project-list-{{ $project->id }}">
-                        <h2 class="title lead fw-medium">
-                            <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/bag.svg') }}"
-                                width="24" height="24" alt="bag">
-                            <a href="{{ route('projects.show', $project) }}">
-                                {{ $project->title ?? '' }}
-                            </a>
-                        </h2>
-                        <div class="info__list fs-13 d-flex justify-content-between align-items-center pt-1">
-                            <div class="d-inline-flex fw-medium">
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/label.svg') }}"
-                                        width="20" height="20" alt="label"> <span class="ps-1">
-                                        {{ $project->expertise->name ?? '' }}
-                                    </span>
+        <div x-show="activeTab === 'myFeed'" class="my-feed-tab-content" x-cloak>
+            <!-- Content for My Feed tab -->
+
+            @forelse ($projects as $project)
+                <div class="project-list-card-item">
+                    <div class="project-list-card-item-header">
+                        <div class="project-item-title">
+                            <h3 class="h6 d-flex gap-2 mb-0">
+                                <x-icon.briefcase width="24" height="24" fill="#9196A2" />
+                                <a href="{{ route('projects.show', $project) }}">
+                                    {{ $project->title }}
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
+                            <div class="project-item-meta">
+                                <div class="">
+                                    <x-icon.tag fill="#9196A2" />
+                                    {{ $project->expertise->name ?? '' }}
                                 </div>
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/clock.svg') }}"
-                                        width="20" height="20" alt="clock"> <span class="ps-1">
-                                        {{ $project->created_at->diffForHumans() }}
-                                    </span>
+                                <div class="">
+                                    <x-icon.clock fill="#9196A2" />
+                                    {{ $project->created_at->diffForHumans() }}
                                 </div>
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/globe.svg') }}"
-                                        width="20" height="20" alt="globe"> <span
-                                        class="ps-1">{{ $project->client->user->country->name ?? '' }}</span>
+                                <div class="">
+                                    <x-icon.globe width="20" height="20" fill="#9196A2" />
+                                    {{ $project->client->user->country->name ?? '' }}
                                 </div>
                             </div>
-                            <div class="d-inline-flex align-items-center">
-                                <span class="fw-normal text-muted">
-                                    {{ $project->type }}:&nbsp;
-                                </span>
-                                <span class="fw-medium text-muted">
-                                    ${{ $project->budget_start_amount }}
-                                </span>
+                            <div class="project-item-action d-flex align-items-center gap-2">
+                                <div class="project-item-price">
+                                    {{ $project->type }}: <strong>${{ $project->budget_start_amount }}@if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong>
+                                </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                            aria-expanded="false">
                                         <x-icon.share />
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
+                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
                                                 <x-icon.linkedin />
                                                 Linkedin
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                                href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
                                                 <x-icon.facebook />
                                                 Facebook
                                             </a>
@@ -88,188 +74,84 @@
                                     </ul>
                                 </div>
                                 <button wire:click="favourite({{ $project->id }})"
-                                    class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
-                                    <span class="heart-line"> <x-icon.heart fill="#0036E3" /></span>
-                                    <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3" /></span>
+                                        class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
+                                    <span class="heart-line"><x-icon.heart fill="#0036E3" /></span>
+                                    <span class="heart-filled"><x-icon.heart-filled fill="#0036E3" /></span>
                                 </button>
                             </div>
                         </div>
-                        <hr>
-                        <div class="desc text-dark fs-15 text-summary">
+                    </div>
+                    <div class="project-list-card-item-body">
+                        <p class="mb-0 text-summary text-base">
                             {{ $project->description }}
-                        </div>
-                        <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
-                            @foreach ($project->skills as $skill)
-                                <span class="tag">{{ $skill->name }}</span>
-                            @endforeach
-                            @if ($project->skills->count() > 4)
-                                <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
-                            @endif
-                        </div>
-                    </li>
-                @empty
-                    <x-empty />
-                @endforelse
-            </ul>
+                        </p>
+                    </div>
+
+                    <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                        @foreach ($project->skills as $skill)
+                            <span class="tag">{{ $skill->name }}</span>
+                        @endforeach
+                        @if ($project->skills->count() > 4)
+                            <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                        @endif
+                    </div>
+                </div>
+            @empty
+                <x-empty/>
+            @endforelse
+
             {{ $projects->links() }}
         </div>
-        <!--.//feed__tab End Here-->
 
-        <!--.//feed__tab start Here-->
-        <div class="tab-pane {{ $tab == 'best' ? 'active' : '' }}" id="bestMatch" role="tabpanel"
-            aria-labelledby="bestMatch-tab">
-            <div class="tab-pane" id="#bestMatch" role="tabpanel" aria-labelledby="#bestMatch-tab">
-                <ul class="feed__list">
-                    @forelse ($projects as $project)
-                        <li class="feed__card tranisition" id="project-list-{{ $project->id }}">
-                            <h2 class="title lead fw-medium">
-                                <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/bag.svg') }}"
-                                    width="24" height="24" alt="bag">
-                                <a href="#">
-                                    {{ $project->title ?? '' }}
+        <div x-show="activeTab === 'bestMatch'" class="best-match-tab-content" x-cloak>
+            <!-- Content for Best Match tab -->
+
+            @forelse ($projects as $project)
+                <div class="project-list-card-item">
+                    <div class="project-list-card-item-header">
+                        <div class="project-item-title">
+                            <h3 class="h6 d-flex gap-2 mb-0">
+                                <x-icon.briefcase width="24" height="24" fill="#9196A2" />
+                                <a href="{{ route('projects.show', $project) }}">
+                                    {{ $project->title }}
                                 </a>
-                            </h2>
-                            <div class="info__list fs-13 d-flex justify-content-between align-items-center pt-1">
-                                <div class="d-inline-flex fw-medium">
-                                    <div class="d-inline-flex align-items-center me-2">
-                                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/label.svg') }}"
-                                            width="20" height="20" alt="label"> <span class="ps-1">
-                                            {{ $project->expertise->name ?? '' }}
-                                        </span>
-                                    </div>
-                                    <div class="d-inline-flex align-items-center me-2">
-                                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/clock.svg') }}"
-                                            width="20" height="20" alt="clock"> <span class="ps-1">
-                                            {{ $project->created_at->diffForHumans() }}
-                                        </span>
-                                    </div>
-                                    <div class="d-inline-flex align-items-center me-2">
-                                        <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/globe.svg') }}"
-                                            width="20" height="20" alt="globe"> <span
-                                            class="ps-1">{{ $project->client->user->country->name ?? '' }}</span>
-                                    </div>
+                            </h3>
+                        </div>
+                        <div class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
+                            <div class="project-item-meta">
+                                <div class="">
+                                    <x-icon.tag fill="#9196A2" />
+                                    {{ $project->expertise->name ?? '' }}
                                 </div>
-                                <div class="d-inline-flex align-items-center">
-                                    <span class="fw-normal text-muted">
-                                        {{ $project->type }}:&nbsp;
-                                    </span>
-                                    <span class="fw-medium text-muted">
-                                        ${{ $project->budget_start_amount }}
-                                    </span>
-                                    <div class="dropdown">
-                                        <button class="btn btn-outline-light m-1" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <x-icon.share />
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li>
-                                                <a class="dropdown-item" target="_blank"
-                                                    href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
-                                                    <x-icon.linkedin />
-                                                    Linkedin
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" target="_blank"
-                                                    href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
-                                                    <x-icon.facebook />
-                                                    Facebook
-                                                </a>
-                                            </li>
-                                            <li x-data="{ projectUrl: '{{ route('projects.show', $project) }}' }">
-                                                <button class="dropdown-item" x-clipboard="projectUrl">
-                                                    <x-icon.copy />
-                                                    Copy Link
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <button wire:click="favourite({{ $project->id }})"
-                                        class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
-                                        <span class="heart-line"> <x-icon.heart fill="#0036E3" /></span>
-                                        <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3" /></span>
-                                    </button>
+                                <div class="">
+                                    <x-icon.clock fill="#9196A2" />
+                                    {{ $project->created_at->diffForHumans() }}
+                                </div>
+                                <div class="">
+                                    <x-icon.globe width="20" height="20" fill="#9196A2" />
+                                    {{ $project->client->user->country->name ?? '' }}
                                 </div>
                             </div>
-                            <hr>
-                            <div class="desc text-dark fs-15 text-summary">
-                                {{ $project->description }}
-                            </div>
-                            <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
-                                @foreach ($project->skills as $skill)
-                                    <span class="tag">{{ $skill->name }}</span>
-                                @endforeach
-                                @if ($project->skills->count() > 4)
-                                    <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
-                                @endif
-                            </div>
-                        </li>
-                    @empty
-                        <x-empty />
-                    @endforelse
-
-                </ul>
-
-                {{ $projects->links() }}
-            </div>
-            <!--.//feed__tab-->
-        </div>
-        <!--.//best__match-->
-        <div class="tab-pane {{ $tab == 'save' ? 'active' : '' }}" id="savedJobs" role="tabpanel"
-            aria-labelledby="savedJobs-tab">
-            <ul class="feed__list">
-                @forelse ($favoriteProjects as $project)
-                    <li class="feed__card tranisition" id="project-list-{{ $project->id }}">
-                        <h2 class="title lead fw-medium">
-                            <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/bag.svg') }}"
-                                width="24" height="24" alt="bag">
-                            <a href="#">
-                                {{ $project->title ?? '' }}
-                            </a>
-                        </h2>
-                        <div class="info__list fs-13 d-flex justify-content-between align-items-center pt-1">
-                            <div class="d-inline-flex fw-medium">
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/label.svg') }}"
-                                        width="20" height="20" alt="label"> <span class="ps-1">
-                                        {{ $project->expertise->name ?? '' }}
-                                    </span>
+                            <div class="project-item-action d-flex align-items-center gap-2">
+                                <div class="project-item-price">
+                                    {{ $project->type }}: <strong>${{ $project->budget_start_amount }}@if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong>
                                 </div>
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/clock.svg') }}"
-                                        width="20" height="20" alt="clock"> <span class="ps-1">
-                                        {{ $project->created_at->diffForHumans() }}
-                                    </span>
-                                </div>
-                                <div class="d-inline-flex align-items-center me-2">
-                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/globe.svg') }}"
-                                        width="20" height="20" alt="globe"> <span
-                                        class="ps-1">{{ $project->client->user->country->name ?? '' }}</span>
-                                </div>
-                            </div>
-                            <div class="d-inline-flex align-items-center">
-                                <span class="fw-normal text-muted">
-                                    {{ $project->type }}:&nbsp;
-                                </span>
-                                <span class="fw-medium text-muted">
-                                    ${{ $project->budget_start_amount }}
-                                </span>
                                 <div class="dropdown">
-                                    <button class="btn btn-outline-light m-1" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
                                         <x-icon.share />
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
+                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
                                                 <x-icon.linkedin />
                                                 Linkedin
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" target="_blank"
-                                                href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
                                                 <x-icon.facebook />
                                                 Facebook
                                             </a>
@@ -283,32 +165,126 @@
                                     </ul>
                                 </div>
                                 <button wire:click="favourite({{ $project->id }})"
-                                    class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
-                                    <span class="heart-line"> <x-icon.heart fill="#0036E3" /></span>
-                                    <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3" /></span>
+                                        class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
+                                    <span class="heart-line"><x-icon.heart fill="#0036E3" /></span>
+                                    <span class="heart-filled"><x-icon.heart-filled fill="#0036E3" /></span>
                                 </button>
                             </div>
                         </div>
-                        <hr>
-                        <div class="desc text-dark fs-15 text-summary">
+                    </div>
+                    <div class="project-list-card-item-body">
+                        <p class="mb-0 text-summary text-base">
                             {{ $project->description }}
+                        </p>
+                    </div>
+
+                    <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                        @foreach ($project->skills as $skill)
+                            <span class="tag">{{ $skill->name }}</span>
+                        @endforeach
+                        @if ($project->skills->count() > 4)
+                            <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                        @endif
+                    </div>
+                </div>
+            @empty
+                <x-empty/>
+            @endforelse
+
+            {{ $projects->links() }}
+        </div>
+
+        <div x-show="activeTab === 'savedJobs'" class="saved-jobs-tab-content" x-cloak>
+            <!-- Content for Saved Jobs tab -->
+            @forelse ($favoriteProjects as $project)
+                <div class="project-list-card-item">
+                    <div class="project-list-card-item-header">
+                        <div class="project-item-title">
+                            <h3 class="h6 d-flex gap-2 mb-0">
+                                <x-icon.briefcase width="24" height="24" fill="#9196A2" />
+                                <a href="{{ route('projects.show', $project) }}">
+                                    {{ $project->title }}
+                                </a>
+                            </h3>
                         </div>
-                        <div class="tag-list light-tag-list mt-3" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
-                            @foreach ($project->skills as $skill)
-                                <span class="tag">{{ $skill->name }}</span>
-                            @endforeach
-                            @if ($project->skills->count() > 4)
-                                <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
-                            @endif
+                        <div class="project-item-meta-wrapper d-flex align-items-center gap-2 justify-content-between">
+                            <div class="project-item-meta">
+                                <div class="">
+                                    <x-icon.tag fill="#9196A2" />
+                                    {{ $project->expertise->name ?? '' }}
+                                </div>
+                                <div class="">
+                                    <x-icon.clock fill="#9196A2" />
+                                    {{ $project->created_at->diffForHumans() }}
+                                </div>
+                                <div class="">
+                                    <x-icon.globe width="20" height="20" fill="#9196A2" />
+                                    {{ $project->client->user->country->name ?? '' }}
+                                </div>
+                            </div>
+                            <div class="project-item-action d-flex align-items-center gap-2">
+                                <div class="project-item-price">
+                                    {{ $project->type }}: <strong>${{ $project->budget_start_amount }}@if($project->budget_end_amount)- ${{ $project->budget_end_amount }} @endif</strong>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                        <x-icon.share />
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a class="dropdown-item" target="_blank"
+                                               href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
+                                                <x-icon.linkedin />
+                                                Linkedin
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" target="_blank"
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ route('projects.show', $project) }}">
+                                                <x-icon.facebook />
+                                                Facebook
+                                            </a>
+                                        </li>
+                                        <li x-data="{ projectUrl: '{{ route('projects.show', $project) }}' }">
+                                            <button class="dropdown-item" x-clipboard="projectUrl">
+                                                <x-icon.copy />
+                                                Copy Link
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button wire:click="favourite({{ $project->id }})"
+                                        class="btn btn-outline-light btn-favorite m-1 {{ $project->favourited() ? 'favorited' : '' }}">
+                                    <span class="heart-line"><x-icon.heart fill="#0036E3" /></span>
+                                    <span class="heart-filled"><x-icon.heart-filled fill="#0036E3" /></span>
+                                </button>
+                            </div>
                         </div>
-                    </li>
-                @empty
-                    <x-empty />
-                @endforelse
-            </ul>
+                    </div>
+                    <div class="project-list-card-item-body">
+                        <p class="mb-0 text-summary text-base">
+                            {{ $project->description }}
+                        </p>
+                    </div>
+
+                    <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $project->skills->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+                        @foreach ($project->skills as $skill)
+                            <span class="tag">{{ $skill->name }}</span>
+                        @endforeach
+                        @if ($project->skills->count() > 4)
+                            <button x-on:click="showAllTags = !showAllTags; buttonText = showAllTags ? 'Show Less' : ' + {{ $project->skills->count() - 4 }}' + ' More' " x-text="buttonText" class="all-tags-trigger"></button>
+                        @endif
+                    </div>
+                </div>
+            @empty
+                <x-empty/>
+            @endforelse
+
             {{ $favoriteProjects->links() }}
         </div>
-        <!--.//savedJobs-->
+
+
     </div>
-    <!--.//tab__pane-->
+
 </div>

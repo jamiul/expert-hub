@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Livewire\Client\Payment;
+namespace App\Livewire\Expert\Payment;
 
-use App\Enums\ClientTransactionType;
-use App\Models\ClientTransaction;
+use App\Enums\ExpertTransactionType;
+use App\Models\ExpertTransaction;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
@@ -15,7 +15,7 @@ class Report extends Component
 
     public $balance;
 
-    public $escrow_balance;
+    public $pending_balance;
 
     public $perPage = 10;
 
@@ -23,7 +23,7 @@ class Report extends Component
 
     public $type;
 
-    public $experts;
+    public $clients;
 
     public $customer;
 
@@ -33,13 +33,13 @@ class Report extends Component
 
     public function downloadCsv() {
         $user = auth()->user();
-        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id );
         if($this->type){
-            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+            $transactions = $transactions->where('type', ExpertTransactionType::from($this->type));
         }
 
         if($this->customer){
-            $transactions = $transactions->where('expert_id', $this->customer);
+            $transactions = $transactions->where('client_id', $this->customer);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -48,13 +48,13 @@ class Report extends Component
 
     public function downloadInvoices() {
         $user = auth()->user();
-        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id );
         if($this->type){
-            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+            $transactions = $transactions->where('type', ExpertTransactionType::from($this->type));
         }
 
         if($this->customer){
-            $transactions = $transactions->where('expert_id', $this->customer);
+            $transactions = $transactions->where('client_id', $this->customer);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -75,7 +75,7 @@ class Report extends Component
         $user = auth()->user();
 
         $this->balance = $user->profile->balance;
-        $this->escrow_balance = $user->profile->escrow_balance;
+        $this->pending_balance = $user->profile->escrow_balance;
     }
 
     public function paginationView()
@@ -87,22 +87,22 @@ class Report extends Component
     {
         $user = auth()->user();
 
-        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        $transactions = ExpertTransaction::where( 'expert_id', $user->id );
 
         if($this->type){
-            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+            $transactions = $transactions->where('type', ExpertTransactionType::from($this->type));
         }
 
         if($this->customer){
-            $transactions = $transactions->where('expert_id', $this->customer);
+            $transactions = $transactions->where('client_id', $this->customer);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->paginate($this->perPage);
 
-        $this->types = ClientTransactionType::cases();
-        $this->experts = ClientTransaction::with('expert')->where('client_id', $user->id)->get()->unique('expert_id');
+        $this->types = ExpertTransactionType::cases();
+        $this->clients = ExpertTransaction::with('expert')->where('expert_id', $user->id)->get()->unique('expert_id');
 
-        return view('livewire.client.payment.report', [
+        return view('livewire.expert.payment.report', [
             'transactions' => $transactions
         ]);
     }
