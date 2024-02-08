@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Client;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
+use App\Models\Consultation;
+use App\Models\ConsultationBooking;
 use App\Models\Contract;
 use App\Models\Milestone;
 use App\Models\Offer;
@@ -74,14 +76,20 @@ class PaymentController extends Controller {
             $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
             $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
             $project    = $contract->project;
+            $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'offer' ) {
             $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
             $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
             $project    = $contract->project;
+            $milestone_amount = $milestones->sum( 'amount' );
+        } else if ( $reference == 'consultation' ) {
+            $contract   = ConsultationBooking::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
+            $project    = $contract->consultation;
+            $milestone_amount = $contract->sum( 'amount' );
         } else {
             abort( 404 );
         }
-        $milestone_amount = $milestones->sum( 'amount' );
+
         //breakdown charge into pieces
         $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
 
