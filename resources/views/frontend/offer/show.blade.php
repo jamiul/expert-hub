@@ -9,10 +9,12 @@
                         <div class="title-page-body p-40">
                             <x-expert.mini-card :expert="$offer->expert" card="true">
                                 <div class="expert-card-header-action d-flex gap-2 align-items-center">
+                                    @if($offer->status == \App\Enums\OfferStatus::Pending)
                                     @livewire('offer.withdraw', ['offer' => $offer])
-                                    <button class="btn btn-md btn-outline-primary">
+                                    @endif
+                                    <a href="{{ $conversation ? route('messaging.conversation',$conversation) : '' }}" class="btn btn-md btn-outline-primary">
                                         <x-icon.chat fill="#0036E3"/>   Chat Now
-                                    </button>
+                                    </a>
                                 </div>
                             </x-expert.mini-card>
                             

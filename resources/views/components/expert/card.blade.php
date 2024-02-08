@@ -19,15 +19,6 @@
                     <li>{{ $expert->user->country->name }}</li>
                 </ul>
                 <div class="d-flex gap-3 align-items-center">
-                    <div><strong class="fw-medium">${{ $expert->hourly_rate }} </strong>/ hr
-                    </div>
-                    <div class="star-ratings">
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                    </div>
                     <div class="project-expert-profile-status">
                         Available now
                     </div>

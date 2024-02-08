@@ -8,7 +8,7 @@ use Livewire\Form as BaseForm;
 
 class Form extends BaseForm
 {
-    #[Validate('required')]
+    #[Validate('required|min:500|max:2000')]
     public $biography = '';
 
     public function update()

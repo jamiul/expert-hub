@@ -1,10 +1,10 @@
 @extends('frontend.layouts.auth')
 @section('content')
-    @if (session('resent'))
+    {{-- @if (session('resent'))
         <div class="alert alert-success mt-2 mb-0" role="alert">
             A fresh verification link has been sent to your email address.
         </div>
-    @endif
+    @endif --}}
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-6">
