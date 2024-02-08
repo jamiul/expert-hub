@@ -8,7 +8,8 @@
                     <div class="sidebar-layout left-sidebar-layout training-details-layout">
                         <div class="page-sidebar">
                             <div class="sidebar-widget bb-1 mb-4">
-                                <button class="btn btn-primary btn-md w-100">Register Now</button>
+                                <button class="btn btn-primary btn-md w-100" onclick="Livewire.dispatch('modal.open', {component: 'training.register', arguments: {'training': {{$training}} }})">
+                                    Register Now</button>
                                 <button class="btn btn-outline-primary border-2 btn-md w-100 mt-2 btn-has-icon">
                                     <x-icon.chat width="20" height="20" fill="#0036E3"/>
                                     Message Now
