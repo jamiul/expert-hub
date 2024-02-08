@@ -733,7 +733,7 @@ class StripeController extends Controller {
                 'transaction_id' => $expertpayout->id,
                 'milestone_id'   => null,
                 'type'           => ExpertTransactionType::Withdrawal,
-                'description'    => "Wire Transfer ($payout->currency) xxxx-$withdrawalMethod->last4",
+                'description'    => "Wire Transfer to Direct to Local Bank ($payout->currency) - Account ending in $withdrawalMethod->last4",
                 'client_id'      => null,
                 'expert_id'      => $user_id,
                 'amount'         => $payout->amount / 100,

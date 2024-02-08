@@ -44,7 +44,10 @@ class GetPaid extends Modal {
                 'destination' => $bank_info->bank_id,
                 'amount'      => $amount,
                 'currency'    => $bank_info->currency,
-                'description' => $reference
+                'description' => $reference,
+                'metadata' => [
+                    'expert_id' => $user->id
+                ]
             ], [ 'stripe_account' => $acct_id ] );
 
             toast( 'success', 'Withdraw request was successful.', $this );

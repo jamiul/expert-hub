@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Expert\Payment;
 
+use App\Enums\ExpertTransactionType;
 use App\Helpers\PaymentHelper;
+use App\Models\ExpertTransaction;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -11,6 +13,8 @@ class GetPaid extends Component {
     public $expert_withdrawal;
 
     public $withdraw_schedule;
+
+    public $last_withdrawal;
 
     #[On( 'refresh' )]
     public function refreshBank() {
@@ -29,6 +33,10 @@ class GetPaid extends Component {
     public function render() {
         $user                    = auth()->user();
         $this->expert_withdrawal = $user->expert_withdrawal;
+
+        $this->last_withdrawal = ExpertTransaction::where('expert_id', $user->id)
+                                                  ->where('type', ExpertTransactionType::Withdrawal)
+                                                  ->latest()->first();
 
         return view( 'livewire.expert.payment.get-paid', [
             'user' => $user
