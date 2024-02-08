@@ -102,7 +102,7 @@ class End extends Modal
             'client_id' => $this->contract->client_id,
             'expert_id' => $this->contract->expert_id,
             'owner_id' => auth()->user()->profile->id,
-            'feedback' => $this->recommendation,
+            'feedback' => $this->feedback,
             'skill' => $this->skill,
             'availability' => $this->availability,
             'communication' => $this->communication,
