@@ -10,4 +10,8 @@ class TrainingParticipant extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function training() {
+        return $this->belongsTo(Training::class);
+    }
 }

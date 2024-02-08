@@ -18,7 +18,7 @@ class Invoice extends Modal
         $data = $this->transaction->toArray();
 
         try {
-            $pdfContent = Pdf::loadView('pdf.invoice', $data)->output();
+            $pdfContent = Pdf::loadView('pdf.invoice', [ 'data' => $data])->output();
             return response()->streamDownload(
                 fn () => print($pdfContent),
                 "invoice.pdf"

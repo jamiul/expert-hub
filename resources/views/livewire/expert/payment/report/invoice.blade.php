@@ -58,7 +58,7 @@
             </span>
                         <span class="csv-text" wire:loading.remove>Download Invoice</span>
                         <div wire:loading>
-                            Downloading Report...
+                            Downloading Invoice...
                         </div>
                     </button>
                 </p>

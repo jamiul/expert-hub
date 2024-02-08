@@ -48,4 +48,9 @@ class Consultation extends Model implements HasMedia
     {
         return $this->hasMany(ConsultationSlot::class, 'consultation_id');
     }
+
+    public function expert()
+    {
+        return $this->belongsTo(Profile::class, 'profile_id');
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Enums\MilestoneStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
+use App\Models\BookingSlot;
 use App\Models\ClientTransaction;
 use App\Models\Consultation;
 use App\Models\ConsultationBooking;
@@ -13,6 +14,8 @@ use App\Models\Milestone;
 use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Profile;
+use App\Models\Training;
+use App\Models\TrainingParticipant;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -77,17 +80,33 @@ class PaymentController extends Controller {
             $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
             $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
+
             $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'offer' ) {
             $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
             $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
+
             $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'consultation' ) {
-            $contract   = Consultation::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones   = ConsultationBooking::where( 'consultation_id', $contract->id )->where( 'status', 'pending' )->firstOrFail();
-            $project    = $contract->consultation;
-            $milestone_amount = $contract->sum( 'amount' );
+            $contract   = Consultation::where( 'id', $request->id )->firstOrFail();
+            $project   = ConsultationBooking::where( 'consultation_id', $contract->id )->firstOrFail();
+            $milestones   = BookingSlot::where( 'consultation_booking_id', $project->id )->where( 'status', 'pending' )->get();
+
+            $project->title = $contract->expertField->name;
+
+            $milestones->map(function ($q){
+                $q->title = $q->consultation_time;
+            });
+            $milestone_amount = $milestones->sum( 'amount' );
+        } else if($reference == 'training'){
+            $project = TrainingParticipant::where( 'id', $request->id )->firstOrFail();
+            $milestones = TrainingParticipant::where( 'id', $request->id )->get();
+            $contract = $project->training;
+
+            $project->title = $project->training->title;
+
+            $milestone_amount = $milestones->sum( 'amount' );
         } else {
             abort( 404 );
         }
