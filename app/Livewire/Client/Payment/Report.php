@@ -5,6 +5,7 @@ namespace App\Livewire\Client\Payment;
 use App\Enums\ClientTransactionType;
 use App\Models\ClientTransaction;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -28,6 +29,46 @@ class Report extends Component
 
     public function updatedType() {
 
+    }
+
+    public function downloadCsv() {
+        $user = auth()->user();
+        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        if($this->type){
+            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+        }
+
+        if($this->customer){
+            $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        $transactions = $transactions->orderby( 'id', 'desc' )->get();
+        $data = $transactions->toArray();
+    }
+
+    public function downloadInvoices() {
+        $user = auth()->user();
+        $transactions = ClientTransaction::where( 'client_id', $user->id );
+        if($this->type){
+            $transactions = $transactions->where('type', ClientTransactionType::from($this->type));
+        }
+
+        if($this->customer){
+            $transactions = $transactions->where('expert_id', $this->customer);
+        }
+
+        $transactions = $transactions->orderby( 'id', 'desc' )->get();
+        $data = $transactions->toArray();
+
+        try {
+            $pdfContent = Pdf::loadView('pdf.invoice', $data)->output();
+            return response()->streamDownload(
+                fn () => print($pdfContent),
+                "invoice.pdf"
+            );
+        } catch (\Exception $ex){
+            toast('warning', $ex->getMessage(), $this);
+        }
     }
 
     public function mount() {
