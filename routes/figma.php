@@ -100,6 +100,7 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/expert-payment-setting-notification', 'figma.client-payment-setting-notification');
     Route::view('/expert-payment-setting-notification-empty', 'figma.client-payment-setting-notification-empty');
     Route::view('/expert-get-paid', 'figma.expert-get-paid');
+    Route::view('/invoice', 'figma.all-invoice');
 
 
     // Route::view('/client-tax-information', 'figma.client-tax-information');
