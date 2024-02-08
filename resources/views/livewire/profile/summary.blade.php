@@ -1,4 +1,4 @@
-<div class="profile-edit-widget user-bio-edit-widget {{ $expertDashboard ? 'px-30' : '' }}">
+<div class="profile-edit-widget user-bio-edit-widget">
     <div class="user-profile-picture">
         <img src="{{ $profile->picture ? $profile->picture : asset('dummy-user.png')}}">
         <button>Edit</button>

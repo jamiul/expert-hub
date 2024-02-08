@@ -27,34 +27,33 @@
     }
 }
 
-.project-secondary-tab {
-    .secondary-tab-nav {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid $edu-border-color;
-        padding-left: 40px;
-        padding-right: 40px;
-        gap: 10px;
+.secondary-tab-nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $edu-border-color;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 10px;
 
-        .tab-nav-item {
-            padding: 13px 5px;
-            background-color: transparent;
-            border: none;
-            position: relative;
+    .tab-nav-item {
+        padding: 13px 5px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        font-weight: 500;
+        &.active {
+            color: $edu-primary-color;
 
-            &.active {
-                color: $edu-primary-color;
-
-                &:after {
-                    content: "";
-                    display: block;
-                    height: 3px;
-                    width: 100%;
-                    background-color: $edu-primary-color;
-                    position: absolute;
-                    bottom: -2px;
-                    left: 0;
-                }
+            &:after {
+                content: "";
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: $edu-primary-color;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
             }
         }
     }
