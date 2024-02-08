@@ -97,7 +97,7 @@
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="save-info">
                             <label class="form-check-label" for="save-info">Yes, I understand and agree to the <a
-                                    href="#"> EduEXHub Terms of Service</a>,including the <a href="#">User
+                                    href="#"> Expert Gate Terms of Service</a>,including the <a href="#">User
                                     Agreement</a> and <a href="#">Privacy Policy</a>.</label>
                         </div>
                         <div class="col-12 mt-3">

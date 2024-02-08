@@ -21,7 +21,7 @@
                                             <p class="pt-4">Hi Michael.</p>
                                         </div>
                                         <div>
-                                            <p>Thanks for your interest in joining EduExHub! To complete your registration,
+                                            <p>Thanks for your interest in joining Expert Gate! To complete your registration,
                                                 we need you to verify your email address.</p>
                                         </div>
                                     </div>
@@ -30,7 +30,7 @@
                                         Email</button>
                                     <div class="edu-for-time pt-4">
                                         <p class="pt-4">Thanks for your time,</p>
-                                        <p>The EduExHub Team</p>
+                                        <p>The Expert Gate Team</p>
                                     </div>
                                     <div>
                                     </div>

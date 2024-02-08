@@ -24,6 +24,7 @@ use Illuminate\Http\Request;
 use Log;
 
 class StripeController extends Controller {
+
     public function receiveWebhook( Request $request ) {
         \Stripe\Stripe::setApiKey( env( 'STRIPE_SECRET' ) );
 
@@ -65,6 +66,35 @@ class StripeController extends Controller {
                 $this->__chargeRefund( $charge );
                 break;
 
+            default:
+                $this->__paymentGeneric( $event );
+                echo 'Received unknown event type ' . $event->type;
+        }
+        http_response_code( 200 );
+    }
+
+    public function receiveConnectWebhook( Request $request ) {
+        \Stripe\Stripe::setApiKey( env( 'STRIPE_SECRET' ) );
+
+        $endpoint_secret = env( 'STRIPE_WEBHOOK_SECRET_CONNECT' );
+        $sig_header      = $_SERVER['HTTP_STRIPE_SIGNATURE'];
+
+        $payload = @file_get_contents( 'php://input' );
+
+        $event = null;
+        try {
+            $event = \Stripe\Webhook::constructEvent(
+                $payload, $sig_header, $endpoint_secret
+            );
+            Log::info( $event );
+        } catch ( \UnexpectedValueException $e ) {
+            http_response_code( 400 );
+            exit();
+        } catch ( \Stripe\Exception\SignatureVerificationException $e ) {
+            http_response_code( 400 );
+            exit();
+        }
+        switch ( $event->type ) {
             //============= CONNECT WEBHOOKS ==============//
             case 'account.application.authorized':
                 $this->__handleApplicationAuthorized( $event );
@@ -160,39 +190,6 @@ class StripeController extends Controller {
             case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
                 $transfer = $event->data->object;
                 $this->__transferReversed( $transfer );
-                break;
-
-            default:
-                $this->__paymentGeneric( $event );
-                echo 'Received unknown event type ' . $event->type;
-        }
-        http_response_code( 200 );
-    }
-
-    public function receiveConnectWebhook( Request $request ) {
-        \Stripe\Stripe::setApiKey( env( 'STRIPE_SECRET' ) );
-
-        $endpoint_secret = env( 'STRIPE_WEBHOOK_SECRET' );
-        $sig_header      = $_SERVER['HTTP_STRIPE_SIGNATURE'];
-
-        $payload = @file_get_contents( 'php://input' );
-
-        $event = null;
-        try {
-            $event = \Stripe\Webhook::constructEvent(
-                $payload, $sig_header, $endpoint_secret
-            );
-            Log::info( $event );
-        } catch ( \UnexpectedValueException $e ) {
-            http_response_code( 400 );
-            exit();
-        } catch ( \Stripe\Exception\SignatureVerificationException $e ) {
-            http_response_code( 400 );
-            exit();
-        }
-        switch ( $event->type ) {
-            case 'account.application.authorized':
-                $this->__handleApplicationAuthorized( $event );
                 break;
             default:
                 echo 'Received unknown event type ' . $event->type;
@@ -715,7 +712,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -761,7 +758,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -807,7 +804,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
             ] ) );
@@ -850,7 +847,7 @@ class StripeController extends Controller {
             $user->notify( new PaymentNotification( [
                 'title'   => "Withdrawal request " . $payout->status,
                 'message' => "Your recent withdraw request of amount " . $payout->amount / 100 . ' ' . $payout->currency . ' to your bank xxxx-' . $withdrawalMethod->last4 . ' was ' . $payout->status,
-                'link'    => route( 'expert.payment.withdraw' ),
+                'link'    => route( 'expert.payment.index' ),
                 'button'  => 'Make another withdraw',
                 'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' ),
             ] ) );

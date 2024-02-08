@@ -29,21 +29,21 @@
                                 </div>
 
                                 <div class="short-by-select-reverse">
-                                    <x-form.choice-static wire:model="titles" label="">
-                                        <option value="Mr">All Transaction</option>
-                                        <option value="Mrs">All Transaction</option>
-                                        <option value="Dr">All Transaction</option>
-                                        <option value="Prof">All Transaction</option>
-                                    </x-form.choice-static>
+                                    <x-form.select wire:model.change="type" label="">
+                                        <option value="">All Transaction</option>
+                                        @foreach($types as $type)
+                                            <option>{{ $type->value }}</option>
+                                        @endforeach
+                                    </x-form.select>
                                 </div>
 
                                 <div class="short-by-select-reverse">
-                                    <x-form.choice-static wire:model="titles" label="">
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">All Experts</option>
-                                        <option value="All Experts">AAll Experts</option>
-                                    </x-form.choice-static>
+                                    <x-form.select wire:model.change="customer" label="">
+                                        <option value="">All Experts</option>
+                                        @foreach($experts as $expert)
+                                            <option value="{{ $expert->expert_id }}">{{ @$expert->expert->fullname }}</option>
+                                        @endforeach
+                                    </x-form.select>
                                 </div>
 
                             </div>
@@ -110,143 +110,16 @@
                                              /
                                         </span> ${{ number_format($data->balance, 2) }}
                                     </td>
-                                    <td style="vertical-align: middle;"><a href="#" class="edux-ref-id" data-bs-toggle="modal" data-bs-target="#eduxRefId">{{ $data->id }}</a></td>
+                                    <td style="vertical-align: middle;"><a href="#" onClick="Livewire.dispatch('modal.open', { component: 'client.payment.report.invoice', arguments: {transaction_id: {{ $data->id }} } })" class="edux-ref-id">{{ $data->id }}</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{--                        {{ $transactions->links() }}--}}
+                        {{ $transactions->onEachSide(1)->links() }}
                     </div>
                 </div>
             </div>
 
         </div>
     </section>
-
-    <div class="modal fade" id="eduxRefId" tabindex="-1" aria-labelledby="eduxRefId" aria-hidden="true">
-        <div class="modal-dialog edux-modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header px-4">
-                    <h1 class="modal-title fs-5" id="eduxRefId">Transaction Details</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body px-4">
-                    <div class="edux-ref-content-area">
-                        <div class="dingle-ref-content">
-                            <span class="ref-id fw-medium">Reference ID </span>
-                            <span class="ref-id fw-medium">Date</span>
-                        </div>
-                        <div class="dingle-ref-item">
-                            <span class="ref-id">545678907</span>
-                            <span class="ref-id">Oct 23, 2023</span>
-                        </div>
-                    </div>
-
-                    <div class="edux-ref-content-area">
-                        <div class="dingle-ref-content">
-                            <span class="ref-id fw-medium">Client</span>
-                            <span class="ref-id fw-medium">Expert</span>
-                        </div>
-                        <div class="dingle-ref-item">
-                            <span class="ref-id">Dr. Fayad Tohme</span>
-                            <span class="ref-id">Abu salaeh muhammad shaon</span>
-                        </div>
-                    </div>
-
-                    <div class="edux-ref-content-area">
-                        <div class="dingle-ref-content">
-                            <span class="ref-id fw-medium">Type</span>
-                            <span class="ref-id fw-medium">Amount</span>
-                        </div>
-                        <div class="dingle-ref-item">
-                            <span class="ref-id">Fixed Price</span>
-                            <span class="ref-id">$117.34</span>
-                        </div>
-                    </div>
-
-                    <div class="edux-ref-content-area">
-                        <div class="dingle-ref-content-main">
-                            <span class="ref-id fw-medium">Description</span>
-                            <p>Funding request for Developing Curriculum for Postgraduate Public Health Unit</p>
-
-                        </div>
-                    </div>
-
-                    <div class="edux-ref-content-area border-0">
-                        <div class="dingle-ref-content-download">
-                            <span class="ref-id fw-medium">More info</span>
-                            <p><a href=""  data-bs-toggle="modal" data-bs-target="#eduxInvoiceId">Download Invoice</a></p>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="eduxInvoiceId" tabindex="-1" aria-labelledby="eduxRefId" aria-hidden="true">
-        <div class="modal-dialog edux-modal-dialog-invoice">
-            <div class="modal-content">
-                <div class="modal-header px-4">
-                    <h1 class="modal-title fs-5" id="eduxRefId"><a href="#"> <img src="{{ asset('/assets/frontend/img/invoice-logo.png') }}"/>  </a></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body px-4">
-                    <div class="edux-ref-content-area border-0">
-
-                        <div class="form-invoice">
-                            <div class="dingle-ref-item-invoice">
-                                <span class="ref-id fw-medium mb-2">From</span>
-                                <span class="ref-id">Expert Gate </span>
-                                <span class="ref-id">32 Erie Street, South Granville </span>
-                                <span class="ref-id">NSW 2142, Australia</span>
-
-                                <span class="ref-id fw-medium my-2">To</span>
-                                <span class="ref-id">Expert Gate </span>
-                                <span class="ref-id">32 Erie Street, South Granville </span>
-                                <span class="ref-id">NSW 2142, Australia</span>
-                            </div>
-                            <div class="dingle-ref-item-invoice-price">
-                                <span class="ref-id fw-medium mb-4">Invoice</span>
-                                <p><span class="ref-id">Invoice #</span> <span>545678907</span></p>
-                                <p><span class="ref-id">Date</span> <span>Oct 23, 2023</span></p>
-                                <p><span class="ref-id">Due Date</span> <span>Oct 23, 2023</span></p>
-                                <p><span class="ref-id">Total Amount</span> <span>$7.34</span></p>
-                                <p><span class="ref-id">Total Due</span> <span>$7.34</span></p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="edux-ref-content-area border-0">
-                        <div class="dingle-ref-content-total">
-                            <span class="ref-id fw-medium">Description</span>
-                            <span class="ref-id fw-medium">Amount / Balance</span>
-                        </div>
-                        <div class="dingle-ref-item-price-all">
-                            <div class="dingle-ref-item-price">
-                                <span class="ref-id">Funding request for Developing Curriculum for Postgraduate Public Health Unit</span>
-                                <span class="ref-id fw-medium">$117.34</span>
-
-                            </div>
-
-                            <div class="dingle-ref-item-total-price">
-                                <span class="ref-id">Total Amount</span>
-                                <span class="ref-id fw-medium">$117.34</span>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-        </div>
-    </div>
 </div>

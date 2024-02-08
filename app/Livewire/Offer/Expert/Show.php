@@ -18,6 +18,9 @@ class Show extends Component
 
     public function accept()
     {
+        if($this->offer->status != OfferStatus::Pending){
+            return toast('warning', 'Offer Withdrawn', $this);
+        }
         $this->askForConfirmation(
             callback: function () {
                 $escrow_amount = $this->offer->fundedMilestones()->sum('amount');
@@ -61,7 +64,7 @@ class Show extends Component
 //                ]);
 
                 //todo: refund customer
-                dd($this->offer);
+//                dd($this->offer);
 //                $refund = $this->stripe->refunds->create([
 //                    'payment_intent' => $payment_intent_id,
 //                    'amount' => 10 * 100

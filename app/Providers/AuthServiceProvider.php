@@ -30,9 +30,9 @@ class AuthServiceProvider extends ServiceProvider
             return (new MailMessage)
                 ->greeting('Verify your email address to complete registration')
                 ->subject('Verify your email address to complete registration')
-                ->line(new HtmlString("<br> Hi " . $notifiable->first_name . "<br><br> Thanks for your interest in joining EduExHub! To complete your registration, we need you to verify your email address."))
+                ->line(new HtmlString("<br> Hi " . $notifiable->first_name . "<br><br> Thanks for your interest in joining Expert Gate! To complete your registration, we need you to verify your email address."))
                 ->action('Verify Email', $url)
-                ->salutation(new HtmlString("Thanks for your time, <br> The EduExHub Team"));
+                ->salutation(new HtmlString("Thanks for your time, <br> The Expert Gate Team"));
         });
     }
 }

@@ -32,7 +32,7 @@
 
                                 <div class="row">
                                     <div class="form-floating admin-text-area position-relative">
-                                        <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">Welcome to EduExHub, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, EduExHub is your ultimate resource for empowerment.  </textarea>
+                                        <textarea class="form-control admin-area position-relative" placeholder="Leave a comment here" id="floatingTextarea">Welcome to Expert Gate, your premier destination for connecting with top academic experts across a diverse spectrum of fields and disciplines. Whether you represent a higher education institution, a media organisation, or are an individual seeking expert guidance for your academic pursuits, Expert Gate is your ultimate resource for empowerment.  </textarea>
                                         <span class="edux-word-count">0/1000</span>
                                         <label for="floatingTextarea"
                                             class=" admin-text-area-level position-absolute">Paragraph</label>

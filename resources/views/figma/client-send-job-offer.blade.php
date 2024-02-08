@@ -260,7 +260,7 @@
                                 </div>
                             </div>
                             <x-form.check wire:model="terms">
-                                Yes, I understand and agree to the EduExHub Terms of Service, including the User
+                                Yes, I understand and agree to the Expert Gate Terms of Service, including the User
                                 Agreement and Privacy Policy.
                             </x-form.check>
 

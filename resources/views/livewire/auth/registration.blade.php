@@ -110,7 +110,7 @@
                         </x-form.choice>
                         <div class="registration-checkboxes">
                             <x-form.check wire:model.boolean.change="terms_agreed">
-                                Yes, I understand and agree to the <a target="_blank" href="{{ route('terms-of-service') }}">EduEXHub Terms of Service</a>,
+                                Yes, I understand and agree to the <a target="_blank" href="{{ route('terms-of-service') }}">Expert Gate Terms of Service</a>,
                                 including the <a target="_blank" href="{{ route('user-agreement') }}">User Agreement</a> and <a target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
                             </x-form.check>
                         </div>

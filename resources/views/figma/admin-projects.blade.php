@@ -76,7 +76,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -85,7 +85,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -132,7 +132,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -141,7 +141,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -197,7 +197,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -206,7 +206,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -262,7 +262,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -271,7 +271,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -318,7 +318,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -327,7 +327,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -374,7 +374,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                             <div class="user-card-small">
@@ -383,7 +383,7 @@
                               </div>
                               <div class="user-card-info">
                                 <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                                <p class="mb-0">EduExHub</p>
+                                <p class="mb-0">Expert Gate</p>
                               </div>
                             </div>
                           </td>
@@ -448,7 +448,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -457,7 +457,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -511,7 +511,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -520,7 +520,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -574,7 +574,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -583,7 +583,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -637,7 +637,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -646,7 +646,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -700,7 +700,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -709,7 +709,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -763,7 +763,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -772,7 +772,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -826,7 +826,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -835,7 +835,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -889,7 +889,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -898,7 +898,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -963,7 +963,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -972,7 +972,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1017,7 +1017,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1026,7 +1026,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1071,7 +1071,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1080,7 +1080,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1125,7 +1125,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1134,7 +1134,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1179,7 +1179,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1188,7 +1188,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1233,7 +1233,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1242,7 +1242,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1287,7 +1287,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1296,7 +1296,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1341,7 +1341,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1350,7 +1350,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1411,7 +1411,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1420,7 +1420,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1468,7 +1468,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1477,7 +1477,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1525,7 +1525,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1534,7 +1534,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1582,7 +1582,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1591,7 +1591,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1641,7 +1641,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1650,7 +1650,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1698,7 +1698,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1707,7 +1707,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1755,7 +1755,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1764,7 +1764,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1812,7 +1812,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                           <div class="user-card-small">
@@ -1821,7 +1821,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                             </div>
                           </div>
                         </td>
@@ -1889,7 +1889,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -1926,7 +1926,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -1984,7 +1984,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2021,7 +2021,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2079,7 +2079,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2116,103 +2116,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                              <ul class="edux-rating">
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                          </ul>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-
-
-                      <tr>
-                        <td>
-                          <p class="mb-2">ID:7557uy8675656</p>
-                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
-                          <p>
-                            <span class="text-black-50">From:</span> Sep 23 to Present
-                          </p>
-                        </td>
-
-                        <td>
-                        <p data-bs-toggle="modal" data-bs-target="#reasonForCompleted" class="mb-0 comment-rating"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M2 8.99374C2 5.68349 4.67654 3 8.00066 3H15.9993C19.3134 3 22 5.69478 22 8.99374V21H8.00066C4.68659 21 2 18.3052 2 15.0063V8.99374ZM14 11V13H16V11H14ZM8 11V13H10V11H8Z" fill="#0036E3"/>
-                          </svg> Comment & rating</p>
-                        </td>
-                        <td>
-                          <p class="mb-0">Fixed: $100.00</p>
-                        </td>
-                        <td>
-                          <div class="user-card-small mb-3">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
-
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
-                              <ul class="edux-rating">
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                            <li>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
-                              </svg>
-                            </li>
-                          </ul>
-                            </div>
-                          </div>
-                          <div class="user-card-small">
-                            <div class="user-card-img">
-                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
-
-                            </div>
-                            <div class="user-card-info">
-                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2271,7 +2175,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2308,7 +2212,103 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
+                              <ul class="edux-rating">
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                          </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <td>
+                          <p class="mb-2">ID:7557uy8675656</p>
+                          <p class="mb-2">Policy Development Assistance Required for Chemical Engineering Industry</p>
+                          <p>
+                            <span class="text-black-50">From:</span> Sep 23 to Present
+                          </p>
+                        </td>
+
+                        <td>
+                        <p data-bs-toggle="modal" data-bs-target="#reasonForCompleted" class="mb-0 comment-rating"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2 8.99374C2 5.68349 4.67654 3 8.00066 3H15.9993C19.3134 3 22 5.69478 22 8.99374V21H8.00066C4.68659 21 2 18.3052 2 15.0063V8.99374ZM14 11V13H16V11H14ZM8 11V13H10V11H8Z" fill="#0036E3"/>
+                          </svg> Comment & rating</p>
+                        </td>
+                        <td>
+                          <p class="mb-0">Fixed: $100.00</p>
+                        </td>
+                        <td>
+                          <div class="user-card-small mb-3">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap1.png') }}" alt="">
+
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">Expert Gate</p>
+                              <ul class="edux-rating">
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                            <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M5.99956 9.51326L8.76623 11.1866C9.27289 11.4933 9.89289 11.0399 9.75956 10.4666L9.02623 7.31992L11.4729 5.19993C11.9196 4.81326 11.6796 4.07993 11.0929 4.03326L7.87289 3.75993L6.61289 0.786592C6.38623 0.246592 5.61289 0.246592 5.38623 0.786592L4.12623 3.75326L0.906227 4.02659C0.31956 4.07326 0.0795601 4.80659 0.526227 5.19326L2.97289 7.31326L2.23956 10.4599C2.10623 11.0333 2.72623 11.4866 3.23289 11.1799L5.99956 9.51326Z" fill="#E9B911" />
+                              </svg>
+                            </li>
+                          </ul>
+                            </div>
+                          </div>
+                          <div class="user-card-small">
+                            <div class="user-card-img">
+                              <img src="{{ asset('assets/frontend/img/admin/ap2.png') }}" alt="">
+
+                            </div>
+                            <div class="user-card-info">
+                              <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2365,7 +2365,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -2402,7 +2402,7 @@
                             </div>
                             <div class="user-card-info">
                               <p class="mb-0 fw-bold">Client: Dr Mohammad Riyadh </p>
-                              <p class="mb-0">EduExHub</p>
+                              <p class="mb-0">Expert Gate</p>
                               <ul class="edux-rating">
                             <li>
                               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
