@@ -15,4 +15,6 @@ enum ClientTransactionType: string
     case GST = 'GST';
 
     case Refund = 'Refund';
+
+    case RefundFee = 'Refund Fee';
 }
