@@ -62,14 +62,14 @@
                                                 {{ $invitation->project->title }}
                                             </a>
                                         </p>
-                                        <p class="mb-1">{{ $eoi->created_at->diffForHumans() }}</p>
+                                        <p class="mb-1">{{ $invitation->created_at->diffForHumans() }}</p>
                                     </td>
                                     <td>
                                         <span class="edux-batch-viewed">Viewed</span>
                                     </td>
                                     <td>
-                                        <p class="mb-1 fw-medium">{{ $eoi->project->type->value }}</p>
-                                        <p class="mb-1">${{ $eoi->amount }}</p>
+                                        <p class="mb-1 fw-medium">{{ $invitation->project->type->value }}</p>
+                                        <p class="mb-1">${{ $invitation->project->budget_start_amount }}</p>
                                     </td>
                                 </tr>
                                 @empty

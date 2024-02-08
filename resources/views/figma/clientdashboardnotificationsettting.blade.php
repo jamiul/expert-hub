@@ -210,7 +210,7 @@
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                EduExHub has a tip to help me start
+                Expert Gate has a tip to help me start
                 </label>
               </div>
             </div>
@@ -218,7 +218,7 @@
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                Notify me of EduExHub events happening in my local area
+                Notify me of Expert Gate events happening in my local area
                 </label>
               </div>
             </div>
@@ -247,19 +247,19 @@
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                Send recommendations if I qualify as top EduExHub expert
+                Send recommendations if I qualify as top Expert Gate expert
                 </label>
               </div>
             </div>
         </div>
 
         <div class="email-communication-area email-update-area">
-            <h4>Communications from EduExHub</h4>
+            <h4>Communications from Expert Gate</h4>
             <div class="single-checkbox">
               <div class="form-check-password">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                Send me genuinely useful emails every now and then to help me get the most out of EduExHub
+                Send me genuinely useful emails every now and then to help me get the most out of Expert Gate
                 </label>
               </div>
             </div>

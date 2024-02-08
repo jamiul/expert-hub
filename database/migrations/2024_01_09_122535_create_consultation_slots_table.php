@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('consultation_id');
             $table->foreignId('profile_id');
-            $table->date('date');
+            $table->string('day');
             $table->string('time');
             $table->string('status');
             $table->boolean('active')->default(1);

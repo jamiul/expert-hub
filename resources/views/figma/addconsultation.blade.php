@@ -103,7 +103,7 @@
                                 <div class="service-fee-input-row">
                                     <div class="service-fee-description">
                                         <p class="fw-medium mb-1">Platform service fee</p>
-                                        <p class="mb-1">The Eduexhub Service Fee Is 10%</p>
+                                        <p class="mb-1">The Expert Gate Service Fee Is 10%</p>
                                     </div>
                                     <div class="service-fee-input">
                                         <div class="d-flex gap-4 align-items-center">
@@ -171,6 +171,10 @@
                                     <h6>Selected slot</h6>
                                     <ul class="edux-selected-slot">
                                         <div class="row edux-padding-xs">
+                                            <li class="edux-day-schedule">Monday</li>
+                                            <li>01.00 AM</li>
+                                        </div>
+                                        <div class="row edux-padding-xs">
                                             <li class="edux-day-schedule">Friday</li>
                                             <li>01.00 AM</li>
                                             <li>10:00 AM</li>
@@ -188,6 +192,10 @@
                                             <li>05:00 PM</li>
                                             <li>09:00 PM</li>
                                             <li>09:00 PM</li>
+                                        </div>
+                                        <div class="row edux-padding-xs">
+                                            <li class="edux-day-schedule">Sunday</li>
+                                            <li>01.00 AM</li>
                                         </div>
                                     </ul>
                                 </div>

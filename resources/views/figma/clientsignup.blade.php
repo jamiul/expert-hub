@@ -97,7 +97,7 @@
                                         Send me emails with tips on how to find projects that fit my expertise.
                                     </x-form.check>
                                     <x-form.check name="terms_agreed" required>
-                                        Yes, I understand and agree to the <a href="#">EduEXHub Terms of Service</a>,
+                                        Yes, I understand and agree to the <a href="#">Expert Gate Terms of Service</a>,
                                         including the <a href="#">User Agreement</a> and <a href="#">Privacy Policy.</a>
                                     </x-form.check>
                                 </div>

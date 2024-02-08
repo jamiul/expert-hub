@@ -1,0 +1,201 @@
+.btn-link {
+    color: $edu-primary-color !important;
+    text-decoration: none;
+}
+
+.button-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+
+    & > .button-list-item {
+        list-style: none;
+        display: flex;
+        border-radius: 30px;
+        border: 1px solid $edu-border-color;
+        background: rgba(48, 55, 68, 0.03);
+        padding: 8px 10px 8px 16px;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        justify-content: space-between;
+        width: 100%;
+
+        .button-list-icon {
+            line-height: 100%;
+        }
+    }
+
+    & > .button-list-title {
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        padding: 6px 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: white;
+    border: 0;
+    padding: 0;
+
+    &.icon-btn-md {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+
+        svg {
+
+        }
+    }
+
+    &.icon-btn-sm {
+        width: 24px;
+        height: 24px;
+        padding: 3px;
+
+        svg {
+
+        }
+    }
+
+}
+
+.btn-has-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn {
+    &.btn-icon {
+        height: 46px;
+        width: 46px;
+        padding: 5px !important;
+        border-width: 2px;
+
+        &.btn-outline-light {
+            border-color: rgba(14, 0, 98, 0.10);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            background-color: $edu-primary-color;
+
+            & > svg {
+                path {
+                    fill: white;
+                }
+            }
+
+        }
+    }
+}
+
+.btn {
+    //padding: 0.6875rem 4.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 150%;
+
+    &.btn-lg {
+        padding: 1rem 4.375rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        line-height: 159.5%;
+    }
+
+    &.btn-md {
+        padding: 0.6875rem 2rem;
+    }
+
+    &.btn-rounded {
+        border-radius: 21px;
+    }
+}
+
+.btn-outline-primary {
+    &:hover {
+        svg {
+            path {
+                fill: white;
+            }
+        }
+    }
+}
+
+.btn-outline-gray {
+    border-radius: 4px;
+    border: 2px solid $edu-border-color;
+    color: #191D24B2;
+}
+
+.btn-primary {
+    &:hover {
+        background-color: $edu-primary-dark-color;
+    }
+
+    &.disabled, &:disabled {
+        opacity: 0.3;
+    }
+}
+
+.btn-favorite {
+    span {
+        &.heart-line {
+            display: block;
+        }
+
+        &.heart-filled {
+            display: none;
+        }
+    }
+
+    &.favorited {
+        span {
+            &.heart-line {
+                display: none;
+            }
+
+            &.heart-filled {
+                display: block;
+            }
+        }
+
+
+        path {
+            fill: $edu-primary-color;
+        }
+
+    }
+
+    &:hover {
+        background-color: $edu-primary-color;
+        color: white;
+
+        path {
+            fill: white;
+        }
+    }
+}
+

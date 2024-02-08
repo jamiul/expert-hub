@@ -16,8 +16,14 @@ class Consultation extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
+        // $this->addMediaCollection('image')
+        // ->singleFile();
         $this->addMediaCollection('image')
-        ->singleFile();
+            ->singleFile()
+            ->registerMediaConversions(function (): void {
+                $this->addMediaConversion('consultation_image')
+                ->crop('crop-center',1900, 400);
+            });
     }
 
     public function getImageAttribute()
@@ -31,5 +37,15 @@ class Consultation extends Model implements HasMedia
             ->withPivot('active')
             ->wherePivot('active', 1)
             ->withTimestamps();
+    }
+
+    public function expertField()
+    {
+        return $this->belongsTo(Expertise::class, 'expertise_id');
+    }
+
+    public function slots()
+    {
+        return $this->hasMany(ConsultationSlot::class, 'consultation_id');
     }
 }
