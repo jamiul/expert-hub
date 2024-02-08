@@ -29,7 +29,8 @@ Table of contents
 
 /**** ================================== Client Dashboard Start Here ===================================***/
 
-.form-select, select.form-control:focus {
+.form-select,
+select.form-control:focus {
     border-color: #86b7fe;
     outline: 0;
     box-shadow: none !important;
@@ -137,11 +138,16 @@ header.client-header {
 }
 
 
-.search-input[type="text"], .search-input[type="select"] {
-    font-family: Colfax !important;;
-    font-size: 16px !important;;
-    font-style: normal !important;;
-    font-weight: 400 !important;;
+.search-input[type="text"],
+.search-input[type="select"] {
+    font-family: Colfax !important;
+    ;
+    font-size: 16px !important;
+    ;
+    font-style: normal !important;
+    ;
+    font-weight: 400 !important;
+    ;
     color: #303744 !important;
     margin-top: 0px;
 }
@@ -471,7 +477,8 @@ span.avatar::after {
     justify-content: center;
 }
 
-li.active, a.active {
+li.active,
+a.active {
     color: #0036E3 !important;
 }
 
@@ -994,7 +1001,8 @@ button.btn.btn-xs.btn-success.btn-preview.active {
     border-right: 1px solid #C8C5D4
 }
 
-.country-rate, .country-rate {
+.country-rate,
+.country-rate {
 
     font-size: 14px;
     font-weight: 500;
@@ -1275,7 +1283,7 @@ li.nav-item {
     height: 57px;
     border: 1px, 0px, 1px, 0px;
     background: linear-gradient(0deg, rgba(14, 0, 98, 0.1), rgba(14, 0, 98, 0.1)),
-    linear-gradient(0deg, #0036E3, #0036E3);
+        linear-gradient(0deg, #0036E3, #0036E3);
     border-width: 1px, 0px, 1px, 0px;
     border-style: solid;
     border-color: rgba(14, 0, 98, 0.1);
@@ -2257,7 +2265,8 @@ button.btn-update {
 }
 
 .m-border-bottom {
-    border-bottom: 1px solid #E7E5EF;;
+    border-bottom: 1px solid #E7E5EF;
+    ;
 }
 
 /* *** ===================================  contact start here  ==============================*** */
@@ -3287,7 +3296,7 @@ input.form-control.p-input {
     text-transform: uppercase;
 }
 
-.switch-button input[type=checkbox]:checked + span {
+.switch-button input[type=checkbox]:checked+span {
     background-color: #369450;
     display: block;
     position: absolute;
@@ -3298,13 +3307,13 @@ input.form-control.p-input {
     padding: 4px;
 }
 
-.switch-button input[type=checkbox]:checked + span label {
+.switch-button input[type=checkbox]:checked+span label {
     float: right;
     border-color: #fff;
     background: #fff;
 }
 
-.switch-button input[type=checkbox]:checked + span label:before {
+.switch-button input[type=checkbox]:checked+span label:before {
     position: absolute;
     font-size: 0.8462rem;
     font-weight: 600;
@@ -3321,7 +3330,7 @@ input.form-control.p-input {
     content: "NO";
 }
 
-.switch-button.switch-button-yesno input[type=checkbox]:checked + span label:before {
+.switch-button.switch-button-yesno input[type=checkbox]:checked+span label:before {
     content: "YES";
 }
 
@@ -3380,11 +3389,11 @@ input.form-control.p-input {
     border-color: #ababab;
 }
 
-.switch-button.switch-button-success input[type=checkbox]:checked + span {
+.switch-button.switch-button-success input[type=checkbox]:checked+span {
     background-color: #34a853;
 }
 
-.switch-button.switch-button-success input[type=checkbox]:checked + span label {
+.switch-button.switch-button-success input[type=checkbox]:checked+span label {
     border-color: #2e9549;
 }
 
@@ -3396,11 +3405,11 @@ input.form-control.p-input {
     border-color: #ababab;
 }
 
-.switch-button.switch-button-warning input[type=checkbox]:checked + span {
+.switch-button.switch-button-warning input[type=checkbox]:checked+span {
     background-color: #fbbc05;
 }
 
-.switch-button.switch-button-warning input[type=checkbox]:checked + span label {
+.switch-button.switch-button-warning input[type=checkbox]:checked+span label {
     border-color: #e3aa04;
 }
 
@@ -3412,11 +3421,11 @@ input.form-control.p-input {
     border-color: #ababab;
 }
 
-.switch-button.switch-button-danger input[type=checkbox]:checked + span {
+.switch-button.switch-button-danger input[type=checkbox]:checked+span {
     background-color: #ea4335;
 }
 
-.switch-button.switch-button-danger input[type=checkbox]:checked + span label {
+.switch-button.switch-button-danger input[type=checkbox]:checked+span label {
     border-color: #e82e1e;
 }
 
@@ -4655,7 +4664,7 @@ p.donax-date-zoom {
     font-weight: 500;
 }
 
-input.registration-check[type=checkbox]:checked + label::before {
+input.registration-check[type=checkbox]:checked+label::before {
     content: "";
     display: block;
     position: absolute;
@@ -4933,7 +4942,8 @@ input.registration-check[type=checkbox]:checked + label::before {
     font-weight: 400;
 }
 
-span.checkout-about, span.checkout-extend {
+span.checkout-about,
+span.checkout-extend {
     color: #0036E3;
 
     font-size: 14px;
@@ -6976,7 +6986,8 @@ ul.edux-dropdown-show a.dropdown-heading:hover svg path {
 
 }
 
-ul.edux-dropdown-show .dropdown-item.active, .dropdown-item:active {
+ul.edux-dropdown-show .dropdown-item.active,
+.dropdown-item:active {
     color: var(--bs-dropdown-link-active-color);
     text-decoration: none;
     background-color: transparent;
@@ -8019,7 +8030,7 @@ p.content-no-close {
     display: none;
 }
 
-body > .edux-no-footer > footer .footer {
+body>.edux-no-footer>footer .footer {
     display: none;
 }
 
@@ -8036,7 +8047,7 @@ body > .edux-no-footer > footer .footer {
     vertical-align: middle;
 }
 
-.icon-component-list > div path {
+.icon-component-list>div path {
     fill: #000000 !important;
 }
 
@@ -10192,7 +10203,8 @@ li.disabled {
         /* flex-direction: column; */
     }
 
-    h3, .h3 {
+    h3,
+    .h3 {
         font-size: 1.0625rem;
         font-weight: 500;
         line-height: 137%;
