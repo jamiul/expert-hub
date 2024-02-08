@@ -23,6 +23,8 @@ class Report extends Component
 
     public $type;
 
+    public $date;
+
     public $clients;
 
     public $customer;
@@ -42,6 +44,10 @@ class Report extends Component
             $transactions = $transactions->where('client_id', $this->customer);
         }
 
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
+        }
+
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
         $data = $transactions->toArray();
     }
@@ -55,6 +61,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('client_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
@@ -95,6 +105,10 @@ class Report extends Component
 
         if($this->customer){
             $transactions = $transactions->where('client_id', $this->customer);
+        }
+
+        if($this->date){
+            $transactions = $transactions->dateFilter($this->date);
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->paginate($this->perPage);
