@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Project;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -11,16 +12,14 @@ class ProjectPostNotification extends Notification
 {
     use Queueable;
 
+    private Project $project;
+
     /**
      * Create a new notification instance.
      */
-    public function __construct( $data )
+    public function __construct(Project $project )
     {
-        $this->title   = $data['title'];
-        $this->message = $data['message'];
-        $this->link    = $data['link'];
-        $this->avatar  = $data['avatar'];
-        $this->button  = $data['button'];
+        $this->project = $project;
     }
 
     /**
@@ -38,11 +37,11 @@ class ProjectPostNotification extends Notification
      */
     public function toMail( object $notifiable ): MailMessage
     {
-        return ( new MailMessage )
-            ->line( $this->title )
-            ->line( $this->message )
-            ->action( 'See Message', $this->link )
-            ->line( 'Thank you for using our application!' );
+        return ( new MailMessage );
+        //     ->line( $this->title )
+        //     ->line( $this->message )
+        //     ->action( 'See Message', $this->link )
+        //     ->line( 'Thank you for using our application!' );
     }
 
     /**
@@ -53,11 +52,11 @@ class ProjectPostNotification extends Notification
     public function toArray( object $notifiable ): array
     {
         return [
-            'title'   => $this->title,
-            'message' => $this->message,
-            'link'    => $this->link,
-            'button'    => $this->button,
-            'avatar'  => $this->avatar
+            'title'   => 'New Project posted',
+            'message' => $this->project->description,
+            'link'    => route('projects.show', $this->project),
+            'button'    => 'View project',
+            'avatar'  => $this->project->client->picture ?: asset('dummy-user.png'),
         ];
     }
 }

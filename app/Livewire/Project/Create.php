@@ -124,13 +124,7 @@ class Create extends Component
     {
         $experts = Profile::expert()->with('user')->get();
         $experts->each(function($expert){
-            $expert->user->notify(new ProjectPostNotification([
-                'title'   => 'New Project posted',
-                'message' => $this->project->description,
-                'link'    => route('projects.show', $this->project),
-                'button' => 'View project',
-                'avatar'  => Auth::user()->profile->picture,
-            ]));
+            $expert->user->notify(new ProjectPostNotification($this->project));
         });
     }
 

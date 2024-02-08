@@ -28,9 +28,18 @@
                         <span class="heart-filled"> <x-icon.heart-filled fill="#0036E3"/></span>
                     </button>
                     @auth
-                        <button class="btn btn-icon btn-outline-light m-1">
+                        @if(auth()->user()->profile->projects()->count() == 0)
+                            <a href="{{ route('projects.create') }}" class="btn btn-icon btn-outline-light m-1">
+                                <x-icon.message-line/>
+                            </a>
+                        @else
+                        <button 
+                        class="btn btn-icon btn-outline-light m-1"
+                        wire:click="$dispatch('modal.open', {component: 'project.invite-message', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})"
+                        >
                             <x-icon.message-line/>
                         </button>
+                        @endif
                         @if(auth()->user()->profile->projects()->count() == 0)
                             <a href="{{ route('projects.create') }}" class="btn btn-md btn-outline-primary">Invite Project</a>
                         @else
@@ -48,17 +57,6 @@
                 </div>
             </div>
             <div class="expert-card-body">
-                <div class="d-flex gap-3 align-items-center">
-                    <div><strong class="fw-medium">${{ $expert->hourly_rate }} </strong>/ hr</div>
-                    <div class="star-ratings d-none">
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                        <x-icon.star-fill/>
-                    </div>
-                </div>
-
                 <div class="expert-summary py-3">
                     <p class="mb-0 text-summary text-base">
                         {{ $expert->biography }}
