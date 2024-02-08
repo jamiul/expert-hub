@@ -92,49 +92,8 @@
                                         </a>
 
                                     </div>
-                                    {{-- @forelse ($consultations as $consultation)
-                                        <div class="consultant-prof1 card-body border-0 edux-border-bottom pt-3">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="prof-img">
-                                                        <img src="{{ $consultation->image }}"></img>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-9">
-
-                                                    <div class="prof-text">
-                                                        <div class="edux-prof-text">
-                                                            <h6>{{ $consultation->expertField->name }}</h6>
-                                                            <div class="consultation-button">
-                                                                <button
-                                                                wire:click="$dispatch('modal.open', { component: 'profile.consultation.edit', arguments: { consultation: {{ $consultation->id }} }})"
-                                                                class="icon-btn icon-btn-md border "
-                                                            >
-                                                                <x-icon.edit />
-                                                            </button>
-                                                            <button
-                                                                wire:click="deleteConsultation({{ $consultation->id }})"
-                                                                class="icon-btn icon-btn-sm p-0"
-                                                            >
-                                                                <x-icon.delete/>
-                                                            </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="profp1">
-                                                            <p class="mb-0">{{ $consultation->description }}</p>
-                                                        </div>
-                                                        <div class="user-profile-skills edux-user-profile-skills">
-                                                            <ul>
-                                                                @foreach ($consultation->skills as $skill)
-                                                                <li>{{ $skill->name }}</li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                    {{-- @forelse ($profile->trainings as $training)
+                                        <p>{{ $training->title }}</p>
                                     @empty
                                         <p> No data</p>
                                     @endforelse --}}
