@@ -26,42 +26,15 @@
 
                     <ul class="nav nav-pills mb-3 over-view" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
+                            <button class="nav-link {{ ($tab_active == 'home') ? 'active' : ''}}" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Required Actions</button>
+                            <button class="nav-link {{ ($tab_active == 'requirements') ? 'active' : ''}}" id="pills-requirements-tab" data-bs-toggle="pill" data-bs-target="#pills-requirements" type="button" role="tab" aria-controls="pills-requirements" aria-selected="false">Required Actions</button>
                         </li>
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-
-                            {{--                            <div class="col-md-12">--}}
-                            {{--                                <div class="card-area d-flex justify-content-between align-content-center">--}}
-                            {{--                                    charges_enabled: {{ $user->expert_kyc->charges_enabled ? 'Enabled' : 'Disabled' }}<br />--}}
-                            {{--                                    details_submitted: {{ $user->expert_kyc->details_submitted ? 'Yes' : 'No' }}<br />--}}
-                            {{--                                    payouts_enabled: {{ $user->expert_kyc->payouts_enabled ? 'Enabled' : 'Disabled' }}<br />--}}
-
-                            {{--                                    available balance: {{ $balance->available[0]->amount }} {{ $balance->available[0]->currency }}<br />--}}
-                            {{--                                    @if($balance->available[0]->amount > 0)--}}
-                            {{--                                        <form action="{{ route('expert.payment.withdraw') }}" method="post">--}}
-                            {{--                                            <label>Amount: </label>--}}
-                            {{--                                            <input type="number" value="{{ old('withdraw_amount') }}" max="{{ $balance->available[0]->amount }}" name="withdraw_amount" />--}}
-                            {{--                                            <button type="submit" class="btn">Withdraw</button>--}}
-                            {{--                                        </form>--}}
-                            {{--                                    @endif--}}
-                            {{--                                    pending balance: {{ $balance->pending[0]->amount }} {{ $balance->pending[0]->currency }}<br />--}}
-                            {{--                                    @if($user->expert_kyc->requirements->past_due)--}}
-                            {{--                                        past_due:--}}
-                            {{--                                        <ul>--}}
-                            {{--                                            @foreach($user->expert_kyc->requirements->past_due as $past_due)--}}
-                            {{--                                                <li>{{ $past_due }}</li>--}}
-                            {{--                                            @endforeach--}}
-                            {{--                                        </ul>--}}
-                            {{--                                    @endif--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-
+                        <div class="tab-pane fade {{ ($tab_active == 'home') ? 'show active' : ''}}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                             @if($user->expert_kyc->requirements)
                                 <div class="edux-paypal-visa-billing">
                                     @php
@@ -80,8 +53,7 @@
                                         <div class="alert edux-alert alert-danger" role="alert">
                                             <x-icon.info/>
                                             <strong>Account requires updates. Receive payment and Withdrawal were paused. </strong>
-                                            <button type="button" class="view-requirement close"
-                                                    data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile">
+                                            <button type="button" class="view-requirement close" wire:click="tabChange('requirements')">
                                                 View Requirements
                                             </button>
                                         </div>
@@ -97,7 +69,7 @@
                                     </div>
                                     <div class="col-4 text-end get-paid-end">
                                         <button onClick="Livewire.dispatch('modal.open', { component: 'expert.payment.withdraw.get-paid'})"
-                                            class="btn btn-primary fs-15 fw-medium large__btn">Get Paid Now</button>
+                                                class="btn btn-primary fs-15 fw-medium large__btn">Get Paid Now</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,20 +91,23 @@
                                         Only when balance is ${{ $withdraw_schedule->balance_reach  }} or more. <a href="#" class="text-primary text-decoration-underline fw-medium">View payment calendar</a>
                                     </p>
                                     <p class="text-black mb-0" >account ends with {{ $withdraw_schedule->expert_withdrawal->last4 }} in {{ $withdraw_schedule->expert_withdrawal->currency }}</p>
+                                @else
+                                    <p class="text-black mb-3">Please add Withdrawal Schedule in order to send fund to you when reach to threshold amount.</p>
                                 @endif
                             </div>
 
-                            <div class="mt-4 p-3 p-sm-4 border rounded-4">
-                                <p class="mb-2 lead fw-medium text-black">
-                                    Last withdrawal
-                                </p>
-                                <p class="text-black mb-3">
-                                    $119.51 to Direct to Local Bank (BDT) - Account ending in 5343 <br>
-                                    <span class="small">Oct 14, 2023</span>
-                                </p>
-                                <a href="{{ route('expert.payment.billing') }}" class="text-primary fw-medium text-decoration-underline mb-0">View Transection history</a>
-                            </div>
-
+                            @if($last_withdrawal)
+                                <div class="mt-4 p-3 p-sm-4 border rounded-4">
+                                    <p class="mb-2 lead fw-medium text-black">
+                                        Last withdrawal
+                                    </p>
+                                    <p class="text-black mb-3">
+                                        ${{ $last_withdrawal->amount }} {{ $last_withdrawal->description }} <br>
+                                        <span class="small">{{ $last_withdrawal->created_at->format('M d, Y') }}</span>
+                                    </p>
+                                    <a href="{{ route('expert.payment.billing') }}" class="text-primary fw-medium text-decoration-underline mb-0">View Transection history</a>
+                                </div>
+                            @endif
 
                             <!-- Button area start Here -->
 
@@ -156,7 +131,7 @@
                             <!-- Button area End Here -->
 
                         </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="tab-pane fade {{ ($tab_active == 'requirements') ? 'show active' : ''}}" id="pills-requirements" role="tabpanel" aria-labelledby="pills-requirements-tab" tabindex="0">
                             @if($user->expert_kyc->requirements['past_due'] || $user->expert_kyc->requirements['currently_due'])
                                 @if($user->expert_kyc->requirements['errors'])
                                     <div class="alert edux-alert alert-danger" role="alert">
