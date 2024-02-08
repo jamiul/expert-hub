@@ -55,7 +55,7 @@ class ProjectInvitationNotification extends Notification
             'title'   => 'Invitation to submit EOI',
             'message' => 'Submit EOI to this project',
             'link'    => route('eoi.create', $this->project),
-            'button'  => 'view invitation',
+            'button'  => 'View invitation',
             'avatar'  => $this->project->client->picture ?: asset('dummy-user.png'),
         ];
     }

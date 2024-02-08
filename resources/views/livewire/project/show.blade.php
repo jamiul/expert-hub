@@ -19,7 +19,7 @@
                                     @else
                                         <p>EOI Already {{ $invitedToSubmitEoi->status->value }}</p>
                                     @endif
-                                    <a href="#" class="btn mb-2 w-100 btn-md btn-outline-primary"> <x-icon.chat fill="#0036E3"/> Chat with Client</a>
+                                    <button wire:click="chatWithClient" class="btn mb-2 w-100 btn-md btn-outline-primary"> <x-icon.chat fill="#0036E3"/> Chat with Client</button>
                                     @else
                                         @if($eoiAlreadySubmitted)
                                             <p>EOI Already submitted</p>

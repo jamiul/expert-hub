@@ -84,7 +84,7 @@
                         <div class="profile-dropdown-inner">
                             <div class="dropdown-user-thumbnail mb-3">
                                 <img
-                                    src="{{ auth()->user()->profile->picture }}"/>
+                                    src="{{ auth()->user()->profile->picture ?: asset('dummy-user.png') }}"/>
                             </div>
                             <div class="dropdown-user-info  mb-3">
                                 <h3 class="h6 mb-1">{{ auth()->user()->full_name }}</h3>
