@@ -28,6 +28,7 @@ class Create extends Component
     public $availableExpertiseFields = [];
     public $expertise_id;
 
+    public $suggestedSkills;
     public $availableSkills = [];
     public $skillLimit = 8;
     public $selectedSkills = [];
@@ -42,6 +43,7 @@ class Create extends Component
     {
         $this->availableExpertiseFields = Expertise::expertise()->isParent()->pluck('name', 'id')->toArray();
         $this->availableSkills = Expertise::skill()->isChild()->pluck('id', 'name')->toArray();
+        $this->suggestedSkills = Expertise::skill()->isChild()->limit(8)->pluck('name');
         $this->project = $project;
         $this->title = $this->project->title;
         $this->description = $this->project->description;
