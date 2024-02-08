@@ -1,7 +1,7 @@
 <div class="profile-edit-widget user-bio-edit-widget">
     <div class="user-profile-picture">
         <img src="{{ $profile->picture ? $profile->picture : asset('dummy-user.png')}}">
-        <button>Edit</button>
+        {{-- <button>Edit</button> --}}
     </div>
     <div class="user-profile-info">
         <h3 class="h6">{{ $profile->user->full_name ?? '' }}</h3>
