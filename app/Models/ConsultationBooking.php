@@ -11,15 +11,8 @@ class ConsultationBooking extends Model
     use SoftDeletes;
 
     protected $guarded = [];
-
-    // morph relations between contracts
-    public function contract()
-    {
-        return $this->morphTo(Contract::class);
-    }
-
-    public function bookingSlots()
-    {
-        return $this->hasMany(BookingSlot::class);
+  
+    public function consultation() {
+        return $this->belongsTo(Consultation::class);
     }
 }

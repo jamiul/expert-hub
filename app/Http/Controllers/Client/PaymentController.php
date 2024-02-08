@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Enums\MilestoneStatus;
 use App\Helpers\PaymentHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ClientTransaction;
@@ -74,16 +75,17 @@ class PaymentController extends Controller {
         $reference = $request->reference;
         if ( $reference == 'contract' ) {
             $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
+            $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
             $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'offer' ) {
             $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
+            $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
             $project    = $contract->project;
             $milestone_amount = $milestones->sum( 'amount' );
         } else if ( $reference == 'consultation' ) {
-            $contract   = ConsultationBooking::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
+            $contract   = Consultation::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
+            $milestones   = ConsultationBooking::where( 'consultation_id', $contract->id )->where( 'status', 'pending' )->firstOrFail();
             $project    = $contract->consultation;
             $milestone_amount = $contract->sum( 'amount' );
         } else {
