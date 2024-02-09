@@ -98,3 +98,72 @@
     }
 
 }
+
+
+.expert-profile-slider {
+    position: relative;
+
+    @media screen and (max-width: 1320px) {
+        margin-bottom: 24px;
+    }
+
+    .owl-stage-outer {
+        @media screen and (min-width: 1320px) {
+            min-height: 315px;
+        }
+    }
+
+    a {
+        color: inherit;
+        display: block;
+    }
+
+    .expert-profile-slider-card {
+        text-align: center;
+        border-radius: 8px;
+        background: #FFF;
+        box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.08);
+        padding: 24px;
+
+        .expert-profile-image {
+            width: 118px;
+            height: 118px;
+            margin: 0 auto 10px;
+            background-color: #C8E0FD;
+            border-radius: 100%;
+            position: relative;
+
+            img {
+                overflow: hidden;
+                border-radius: 100%;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    h3 {
+        margin-bottom: 6px;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        color: #6E737C;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+    }
+
+}
+
+
