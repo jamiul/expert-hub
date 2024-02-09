@@ -534,3 +534,22 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
+
+.widget-menu {
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            padding: 3px 0;
+
+            a {
+                font-size: 14px;
+                font-weight: 500;
+                color: $edu-primary-color;
+            }
+        }
+    }
+}
