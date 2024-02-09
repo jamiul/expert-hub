@@ -88,7 +88,7 @@ class Form extends BaseForm
     public function saveAvailability()
     {
         $this->validate([
-            'time_zone' => 'nullable',
+            'time_zone' => 'required',
             'day' => 'nullable'
         ]);
     }
@@ -226,11 +226,10 @@ class Form extends BaseForm
     public function update()
     {
         $data = $this->validate();
-        // dd($data);
         $data['time'] = $this->selectedHours;
         $data['profile_id'] = $this->profile()->id;
 
-        $this->consultation->update(Arr::except($data, ['expertise_skills', 'day', 'time']));
+        $this->consultation->update(Arr::except($data, ['expertise_skills', 'day', 'time', 'image']));
 
         if (!is_null($this->image)) {
             $this->consultation->addMedia($this->image->getRealPath())
@@ -246,6 +245,17 @@ class Form extends BaseForm
 
     public function setSlots()
     {
+        $this->validate([
+            'day' => 'required',
+        ],[
+            'day.required' => 'Please select Day.'
+        ]);
+
+        if (empty($this->selectedHours)) {
+            $this->addError('selectedHours', 'Please select at least one hour.');
+            return;
+        }
+
         if (!isset($this->confirmSlots) || !is_array($this->confirmSlots)) {
             $this->confirmSlots = [];
         }

@@ -1,3 +1,8 @@
+<div>
+    @error('selectedHours')
+        <span class="text-red-500">{{ $message }}</span>
+    @enderror
+</div>
 <ul class="progress-bar-nav-horizontal">
     <li class="{{ $currentStep > 1 ? 'done-item' : 'running-item' }}"><strong> Expertise </strong></li>
     <li class="{{ $currentStep > 2 ? 'done-item' : 'running-item' }}"><strong> Service fees </strong></li>

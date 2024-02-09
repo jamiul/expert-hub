@@ -7,7 +7,6 @@ use App\Models\Expertise;
 use App\Models\Consultation;
 use Livewire\WithFileUploads;
 use App\Livewire\Profile\Consultation\Form;
-use Label84\HoursHelper\Facades\HoursHelper;
 use WireElements\Pro\Components\Modal\Modal;
 
 class Edit extends Modal
