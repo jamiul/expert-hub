@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             $profile_id = DB::table('profiles')->insertGetId([
                 'user_id' => $user_id,
                 'type' => $user['type'],
-                'status' => ProfileStatus::Approved->name,
+                'status' => ProfileStatus::Draft->name,
             ]);
             if ($user['type'] == ProfileType::Client->value) {
                 $profile = Profile::find($profile_id);
@@ -79,7 +79,6 @@ class UserSeeder extends Seeder
                     ->usingName($imageName)
                     ->toMediaCollection('picture');
                 $profile->update([
-                    'stripe_acct_id' => "acct_1OYlT8BCePPNtsZd",
                     'expert_category_id' => $user['category'],
                     'expertise_id' => $user['expertise'],
                     'biography' => $user['biography'],
