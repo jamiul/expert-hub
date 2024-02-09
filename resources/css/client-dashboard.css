@@ -4529,6 +4529,15 @@ a.eye-off {
 }
 
 
+.training-expert-card .expert-thumb-box {
+    height: auto !important;
+    border-radius: 100%;
+    display: table;
+    overflow: hidden;
+    background-color: #C8E0FD;
+}
+
+
 /*  ========================= Expert Login End here ================================================ */
 
 
@@ -9634,11 +9643,11 @@ li.disabled {
     font-size: 20px;
 }
 
-.edux-social {
+.edux-social a {
     color: #0036E3;
     align-items: center;
     display: flex;
-    gap:8px;
+    gap: 8px;
 }
 
 .edux-user-profile-skills ul.project-expert-meta li {
