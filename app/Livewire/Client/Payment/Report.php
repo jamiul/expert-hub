@@ -18,7 +18,7 @@ class Report extends Component {
 
     public $escrow_balance;
 
-    public $perPage = 10;
+    public $perPage = 20;
 
     public $types;
 

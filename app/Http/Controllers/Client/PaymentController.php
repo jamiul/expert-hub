@@ -70,56 +70,7 @@ class PaymentController extends Controller {
      * fund a milestone /payment/pay
      * */
     public function pay( Request $request ) {
-        $user = auth()->user();
-
-        $payment_methods = PaymentMethod::where( 'user_id', $user->id )->get();
-
-        //read payment type
-        $reference = $request->reference;
-        if ( $reference == 'contract' ) {
-            $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
-            $project    = $contract->project;
-
-            $milestone_amount = $milestones->sum( 'amount' );
-        } else if ( $reference == 'offer' ) {
-            $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
-            $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', MilestoneStatus::WantToPay )->get();
-            $project    = $contract->project;
-
-            $milestone_amount = $milestones->sum( 'amount' );
-        } else if ( $reference == 'consultation' ) {
-            $contract   = Consultation::where( 'id', $request->id )->firstOrFail();
-            $project   = ConsultationBooking::where( 'consultation_id', $contract->id )->firstOrFail();
-            $milestones   = BookingSlot::where( 'consultation_booking_id', $project->id )->where( 'status', 'pending' )->get();
-
-            $project->title = $contract->expertField->name;
-
-            $milestones->map(function ($q){
-                $q->title = $q->consultation_time;
-            });
-            $milestone_amount = $milestones->sum( 'amount' );
-        } else if($reference == 'training'){
-            $project = TrainingParticipant::where( 'id', $request->id )->firstOrFail();
-            $milestones = TrainingParticipant::where( 'id', $request->id )->get();
-            $contract = $project->training;
-
-            $project->title = $project->training->title;
-
-            $milestone_amount = $milestones->sum( 'amount' );
-        } else {
-            abort( 404 );
-        }
-
-        //breakdown charge into pieces
-        $milestone_charges = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $contract->client_id, $contract->expert_id );
-
-        return view( 'frontend.client.payment.summary', compact( 'payment_methods',
-            'project',
-            'contract',
-            'milestones',
-            'milestone_charges'
-        ) );
+        return view( 'frontend.client.payment.summary' );
     }
 
     /*
@@ -184,15 +135,30 @@ class PaymentController extends Controller {
             if ( $reference == 'contract' ) {
                 $contract   = Contract::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
                 $milestones = Milestone::where( 'contract_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
-                $project    = $contract->project;
+
                 $redirect   = route( 'contract.show', $contract->id );
             } else if ( $reference == 'offer' ) {
                 $contract   = Offer::where( 'id', $request->id )->where( 'client_id', $user->profile->id )->firstOrFail();
                 $milestones = Milestone::where( 'offer_id', $contract->id )->where( 'status', 'Want to Pay' )->get();
-                $project    = $contract->project;
+
                 $redirect   = route( 'offers.show', $contract->id );
+            } else if ( $reference == 'consultation' ) {
+                $project = ConsultationBooking::where( 'id', $request->id )->firstOrFail();
+                $contract   = Consultation::where( 'id', $project->consultation_id )->firstOrFail();
+                $milestones = BookingSlot::where( 'consultation_booking_id', $project->id )->where( 'status', 'pending' )->get();
+
+                $redirect   = route( 'client.dashboard' );
+            } else if ( $reference == 'training' ) {
+                $project = TrainingParticipant::where( 'id', $request->id )->firstOrFail();
+                $milestones = TrainingParticipant::where( 'id', $request->id )->get();
+                $contract = $project->training;
+
+                $redirect   = route( 'client.dashboard' );
             } else {
-                abort( 404 );
+                return response()->json( [
+                    'status' => false,
+                    'message' => 'Invalid request'
+                ] );
             }
             $milestone_amount = $milestones->sum( 'amount' );
 
@@ -219,16 +185,22 @@ class PaymentController extends Controller {
                     ]
                 ] );
             } else {
-                return toast('warning', 'Account is not active to recveive payment');
+                return response()->json( [
+                    'status' => false,
+                    'message' => 'Account is not active to recveive payment'
+                ] );
             }
-
-            toast( 'success', 'Offer Sent Successfully' );
-
         } catch ( \Exception $ex ) {
-            return toast( 'warning', $ex->getMessage() );
+            return response()->json( [
+                'status' => false,
+                'message' => $ex->getMessage()
+            ] );
         }
 
+
+
         return response()->json( [
+            'status' => true,
             'redirect'     => $redirect,
             'intent'       => $intent,
             'clientSecret' => $intent->client_secret
@@ -256,7 +228,7 @@ class PaymentController extends Controller {
             ] );
 
         } catch ( \Exception $ex ) {
-            dd( $ex->getMessage() );
+            return toast('warning', $ex->getMessage(), $this);
         }
 
         return response()->json( [

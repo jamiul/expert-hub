@@ -10,7 +10,6 @@ class Add extends Modal
 {
     public $clientSecret;
 
-
     public function render()
     {
         $user = auth()->user();
@@ -44,9 +43,8 @@ class Add extends Modal
                     'reference_type' => 'customer'
                 ]
             ] );
-
         } catch ( \Exception $ex ) {
-            dd( $ex->getMessage() );
+            return toast( 'warning', $ex->getMessage() );
         }
 
         $this->dispatch('loadStripeElement', [
