@@ -6,7 +6,6 @@ use DateTimeZone;
 use App\Models\Expertise;
 use Livewire\WithFileUploads;
 use App\Livewire\Profile\Consultation\Form;
-use Label84\HoursHelper\Facades\HoursHelper;
 use WireElements\Pro\Components\Modal\Modal;
 
 class Add extends Modal

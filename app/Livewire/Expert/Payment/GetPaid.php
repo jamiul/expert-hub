@@ -24,7 +24,7 @@ class GetPaid extends Component {
         $this->expert_withdrawal = $user->expert_withdrawal;
     }
 
-    public function tabChange($tab) {
+    public function tabChange( $tab ) {
         $this->tab_active = $tab;
     }
 
@@ -33,15 +33,15 @@ class GetPaid extends Component {
         $this->expert_withdrawal = $user->expert_withdrawal;
         $this->withdraw_schedule = $user->withdraw_schedule;
 
-        PaymentHelper::expertRegisterToStripe($user);
+        PaymentHelper::expertRegisterToStripe( $user );
     }
 
     public function render() {
         $user                    = auth()->user();
         $this->expert_withdrawal = $user->expert_withdrawal;
 
-        $this->last_withdrawal = ExpertTransaction::where('expert_id', $user->id)
-                                                  ->where('type', ExpertTransactionType::Withdrawal)
+        $this->last_withdrawal = ExpertTransaction::where( 'expert_id', $user->id )
+                                                  ->where( 'type', ExpertTransactionType::Withdrawal )
                                                   ->latest()->first();
 
         return view( 'livewire.expert.payment.get-paid', [

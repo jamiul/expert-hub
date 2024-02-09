@@ -42,7 +42,7 @@ class DispatchMilestone extends Command {
                 $milestone_amount     = $milestone->amount;
                 $CONNECTED_ACCOUNT_ID = $milestone->contract->expert->stripe_acct_id;
 
-                $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+                $charge    = PaymentHelper::calculateExpertCharge( $milestone->amount );
                 $net_total = $charge['net_total'];
 
                 $stripe = new \Stripe\StripeClient( [
@@ -60,23 +60,32 @@ class DispatchMilestone extends Command {
                     ]
                 ] );
 
-                $milestone->update([
+                $milestone->update( [
                     'status' => MilestoneStatus::Released
-                ]);
+                ] );
 
-                Log::info($CONNECTED_ACCOUNT_ID . ' payment released.');
-
-                Log::info($acceptMilestone);
-            } catch (\Exception $ex){
-                $milestone->contract->expert->user->notify(new PaymentNotification([
-                        'title'   => 'Client trying to pay you milestone',
-                        'message' => 'A client is trying to pay you milestone. Please submit KYC to verify your account and receive payment',
-                        'link'    => route('expert.payment.index'),
-                        'button' => 'Submit KYC',
+                $milestone->contract->expert->user->notify( new PaymentNotification( [
+                        'title'   => 'Great news! You got paid.',
+                        'message' => "Your available balance is " . $milestone->contract->expert->balance,
+                        'link'    => route( 'expert.payment.billing' ),
+                        'button'  => 'See available balance',
                         'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' )
                     ]
-                ));
-                Log::error($ex);
+                ) );
+
+                Log::info( $CONNECTED_ACCOUNT_ID . ' payment released.' );
+
+                Log::info( $acceptMilestone );
+            } catch ( \Exception $ex ) {
+                $milestone->contract->expert->user->notify( new PaymentNotification( [
+                        'title'   => 'A Client is trying to pay you milestone',
+                        'message' => 'A client is trying to pay you milestone. Please submit KYC to verify your account and receive payment. If already submitted please give us some time to verify it.',
+                        'link'    => route( 'expert.payment.index' ),
+                        'button'  => 'Submit KYC',
+                        'avatar'  => asset( '/assets/frontend/default/img/expert_dashboard/profile-img.png' )
+                    ]
+                ) );
+                Log::error( $ex );
             }
         }
     }
