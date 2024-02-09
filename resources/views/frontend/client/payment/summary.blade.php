@@ -84,9 +84,9 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <p class="py-3 bt-1">Learn <a class="text-decoration-underline fw-medium"
-                                                          href="#">Policy</a> fees and
-                                <a class="text-decoration-underline fw-medium" href="#">estimated taxes</a>
+                            <p class="py-3 bt-1">Learn <a target="_blank" class="text-decoration-underline fw-medium"
+                                                          href="{{ route('privacy-policy') }}">Policy</a> fees and
+                                <a class="text-decoration-underline fw-medium" target="_blank" href="{{ route('terms-of-service') }}">estimated taxes</a>
                             </p>
                             <button class="btn btn-primary btn-md w-100" id="fund_now">Fund Milestone & Hire</button>
                         </div>
