@@ -92,11 +92,77 @@
                                         </a>
 
                                     </div>
-                                    {{-- @forelse ($profile->trainings as $training)
-                                        <p>{{ $training->title }}</p>
+                                    @forelse ($profile->trainings as $training)
+                                        <div class="training-card-trainer-wrapper d-flex gap-3 mb-3">
+                                            @foreach ($training->instructors as $instructor)
+                                            <div class="user-small-card">
+                                                <div>
+                                                    <img src="{{ $instructor->picture }}"/>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-base mb-0">{{ $instructor->user->full_name }}</h4>
+                                                    <ul class="user-meta">
+                                                        <li>Melbourne University</li>
+                                                        <li>{{ $instructor->user->country->name }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        <div class="training-card-description mb-3">
+                                            <p class="mb-0 text-summary">{{ $training->summary }}</p>
+                                        </div>
+                                        <div class="training-card-summary">
+                                            <div class="custom-table text-sm">
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Seminar Dates</div>
+                                                    <div class="td">{{ $training->start_date->format('d M Y') }} - {{ $training->end_date->format('d M Y') }}</div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Time & Location</div>
+                                                    <div class="td">10.15am AEST, Sydney, Australia</div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Training Mode</div>
+                                                    <div class="td">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            @if($training->mode == \App\Enums\TrainingMode::Zoom)
+                                                            <div>
+                                                                <x-icon.video/>
+                                                            </div>
+                                                            @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
+                                                            <x-icon.face-to-face/>
+                                                            @endif
+                                                            <div> {{ $training->mode }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Language</div>
+                                                    <div class="td">{{ $training->language->name }}</div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Training Category</div>
+                                                    <div class="td">{{ $training->category->name }}</div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Training Fee</div>
+                                                    <div class="td">USD {{ $training->fee }}</div>
+                                                </div>
+                                                <div class="tr">
+                                                    <div class="td fw-medium">Partner Institute</div>
+                                                    <div class="td">
+                                                        @foreach ($training->partners as $partner)
+                                                            <a class="text-decoration-underline" href="#">{{ $partner->name }}</a> @if (!$loop->last)|@endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     @empty
                                         <p> No data</p>
-                                    @endforelse --}}
+                                    @endforelse
                                 </div>
 
                             </div>

@@ -8,12 +8,13 @@
         <div class="team-block edux-team-block">
             <a href="#">
             </a>
-            <div class="team-img position-relative"><a href="#">
-                    <img src="{{Auth::user()->profile->picture}}" alt="person">
-                </a><a class="blog-close position-absolute"> <img class="" src="{{ asset('assets/frontend/img/blog-close.png') }}" alt="close"> </a> </div>
+            <div class="team-img position-relative">
+                <img src="{{Auth::user()->profile->picture}}" alt="person">
+                <a class="blog-close position-absolute"> <x-icon.close/> </a> 
+            </div>
             <div class="hire-text edux-hire-text">
-                <h6>{{Auth::user()->full_name}}</h6>
-                <p>Curriculum Expert <br> Public Health <br> {{Auth::user()->country->name}}</p>
+                <h6 class="text-center">{{Auth::user()->full_name}}</h6>
+                <p>{{Auth::user()->profile->expertField->name}}<br> {{Auth::user()->country->name}}</p>
             </div>
         </div>
     </div>
