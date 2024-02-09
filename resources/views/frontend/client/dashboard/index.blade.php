@@ -4,9 +4,24 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="title-page-wrapper">
-                        <div class="title-page-header bb-1">
+                    <div class="title-page-wrapper client-dashboard-page-wrapper">
+                        <div class="title-page-header bb-1 d-flex justify-content-between">
                             <h2 class="h5 mb-0">Your workspace</h2>
+                            <div>
+                                <ul class="d-flex gap-3 m-0">
+                                    <li><a href="{{ route('client.projects') }}" class="btn  btn-light">All
+                                            Project Posts</a></li>
+                                    <li><a href="{{ route('client.contracts') }}" class="btn  btn-light">All
+                                            Contracts</a></li>
+                                    <li>
+                                        <a href="{{ route('projects.create') }}" class="btn btn-has-icon btn-primary ">
+                                            <x-icon.add fill="#fff"/>
+                                            <span class="btn-text">Post a Job</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                         <div class="title-page-body p-40">
                             <div class="proposal-slider carousel-nav-shadow owl-carousel">
@@ -60,36 +75,115 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <hr>
-                            <h3>Upcomming Traning Here</h3>
-                            <div class="upcomming-training-wrapper">
 
+                            <div class="dashboard-page-block">
+                                <div class="dashboard-page-block-heading">
+                                    <h2 class="h4 m-0">Upcoming Academic Training</h2>
+                                    <a class="btn btn-md btn-outline-primary border-2" href="">View All</a>
+                                </div>
+                                <div class="upcomming-training-wrapper">
+                                    @foreach ($latestTrainings as $training)
+                                        <div class="training-small-card bb-1 bt-1">
+                                            <div class="training-small-card-schedule">
+                                                <p class="fw-medium">
+                                                    @if($training->mode == \App\Enums\TrainingMode::Zoom)
+                                                        <x-icon.video fill="#0036E3"/>
+                                                    @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
+                                                        <x-icon.face-to-face fill="#0036E3"/>
+                                                    @endif
+                                                    {{ $training->mode }}
+                                                </p>
+                                                <p class="">{{ $training->start_date->format('d F Y') }}
+                                                    - {{ $training->end_date->format('d F Y') }}</p>
+                                                <p class="">{{ $training->start_time }} AEST, {{ $training->state->name }}
+                                                    , {{ $training->country->name }}</p>
+                                                <p class="">AUD {{ $training->fee }}</p>
+                                            </div>
+                                            <div class="training-small-card-info">
+                                                <h3 class="h6"><a
+                                                        href="{{ route('trainings.show', $training) }}">{{ $training->title }}</a>
+                                                </h3>
+                                                <div class="training-small-card-trainers">
+                                                    @foreach ($training->instructors as $instructor)
+                                                        <div class="user-small-card">
+                                                            <div class="">
+                                                                <img src="{{ $instructor->picture }}">
+                                                            </div>
+                                                            <div class="">
+                                                                <h5 class="text-base mb-0">{{ $instructor->user->full_name ?? '' }}</h5>
+                                                                <ul class="user-meta">
+                                                                    <li>Melbourne University</li>
+                                                                    <li>{{ $instructor->user->country?->name }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                            <div class="training-small-card-action">
+                                                <a href="#" class="btn btn-primary btn-md w-100 mb-2">Registration</a>
+                                                <a href="{{ route('trainings.show', $training) }}"
+                                                   class="btn btn-outline-primary btn-md w-100">Read More</a>
+                                            </div>
+                                        </div> <!--training-small-card-->
+                                    @endforeach
+                                </div>
                             </div>
-                            <div class="expert-profile-slider carousel-nav-shadow owl-carousel">
-                                @foreach ($experts as $expert)
-                                    <div class="expert-profile-slider-card">
-                                        <div class="expert-profile-image">
-                                            <img src="{{ $expert->picture }}"/>
-                                            <span class="notify-point-green"></span>
+                            <div class="dashboard-page-block">
+                                <div class="dashboard-page-block-heading">
+                                    <h2 class="h4 m-0">Discover our Experts</h2>
+                                    <a class="btn btn-md btn-outline-primary border-2" href="">View All</a>
+                                </div>
+                                <div class="expert-profile-slider carousel-nav-shadow owl-carousel">
+                                    @foreach ($experts as $expert)
+                                        <div class="expert-profile-slider-card">
+                                            <div class="expert-profile-image">
+                                                <img src="{{ $expert->picture }}"/>
+                                                <span class="notify-point-green"></span>
+                                            </div>
+                                            <div class="expert-profile-info">
+                                                <h3 class="h6">{{ $expert->user->full_name }}</h3>
+                                                <p class="mb-0">{{ $expert->expertField->name }}</p>
+                                                {{-- <p class="mb-0">Oxford University </p> --}}
+                                                <ul class="expert-profile-meta">
+                                                    <li>{{ $expert->user->country->name }}</li>
+                                                    <li>${{ $expert->hourly_rate }}/hr</li>
+                                                </ul>
+                                                <a href="{{ route('expert.profile.show', $expert) }}"
+                                                   class="btn btn-md btn-outline-primary border-2 w-100">
+                                                    View Profile
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="expert-profile-info">
-                                            <h3 class="h6">{{ $expert->user->full_name }}</h3>
-                                            <p class="mb-0">{{ $expert->expertField->name }}</p>
-                                            {{-- <p class="mb-0">Oxford University </p> --}}
-                                            <ul class="expert-profile-meta">
-                                                <li>{{ $expert->user->country->name }}</li>
-                                                <li>${{ $expert->hourly_rate }}/hr</li>
-                                            </ul>
-                                            <a href="{{ route('expert.profile.show', $expert) }}"
-                                               class="btn btn-md btn-outline-primary border-2 w-100">
-                                                View Profile
-                                            </a>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
+
+
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section  class="page-section-sm team-section pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="section-title-wrapper">
+                        <h2 class="section-title">TEAM</h2>
+                        <p class="section-title-lead">Build on Demand Teams for your Education Institution</p>
+                        <p class="section-title-summary">
+                            Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements
+                            from hourly to full-time.Hire in under 48 hours. Scale up or down, no strings attached. We
+                            offer flexible engagements from hourly to full-time.
+                            Hire in under 48 hours. Scale up or
+                        </p>
+                        <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    @livewire('about.team')
                 </div>
             </div>
         </div>
