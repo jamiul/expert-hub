@@ -8,6 +8,10 @@ enum ClientTransactionType: string
 
     case FixedPrice = 'Fixed Price';
 
+    case Consultation = 'Consultation';
+
+    case Training = 'Training';
+
     case ServiceFee = 'Service Fee';
 
     case ContractInitializationFee = 'Contract Initialization Fee';
