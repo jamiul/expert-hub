@@ -37,10 +37,11 @@ The first day of the course provides a profound introduction to latent variable 
         $stateLookup = State::pluck('id', 'name')->toArray();
         $languageLookup = Language::pluck('id', 'name')->toArray();
         $categoryLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
-        $expert = Profile::find(2);
+        $experts = Profile::expert()->pluck('id')->toArray();
         foreach($keyedData as $data){
+            $expert_id = fake()->randomElement($experts);
             $trainingData = [
-                'expert_id' => $expert->id,
+                'expert_id' => $expert_id,
                 'title' => $data['title'],
                 'fee' => $data['fee'],
                 'country_id' => isset($countryLookup[$data['country']]) ? $countryLookup[$data['country']] : null,
@@ -66,7 +67,7 @@ The first day of the course provides a profound introduction to latent variable 
             ];
             $training_id = DB::table('trainings')->insertGetId($trainingData);
             $training = Training::find($training_id);
-            $training->instructors()->sync([2,3]);
+            $training->instructors()->sync([$expert_id, 3]);
             $training->partners()->sync([2,3]);
         }
     }

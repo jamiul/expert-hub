@@ -36,13 +36,16 @@
                                         <span> 10.15am AEST</span>
                                     </p>
                                     {{-- @TODO project need to be dynamic --}}
+                                    @auth
                                     @if(isset($eoi))
                                     @else
                                     <button onclick="Livewire.dispatch('modal.open', { component: 'project.invite', arguments: { 'expert': {{ $expert->id }}, 'project': 0 }})" class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
                                         Invite to Project
                                     </button>
                                     @endif
-                                    <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon">
+                                    <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon"
+                                    onclick="Livewire.dispatch('modal.open', { component: 'project.invite-message', arguments: { 'expert': {{ $expert->id }}, 'project': 0 }})"
+                                    >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24"
                                             viewBox="0 0 25 24" fill="none">
                                             <path
@@ -51,7 +54,7 @@
                                         </svg>
                                         Chat with Michael
                                     </button>
-
+                                    @endauth
                                 </div>
                             </div>
                             <div class="sidebar-widget">
@@ -96,6 +99,11 @@
                                     </div>
                                     @endforelse
                                 </div>
+                            </div>
+                            <div class="user-education-box-item mb-0 mt-4">
+                                <p class="text-lg fw-medium mt-2 mb-0 edux-social"><x-icon.linkedin fill="#0036E3"/> LinkedIn</p>
+                                <p class="text-lg fw-medium mt-3 mb-0 edux-social"><x-icon.briefcase fill="#0036E3"/> Work Profile</p>
+                                <p class="text-lg fw-medium mt-3 mb-0 edux-social"> <x-icon.briefcase fill="#0036E3"/> Google Scholar </p>
                             </div>
                         </div>
 
@@ -253,6 +261,71 @@
                                                 interdisciplinary learning.</p>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-0">
+                                            <div class="d-flex gap-2 align-items-center">
+                                            <x-icon.listening fill="#0036E3"/>
+                                                <h3 class="h5 mb-0">Conferences and Media Interview</h3>
+                                                <button class="icon-btn">
+                                                    <x-icon.info fill="#C8C5D4"/>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="card card-24 mb-3 border-0">
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                              with Activists</a></p>
+                                              <p class="mb-2">Public Health Institute of Sydney</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Conference</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Mic Drop Moments: Elon Musk Unveils Bold Space Exploration Plans in Interview</a></p>
+                                              <p class="mb-2">Public Health Institute of Sydney</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Conference</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Deep Dives & Hot Takes: Exploring AI Ethics at Industry Conference & Interview with Leading Expert</a></p>
+                                              <p class="mb-2">Fox News</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Media</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                            <div class="card-body py-3 ps-0 pb-4 edux-media-interview">
+                                              <p class="mb-2"><a href="#">Fireside Chats & Panel Discussions: Unveiling Cybersecurity Trends at DEF CON</a></p>
+                                              <p class="mb-2">CNN</p>
+
+                                                <div class="user-profile-skills">
+                                                    <ul>
+                                                    <li>Media</li>
+                                                    </ul>
+                                                  </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
