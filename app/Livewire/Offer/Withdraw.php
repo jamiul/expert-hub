@@ -12,7 +12,7 @@ use WireElements\Pro\Concerns\InteractsWithConfirmationModal;
 class Withdraw extends Component
 {
     use InteractsWithConfirmationModal;
-    
+
     public Offer $offer;
 
     public $currentRoute;
@@ -42,14 +42,15 @@ class Withdraw extends Component
                                 'metadata' => [
                                     'reference_type' => 'offer',
                                     'reference_id' => $this->offer->id,
-                                    'client_id' => $this->offer->client_id
+                                    'client_id' => $this->offer->client_id,
+                                    'refund_type' => 'dispute'
                                 ]
                             ]);
 
                             $this->offer->update([
                                 'status' => OfferStatus::Withdrawn,
                             ]);
-                            
+
                         } catch (\Stripe\Exception\CardException $ex) {
                             toast('warning', $ex->getMessage(), $this);
                         } catch (\Stripe\Exception\InvalidRequestException $ex) {

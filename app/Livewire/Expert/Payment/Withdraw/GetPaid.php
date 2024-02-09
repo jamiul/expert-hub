@@ -16,7 +16,7 @@ class GetPaid extends Modal {
 
     public $amount;
 
-    public $total_amount=0;
+    public $total_amount = 0;
 
     public $withdrawal_method = null;
 
@@ -34,7 +34,7 @@ class GetPaid extends Modal {
                                      ->where( 'bank_id', $this->withdrawal_method )
                                      ->first();
 
-        if($amount <= $user->profile->balance){
+        if ( $amount <= $user->profile->balance ) {
             try {
                 $stripe = new \Stripe\StripeClient( [
                     "api_key" => env( 'STRIPE_SECRET' ),
@@ -46,7 +46,7 @@ class GetPaid extends Modal {
                     'amount'      => $amount,
                     'currency'    => $bank_info->currency,
                     'description' => $reference,
-                    'metadata' => [
+                    'metadata'    => [
                         'expert_id' => $user->id
                     ]
                 ], [ 'stripe_account' => $acct_id ] );

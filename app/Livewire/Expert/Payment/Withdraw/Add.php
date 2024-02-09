@@ -65,7 +65,7 @@ class Add extends Modal {
             }
         }
 
-        sleep(2);
+        sleep( 2 );
 
         $this->dispatch( 'refresh' )->to( GetPaid::class );
 

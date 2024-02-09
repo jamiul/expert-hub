@@ -6,15 +6,13 @@ use App\Models\Profile;
 use Livewire\Component;
 use WireElements\Pro\Components\Modal\Modal;
 
-class Add extends Modal
-{
+class Add extends Modal {
     public $clientSecret;
 
-    public function render()
-    {
+    public function render() {
         $user = auth()->user();
 
-        $stripe = new \Stripe\StripeClient( [
+        $stripe            = new \Stripe\StripeClient( [
             "api_key" => env( 'STRIPE_SECRET' ),
         ] );
         $stripe_account_id = $user->profile->stripe_client_id;
@@ -48,10 +46,10 @@ class Add extends Modal
             dd( $ex->getMessage() );
         }
 
-        $this->dispatch('loadStripeElement', [
+        $this->dispatch( 'loadStripeElement', [
             'clientSecret' => $intent->client_secret,
-        ]);
+        ] );
 
-        return view('livewire.client.billing.card.add');
+        return view( 'livewire.client.billing.card.add' );
     }
 }
