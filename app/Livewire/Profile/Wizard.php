@@ -113,7 +113,7 @@ class Wizard extends Component
         }
         if ($this->currentStep == 6) {
             $this->validate([
-                'biography' => ['required', 'min:500', 'max:2000'],
+                'biography' => ['required', 'min:200', 'max:2000'],
                 'picture' => $this->rules()['picture'],
             ]);
             $this->profile()->update(['biography' => $this->biography]);
@@ -199,7 +199,7 @@ class Wizard extends Component
             'expertise_id' => ['required'],
             'skills' => ['required', 'array'],
             'hourly_rate' => ['required', 'numeric', 'min:50', 'max:1000'],
-            'biography' => ['required', 'min:500', 'max:2000'],
+            'biography' => ['required', 'min:200', 'max:2000'],
             'picture' => [
                 $required,
                 'image',
