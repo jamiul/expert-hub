@@ -3,6 +3,7 @@
 namespace App\Livewire\Contract\Client;
 
 use App\Enums\ContractStatus;
+use App\Enums\ExpertTransactionType;
 use App\Enums\MilestoneStatus;
 use App\Helpers\PaymentHelper;
 use App\Models\Contract;
@@ -14,8 +15,7 @@ use Livewire\Component;
 use Log;
 use WireElements\Pro\Components\Modal\Modal;
 
-class End extends Modal
-{
+class End extends Modal {
     public $contract;
     public $expert;
     public $project;
@@ -28,12 +28,11 @@ class End extends Modal
     public $deadlines;
     public $feedback;
 
-    public function mount(Contract $contract)
-    {
+    public function mount( Contract $contract ) {
         $this->contract = $contract;
-        $this->expert = $contract->expert;
-        $this->project = $contract->project->title;
-        $this->reasons = [
+        $this->expert   = $contract->expert;
+        $this->project  = $contract->project->title;
+        $this->reasons  = [
             'Project Completed successfully',
             'Problem working with expert',
             'I do not need the work completed',
@@ -42,27 +41,26 @@ class End extends Modal
         ];
     }
 
-    public function endContract()
-    {
+    public function endContract() {
         $this->validate();
 
-        $releasing_amount = $this->contract->fundedMilestones()->sum('amount');
+        $releasing_amount = $this->contract->fundedMilestones()->sum( 'amount' );
 
-        foreach ($this->contract->fundedMilestones() as $milestone) {
-            $milestone->update([
-                'status' => MilestoneStatus::Approved,
+        foreach ( $this->contract->fundedMilestones() as $milestone ) {
+            $milestone->update( [
+                'status'      => MilestoneStatus::Approved,
                 'approved_at' => now(),
-            ]);
+            ] );
 
             //generate expert charge
-            $charge = PaymentHelper::calculateExpertCharge($milestone->amount);
+            $charge           = PaymentHelper::calculateExpertCharge( $milestone->amount );
             $milestone_amount = $milestone->amount;
 
             //parent transaction
             $transaction_data = [
                 'transaction_id' => null,
                 'milestone_id'   => $milestone->id,
-                'type'           => 'Fixed Price',
+                'type'           => ExpertTransactionType::FixedPrice,
                 'description'    => "Invoice for " . $milestone->title,
                 'client_id'      => $this->contract->client->user_id,
                 'expert_id'      => $this->contract->expert->user_id,
@@ -71,15 +69,15 @@ class End extends Modal
                 'parent'         => null,
                 'status'         => 0,
             ];
-            $transaction = PaymentHelper::createExpertTransaction($transaction_data);
-            $parent_id = $transaction->id;
+            $transaction      = PaymentHelper::createExpertTransaction( $transaction_data );
+            $parent_id        = $transaction->id;
 
             //charge platform fee
-            $service_charge = $charge['service_charge'];
+            $service_charge   = $charge['service_charge'];
             $transaction_data = [
                 'transaction_id' => null,
                 'milestone_id'   => $milestone->id,
-                'type'           => 'Service Fee',
+                'type'           => ExpertTransactionType::ServiceFee,
                 'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
                 'client_id'      => $this->contract->client->user_id,
                 'expert_id'      => $this->contract->expert->user_id,
@@ -88,66 +86,63 @@ class End extends Modal
                 'parent'         => $parent_id,
                 'status'         => 0,
             ];
-            PaymentHelper::createExpertTransaction($transaction_data);
+            PaymentHelper::createExpertTransaction( $transaction_data );
         }
 
-        $escrow_balance = ( $this->contract->client->escrow_balance - $releasing_amount);
+        $escrow_balance = ( $this->contract->client->escrow_balance - $releasing_amount );
 
-        Profile::find($this->contract->client_id)->update([
+        Profile::find( $this->contract->client_id )->update( [
             'escrow_balance' => $escrow_balance
-        ]);
+        ] );
 
-        $testimonial = Testimonial::create([
-            'contract_id' => $this->contract->id,
-            'client_id' => $this->contract->client_id,
-            'expert_id' => $this->contract->expert_id,
-            'owner_id' => auth()->user()->profile->id,
-            'feedback' => $this->feedback,
-            'skill' => $this->skill,
-            'availability' => $this->availability,
+        $testimonial = Testimonial::create( [
+            'contract_id'   => $this->contract->id,
+            'client_id'     => $this->contract->client_id,
+            'expert_id'     => $this->contract->expert_id,
+            'owner_id'      => auth()->user()->profile->id,
+            'feedback'      => $this->feedback,
+            'skill'         => $this->skill,
+            'availability'  => $this->availability,
             'communication' => $this->communication,
-            'deadlines' => $this->deadlines,
-        ]);
+            'deadlines'     => $this->deadlines,
+        ] );
 
-        $this->contract->update([
+        $this->contract->update( [
             'status' => ContractStatus::Ended,
             'reason' => $this->reason,
-        ]);
+        ] );
 
-        $this->expert->user->notify(new ContractEndedNotification($this->contract));
-        toast('success', 'Contract ended successfully', $this);
-        $this->dispatch('contract-ended');
+        $this->expert->user->notify( new ContractEndedNotification( $this->contract ) );
+        toast( 'success', 'Contract ended successfully', $this );
+        $this->dispatch( 'contract-ended' );
         $this->close();
     }
 
-    public function updateTotalScore()
-    {
+    public function updateTotalScore() {
         $this->totalScore();
     }
 
     #[Computed()]
-    public function totalScore()
-    {
-        $total = ($this->skill + $this->availability + $this->communication + $this->deadlines + $this->deadlines);
-        $average = $total/5;
+    public function totalScore() {
+        $total   = ( $this->skill + $this->availability + $this->communication + $this->deadlines + $this->deadlines );
+        $average = $total / 5;
+
         return $average;
     }
 
-    public function rules()
-    {
+    public function rules() {
         return [
-            'reason' => ['required'],
-            'recommendation' => ['required'],
-            'skill' => ['required'],
-            'availability' => ['required'],
-            'communication' => ['required'],
-            'deadlines' => ['required'],
-            'feedback' => ['required'],
+            'reason'         => [ 'required' ],
+            'recommendation' => [ 'required' ],
+            'skill'          => [ 'required' ],
+            'availability'   => [ 'required' ],
+            'communication'  => [ 'required' ],
+            'deadlines'      => [ 'required' ],
+            'feedback'       => [ 'required' ],
         ];
     }
 
-    public function render()
-    {
-        return view('livewire.contract.client.end');
+    public function render() {
+        return view( 'livewire.contract.client.end' );
     }
 }

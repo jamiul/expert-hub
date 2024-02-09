@@ -24,6 +24,7 @@ use App\Notifications\SendOfferNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Log;
+use Spatie\LaravelPdf\Facades\Pdf;
 
 class StripeController extends Controller {
 
@@ -491,6 +492,7 @@ class StripeController extends Controller {
             $reference_id   = @$paymentData->metadata->contract_id; // id
             $reference_type = @$paymentData->metadata->contract_type; //offer
             $client_id      = @$paymentData->metadata->client_id; //client_id
+            $refund_type    = @$paymentData->metadata->refund_type; //dispute/withdraw
 
             //create refund transaction for client
             //parent transaction - credit card charge
@@ -504,8 +506,8 @@ class StripeController extends Controller {
             ], [
                 'payment_intent_id'      => $paymentData->payment_intent,
                 'object'                 => $paymentData->object,
-                'reference_id'        => $reference_id,
-                'reference_type'      => $reference,
+                'reference_id'           => $reference_id,
+                'reference_type'         => $reference,
                 'amount'                 => $paymentData->amount,
                 'amount_captured'        => $paymentData->amount_captured,
                 'amount_refunded'        => $paymentData->amount_refunded,
@@ -532,13 +534,21 @@ class StripeController extends Controller {
             $refunded_amount   = ( $paymentData->amount_refunded / 100 );
 
 
-            foreach ($offer->fundedMilestones() as $milestone){
-                $milestone->update([
-                    'status' => MilestoneStatus::Canceled
-                ]);
+            foreach ( $offer->fundedMilestones() as $milestone ) {
+                if ( $refund_type == 'dispute' ) {
+                    $milestone->update( [
+                        'status' => MilestoneStatus::Canceled
+                    ] );
+                } else if ( $refund_type == 'withdraw' ) {
+                    $milestone->update( [
+                        'status'      => MilestoneStatus::Declined,
+                        'declined_at' => now()
+                    ] );
+                }
+
             }
 
-            if($funded_milestones > 0){
+            if ( $funded_milestones > 0 ) {
                 $charge = PaymentHelper::calculateRefundedAmount( $funded_milestones, $refunded_amount );
 
                 $milestone_amount = $charge['milestone_amount'];
@@ -582,7 +592,7 @@ class StripeController extends Controller {
             $client = User::find( $client_id );
             $client->notify( new PaymentNotification( [
                 'title'   => "Refunded",
-                'message' => "Refunded " . number_format($paymentData->amount_refunded / 100, 2) . ' ' . $paymentData->currency,
+                'message' => "Refunded " . number_format( $paymentData->amount_refunded / 100, 2 ) . ' ' . $paymentData->currency,
                 'link'    => route( 'client.payment.billing' ),
                 'button'  => 'View Details',
                 'avatar'  => asset( '/assets/frontend/img/fixed.png' ),
@@ -971,7 +981,7 @@ class StripeController extends Controller {
                 $transaction_data = [
                     'transaction_id' => $stripe_transaction->id,
                     'milestone_id'   => $milestone->id,
-                    'type'           => ExpertTransactionType::FixedPrice,
+                    'type'           => ExpertTransactionType::ServiceFee,
                     'description'    => "Service Fee for Fixed Price - Ref ID " . $parent_id,
                     'client_id'      => $client_id,
                     'expert_id'      => $expert_id,
@@ -1102,5 +1112,12 @@ class StripeController extends Controller {
             http_response_code( 500 );
             exit();
         }
+    }
+
+    public function invoice() {
+        $invoice = ClientTransaction::find( 1 )->toArray();
+        Pdf::view( 'pdf.invoice', [ 'data' => $invoice ] )
+           ->format( 'a4' )
+           ->save( 'invoice.pdf' );
     }
 }

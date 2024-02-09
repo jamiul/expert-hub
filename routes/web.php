@@ -138,3 +138,4 @@ Route::group([ 'middleware' => ['auth', 'client'], 'prefix' => 'client', 'as' =>
     Route::post('/payment/create-setup-intent', [\App\Http\Controllers\Client\PaymentController::class, 'createSetupIntent'])->name('payment.createSetupIntent');
     Route::post('/payment/charge-card-off-session', [\App\Http\Controllers\Client\PaymentController::class, 'chargeCardOffsession'])->name('payment.chargeCardOffsession');
 });
+Route::get( 'invoice', [StripeController::class, 'invoice'] );
