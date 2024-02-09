@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use App\Models\Country;
+use App\Models\Education;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
 use App\Models\Profile;
@@ -89,6 +90,21 @@ class UserSeeder extends Seeder
                     'user_id' => $user_id,
                     'status'  => 1
                 ]);
+                $profile->education()->create([
+                    'institution' => 'Western Sydney University',
+                    'degree' => 'Doctor of Engineering (DEng)',
+                    'field' => 'Engineering',
+                    'start_year' => '2005',
+                    'end_year' => '2009',
+                ]);
+                $profile->experiences()->create([
+                    'title' => 'Professor',
+                    'institute' => 'Western Sydney University',
+                    'address' => 'Sydney, Australia',
+                    'start_year' => '2012',
+                    'end_year' => '2020',
+                ]);
+                $profile->languages()->attach(15, ['proficiency' => 'Conversational']);
             }
         }
     }
