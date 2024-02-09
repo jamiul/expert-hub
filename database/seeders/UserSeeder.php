@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Enums\ProfileStatus;
 use App\Enums\ProfileType;
 use App\Models\Country;
+use App\Models\Education;
 use App\Models\Expertise;
 use App\Models\ExpertKYC;
 use App\Models\Profile;
@@ -45,7 +46,7 @@ class UserSeeder extends Seeder
             $profile_id = DB::table('profiles')->insertGetId([
                 'user_id' => $user_id,
                 'type' => $user['type'],
-                'status' => ProfileStatus::Approved->name,
+                'status' => ProfileStatus::Draft->name,
             ]);
             if ($user['type'] == ProfileType::Client->value) {
                 $profile = Profile::find($profile_id);
@@ -79,7 +80,6 @@ class UserSeeder extends Seeder
                     ->usingName($imageName)
                     ->toMediaCollection('picture');
                 $profile->update([
-                    'stripe_acct_id' => "acct_1OYlT8BCePPNtsZd",
                     'expert_category_id' => $user['category'],
                     'expertise_id' => $user['expertise'],
                     'biography' => $user['biography'],
@@ -90,6 +90,21 @@ class UserSeeder extends Seeder
                     'user_id' => $user_id,
                     'status'  => 1
                 ]);
+                $profile->education()->create([
+                    'institution' => 'Western Sydney University',
+                    'degree' => 'Doctor of Engineering (DEng)',
+                    'field' => 'Engineering',
+                    'start_year' => '2005',
+                    'end_year' => '2009',
+                ]);
+                $profile->experiences()->create([
+                    'title' => 'Professor',
+                    'institute' => 'Western Sydney University',
+                    'address' => 'Sydney, Australia',
+                    'start_year' => '2012',
+                    'end_year' => '2020',
+                ]);
+                $profile->languages()->attach(15, ['proficiency' => 'Conversational']);
             }
         }
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\ProfileType;
 use App\Models\Country;
 use App\Models\Expertise;
 use App\Models\Language;
@@ -37,7 +38,7 @@ The first day of the course provides a profound introduction to latent variable 
         $stateLookup = State::pluck('id', 'name')->toArray();
         $languageLookup = Language::pluck('id', 'name')->toArray();
         $categoryLookup = Expertise::expertise()->isParent()->pluck('id', 'name')->toArray();
-        $experts = Profile::expert()->pluck('id')->toArray();
+        $experts = Profile::where('type', ProfileType::Expert)->pluck('id')->toArray();
         foreach($keyedData as $data){
             $expert_id = fake()->randomElement($experts);
             $trainingData = [
