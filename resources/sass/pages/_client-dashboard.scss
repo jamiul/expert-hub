@@ -1,0 +1,45 @@
+.client-dashboard-page-wrapper {
+    .title-page-header {
+        ul {
+            li {
+                a {
+                    padding: 7px 24px !important;
+
+                    &.btn-light {
+                        background-color: transparent !important;
+                        border-color: transparent;
+
+                        &:hover {
+                            color: $edu-primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard-page-block {
+    padding: 50px 40px;
+    margin-left: -40px;
+    margin-right: -40px;
+
+    .dashboard-page-block-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        a {
+            width: 177px;
+        }
+    }
+}
+
+.client-dashboard-page-wrapper {
+    .training-small-card {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
