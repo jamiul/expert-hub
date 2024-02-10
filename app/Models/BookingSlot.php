@@ -11,7 +11,7 @@ class BookingSlot extends Model
 
     protected $guarded = [];
 
-    public function consultationBooking() {
+    public function consultation_booking() {
         return $this->belongsTo(ConsultationBooking::class);
     }
 }
