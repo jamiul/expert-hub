@@ -45,15 +45,15 @@
         <h4 class="widget-title">Location</h4>
         <x-form.autocomplete class="input-field-md" :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
     </div>
-    <div class="filter-widget">
-        <h4 class="widget-title">Hourly Rate (USD)</h4>
-        <x-form.select x-on:change="window.scrollTo({top: 0, behavior: 'smooth'})" wire:change="filter" wire:model="hourlyRate" class="input-field-md">
-            <option value="">Any hourly rate</option>
-            <option value="50-100">$50-$100 /hour</option>
-            <option value="101-150">$101-$150 /hour</option>
-            <option value="151-200">$151-$200 /hour</option>
-            <option value="201-250">$201-$250 /hour</option>
-            <option value="251-300">$251-$300 /hour</option>
-        </x-form.select>
-    </div>
+{{--    <div class="filter-widget">--}}
+{{--        <h4 class="widget-title">Hourly Rate (USD)</h4>--}}
+{{--        <x-form.select x-on:change="window.scrollTo({top: 0, behavior: 'smooth'})" wire:change="filter" wire:model="hourlyRate" class="input-field-md">--}}
+{{--            <option value="">Any hourly rate</option>--}}
+{{--            <option value="50-100">$50-$100 /hour</option>--}}
+{{--            <option value="101-150">$101-$150 /hour</option>--}}
+{{--            <option value="151-200">$151-$200 /hour</option>--}}
+{{--            <option value="201-250">$201-$250 /hour</option>--}}
+{{--            <option value="251-300">$251-$300 /hour</option>--}}
+{{--        </x-form.select>--}}
+{{--    </div>--}}
 </div>
