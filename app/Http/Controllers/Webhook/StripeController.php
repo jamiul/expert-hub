@@ -73,6 +73,97 @@ class StripeController extends Controller {
                 $this->__chargeRefund( $charge );
                 break;
 
+            //============= CONNECT WEBHOOKS ==============//
+            case 'account.application.authorized':
+                $this->__handleApplicationAuthorized( $event );
+                break;
+
+            case 'account.application.deauthorized': //Occurs when a user disconnects from your account and can be used to trigger required cleanup on your server.
+                $this->__handleApplicationDeauthorized( $event );
+                break;
+
+            case 'account.external_account.created':
+                Log::info( $event->type );
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountCreated( $paymentMethod );
+                break;
+
+            case 'account.external_account.updated': //Occurs when a bank account or debit card attached to a connected account is updated, which can impact payouts.
+                Log::info( $event->type );
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountUpdated( $paymentMethod );
+                break;
+
+            case 'account.external_account.deleted':
+                Log::info( $event->type );
+                $paymentMethod = $event->data->object;
+                $this->__externalAccountDeleted( $paymentMethod );
+                break;
+
+            case 'capability.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__capabilityUpdated( $account );
+                break;
+
+            case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__accountUpdated( $account );
+                break;
+
+            case 'balance.available': //Occurs when your Stripe balance has been updated (for example, when funds you’ve added from your bank account are available for transfer to your connected account).
+                $paymentMethod = $event->data->object;
+                $this->__paymentGeneric( $event );
+                break;
+
+            case 'person.created': //connect account status update
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__personCreated( $account );
+                break;
+
+            case 'person.updated': //connect account status update
+                Log::info( $event->type );
+                $account = $event->data->object;
+                $this->__personCreated( $account );
+                break;
+
+            case 'payout.created': //payout to expert's external bank account created
+                $payout = $event->data->object;
+                $this->__payoutCreated( $payout );
+                break;
+
+            case 'payout.updated': //payout to expert's external bank account status updated
+                $payout = $event->data->object;
+                $this->__payoutUpdated( $payout );
+                break;
+
+            case 'payout.failed': //payout to expert's external bank account failed
+                $payout = $event->data->object;
+                $this->__payoutFailed( $payout );
+                break;
+
+            case 'payout.paid': //payout to expert's external bank account success
+                $payout = $event->data->object;
+                $this->__payoutPaid( $payout );
+                break;
+
+            case 'payment.created':
+                $transfer = $event->data->object;
+                $this->__paymentGeneric( $event );
+                break;
+
+            case 'transfer.created': //when money transferred to expert's stripe account
+                $paymentMethod = $event->data->object;
+                $this->__transferCreated( $paymentMethod );
+                break;
+
+            case 'transfer.reversed': //admin reveresed already transferred amount from expert's stripe account
+                $transfer = $event->data->object;
+                $this->__transferReversed( $transfer );
+                break;
+
             default:
                 $this->__paymentGeneric( $event );
                 echo 'Received unknown event type ' . $event->type;
@@ -133,12 +224,6 @@ class StripeController extends Controller {
                 Log::info( $event->type );
                 $account = $event->data->object;
                 $this->__capabilityUpdated( $account );
-                break;
-
-            case 'account.created': //Allows you to monitor changes to connected account requirements and status changes.
-                Log::info( $event->type );
-                $account = $event->data->object;
-                $this->__accountUpdated( $account );
                 break;
 
             case 'account.updated': //Allows you to monitor changes to connected account requirements and status changes.
