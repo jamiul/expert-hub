@@ -10,15 +10,15 @@
                 <li class="item-has-submenu">
                     <a href="#">Projects</a>
                     <ul>
-                        <li><a href="{{ route('find.projects') }}">Find project</a></li>
-                        <li><a href="{{ route('expert.eois.index') }}">My Eois</a></li>
+                        <li><a href="{{ route('find.projects') }}">Find Project</a></li>
+                        <li><a href="{{ route('expert.eois.index') }}">My EOIs</a></li>
                         <li><a href="{{ route('expert.contracts') }}">My Contracts</a></li>
                     </ul>
                 </li>
                 <li class="item-has-submenu">
                     <a href="#">Reports</a>
                     <ul>
-                        <li><a href="{{ route('expert.profile.edit') }}">My profile</a></li>
+                        <li><a href="{{ route('expert.profile.edit') }}">My Profile</a></li>
                         <li><a href="{{ route('expert.analytics') }}">Analytics</a></li>
                     </ul>
                 </li>
@@ -75,7 +75,7 @@
                 @livewire('expert-notification-count')
 
                 <livewire:new-message-count />
-                
+
                 <li>
                     <a class="icon-btn border" @click.prevent="openDropdown = (openDropdown === 'profile') ? null : 'profile'" href="#">
                         <img src="{{ auth()->user()->profile->picture ? auth()->user()->profile->picture : asset('dummy-user.png')}}"/>
@@ -88,7 +88,6 @@
                             </div>
                             <div class="dropdown-user-info  mb-3">
                                 <h3 class="h6 mb-1">{{ auth()->user()->full_name }}</h3>
-                                <p class="text-sm">Sydney Islamic business school</p>
                             </div>
                             <div class="dropdown-user-profile-status  mb-3">
                                 <input type="radio" name="user-profile-status" id="user-profile-offline">
