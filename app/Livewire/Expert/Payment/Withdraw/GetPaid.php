@@ -27,7 +27,7 @@ class GetPaid extends Modal {
 
         $acct_id = $user->profile->stripe_acct_id;
 
-        $amount    = $this->amount * 100;
+        $amount    = $this->amount;
         $reference = $this->reference;
 
         $bank_info = ExpertWithdrawal::where( 'user_id', $user->id )
@@ -43,7 +43,7 @@ class GetPaid extends Modal {
                 $stripe->payouts->create( [
 //                'source_type' => 'bank_account',
                     'destination' => $bank_info->bank_id,
-                    'amount'      => $amount,
+                    'amount'      => $amount * 100,
                     'currency'    => $bank_info->currency,
                     'description' => $reference,
                     'metadata'    => [
