@@ -11,7 +11,7 @@
                 <li class="item-has-submenu">
                     <a href="#">Projects</a>
                     <ul>
-                        <li><a href="{{ route('projects.create') }}">Post a project</a></li>
+                        <li><a href="{{ route('projects.create') }}">Post a Project</a></li>
                         <li><a href="{{ route('client.projects') }}">All Project Posts</a></li>
                         <li><a href="{{ route('client.contracts') }}">All Contracts</a></li>
                     </ul>
@@ -19,7 +19,7 @@
                 <li class="item-has-submenu">
                     <a href="#">Reports</a>
                     <ul>
-                        <li><a href="{{ route('client.profile.edit') }}">My profile</a></li>
+                        <li><a href="{{ route('client.profile.edit') }}">My Profile</a></li>
                         <li><a href="">Analytic</a></li>
                     </ul>
                 </li>
