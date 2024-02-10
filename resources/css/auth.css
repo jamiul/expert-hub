@@ -5,12 +5,15 @@
     padding-left: 32px;
     box-shadow: 8px 8px 32px 0px rgba(14, 0, 98, 0.06);
 }
+
 .login-card {
     max-width: 540px;
 }
+
 .registration-card {
     max-width: 640px;
 }
+
 .login-card,
 .registration-card {
     margin: auto;
@@ -18,12 +21,26 @@
     padding: 40px;
     border-radius: 12px;
 }
+
+@media screen and (max-width: 500px) {
+    .login-card,
+    .registration-card {
+        padding: 20px;
+    }
+
+    .login-card .d-flex {
+        flex-wrap: wrap;
+    }
+
+}
+
 .form-title {
     font-size: 28px;
     font-weight: 500;
     color: #303744;
     margin: 0 0 40px;
 }
+
 .auth-footer {
     margin-top: 40px;
     font-size: 16px;
@@ -32,6 +49,7 @@
     text-align: center;
     margin-bottom: 0;
 }
+
 .usertype-radio {
     display: flex;
     align-items: center;
@@ -42,6 +60,7 @@
     margin-top: 15px;
     transition: all 500ms;
 }
+
 .usertype-radio input {
     width: 20px;
     height: 20px;
@@ -50,22 +69,26 @@
     margin-top: 3px;
     border: 2px solid rgba(0, 0, 0, 0.31);
 }
+
 .usertype-radio input:checked {
     background-color: #0036E3;
     border: 2px solid #0036E3;
     box-shadow: 0 0 0 .25rem rgba(0, 89, 201, .2);
 }
+
 .usertype-label {
     flex-grow: 1;
     display: flex;
     align-items: center;
 }
-.usertype-label p{
+
+.usertype-label p {
     margin: 0;
     font-size: 19px;
     font-weight: 500;
     line-height: normal;
 }
+
 .usertype-icon {
     width: 48px;
     height: 48px;
@@ -77,15 +100,18 @@
     background: #fff;
     margin-right: 12px;
 }
+
 .social-registration-block ul {
     display: flex;
     justify-content: space-between;
     padding: 0;
     margin: 0;
 }
+
 .social-registration-block ul li {
     list-style: none;
 }
+
 .separator {
     text-align: center;
     position: relative;
@@ -94,6 +120,7 @@
     justify-content: center;
     margin: 20px 0;
 }
+
 .separator::before {
     content: "";
     background: #0000001c;
@@ -104,6 +131,7 @@
     right: 0;
     top: 10px;
 }
+
 .separator span {
     background: #fff;
     z-index: 999;
@@ -113,19 +141,24 @@
     color: #303744;
     font-size: 15px;
 }
-.registration-checkboxes .form-check-group .form-check-label{
+
+.registration-checkboxes .form-check-group .form-check-label {
     font-size: 14px;
 }
+
 .verify-email .verify-img {
     text-align: center;
     margin-bottom: 65px;
 }
+
 .verify-email .verify-text {
     text-align: center;
 }
+
 .verify-email .verify-text h3 {
     margin-bottom: 15px;
 }
+
 .verify-email .verify-text p {
     font-size: 16px;
     line-height: 25px;
@@ -133,27 +166,30 @@
     color: #303744b2;
     margin: 0 50px;
 }
+
 .verify-email .verify-link ul {
     padding: 0;
     margin: 25px 0 30px;
     text-align: center;
 }
+
 .verify-email .verify-link ul li {
     display: inline-block;
     margin: 0 6px;
 }
+
 .verify-email .verify-link ul li a {
     font-size: 16px;
     font-weight: 500;
     color: #0036e3;
 }
+
 .verify-email .verify-link ul li a:hover {
     color: #303744;
 }
 
 
-
-.edux-social-auth{
+.edux-social-auth {
     display: flex;
     gap: 16px;
     width: 100%;
@@ -177,6 +213,6 @@
     justify-content: center;
 }
 
-.registration-checkboxes .form-check-group{
+.registration-checkboxes .form-check-group {
     margin-bottom: 24px;
 }

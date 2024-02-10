@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-lg-6">
             <div class="login-card">
-                <h3 class="text-center form-title">Log in to EduExHub</h3>
+                <h3 class="text-center form-title">Log in to ExpertGate</h3>
                 <x-auth-session-status class="mb-4" :status="session('status')" />
                 <form wire:submit="login">
                     <x-form.input type="email" label="Email Address" wire:model="email" placeholder="name@example.com"/>
