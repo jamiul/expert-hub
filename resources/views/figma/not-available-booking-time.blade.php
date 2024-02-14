@@ -342,9 +342,8 @@
                         <p><a href="#">See more times</a>  </p>
                         <button type="button" class="btn btn-primary edux-btn-primary">Continue</button>
                         <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon fw-bold">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                                  <path d="M6.5 14H14.5V12H6.5V14ZM6.5 11H18.5V9H6.5V11ZM6.5 8H18.5V6H6.5V8ZM2.5 22V4C2.5 3.45 2.69583 2.97917 3.0875 2.5875C3.47917 2.19583 3.95 2 4.5 2H20.5C21.05 2 21.5208 2.19583 21.9125 2.5875C22.3042 2.97917 22.5 3.45 22.5 4V16C22.5 16.55 22.3042 17.0208 21.9125 17.4125C21.5208 17.8042 21.05 18 20.5 18H6.5L2.5 22ZM5.65 16H20.5V4H4.5V17.125L5.65 16Z" fill="#0036E3"></path>
-                                </svg>
+
+                                <x-icon.message-line fill="#0036E3"/>
                                 Chat with Michael
                             </button>
                     </div>
