@@ -245,15 +245,19 @@ class Form extends BaseForm
 
     public function setSlots()
     {
+
         $this->validate([
             'day' => 'required',
         ],[
             'day.required' => 'Please select Day.'
         ]);
 
-        if (empty($this->selectedHours)) {
-            $this->addError('selectedHours', 'Please select at least one hour.');
-            return;
+        if(count($this->selectedHours) > 5) {
+            return $this->addError('error', 'Please select maximum 5 schedule per day');
+        }
+
+        if (count($this->selectedHours) === 0) {
+            return $this->addError('error', 'Please select at least one hour.');
         }
 
         if (!isset($this->confirmSlots) || !is_array($this->confirmSlots)) {

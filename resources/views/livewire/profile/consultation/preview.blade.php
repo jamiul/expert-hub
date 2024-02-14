@@ -26,17 +26,17 @@
         </div>
     </div>
     <div class="mb-40">
-        <div class="available-schedule-input-wrapper edux-schedule-input mb-40">
+        <div class="available-schedule-input-wrapper edux-schedule-input edux-schedule-input-single mb-40">
             <div class="available-time-select-col eudx-time-select">
                 <h6>Selected slot</h6>
                 <ul class="edux-selected-slot">
-                    @if(count($form->confirmSlots) > 0)
+                    @if (count($form->confirmSlots) > 0)
                         @foreach ($form->confirmSlots as $day => $times)
                             <div class="row edux-padding-xs">
                                 <li class="edux-day-schedule">{{ $day }}</li>
-                                    @foreach ($times as $time)
-                                        <li>{{ $time }}</li>
-                                    @endforeach
+                                @foreach ($times as $time)
+                                    <li>{{ $time }}</li>
+                                @endforeach
                             </div>
                         @endforeach
                     @endif
