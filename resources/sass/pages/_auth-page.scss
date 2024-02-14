@@ -1,6 +1,20 @@
+.auth-nav {
+    width: 100%;
+    max-height: 64px;
+    padding: 14px 40px;
+    border-bottom: 1px solid $edu-border-color;
+    background: #fff;
+}
+
+
 .auth-card {
     width: 100%;
     max-width: 640px;
+    margin: 0 auto;
+    border: 1px solid $edu-border-color;
+    border-radius: 8px;
+    padding: 60px 95px;
+    background-color: #fff;
 
     .auth-card-title {
         margin-bottom: 40px;

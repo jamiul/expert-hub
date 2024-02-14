@@ -1,4 +1,4 @@
-@mixin input-field($height: 55px, $border-radius: 4px, $padding-y: 8px, $padding-x: 15px, $font-size: 1rem,  $border-color: $edu-primary-color ) {
+@mixin input-field($height: 48px, $border-radius: 4px, $padding-y: 8px, $padding-x: 15px, $font-size: 1rem,  $border-color: $edu-primary-color ) {
     background: transparent;
     outline: none;
     border: solid 2px rgba(0, 0, 0, 0.1);
@@ -126,10 +126,6 @@
 .input-field-control {
     @include input-field;
 
-    &.input-field-control-lg {
-        height: 46px;
-    }
-
     &.input-field-control-md {
         height: 42px;
     }
@@ -187,7 +183,7 @@ select.input-field-control {
         }
     }
 }
-
+/*
 .name-fields-wrapper {
     display: grid;
     gap: 0 16px;
@@ -202,7 +198,7 @@ select.input-field-control {
         }
     }
 }
-
+*/
 .available-schedule-input-wrapper {
     display: grid;
     gap: 25px;
