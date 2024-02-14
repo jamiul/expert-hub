@@ -55,7 +55,7 @@ class Form extends BaseForm
     public $time;
     public $selectedHours = [];
     public $timezoneIndetifiers = [];
-    public $daysInWeek = ['Select Day','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    public $daysInWeek = ['Select Day', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     public function mount()
     {
@@ -69,18 +69,17 @@ class Form extends BaseForm
             'profile_id' => 'nullable',
             'expertise_id' => 'required',
             'expertise_skills' => 'required',
-        ],[
+        ], [
             'expertise_id.required' => 'Please Add Consultation Title.',
             'expertise_skills.required' => 'Please Add Consultation Skillsets.',
         ]);
-
     }
 
     public function saveServiceFee()
     {
         $this->validate([
             'hourly_rate' => ['required', 'numeric', 'min:50', 'max:1000'],
-        ],[
+        ], [
             'hourly_rate.required' => 'Please add hourly rate.'
         ]);
     }
@@ -102,8 +101,8 @@ class Form extends BaseForm
         $requiredOrNull = $this->imageUrl == '' ? 'required' : 'nullable';
         $this->validate([
             'description' => 'required|max:2000',
-            'image' => $requiredOrNull.'|max:2048'
-        ],[
+            'image' => $requiredOrNull . '|max:2048'
+        ], [
             'description.required' => 'Please add Description.',
             'image.required' => 'Please add image.'
         ]);
@@ -113,7 +112,6 @@ class Form extends BaseForm
     public function previewService()
     {
         $data = $this->validate();
-
     }
 
     public function add()
@@ -121,7 +119,7 @@ class Form extends BaseForm
         $data = $this->validate();
         $data['profile_id'] = $this->profile()->id;
 
-        $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'day', 'time','image']));
+        $consultation = $this->profile()->consultation()->create(Arr::except($data, ['expertise_skills', 'day', 'time', 'image']));
 
         if (!is_null($this->image)) {
 
@@ -212,12 +210,11 @@ class Form extends BaseForm
         })->toArray();
 
         $this->day = "";
-
     }
 
     public function updatedDate()
     {
-        if(! is_null($this->consultation)){
+        if (!is_null($this->consultation)) {
             $filteredSlots = $this->consultation->slots->where('day', $this->day);
             $this->selectedHours = $filteredSlots->pluck('time');
         }
@@ -245,14 +242,13 @@ class Form extends BaseForm
 
     public function setSlots()
     {
-
         $this->validate([
             'day' => 'required',
-        ],[
+        ], [
             'day.required' => 'Please select Day.'
         ]);
 
-        if(count($this->selectedHours) > 5) {
+        if (count($this->selectedHours) > 5) {
             return $this->addError('error', 'Please select maximum 5 schedule per day');
         }
 

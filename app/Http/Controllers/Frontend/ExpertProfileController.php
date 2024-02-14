@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Profile;
 use Illuminate\View\View;
-use App\Enums\ProfileType;
 use App\Models\Consultation;
 use App\Http\Controllers\Frontend\Controller;
 
