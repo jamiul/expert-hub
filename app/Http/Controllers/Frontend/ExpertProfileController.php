@@ -32,7 +32,7 @@ class ExpertProfileController extends Controller
     {
         $expert = Profile::with('user')->where('id', $profile->id)->expert()->first();
 
-        if($expert->count() > 0) {
+        if($expert) {
             return view('frontend.expert.profile.show', compact('expert'));
         }
 

@@ -164,93 +164,90 @@
                         </div>
                       </div>
 
-                      <div class="row border-0">
-                          <div class="col-md-6">
-                            <div class="expert-card training-expert-card">
-                            <div class="expert-card-header mb-2">
-                                <div class="expert-thumb">
-                                    <div class="expert-thumb-box">
-                                        <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                      <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="training-card">
+                                <div class="training-card-trainer-wrapper">
+                                    <div class="user-small-card">
+                                        <div>
+                                            <img src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                            <ul class="user-meta">
+                                                <li>Public Health</li>
+                                                <li>Melbourne University</li>
+                                                <li>Australia</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div> <!--expert-thumb-->
-                                <div class="expert-info">
-                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
-                                    <ul class="expert-meta">
-                                        <li>Public Health</li>
-                                        <li>Melbourne University</li>
-                                        <li>Australia</li>
-                                    </ul>
-
-
-
-
-                                </div><!--expert-info-->
-
-
-                            </div>
-
-                            <div class="scholarship-details">
-                                  <div class="custom-table text-sm">
-                                      <div class="tr">
-                                          <div class="td">Seminar Dates</div>
-                                          <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Time & Location</div>
-                                          <div class="td fw-medium">10.15am  AEST, Sydney, Australia</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Mode</div>
-                                          <div class="td fw-medium">
-                                            <a href="#" class="expert-tag offer-consultation-btn">
-                                            <x-icon.video fill="#0036E3"/>
-                                                  Live via Zoom
-                                              </a>
-                                          </div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Language</div>
-                                          <div class="td fw-medium">English</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Category</div>
-                                          <div class="td fw-medium">Research and Analysis</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Fee</div>
-                                          <div class="td fw-medium">USD 995</div>
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="expert-card training-expert-card">
-                            <div class="expert-card-header mb-2">
-                                <div class="expert-thumb">
-                                    <div class="expert-thumb-box">
-                                        <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                                    <div class="user-small-card">
+                                        <div>
+                                            <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                            <ul class="user-meta">
+                                                <li>Public Health</li>
+                                                <li>Melbourne University</li>
+                                                <li>Australia</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div> <!--expert-thumb-->
-                                <div class="expert-info">
-                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
-                                    <ul class="expert-meta">
-                                        <li>Public Health</li>
-                                        <li>Melbourne University</li>
-                                        <li>Australia</li>
-                                    </ul>
-                                </div><!--expert-info-->
+                                </div>
 
+                                <div class="training-card-summary">
+                                    <div class="custom-table text-sm">
+                                        <div class="tr">
+                                            <div class="td">Seminar Dates</div>
+                                            <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Time & Location</div>
+                                            <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Training Mode</div>
+                                            <div class="td fw-medium">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div>
+                                                        <x-icon.video/>
+                                                    </div>
+                                                    <div>Live via Zoom</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Language</div>
+                                            <div class="td fw-medium">English</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Training Category</div>
+                                            <div class="td fw-medium">Research and Analysis</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Training Fee</div>
+                                            <div class="td fw-medium">USD 995</div>
+                                        </div>
+
+                                        <div class="tr">
+                                            <div class="td">Partner Institute</div>
+                                            <div class="td fw-medium">Western Sydney University   |   Oxford University</div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                          </div>
-                      </div>
+                        </div>
 
-                    </div>
+                        </div>
+                </div>
 
-                    <div class="training-speaker-area">
+
+
+                <div class="training-speaker-area">
                       <div class="training-speaker-title-area">
                         <h6>Igniting the Spark: Designing PhD Curriculums for the Next Generation of Disruptors</h6>
                         <div class="training-speaker-option">
@@ -259,91 +256,89 @@
                         </div>
                       </div>
 
-                      <div class="row border-0">
-                          <div class="col-md-6">
-                            <div class="expert-card training-expert-card">
-                            <div class="expert-card-header mb-2">
-                                <div class="expert-thumb">
-                                    <div class="expert-thumb-box">
-                                        <img src=" {{ asset('assets/frontend/img/consultant1.png') }}">
+                      <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="training-card">
+                                <div class="training-card-trainer-wrapper">
+                                    <div class="user-small-card">
+                                        <div>
+                                            <img src="{{ asset('assets/frontend/img/consultant2.png') }}"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                            <ul class="user-meta">
+                                                <li>Public Health</li>
+                                                <li>Melbourne University</li>
+                                                <li>Australia</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div> <!--expert-thumb-->
-                                <div class="expert-info">
-                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
-                                    <ul class="expert-meta">
-                                        <li>Public Health</li>
-                                        <li>Melbourne University</li>
-                                        <li>Australia</li>
-                                    </ul>
-
-
-
-
-                                </div><!--expert-info-->
-
-
-                            </div>
-
-                            <div class="scholarship-details">
-                                  <div class="custom-table text-sm">
-                                      <div class="tr">
-                                          <div class="td">Seminar Dates</div>
-                                          <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Time & Location</div>
-                                          <div class="td fw-medium">10.15am  AEST, Sydney, Australia</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Mode</div>
-                                          <div class="td fw-medium">
-                                            <a href="#" class="expert-tag offer-consultation-btn">
-                                            <x-icon.video fill="#0036E3"/>
-                                                  Live via Zoom
-                                              </a>
-                                          </div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Language</div>
-                                          <div class="td fw-medium">English</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Category</div>
-                                          <div class="td fw-medium">Research and Analysis</div>
-                                      </div>
-                                      <div class="tr">
-                                          <div class="td">Training Fee</div>
-                                          <div class="td fw-medium">USD 995</div>
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="expert-card training-expert-card">
-                            <div class="expert-card-header mb-2">
-                                <div class="expert-thumb">
-                                    <div class="expert-thumb-box">
-                                        <img src=" {{ asset('assets/frontend/img/consultant2.png') }}">
+                                    <div class="user-small-card">
+                                        <div>
+                                            <img src="{{ asset('assets/frontend/img/consultant1.png') }}"/>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-base mb-0">Professor Miles Esther</h4>
+                                            <ul class="user-meta">
+                                                <li>Public Health</li>
+                                                <li>Melbourne University</li>
+                                                <li>Australia</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div> <!--expert-thumb-->
-                                <div class="expert-info">
-                                    <h3 class="h6 expert-name mb-0">Professor Miles Esther</h3>
-                                    <ul class="expert-meta">
-                                        <li>Public Health</li>
-                                        <li>Melbourne University</li>
-                                        <li>Australia</li>
-                                    </ul>
-                                </div><!--expert-info-->
+                                </div>
 
-                            </div>
-                            </div>
-                          </div>
-                      </div>
+                                <div class="training-card-summary">
+                                    <div class="custom-table text-sm">
+                                        <div class="tr">
+                                            <div class="td">Seminar Dates</div>
+                                            <div class="td fw-medium">23 January 2024 - 28 April 2024</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Time & Location</div>
+                                            <div class="td fw-medium">10.15am AEST, Sydney, Australia</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Training Mode</div>
+                                            <div class="td fw-medium">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div>
+                                                        <x-icon.video/>
+                                                    </div>
+                                                    <div>Live via Zoom</div>
+                                                </div>
 
-                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Language</div>
+                                            <div class="td fw-medium">English</div>
+                                        </div>
+                                        <div class="tr">
+                                            <div class="td">Training Category</div>
+                                            <div class="td fw-medium">Research and Analysis</div>
+                                        </div>
+
+                                        <div class="tr">
+                                            <div class="td">Training Fee</div>
+                                            <div class="td fw-medium">USD 995</div>
+                                        </div>
+
+                                        <div class="tr">
+                                            <div class="td">Partner Institute</div>
+                                            <div class="td fw-medium">Western Sydney University   |   Oxford University</div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                </div>
+
+
 
                   </div>
               </div>
