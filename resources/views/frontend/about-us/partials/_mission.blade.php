@@ -7,9 +7,8 @@
                 </div>
             </div>
             <div class="col-md-7">
-
                 <div class="section-content">
-                    <div style="margin-bottom: 24px" class="section-title-wrapper">
+                    <div style="margin-bottom: 24px; max-width: 544px" class="section-title-wrapper">
                         <h2 class="section-title">{{ Str::upper($aboutUsDTO->mission_subtitle) }}</h2>
                         <p class="section-title-lead">{{ Str::headline($aboutUsDTO->mission_title) }}</p>
                     </div>
