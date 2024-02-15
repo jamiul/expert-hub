@@ -1,42 +1,4 @@
-/*---- Global styling --*/
-
-
-.lead {
-    font-size: 19px !important;
-}
-
-.lead-lg {
-    font-size: 1.438rem;
-}
-
-.lead-sm {
-    font-size: 1.125rem;
-}
-
-.fs-12 {
-    font-size: 12px;
-}
-
-.fs-13 {
-    font-size: 13px;
-}
-
-.fs-15 {
-    font-size: 0.937rem !important;
-}
-
-.bg-light {
-    background-color: rgba(1, 59, 69, 0.05) !important;
-}
-
-.bg-dark {
-    background-color: var(--dark) !important;
-}
-
-.transition {
-    transition: all 0.3s ease-in-out;
-}
-
+/*
 .text-muted {
     color: rgba(25, 29, 36, 0.7) !important;
 }
@@ -145,10 +107,6 @@ ul li {
     color: var(--white);
 }
 
-/*---- Global styling --*/
-
-/*---- Expert Dashboard page styling --*/
-
 .expert__dashboad .progress {
     --bs-progress-bar-bg: var(--primary);
     height: 3px;
@@ -212,7 +170,7 @@ ul li {
     position: relative;
     line-height: 1;
     font-size: 20px;
-    /* margin-top: -3px; */
+
     color: var(--primary);
 }
 
@@ -409,7 +367,7 @@ ul li {
 
 .expert__dashboad .main__content__wrapp .aside__wrapp .button .checkbox:checked + .knobs span {
     left: 4px;
-    /* background-color: #333; */
+
     background-color: #FFF;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
 }
@@ -480,7 +438,7 @@ ul li {
 
 .expert__dashboad .main__content__wrapp .pagination .pagination-right ul li {
     margin-left: 2px;
-    /* display: inline-block; */
+
 }
 
 .expert__dashboad .main__content__wrapp .pagination .pagination-right ul li a {
@@ -533,9 +491,7 @@ ul li {
     color: var(--dark);
 }
 
-/*---- Expert Dashboard page styling --*/
 
-/*---- Expert Status page styling --*/
 .pt-32 {
     padding-top: 32px;
 }
@@ -615,9 +571,7 @@ ul li {
     line-height: 19px;
 }
 
-/*---- Expert STatus page styling --*/
 
-/*--------------------- Contract page styling -------------------------*/
 .mb-21 {
     margin-bottom: 21px;
 }
@@ -765,16 +719,14 @@ ul li {
 .expert__dashboad.contract__page .main__content__wrapp button.prop-btn {
     width: 186px;
     height: 32px;
-    /* color: #fff; */
+
 }
 
 .expert__dashboad.contract__page .main__content__wrapp button.prop-btn:hover {
-    /* color: var(--primary) */
+
 }
 
-/*--------------------- Contract page styling -------------------------*/
 
-/*--------------------- Services page styling -------------------------*/
 .my-services h3 {
     font-size: 19px;
     font-weight: 500;
@@ -894,14 +846,10 @@ ul li {
 }
 
 .my-services .edit__fab__btn:hover, .edit__fab__btn:focus, .edit__fab__btn:active {
-    border-color: 2px solid #0E00621A;
+    border-color:#0E00621A;
     background-color: #0E00621A;
 }
 
-/*--------------------- Services page styling -------------------------*/
-
-
-/* --------------- Get Paid Pages CSS --------------------------------- */
 .setting__modal .modal-body {
     padding: 3rem 2.5rem 1.5rem 2.5rem;
 }
@@ -1052,7 +1000,7 @@ ul li {
     border-color: #d1dbfa;
 }
 
-/*------------ Verificaion Page Styles ------------*/
+
 .verification__page .verification__list > li {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
@@ -1145,11 +1093,6 @@ ul li {
     color: #BABABA;
     margin-left: 6px;
 }
-
-/* --------------- Get Paid Pages CSS --------------------------------- */
-
-
-/* ------------------ Work Diray Page Styles ------------------------ */
 
 .expert__dashboad.diary__page .px-40 {
     padding-left: 2.5rem;
@@ -1509,10 +1452,6 @@ ul li {
     font-size: 23px;
 }
 
-/* ------------------ Work Diray Page Styles ------------------------ */
-
-/* --------------------- Proposal Page Styles ----------------------- */
-
 .expert__dashboad.proposal__page .px-40 {
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
@@ -1550,8 +1489,6 @@ ul li {
 .pt-37 {
     padding-top: 37px;
 }
-
-/* --------------------- Proposal Page Styles ----------------------- */
 .large__btn {
     padding: 12px 50px;
 }
@@ -1569,10 +1506,6 @@ ul li {
     background-color: var(--primary);
     color: var(--white) !important;
 }
-
-/* --------------------- Proposal Page Styles ----------------------- */
-
-/* --------------------- Add payment page Styles ----------------------- */
 
 .payment-title-area {
     display: flex;
@@ -1634,11 +1567,6 @@ span.payment-currency {
     color: var(--dark);
 }
 
-/* .card-option a{
-  color:#191D24;
-  max-width: 17px;
-  max-height: 17px;
-} */
 
 .withdraw-area {
     border: 1px solid #0000001A;
@@ -1682,7 +1610,7 @@ button.btn-with-draw-paypal {
     margin-bottom: 24px;
 }
 
-/* Find Projects Styles  */
+
 .left-sidebar .search-block .text-black::placeholder {
     color: var(--dark);
 }
@@ -1791,7 +1719,7 @@ button.btn-with-draw-paypal {
 
 
 @media (min-width: 990px) {
-    /* profile page box width set */
+
     .expert__dashboad .main__content__wrapp .row .col-lg-4 {
         width: 348px !important;
     }
@@ -1800,3 +1728,4 @@ button.btn-with-draw-paypal {
         width: calc(100% - 348px) !important;
     }
 }
+*/

@@ -1,4 +1,4 @@
-.edux-scholarship-table {
+/*.edux-scholarship-table {
     border: none;
     color: #191D24;
 }
@@ -88,7 +88,6 @@
 }
 
 
-/* ==================================== Scholarship Single page ===================================== */
 
 .edux-sidebar-layout {
     display: grid;
@@ -97,6 +96,4 @@
     box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1);
     grid-template-columns: auto;
 }
-
-/* ==================================== Scholarship Single page ===================================== */
-
+*/

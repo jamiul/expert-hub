@@ -1,46 +1,3 @@
-
-:root {
-    --primary: #0036E3;
-    --dark: #191D24;
-    --white: #ffffff;
-}
-
-/*body,*/
-/*h1,*/
-/*h2,*/
-/*h3,*/
-/*h4,*/
-/*h5,*/
-/*h6,*/
-/*p,*/
-/*span,*/
-/*ul,*/
-/*li,*/
-/*a,*/
-/*div,*/
-/*strong,*/
-/*span,*/
-/*b {*/
-/*    font-family: "Colfax";*/
-/*}*/
-
-/*body {*/
-/*    overflow-x: hidden;*/
-/*}*/
-
-/*img {*/
-/*    max-width: 100%;*/
-/*}*/
-
-li {
-    list-style: none;
-}
-
-/*header {*/
-/*    margin-top: 25px;*/
-/*    box-shadow: 8px 8px 32px 0px #0e00620f;*/
-/*}*/
-
 header .header .row {
     display: flex;
     align-items: center;
@@ -159,9 +116,6 @@ header .header-menu .container-fluid {
     padding: 0;
 }
 
-/* header .header-menu .login-block {
-    text-align: right;
-} */
 
 header .header-menu .login-block {
     text-align: right;
@@ -176,7 +130,8 @@ header .header-menu .login-block a {
     color: #0036e3;
     border: solid 2px #0036e3;
     border-radius: 4px;
-    /* display: inline-table; */
+
+
     width: 118px;
     min-height: 35px;
     line-height: 35px;
@@ -525,7 +480,8 @@ header .header-menu .login-block i {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-top: -20px; */
+
+
     gap: 8px;
 }
 
@@ -693,8 +649,6 @@ header .header-menu .login-block i {
 }
 
 
-/* **  Browse Experts by Category of Expertise end ** */
-
 .categories-main .categories-block .categories-text .review .fa {
     color: #db9e00;
     font-size: 13px;
@@ -710,7 +664,6 @@ header .header-menu .login-block i {
     color: #303744b2;
 }
 
-/* ***  Browse Experts by Category of Expertise   ****  */
 
 .categories-main .categories-block .categories-available {
     display: flex;
@@ -765,7 +718,6 @@ img.exp-categoryl {
     top: 7px;
 }
 
-/* ***  Browse Experts by Category of Expertise   ****  */
 
 .categories-main .categories-button a:hover {
     color: #fff;
@@ -973,12 +925,7 @@ img.exp-categoryl {
     min-width: 239px;
 }
 
-/* .eudx-training{
-    border-left: solid 1px #d9dbea;
-    padding-left:20px;
-    margin-left:0px;
 
-} */
 .training-expert-card .expert-card-header ul.expert-meta li {
     display: inline-block;
     padding-right: 15px;
@@ -994,7 +941,7 @@ img.exp-categoryl {
 }
 
 .live-zoom .zoom-icon img {
-    /* height: 10px; */
+
     margin-right: 11px;
 }
 
@@ -1010,7 +957,7 @@ img.exp-categoryl {
     justify-content: space-between;
     align-items: center;
     padding: 30px 25px 32px;
-    /* border-top: 1px solid  rgba(14, 0, 98, 0.10); */
+
     border-bottom: 1px solid rgba(14, 0, 98, 0.10);
 }
 
@@ -1019,17 +966,8 @@ img.exp-categoryl {
 }
 
 
-/* .academic-zoom-area {
-    width: 100%;
-    max-width: 239px;
-    border-right: 1px solid  rgba(14, 0, 98, 0.10);
-} */
-
-
 .live-zoom p {
     margin: 15px 0 0;
-    /*font-size: 14px;*/
-    /*font-weight: 400;*/
     line-height: 16.8px;
 }
 
@@ -1100,10 +1038,6 @@ img.exp-categoryl {
 
 .zoom-live-text p {
     gap: 18px;
-    /*color:  #303744;*/
-    /*font-size: 14px;*/
-    /*font-style: normal;*/
-    /*font-weight: 500;*/
 }
 
 .training-expert-card .expert-card-header {
@@ -1123,7 +1057,6 @@ img.exp-categoryl {
     text-align: center;
     line-height: 45px;
     border-radius: 4px;
-    /* margin-left: 12px; */
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
@@ -1135,10 +1068,6 @@ img.exp-categoryl {
 }
 
 .eudx-training h3 {
-    /*color:  #191D24;*/
-    /*font-size: 19px;*/
-    /*font-style: normal;*/
-    /*font-weight: 500;*/
     margin-bottom: 0px
 }
 
@@ -1172,7 +1101,6 @@ img.exp-categoryl {
 
 .academic-button {
     text-align: center;
-    /* margin-top: 30px; */
 }
 
 .academic-button a {
@@ -1199,10 +1127,6 @@ img.exp-categoryl {
     background: #e8ebf699;
 }
 
-/* .skillsets .tabbable-panel {
-    box-shadow: 0px 8px 32px 0px #0e006214;
-    padding: 30px 0;
-} */
 
 .skillsets .tabbable-panel .nav-tabs {
     border: none;
@@ -1231,7 +1155,6 @@ img.exp-categoryl {
 }
 
 .skillsets .tabbable-panel .tab-content {
-    /* border-top: solid 1px #dadceb; */
     padding: 50px 40px 0;
 }
 
@@ -1266,8 +1189,6 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-item {
     border-bottom: solid 1px #e7e5f0;
-    /*margin-bottom: 20px;*/
-    /*padding-bottom: 20px;*/
 }
 
 .skillsets .accordion .at-item:last-child {
@@ -1308,100 +1229,7 @@ img.exp-categoryl {
     text-decoration: underline;
     font-weight: 500;
 }
-/**
-footer .footer {
-    background: #002ec0;
-    padding: 70px 0;
-}
 
-footer .footer .footer-block h3 {
-    transition: all 500ms;
-    color: #fff;
-    font-size: 19px;
-    font-weight: 500;
-    margin: 0 0 30px;
-}
-
-
-footer .footer .footer-block ul {
-    padding: 0;
-    margin: 0;
-}
-
-footer .footer .footer-block ul li {
-    margin-bottom: 10px;
-}
-
-footer .footer .footer-block ul li a {
-    font-size: 14px;
-    color: #fff;
-    font-weight: 400;
-    text-decoration: none;
-    display: inline-block;
-    width: 100%;
-}
-
-footer .footer .footer-block ul li a:hover {
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-footer .footer .play {
-    float: right;
-}
-
-footer .footer .play .footer-play img {
-    margin-right: 4px;
-}
-
-footer .footer-bottom {
-    background: #012bb0;
-    padding: 20px 0;
-}
-
-footer .footer-bottom .footer-left p {
-    margin: 0;
-    color: #fff;
-    font-size: 14px;
-    line-height: 40px;
-}
-
-footer .footer-bottom .footer-icon ul {
-    margin: 0;
-    padding: 0;
-    text-align: right;
-}
-
-footer .footer-bottom .footer-icon ul li {
-    display: inline-block;
-    margin-left: 2px;
-}
-
-footer .footer-bottom .footer-icon ul li a {
-    color: #fff;
-    border: solid 1px #ffffff33;
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 100%;
-    font-size: 16px;
-    transition: all 500ms;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-bottom .footer-icon ul li a:hover {
-    color: #0036e3;
-    background: #fff;
-}
-
-footer .footer-bottom .footer-icon ul li a:hover svg path {
-    fill: #0036e3;
-    background: #fff;
-}
-**/
 .about-mission {
     background: #f1f3fa;
     padding: 90px 0;
@@ -1780,57 +1608,6 @@ footer .footer-bottom .footer-icon ul li a:hover svg path {
 .left-sidebar .study-level .accordion ul li {
     margin-bottom: 12px;
 }
-
-/*.left-sidebar .study-level .accordion ul li input {*/
-/*    padding: 0;*/
-/*    height: initial;*/
-/*    width: initial;*/
-/*    margin-bottom: 0;*/
-/*    display: none;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.left-sidebar .study-level .accordion ul li label {*/
-/*    align-items: center;*/
-/*    position: relative;*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    margin: 0;*/
-/*    font-size: 14px;*/
-/*    color: #303744;*/
-/*    font-weight: 400;*/
-/*}*/
-
-/*.left-sidebar .study-level .accordion ul li label:before {*/
-/*    content: '';*/
-/*    -webkit-appearance: none;*/
-/*    background-color: transparent;*/
-/*    border: 2px solid #3037444D;*/
-/*    display: flex;*/
-/*    position: relative;*/
-/*    vertical-align: middle;*/
-/*    cursor: pointer;*/
-/*    margin-right: 8px;*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*    border-radius: 4px;*/
-/*    font-size: 20px;*/
-/*}*/
-
-/*.left-sidebar .study-level .accordion ul li input:checked + label:after {*/
-/*    content: "\e876";*/
-/*    font-family: 'Material Symbols Outlined';*/
-/*    left: 0;*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*    border-radius: 4px;*/
-/*    background: #0036e3;*/
-/*    color: #fff;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    font-size: 23px;*/
-/*    align-items: center;*/
-/*}*/
 
 .left-sidebar .study-level .accordion ul li:last-child {
     margin-bottom: 0;
@@ -2397,7 +2174,7 @@ input::placeholder {
     font-weight: 500;
 }
 
-/* color update as per figma on find training page */
+
 .right-sidebar .database-block .database-contant .database-text h4 a {
     color: #191D24;
 }
@@ -2527,7 +2304,7 @@ span:last-child {
     float: left;
     line-height: 32px;
     margin-bottom: 0;
-    color: #191D24; /* color update as per figma on find training page */
+    color: #191D24;
     font-size: 14px;
     font-weight: 400;
 }
@@ -2545,7 +2322,7 @@ span:last-child {
     text-decoration: underline;
 }
 
-/* color update as per figma on find training page */
+
 .right-sidebar .deta-list ul li a.zoomcall {
     color: #191D24;
 }
@@ -2559,63 +2336,8 @@ span:last-child {
     color: #303744;
     text-decoration: none;
 }
-/*
-.pagination {
-    width: 100%;
-    margin: 25px 0 30px;
-    display: block;
-}
-
-.pagination .col-md-4 {
-    width: 30%;
-}
-
-.pagination .col-md-8 {
-    width: 70%;
-}
 
 
-.pagination .pagination-left {
-    color: #303744;
-    font-size: 14px;
-}
-
-.pagination .pagination-right ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    text-align: right;
-}
-
-.pagination .pagination-right ul li {
-    margin-left: 2px;
-}
-
-.pagination .pagination-right ul li a:hover {
-    background: #0036e3;
-    color: #fff;
-}
-
-.pagination .pagination-right ul li a.active {
-    background: #0036e3;
-    color: #fff !important;
-}
-
-.pagination .pagination-right ul li a {
-    border: 2px solid #00000017;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    color: #303744;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 500ms;
-    font-size: 14px;
-    justify-content: center;
-}
-*/
 .pagination .row {
     display: flex;
     align-items: center;
@@ -3065,7 +2787,7 @@ h4 {
 
 .find-projects-require-main {
     padding: 50px 0;
-    /*margin-top: -40px;*/
+
 }
 
 .find-projects-require-main .team-button {
@@ -3796,7 +3518,8 @@ h4 {
     padding: 0 20px 0 85px;
 }
 
-/*---updated taglist styling 06 Nov 2023 --*/
+
+
 .find-consultant .projects-slider .cons-vid {
     display: flex;
     align-items: center;
@@ -3849,10 +3572,7 @@ h4 {
     display: block;
 }
 
-/*---updated taglist styling --*/
 
-
-/*---updated Location search styling 06 Nov 2023--*/
 .scroller * {
     scrollbar-width: thin;
     scrollbar-color: #ddd #eee;
@@ -3910,7 +3630,8 @@ h4 {
 }
 
 
-/*the container must be positioned relative:*/
+
+
 .autocomplete {
     position: relative;
     display: inline-block;
@@ -3935,20 +3656,22 @@ h4 {
     transition: all .3s ease-in-out;
 }
 
-/*when hovering an item:*/
+
+
 .autocomplete-items div:hover {
     color: #0036E3;
     font-weight: 500;
     background: rgba(0, 89, 201, 0.08);
 }
 
-/*when navigating through the items using the arrow keys:*/
+
 .autocomplete-active {
     background-color: DodgerBlue !important;
     color: #ffffff;
 }
 
-/*---updated Location search styling --*/
+
+
 
 
 .find-consultant .consultant-reviw ul li .fa {
@@ -8928,7 +8651,8 @@ h2:after {
     }
 }
 
-/** Job Post */
+
+
 .site-content {
     padding: 60px 0;
 }
@@ -8949,7 +8673,8 @@ h2:after {
     border-radius: 8px;
     border: 1px solid rgba(14, 0, 98, 0.1);
     background: #fff;
-    /* box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1); */
+
+
     padding: 56px;
 }
 
@@ -9481,7 +9206,8 @@ h2:after {
     -webkit-box-orient: vertical;
 }
 
-/****MEDIA QUERY***/
+
+
 
 @media screen and (max-width: 767px) {
     .post-shadow-box {
@@ -9555,10 +9281,10 @@ h2:after {
     }
 }
 
-/** End Job Post */
 
 
-/** Form Error validation and button styling */
+
+
 
 .sign-up .register-form .register-sign-up .form-group input.err {
     border: 2px solid #C00000;
@@ -9592,7 +9318,8 @@ h2:after {
     color: #0036e3;
 }
 
-/* More link styling */
+
+
 .btn-link {
     color: #0036E3;
     font-size: .875rem;
@@ -9603,12 +9330,14 @@ h2:after {
     color: #000;
 }
 
-/* More link styling */
+
+
 .circle-img img {
     border-radius: 50px;
 }
 
-/* accordian styling for training page */
+
+
 .find-training-detail .right-sidebar .accordion-flush .accordion-item {
     box-shadow: 4px -4px 16px 0px rgba(14, 0, 98, 0.09);
     margin-bottom: 8px;
@@ -9648,9 +9377,7 @@ h2:after {
     padding: 24px 32px;
 }
 
-/* accordian styling for training page */
 
-/* Share dropdown menu styles */
 .share__drop__menu {
     border-radius: 4px;
     background: #FFF;

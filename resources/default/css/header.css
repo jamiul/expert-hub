@@ -1,14 +1,13 @@
+/*
 .dropdown:hover  {
-    /* display: block; */
+
 
   }
 
   .dropdown>.dropdown-toggle:active {
-    /* Without this, clicking will make it sticky */
-      /* pointer-events: none; */
+
   }
 .btn-primary{
-    /* background: #055846 !important; */
     background: #0059C9 !important;
     color: #fff;
 }
@@ -146,3 +145,4 @@
         width: 190px !important;
     }
 }
+*/
