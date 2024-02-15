@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="user-education-box-item mb-0 mt-4">
-                                <p class="text-lg fw-medium mt-2 mb-0 edux-social"> <a href="#"><x-icon.linkedin fill="#0036E3"/> LinkedIn</a> </p>
+                                <p class="text-lg fw-medium mt-2 mb-0 edux-social"> <a href="#"><x-icon.logo-linkedin fill="#0036E3"/> LinkedIn</a> </p>
                                 <p class="text-lg fw-medium mt-3 mb-0 edux-social"> <a href="#"><x-icon.briefcase fill="#0036E3"/> Work Profile</a> </p>
                                 <p class="text-lg fw-medium mt-3 mb-0 edux-social"> <a href="#"><x-icon.briefcase fill="#0036E3"/> Google Scholar </a> </p>
                             </div>
