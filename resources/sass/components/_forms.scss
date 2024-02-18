@@ -183,6 +183,7 @@ select.input-field-control {
         }
     }
 }
+
 /*
 .name-fields-wrapper {
     display: grid;
@@ -403,6 +404,7 @@ select.input-field-control {
                 padding: 0.4375rem 1rem;
                 font-weight: 400;
                 cursor: pointer;
+                list-style: none;
 
                 &:hover {
                     background: rgba(0, 89, 201, 0.08);
