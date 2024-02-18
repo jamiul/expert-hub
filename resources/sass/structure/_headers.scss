@@ -948,18 +948,6 @@ header {
             }
 
             &.notification-dropdown-item-unread {
-                //&:after {
-                //    content: "";
-                //    display: block;
-                //    width: 10px;
-                //    height: 10px;
-                //    background-color: $edu-primary-color;
-                //    position: absolute;
-                //    top: 50%;
-                //    right: 11px;
-                //    border-radius: 100%;
-                //    transform: translateY(-50%);
-                //}
             }
 
             .show-dropdown-notification-details {
@@ -1116,7 +1104,6 @@ header {
             }
         }
     }
-
 
 }
 

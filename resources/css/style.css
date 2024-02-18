@@ -1,3 +1,4 @@
+/*
 header .header .row {
     display: flex;
     align-items: center;
@@ -399,6 +400,7 @@ header .header-menu .login-block i {
 .product-slider .carousel-w .carousel-inner .carousel-item {
     text-align: right;
 }
+
 
 .heading {
     text-align: center;
@@ -9465,3 +9467,4 @@ h2:after {
     background-color: var(--primary);
 }
 
+*/

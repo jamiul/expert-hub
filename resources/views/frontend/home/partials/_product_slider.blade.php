@@ -1,62 +1,40 @@
-<div class="homepage-main-slider-wrapper">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6">
-                <div class="hero-text">
-                    <h2>Find Experts for your project</h2>
-                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
-                        you with leaders in course accreditation, curriculum design, policy development, project
-                        management and more. <!--- Choose ExpertGate when your most pivotal academic and industry projects
+<section>
+    <div class="homepage-main-slider-wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6">
+                    <div class="hero-text">
+                        <h2>Find Experts for your project</h2>
+                        <p>ExpertGate is an elite network of top academic and industry experts across the globe. We
+                            connect
+                            you with leaders in course accreditation, curriculum design, policy development, project
+                            management and more. <!--- Choose ExpertGate when your most pivotal academic and industry projects
                         demand the best.---></p>
-                    <div class="hero-button-wrapper">
-                        <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
-                        <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become an
-                            Expert</a>
+                        <div class="hero-button-wrapper">
+                            <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
+                            <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become
+                                an
+                                Expert</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-6 home-main-slider-col">
-                <div id="homepage-slider-main" class="owl-carousel homepage-slider-main">
-                    @forelse ($experts as $expert)
-
-                        <div class="homepage-slider-item">
-                            <div class="homepage-slider-image">
-                                <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
-                            </div>
-                            <div class="homepage-slider-content">
-                                <h4 class="h6">
-                                    <a href="{{ route('expert.profile.show', $expert) }}">{{ $expert->user->full_name }}</a>
-                                </h4>
-                                <p>{{ $expert->expertField?->name }}</p>
-                                <p class="text-primary">{{ $expert->user?->country?->name }}</p>
-                            </div>
-                        </div>
-
-                    @empty
-                        <div>No data</div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="homepage-slider-thumbnails-wrapper bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="homepage-slider-thumbnails-inner-wrapper">
-                    <div id="homepage-slider-thumbnails" class="owl-carousel owl-theme homepage-slider-thumbnails">
+                <div class="col-xl-6 home-main-slider-col">
+                    <div id="homepage-slider-main" class="owl-carousel homepage-slider-main">
                         @forelse ($experts as $expert)
-                            <div class="homepage-slider-thumb-item">
-                                <div class="">
+
+                            <div class="homepage-slider-item">
+                                <div class="homepage-slider-image">
                                     <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
                                 </div>
-                                <div class="">
-                                    <h4>{{ $expert->user->full_name }}</h4>
+                                <div class="homepage-slider-content">
+                                    <h4 class="h6">
+                                        <a href="{{ route('expert.profile.show', $expert) }}">{{ $expert->user->full_name }}</a>
+                                    </h4>
                                     <p>{{ $expert->expertField?->name }}</p>
                                     <p class="text-primary">{{ $expert->user?->country?->name }}</p>
                                 </div>
                             </div>
+
                         @empty
                             <div>No data</div>
                         @endforelse
@@ -64,10 +42,35 @@
                 </div>
             </div>
         </div>
-
     </div>
-</div>
+    <div class="homepage-slider-thumbnails-wrapper bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="homepage-slider-thumbnails-inner-wrapper">
+                        <div id="homepage-slider-thumbnails" class="owl-carousel owl-theme homepage-slider-thumbnails">
+                            @forelse ($experts as $expert)
+                                <div class="homepage-slider-thumb-item">
+                                    <div class="">
+                                        <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
+                                    </div>
+                                    <div class="">
+                                        <h4>{{ $expert->user->full_name }}</h4>
+                                        <p>{{ $expert->expertField?->name }}</p>
+                                        <p class="text-primary">{{ $expert->user?->country?->name }}</p>
+                                    </div>
+                                </div>
+                            @empty
+                                <div>No data</div>
+                            @endforelse
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</section>
 @push('bottom_scripts')
     <script>
         jQuery(document).ready(function () {

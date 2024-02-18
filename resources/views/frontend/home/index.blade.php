@@ -2,7 +2,7 @@
 
 @section('content')
     @include('frontend.home.partials._product_slider')
-    <div class="page-section work-steps-section">
+    <section class="page-section work-steps-section">
         <div class="container">
             <div style="max-width: 725px; margin-bottom: 75px" class="section-title-wrapper text-center mx-auto">
                 <h2 class="section-title">Required Steps</h2>
@@ -55,7 +55,7 @@
                 <a href="{{ route('auth.registration') }}" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
             </div>
         </div>
-    </div>
+    </section>
 
     @include('frontend.home.partials._categories_main')
     <section class="page-section team-section">
@@ -75,35 +75,12 @@
             </div>
         </div>
     </section>
-    <section class="page-section speciality-section bg-white">
-        <div class="container">
-            <div style="" class="section-title-wrapper text-center mb-40">
-                <h2 class="section-title">CHOOSE EXPERTGATE</h2>
-                <p class="section-title-lead">Why Choose ExpertGate?</p>
-            </div>
-            @livewire('about.apart-set')
-        </div>
-    </section>
+
+    @include('frontend.page-sections.why-choose')
+
     @include('frontend.home.partials._academic_block')
-    <div class="scholarship bg-white">
+    <section class="page-section scholarship-section bg-white">
         @livewire('home.scholarship-list')
-    </div>
+    </section>
     @livewire('skill-sets')
 @endsection
-
-@push('bottom_scripts')
-    <script>
-        $(document).ready(function () {
-            $(".at-title").click(function () {
-                $(this).toggleClass("active").next(".at-tab").slideToggle().parent().siblings().find(".at-tab").slideUp().prev().removeClass("active");
-            });
-            $(".carousel-inner .thumb").click(function () {
-                if(!$(this).hasClass('active'))
-                {
-                    $(".carousel-inner .thumb").removeClass("active");
-                    $(this).addClass("active");
-                }
-            });
-        });
-    </script>
-@endpush
