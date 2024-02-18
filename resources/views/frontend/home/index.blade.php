@@ -85,25 +85,8 @@
         </div>
     </section>
     @include('frontend.home.partials._academic_block')
-    <div class="scholarship bg-white">
+    <section class="page-section scholarship-section bg-white">
         @livewire('home.scholarship-list')
-    </div>
+    </section>
     @livewire('skill-sets')
 @endsection
-
-@push('bottom_scripts')
-    <script>
-        $(document).ready(function () {
-            $(".at-title").click(function () {
-                $(this).toggleClass("active").next(".at-tab").slideToggle().parent().siblings().find(".at-tab").slideUp().prev().removeClass("active");
-            });
-            $(".carousel-inner .thumb").click(function () {
-                if(!$(this).hasClass('active'))
-                {
-                    $(".carousel-inner .thumb").removeClass("active");
-                    $(this).addClass("active");
-                }
-            });
-        });
-    </script>
-@endpush

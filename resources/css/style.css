@@ -1,3 +1,4 @@
+/*
 header .header .row {
     display: flex;
     align-items: center;
@@ -399,6 +400,7 @@ header .header-menu .login-block i {
 .product-slider .carousel-w .carousel-inner .carousel-item {
     text-align: right;
 }
+
 
 .heading {
     text-align: center;
@@ -1230,7 +1232,7 @@ img.exp-categoryl {
     text-decoration: underline;
     font-weight: 500;
 }
-
+*/
 .about-mission {
     background: #f1f3fa;
     padding: 90px 0;
