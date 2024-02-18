@@ -1,4 +1,4 @@
-<div class="page-section category-accordion-section">
+<section class="page-section category-accordion-section">
     <div class="container">
         <div style="margin-bottom:34px; max-width: 700px" class="section-title-wrapper text-center mx-auto">
             <h2 class="section-title">Experts</h2>
@@ -50,4 +50,4 @@
 
         </div>
     </div>
-</div>
+</section>

@@ -2,7 +2,7 @@
 
 @section('content')
     @include('frontend.home.partials._product_slider')
-    <div class="page-section work-steps-section">
+    <section class="page-section work-steps-section">
         <div class="container">
             <div style="max-width: 725px; margin-bottom: 75px" class="section-title-wrapper text-center mx-auto">
                 <h2 class="section-title">Required Steps</h2>
@@ -55,7 +55,7 @@
                 <a href="{{ route('auth.registration') }}" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
             </div>
         </div>
-    </div>
+    </section>
 
     @include('frontend.home.partials._categories_main')
     <section class="page-section team-section">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    
+
     @include('frontend.page-sections.why-choose')
 
     @include('frontend.home.partials._academic_block')
