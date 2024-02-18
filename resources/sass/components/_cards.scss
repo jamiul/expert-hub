@@ -104,7 +104,8 @@
     border: 1px solid $edu-border-color;
 }
 
-.user-small-card {
+.user-small-card,
+.user-card-small {
     display: grid;
     grid-template-columns: 40px auto;
     gap: 8px;
@@ -152,6 +153,16 @@
                 top: 0;
                 background-color: $edu-border-color;
             }
+        }
+    }
+
+    ul.edux-rating {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
         }
     }
 }

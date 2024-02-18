@@ -1212,6 +1212,7 @@ img.exp-categoryl {
 
 .skillsets .accordion .at-tab ul li {
     margin-bottom: 6px;
+    list-style: none;
 }
 
 .skillsets .accordion .at-tab ul li a {
@@ -3519,7 +3520,6 @@ h4 {
 }
 
 
-
 .find-consultant .projects-slider .cons-vid {
     display: flex;
     align-items: center;
@@ -3630,8 +3630,6 @@ h4 {
 }
 
 
-
-
 .autocomplete {
     position: relative;
     display: inline-block;
@@ -3657,7 +3655,6 @@ h4 {
 }
 
 
-
 .autocomplete-items div:hover {
     color: #0036E3;
     font-weight: 500;
@@ -3669,9 +3666,6 @@ h4 {
     background-color: DodgerBlue !important;
     color: #ffffff;
 }
-
-
-
 
 
 .find-consultant .consultant-reviw ul li .fa {
@@ -8652,7 +8646,6 @@ h2:after {
 }
 
 
-
 .site-content {
     padding: 60px 0;
 }
@@ -9207,8 +9200,6 @@ h2:after {
 }
 
 
-
-
 @media screen and (max-width: 767px) {
     .post-shadow-box {
         padding: 20px;
@@ -9282,10 +9273,6 @@ h2:after {
 }
 
 
-
-
-
-
 .sign-up .register-form .register-sign-up .form-group input.err {
     border: 2px solid #C00000;
     box-shadow: 0px 0px 8px 4px rgba(255, 0, 0, 0.10);
@@ -9319,7 +9306,6 @@ h2:after {
 }
 
 
-
 .btn-link {
     color: #0036E3;
     font-size: .875rem;
@@ -9331,11 +9317,9 @@ h2:after {
 }
 
 
-
 .circle-img img {
     border-radius: 50px;
 }
-
 
 
 .find-training-detail .right-sidebar .accordion-flush .accordion-item {
