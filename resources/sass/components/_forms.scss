@@ -1,7 +1,7 @@
 @mixin input-field($height: 48px, $border-radius: 4px, $padding-y: 8px, $padding-x: 15px, $font-size: 1rem,  $border-color: $edu-primary-color ) {
     background: transparent;
     outline: none;
-    border: solid 2px rgba(0, 0, 0, 0.1);
+    border: solid 2px #E7E5EF;
     height: $height;
     width: 100%;
     border-radius: $border-radius;
