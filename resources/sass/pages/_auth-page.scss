@@ -6,23 +6,24 @@
     background: #fff;
 }
 
+.user-registration-layout {
+    display: grid;
+    grid-template-columns: 311px auto;
+    gap: 50px;
+    align-items: start;
+}
+
 
 .auth-card {
     width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
     border: 1px solid $edu-border-color;
     border-radius: 8px;
-    padding: 60px 95px;
+    padding: 20px 40px;
     background-color: #fff;
-
-    .auth-card-title {
-        margin-bottom: 40px;
-
-        h1 {
-            text-align: center;
-        }
+    @media screen and (min-width: 1000px) {
+        padding: 60px 95px;
     }
+
 
     .form-check-group {
         .form-check-label {
