@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Experts;
 
+use App\Enums\AvailableFor;
 use App\Models\Profile;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -19,9 +20,9 @@ class Lists extends Component
 
     public function mount($project = null)
     {
-        if($project){
+        if ($project) {
             $this->project = auth()->user()->profile->projects()->where('id', $project)->first();
-        }else{
+        } else {
             $this->project = 0;
         }
         $this->filtersArray = request()->only(
@@ -30,6 +31,7 @@ class Lists extends Component
             'selectedCountries',
             'fields',
             'skills',
+            'availableFor',
         );
     }
 
@@ -54,21 +56,34 @@ class Lists extends Component
     public function render()
     {
         $experts = Profile::expert()->with('user', 'education');
+
         if (!empty($this->filtersArray['hourlyRate'])) {
             $hourlyRateRange = explode('-', $this->filtersArray['hourlyRate']);
             $experts = $experts->whereBetween('hourly_rate', $hourlyRateRange);
         }
 
+        if (!empty($this->filtersArray['availableFor'])) {
+
+            if (in_array(AvailableFor::Consultation->name, $this->filtersArray['availableFor'])) {
+                $profileIds = $experts->pluck('id');
+
+                $experts = $experts->whereHas('consultation', function ($query) use ($profileIds) {
+                    $query->whereIn('profile_id', $profileIds);
+                });
+            }
+
+        }
+
         if (!empty($this->filtersArray['selectedCountries'])) {
-            $experts = $experts->whereHas('user', function($query){
-                $query->whereHas('country', function($query){
+            $experts = $experts->whereHas('user', function ($query) {
+                $query->whereHas('country', function ($query) {
                     $query->whereIn('name', $this->filtersArray['selectedCountries']);
                 });
             });
         }
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
-            $experts = $experts->whereHas('user', function($query){
+            $experts = $experts->whereHas('user', function ($query) {
                 $query
                     ->where('first_name', 'like', '%' . $this->filtersArray['search'] . '%')
                     ->orWhere('last_name', 'like', '%' . $this->filtersArray['search'] . '%')
@@ -76,12 +91,12 @@ class Lists extends Component
             });
         };
         if (isset($this->filtersArray['fields']) && $this->filtersArray['fields']) {
-            $experts = $experts->whereHas('expertField', function($query){
+            $experts = $experts->whereHas('expertField', function ($query) {
                 $query->whereIn('name', $this->filtersArray['fields']);
             });
         };
         if (isset($this->filtersArray['skills']) && $this->filtersArray['skills']) {
-            $experts = $experts->whereHas('expertises', function($query){
+            $experts = $experts->whereHas('expertises', function ($query) {
                 $query->whereIn('name', $this->filtersArray['skills']);
             });
         };
