@@ -1,4 +1,4 @@
-<section class="profile-setup">
+<section class="page-section-sm profile-setup">
     <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-4">
