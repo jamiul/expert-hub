@@ -1,6 +1,6 @@
 <div class="progress-step-content ">
-    <h5 class="mb-2">What languages do you speak?</h5>
-    <p>We will use this to help match you with clients who are fluent in their language.</p>
+    <p>What languages do you speak?</p>
+    <p class="text-sm">We will use this to help match you with clients who are fluent in their language (Max 4)</p>
 
     <div class="d-grid grid-cols-sm-6 gap-3">
         @forelse ($languages as $language)

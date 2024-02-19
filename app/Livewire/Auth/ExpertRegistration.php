@@ -2,8 +2,17 @@
 
 namespace App\Livewire\Auth;
 
+use App\Enums\ProfileStatus;
+use App\Enums\ProfileType;
 use App\Models\Country;
+use App\Models\Profile;
 use App\Models\Title;
+use App\Models\User;
+use Exception;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -18,7 +27,7 @@ class ExpertRegistration extends Component
     #[Validate()]
     public $title = '';
     #[Validate()]
-    public $full_name = '';
+    public $name = '';
     #[Validate()]
     public $email = '';
     #[Validate()]
@@ -32,21 +41,7 @@ class ExpertRegistration extends Component
     #[Validate()]
     public $country_id = '';
     #[Validate()]
-    public $terms = '';
-
-    public $expertCategories = [];
-    public $expert_category_id;
-
-    public $expertises = [];
-    public $expertise_id;
-
-    public $availableSkills = [];
-    public $skills = [];
-
-    public $biography;
-    public $picture;
-    public $pictureUrl = '';
-    
+    public $terms = '';    
 
     public function mount()
     {
@@ -54,29 +49,36 @@ class ExpertRegistration extends Component
         $this->countries = Country::pluck('name', 'id')->toArray();
     }
 
-    public function next()
-    {
-        if ($this->currentStep < 3) {
-            $this->currentStep += 1;
-        }
-    }
-
-    public function back()
-    {
-        if ($this->currentStep > 1) {
-            $this->currentStep -= 1;
-        }
-    }
-
     public function createAccount()
     {
-        $this->next();
-        $this->stepOne();
-    }
-
-    public function stepOne()
-    {
         $this->validate();
+        try {
+            DB::transaction(function (): void {
+                $profileType = ProfileType::Expert;
+                $user = User::create([
+                    'title' => $this->title,
+                    'name' => $this->name,
+                    'username' => $this->username(),
+                    'email' => $this->email,
+                    'phone' => $this->phone,
+                    'password' => Hash::make($this->password),
+                    'active_profile' => $profileType,
+                    'country_id' => $this->country_id,
+                    'terms' => $this->terms,
+                ]);
+
+                Profile::create([
+                    'user_id' => $user->id,
+                    'type'    => $profileType,
+                    'status'  => ProfileStatus::Draft,
+                ]);
+
+                Auth::login($user);
+            });
+            $this->redirectRoute('auth.expert.profile-setup');
+        } catch (Exception $e) {
+            throw new Exception($e);
+        }
     }
 
     public function messages()
@@ -90,7 +92,7 @@ class ExpertRegistration extends Component
     {
         return [
             'title' => ['required'],
-            'full_name' => ['required'],
+            'name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'phone' => ['required', 'phone:'. $this->phone_country],
             'password' => [
@@ -104,6 +106,11 @@ class ExpertRegistration extends Component
             'country_id' => ['required'],
             'terms' => ['accepted'],
         ];
+    }
+
+    public function username()
+    {
+        return Str::uuid();
     }
 
     public function render()
