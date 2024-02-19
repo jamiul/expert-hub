@@ -39,7 +39,6 @@ class ExpertProfileController extends Controller
 
     public function viewConsultation(Consultation $consultation)
     {
-        // dd($consultation->slots);
         return view('frontend.expert.profile.consultation', compact('consultation'));
     }
 }
