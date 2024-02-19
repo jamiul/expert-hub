@@ -41,17 +41,6 @@
         </div>
     </div>
     <div class="filter-widget mb-40">
-        <h6 class="filter-widget-title">Application Deadline</h6>
-        <div class="filter-widget-content">
-            <x-form.select class="input-field-md" wire:change="filter" wire:model="applicationDeadline">
-                <option value="">Select Year</option>
-                @foreach ($years as $year)
-                    <option value="{{ $year }}">{{ $year }}</option>
-                @endforeach
-            </x-form.select>
-        </div>
-    </div>
-    <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">Study Area</h6>
         <div class="filter-widget-content">
             @foreach ($studyAreas as $studyArea)

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 500);
             $table->string('link')->nullable();
+            $table->string('supervisor_link')->nullable();
             $table->foreignId('university_id')->nullable();
             $table->foreignId('country_id')->nullable();
             $table->string('student_type')->nullable(); //App\Enums\Scholarship\StudentType
