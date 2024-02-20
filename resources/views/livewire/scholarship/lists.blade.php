@@ -81,11 +81,24 @@
                             <div class="td">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
                         </div>
                         <div class="tr">
+                            <div class="td">Supervisor</div>
+                            <div class="td">
+                                @if($scholarship->supervisor_link)
+                                    <a target="_blank" class="text-decoration-underline fw-medium"
+                                       href="{{ $scholarship->supervisor_link }}">Click Here</a>
+                                @else
+                                    N/A
+                                @endif
+                            </div>
+                        </div>
+                        <div class="tr">
                             <div class="td">Scholarship Website</div>
                             <div class="td">
                                 @if($scholarship->link)
                                     <a target="_blank" class="text-decoration-underline fw-medium"
                                        href="{{ $scholarship->link }}">Click Here</a>
+                                @else
+                                    N/A
                                 @endif
                             </div>
                         </div>
