@@ -47,18 +47,18 @@
                                                 @endif
                                             </div>
                                             <div>
-                                                <p class="m-0 text-sm fw-medium text-primary">{{ $training->mode->value }}</p>
+                                                <p class="m-0 text-sm fw-medium text-primary">{{ $training->mode?->value }}</p>
                                             </div>
                                         </div>
 
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Language</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->language->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->language?->name }}</p>
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Training Category</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->category->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->category?->name }}</p>
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Partner Institute</p>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Time & Location</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->start_time }} AEST, {{ $training->state->name }}, {{ $training->country->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->start_time }} AEST, {{ $training->state?->name }}, {{ $training->country?->name }}</p>
                                     </div>
                                 </div>
                             </div>
