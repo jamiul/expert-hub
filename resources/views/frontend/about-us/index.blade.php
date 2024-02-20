@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-md-7">
                     <div class="section-content">
-                        <div style="margin-bottom: 24px" class="section-title-wrapper">
+                        <div style="margin-bottom: 24px; max-width: 544px" class="section-title-wrapper">
                             <h2 class="section-title">OUR MISSION</h2>
                             <p class="section-title-lead">Bridging the Gap Between Academia and Industry</p>
                         </div>
@@ -89,15 +89,7 @@
             </div>
         </div>
     </section>
-    <section class="page-section speciality-section bg-white">
-        <div class="container">
-            <div style="" class="section-title-wrapper text-center mb-40">
-                <h2 class="section-title">CHOOSE EXPERTGATE</h2>
-                <p class="section-title-lead">Why Choose ExpertGate?</p>
-            </div>
-            @livewire('about.apart-set')
-        </div>
-    </section>
+    @include('frontend.page-sections.why-choose')
     <section class="page-section team-section">
         <div class="container">
             <div class="row align-items-center">

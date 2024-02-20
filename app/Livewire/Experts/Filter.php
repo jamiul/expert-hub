@@ -32,6 +32,9 @@ class Filter extends Component
     public $skills = [];
     public $expertSkills;
 
+    #[Url()]
+    public $availableFor = [];
+
     public function mount()
     {
         $this->setcountries();
@@ -65,41 +68,6 @@ class Filter extends Component
         $this->filter();
     }
 
-
-    // public function checkParentExpertField(Expertise $expertise)
-    // {
-    //     $removeItems = [];
-
-    //     foreach ($expertise->children as $child) {
-    //         if (in_array($expertise->name, $this->filterByExpertField)) {
-    //             $this->fields[] = $child->name;
-    //         } else {
-    //             $removeItems[] = $child->name;
-    //         }
-    //     }
-
-    //     $this->fields = array_values(array_diff($this->fields, $removeItems));
-
-    //     $this->filter();
-    // }
-
-    // public function checkParentExpertSkill(Expertise $expertise)
-    // {
-    //     $removeItems = [];
-
-    //     foreach ($expertise->children as $child) {
-    //         if (in_array($expertise->name, $this->filterByExpertSkill)) {
-    //             $this->skills[] = $child->name;
-    //         } else {
-    //             $removeItems[] = $child->name;
-    //         }
-    //     }
-
-    //     $this->skills = array_values(array_diff($this->skills, $removeItems));
-
-    //     $this->filter();
-    // }
-
     public function filter()
     {
         $filters = [
@@ -110,6 +78,7 @@ class Filter extends Component
             'filterByExpertSkill' => $this->filterByExpertSkill,
             'fields' => $this->fields,
             'skills' => $this->skills,
+            'availableFor' => $this->availableFor,
         ];
         $this->dispatch('expert-filter', $filters);
     }
@@ -123,6 +92,7 @@ class Filter extends Component
         $this->filterByExpertSkill = [];
         $this->fields = [];
         $this->skills = [];
+        $this->availableFor = [];
         $this->filter();
     }
 

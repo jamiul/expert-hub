@@ -1,13 +1,17 @@
 <div class="homepage-main-slider-wrapper">
     <div class="container">
-        <div class="row align-items-end">
+        <div class="row align-items-center">
             <div class="col-xl-6">
                 <div class="hero-text">
-                    <h2>Find Top Academic and Industry Experts for your project</h2>
-                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect you with leaders in course accreditation, curriculum design, policy development, project management and more. Choose ExpertGate when your most pivotal academic and industry projects demand the best.</p>
+                    <h2>Find Experts for your project</h2>
+                    <p>ExpertGate is an elite network of top academic and industry experts across the globe. We connect
+                        you with leaders in course accreditation, curriculum design, policy development, project
+                        management and more. <!--- Choose ExpertGate when your most pivotal academic and industry projects
+                        demand the best.---></p>
                     <div class="hero-button-wrapper">
                         <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
-                        <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become an Expert</a>
+                        <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become an
+                            Expert</a>
                     </div>
                 </div>
             </div>
@@ -16,17 +20,15 @@
                     @forelse ($experts as $expert)
 
                         <div class="homepage-slider-item">
-                            <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
+                            <div class="homepage-slider-image">
+                                <img src="{{ $expert->getFirstMediaUrl('picture') }}"/>
+                            </div>
                             <div class="homepage-slider-content">
-                                <a href="{{ route('expert.profile.show', $expert) }}">
-                                    <div class="slider-map-wrapper">
-                                        <img src="{{ asset('assets/frontend/img/map-img.png') }}"/>
-                                        <div class="australia">Australia</div>
-                                    </div>
-                                    <h4>{{ $expert->user->full_name }}</h4>
-                                    <p>{{ $expert->expertField?->name }}</p>
-                                    <p class="text-primary">Oxford University</p>
-                                </a>
+                                <h4 class="h6">
+                                    <a href="{{ route('expert.profile.show', $expert) }}">{{ $expert->user->full_name }}</a>
+                                </h4>
+                                <p>{{ $expert->expertField?->name }}</p>
+                                <p class="text-primary">{{ $expert->user?->country?->name }}</p>
                             </div>
                         </div>
 
@@ -52,7 +54,7 @@
                                 <div class="">
                                     <h4>{{ $expert->user->full_name }}</h4>
                                     <p>{{ $expert->expertField?->name }}</p>
-                                    <p class="text-primary">Oxford University</p>
+                                    <p class="text-primary">{{ $expert->user?->country?->name }}</p>
                                 </div>
                             </div>
                         @empty
@@ -83,8 +85,8 @@
                 nav: true,
                 center: true,
                 smartSpeed: 800,
-                dots: false,  // Enable dots navigation
-                items: 5,    // Set the number of items to 5
+                dots: false,
+                items: 5,
                 margin: 23,
                 responsive: {
                     1200: {
@@ -117,8 +119,8 @@
                 var loop = event.relatedTarget.options.loop;
                 var slider2CloneCount = event.relatedTarget.clones().length / 2;
 
-                if(loop) {
-                    if(index < slider1FirstSlideIndex) { // if active slide is clone
+                if (loop) {
+                    if (index < slider1FirstSlideIndex) { // if active slide is clone
                         mainSlider.trigger('prev.owl.carousel');
                     } else {
                         mainSlider.trigger('to.owl.carousel', index - slider2CloneCount);
@@ -130,8 +132,9 @@
                     mainSlider.trigger('to.owl.carousel', index);
                 }
             }
+
             // Add click event handler to slider2 items
-            mainSlider.on('click', '.owl-item', function(e){
+            mainSlider.on('click', '.owl-item', function (e) {
                 var index = $(this).index();
                 thumbSlider.trigger('to.owl.carousel', index);
             });
