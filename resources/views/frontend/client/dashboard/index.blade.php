@@ -24,13 +24,13 @@
 
                         </div>
                         <div class="title-page-body p-40">
-                            <div class="proposal-slider carousel-nav-shadow owl-carousel mb-40">
+                            <div class="proposal-slider carousel-nav-shadow owl-carousel">
                                 @foreach ($projects as $project)
                                     <div class="proposal-slider-card">
                                         <div class="proposal-slider-card-action">
                                             <div class="badge badge-primary badge-pill">Hiring</div>
                                             <div class="dropdown dropleft">
-                                                <button class="icon-btn border" data-bs-toggle="dropdown"
+                                                <button class="icon-btn" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
                                                     <x-icon.three-dots/>
                                                 </button>
@@ -76,9 +76,9 @@
                                 @endforeach
                             </div>
 
-                            <div class="dashboard-page-block bt-1">
+                            <div class="dashboard-page-block">
                                 <div class="dashboard-page-block-heading">
-                                    <h2 class="h5 m-0">Upcoming Academic Training</h2>
+                                    <h2 class="h4 m-0">Upcoming Academic Training</h2>
                                     <a class="btn btn-md btn-outline-primary border-2" href="">View All</a>
                                 </div>
                                 <div class="upcomming-training-wrapper">
@@ -129,9 +129,9 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="dashboard-page-block pt-0">
+                            <div class="dashboard-page-block">
                                 <div class="dashboard-page-block-heading">
-                                    <h2 class="h5 m-0">Discover our Experts</h2>
+                                    <h2 class="h4 m-0">Discover our Experts</h2>
                                     <a class="btn btn-md btn-outline-primary border-2" href="">View All</a>
                                 </div>
                                 <div class="expert-profile-slider carousel-nav-shadow owl-carousel">
@@ -144,7 +144,7 @@
                                             <div class="expert-profile-info">
                                                 <h3 class="h6">{{ $expert->user->full_name }}</h3>
                                                 <p class="mb-0">{{ $expert->expertField->name }}</p>
-                                                <p class="mb-0 single-university">Oxford University </p>
+                                                {{-- <p class="mb-0">Oxford University </p> --}}
                                                 <ul class="expert-profile-meta">
                                                     <li>{{ $expert->user->country->name }}</li>
                                                     <li>${{ $expert->hourly_rate }}/hr</li>
