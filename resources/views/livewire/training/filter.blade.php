@@ -2,7 +2,7 @@
     <div class="filter-widget border-bottom">
         <div class="sidebar-title-wrapper">
             <h3 class="h6">Filter</h3>
-            <button class="btn btn-filter-reset">
+            <button wire:click="resetFilter" class="btn btn-filter-reset">
                 Clear filters
             </button>
         </div>
@@ -23,7 +23,7 @@
     <div class="filter-widget">
         <h4 class="widget-title">Training Date</h4>
         <div class="widget-content">
-            <x-form.flatpicker wire:change="filter" minDate="today" wire:model="date" class="input-field-md" label="" name="datepicker"/>
+            <x-form.flatpicker wire:change="filter" minDate="today" wire:model="date" class="input-field-md" Placeholder="Search by Date" name="datepicker"/>
         </div>
     </div>
     <div class="filter-widget">
