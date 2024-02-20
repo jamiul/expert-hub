@@ -3125,6 +3125,241 @@ span.edux-word-count {
 }
 
 
+.job-post-wrapper {
+    max-width: 872px;
+    margin: 0 auto;
+}
+
+.post-shadow-box {
+    border-radius: 8px;
+    border: 1px solid rgba(14, 0, 98, 0.1);
+    background: #fff;
+    padding: 56px;
+}
+
+.job-post-header {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 89, 201, 0.14);
+    background: rgba(0, 54, 227, 0.05);
+    padding: 24px 32px 20px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    display: flex;
+    margin: 0 0 48px 0;
+}
+
+.post-header-content {
+    padding-right: 25px;
+}
+
+.consult-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.consult-heading h2 {
+    font-size: 23px;
+    margin: 0;
+    color: #303744;
+}
+
+.consult-heading p {
+    font-size: 16px;
+    margin: 0;
+    color: #303744;
+}
+
+.post-header-image {
+    text-align: right;
+    margin: -12px 0 -20px 0;
+}
+
+.upload-file-user {
+    display: flex;
+    flex-grow: 1;
+}
+.upload-file-user {
+    display: flex;
+    flex-grow: 1;
+}
+
+.upload-file-user-img {
+    margin-right: 18px;
+}
+
+.upload-file-user-text h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #303744;
+}
+
+.upload-file-user-text p {
+    margin: 0;
+    color: #303744;
+    font-size: 14px;
+}
+
+.skills {
+    width: 100%;
+    margin: 15px 0 0 0;
+    display: inline-block;
+}
+
+.job-post-wrapper h3 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #303744;
+}
+
+.skills p {
+    color: #191D24;
+    font-family: Colfax;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.skills .form-group .input-group {
+    margin: 0 0 8px 0;
+}
+
+.main-form .input-group {
+    display: block;
+    margin: 0 0 25px 0;
+}
+
+.main-form .input-group .form-control {
+    width: 100%;
+    border-radius: 4px !important;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 56px;
+    padding: 10px 16px;
+    box-shadow: none;
+    font-size: 15px;
+    transition-duration: 0.3s;
+}
+
+.skills .form-group p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(48, 55, 68, 0.7);
+    margin: 0;
+}
+
+.skills span {
+    color: rgba(48, 55, 68, 0.7);
+    font-weight: 500;
+}
+
+.job-post-wrapper {
+    max-width: 872px;
+    margin: 0 auto;
+    font-family: "Colfax";
+}
+
+.hourly-fixed-block {
+    margin: 40px 0 0 0;
+}
+
+.hourly-fixed-block .subheadings {
+    margin: 0 0 16px 0;
+}
+
+.job-post-wrapper h3 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #303744;
+}
+
+.hourly-fixed-block .form-radio-option {
+    display: flex;
+    width: 100%;
+}
+
+.hourly-fixed-block .rate-box .btn.active {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 54, 227, 0.30);
+    background: rgba(0, 54, 227, 0.03);
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    width: 100%;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+.job-post-wrapper h3 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #303744;
+}
+
+.pay-rate p {
+    color: #303744;
+    font-size: 14px;
+    margin: 0;
+    font-weight: normal;
+    max-width: 240px;
+}
+.pay-rate {
+    text-align: left;
+}
+
+.hourly-fixed-block .rate-box .btn {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 54, 227, 0.30);
+    background: rgba(0, 54, 227, 0.00);
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    width: 100%;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+.job-post-wrapper label, .job-post-wrapper h2 {
+    font-family: "Colfax";
+    font-weight: 500;
+}
+
+.budget-block {
+    width: 100%;
+    display: inline-block;
+    margin: 40px 0 0 0;
+}
+
+.budget-block h3 {
+    margin: 0 0 16px 0;
+}
+
+.job-post-wrapper h3 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #303744;
+}
+
+
 label.basic-file-upload:hover {
     border-radius: 4px;
     border: 2px solid rgba(48, 55, 68, 0.15);
