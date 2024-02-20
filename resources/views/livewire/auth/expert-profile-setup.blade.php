@@ -3,21 +3,7 @@
         <div class="row">
             <div class="col">
                 <div class="user-registration-layout">
-                    <div class="card card-40">
-                        <div class="card-body">
-                            <ul class="progress-bar-nav-vertical profile-progress-bar-nav">
-                                <li class="@if($currentStep > 1) done-item @endif @if($currentStep == 1) running-item @endif">
-                                    <strong>Getting Started</strong> <span>1 Min</span>
-                                </li>
-                                <li class="@if($currentStep > 2) done-item @endif @if($currentStep == 2) running-item @endif">
-                                    <strong>Expertise</strong> <span>1 Min</span>
-                                </li>
-                                <li class="@if($currentStep > 3) done-item @endif @if($currentStep == 3) running-item @endif">
-                                    <strong>Profile Setup</strong> <span>1 Min</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    @include('livewire.auth.expert-steps')
                     <div class="progress-step-content-wrapper">
                         @if($currentStep === 2)
                             <div class="progress-step-content" style="max-width: 872px">

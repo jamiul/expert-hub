@@ -39,7 +39,7 @@ class ExpertRegistration extends Component
     #[Validate()]
     public $password_confirmation = '';
     #[Validate()]
-    public $country_id = '';
+    public $country_id = '12';
     #[Validate()]
     public $terms = '';    
 
