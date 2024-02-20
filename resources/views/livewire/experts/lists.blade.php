@@ -33,7 +33,7 @@
                                 <x-icon.message-line/>
                             </a>
                         @else
-                        <button 
+                        <button
                         class="btn btn-icon btn-outline-light m-1"
                         wire:click="$dispatch('modal.open', {component: 'project.invite-message', arguments: {'expert': {{ $expert->id }}, 'project': {{ $project }}}})"
                         >
@@ -64,6 +64,14 @@
                     </p>
                 </div>
                 <div class="tag-list light-tag-list" x-data="{ showAllTags: false, buttonText: ' + {{ $expert->expertises->count() - 4 }}' + ' More' }" :class="{ 'showing-less-tag': !showAllTags }">
+
+                    @if(count($expert->consultation) > 0)
+                        <a href="{{ route('expert.profile.show', $expert) }}" class="expert-profile-tag offer-consultation-btn">
+                            <x-icon.video fill="#0036E3"/>
+                            Offer Consultation
+                        </a>
+                    @endif
+
                     @foreach ($expert->expertises as $expertise)
                         <span class="tag">{{ $expertise->name }}</span>
                     @endforeach
