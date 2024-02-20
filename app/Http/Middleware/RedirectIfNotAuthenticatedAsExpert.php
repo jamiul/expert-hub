@@ -19,8 +19,8 @@ class RedirectIfNotAuthenticatedAsExpert
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->user()->active_profile == ProfileType::Expert) {
-            if (auth()->user()->profile->status == ProfileStatus::Draft && Route::currentRouteName() != 'expert.profile.create') {
-                return redirect()->route('expert.profile.create');
+            if (auth()->user()->profile->status == ProfileStatus::Draft && Route::currentRouteName() != 'auth.expert.profile-setup') {
+                return redirect()->route('auth.expert.profile-setup');
             }
             if (auth()->user()->profile->status == ProfileStatus::InReview && Route::currentRouteName() != 'expert.profile.edit') {
                 return redirect()->route('expert.profile.edit');

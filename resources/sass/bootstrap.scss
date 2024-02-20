@@ -11,6 +11,7 @@
 
 
 //Component
+@import 'components/accordion';
 @import 'components/alerts';
 @import "components/badges";
 @import "components/buttons";
@@ -52,7 +53,10 @@
 @import "pages/scholarship-database";
 @import "pages/training-page";
 @import "pages/user-profile-setup";
+
+
 @import "pages/expert-dashboard";
+
 @import "pages/client-dashboard";
 
-
+@import "pages/admin-dashboard";

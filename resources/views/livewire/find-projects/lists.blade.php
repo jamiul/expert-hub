@@ -39,7 +39,7 @@
                                 <li>
                                     <a class="dropdown-item" target="_blank"
                                         href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('projects.show', $project) }}">
-                                        <x-icon.linkedin />
+                                        <x-icon.logo-linkedin />
                                         Linkedin
                                     </a>
                                 </li>

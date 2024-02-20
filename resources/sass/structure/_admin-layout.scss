@@ -23,6 +23,7 @@ $edu-admin-header-height: 76px;
         background-color: $edu-primary-color;
         min-height: 100vh;
         z-index: 11;
+
         ::-webkit-scrollbar {
             width: 3px;
         }
@@ -348,6 +349,8 @@ $edu-admin-header-height: 76px;
             display: inline-flex;
             gap: 15px;
             align-items: center;
+            margin: 0;
+            padding: 0;
 
             & > li {
                 list-style: none;
