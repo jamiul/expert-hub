@@ -171,6 +171,43 @@ select.input-field-control {
     }
 }
 
+.image-self-upload-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+
+    & > div {
+        &:first-child {
+            flex: 0 0 144px;
+            max-width: 144px;
+        }
+
+        .uploaded-img-preview {
+            width: 144px;
+            height: 144px;
+            background-color: #F8FBFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed $edu-primary-color;
+            margin: 0 auto;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+
+        .btn-outline-primary {
+            border-width: 2px;
+
+            &:hover {
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+
 .image-upload-flat {
     label {
         border-radius: 4px;
@@ -671,4 +708,10 @@ select.input-field-control {
     label {
         cursor: pointer;
     }
+}
+
+.file-upload-preview-wrapper {
+    display: grid;
+    grid-template-columns: 218px auto;
+    gap: 30px;
 }
