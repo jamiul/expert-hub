@@ -2,9 +2,12 @@
     .title-page-header {
         ul {
             li {
+                &:last-child{
+                    a{
+                        padding: 7px 32px !important;
+                    }
+                }
                 a {
-                    padding: 7px 24px !important;
-
                     &.btn-light {
                         background-color: transparent !important;
                         border-color: transparent;
@@ -43,3 +46,28 @@
     }
 
 }
+
+
+// Rabiul
+
+.single-university {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0036E3 !important;
+    margin-bottom: 15px;
+}
+
+
+
+    ul.expert-profile-meta {
+        li {
+            padding: 0px 5px;
+            line-height: 20px;
+            margin: 0px;
+            &:last-child {
+                border-left: 1px solid #C8C5D4;
+            }
+
+        }
+    }
+

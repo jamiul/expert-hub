@@ -673,13 +673,7 @@ button.no-hover::after {
 
 }
 
-.single-university {
 
-    font-size: 14px;
-    font-weight: 400;
-    color: #0036E3;
-    margin-bottom: 15px;
-}
 
 
 .notify-point-green {
@@ -2218,13 +2212,6 @@ span.text-count {
     font-weight: 400;
 }
 
-.justify-content-between h5 {
-    color: #303744;
-
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
-}
 
 .without-method p {
     color: #191D24;
