@@ -3210,7 +3210,6 @@ span.edux-word-count {
 
 .job-post-wrapper h3 {
     font-size: 19px;
-    font-style: normal;
     font-weight: 500;
     margin: 0 0 5px 0;
     color: #303744;
@@ -3218,7 +3217,6 @@ span.edux-word-count {
 
 .skills p {
     color: #191D24;
-    font-family: Colfax;
     font-size: 16px;
     font-weight: 400;
 }
@@ -3259,7 +3257,7 @@ span.edux-word-count {
 .job-post-wrapper {
     max-width: 872px;
     margin: 0 auto;
-    font-family: "Colfax";
+
 }
 
 .hourly-fixed-block {
@@ -3337,7 +3335,6 @@ span.edux-word-count {
 }
 
 .job-post-wrapper label, .job-post-wrapper h2 {
-    font-family: "Colfax";
     font-weight: 500;
 }
 
