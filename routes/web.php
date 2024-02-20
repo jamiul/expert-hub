@@ -33,6 +33,10 @@ use App\Http\Controllers\Frontend\SearchScholarshipController;
 use App\Http\Controllers\Frontend\TrainingController;
 use App\Http\Controllers\Frontend\TrainingDetailsController;
 use App\Http\Controllers\Webhook\StripeController;
+use App\Livewire\Auth\ClientProfileSetup;
+use App\Livewire\Auth\ClientRegistration;
+use App\Livewire\Auth\ExpertProfileSetup;
+use App\Livewire\Auth\ExpertRegistration;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,6 +69,10 @@ Route::get('/find-projects', [FindProjectController::class, 'index'])->name('fin
 Route::get('/scholarship-database', [ScholarshipController::class, 'index'])->name('scholarship-database');
 Route::get('/scholarship-database/{scholarship}', [ScholarshipController::class, 'show'])->name('scholarship-database.show');
 
+Route::get('/auth/expert/registration', ExpertRegistration::class)->middleware('guest')->name('auth.expert.registration');
+Route::get('/auth/expert/profile-setup', ExpertProfileSetup::class)->middleware(['auth', 'expert'])->name('auth.expert.profile-setup');
+Route::get('/auth/client/registration', ClientRegistration::class)->middleware('guest')->name('auth.client.registration');
+Route::get('/auth/client/profile-setup', ClientProfileSetup::class)->middleware(['auth', 'client'])->name('auth.client.profile-setup');
 Route::get('/auth/registration', [RegistrationController::class, 'index'])->middleware('guest')->name('auth.registration');
 Route::get('/auth/login', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name('auth.login');
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->middleware('guest')->name('password.request');

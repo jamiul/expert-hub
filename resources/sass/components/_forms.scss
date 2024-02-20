@@ -1,7 +1,7 @@
-@mixin input-field($height: 55px, $border-radius: 4px, $padding-y: 8px, $padding-x: 15px, $font-size: 1rem,  $border-color: $edu-primary-color ) {
+@mixin input-field($height: 48px, $border-radius: 4px, $padding-y: 8px, $padding-x: 15px, $font-size: 1rem,  $border-color: $edu-primary-color ) {
     background: transparent;
     outline: none;
-    border: solid 2px rgba(0, 0, 0, 0.1);
+    border: solid 2px #E7E5EF;
     height: $height;
     width: 100%;
     border-radius: $border-radius;
@@ -126,10 +126,6 @@
 .input-field-control {
     @include input-field;
 
-    &.input-field-control-lg {
-        height: 46px;
-    }
-
     &.input-field-control-md {
         height: 42px;
     }
@@ -175,6 +171,43 @@ select.input-field-control {
     }
 }
 
+.image-self-upload-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+
+    & > div {
+        &:first-child {
+            flex: 0 0 144px;
+            max-width: 144px;
+        }
+
+        .uploaded-img-preview {
+            width: 144px;
+            height: 144px;
+            background-color: #F8FBFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed $edu-primary-color;
+            margin: 0 auto;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+
+        .btn-outline-primary {
+            border-width: 2px;
+
+            &:hover {
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+
 .image-upload-flat {
     label {
         border-radius: 4px;
@@ -188,6 +221,7 @@ select.input-field-control {
     }
 }
 
+/*
 .name-fields-wrapper {
     display: grid;
     gap: 0 16px;
@@ -202,7 +236,7 @@ select.input-field-control {
         }
     }
 }
-
+*/
 .available-schedule-input-wrapper {
     display: grid;
     gap: 25px;
@@ -407,6 +441,7 @@ select.input-field-control {
                 padding: 0.4375rem 1rem;
                 font-weight: 400;
                 cursor: pointer;
+                list-style: none;
 
                 &:hover {
                     background: rgba(0, 89, 201, 0.08);
@@ -673,4 +708,10 @@ select.input-field-control {
     label {
         cursor: pointer;
     }
+}
+
+.file-upload-preview-wrapper {
+    display: grid;
+    grid-template-columns: 218px auto;
+    gap: 30px;
 }

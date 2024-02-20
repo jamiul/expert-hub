@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('active_profile')->index(); //App\Enums\ProfileType
             $table->string('title');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone')->nullable();
@@ -24,8 +23,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->foreignId('country_id');
             $table->string('password');
-            $table->boolean('send_tips')->default(1);
-            $table->boolean('terms_agreed')->default(1);
+            $table->boolean('terms')->default(1);
             $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();

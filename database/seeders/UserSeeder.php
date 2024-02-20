@@ -34,8 +34,7 @@ class UserSeeder extends Seeder
             $userData = [
                 'active_profile' => $user['type'],
                 'title' => $user['title'],
-                'first_name' => $user['first_name'],
-                'last_name' => $user['last_name'],
+                'name' => $user['first_name'] . ' ' . $user['last_name'],
                 'username' => $user['first_name'] . '-' . $user['last_name'],
                 'email' => $user['email'],
                 'email_verified_at' => now(),
@@ -51,8 +50,9 @@ class UserSeeder extends Seeder
             if ($user['type'] == ProfileType::Client->value) {
                 $profile = Profile::find($profile_id);
                 $profile->update([
-                    'current_role' => 'Director',
-                    'current_organization' => 'Sydney Islamic Business School',
+                    'current_job_title' => 'Director',
+                    'current_job_organization' => 'Sydney Islamic Business School',
+                    'current_job_sector' => 'Education',
                 ]);
                 if ($user['image']) {
                     $imagePath = database_path('/data/users/' . $user['image']);

@@ -1,4 +1,4 @@
-
+/*
 header .header .row {
     display: flex;
     align-items: center;
@@ -1865,7 +1865,6 @@ footer .footer-bottom .footer-icon ul li a:hover {
     z-index: 1;
     display: none;
     left: -45px !important;
-    /* border: solid 2px #0036E3; */
     top: 45px !important;
     min-width: 298px;
     min-height: 282px;
@@ -1982,24 +1981,6 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 
 
-/* #dateInputsheet {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #0000001A;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    height: 40px;
-    color: #303744B2;
-    font-size: 16px;
-    font-weight: 400;
-    appearance: none;
-    background: url(../img/date.png) no-repeat !important;
-    background-position: right 20px center;
-    min-width: 310px;
-    min-height: 46px;
-    margin-top: 0px;
-} */
 
 
 #dateInputsheet {
@@ -2447,7 +2428,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     text-decoration: none;
 }
 
-/* .pagination {width: 100%;margin: 25px 0 30px;display: block;} */
+
 .pagination .col-md-4 {
     width: 30%;
 }
@@ -2922,7 +2903,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 .find-projects-require-main {
     padding: 50px 0;
-    /*margin-top: -40px;*/
+
 }
 
 .find-projects-require-main .team-button {
@@ -3031,7 +3012,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+
     justify-content: flex-start;
     gap: 4px
 }
@@ -3054,7 +3035,6 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border: 2px solid rgba(48, 55, 68, 0.46) !important;
     background: #FFF !important;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -6803,7 +6783,6 @@ footer .footer-bottom .footer-icon ul li a:hover {
 }
 
 
-/* ==================================== Scholarship Single page  start ===================================== */
 
 .edux-sidebar-layout {
     display: grid;
@@ -6836,8 +6815,7 @@ footer .footer-bottom .footer-icon ul li a:hover {
     border-bottom: 1px solid #E7E5EF;
 }
 
-/* ==================================== Scholarship Single  page end ===================================== */
-/* ==================================== Search empty  start  page ===================================== */
+
 .edux-notification-details {
     display: flex;
     flex-direction: column;
@@ -6867,8 +6845,6 @@ footer .footer-bottom .footer-icon ul li a:hover {
 .notification-details p {
     font-size: 16px;
 }
-
-/* ==================================== Search empty end  page ===================================== */
 
 
 .single-contest-top p {
@@ -8623,3 +8599,4 @@ footer .footer-bottom .footer-icon ul li a:hover {
 
 }
 
+*/
