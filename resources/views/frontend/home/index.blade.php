@@ -52,7 +52,7 @@
                 </div> <!--work-steps-box-->
             </div>
             <div style="margin-top: 36px" class="text-center">
-                <a href="{{ route('auth.registration') }}" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
+                <a href="{{ route('auth.client.registration') }}" class="btn btn-primary btn-md" style="width: 218px">Get Started</a>
             </div>
         </div>
     </section>

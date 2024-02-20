@@ -37,7 +37,7 @@
                             <div class="sidebar-widget">
                                 <div class="alert alert-info mb-0">
                                     You need to <a href="{{ route('auth.login') }}">Log In</a> as a Expert to send the EOI. Don't have an
-                                    account with us? <a href="{{ route('auth.registration') }}">Create an account now</a>
+                                    account with us? <a href="{{ route('auth.expert.registration') }}">Create an account now</a>
                                 </div>
                             </div>
                             @endguest
