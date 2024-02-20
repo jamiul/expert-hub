@@ -8950,7 +8950,7 @@ h2:after {
     border: 1px solid rgba(14, 0, 98, 0.1);
     background: #fff;
     /* box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.1); */
-    padding: 56px;
+    padding: 48px;
 }
 
 .job-post-header {
@@ -9101,7 +9101,7 @@ h2:after {
 }
 
 .job-post-wrapper h3 {
-    font-size: 19px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     margin: 0 0 5px 0;
