@@ -125,7 +125,7 @@
                                                     <div class="expert-info">
                                                         <h3 class="h6 expert-name mb-0">{{ $instructor->user->full_name ?? '' }}</h3>
                                                         <ul class="expert-meta">
-                                                            {{-- <li>Melbourne University</li> --}}
+                                                            <li>{{$instructor->expertField->name}}</li>
                                                             <li>{{ $instructor->user->country?->name }}</li>
                                                         </ul>
 
