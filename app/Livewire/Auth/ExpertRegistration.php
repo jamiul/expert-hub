@@ -55,12 +55,13 @@ class ExpertRegistration extends Component
         try {
             DB::transaction(function (): void {
                 $profileType = ProfileType::Expert;
+                $phoneNumber = new PhoneNumber($this->phone, $this->phone_country);
                 $user = User::create([
                     'title' => $this->title,
                     'name' => $this->name,
                     'username' => $this->username(),
                     'email' => $this->email,
-                    'phone' => $this->phone,
+                    'phone' => $phoneNumber->isOfCountry($this->phone_country) ? $phoneNumber->formatE164() : null,
                     'password' => Hash::make($this->password),
                     'active_profile' => $profileType,
                     'country_id' => $this->country_id,

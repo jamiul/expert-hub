@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <a href="" style="width: 195px" class="btn btn-md btn-outline-primary border-2">View All</a>
+                    <a href="{{ route('find.experts') }}" style="width: 195px" class="btn btn-md btn-outline-primary border-2">View All</a>
                 </div>
             </div>
         </div>

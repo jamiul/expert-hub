@@ -45,8 +45,6 @@ class ClientRegistration extends Component
 
     public function mount()
     {
-        $phoneNumber = new PhoneNumber('3411105535', $this->phone_country);
-        dd($phoneNumber->isOfCountry($this->phone_country));
         $this->titles    = Title::pluck('name')->toArray();
         $this->countries = Country::pluck('name', 'id')->toArray();
     }
@@ -63,7 +61,7 @@ class ClientRegistration extends Component
                     'name' => $this->name,
                     'username' => $this->username(),
                     'email' => $this->email,
-                    'phone' => $phoneNumber?->formatE164(),
+                    'phone' => $phoneNumber->isOfCountry($this->phone_country) ? $phoneNumber->formatE164() : null,
                     'password' => Hash::make($this->password),
                     'active_profile' => $profileType,
                     'country_id' => $this->country_id,

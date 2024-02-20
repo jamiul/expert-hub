@@ -23,7 +23,7 @@
     </div>
 
     <div class="single-button d-flex justify-content-center edux-btn-mt">
-        <x-button.link href="{{ route('scholarship-database') }}" class="btn edux-btn-border-primary"
+        <x-button.link href="{{ route('scholarship-database') }}" class="btn btn-outline-primary border-2 btn-md"
                        text="View all Scholarships"/>
     </div>
 </div>

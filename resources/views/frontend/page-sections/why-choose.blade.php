@@ -48,7 +48,7 @@
                                 </x-why-choose>
                             </div>
                             <div class="text-center">
-                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.registration') }}">Get Started</a>
+                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.expert.registration') }}">Get Started</a>
                             </div>
                         </div>
                         <div class="tab-pane fade show" :class="tab == 'client' ? 'active' : ''" id="profile"
@@ -75,7 +75,7 @@
                                 </x-why-choose>
                             </div>
                             <div class="text-center">
-                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.registration') }}">Get Started</a>
+                                <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.client.registration') }}">Get Started</a>
                             </div>
                         </div>
                     </div>
