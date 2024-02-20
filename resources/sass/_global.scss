@@ -34,9 +34,9 @@ img {
     display: grid;
     gap: 16px;
 
-    &.col-items-3 {
+    &.col-items-2 {
         @media screen and (min-width: 500px) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 

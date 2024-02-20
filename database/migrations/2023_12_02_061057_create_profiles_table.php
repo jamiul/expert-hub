@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string('stripe_client_id')->nullable();
             $table->decimal('hourly_rate')->nullable();
             $table->longText('biography')->nullable();
-            $table->string('current_role')->nullable();
-            $table->string('current_organization')->nullable();
+            $table->string('current_job_title')->nullable();
+            $table->string('current_job_organization')->nullable();
+            $table->string('current_job_sector')->nullable();
             $table->decimal('balance', 12,2)->default(0);
             $table->decimal('escrow_balance', 12,2)->default(0);
             $table->string('currency')->default('AUD');

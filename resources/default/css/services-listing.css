@@ -1,3 +1,4 @@
+/*
 .container-main {
 
 }
@@ -10,14 +11,13 @@
 }
 .service-toggle-child p{
     color: #222222;
-    /* font-family: "DM Sans"; */
+
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
 }
 .service-toggle-list{
     color: #222222;
-    /* font-family: "DM Sans"; */
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -46,7 +46,7 @@
     -moz-appearance: textfield;
 }
 .price-input .price-input-field-separator{
-    /* background: red; */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,3 +109,4 @@ input[type="range"]::-moz-range-thumb{
 .fre-speaks-more-value {
     display: none;
 }
+*/
