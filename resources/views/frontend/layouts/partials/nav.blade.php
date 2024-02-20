@@ -30,7 +30,7 @@
                 <div class="header-special-menu">
                     <ul class="">
                         <li>
-                            <a href="{{ route('auth.registration',['type' => \App\Enums\ProfileType::Expert->value]) }}">Join
+                            <a href="{{ route('auth.expert.registration') }}">Join
                                 as an Expert</a></li>
                         <li class="header-special-menu-active-item"><a
                                 href="{{ route('projects.create') }}">{{ __('Post your Project') }}</a></li>
