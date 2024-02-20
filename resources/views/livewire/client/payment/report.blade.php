@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="history-report-area d-flex justify-content-between">
                     <div class="all-project history-report">
-                        <h2>Transaction History</h2>
+                        <h2 class="h5">Transaction History</h2>
                     </div>
                 </div>
             </div>
