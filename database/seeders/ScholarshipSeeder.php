@@ -32,7 +32,6 @@ class ScholarshipSeeder extends Seeder
 
         $universityLookup = University::pluck('id', 'name')->toArray();
         $countryLookup = Country::pluck('id', 'name')->toArray();
-        // dd($keyedData);
         foreach ($keyedData as $scholarship) {
             $studentType = StudentType::tryFrom(trim($scholarship['student_type']));
             $scholarshipData = [

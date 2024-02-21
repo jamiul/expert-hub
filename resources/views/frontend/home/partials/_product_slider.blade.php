@@ -12,7 +12,7 @@
                         demand the best.---></p>
                         <div class="hero-button-wrapper">
                             <a href="{{ route('find.experts') }}" class="btn btn-primary btn-md">Find an Expert</a>
-                            <a href="{{ route('auth.login') }}" class="btn btn-outline-primary border-2 btn-md">Become
+                            <a href="{{ route('auth.expert.registration') }}" class="btn btn-outline-primary border-2 btn-md">Become
                                 an
                                 Expert</a>
                         </div>
