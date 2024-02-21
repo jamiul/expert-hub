@@ -8,7 +8,7 @@
         padding: 13px 16px;
         background-color: transparent;
         border: none;
-
+        list-style: none;
         &.active {
             background-color: #0036E3;
             color: white;
@@ -42,6 +42,8 @@
         position: relative;
         cursor: pointer;
         font-weight: 500;
+        list-style: none;
+
         &.active {
             color: $edu-primary-color;
 
