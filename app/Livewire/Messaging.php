@@ -141,10 +141,7 @@ class Messaging extends Component
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
-            'content' => $data['messageBody'],
-            // 'content' => 'sss',
-            'content' => $data['messageBody'],
-            // 'content' => 'sss',
+            
         ]);
 
         // file upload start
