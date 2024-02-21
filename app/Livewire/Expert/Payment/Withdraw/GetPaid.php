@@ -74,7 +74,7 @@ class GetPaid extends Modal {
         $amt = doubleval( $this->amount );
 
         if ( $amt > 0 ) {
-            $this->total_amount = number_format( $amt - 1, 2 );
+            $this->total_amount = number_format( $amt - env('WITHDRAW_FEE'), 2 );
         } else if ( $amt == 0 ) {
             $this->total_amount = $amt;
         }
@@ -83,7 +83,7 @@ class GetPaid extends Modal {
     public function updatedAmount() {
         $amt = doubleval( $this->amount );
         if ( $amt >= 0 ) {
-            $this->total_amount = number_format( $amt - 1, 2 );
+            $this->total_amount = number_format( $amt - env('WITHDRAW_FEE'), 2 );
         } else {
             $this->total_amount = 0;
         }

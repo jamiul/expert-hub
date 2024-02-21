@@ -67,17 +67,30 @@ class Report extends Component {
         }
 
         $transactions = $transactions->orderby( 'id', 'desc' )->get();
-        $data         = $transactions->toArray();
 
-        try {
-            $pdfContent = Pdf::loadView( 'pdf.invoice', $data )->output();
+        foreach ($transactions as $transaction){
+            $invoice = [
+                'full_name' => $transaction->client->first_name,
+                'address_line1' => 'Test location',
+                'address_line2' => 'NSW 2142, Australia',
+                'invoice_id' => $transaction->invoice_number,
+                'date' => $transaction->created_at->format('M d, Y'),
+                'due_date' => $transaction->created_at->format('M d, Y'),
+                'total' => number_format($transaction->amount, 2),
+                'total_due' => number_format($transaction->amount, 2),
+                'description' => $transaction->description,
+                'amount' => number_format($transaction->amount, 2),
+            ];
+            try {
+                $pdfContent = Pdf::loadView( 'pdf.invoice', $invoice )->output();
 
-            return response()->streamDownload(
-                fn() => print( $pdfContent ),
-                "invoice.pdf"
-            );
-        } catch ( \Exception $ex ) {
-            toast( 'warning', $ex->getMessage(), $this );
+                return response()->streamDownload(
+                    fn() => print( $pdfContent ),
+                    "invoice.pdf"
+                );
+            } catch ( \Exception $ex ) {
+                toast( 'warning', $ex->getMessage(), $this );
+            }
         }
     }
 
