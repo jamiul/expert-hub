@@ -95,8 +95,8 @@
                                                 </p>
                                                 <p class="">{{ $training->start_date->format('d F Y') }}
                                                     - {{ $training->end_date->format('d F Y') }}</p>
-                                                <p class="">{{ $training->start_time }} AEST, {{ $training->state->name }}
-                                                    , {{ $training->country->name }}</p>
+                                                <p class="">{{ $training->start_time }} AEST, {{ $training->state?->name }}
+                                                    , {{ $training->country?->name }}</p>
                                                 <p class="">AUD {{ $training->fee }}</p>
                                             </div>
                                             <div class="training-small-card-info">
