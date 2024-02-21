@@ -112,7 +112,7 @@
                                                             <div class="">
                                                                 <h5 class="text-base mb-0">{{ $instructor->user->full_name ?? '' }}</h5>
                                                                 <ul class="user-meta">
-                                                                    <li>Melbourne University</li>
+                                                                    <li>{{$instructor->expertField->name}}</li>
                                                                     <li>{{ $instructor->user->country?->name }}</li>
                                                                 </ul>
                                                             </div>
@@ -121,7 +121,9 @@
                                                 </div>
                                             </div>
                                             <div class="training-small-card-action">
-                                                <a href="#" class="btn btn-primary btn-md w-100 mb-2">Registration</a>
+                                                <a href="#" class="btn btn-primary btn-md w-100 mb-2" onclick="Livewire.dispatch('modal.open', {component: 'training.register', arguments: {'training': {{$training}} }})">
+                                                    Registration
+                                                </a>
                                                 <a href="{{ route('trainings.show', $training) }}"
                                                    class="btn btn-outline-primary btn-md w-100">Read More</a>
                                             </div>

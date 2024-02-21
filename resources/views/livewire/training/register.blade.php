@@ -22,7 +22,7 @@
         </div>
         <div class="tr">
             <div class="td">Time & Location</div>
-            <div class="td fw-medium">{{ $training->start_time }} AEST, {{ $training->state->name }}, {{ $training->country->name }}</div>
+            <div class="td fw-medium">{{ $training->start_time }} AEST, {{ $training->state?->name }}, {{ $training->country?->name }}</div>
         </div>
         <div class="tr">
             <div class="td">Training Mode</div>
@@ -33,13 +33,13 @@
                     @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
                     <x-icon.face-to-face fill="#0036E3"/>
                     @endif
-                    <div> {{ $training->mode->value }}</div>
+                    <div> {{ $training->mode?->value }}</div>
                 </div>
             </div>
         </div>
         <div class="tr">
             <div class="td">Language</div>
-            <div class="td fw-medium">{{ $training->language->name }}</div>
+            <div class="td fw-medium">{{ $training->language?->name }}</div>
         </div>
         <div class="tr">
             <div class="td">Training Category</div>
