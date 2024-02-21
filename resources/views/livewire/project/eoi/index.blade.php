@@ -27,7 +27,7 @@
                     </button>
 
                 </div>
-                <div class="tab-content pt-40">
+                <div class="tab-content">
                     <div x-show="activeTab === 'view-job'" id="view-job-tab-content">
                         <div class="sidebar-layout right-sidebar-layout project-detials-layout border-0">
                             <div class="page-sidebar">
@@ -273,7 +273,7 @@
                                                                 <div>
                                                                     <h3 class="h6 d-flex gap-2 mb-0">
                                                                         <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                                        <span> 
+                                                                        <span>
                                                                             {{ $hire->project->title }}
                                                                         </span>
                                                                     </h3>

@@ -686,9 +686,7 @@
                                       disabled/>
                         <x-form.select label="Reason of dispute" wire:model="reason">
                             <option value="">Select a reason</option>
-                            @foreach ($reasons as $reason)
-                                <option value="{{ $reason }}">{{ $reason }}</option>
-                            @endforeach
+
                         </x-form.select>
                         <x-form.countable-textarea label="Description" wire:model="description" placeholder="" row="5"/>
                         <div class="image-upload-flat mb-3">
