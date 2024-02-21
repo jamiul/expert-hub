@@ -5,12 +5,12 @@
                 <div class="d-flex justify-content-between align-items-center gap-3">
                     <div><h1 class="h5 m-0">All Project Posts</h1></div>
                     <div>
-                        <a href="{{ route('projects.create') }}" class="btn btn-primary btn-md">Post a Job</a>
+                        <a href="{{ route('projects.create') }}" style="width: 203px" class="btn btn-primary btn-md">Post a Job</a>
                     </div>
                 </div>
                 <div class="seller-admin-project-filter mt-20">
                     <x-form.flatpicker class="vertical-label input-field-md" label="Sort By" name="datepicker"/>
-                        
+
                     <x-form.select class="input-field-md" wire:model="title">
                         <option value="Mr">Ascending</option>
                         <option value="Mrs">Descending</option>
@@ -18,7 +18,7 @@
                     <div class="input-group">
                         <input type="text" class="input-field-control input-field-control-md"
                                 placeholder="Search by contract, client, or company">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-secondary">
                             <x-icon.search/>
                         </button>
                     </div>
