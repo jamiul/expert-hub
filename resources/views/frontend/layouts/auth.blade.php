@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <a href="{{ auth() ? route('expert.dashboard') : route('home') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('logo/expert-gate-logo.png') }}" /></a>
             </div>
         </div>
     </div>
