@@ -34,6 +34,12 @@ class Training extends Model
         return $this->belongsTo(Profile::class, 'expert_id');
     }
 
+    // Training and Client should have many to many relation, training_participants is the intermediate table 
+    public function participants()
+    {
+        return $this->belongsToMany(Profile::class, 'training_participants', 'training_id', 'client_id');
+    }
+
     public function language()
     {
         return $this->belongsTo(Language::class);
