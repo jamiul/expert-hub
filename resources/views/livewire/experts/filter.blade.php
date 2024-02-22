@@ -42,6 +42,20 @@
         </div>
     </div>
     <div class="filter-widget">
+        <h4 class="widget-title">Available for</h4>
+        <div class="widget-content">
+            <x-form.check wire:change="filter" wire:model="availableFor" id="consultation" value="{{ \App\Enums\AvailableFor::Consultation->value }}">
+                Consultation
+            </x-form.check>
+            <x-form.check wire:change="filter" wire:model="availableFor" id="media" value="{{ \App\Enums\AvailableFor::MediaInterview->value }}">
+                Media Interview
+            </x-form.check>
+            <x-form.check wire:change="filter" wire:model="availableFor" id="keynote" value="{{ \App\Enums\AvailableFor::KeynoteSpeaker->value }}">
+                Keynote Speaker
+            </x-form.check>
+        </div>
+    </div>
+    <div class="filter-widget">
         <h4 class="widget-title">Location</h4>
         <x-form.autocomplete class="input-field-md" :searchResults="$countries" selectFunction="selectCountry" removeFunction="removeCountry" :selectedRecords="$selectedCountries" name="country" placeholder="Search by Country"/>
     </div>

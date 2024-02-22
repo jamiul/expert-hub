@@ -102,7 +102,9 @@ class Lists extends Component
         }
 
         $this->scholarshipCount = $scholarships->count();
-        $scholarships = $scholarships->orderByDesc('id')->paginate($this->perPage);
+        $scholarships = $scholarships
+            ->orderByDesc('university_id')
+            ->paginate($this->perPage);
 
         return view('livewire.scholarship.lists', compact('scholarships'));
     }

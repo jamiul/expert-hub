@@ -1,10 +1,9 @@
+/*
 .profile-identity {
     display: flex;
     align-items: flex-start;
 }
-/* .single-profile {
-    padding: 30px;
-} */
+
 .single-profile-boder {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -34,15 +33,15 @@ h4.view-profile {
     background-color: #055846 !important;
 }
 .hire-button {
-    /* display: inline-block; */
+
     padding: 5px 15px;
     border: 2px solid #055846;
-    border-radius: 20px; /* Rounded border */
+    border-radius: 20px;
 
 }
 
 .hire-link {
-    color: #055846; /* Button text color */
+    color: #055846;
     text-decoration: none !important;
     font-weight: 600;
     font-size: 14px;
@@ -56,7 +55,7 @@ h4.view-profile {
     padding-bottom: 15px;
 }
 .profile {
-    /* max-width: 500px; */
+
     margin: auto;
     padding: 20px;
 }
@@ -118,7 +117,6 @@ h4.view-profile {
     }
     .freePage-sign-login-btn-show {
         width: 100%;
-        /* marg?in: 0 10%; */
         bottom: 60px;
         z-index: 3;
         position: fixed;
@@ -189,16 +187,16 @@ h4.view-profile {
     border: none !important;
 }
 .freePage-work-history-com-prog .nav-link.active {
-    background-color: your-active-color; /* Set your desired background color */
+
     color: black !important;
     border: none !important;
-    border-bottom:2px solid rgb(5, 1, 1) !important; /* Set your desired text color */
+    border-bottom:2px solid rgb(5, 1, 1) !important;
 }
 
 
 .freePage-work-history-com-prog .nav-link {
-    background-color: your-inactive-color; /* Set your desired background color */
-    /* color: yellow; */
+
 }
 
 
+*/

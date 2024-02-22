@@ -10,7 +10,7 @@
                     <div class="page-content">
 
                         <div class="book-expert-profile pb-3">
-                            <img src="{{ asset('assets/frontend/img/book-exprt1.jpg') }}" alt="">
+                            <img src="{{ $consultation->image }}" alt="">
 
 
                             <div class="edux-course-curriculum-area">

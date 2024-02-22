@@ -144,6 +144,10 @@
 
 
         li {
+           &:last-child {
+                border-left: 1px solid #C8C5D4;
+                padding: 0px 5px;
+            }
             list-style: none;
             display: inline-block;
             margin: 5px;
@@ -152,5 +156,7 @@
     }
 
 }
+
+
 
 

@@ -11,6 +11,7 @@
 
 
 //Component
+@import 'components/accordion';
 @import 'components/alerts';
 @import "components/badges";
 @import "components/buttons";
@@ -48,11 +49,19 @@
 @import "pages/home-page";
 @import "pages/notifications-page";
 @import "pages/project-page";
+//@import "pages/project-create";
 @import "pages/projects";
 @import "pages/scholarship-database";
 @import "pages/training-page";
 @import "pages/user-profile-setup";
+
+
 @import "pages/expert-dashboard";
+
 @import "pages/client-dashboard";
 
+@import "pages/admin-dashboard";
 
+
+// Rabiul
+@import "pages/client-transaction-all";

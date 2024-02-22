@@ -9,7 +9,6 @@
                     <div class="expert-slider-info">
                         <h4>{{ $expert->user->full_name }}</h4>
                         <p>{{ $expert->expertField ? $expert->expertField->parent->name : '' }}</p>
-                        <p class="text-primary">Oxford University</p>
                     </div>
                 </div>
             </a>

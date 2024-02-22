@@ -14,7 +14,6 @@ class ScholarshipList extends Component
         $this
         ->scholarships = Scholarship::with('university', 'country')
             ->take(8)
-            ->orderBy('id', 'desc')
             ->get();
     }
 

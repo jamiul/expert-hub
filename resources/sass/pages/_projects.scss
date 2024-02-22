@@ -136,7 +136,7 @@
 
     .project-details-card-header {
         padding-bottom: 5px;
-        border-bottom: 1px solid $edu-border-color;
+        //border-bottom: 1px solid $edu-border-color;
 
         .project-details-meta-data {
             font-size: 14px;
@@ -286,10 +286,25 @@
                 min-width: 0;
             }
         }
+        .form-input-icon{
+            path{
+                fill: #6E737C;
+            }
+        }
     }
 
     .input-group {
         grid-column: span 2;
+    }
+
+    .btn-secondary {
+        background-color: #EBEFF7;
+        border-color: $edu-border-color;
+        svg{
+            path{
+                fill: #6E737C;
+            }
+        }
     }
 }
 

@@ -37,7 +37,7 @@
                                                     <ul class="dropdown-menu dropdown-menu-end">
                                                         <li>
                                                             <a class="dropdown-item" target="_blank" href="https://linkedin.com/shareArticle?u={{ route('scholarship-database.show', $scholarship) }}">
-                                                                <x-icon.linkedin/>Linkedin
+                                                                <x-icon.logo-linkedin/>Linkedin
                                                             </a>
                                                         </li>
                                                         <li>

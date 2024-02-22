@@ -22,8 +22,15 @@ class Profile extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
+        $this->addMediaCollection('resume')
+            ->singleFile();
         $this->addMediaCollection('picture')
             ->singleFile();
+    }
+
+    public function getResumeAttribute()
+    {
+        return $this->getFirstMediaUrl('resume');
     }
 
     public function getPictureAttribute()
@@ -39,6 +46,11 @@ class Profile extends Model implements HasMedia
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function externalProfiles()
+    {
+        return $this->hasMany(ExternalProfile::class);
     }
 
     public function projects()

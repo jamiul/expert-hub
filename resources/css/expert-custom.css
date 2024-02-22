@@ -1,5 +1,4 @@
-/**** ================================== Client Dashboard Start Here ===================================***/
-
+/*
 :root {
   --color-heading-color: #191D24;
   --color-heading: #303744;
@@ -17,11 +16,6 @@
   --color-yellow: #E9B911;
 }
 
-/*  default css */
-
-/*h1, h2, h3, h4, h5, h6, p, ul, ol{*/
-/*  margin-bottom: 0px;*/
-/*}*/
 
 a{
   text-decoration: none;
@@ -76,3 +70,4 @@ li{
   display: inline-block;
   font-size: 12px;
 }
+*/

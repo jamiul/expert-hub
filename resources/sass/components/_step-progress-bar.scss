@@ -18,6 +18,11 @@ ul.progress-bar-nav-vertical {
         list-style: none;
         padding: 5px 0 24px 36px;
         position: relative;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
         @media screen and (max-width: 767px) {
             display: inline-block;
             padding-bottom: 5px;

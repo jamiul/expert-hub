@@ -37,11 +37,12 @@ class ScholarshipSeeder extends Seeder
             $scholarshipData = [
                 'title' => trim($scholarship['scholarships_title']),
                 'link' => trim($scholarship['scholarships_link']),
+                'supervisor_link' =>  $scholarship['find_supervisor_link'] ?? null,
                 'university_id' => $universityLookup[trim($scholarship['university'])] ?? null,
                 'country_id' => $countryLookup[trim($scholarship['country'])] ?? null,
                 'student_type' => $studentType ? $studentType->value : null,
-                'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
-                'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('d-m-Y',$scholarship['deadline']),
+                // 'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
+                // 'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('d-m-Y',$scholarship['deadline']),
             ];
             $scholarship_id = DB::table('scholarships')->insertGetId($scholarshipData);
             

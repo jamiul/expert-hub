@@ -3,10 +3,10 @@
         <div class="sidebar-layout right-sidebar-layout edit-client-job-post border-0">
             <div class="page-sidebar">
                 <div class="sidebar-widget">
-                    <x-form.input class="label-inline input-field-md" type="number" label="{{ $project->type }}" wire:model="budget_start_amount"/>
+                    <x-form.input class="input-field-md" type="number" label="{{ $project->type }}" wire:model="budget_start_amount"/>
                 </div>
                 <div class="sidebar-widget">
-                    <h4 class="widget-title">Job information</h4>
+                    <h4 class="widget-title">Project information</h4>
                     <div class="widget-content text-sm">
                         <div class="d-flex gap-2 align-items-center py-1">
                             <x-icon.graduation-cap fill="#0036E3"/>
