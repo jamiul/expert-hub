@@ -27,7 +27,9 @@ class ExpertRegistration extends Component
     #[Validate()]
     public $title = '';
     #[Validate()]
-    public $name = '';
+    public $first_name = '';
+    #[Validate()]
+    public $last_name = '';
     #[Validate()]
     public $email = '';
     #[Validate()]
@@ -58,7 +60,8 @@ class ExpertRegistration extends Component
                 $phoneNumber = new PhoneNumber($this->phone, $this->phone_country);
                 $user = User::create([
                     'title' => $this->title,
-                    'name' => $this->name,
+                    'first_name' => $this->first_name,
+                    'last_name' => $this->last_name,
                     'username' => $this->username(),
                     'email' => $this->email,
                     'phone' => $phoneNumber->isOfCountry($this->phone_country) ? $phoneNumber->formatE164() : null,
@@ -93,7 +96,8 @@ class ExpertRegistration extends Component
     {
         return [
             'title' => ['required'],
-            'name' => ['required'],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'phone' => ['required', 'phone:'. $this->phone_country],
             'password' => [
