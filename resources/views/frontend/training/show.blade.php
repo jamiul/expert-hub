@@ -47,18 +47,18 @@
                                                 @endif
                                             </div>
                                             <div>
-                                                <p class="m-0 text-sm fw-medium text-primary">{{ $training->mode->value }}</p>
+                                                <p class="m-0 text-sm fw-medium text-primary">{{ $training->mode?->value }}</p>
                                             </div>
                                         </div>
 
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Language</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->language->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->language?->name }}</p>
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Training Category</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->category->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->category?->name }}</p>
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Partner Institute</p>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div>
                                         <p class="m-0 text-sm">Time & Location</p>
-                                        <p class="m-0 text-sm fw-medium">{{ $training->start_time }} AEST, {{ $training->state->name }}, {{ $training->country->name }}</p>
+                                        <p class="m-0 text-sm fw-medium">{{ $training->start_time }} AEST, {{ $training->state?->name }}, {{ $training->country?->name }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                     </div> <!--page-content-accordion-body-->
                                 </div> <!--page-content-accordion-item-->
 
-                                <div class="page-content-accordion-item" x-data="{ isOpen: false }"
+                                <div class="page-content-accordion-item" x-data="{ isOpen: true }"
                                      :class="{ 'accordion-item-active': isOpen }">
                                     <div class="page-content-accordion-title" x-on:click="isOpen = !isOpen">
                                         <h3 class="h6">Instructors</h3>
@@ -125,7 +125,7 @@
                                                     <div class="expert-info">
                                                         <h3 class="h6 expert-name mb-0">{{ $instructor->user->full_name ?? '' }}</h3>
                                                         <ul class="expert-meta">
-                                                            {{-- <li>Melbourne University</li> --}}
+                                                            <li>{{$instructor->expertField->name}}</li>
                                                             <li>{{ $instructor->user->country?->name }}</li>
                                                         </ul>
 
@@ -167,47 +167,7 @@
                                         </button>
                                     </div> <!--page-content-accordion-title-->
                                     <div x-show="isOpen" class="page-content-accordion-body">
-                                        @foreach ($training->instructors as $instructor)
-                                            <div class="expert-card py-3">
-                                                <div class="expert-card-header mb-2">
-                                                    <div class="expert-thumb">
-                                                        <div class="expert-thumb-box">
-                                                            <img src="{{ $instructor->picture }}"/>
-                                                        </div>
-                                                    </div> <!--expert-thumb-->
-                                                    <div class="expert-info">
-                                                        <h3 class="h6 expert-name mb-0">{{ $instructor->user->full_name ?? '' }}</h3>
-                                                        <ul class="expert-meta">
-                                                            <li>Melbourne University</li>
-                                                            <li>{{ $instructor->user->country?->name }}</li>
-                                                        </ul>
-
-                                                    </div><!--expert-info-->
-                                                    <div class="expert-card-action">
-                                                        <button x-data="{ isFavorited: false }"
-                                                                class="btn btn-md btn-icon btn-outline-light btn-favorite"
-                                                                :class="{ 'favorited': isFavorited }"
-                                                                @click="isFavorited = !isFavorited">
-                                                                        <span class="heart-line">
-                                                                            <x-icon.heart/>
-                                                                       </span>
-                                                            <span class="heart-filled">
-                                                                            <x-icon.heart-filled/>
-                                                                       </span>
-                                                        </button>
-                                                        <button class="btn btn-md btn-icon btn-outline-light">
-                                                            <x-icon.message-line/>
-                                                        </button>
-                                                        <button class="btn btn-md btn-outline-primary border-2"> Invite Project</button>
-                                                    </div>
-                                                </div>
-                                                <div class="expert-card-body">
-                                                    <div class="expert-summary py-3">
-                                                        <p class="mb-0">{{ $instructor->biography ?? '' }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
+                                        <p>{{ $training->outcomes ?? '' }}</p>
                                     </div> <!--page-content-accordion-body-->
                                 </div> <!--page-content-accordion-item-->
 
@@ -277,7 +237,7 @@
                                     </div> <!--page-content-accordion-body-->
                                 </div> <!--page-content-accordion-item-->
 
-                                <div class="page-content-accordion-item" x-data="{ isOpen: true }"
+                                <div class="page-content-accordion-item" x-data="{ isOpen: false }"
                                      :class="{ 'accordion-item-active': isOpen }">
                                     <div class="page-content-accordion-title" x-on:click="isOpen = !isOpen">
                                         <h3 class="h6">Recommended Reading</h3>

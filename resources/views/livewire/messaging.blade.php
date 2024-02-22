@@ -274,7 +274,9 @@
                                 </div>
                                 <div class="conversation-message-body">
                                     @if(!$conversationMessage->has_attachment)
-                                    <p>{{$conversationMessage->content}}</p>
+                                    <p>{{$conversationMessage->content}}@unless ($conversationMessage->created_at->eq($conversationMessage->updated_at))
+                                        <small class="text-sm text-gray-600"> {{'(edited)' }} </small> @endunless
+                                    </p>
                                     @endif
 
                                     @if($conversationMessage->has_attachment)
@@ -302,7 +304,7 @@
 
 
                             <!-- TODO:NEL: add conversation-user-message-action -->
-
+                            @if($conversationMessage->sender_profile_id === Auth::user()->profile->id)
                             <div class="conversation-user-message-action">
                                 <div class="dropdown">
                                     <button class="icon-btn message-action-trigger" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -310,7 +312,7 @@
                                     </button>
                                     <div class="dropdown-menu dropdown-show">
 
-                                        <button class="dropdown-item dropdown-heading" onclick="startMessageEdit()">
+                                        <button class="dropdown-item dropdown-heading" wire:click="$dispatch('modal.open', {component: 'messaging.edit-message' , arguments: {'message': {{$conversationMessage}} }})">
                                             <span> <x-icon.edit /></span> <span>Edit</span>
                                         </button>
 
@@ -327,6 +329,7 @@
                                 </div>
 
                             </div>
+                            @endif
 
                             <!-- TODO:NEL: add conversation-user-message-action end-->
 

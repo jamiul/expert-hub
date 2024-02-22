@@ -44,7 +44,7 @@
                             </li>
                         </ul>
                     </button>
-                    <button class="btn btn-md btn-outline-primary border-2"> Registration</button>
+                    <button class="btn btn-md btn-outline-primary border-2" wire:click="$dispatch('modal.open', {component: 'training.register' , arguments: {'training': {{$training}} } })"> Registration</button>
                 </div>
                 <div class="training-card-trainer-wrapper">
                     @foreach ($training->instructors as $instructor)
@@ -55,7 +55,7 @@
                             <div>
                                 <h4 class="text-base mb-0">{{ $instructor->user->full_name }}</h4>
                                 <ul class="user-meta">
-                                    <li>Melbourne University</li>
+                                    <li>{{$instructor->expertField->name}}</li>
                                     <li>{{ $instructor->user->country->name }}</li>
                                 </ul>
                             </div>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="tr">
                             <div class="td fw-medium">Time & Location</div>
-                            <div class="td">10.15am AEST, Sydney, Australia</div>
+                            <div class="td">{{ $training->start_time }} AEST, {{ $training->state->name }}, {{ $training->country->name }}</div>
                         </div>
                         <div class="tr">
                             <div class="td fw-medium">Training Mode</div>
