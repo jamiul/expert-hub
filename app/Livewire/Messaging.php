@@ -296,6 +296,12 @@ class Messaging extends Component
         // dump($this->messageAttachmentUrls);
     }
 
+    #[On('updateMessage')] 
+    public function refreshCurrentConversation()
+    {
+        $this->currentConversation = $this->currentConversation;       
+    }
+
     public function filter($filterType = null)
     {
         $this->filterType = $filterType;

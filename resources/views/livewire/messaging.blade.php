@@ -274,7 +274,9 @@
                                 </div>
                                 <div class="conversation-message-body">
                                     @if(!$conversationMessage->has_attachment)
-                                    <p>{{$conversationMessage->content}}</p>
+                                    <p>{{$conversationMessage->content}}@unless ($conversationMessage->created_at->eq($conversationMessage->updated_at))
+                                        <small class="text-sm text-gray-600"> {{'(edited)' }} </small> @endunless
+                                    </p>
                                     @endif
 
                                     @if($conversationMessage->has_attachment)
