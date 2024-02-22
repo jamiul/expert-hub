@@ -131,11 +131,11 @@
                                                     </div>
                                                     <div class="tr">
                                                         <div class="td fw-medium">Language</div>
-                                                        <div class="td">{{ $training->language->name }}</div>
+                                                        <div class="td">{{ $training->language?->name }}</div>
                                                     </div>
                                                     <div class="tr">
                                                         <div class="td fw-medium">Training Category</div>
-                                                        <div class="td">{{ $training->category->name }}</div>
+                                                        <div class="td">{{ $training->category?->name }}</div>
                                                     </div>
                                                     <div class="tr">
                                                         <div class="td fw-medium">Training Fee</div>

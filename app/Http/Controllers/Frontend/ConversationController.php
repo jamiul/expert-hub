@@ -48,8 +48,8 @@ class ConversationController extends Controller
             // dd($id);
             $authUser = Auth::user();
             $participantProfileIDs = [$authUser->profile->id, $id]; //TODO:receive the second user from UI
-
-            $conversation = Conversation::create(['creator_profile_id' => $authUser->profile->id, 'title' => $authUser->first_name]);
+            
+            $conversation = Conversation::create(['creator_profile_id' => $authUser->profile->id, 'title' => $authUser->name]);
 
             foreach ($participantProfileIDs as $participantProfileID) {
                 Participant::create(['conversation_id' => $conversation->id, 'profile_id' => $participantProfileID]);
