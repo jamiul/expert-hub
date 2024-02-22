@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Training extends Model
 {
     use SoftDeletes;
+    use Favoritable;
 
     protected $guarded = [];
 
