@@ -77,7 +77,7 @@
                         <div class="page-content p-0">
 
                             <div class="project-details-card">
-                                <div class="project-details-card-header pb-4">
+                                <div class="project-details-card-header">
                                     <div class="project-details-title">
                                         <h1 class="h5 d-flex align-items-center gap-2 mb-2">
                                             <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="project-details-card-body pt-3 mb-40">
+                                <div class="project-details-card-body pt-4 mb-40">
                                     <p class="mb-0">
                                         {{ $project->description }}
                                     </p>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 @empty
-                    
+
                 @endforelse
             </div>
         </div>
