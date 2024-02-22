@@ -11,12 +11,12 @@
         </div>
         <ul>
             @foreach ($scholarshipType as $type)
-            <li>{{ $type }}</li>
+            <li>{{ $type }} <span>x</span></li>
             @endforeach
         </ul>
     </div>
     <div class="filter-widget mb-40">
-        <h6 class="filter-widget-title">Scholarship type</h6>
+        <h6 class="filter-widget-title">Scholarship and Grant type</h6>
         <div class="filter-widget-content">
             @foreach ($scholarshipTypes as $scholarshipType)
             <x-form.check wire:change="filter" wire:model="scholarshipType" id="{{ $scholarshipType->value }}" value="{{ $scholarshipType->value }}">

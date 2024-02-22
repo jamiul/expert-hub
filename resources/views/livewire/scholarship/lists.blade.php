@@ -10,7 +10,7 @@
                     @endif
                 </div>
                 <div class="scholarship-university-info">
-                    <h3 class="h6 mb-1"> {{ $scholarship->title }} </h3>
+                    <a target="_blank" href="{{ $scholarship->link }}"><h3 class="h6 mb-1"> {{ $scholarship->title }} </h3></a>
                         <p class="mb-0 text-sm fw-medium">{{$scholarship->organization}} | {{$scholarship->country?->name}}</p>
                 </div>
                 <div class="scholarship-action">
@@ -53,26 +53,26 @@
                 </div>
                 <div class="scholarship-details">
                     <p class="text-sm">
-                        {{ Str::limit($scholarship->summary, 220) }} <a target="_blank" href="{{ $scholarship->link }}">more</a>
+                        {{ Str::limit($scholarship->summary, 400) }} @if(Str::length($scholarship->summary) > 400)<a target="_blank" href="{{ $scholarship->link }}">more</a> @endif
                     </p>
                     <div class="custom-table text-sm">
-                        <div class="tr">
-                            <div class="td">Find Supervisors</div>
-                            <div class="td">
-                                @if($scholarship->supervisor_link)
-                                    <a target="_blank" class="text-decoration-underline fw-medium"
-                                       href="{{ $scholarship->supervisor_link }}">Click Here</a>
-                                @else
-                                    N/A
-                                @endif
-                            </div>
-                        </div>
                         <div class="tr">
                             <div class="td">Scholarship Website</div>
                             <div class="td">
                                 @if($scholarship->link)
                                     <a target="_blank" class="text-decoration-underline fw-medium"
                                        href="{{ $scholarship->link }}">Click Here</a>
+                                @else
+                                    N/A
+                                @endif
+                            </div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">Find Supervisors</div>
+                            <div class="td">
+                                @if($scholarship->supervisor_link)
+                                    <a target="_blank" class="text-decoration-underline fw-medium"
+                                       href="{{ $scholarship->supervisor_link }}">Click Here</a>
                                 @else
                                     N/A
                                 @endif

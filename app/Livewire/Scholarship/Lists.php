@@ -11,7 +11,7 @@ class Lists extends Component
 {
     use WithPagination;
 
-    public $perPage = 6;
+    public $perPage = 12;
 
     public $filtersArray;
 
