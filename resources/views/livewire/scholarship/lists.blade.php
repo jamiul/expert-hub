@@ -3,20 +3,15 @@
         @forelse ($scholarships as $scholarship)
             <div class="scholarship-database-content-list-item">
                 <div class="scholarship-university-logo">
-                    <div>
-                        @if ($scholarship->university?->logo)
-                            <img src="{{ asset($scholarship->university?->logo) }}"/>
-                        @else
-                            <img src="{{ asset('dummy-logo.png') }}"/>
-                        @endif
-                    </div>
+                    @if ($scholarship->logo)
+                        <img src="{{ asset($scholarship->logo) }}"/>
+                    @else
+                        <img src="{{ asset('dummy-logo.png') }}"/>
+                    @endif
                 </div>
                 <div class="scholarship-university-info">
                     <h3 class="h6 mb-1"> {{ $scholarship->title }} </h3>
-                    @if (isset($scholarship->university))
-                        <p class="mb-0 text-sm fw-medium">{{$scholarship->university->name}}
-                            | {{$scholarship->country?->name}}</p>
-                    @endif
+                        <p class="mb-0 text-sm fw-medium">{{$scholarship->organization}} | {{$scholarship->country?->name}}</p>
                 </div>
                 <div class="scholarship-action">
                     <div class="d-flex justify-content-end flex-wrap">
@@ -57,31 +52,12 @@
                     </div>
                 </div>
                 <div class="scholarship-details">
+                    <p class="text-sm">
+                        {{ Str::limit($scholarship->summary, 220) }} <a target="_blank" href="{{ $scholarship->link }}">more</a>
+                    </p>
                     <div class="custom-table text-sm">
                         <div class="tr">
-                            <div class="td">Application Deadline</div>
-                            <div class="td">
-                                {{ $scholarship->deadline ? $scholarship->deadline->format('d F Y') : 'Avaiable' }}
-                            </div>
-                        </div>
-                        <div class="tr">
-                            <div class="td">Study Area</div>
-                            <div class="td">
-                                {{ $scholarship->studyAreas->count() ? $scholarship->studyAreas->implode('name', ', ') : 'N/A' }}
-                            </div>
-                        </div>
-                        <div class="tr">
-                            <div class="td">Study Level</div>
-                            <div class="td">
-                                {{ $scholarship->studyLevels->count() ? $scholarship->studyLevels->implode('name.value', ', ') : 'N/A'}}
-                            </div>
-                        </div>
-                        <div class="tr">
-                            <div class="td">Student Type</div>
-                            <div class="td">{{ $scholarship->student_type ? $scholarship->student_type : 'n/a' }}</div>
-                        </div>
-                        <div class="tr">
-                            <div class="td">Supervisor</div>
+                            <div class="td">Find Supervisors</div>
                             <div class="td">
                                 @if($scholarship->supervisor_link)
                                     <a target="_blank" class="text-decoration-underline fw-medium"

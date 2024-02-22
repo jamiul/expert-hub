@@ -21,13 +21,8 @@ class Lists extends Component
     {
         $this->filtersArray = request()->only(
             'search',
-            'level',
-            'studyArea',
             'scholarshipType',
-            'applicationDeadline',
-            'studentType',
-            'country',
-            'selectedUniversities',
+            'selectedCountries',
         );
     }
 
@@ -57,53 +52,24 @@ class Lists extends Component
 
     public function render()
     {
-        $scholarships = Scholarship::with(['university']);
+        $scholarships = Scholarship::query();
 
         if (isset($this->filtersArray['search']) && $this->filtersArray['search']) {
             $scholarships = $scholarships->where('title', 'like', '%' . $this->filtersArray['search'] . '%');
-        }
-        if (isset($this->filtersArray['level']) && $this->filtersArray['level']) {
-            $scholarships = $scholarships->whereHas('studyLevels', function($query){
-                $query->whereIn('name', $this->filtersArray['level']);
-            });
-        }
-        if (isset($this->filtersArray['studyArea']) && $this->filtersArray['studyArea']) {
-            $scholarships = $scholarships->whereHas('studyAreas', function ($query) {
-                $query->whereIn('study_field_id', $this->filtersArray['studyArea']);
-            });
-        }
-        if (isset($this->filtersArray['studentType']) && $this->filtersArray['studentType']) {
-            $studentTypes = $this->filtersArray['studentType'];
-            $scholarships = $scholarships->where(function ($q) use ($studentTypes) {
-                foreach ($studentTypes as $value) {
-                    $q->orWhere('student_type', $value);
-                }
-            });
         }
         if (isset($this->filtersArray['scholarshipType']) && $this->filtersArray['scholarshipType']) {
             $scholarships = $scholarships->whereHas('fundTypes', function ($query) {
                 $query->whereIn('name', $this->filtersArray['scholarshipType']);
             });
         }
-        if (isset($this->filtersArray['applicationDeadline']) && $this->filtersArray['applicationDeadline']) {
-            $scholarships = $scholarships->whereYear('deadline', '>=', $this->filtersArray['applicationDeadline'])
-                ->whereDate('deadline', '>', now())
-                ->orWhere('automatic_consideration', true);
-        }
         if (isset($this->filtersArray['selectedCountries']) && $this->filtersArray['selectedCountries']) {
             $scholarships = $scholarships->whereHas('country', function ($query) {
                 $query->whereIn('name', $this->filtersArray['selectedCountries']);
             });
         }
-        if (isset($this->filtersArray['selectedUniversities']) && $this->filtersArray['selectedUniversities']) {
-            $scholarships = $scholarships->whereHas('university', function ($query) {
-                $query->whereIn('name', $this->filtersArray['selectedUniversities']);
-            });
-        }
 
         $this->scholarshipCount = $scholarships->count();
         $scholarships = $scholarships
-            ->orderByDesc('university_id')
             ->paginate($this->perPage);
 
         return view('livewire.scholarship.lists', compact('scholarships'));

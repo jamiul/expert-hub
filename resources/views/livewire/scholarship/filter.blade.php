@@ -9,16 +9,11 @@
                 Clear filters
             </button>
         </div>
-    </div>
-    <div class="filter-widget">
-        <h6 class="filter-widget-title">Study Level</h6>
-        <div class="filter-widget-content">
-            @foreach($levels as $level)
-                <x-form.check wire:change="filter" wire:model="level" id="{{ $level->value }}" value="{{ $level->value }}">
-                    {{ $level->value }}
-                </x-form.check>
+        <ul>
+            @foreach ($scholarshipType as $type)
+            <li>{{ $type }}</li>
             @endforeach
-        </div>
+        </ul>
     </div>
     <div class="filter-widget mb-40">
         <h6 class="filter-widget-title">Scholarship type</h6>
@@ -28,32 +23,6 @@
                 {{ $scholarshipType->value }}
             </x-form.check>
             @endforeach
-        </div>
-    </div>
-    <div class="filter-widget mb-40">
-        <h6 class="filter-widget-title">Student type</h6>
-        <div class="filter-widget-content">
-            @foreach ($studentTypes as $studentType)
-            <x-form.check wire:change="filter" wire:model="studentType" id="{{ $studentType->value }}" value="{{ $studentType->value }}">
-                {{ $studentType->value }}
-            </x-form.check>
-            @endforeach
-        </div>
-    </div>
-    <div class="filter-widget mb-40">
-        <h6 class="filter-widget-title">Study Area</h6>
-        <div class="filter-widget-content">
-            @foreach ($studyAreas as $studyArea)
-            <x-form.check wire:change="filter" wire:model="studyArea" id="{{ $studyArea->name }}" value="{{ $studyArea->id }}">
-                {{ $studyArea->name }}
-            </x-form.check>
-            @endforeach
-        </div>
-    </div>
-    <div class="filter-widget mb-40">
-        <h6 class="filter-widget-title">University</h6>
-        <div class="filter-widget-content">
-            <x-form.autocomplete class="input-field-md" :searchResults="$universities" selectFunction="selectUniversity" removeFunction="removeUniversity" :selectedRecords="$selectedUniversities" name="university" placeholder="Search by University"/>
         </div>
     </div>
     <div class="filter-widget mb-40">
