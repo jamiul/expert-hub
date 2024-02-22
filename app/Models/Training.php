@@ -34,6 +34,11 @@ class Training extends Model
         return $this->belongsTo(Profile::class, 'expert_id');
     }
 
+    public function participants()
+    {
+        return $this->belongsToMany(Profile::class, 'training_participants', 'training_id', 'client_id');
+    }
+
     public function language()
     {
         return $this->belongsTo(Language::class);
