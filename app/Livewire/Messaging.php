@@ -141,10 +141,7 @@ class Messaging extends Component
         $message = Message::create([
             'conversation_id' => $this->currentConversation->id, 'sender_profile_id' => Auth::user()->profile->id,
             'content' => $data['messageBody'],
-            'content' => $data['messageBody'],
-            // 'content' => 'sss',
-            'content' => $data['messageBody'],
-            // 'content' => 'sss',
+            
         ]);
 
         // file upload start
@@ -297,6 +294,12 @@ class Messaging extends Component
         foreach ($this->messageAttachment as $file)
             $this->messageAttachmentTemporaryUrls[] = $file->temporaryUrl();
         // dump($this->messageAttachmentUrls);
+    }
+
+    #[On('updateMessage')] 
+    public function refreshCurrentConversation()
+    {
+        $this->currentConversation = $this->currentConversation;       
     }
 
     public function filter($filterType = null)
