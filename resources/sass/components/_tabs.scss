@@ -41,12 +41,11 @@
         border: none;
         position: relative;
         cursor: pointer;
-        font-weight: 500;
         list-style: none;
 
         &.active {
             color: $edu-primary-color;
-
+            font-weight: 500;
             &:after {
                 content: "";
                 display: block;

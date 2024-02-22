@@ -45,6 +45,6 @@
         <span>May 26, 2024</span>
     </div>
     <x-slot name="button">
-        <button type="submit" class="btn btn-md btn-primary">Withdraw Now</button>
+        <button type="submit" class="btn btn-md btn-primary">Set Schedule</button>
     </x-slot>
 </x-modal.form>
