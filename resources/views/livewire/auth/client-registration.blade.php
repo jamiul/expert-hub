@@ -34,8 +34,10 @@
                                                 <option value="{{ $title }}">{{ $title }}</option>
                                             @endforeach
                                         </x-form.select>
-                                        <x-form.input type="text" label="Full Name" wire:model.blur="name"
-                                                      placeholder="Your full name"/>
+                                        <x-form.input type="text" label="First Name" wire:model.blur="first_name"
+                                                      placeholder="Your First name"/>
+                                        <x-form.input type="text" label="Last Name" wire:model.blur="last_name"
+                                                      placeholder="Your Last name"/>
                                         <x-form.input type="email" label="Email Address"
                                                       wire:model.live.debounce.1000="email"
                                                       placeholder="name@example.com"/>

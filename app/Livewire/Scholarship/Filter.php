@@ -43,6 +43,13 @@ class Filter extends Component
         $this->filter();
     }
 
+    public function removeFilter($key)
+    {
+        unset($this->scholarshipType[$key]);
+        $this->filter();
+        // dd($key);
+    }
+
     public function updatedSearch()
     {
         $this->filter();

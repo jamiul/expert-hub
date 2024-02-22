@@ -9,9 +9,14 @@
                 Clear filters
             </button>
         </div>
-        <ul>
-            @foreach ($scholarshipType as $type)
-            <li>{{ $type }} <span>x</span></li>
+        <ul class="ps-0">
+            @foreach ($scholarshipType as $key => $value)
+            <li wire:key="{{ $value }}" class="badge rounded-pill text-bg-primary">
+                {{ $value }}
+                <span wire:click="removeFilter('{{ $key }}')" class="cursor-pointer">
+                    <x-icon.close width="18" height="18" fill="#fff"/>
+                </span>
+            </li>
             @endforeach
         </ul>
     </div>

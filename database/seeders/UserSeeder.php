@@ -13,6 +13,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -34,8 +35,9 @@ class UserSeeder extends Seeder
             $userData = [
                 'active_profile' => $user['type'],
                 'title' => $user['title'],
-                'name' => $user['first_name'] . ' ' . $user['last_name'],
-                'username' => $user['first_name'] . '-' . $user['last_name'],
+                'first_name' => $user['last_name'],
+                'last_name' => $user['last_name'],
+                'username' => Str::uuid(),
                 'email' => $user['email'],
                 'email_verified_at' => now(),
                 'password' => Hash::make($user['password']),
