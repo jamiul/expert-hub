@@ -11,7 +11,7 @@
 <table class="w-full">
     <tr>
         <td class="w-half">
-            <img src="{{ asset('assets/frontend/img/invoice-logo.png') }}" alt="laravel daily" width="200" />
+            <img src="{{ asset('assets/frontend/img/invoice-logo.png') }}" alt="" width="200" />
         </td>
     </tr>
 </table>
@@ -22,19 +22,22 @@
             <table class="w-full">
                 <tr>
                     <td class="w-half">
-                        <div><h4>To:</h4></div>
-                        <div>{{ $data['client_id'] }}</div>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="w-half">
                         <div><h4>From:</h4></div>
                         <div>Expert Gate</div>
                         <div>32 Erie Street, South Granville</div>
                         <div>NSW 2142, Australia</div>
                     </td>
                 </tr>
+                <tr>
+                    <td class="w-half">
+                        <div><h4>To:</h4></div>
+                        <div>{{ @$data['full_name'] }}</div>
+                        <div>{{ $data['address_line1'] }}</div>
+                        <div>{{ $data['address_line2'] }}</div>
+                    </td>
+
+                </tr>
+
             </table>
         </div>
         <div class="invoice-right-area">
@@ -42,15 +45,23 @@
                 <tr><td class="invoice-title">Invoice</td></tr>
                 <tr>
                     <td class="text-left">Invoice #</td>
-                    <td class="text-right text-bold">{{ $data['id'] }}</td>
+                    <td class="text-right text-bold">{{ $data['invoice_id'] }}</td>
                 </tr>
                 <tr>
                     <td class="text-left">Date</td>
-                    <td class="text-right">{{ $data['created_at'] }}</td>
+                    <td class="text-right">{{ $data['date'] }}</td>
+                </tr>
+                <tr>
+                    <td class="text-left">Due Date</td>
+                    <td class="text-right">{{ $data['due_date'] }}</td>
                 </tr>
                 <tr>
                     <td class="text-left">Total Amount</td>
-                    <td class="text-right text-bold">$100.50</td>
+                    <td class="text-right text-bold">${{ $data['total'] }}</td>
+                </tr>
+                <tr>
+                    <td class="text-left">Total Due</td>
+                    <td class="text-right text-bold">${{ $data['total_due'] }}</td>
                 </tr>
             </table>
         </div>
@@ -62,11 +73,11 @@
     <table class="products tbl-description">
         <tr>
             <th class="text-left">Description</th>
-            <th class="text-right">Amount / Balance</th>
+            <th class="text-right">Amount</th>
         </tr>
         <tr class="items">
-            <td class="text-left">Funding request for Developing Curriculum for Postgraduate Public Health Unit</td>
-            <td class="text-right text-bold">$117.34</td>
+            <td class="text-left">{{ $data['description'] }}</td>
+            <td class="text-right text-bold">{{ $data['amount'] }}</td>
         </tr>
     </table>
 </div>
@@ -75,7 +86,7 @@
     <table>
         <tr>
             <td>Total Amount:</td>
-            <td class="text-right text-bold"> $117.34</td>
+            <td class="text-right text-bold"> ${{ $data['total'] }}</td>
         </tr>
     </table>
 </div>
