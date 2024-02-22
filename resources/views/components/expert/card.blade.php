@@ -2,7 +2,7 @@
 'expert' => null,
 'url' => null
 ])
-<div class="expert-card border-bottom">
+<div class="expert-card border-bottom p-40">
     <div class="expert-card-header mb-2">
         <div class="expert-thumb">
             <div class="expert-thumb-box">
