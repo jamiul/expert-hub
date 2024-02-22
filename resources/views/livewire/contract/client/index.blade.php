@@ -96,7 +96,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @empty 
+                                @empty
                                     <x-empty/>
                                 @endforelse
                             </table>
@@ -178,7 +178,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @empty 
+                                @empty
                                 <x-empty/>
                                 @endforelse
                             </table>
@@ -388,7 +388,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @empty 
+                                @empty
                                 <x-empty/>
                                 @endforelse
                             </table>

@@ -28,9 +28,9 @@ use App\Notifications\SendOfferNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Log;
-use Spatie\LaravelPdf\Facades\Pdf;
 
-class StripeController extends Controller {
+class StripeController extends Controller
+{
 
     public function receiveWebhook( Request $request ) {
         \Stripe\Stripe::setApiKey( env( 'STRIPE_SECRET' ) );
@@ -372,8 +372,8 @@ class StripeController extends Controller {
             if ( $contract_type == 'offer' || $contract_type == 'contract' ) {
                 $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                $milestone_amount = Milestone::where('id', json_decode( $reference_id, true ))->sum('amount');
-                $charge  = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $offer->client_id, $offer->expert_id );
+                $milestone_amount = Milestone::where( 'id', json_decode( $reference_id, true ) )->sum( 'amount' );
+                $charge           = PaymentHelper::calculateMilestoneCharge( $milestone_amount, $offer->client_id, $offer->expert_id );
 
                 //parent transaction - credit card charge
                 $transaction_data = [
@@ -383,7 +383,7 @@ class StripeController extends Controller {
                     'description'    => "Paid from Visa 0077 to escrow for funding request",
                     'client_id'      => $profile->user_id,
                     'expert_id'      => null,
-                    'amount'         => ($paymentData->amount / 100),
+                    'amount'         => ( $paymentData->amount / 100 ),
                     'charge_type'    => 'credit',
                     'parent'         => null,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
@@ -481,13 +481,13 @@ class StripeController extends Controller {
             }
 
             //save to client transaction table
-            if($contract_type == 'consultation'){
+            if ( $contract_type == 'consultation' ) {
                 //update consultation status
 
                 $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                $booking_total = BookingSlot::whereIn('id', json_decode( $reference_id, true ))->sum('amount');
-                $charge  = PaymentHelper::calculateMilestoneCharge( $booking_total, $client_id, $expert_id );
+                $booking_total = BookingSlot::whereIn( 'id', json_decode( $reference_id, true ) )->sum( 'amount' );
+                $charge        = PaymentHelper::calculateMilestoneCharge( $booking_total, $client_id, $expert_id );
 
                 //parent transaction - credit card charge
                 $transaction_data = [
@@ -497,7 +497,7 @@ class StripeController extends Controller {
                     'description'    => "Paid from Visa 0077 to escrow for funding request",
                     'client_id'      => $client_id,
                     'expert_id'      => null,
-                    'amount'         => ($paymentData->amount / 100),
+                    'amount'         => ( $paymentData->amount / 100 ),
                     'charge_type'    => 'credit',
                     'parent'         => null,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
@@ -562,7 +562,7 @@ class StripeController extends Controller {
                     $booking->save();
 
                     $consultation_booking = $booking->consultation_booking;
-                    $consultation = $consultation_booking->consultation;
+                    $consultation         = $consultation_booking->consultation;
 
                     //escrow transaction
                     $transaction_data = [
@@ -582,12 +582,12 @@ class StripeController extends Controller {
             }
 
             //save to client transaction table
-            if($contract_type == 'training'){
+            if ( $contract_type == 'training' ) {
                 //update training booking status
                 $profile = Profile::where( 'stripe_client_id', $paymentData->customer )->first();
 
-                $training_total = TrainingParticipant::whereIn('id', json_decode( $reference_id, true ))->sum('amount');
-                $charge  = PaymentHelper::calculateMilestoneCharge( $training_total, $client_id, $expert_id );
+                $training_total = TrainingParticipant::whereIn( 'id', json_decode( $reference_id, true ) )->sum( 'amount' );
+                $charge         = PaymentHelper::calculateMilestoneCharge( $training_total, $client_id, $expert_id );
 
                 //parent transaction - credit card charge
                 $transaction_data = [
@@ -597,7 +597,7 @@ class StripeController extends Controller {
                     'description'    => "Paid from Visa 0077 to escrow for funding request",
                     'client_id'      => $client_id,
                     'expert_id'      => null,
-                    'amount'         => ($paymentData->amount / 100),
+                    'amount'         => ( $paymentData->amount / 100 ),
                     'charge_type'    => 'credit',
                     'parent'         => null,
                     'status'         => ( $paymentData->status == 'succeeded' ) ? 1 : 0
@@ -657,7 +657,7 @@ class StripeController extends Controller {
 
 
                 foreach ( json_decode( $reference_id ) as $ref_id ) {
-                    $training_perticipent = TrainingParticipant::find($ref_id);
+                    $training_perticipent         = TrainingParticipant::find( $ref_id );
                     $training_perticipent->status = TrainingParticipantStatus::Funded;
                     $training_perticipent->save();
 
@@ -1049,6 +1049,20 @@ class StripeController extends Controller {
             ];
             $transaction      = PaymentHelper::createExpertTransaction( $transaction_data );
 
+//            $transaction_data = [
+//                'transaction_id' => $expertpayout->id,
+//                'milestone_id'   => null,
+//                'type'           => ExpertTransactionType::ServiceFee,
+//                'description'    => "Service Fee for Wire Transfer - Ref ID " . $transaction->id,
+//                'client_id'      => null,
+//                'expert_id'      => $user_id,
+//                'amount'         => env( 'WITHDRAW_FEE' ),
+//                'charge_type'    => 'debit',
+//                'parent'         => $transaction->id,
+//                'status'         => ( $payout->status == 'paid' ) ? 1 : 0
+//            ];
+//            PaymentHelper::createExpertTransaction( $transaction_data );
+
             //send notification
             $user = User::find( $user_id );
             $user->notify( new PaymentNotification( [
@@ -1090,8 +1104,8 @@ class StripeController extends Controller {
                 'status'              => $payout->status
             ] );
 
-            //save transaction for expert
-            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+            //update transaction for expert
+            ExpertTransaction::where( 'transaction_id', $payout->id )->update( [
                 'status' => ( $payout->status == 'paid' ) ? 1 : 0
             ] );
 
@@ -1137,7 +1151,7 @@ class StripeController extends Controller {
             ] );
 
             //save transaction for expert
-            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+            ExpertTransaction::where( 'transaction_id', $payout->id )->update( [
                 'status' => ( $payout->status == 'paid' ) ? 1 : 0
             ] );
 
@@ -1180,7 +1194,7 @@ class StripeController extends Controller {
             ] );
 
             //save transaction for expert
-            ClientTransaction::where( 'transaction_id', $payout->id )->update( [
+            ExpertTransaction::where( 'transaction_id', $payout->id )->update( [
                 'status' => ( $payout->status == 'paid' ) ? 1 : 0
             ] );
 
@@ -1402,12 +1416,5 @@ class StripeController extends Controller {
             http_response_code( 500 );
             exit();
         }
-    }
-
-    public function invoice() {
-        $invoice = ClientTransaction::find( 1 )->toArray();
-        Pdf::view( 'pdf.invoice', [ 'data' => $invoice ] )
-           ->format( 'a4' )
-           ->save( 'invoice.pdf' );
     }
 }

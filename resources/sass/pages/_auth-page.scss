@@ -50,3 +50,56 @@
         }
     }
 }
+
+.email-verification-notice-wrapper {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+
+    .verify-img {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .verify-text {
+        text-align: center;
+
+        h3 {
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 40px;
+        }
+    }
+
+    .email-verification-help-menu {
+        border-bottom: 1px solid $edu-border-color;
+        padding-bottom: 24px;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+
+            li {
+                display: inline-block;
+                margin: 0 6px;
+
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $edu-primary-color;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: $edu-primary-dark-color;
+                    }
+                }
+            }
+        }
+    }
+}

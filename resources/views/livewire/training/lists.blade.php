@@ -118,7 +118,7 @@
                 </div>
             </div>
         @empty
-            <x-empty />
+        <x-empty />
         @endforelse
     </div>
     {{ $trainings->links() }}
