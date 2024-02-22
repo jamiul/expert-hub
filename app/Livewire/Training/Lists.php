@@ -2,12 +2,12 @@
 
 namespace App\Livewire\Training;
 
-use App\Models\Training;
-use App\Repositories\TrainingRepository;
-use Illuminate\Support\Carbon;
-use Livewire\Attributes\On;
+use App\Models\Profile;
 use Livewire\Component;
+use App\Models\Training;
+use Livewire\Attributes\On;
 use Livewire\WithPagination;
+use Illuminate\Support\Carbon;
 
 class Lists extends Component
 {
@@ -39,6 +39,12 @@ class Lists extends Component
     {
         $this->filtersArray = $filtersArray;
         $this->resetPage();
+    }
+
+    public function favourite(Training $training)
+    {
+        $redirectUrlIfNotAuthenticated = route('find.trainings');
+        $training->favourite($redirectUrlIfNotAuthenticated);
     }
 
     public function render()

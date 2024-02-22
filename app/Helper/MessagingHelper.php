@@ -12,7 +12,7 @@ function createConversation(Profile $sender, Profile $receiver, $message, $refer
 
     $conversation = Conversation::create([
         'creator_profile_id' => $sender->id, 
-        'title' => $sender->user->first_name,
+        'title' => $sender->user->full_name,
         'reference_id' => $reference ? $reference->id : null,
         'reference_type' => $reference ? $reference::class : null,
     ]);

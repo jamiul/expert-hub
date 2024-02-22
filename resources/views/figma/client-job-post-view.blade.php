@@ -30,7 +30,7 @@
                         </button>
 
                     </div>
-                    <div class="tab-content pt-40">
+                    <div class="tab-content">
                         <div x-show="activeTab === 'view-job'" id="view-job-tab-content">
                             <div class="sidebar-layout right-sidebar-layout project-detials-layout border-0">
                                 <div class="page-sidebar">

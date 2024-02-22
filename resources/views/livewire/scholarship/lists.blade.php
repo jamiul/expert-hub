@@ -7,7 +7,7 @@
                         @if ($scholarship->university?->logo)
                             <img src="{{ asset($scholarship->university?->logo) }}"/>
                         @else
-                            <img src="{{ asset('assets/university-logo/university_of_melbourne.png') }}"/>
+                            <img src="{{ asset('dummy-logo.png') }}"/>
                         @endif
                     </div>
                 </div>

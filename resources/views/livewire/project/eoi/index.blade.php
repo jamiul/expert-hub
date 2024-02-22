@@ -11,7 +11,7 @@
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'review-proposal' }"
-                            @click="activeTab = 'review-proposal'">Review Proposal ({{ $project->eois->count() }})
+                            @click="activeTab = 'review-proposal'">View EOI ({{ $project->eois->count() }})
                     </button>
 
                     <button class="tab-nav-item" :class="{ 'active': activeTab === 'invite-expert' }"
@@ -27,12 +27,12 @@
                     </button>
 
                 </div>
-                <div class="tab-content pt-40">
+                <div class="tab-content">
                     <div x-show="activeTab === 'view-job'" id="view-job-tab-content">
                         <div class="sidebar-layout right-sidebar-layout project-detials-layout border-0">
                             <div class="page-sidebar">
                                 <div class="sidebar-widget">
-                                    <p class="text-sm mb-3">{{ $project->type }} <strong class="h5">${{ $project->budget_start_amount }}</strong></p>
+                                    <p class="text-sm mb-3">{{ $project->type }}: <strong class="h5">${{ $project->budget_start_amount }}</strong></p>
 
                                 </div>
 
@@ -71,7 +71,7 @@
                             </div>
                             <div class="page-content">
                                 <div class="project-details-card p-0">
-                                    <div class="project-details-card-header pb-4">
+                                    <div class="project-details-card-header">
                                         <p class="text-sm">ID: #45765rte675345</p>
                                         <div class="project-details-meta-data d-flex align-items-center gap-3">
                                             <div class="d-flex align-items-center gap-2">
@@ -273,7 +273,7 @@
                                                                 <div>
                                                                     <h3 class="h6 d-flex gap-2 mb-0">
                                                                         <x-icon.briefcase width="20" height="20" fill="#9196A2"/>
-                                                                        <span> 
+                                                                        <span>
                                                                             {{ $hire->project->title }}
                                                                         </span>
                                                                     </h3>

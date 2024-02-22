@@ -30,7 +30,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="text-black">- $1.00</div>
+                        <div class="text-black">- {{ $expert->currency }} {{ env('WITHDRAW_FEE') }}</div>
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="text-black fw-medium">

@@ -1,0 +1,210 @@
+
+
+.site-content {
+    padding: 60px 0;
+}
+
+.job-post-wrapper {
+    max-width: 872px;
+    margin: 0 auto;
+    font-family: "Colfax";
+}
+
+.job-post-wrapper label,
+.job-post-wrapper h2 {
+    font-family: "Colfax";
+    font-weight: 500;
+}
+
+.post-shadow-box {
+    border-radius: 8px;
+    border: 1px solid rgba(14, 0, 98, 0.1);
+    background: #fff;
+
+
+    padding: 56px;
+}
+
+.job-post-header {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 89, 201, 0.14);
+    background: rgba(0, 54, 227, 0.05);
+    padding: 24px 32px 20px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    display: flex;
+    margin: 0 0 48px 0;
+}
+
+
+.consult-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.consult-heading h2 {
+    font-size: 23px;
+    margin: 0;
+    color: #303744;
+}
+
+.consult-heading p {
+    font-size: 16px;
+    margin: 0;
+    color: #303744;
+}
+
+.post-header-image {
+    text-align: right;
+    margin: -12px 0 -20px 0;
+}
+
+.post-header-content {
+    padding-right: 25px;
+}
+
+.main-form .input-group {
+    display: block;
+    margin: 0 0 25px 0;
+}
+
+.main-form .input-group .form-control {
+    width: 100%;
+    border-radius: 4px !important;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 56px;
+    padding: 10px 16px;
+    box-shadow: none;
+    font-size: 15px;
+    transition-duration: 0.3s;
+}
+
+.main-form .input-group .form-control:hover {
+    border-color: #0059c9;
+}
+
+.main-form .form-label {
+    margin: 0 16px -12px 16px;
+    position: relative;
+    display: inline-flex;
+    float: left;
+    z-index: 9;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.upload-cotent p {
+    color: rgba(48, 55, 68, 0.7);
+    margin: 7px 0 0 0;
+    font-size: 14px;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0 0 0;
+}
+
+.main-form .input-group:last-child {
+    margin: 0;
+}
+
+.form-buttons button.btn {
+    width: 265px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(--color-theme-color-2, #0059c9);
+    display: flex;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    transition-duration: 0.3s;
+}
+
+.form-buttons button.btn:hover {
+    background: transparent;
+    color: #0059c9;
+}
+
+.main-form .edit-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.main-form .input-group textarea {
+    height: auto;
+    min-height: 120px;
+    font-size: 15px;
+}
+
+.customer-file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 89, 201, 0.3);
+    background: rgba(0, 89, 201, 0.05);
+    padding: 16px 24px;
+}
+
+.customer-file.delete {
+    display: none;
+}
+
+.job-post-wrapper h3 {
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #303744;
+}
+
+.file-extension p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.file-extension h3 {
+    font-size: 15px;
+}
+
+.file-name {
+    display: flex;
+    gap: 20px;
+}
+
+.del-file a {
+    cursor: pointer;
+}
+
+.file-extension span {
+    color: rgba(48, 55, 68, 0.7);
+}
+
+.file-upload {
+    border-radius: 4px;
+    border: 2px dashed rgba(48, 55, 68, 0.25);
+    padding: 25px 24px;
+    text-align: center;
+}
