@@ -28,24 +28,24 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show" :class="tab == 'expert' ? 'active' : ''" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="company-speciality-wrapper">
-                                <x-why-choose title="Global Recognition">
+                                <x-why-choose.index title="Global Recognition">
                                     Joining ExpertGate gives experts the opportunity to showcase their expertise on a global platform, increasing their visibility and recognition within their respective fields.
-                                </x-why-choose>
-                                <x-why-choose title="Diverse Opportunities">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Diverse Opportunities">
                                     Experts can explore a wide range of projects and collaborations across various industries and academic disciplines, allowing them to diversify their portfolio and expand their professional network.
-                                </x-why-choose>
-                                <x-why-choose title="Impactful Contributions">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Impactful Contributions">
                                     By offering their expertise through ExpertGate, experts can make meaningful contributions to educational institutions, industries, media outlets, and students, helping to solve real-world challenges and drive positive change.
-                                </x-why-choose>
-                                <x-why-choose title="Flexible Work Arrangements">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Flexible Work Arrangements">
                                     Experts have the flexibility to choose projects that align with their interests, expertise, and availability, enabling them to maintain a healthy work-life balance.
-                                </x-why-choose>
-                                <x-why-choose title="Secure Payment System">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Secure Payment System">
                                     ExpertGate prioritises the security of experts' payments by holding funds in escrow until project completion, ensuring fair compensation for their services.
-                                </x-why-choose>
-                                <x-why-choose title="Professional Development">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Professional Development">
                                     Through unique training opportunities offered by ExpertGate, experts can enhance their skills in areas such as policy development, course design, and soft skills development, further advancing their careers and expertise.
-                                </x-why-choose>
+                                </x-why-choose.index>
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.expert.registration') }}">Get Started</a>
@@ -55,24 +55,24 @@
                                 role="tabpanel"
                                 aria-labelledby="profile-tab">
                             <div class="company-speciality-wrapper">
-                                <x-why-choose title="Access to Top Experts">
+                                <x-why-choose.index title="Access to Top Experts">
                                     ExpertGate provides clients with access to a curated network of top academic and industry experts across various fields and disciplines, ensuring that they can find the right expertise to meet their specific needs.
-                                </x-why-choose>
-                                <x-why-choose title="Tailored Solutions">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Tailored Solutions">
                                     Clients can post projects on ExpertGate and receive expressions of interest from experts who are uniquely qualified to address their challenges, allowing for tailored solutions that align with their goals and objectives.
-                                </x-why-choose>
-                                <x-why-choose title="Empowering Collaboration">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Empowering Collaboration">
                                     By bridging the gap between academia and industry, ExpertGate empowers clients to collaborate with experts from diverse backgrounds and disciplines, fostering innovation, creativity, and excellence in their projects and initiatives.
-                                </x-why-choose>
-                                <x-why-choose title="Streamlined Process">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Streamlined Process">
                                     ExpertGate's intuitive user interface makes it easy for clients to navigate the platform, post projects, review proposals, and make informed decisions, saving time and effort in the search for expertise.
-                                </x-why-choose>
-                                <x-why-choose title="International Perspective">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="International Perspective">
                                     With a global platform that transcends borders, ExpertGate provides clients with access to an international perspective that can be invaluable in addressing educational challenges and opportunities on a global scale.
-                                </x-why-choose>
-                                <x-why-choose title="Security and Satisfaction">
+                                </x-why-choose.index>
+                                <x-why-choose.index title="Security and Satisfaction">
                                     ExpertGate holds payments in escrow until project completion, ensuring that clients only release funds when they are satisfied with the outcome of the collaboration, providing peace of mind and security throughout the process.
-                                </x-why-choose>
+                                </x-why-choose.index>
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-md btn-primary" style="width: 218px" href="{{ route('auth.client.registration') }}">Get Started</a>
