@@ -33,30 +33,18 @@ class ScholarshipSeeder extends Seeder
         $universityLookup = University::pluck('id', 'name')->toArray();
         $countryLookup = Country::pluck('id', 'name')->toArray();
         foreach ($keyedData as $scholarship) {
-            $studentType = StudentType::tryFrom(trim($scholarship['student_type']));
+            $university = University::where('name', trim($scholarship['organization']))->first();
+            $logo = $university ? $university->logo : null;
             $scholarshipData = [
                 'title' => trim($scholarship['scholarships_title']),
+                'organization' => trim($scholarship['organization']),
+                'logo' => $logo,
+                'summary' => trim($scholarship['summary']),
                 'link' => trim($scholarship['scholarships_link']),
                 'supervisor_link' =>  $scholarship['find_supervisor_link'] ?? null,
-                'university_id' => $universityLookup[trim($scholarship['university'])] ?? null,
                 'country_id' => $countryLookup[trim($scholarship['country'])] ?? null,
-                'student_type' => $studentType ? $studentType->value : null,
-                // 'automatic_consideration' => $scholarship['automatic_consideration']  == 'FALSE' ? 0 : 1,
-                // 'deadline' => empty($scholarship['deadline']) ? null : Carbon::createFromFormat('d-m-Y',$scholarship['deadline']),
             ];
             $scholarship_id = DB::table('scholarships')->insertGetId($scholarshipData);
-            
-            $studyLevelData = [];
-            foreach(explode(',', $scholarship['study_level']) as $studyLevel){
-                $studyLevel = StudyLevel::tryFrom(trim($studyLevel));
-                if($studyLevel){
-                    $studyLevelData[] = [
-                        'scholarship_id' => $scholarship_id,
-                        'name' => $studyLevel->value,
-                    ];
-                }
-            }
-            DB::table('scholarship_study_levels')->insert($studyLevelData);
 
             $scholarshipFundData = [];
             foreach(explode(',', $scholarship['fund_type']) as $scholarshipFund){
@@ -69,29 +57,6 @@ class ScholarshipSeeder extends Seeder
                 }
             }
             DB::table('scholarship_fund_types')->insert($scholarshipFundData);
-
-            $scholarshipAreaData = [];
-            $studyAreaLookup = StudyField::pluck('id', 'name')->toArray();
-            if($scholarship['study_area'] == 'All'){
-                $studyAreas = $studyAreaLookup;
-                foreach ($studyAreas as $studyArea) {
-                    $scholarshipAreaData[] = [
-                        'scholarship_id' => $scholarship_id,
-                        'study_field_id' => $studyArea,
-                    ];
-                }
-            }else{
-                foreach (explode(',', $scholarship['study_area']) as $scholarshipArea) {
-                    $studyAreaId = $studyAreaLookup[trim($scholarshipArea)] ?? null;
-                    if($studyAreaId){
-                        $scholarshipAreaData[] = [
-                            'scholarship_id' => $scholarship_id,
-                            'study_field_id' => $studyAreaId,
-                        ];
-                    }
-                }
-            }
-            DB::table('scholarship_study_area')->insert($scholarshipAreaData);
         }
     }
 }
