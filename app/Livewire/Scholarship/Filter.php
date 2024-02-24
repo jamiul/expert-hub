@@ -3,17 +3,7 @@
 namespace App\Livewire\Scholarship;
 
 use App\Enums\Scholarship\FundType;
-use App\Enums\Scholarship\StudentType;
-use App\Enums\Scholarship\StudyLevel;
 use App\Models\Country;
-use App\Models\Expertise;
-use App\Models\ScholarshipCountry;
-use App\Models\ScholarshipLevel;
-use App\Models\ScholarshipType;
-use App\Models\ScholarshipUniversity;
-use App\Models\StudyArea;
-use App\Models\StudyField;
-use App\Models\University;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
@@ -22,46 +12,24 @@ class Filter extends Component
     #[Url()]
     public $search = null;
     #[Url()]
-    public $level = [];
-    #[Url()]
-    public $studyArea = [];
-    #[Url()]
-    public $studentType = [];
-    #[Url()]
     public $scholarshipType = [];
-    #[Url()]
-    public $applicationDeadline = '';
     #[Url()]
     public $selectedCountries = [];
     public $country = '';
     public $countries = null;
     public $searchCountry = '';
-    #[Url()]
-    public $selectedUniversities = [];
-    public $university = '';
-    public $universities = null;
-    public $searchUniversity = '';
-
-    public $years;
 
     public function mount()
     {
         $this->setcountries();
-        $this->setUniversities();
-        $this->years = range(date('Y'), (date('Y')+5));
     }
 
     public function filter()
     {
         $filters = [
             'search' => $this->search,
-            'level' => $this->level,
-            'studyArea' => $this->studyArea,
             'scholarshipType' => $this->scholarshipType,
-            'applicationDeadline' => $this->applicationDeadline,
-            'studentType' => $this->studentType,
             'selectedCountries' => $this->selectedCountries,
-            'selectedUniversities' => $this->selectedUniversities,
         ];
         $this->dispatch('scholarship-filter', $filters);
     }
@@ -69,15 +37,17 @@ class Filter extends Component
     public function resetFilter()
     {
         $this->search = '';
-        $this->level = [];
-        $this->studyArea = [];
         $this->scholarshipType = [];
-        $this->applicationDeadline = '';
-        $this->studentType = [];
         $this->selectedCountries = [];
-        $this->selectedUniversities = [];
 
         $this->filter();
+    }
+
+    public function removeFilter($key)
+    {
+        unset($this->scholarshipType[$key]);
+        $this->filter();
+        // dd($key);
     }
 
     public function updatedSearch()
@@ -117,49 +87,11 @@ class Filter extends Component
         $this->filter();
     }
 
-    public function updatedUniversity()
-    {
-        if($this->university){
-            $this->universities = University::where('name', 'like', '%' . $this->university . '%')
-                ->whereNotIn('name', $this->selectedUniversities)
-                ->limit(5)
-                ->get();
-        }else{
-            $this->setUniversities();
-        }
-    }
-
-    public function setUniversities()
-    {
-        $this->universities = University::whereNotIn('name', $this->selectedUniversities)->limit(5)->get();
-    }
-
-    public function selectUniversity($name)
-    {
-        $university = University::where('name', $name)->first();
-        $this->selectedUniversities[] = $university->name;
-        $this->setUniversities();
-        $this->filter();
-    }
-
-    public function removeUniversity($name)
-    {
-        $this->selectedUniversities = array_diff($this->selectedUniversities, [$name]);
-        $this->setUniversities();
-        $this->filter();
-    }
-
     public function render()
     {
-        $levels = StudyLevel::cases();
-        $studyAreas = StudyField::get();
         $scholarshipTypes = FundType::cases();
-        $studentTypes = StudentType::cases();
-        
-
-        return view(
-            'livewire.scholarship.filter',
-            compact('levels', 'studyAreas', 'scholarshipTypes', 'studentTypes')
-        );
+        return view('livewire.scholarship.filter',[
+            'scholarshipTypes' => $scholarshipTypes,
+        ]);
     }
 }

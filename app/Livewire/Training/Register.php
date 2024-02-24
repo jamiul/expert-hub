@@ -28,6 +28,12 @@ class Register extends Modal
             toast('info', 'Login as Client to register Training');
             return redirect()->route('home');
         }
+
+        if($this->training->participants->contains($user->profile)) {
+            toast('info', 'You already registered to this Training');            
+            return redirect()->route('find.trainings');
+        }
+        
         $participant = TrainingParticipant::create([
             'training_id' => $this->training->id,
             'client_id' => $user->profile->id,
