@@ -25,31 +25,31 @@
             <div class="col-md-8">
                 <div x-data="{ activeTab: 'myFeed' }">
                     <ul class="secondary-tab-nav" id="myTab" role="tablist">
-                        <li x-on:click="activeTab = 'myFeed'"
-                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'myFeed' }">
+                        <li x-on:click="activeTab = 'myFeed'" class="tab-nav-item"
+                            :class="{'active': activeTab === 'myFeed' }">
                             My Feed
                         </li>
-                        <li x-on:click="activeTab = 'bestMatch'"
-                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'bestMatch' }">
+                        <li x-on:click="activeTab = 'bestMatch'" class="tab-nav-item"
+                            :class="{'active': activeTab === 'bestMatch' }">
                             Best Match
                         </li>
-                        <li x-on:click="activeTab = 'savedJobs'"
-                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'savedJobs' }">
+                        <li x-on:click="activeTab = 'savedJobs'" class="tab-nav-item"
+                            :class="{'active': activeTab === 'savedJobs' }">
                             Saved Jobs
                         </li>
                     </ul>
 
-                    <div x-show="activeTab === 'myFeed'" class="tab-content" x-cloak>
+                    <div x-show="activeTab === 'myFeed'" class="tab-content">
                         <!-- Content for My Feed tab -->
                         My Feed Content Goes Here
                     </div>
 
-                    <div x-show="activeTab === 'bestMatch'" class="tab-content" x-cloak>
+                    <div x-show="activeTab === 'bestMatch'" class="tab-content">
                         <!-- Content for Best Match tab -->
                         Best Match Content Goes Here
                     </div>
 
-                    <div x-show="activeTab === 'savedJobs'" class="tab-content" x-cloak>
+                    <div x-show="activeTab === 'savedJobs'" class="tab-content">
                         <!-- Content for Saved Jobs tab -->
                         Saved Jobs Content Goes Here
                     </div>
