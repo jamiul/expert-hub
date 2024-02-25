@@ -1,25 +1,44 @@
-$edu-lighter-brand-bg: rgba(0, 54, 227, 0.05);
-$edu-lighter-brand-border-color: rgba(0, 89, 201, 0.14);
-
-
 $edu-primary-color: #0036E3;
-$edu-primary-dark-color: #002CB9;
-$edu-primary-light-color: rgba(0, 89, 201, 0.10);
-$edu-secondary-color: #369450;
-$edu-secondary-dark-color: #275846;
+$edu-primary-dark-color: #0530BB;
+$edu-primary-color-70: rgba(0, 54, 227, 0.70);
+$edu-primary-color-50: rgba(0, 54, 227, 0.50);
+$edu-primary-color-30: rgba(0, 54, 227, 0.30);
+$edu-primary-color-10: rgba(0, 54, 227, 0.10);
+$edu-primary-color-05: rgba(0, 54, 227, 0.05);
+
+$edu-dark-color: #191D24;
+$edu-dark-color-70: rgba(25, 29, 36, 0.70);
+$edu-dark-color-50: rgba(25, 29, 36, 0.50);
+$edu-dark-color-30: rgba(25, 29, 36, 0.30);
+$edu-dark-color-10: rgba(25, 29, 36, 0.10);
+
+
+$edu-section-bg: #F1F3FA;
 $edu-headings-color: #303744;
+
 $edu-border-color: #E7E5EF;
+$edu-disabled-bg: #F0F0F0;
+$edu-disabled-text: #9D9D9D;
+
+
+
+
+
+//Used for _step-progress-bar
 $edu-gray-color: #A1A0A5;
+//User for _tags
 $edu-min-gray-color: #6E737C;
+//Used for _forms
 $edu-gray-4-color: #F6F6F6;
+
 $edu-red-color: #C00000;
 
 // change the Bootstrap Variables
-$edu-bs-secondary: #6c757d !default;
-$edu-bs-success: #198754 !default;
+$edu-bs-secondary: #A2A3B7 !default;
+$edu-bs-success: #369450 !default;
 $edu-bs-info: #0dcaf0 !default;
-$edu-bs-warning: #ffc107 !default;
-$edu-bs-danger: #dc3545 !default;
+$edu-bs-warning: #E9B911 !default;
+$edu-bs-danger: #FF0000 !default;
 $edu-bs-light: #f8f9fa !default;
 $edu-bs-dark: #212529 !default;
 

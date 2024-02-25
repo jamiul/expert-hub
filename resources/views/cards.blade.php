@@ -4,19 +4,61 @@
 
     <div class="container bg-white border my-60">
         <div class="row">
-            <h4 class="my-5  text-center">General Elements</h4>
+            <h4 class="my-5  text-center">Tooltip</h4>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 I am label
                 <div class="tooltip-wrapper bottom-left">
-                    <i class="tooltip-icon"></i>
+                    <i class="tooltip-icon"> <x-icon.info fill="#ccc"/> </i>
                     <div class="tooltip-content"> Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Eum, placeat!
                     </div>
                 </div>
             </div>
 
+        </div>
+        <div class="row">
+            <h4 class="my-5  text-center">Tab secondary</h4>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div x-data="{ activeTab: 'myFeed' }">
+                    <ul class="secondary-tab-nav" id="myTab" role="tablist">
+                        <li x-on:click="activeTab = 'myFeed'"
+                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'myFeed' }">
+                            My Feed
+                        </li>
+                        <li x-on:click="activeTab = 'bestMatch'"
+                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'bestMatch' }">
+                            Best Match
+                        </li>
+                        <li x-on:click="activeTab = 'savedJobs'"
+                            :class="{ 'tab-nav-item': true, 'active': activeTab === 'savedJobs' }">
+                            Saved Jobs
+                        </li>
+                    </ul>
+
+                    <div x-show="activeTab === 'myFeed'" class="tab-content" x-cloak>
+                        <!-- Content for My Feed tab -->
+                        My Feed Content Goes Here
+                    </div>
+
+                    <div x-show="activeTab === 'bestMatch'" class="tab-content" x-cloak>
+                        <!-- Content for Best Match tab -->
+                        Best Match Content Goes Here
+                    </div>
+
+                    <div x-show="activeTab === 'savedJobs'" class="tab-content" x-cloak>
+                        <!-- Content for Saved Jobs tab -->
+                        Saved Jobs Content Goes Here
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <h4 class="my-5  text-center">Text Summary</h4>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">

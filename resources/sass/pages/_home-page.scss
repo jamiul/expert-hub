@@ -1,28 +1,27 @@
-$page-section-bg: #F1F3FA;
 
 .page-section {
     padding: 90px 0;
 
     &.work-steps-section {
-        background-color: $page-section-bg;
+        background-color: $edu-section-bg;
     }
 
     &.team-section {
-        background-color: $page-section-bg;
+        background-color: $edu-section-bg;
     }
 
     &.training-section {
-        background-color: $page-section-bg;
+        background-color: $edu-section-bg;
     }
 
     &.category-accordion-section {
-        background-color: $page-section-bg;
+        background-color: $edu-section-bg;
     }
 
 }
 
 .page-section-bg {
-    background-color: $page-section-bg;
+    background-color: $edu-section-bg;
 }
 
 .page-section-sm {
