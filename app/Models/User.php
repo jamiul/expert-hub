@@ -32,15 +32,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Profile::class)->where('profiles.type', $this->active_profile);
     }
 
-    public function expert_kyc() {
+    public function expert_kyc()
+    {
         return $this->hasOne(ExpertKYC::class);
     }
 
-    public function expert_withdrawal() {
+    public function expert_withdrawal()
+    {
         return $this->hasMany(ExpertWithdrawal::class);
     }
 
-    public function withdraw_schedule() {
+    public function withdraw_schedule()
+    {
         return $this->hasOne(WithdrawSchedule::class);
     }
 
@@ -51,7 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getFullNameAttribute()
     {
-        return $this->title . ' ' . $this->name;
+        return $this->title . ' ' . $this->first_name . ' ' . $this->last_name;
     }
 
     public function isClient()

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('active_profile')->index(); //App\Enums\ProfileType
             $table->string('title');
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone')->nullable();

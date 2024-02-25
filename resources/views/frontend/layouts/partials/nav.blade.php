@@ -19,7 +19,7 @@
                             <a href="{{ route('find.trainings') }}">{{ __('Trainings') }}</a>
                         </li>
                         <li class="{{ activeRouteClass('scholarship-database') }}">
-                            <a href="{{ route('scholarship-database') }}">{{ __('Scholarship Database') }}</a>
+                            <a href="{{ route('scholarship-database') }}">{{ __('Scholarships & Grants') }}</a>
                         </li>
                         <li class="{{ activeRouteClass('about-us') }}">
                             <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>

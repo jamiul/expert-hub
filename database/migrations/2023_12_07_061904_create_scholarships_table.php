@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('scholarships', function (Blueprint $table) {
             $table->id();
             $table->string('title', 500);
+            $table->string('organization')->nullable();
+            $table->string('logo')->nullable();
+            $table->text('summary')->nullable();
             $table->string('link')->nullable();
             $table->string('supervisor_link')->nullable();
-            $table->foreignId('university_id')->nullable();
             $table->foreignId('country_id')->nullable();
-            $table->string('student_type')->nullable(); //App\Enums\Scholarship\StudentType
-            $table->boolean('automatic_consideration')->default(0);
-            $table->date('deadline')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
