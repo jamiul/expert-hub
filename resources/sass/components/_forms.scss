@@ -293,9 +293,8 @@ select.input-field-control {
                 cursor: pointer;
 
                 &:hover {
-                    background: $edu-lighter-brand-bg;
+                    background: $edu-primary-color-10;
                     color: $edu-primary-color;
-
                 }
 
             }
@@ -511,7 +510,7 @@ select.input-field-control {
 
                 &.today {
                     border-color: $edu-border-color;
-                    background: $edu-lighter-brand-bg;
+                    background: $edu-primary-color-10;
                     color: $edu-primary-color;
 
                     &:hover,

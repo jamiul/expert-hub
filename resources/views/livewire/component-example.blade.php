@@ -364,7 +364,11 @@
             <div class="rating-input-total"> <span class="fw-medium">Total Score:</span>  <x-icon.star-fill width="16" height="16" fill="#EAA800"/> <span>5.0</span></div>
 
         </div>
-        <button type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+        <button class="btn btn-primary btn-md" type="submit">Submit</button>
+        <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+
     </form>
 
 </div>
