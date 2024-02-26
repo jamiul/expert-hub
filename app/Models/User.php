@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\ProfileType;
 use App\Notifications\EmailVerificationNotification;
+use App\Notifications\VerifyEmailQueued;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -70,5 +71,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function client_transaction()
     {
         return $this->hasMany(ClientTransaction::class, 'client_id');
+    }
+
+    /**
+     * Send the queued email verification notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmailQueued);
     }
 }
