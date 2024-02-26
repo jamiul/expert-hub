@@ -28,8 +28,8 @@ class SocialLoginController extends Controller
         $user = User::updateOrCreate([
             'linkedin_id' => $linkedin_user->id,
         ], [
-            'name' => $facebook_user->name,
-            'email' => $facebook_user->email,
+            'name' => $google_user->name,
+            'email' => $google_user->email,
             'username' => Str::uuid(),
             'password' => Hash::make(Str::password(8)),
             'active_profile' => $profileType,
@@ -52,26 +52,26 @@ class SocialLoginController extends Controller
         return route('client.dashboard');
     }
 
-    public function facebookRedirect() {
-        return Socialite::driver('facebook')->redirect();
+    public function googleRedirect() {
+        return Socialite::driver('google')->redirect();
     }
 
-    public function facebookCallback() {
-        $facebook_user = Socialite::driver('facebook')->user();
-        dd($facebook_user);
+    public function googleCallback() {
+        $google_user = Socialite::driver('google')->user();
+        dd($google_user);
 
         $profileType = ProfileType::Client;
 
         $user = User::updateOrCreate([
-            'facebook_id' => $facebook_user->id,
+            'google_id' => $google_user->id,
         ], [
-            'name' => $facebook_user->name,
-            'email' => $facebook_user->email,
+            'name' => $google_user->name,
+            'email' => $google_user->email,
             'username' => Str::uuid(),
             'password' => Hash::make(Str::password(8)),
             'active_profile' => $profileType,
-            'facebook_token' => $facebook_user->token,
-            'facebook_refresh_token' => $facebook_user->refreshToken,
+            'google_token' => $google_user->token,
+            'google_refresh_token' => $google_user->refreshToken,
         ]);
 
         Profile::updateOrCreate([
