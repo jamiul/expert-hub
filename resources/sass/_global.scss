@@ -1,5 +1,5 @@
 body {
-    font-family: "Colfax", Roboto, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     background-color: #F8F8F8;
@@ -52,8 +52,8 @@ img {
             transition: 0.2s;
 
             &:hover {
-                background-color: $edu-lighter-brand-bg;
-                border-color: $edu-lighter-brand-border-color;
+                background-color: $edu-primary-color-05;
+                border-color: $edu-primary-color-30;
             }
         }
     }
