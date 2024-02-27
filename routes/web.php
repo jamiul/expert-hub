@@ -37,6 +37,7 @@ use App\Livewire\Auth\ClientProfileSetup;
 use App\Livewire\Auth\ClientRegistration;
 use App\Livewire\Auth\ExpertProfileSetup;
 use App\Livewire\Auth\ExpertRegistration;
+use App\Http\Controllers\Frontend\Auth\SocialLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,6 +82,12 @@ Route::post('/auth/logout', [AuthenticatedSessionController::class, 'logout'])->
 Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
+//social login
+Route::get('/google/auth/redirect', [SocialLoginController::class, 'googleRedirect'])->middleware('guest')->name('auth.google.redirect');
+Route::get('/google/auth/callback', [SocialLoginController::class, 'googleCallback'])->middleware('guest')->name('auth.google.callback');
+Route::get('/linkedin/auth/redirect', [SocialLoginController::class, 'linkedinRedirect'])->middleware('guest')->name('auth.linkedin.redirect');
+Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCallback'])->middleware('guest')->name('auth.linkedin.callback');
 
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');

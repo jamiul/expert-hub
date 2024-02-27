@@ -27,12 +27,12 @@
                         </div>
                         <div class="social-auth">
                             <div class="social-auth-item">
-                                <a href="#">
+                                <a href="{{ route('auth.google.redirect') }}">
                                     <x-icon.logo-google/>
                                     Google</a>
                             </div>
                             <div class="social-auth-item">
-                                <a href="#">
+                                <a href="{{ route('auth.linkedin.redirect') }}">
                                     <x-icon.logo-linkedin-fill/>
                                     LinkedIn</a>
                             </div>
