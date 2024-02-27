@@ -11,6 +11,9 @@
         &.page-sidebar {
             background-color: #FCFCFF;
         }
+        &.page-content {
+           max-width: 998px;
+        }
     }
 }
 
