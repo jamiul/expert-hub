@@ -1,10 +1,6 @@
 @extends('frontend.layouts.figma' , ['header' => 'expert'])
 @section('content')
 @vite('resources/default/css/expert-profile.css')
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
       <div class="container profile__page edux-profile-page">
         <div class="edux-billing-method-area-right">
 
@@ -14,8 +10,6 @@
 
               <div class="book-expert-profile pb-3">
                         <img src="{{ asset('assets/frontend/img/book-exprt1.jpg') }}" alt="">
-
-
                         <div class="edux-course-curriculum-area">
                           <div class="edux-course-curriculum-item">
                               <h3>Course Curriculum Development</h3>
@@ -50,13 +44,8 @@
                             <x-icon.video fill="#0036E3"/>
                             <p class="mb-0"><strong>2</strong> Order</p>
                           </div>
-
                         </div>
-
-
                     </div>
-
-
                     <div class="prof-text mt-3">
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim</p>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
@@ -177,12 +166,7 @@
 
                                 </div>
                             </div>
-
-
-
-
               <div class="consultant-work mb-0 border-0 p-0">
-
                 <div class="d-flex gap-2 align-items-center">
                 <x-icon.batch fill="#0036E3" width="32" height="32"/>
                     <h3 class="h5 mb-0">Portfolio</h3>
@@ -223,11 +207,7 @@
                     <div class="portfolio__card">
                       <figure class="position-relative">
                         <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}" class="img-fluid rounded" alt="Portfolio Thumbnail">
-
                       </figure>
-
-
-
                       <h4 class="fs-6 fw-medium title">
                         <a href="#">Comparative Analysis of Public Health Curricula</a>
                       </h4>
@@ -319,13 +299,9 @@
         </div>
 
 <div class="col-md-4 mt-5">
-
 <div class="edux-sidebar-expert edux-billing-method-right-sidebar">
-
-
                     <div class="eudx-total-slot-area py-1">
                         <ul>
-
                             <li> <span><strong class="edux-booking">Booking for 1 hour</strong></span> <span><strong class="edux-booking">$100</strong></span> </li>
 
                         </ul>
@@ -346,10 +322,7 @@
                                 <span>Michel is not available right now</span>
                               </label>
                             </div>
-
-
                             <div class="tag-list mt-2">
-
                                 <a href="#" class="expert-profile-tag">1:00 AM</a>
                                 <a href="#" class="expert-profile-tag">2:00 AM</a>
                                 <a href="#" class="expert-profile-tag">3:00 AM</a>
@@ -459,7 +432,6 @@
                             </div>
                           </div>
                     </div>
-
                     <div class="row mt-4">
                     <h3 class="start-end">Description</h3>
                         <div class="mb-3">

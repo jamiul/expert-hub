@@ -257,7 +257,7 @@
                                     </ul>
                                 </div>
 
-                                <button type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
+                                <button style="width:185px" type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
 
                             </div>
 
@@ -321,11 +321,10 @@
                                 </div>
                                 <div>
                                     <div class="d-flex gap-3 justify-content-sm-between">
-                                        <h6 class="">Architecture history</h6>
-                                        <p class="h6 mb-0">$120/1 hrs</p>
+                                        <h6 class="">Course Curriculum Development</h6>
+                                        <p class="h6 mb-0 fw-bold">$120/1 hrs</p>
                                     </div>
-                                    <p>Prof. Jhon dowe offers consultation services to educational institutions,
-                                        businesses and individuals seeking expertise in curriculum development. <span
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes More...<span
                                             class="edux-more"> More...</span></p>
                                     <ul class="button-list edux-button-list">
                                         <li class="button-list-item">
@@ -344,7 +343,7 @@
                                         </li>
 
                                         <li class="button-list-item">
-                                            +10 More
+                                        +3 More
                                         </li>
 
                                     </ul>
@@ -388,16 +387,12 @@
                     </div>
 
 
-                    <div class="modal-footer px-0 pb-0 pt-3">
-                        <button type="button" class="btn btn-secondary edux-btn-cancel" data-bs-dismiss="modal">Cancel
+                    <div class="modal-footer px-0 pb-0 pt-3 d-flex justify-content-between">
+                        <button style="width:265px" type="button" class="btn btn-outline-primary border-2 btn-md" data-bs-dismiss="modal">Cancel
                         </button>
-                        <button type="button" class="btn btn-primary eudx-btn-save">Save & Continue</button>
-                        <button type="button" class="btn  eudx-btn-back d-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z"
-                                      fill="#191D24" fill-opacity="0.7"/>
-                            </svg>
+                        <button style="width:250px" type="button" class="btn btn-md btn-primary">Save & Continue</button>
+                        <button style="width:265px" type="button" class="btn btn-outline-primary border-2 btn-md d-none">
+                        <x-icon.arrow-back fill="#0036E3"/>
                             Back
                         </button>
                     </div>

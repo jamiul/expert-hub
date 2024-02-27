@@ -1,0 +1,329 @@
+.consultant-reviw {
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.edux-tooltips {
+    position: relative;
+}
+
+.edux-schedule-input {
+    grid-template-columns: 100%;
+}
+
+.service-fee-description {
+    .edux-tooltips-details {
+        border: 2px solid #e7e5ef;
+        padding: 15px 22px;
+        background-color: #fff;
+        border-radius: 8px;
+        position: absolute;
+        min-width: 190px;
+        left: -24px;
+        top: 35px;
+        z-index: 999;
+        visibility: hidden;
+    }
+}
+
+.edux-tooltips:hover {
+    .edux-tooltips-details {
+        visibility: visible;
+    }
+}
+
+.edux-tooltips-details:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 16px solid #fff;
+    border-top: 0;
+    top: -16px;
+    left: 19px;
+    visibility: hidden;
+}
+
+.edux-button-list {
+    .button-list-item {
+        list-style: none;
+        display: inline-flex;
+        border-radius: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #e7e5ef;
+        padding: 2px 12px;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.875rem;
+        line-height: 140%;
+        justify-content: space-between;
+        width: auto;
+    }
+}
+
+.eudx-time-select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border: 2px solid #e7e5ef;
+    background: rgba(0, 54, 227, 0.02);
+}
+
+.edux-schedule-input-single {
+    .available-time-select-col {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex-direction: column;
+        }
+    }
+}
+
+.edux-selected-slot {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 0px !important;
+    li {
+        height: 42px;
+        padding: 10px 16px !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 4px !important;
+        border: 2px solid rgba(14, 0, 98, 0.15) !important;
+        background: #fff;
+        width: auto !important;
+        margin: 0px 3px;
+    }
+    .edux-day-schedule {
+        border: none !important;
+        padding-left: 0px !important;
+        min-width: 75px;
+        text-align: left !important;
+        background: transparent;
+        padding: 10px !important;
+    }
+    .selected-date-bg {
+        border-radius: 4px;
+        border: 2px solid rgba(14, 0, 98, 0.15);
+        background: rgba(0, 54, 227, 0.06) !important;
+    }
+}
+
+.available-schedule-slot {
+    grid-template-columns: 50% 50%;
+    display: grid;
+    gap: 25px;
+    border-radius: 4px;
+    border: 2px solid #e7e5ef;
+    padding: 20px;
+}
+.slot-item-area {
+    padding-right: 20px;
+}
+
+.slot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.single-slot {
+    span {
+        text-align: center;
+    }
+    display: flex;
+    padding: 5px 50px 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 2px solid #e7e5ef;
+}
+
+.multi-slot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slot-border {
+    border-radius: 4px;
+    border: 2px solid #0036e3;
+}
+
+.slot-fill {
+    border-radius: 4px;
+    background: #0036e3;
+    border: none;
+}
+
+.edux-btn-paypal {
+    display: flex;
+    padding: 2px 16px 1px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 23px;
+    border: 2px solid #0036e3;
+    color: #0036e3;
+}
+
+.edux-paypal-visa-billing-area {
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 54, 227, 0.2);
+    background: rgba(0, 54, 227, 0.05);
+}
+
+.edux-paypal-billing {
+    display: flex;
+    align-items: center;
+}
+
+.edux-radio-option {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+.edux-form-radio-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    min-width: 185px;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.31);
+}
+
+.edux-btn-set-as-primary {
+    display: flex;
+    padding: 2px 16px 1px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 23px;
+    background: #369450;
+    &:hover {
+        display: flex;
+        padding: 2px 16px 1px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 23px;
+        background: #369450;
+    }
+}
+
+.edux-btn-set-as-remove {
+    display: flex;
+    padding: 2px 16px 1px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 23px;
+    border: 2px solid #c00000;
+    background: #c00000;
+
+    &:hover {
+        display: flex;
+        padding: 2px 16px 1px 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 23px;
+        border: 2px solid #c00000;
+        background: #c00000;
+    }
+}
+
+.edux-billing-method-right-sidebar {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    max-width: 400px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    border: 2px solid #e7e5ef;
+    background: #fff;
+    width: 100%;
+}
+
+.book-expert-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom: 1px solid #e7e5ef;
+    width: 100%;
+}
+
+.profile-mile-ester {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    p {
+        margin-bottom: 0px;
+    }
+}
+.edux-book-expert-time {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.eudx-total-slot-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #e7e5ef;
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
+        gap: 16px;
+        li {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}
+
+.edux-check-and-fund {
+    p {
+        margin-bottom: 32px;
+        a {
+            text-decoration-line: underline;
+        }
+    }
+}
