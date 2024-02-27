@@ -84,10 +84,10 @@ Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 've
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
 //social login
-Route::get('/google/auth/redirect', [SocialLoginController::class, 'googleRedirect'])->middleware('guest')->name('auth.google.redirect');
-Route::get('/google/auth/callback', [SocialLoginController::class, 'googleCallback'])->middleware('guest')->name('auth.google.callback');
-Route::get('/linkedin/auth/redirect', [SocialLoginController::class, 'linkedinRedirect'])->middleware('guest')->name('auth.linkedin.redirect');
-Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCallback'])->middleware('guest')->name('auth.linkedin.callback');
+Route::get('/google/auth/redirect', [SocialLoginController::class, 'googleRedirect'])->middleware('guest')->name('google.redirect');
+Route::get('/google/auth/callback', [SocialLoginController::class, 'googleCallback'])->middleware('guest')->name('google.callback');
+Route::get('/linkedin/auth/redirect', [SocialLoginController::class, 'linkedinRedirect'])->middleware('guest')->name('linkedin.redirect');
+Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCallback'])->middleware('guest')->name('linkedin.callback');
 
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
