@@ -91,6 +91,7 @@ Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCa
 
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
+Route::get('/expert/profile/favourites', [ExpertProfileController::class, 'favourites'])->middleware(['auth', 'expert'])->name('expert.profile.favourites');
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/consultation/{consultation}', [ExpertProfileController::class, 'viewConsultation'])->name('expert.consultation.show');

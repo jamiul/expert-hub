@@ -112,7 +112,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Igniting the Spark: Designing PhD ...</p>
                                             <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Scholarship</span>
-                                                
+
                                             </p>
 
                                         </div>
@@ -143,7 +143,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/figma/expert/favourate" class="notification-dropdown-view-all">
+                                <a href="{{ route('expert.profile.favourites') }}" class="notification-dropdown-view-all">
                                     <x-icon.heart fill="#C8C5D4"/>
                                     View All Favorites</a>
                             </div>
