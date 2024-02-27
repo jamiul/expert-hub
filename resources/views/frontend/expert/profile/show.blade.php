@@ -499,7 +499,7 @@
 
 
                                     <div class="mt-4">
-                                        <div class="owl-carousel portfolioCaousel">
+                                        <div class="owl-carousel awards-carousel">
                                             <div class="portfolio__card">
                                                 <figure class="position-relative">
                                                     <img
@@ -657,35 +657,17 @@
 @endsection
 
 
+
 @push('bottom_scripts')
 
     <script>
-        $(".portfolioCaousel").owlCarousel({
-            items: 3,
-            autoplay: false,
-            autoplayTimeout: 5500,
-            autoplayHoverPause: true,
-            smartSpeed: 550,
-            loop: false,
-            margin: 20,
-            nav: true,
-            dots: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                992: {
-                    items: 3
-                },
-                1200: {
-                    items: 3
-                }
-            },
-
-        });
+        jQuery(document).ready(function () {
+            jQuery(".awards-carousel").owlCarousel({
+                loop: true,
+                nav: true,
+                dots: false,
+                items: 3
+            });
+        })
     </script>
 @endpush

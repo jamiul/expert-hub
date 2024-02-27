@@ -352,6 +352,91 @@
                                 </div>
                             </div> <!--Previous Projects (0) -->
 
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.microphone fill="#0036E3"/>
+                                                <h3 class="mb-0 h4">Conferences and Media Interview</h3>
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <i class="tooltip-icon">
+                                                        <x-icon.info fill="#191D24B2"/>
+                                                    </i>
+                                                    <div class="tooltip-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Voluptas,
+                                                        voluptates.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addConferences">
+                                                <x-icon.add/>
+                                            </button>
+                                        </div>
+
+                                        <div class="users-projects-list">
+
+                                            <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                                                with Activists</a></h3>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney</p>
+                                                    </div>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-md border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="users-project-item-body mt-2">
+                                                    <div class="tag-list">
+                                                        <span class="tag">Conference</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                                                with Activists</a></h3>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney</p>
+                                                    </div>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-md border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="users-project-item-body mt-2">
+                                                    <div class="tag-list">
+                                                        <span class="tag">Conference</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--Previous Projects (0) -->
+
 
                             {{-- Experience --}}
 
@@ -413,7 +498,7 @@
 @endsection
 
 
-<!-- Modal : Add Work Experience-->
+<!-- Modal : add Previous Project-->
 <div class="modal fade" id="addPreviousProject" tabindex="-1" aria-labelledby="addPreviousProjectLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-md flat-modal">
@@ -459,6 +544,38 @@
                         <input type="file" id="upload-file" class="d-none">
                     </div>
                     <x-form.input type="text" readonly label="Organisation Verified Email" name="type" placeholder="Type"
+                                  value=""/>
+
+                </form>
+            </div>
+            <div class="modal-footer p-40 pt-3">
+                <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-md btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Modal -->
+<!-- Modal : add Conferences-->
+<div class="modal fade" id="addConferences" tabindex="-1" aria-labelledby="addConferencesLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md flat-modal">
+        <div class="modal-content">
+            <div class="modal-header p-40 pb-0 border-0">
+                <h5 class="modal-title" id="exampleModalLabel">Add Conferences and Media Interview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-40 pt-2">
+                <form action="">
+                    <x-form.choice-static wire:model="category" label="Category">
+                        <option value="">Select</option>
+                        <option value="Mr">Media Interview</option>
+                    </x-form.choice-static>
+
+                    <x-form.input type="text" label="Title" name="type" placeholder="Type"
+                                  value=""/>
+
+                    <x-form.input type="text" label="Link" name="type" placeholder="Type"
                                   value=""/>
 
                 </form>
