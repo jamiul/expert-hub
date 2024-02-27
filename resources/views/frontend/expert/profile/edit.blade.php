@@ -182,42 +182,175 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
-                                                    data-bs-target="#addWorkExperience">
-                                                <x-icon.edit/>
-                                            </button>
                                         </div>
 
-                                        <div class="profile-projects-list">
-                                            <div class="project-list-card-item">
-                                                <div class="project-list-card-item-header">
-                                                    <div class="project-item-title">
-                                                        <h3 class="h5">Development of Innovative Public Health
+                                        <div class="users-projects-list">
+
+                                            <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1">Development of Innovative Public Health
                                                             Curriculum</h3>
-                                                        <p>Public Health Institute of Sydney, Sydney, Australia <span
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
                                                                 class="mx-2">|</span> 2015 -
                                                             Present</p>
                                                     </div>
+
                                                 </div>
-                                                <div class="project-list-card-item-body">
-                                                    <p>I led a groundbreaking project in collaboration with Public
+                                                <div class="users-project-item-body">
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
                                                         Health Institute of Sydney to develop an innovative public
                                                         health curriculum. This project aimed to revamp the university's
                                                         existing curriculum to align with the latest research,
                                                         pedagogical trends, and industry demands. Key highlights of this
                                                         project included:</p>
-                                                    <p>Conducting a comprehensive needs assessment to identify gaps in
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
                                                         the current curriculum and the evolving requirements of the
                                                         public health field.</p>
-                                                    <p>Collaborating with a team of subject matter experts to design a
+                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
                                                         competency-based curriculum that emphasised practical skills and
                                                         interdisciplinary learning.</p>
                                                 </div>
                                             </div>
+
+                                             <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1">Development of Innovative Public Health
+                                                            Curriculum</h3>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                                class="mx-2">|</span> 2015 -
+                                                            Present</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="users-project-item-body">
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                        Health Institute of Sydney to develop an innovative public
+                                                        health curriculum. This project aimed to revamp the university's
+                                                        existing curriculum to align with the latest research,
+                                                        pedagogical trends, and industry demands. Key highlights of this
+                                                        project included:</p>
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                        the current curriculum and the evolving requirements of the
+                                                        public health field.</p>
+                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                        competency-based curriculum that emphasised practical skills and
+                                                        interdisciplinary learning.</p>
+                                                </div>
+                                            </div>
+
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div> <!--Current Project -->
+
+                            <div class="page-block mt-40">
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.user-tie fill="#0036E3"/>
+                                                <h3 class="mb-0 h4">Previous Projects (0) </h3>
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <i class="tooltip-icon">
+                                                        <x-icon.info fill="#191D24B2"/>
+                                                    </i>
+                                                    <div class="tooltip-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Voluptas,
+                                                        voluptates.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addPreviousProject">
+                                                <x-icon.add/>
+                                            </button>
+                                        </div>
+
+                                        <div class="users-projects-list">
+
+                                            <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1">Development of Innovative Public Health
+                                                            Curriculum</h3>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                                class="mx-2">|</span> 2015 -
+                                                            Present</p>
+                                                    </div>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-md border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="users-project-item-body">
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                        Health Institute of Sydney to develop an innovative public
+                                                        health curriculum. This project aimed to revamp the university's
+                                                        existing curriculum to align with the latest research,
+                                                        pedagogical trends, and industry demands. Key highlights of this
+                                                        project included:</p>
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                        the current curriculum and the evolving requirements of the
+                                                        public health field.</p>
+                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                        competency-based curriculum that emphasised practical skills and
+                                                        interdisciplinary learning.</p>
+                                                </div>
+                                            </div>
+
+                                             <div class="users-project-item bb-1 py-4">
+                                                <div class="users-project-item-header">
+                                                    <div class="users-project-item-title">
+                                                        <h3 class="h6 mb-1">Development of Innovative Public Health
+                                                            Curriculum</h3>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                                class="mx-2">|</span> 2015 -
+                                                            Present</p>
+                                                    </div>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-md border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="users-project-item-body">
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                        Health Institute of Sydney to develop an innovative public
+                                                        health curriculum. This project aimed to revamp the university's
+                                                        existing curriculum to align with the latest research,
+                                                        pedagogical trends, and industry demands. Key highlights of this
+                                                        project included:</p>
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                        the current curriculum and the evolving requirements of the
+                                                        public health field.</p>
+                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                        competency-based curriculum that emphasised practical skills and
+                                                        interdisciplinary learning.</p>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--Previous Projects (0) -->
 
 
                             {{-- Experience --}}
@@ -278,3 +411,63 @@
         </div>
     </section>
 @endsection
+
+
+<!-- Modal : Add Work Experience-->
+<div class="modal fade" id="addPreviousProject" tabindex="-1" aria-labelledby="addPreviousProjectLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md flat-modal">
+        <div class="modal-content">
+            <div class="modal-header p-40 pb-0 border-0">
+                <h5 class="modal-title" id="exampleModalLabel">Add Previous Project</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-40 pt-2">
+                <form action="">
+                    <x-form.input type="text" readonly label="Project ID" name="type"
+                                  placeholder="Type Here" value=""/>
+                    <x-form.input type="text" readonly label="Address" name="type" placeholder="Type"
+                                  value=""/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <x-form.select label="Start Year" name="title">
+                                <option value="">Select Year</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </x-form.select>
+                        </div>
+                        <div class="col-md-6">
+                            <x-form.select label="End Year" name="title">
+                                <option value="">Select Year</option>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                            </x-form.select>
+                        </div>
+                    </div>
+                    <x-form.textarea label="Description" name="bio" placeholder="Type"/>
+                    <div class="image-upload-flat mb-2">
+                        <label for="upload-file" class="text-center">
+                            <span> <x-icon.image width="50px" height="50px" fill="#0059C999"/> </span>
+                            <span class="fw-medium">Clik to upload or drag & drop</span>
+                            <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here</span>
+
+                        </label>
+                        <input type="file" id="upload-file" class="d-none">
+                    </div>
+                    <x-form.input type="text" readonly label="Organisation Verified Email" name="type" placeholder="Type"
+                                  value=""/>
+
+                </form>
+            </div>
+            <div class="modal-footer p-40 pt-3">
+                <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-md btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Modal -->
