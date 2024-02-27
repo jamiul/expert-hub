@@ -179,4 +179,11 @@ Route::group(['prefix' => 'figma'], function () {
     //Training
     Route::view('/find-training', 'figma.find-training');
     Route::view('/training/training-details-view', 'figma.training-details-view');
+
+     //Favourate 
+
+     Route::view('/client/favourate', 'figma.client-favourate');
+     Route::view('/expert/favourate', 'figma.expert-favourate');
+     Route::view('/expert/no-favourate', 'figma.no-favourate');
+
 });
