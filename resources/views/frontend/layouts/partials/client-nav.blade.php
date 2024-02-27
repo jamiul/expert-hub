@@ -1,6 +1,5 @@
 <header class="main-header">
     <div class="main-header-container">
-        {{-- @dd(auth()->user()->full_name) --}}
         <div class="header-logo">
             <a href="{{ route('client.dashboard') }}">
                 <img src="{{ asset('logo/expert-gate-logo.png') }}"/>
@@ -72,11 +71,10 @@
                     </button>
                 </li>
                 <li>
-                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="#">
+                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="{{ route('client.profile.favourites') }}">
                         <x-icon.heart/>
                     </a>
-
-
+                    <!--
                     <div x-show="openDropdown === 'favourates'" class="header-dropdown">
                             <div class="notification-dropdown-inner">
                                 <div class="notification-dropdown-item-wrapper">
@@ -117,7 +115,7 @@
                                         <div class="notification-dropdown-info">
                                             <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo</p>
                                             <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Higher Edu Curriculum Expert</span>
-                                                
+
                                             </p>
 
                                         </div>
@@ -153,7 +151,7 @@
                                     View All Favorites</a>
                             </div>
                         </div>
-
+                    -->
 
                 </li>
                 @livewire('expert-notification-count')

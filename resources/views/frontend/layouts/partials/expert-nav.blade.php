@@ -68,11 +68,11 @@
                     </button>
                 </li>
                 <li>
-                    <a class="icon-btn border"  @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="#">
+                    <a class="icon-btn border"  @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="{{ route('expert.profile.favourites') }}">
                         <x-icon.heart/>
                     </a>
 
-                    <div x-show="openDropdown === 'favourates'" class="header-dropdown">
+                    {{-- <div x-show="openDropdown === 'favourates'" class="header-dropdown">
                             <div class="notification-dropdown-inner">
                                 <div class="notification-dropdown-item-wrapper">
                                     <div class="notification-dropdown-item notification-dropdown-item-unread">
@@ -147,7 +147,7 @@
                                     <x-icon.heart fill="#C8C5D4"/>
                                     View All Favorites</a>
                             </div>
-                        </div>
+                        </div> --}}
 
                 </li>
                 @livewire('expert-notification-count')
