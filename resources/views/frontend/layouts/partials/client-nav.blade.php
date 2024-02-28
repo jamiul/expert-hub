@@ -72,9 +72,89 @@
                     </button>
                 </li>
                 <li>
-                    <a class="icon-btn border"  href="#">
+                    <a class="icon-btn border" @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="#">
                         <x-icon.heart/>
                     </a>
+
+
+                    <div x-show="openDropdown === 'favourates'" class="header-dropdown">
+                            <div class="notification-dropdown-inner">
+                                <div class="notification-dropdown-item-wrapper">
+                                    <div class="notification-dropdown-item notification-dropdown-item-unread">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo </p>
+                                            <p class="text-sm notification-dropdown-body">
+                                                <span class="notification-dropdown-message">Accreditation Specialist</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Higher Edu Curriculum Expert</span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Higher Edu Curriculum Expert</span>
+                                                
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Higher Edu Curriculum Expert</span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/profile-img.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Higher Edu Curriculum Expert</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/figma/client/favourate" class="notification-dropdown-view-all">
+                                    <x-icon.heart fill="#C8C5D4"/>
+                                    View All Favorites</a>
+                            </div>
+                        </div>
+
+
                 </li>
                 @livewire('expert-notification-count')
 

@@ -29,12 +29,12 @@
         <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pb-4">
-        <div class="form-input-group form-input-has-icon ">
+        <!-- <div class="form-input-group form-input-has-icon ">
           <div class="icon-field-wrapper">
             <input name="skill" id="skill" class="form-input-field" wire:model="skill" placeholder="Total slot">
             <span class="form-input-icon edux-slot-count"> 3 </span>
           </div>
-        </div>
+        </div> -->
         <div class="mb-40">
           <div class="available-schedule-slot mb-40">
 
@@ -48,10 +48,10 @@
                 </div>
                 <div class="multi-slot">
                   <div class="single-slot slot-border">
-                    <span>1:00 AM</span>
+                    <span class="text-primary">2:00 AM</span>
                   </div>
                   <div class="single-slot slot-fill">
-                    <span>1:00 AM</span>
+                    <span class="text-white">1:00 AM</span>
                   </div>
                 </div>
                 <div class="single-slot">
@@ -70,17 +70,13 @@
             </div>
           </div>
         </div>
-        <div class="edux-select-options position-relative">
+        <!-- <div class="edux-select-options position-relative">
           <x-form.textarea label="Note" wire:model="bio" placeholder="Bio"> Select options </x-form.textarea>
           <span class="edux-total-select-count">0/200</span>
-        </div>
+        </div> -->
         <div class="modal-footer px-0 pb-0 pt-3">
-          <button type="button" class="btn btn-secondary edux-btn-cancel" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary eudx-btn-save">Book a Consultation</button>
-          <button type="button" class="btn  eudx-btn-back d-none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z" fill="#191D24" fill-opacity="0.7" />
-            </svg> Back </button>
+          <button type="button" class="btn btn-md btn-outline-primary border-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-md btn-primary">Book a Consultation</button>
         </div>
       </div>
     </div>

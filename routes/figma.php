@@ -20,10 +20,13 @@ Route::group(['prefix' => 'figma'], function () {
     Route::view('/profile-picture', 'figma.profilepicture');
     Route::view('/profile-completed', 'figma.profilecompleted');
 
-    // Consultation Modal
+    // Consultation Module
     Route::view('/add-consultation', 'figma.addconsultation');
     Route::view('/book-consultation', 'figma.bookconsultation');
-    Route::view('/expert/profile/login/public', 'figma.loginpublic');
+    Route::view('/expert/booking/checkout', 'figma.booking-checkout');
+    Route::view('/user-consultation-booking-not-valuable', 'figma.not-available-expert-public-profile');
+    Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
+    Route::view('/expert-public-profile-v2', 'figma.expert-profile-update');
 
 
     Route::view('/scholarship-database', 'figma.scholarshipdatabase');
@@ -47,9 +50,7 @@ Route::group(['prefix' => 'figma'], function () {
     //expert profile
     Route::view('/expert-profile', 'figma.expert-profile');
     Route::view('/expert-public-profile', 'figma.expert-public-profile');
-    Route::view('/user-consultation-booking-not-valuable', 'figma.not-available-expert-public-profile');
-    Route::view('/not-available-booking-time', 'figma.not-available-booking-time');
-    Route::view('/expert-public-profile-v2', 'figma.expert-profile-update');
+
 
 
     //Find Training Page
@@ -179,4 +180,10 @@ Route::group(['prefix' => 'figma'], function () {
     //Training
     Route::view('/find-training', 'figma.find-training');
     Route::view('/training/training-details-view', 'figma.training-details-view');
+
+     //Favourate 
+     Route::view('/client/favourate', 'figma.client-favourate');
+     Route::view('/expert/favourate', 'figma.expert-favourate');
+     Route::view('/expert/no-favourate', 'figma.no-favourate');
+
 });

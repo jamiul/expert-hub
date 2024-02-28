@@ -68,9 +68,87 @@
                     </button>
                 </li>
                 <li>
-                    <a class="icon-btn border"  href="#">
+                    <a class="icon-btn border"  @click="openDropdown = (openDropdown === 'favourates') ? null : 'favourates'"  href="#">
                         <x-icon.heart/>
                     </a>
+
+                    <div x-show="openDropdown === 'favourates'" class="header-dropdown">
+                            <div class="notification-dropdown-inner">
+                                <div class="notification-dropdown-item-wrapper">
+                                    <div class="notification-dropdown-item notification-dropdown-item-unread">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/expert-profile.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Jhon Jimbo </p>
+                                            <p class="text-sm notification-dropdown-body">
+                                                <span class="notification-dropdown-message">Accreditation Specialist</span>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/expert-icon1.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Developing curriculum for Postgraduate  ...</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Project</span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/expert-icon2.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Igniting the Spark: Designing PhD ...</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Scholarship</span>
+                                                
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/expert-icon3.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">Igniting the Spark: Designing PhD ...</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">Academic Training</span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification-dropdown-item">
+                                        <div class="notification-dropdown-thumb">
+                                            <img
+                                                src="{{ asset('/assets/frontend/default/img/expert_dashboard/expert-icon4.png') }}"
+                                                class="" alt="avatar">
+                                        </div>
+                                        <div class="notification-dropdown-info">
+                                            <p class="text-sm fw-medium notification-dropdown-title">An offer was expired</p>
+                                            <p class="text-sm notification-dropdown-body"><span class="notification-dropdown-message">A wonderful serenity has taken about ...  1m</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/figma/expert/favourate" class="notification-dropdown-view-all">
+                                    <x-icon.heart fill="#C8C5D4"/>
+                                    View All Favorites</a>
+                            </div>
+                        </div>
+
                 </li>
                 @livewire('expert-notification-count')
 

@@ -43,7 +43,7 @@ class ClientRegistration extends Component
     #[Validate()]
     public $country_id = '12';
     #[Validate()]
-    public $terms = '';    
+    public $terms = '';
 
     public function mount()
     {
