@@ -74,84 +74,94 @@
                             </div> <!--Consultation--->
 
                             <div class="page-block mt-40">
-                                <div class="consultant-prof edux-consultant-prof card card-24">
-                                    <div class="d-flex gap-2 edux-add-modal-steps mb-3">
-                                        <div class="edux-tool-tips">
-                                            <x-icon.icon-trainer fill="#0036E3"/>
-                                            <h3 style="font-size:24px" class="mb-0">Training
-                                                ({{ $profile->trainings->count() }})</h3>
-                                            <button class="icon-btn">
-                                                <x-icon.info fill="#C8C5D4"/>
-                                            </button>
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.icon-trainer width="24" height="24" fill="#0036E3"/>
+                                                <h3 class="h4 mb-0">Training
+                                                    ({{ $profile->trainings->count() }})</h3>
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <i class="tooltip-icon">
+                                                        <x-icon.info fill="#191D24B2"/>
+                                                    </i>
+                                                    <div class="tooltip-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Voluptas,
+                                                        voluptates.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/training/create"
+                                               class="icon-btn icon-btn-md border">
+                                                <x-icon.add/>
+                                            </a>
                                         </div>
 
-                                        <a href="/training/create"
-                                           class="icon-btn icon-btn-md border">
-                                            <x-icon.add/>
-                                        </a>
-                                    </div>
-                                    @forelse ($profile->trainings as $training)
-                                        <div class="card p-3 mb-3">
-                                            <h6 class="h-5 mb-3">{{ $training->title }}</h6>
-                                            <div class="d-flex">
-                                                @foreach ($training->instructors as $expert)
-                                                    <x-expert.mini-card :expert="$expert"/>
-                                                @endforeach
-                                            </div>
-                                            <div class="training-card-summary">
-                                                <div class="custom-table text-sm">
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Seminar Dates</div>
-                                                        <div class="td">{{ $training->start_date->format('d M Y') }}
-                                                            - {{ $training->end_date->format('d M Y') }}</div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Time & Location</div>
-                                                        <div class="td">10.15am AEST, Sydney, Australia</div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Training Mode</div>
-                                                        <div class="td">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                @if($training->mode == \App\Enums\TrainingMode::Zoom)
-                                                                    <div>
-                                                                        <x-icon.video/>
-                                                                    </div>
-                                                                @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
-                                                                    <x-icon.face-to-face/>
-                                                                @endif
-                                                                <div> {{ $training->mode }}</div>
+                                        @forelse ($profile->trainings as $training)
+                                            <div class="card p-3 mb-3">
+                                                <h6 class="h-5 mb-3">{{ $training->title }}</h6>
+                                                <div class="d-flex">
+                                                    @foreach ($training->instructors as $expert)
+                                                        <x-expert.mini-card :expert="$expert"/>
+                                                    @endforeach
+                                                </div>
+                                                <div class="training-card-summary">
+                                                    <div class="custom-table text-sm">
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Seminar Dates</div>
+                                                            <div class="td">{{ $training->start_date->format('d M Y') }}
+                                                                - {{ $training->end_date->format('d M Y') }}</div>
+                                                        </div>
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Time & Location</div>
+                                                            <div class="td">10.15am AEST, Sydney, Australia</div>
+                                                        </div>
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Training Mode</div>
+                                                            <div class="td">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    @if($training->mode == \App\Enums\TrainingMode::Zoom)
+                                                                        <div>
+                                                                            <x-icon.video/>
+                                                                        </div>
+                                                                    @elseif($training->mode == \App\Enums\TrainingMode::FaceToFace)
+                                                                        <x-icon.face-to-face/>
+                                                                    @endif
+                                                                    <div> {{ $training->mode }}</div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Language</div>
-                                                        <div class="td">{{ $training->language?->name }}</div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Training Category</div>
-                                                        <div class="td">{{ $training->category?->name }}</div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Training Fee</div>
-                                                        <div class="td">USD {{ $training->fee }}</div>
-                                                    </div>
-                                                    <div class="tr">
-                                                        <div class="td fw-medium">Partner Institute</div>
-                                                        <div class="td">
-                                                            @foreach ($training->partners as $partner)
-                                                                <a class="text-decoration-underline"
-                                                                   href="#">{{ $partner->name }}</a> @if (!$loop->last)
-                                                                    |@endif
-                                                            @endforeach
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Language</div>
+                                                            <div class="td">{{ $training->language?->name }}</div>
+                                                        </div>
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Training Category</div>
+                                                            <div class="td">{{ $training->category?->name }}</div>
+                                                        </div>
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Training Fee</div>
+                                                            <div class="td">USD {{ $training->fee }}</div>
+                                                        </div>
+                                                        <div class="tr">
+                                                            <div class="td fw-medium">Partner Institute</div>
+                                                            <div class="td">
+                                                                @foreach ($training->partners as $partner)
+                                                                    <a class="text-decoration-underline"
+                                                                       href="#">{{ $partner->name }}</a> @if (!$loop->last)
+                                                                        |@endif
+                                                                @endforeach
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @empty
-                                        <p> No data</p>
-                                    @endforelse
+                                        @empty
+                                            <p> No data</p>
+                                        @endforelse
+
+                                    </div>
                                 </div>
 
                             </div> <!--Training --->
@@ -161,7 +171,7 @@
                                     <div class="card-body">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
                                             <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.user-tie fill="#0036E3"/>
+                                                <x-icon.user-tie width="32" height="32" fill="#0036E3"/>
                                                 <h3 class="mb-0 h4 fw-bold text-primary">Current Project </h3>
                                                 <div class="tooltip-wrapper bottom-left">
                                                     <i class="tooltip-icon">
@@ -251,7 +261,7 @@
                                     <div class="card-body">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
                                             <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.user-tie fill="#0036E3"/>
+                                                <x-icon.user-tie width="32" height="32" fill="#0036E3"/>
                                                 <h3 class="mb-0 h4">Previous Projects (0) </h3>
                                                 <div class="tooltip-wrapper bottom-left">
                                                     <i class="tooltip-icon">
@@ -367,7 +377,7 @@
                                     <div class="card-body">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
                                             <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.microphone fill="#0036E3"/>
+                                                <x-icon.microphone width="32" height="32" fill="#0036E3"/>
                                                 <h3 class="mb-0 h4">Conferences and Media Interview</h3>
                                                 <div class="tooltip-wrapper bottom-left">
                                                     <i class="tooltip-icon">
@@ -454,7 +464,7 @@
                                     <div class="card-body">
                                         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
                                             <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.microphone fill="#0036E3"/>
+                                                <x-icon.batch width="32" height="32" fill="#0036E3"/>
                                                 <h3 class="mb-0 h4">Awards and Honors</h3>
                                                 <div class="tooltip-wrapper bottom-left">
                                                     <i class="tooltip-icon">
@@ -556,7 +566,7 @@
                                     <div class="card-body">
                                         <div class="page-block-heading mb-3">
                                             <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.quote-right/>
+                                                <x-icon.quote-right width="32" height="32" fill="#0036E3"/>
                                                 <h3 class="h5 mb-0">Reviews & Rating</h3>
 
 

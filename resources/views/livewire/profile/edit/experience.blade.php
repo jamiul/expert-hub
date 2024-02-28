@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
             <div class="d-flex gap-2 align-items-center">
-                <x-icon.user-tie />
+                <x-icon.user-tie width="32" height="32" fill="#0036E3"/>
                 <h3 class="h5 mb-0">Work Experience</h3>
                 <button class="icon-btn {{ ! $editable ? 'd-none' : '' }}">
                     <x-icon.info fill="#C8C5D4" />
