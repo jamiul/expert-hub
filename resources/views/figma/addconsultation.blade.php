@@ -29,11 +29,10 @@
         <div class="modal-dialog modal-lg flat-modal">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title pt-3 px-3" id="exampleModalLabel">Add Consultation</h5>
+                    <h5 class="modal-title pt-3 px-4" id="exampleModalLabel">Add Consultation</h5>
                     <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body pb-4">
-
+                <div class="modal-body p-40 pt-0">
                     <ul class="progress-bar-nav-horizontal">
                         <li class="done-item"><strong> Expertise </strong></li>
                         <li class="running-item"><strong> Service fees </strong></li>
@@ -41,7 +40,6 @@
                         <li><strong> Summery </strong></li>
                     </ul>
                     <div class="progress-step-content mt-20">
-
                         <x-form.choice-static wire:model="title" label="Consultation Title">
                             <option value="">Select a consultation title</option>
                             <optgroup label="# Curriculum Expert">
@@ -170,7 +168,6 @@
                                             <li>04:00 PM</li>
                                             <li>05:00 PM</li>
                                             <li>09:00 PM</li>
-                                            <li>09:00 PM</li>
                                         </div>
 
                                         <div class="row edux-padding-xs">
@@ -179,7 +176,6 @@
                                             <li>10:00 AM</li>
                                             <li>04:00 PM</li>
                                             <li>05:00 PM</li>
-                                            <li>09:00 PM</li>
                                             <li>09:00 PM</li>
                                         </div>
                                         <div class="row edux-padding-xs">
@@ -257,7 +253,7 @@
                                     </ul>
                                 </div>
 
-                                <button type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
+                                <button style="width:185px" type="button" class="btn btn-primary eudx-btn-save">Confirm</button>
 
                             </div>
 
@@ -294,8 +290,6 @@
                             <div class="image-upload-preview">
                                 <div class="">
                                     <div class="uploaded-img-preview">
-
-
                                     <x-icon.user-fill width="132" height="133"  fill="#B3C1CF"/>
                                     </div>
                                     <p class="text-sm fst-italic my-1">
@@ -321,11 +315,10 @@
                                 </div>
                                 <div>
                                     <div class="d-flex gap-3 justify-content-sm-between">
-                                        <h6 class="">Architecture history</h6>
-                                        <p class="h6 mb-0">$120/1 hrs</p>
+                                        <h6 class="">Course Curriculum Development</h6>
+                                        <p class="h6 mb-0 fw-bold">$120/1 hrs</p>
                                     </div>
-                                    <p>Prof. Jhon dowe offers consultation services to educational institutions,
-                                        businesses and individuals seeking expertise in curriculum development. <span
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes More...<span
                                             class="edux-more"> More...</span></p>
                                     <ul class="button-list edux-button-list">
                                         <li class="button-list-item">
@@ -344,7 +337,7 @@
                                         </li>
 
                                         <li class="button-list-item">
-                                            +10 More
+                                        +3 More
                                         </li>
 
                                     </ul>
@@ -364,7 +357,6 @@
                                                 <li>04:00 PM</li>
                                                 <li>05:00 PM</li>
                                                 <li>09:00 PM</li>
-                                                <li>09:00 PM</li>
                                             </div>
 
                                             <div class="row">
@@ -373,7 +365,6 @@
                                                 <li>10:00 AM</li>
                                                 <li>04:00 PM</li>
                                                 <li>05:00 PM</li>
-                                                <li>09:00 PM</li>
                                                 <li>09:00 PM</li>
                                             </div>
                                         </ul>
@@ -388,16 +379,12 @@
                     </div>
 
 
-                    <div class="modal-footer px-0 pb-0 pt-3">
-                        <button type="button" class="btn btn-secondary edux-btn-cancel" data-bs-dismiss="modal">Cancel
+                    <div class="modal-footer px-0 pb-0 pt-3 d-flex justify-content-between">
+                        <button style="width:265px" type="button" class="btn btn-outline-primary border-2 btn-md" data-bs-dismiss="modal">Cancel
                         </button>
-                        <button type="button" class="btn btn-primary eudx-btn-save">Save & Continue</button>
-                        <button type="button" class="btn  eudx-btn-back d-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none">
-                                <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z"
-                                      fill="#191D24" fill-opacity="0.7"/>
-                            </svg>
+                        <button style="width:250px" type="button" class="btn btn-md btn-primary">Save & Continue</button>
+                        <button style="width:265px" type="button" class="btn btn-outline-primary border-2 btn-md d-none">
+                        <x-icon.arrow-back fill="#0036E3"/>
                             Back
                         </button>
                     </div>
