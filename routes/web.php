@@ -91,6 +91,7 @@ Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCa
 
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
+Route::get('/expert/profile/favourites', [ExpertProfileController::class, 'favourites'])->middleware(['auth', 'expert'])->name('expert.profile.favourites');
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/consultation/{consultation}', [ExpertProfileController::class, 'viewConsultation'])->name('expert.consultation.show');
@@ -100,6 +101,7 @@ Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->mid
 Route::get('/expert/analytics', [ExpertAnalyticsController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.analytics');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
+Route::get('/client/profile/favourites', [ClientProfileController::class, 'favourites'])->middleware(['auth', 'client'])->name('client.profile.favourites');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');

@@ -41,4 +41,9 @@ class ExpertProfileController extends Controller
     {
         return view('frontend.expert.profile.consultation', compact('consultation'));
     }
+
+    public function favourites()
+    {
+        return view('frontend.expert.profile.favourites');
+    }
 }

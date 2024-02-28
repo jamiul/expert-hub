@@ -1,4 +1,5 @@
-@extends('frontend.layouts.figma', ['header' => 'client']) @section('content') <section class="my-60">
+@extends('frontend.layouts.figma', ['header' => 'client']) @section('content')
+<section class="my-60">
   <div class="container">
     <div class="title-page-wrapper">
       <div class="title-page-header pb-0">
@@ -42,7 +43,7 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <x-icon.share fill="#0036E3"/>      
+                                        <x-icon.share fill="#0036E3"/>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" target="_blank"
@@ -66,9 +67,9 @@
                                         Copy Link
                                     </a>
                                 </li>
-                            </ul>                      
+                            </ul>
                                       </button>
-                                   
+
                                 </div>
                                   <button wire:click="favourite(10)" class="btn btn-outline-light btn-favorite m-1 ">
                                  <span class="heart-line">
@@ -130,7 +131,7 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <x-icon.share fill="#0036E3"/>    
+                                        <x-icon.share fill="#0036E3"/>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" target="_blank"
@@ -154,9 +155,9 @@
                                         Copy Link
                                     </a>
                                 </li>
-                            </ul>                        
+                            </ul>
                                       </button>
-                                   
+
                                 </div>
                                   <button wire:click="favourite(10)" class="btn btn-outline-light btn-favorite m-1 ">
                                  <span class="heart-line">
@@ -218,7 +219,7 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <x-icon.share fill="#0036E3"/>   
+                                        <x-icon.share fill="#0036E3"/>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" target="_blank"
@@ -242,9 +243,9 @@
                                         Copy Link
                                     </a>
                                 </li>
-                            </ul>                         
+                            </ul>
                                       </button>
-                                   
+
                                 </div>
                                   <button wire:click="favourite(10)" class="btn btn-outline-light btn-favorite m-1 ">
                                  <span class="heart-line">
@@ -306,7 +307,7 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <x-icon.share fill="#0036E3"/>  
+                                        <x-icon.share fill="#0036E3"/>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" target="_blank"
@@ -330,9 +331,9 @@
                                         Copy Link
                                     </a>
                                 </li>
-                            </ul>                          
+                            </ul>
                                       </button>
-                                   
+
                                 </div>
                                   <button wire:click="favourite(10)" class="btn btn-outline-light btn-favorite m-1 ">
                                  <span class="heart-line">
@@ -394,7 +395,7 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <x-icon.share fill="#0036E3"/>    
+                                        <x-icon.share fill="#0036E3"/>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" target="_blank"
@@ -418,9 +419,9 @@
                                         Copy Link
                                     </a>
                                 </li>
-                            </ul>                        
+                            </ul>
                                       </button>
-                                   
+
                                 </div>
                                   <button wire:click="favourite(10)" class="btn btn-outline-light btn-favorite m-1 ">
                                  <span class="heart-line">
@@ -456,7 +457,7 @@
              </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
