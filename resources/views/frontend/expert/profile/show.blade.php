@@ -496,8 +496,6 @@
                                             <x-icon.info fill="#C8C5D4"/>
                                         </button>
                                     </div>
-
-
                                     <div class="mt-4">
                                         <div class="owl-carousel awards-carousel">
                                             <div class="portfolio__card">

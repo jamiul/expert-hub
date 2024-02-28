@@ -76,11 +76,13 @@
                             <livewire:profile.edit.education/>
                         </div>
                         <div class="page-content">
-                            {{-- Biography --}}
+
                             <livewire:profile.biography/>
+
                             <div class="page-block mt-40">
                                 <livewire:profile.consultation/>
-                            </div>
+                            </div> <!--Consultation--->
+
                             <div class="page-block mt-40">
                                 <div class="consultant-prof edux-consultant-prof card card-24">
                                     <div class="d-flex gap-2 edux-add-modal-steps mb-3">
@@ -162,7 +164,7 @@
                                     @endforelse
                                 </div>
 
-                            </div>
+                            </div> <!--Training --->
 
                             <div class="page-block mt-40">
                                 <div class="card card-24">
@@ -191,55 +193,62 @@
                                                     <div class="users-project-item-title">
                                                         <h3 class="h6 mb-1">Development of Innovative Public Health
                                                             Curriculum</h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney,
+                                                            Sydney, Australia <span
                                                                 class="mx-2">|</span> 2015 -
                                                             Present</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="users-project-item-body">
-                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with
+                                                        Public
                                                         Health Institute of Sydney to develop an innovative public
                                                         health curriculum. This project aimed to revamp the university's
                                                         existing curriculum to align with the latest research,
                                                         pedagogical trends, and industry demands. Key highlights of this
                                                         project included:</p>
-                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to
+                                                        identify gaps in
                                                         the current curriculum and the evolving requirements of the
                                                         public health field.</p>
-                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                    <p class="my-2">Collaborating with a team of subject matter experts
+                                                        to design a
                                                         competency-based curriculum that emphasised practical skills and
                                                         interdisciplinary learning.</p>
                                                 </div>
                                             </div>
 
-                                             <div class="users-project-item bb-1 py-4">
+                                            <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
                                                         <h3 class="h6 mb-1">Development of Innovative Public Health
                                                             Curriculum</h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney,
+                                                            Sydney, Australia <span
                                                                 class="mx-2">|</span> 2015 -
                                                             Present</p>
                                                     </div>
 
                                                 </div>
                                                 <div class="users-project-item-body">
-                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with
+                                                        Public
                                                         Health Institute of Sydney to develop an innovative public
                                                         health curriculum. This project aimed to revamp the university's
                                                         existing curriculum to align with the latest research,
                                                         pedagogical trends, and industry demands. Key highlights of this
                                                         project included:</p>
-                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to
+                                                        identify gaps in
                                                         the current curriculum and the evolving requirements of the
                                                         public health field.</p>
-                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                    <p class="my-2">Collaborating with a team of subject matter experts
+                                                        to design a
                                                         competency-based curriculum that emphasised practical skills and
                                                         interdisciplinary learning.</p>
                                                 </div>
                                             </div>
-
 
 
                                         </div>
@@ -278,7 +287,8 @@
                                                     <div class="users-project-item-title">
                                                         <h3 class="h6 mb-1">Development of Innovative Public Health
                                                             Curriculum</h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney,
+                                                            Sydney, Australia <span
                                                                 class="mx-2">|</span> 2015 -
                                                             Present</p>
                                                     </div>
@@ -294,27 +304,31 @@
                                                     </div>
                                                 </div>
                                                 <div class="users-project-item-body">
-                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with
+                                                        Public
                                                         Health Institute of Sydney to develop an innovative public
                                                         health curriculum. This project aimed to revamp the university's
                                                         existing curriculum to align with the latest research,
                                                         pedagogical trends, and industry demands. Key highlights of this
                                                         project included:</p>
-                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to
+                                                        identify gaps in
                                                         the current curriculum and the evolving requirements of the
                                                         public health field.</p>
-                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                    <p class="my-2">Collaborating with a team of subject matter experts
+                                                        to design a
                                                         competency-based curriculum that emphasised practical skills and
                                                         interdisciplinary learning.</p>
                                                 </div>
                                             </div>
 
-                                             <div class="users-project-item bb-1 py-4">
+                                            <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
                                                         <h3 class="h6 mb-1">Development of Innovative Public Health
                                                             Curriculum</h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney, Sydney, Australia <span
+                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney,
+                                                            Sydney, Australia <span
                                                                 class="mx-2">|</span> 2015 -
                                                             Present</p>
                                                     </div>
@@ -330,27 +344,33 @@
                                                     </div>
                                                 </div>
                                                 <div class="users-project-item-body">
-                                                    <p class="my-2">I led a groundbreaking project in collaboration with Public
+                                                    <p class="my-2">I led a groundbreaking project in collaboration with
+                                                        Public
                                                         Health Institute of Sydney to develop an innovative public
                                                         health curriculum. This project aimed to revamp the university's
                                                         existing curriculum to align with the latest research,
                                                         pedagogical trends, and industry demands. Key highlights of this
                                                         project included:</p>
-                                                    <p class="my-2">Conducting a comprehensive needs assessment to identify gaps in
+                                                    <p class="my-2">Conducting a comprehensive needs assessment to
+                                                        identify gaps in
                                                         the current curriculum and the evolving requirements of the
                                                         public health field.</p>
-                                                    <p class="my-2">Collaborating with a team of subject matter experts to design a
+                                                    <p class="my-2">Collaborating with a team of subject matter experts
+                                                        to design a
                                                         competency-based curriculum that emphasised practical skills and
                                                         interdisciplinary learning.</p>
                                                 </div>
                                             </div>
-
 
 
                                         </div>
                                     </div>
                                 </div>
                             </div> <!--Previous Projects (0) -->
+
+                            <div class="page-block mt-40">
+                                <livewire:profile.edit.experience/>
+                            </div> <!---Work Experience-->
 
                             <div class="page-block mt-40">
                                 <div class="card card-24">
@@ -381,9 +401,11 @@
                                             <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
-                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate
+                                                                Change Summit Highlights & Media Conversations
                                                                 with Activists</a></h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney</p>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of
+                                                            Sydney</p>
                                                     </div>
                                                     <div>
                                                         <button class="icon-btn icon-btn-md border">
@@ -407,9 +429,11 @@
                                             <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
-                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate Change Summit Highlights & Media Conversations
+                                                        <h3 class="h6 mb-1"><a href="">Front Row & On the Mic: Climate
+                                                                Change Summit Highlights & Media Conversations
                                                                 with Activists</a></h3>
-                                                        <p class="text-dark-70 m-0">Public Health Institute of Sydney</p>
+                                                        <p class="text-dark-70 m-0">Public Health Institute of
+                                                            Sydney</p>
                                                     </div>
                                                     <div>
                                                         <button class="icon-btn icon-btn-md border">
@@ -430,20 +454,113 @@
                                             </div>
 
 
-
-
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!--Previous Projects (0) -->
-
-
-                            {{-- Experience --}}
-
+                            </div> <!--Conferences and Media Interview -->
 
                             <div class="page-block mt-40">
-                                <livewire:profile.edit.experience/>
-                            </div>
+                                <div class="card card-24">
+                                    <div class="card-body">
+                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
+                                            <div class="d-flex gap-2 align-items-center">
+                                                <x-icon.microphone fill="#0036E3"/>
+                                                <h3 class="mb-0 h4">Awards and Honors</h3>
+                                                <div class="tooltip-wrapper bottom-left">
+                                                    <i class="tooltip-icon">
+                                                        <x-icon.info fill="#191D24B2"/>
+                                                    </i>
+                                                    <div class="tooltip-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Voluptas,
+                                                        voluptates.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addAwards">
+                                                <x-icon.add/>
+                                            </button>
+                                        </div>
+                                        <div class="owl-carousel awards-carousel">
+                                            <div class="portfolio__card">
+                                                <figure class="position-relative">
+                                                    <img
+                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
+                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
+                                                </figure>
+                                                <h4 class="fs-6 fw-medium title">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </h4>
+                                                <div class="tags">
+                                                    <span>Public Health</span>
+                                                    <span>Infectious Diseases</span>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio__card">
+                                                <figure class="position-relative">
+                                                    <img
+                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}"
+                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
+                                                </figure>
+                                                <h4 class="fs-6 fw-medium title">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </h4>
+                                                <div class="tags">
+                                                    <span>Public Health</span>
+                                                    <span>Infectious Diseases</span>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio__card">
+                                                <figure class="position-relative">
+                                                    <img
+                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
+                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
+                                                </figure>
+
+
+                                                <h4 class="fs-6 fw-medium title">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </h4>
+                                                <div class="tags">
+                                                    <span>Public Health</span>
+                                                    <span>Infectious Diseases</span>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio__card">
+                                                <figure class="position-relative">
+                                                    <img
+                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
+                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
+                                                </figure>
+                                                <h4 class="fs-6 fw-medium title">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </h4>
+                                                <div class="tags">
+                                                    <span>Public Health</span>
+                                                    <span>Infectious Diseases</span>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio__card">
+                                                <figure class="position-relative">
+                                                    <img
+                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
+                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
+                                                </figure>
+                                                <h4 class="fs-6 fw-medium title">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </h4>
+                                                <div class="tags">
+                                                    <span>Public Health</span>
+                                                    <span>Infectious Diseases</span>
+                                                </div>
+                                            </div>
+                                        </div><!--.//carousel-->
+
+                                    </div>
+                                </div>
+                            </div> <!--Conferences and Media Interview -->
+
                             <div class="page-block mt-40">
                                 <div class="card card-24">
                                     <div class="card-body">
@@ -488,103 +605,169 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> <!--Reviews & Rating-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- Modal : add Previous Project-->
+    <div class="modal fade" id="addPreviousProject" tabindex="-1" aria-labelledby="addPreviousProjectLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Previous Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 pt-2">
+                    <form action="">
+                        <x-form.input type="text" readonly label="Project ID" name="type"
+                                      placeholder="Type Here" value=""/>
+                        <x-form.input type="text" readonly label="Address" name="type" placeholder="Type"
+                                      value=""/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <x-form.select label="Start Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                            <div class="col-md-6">
+                                <x-form.select label="End Year" name="title">
+                                    <option value="">Select Year</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="Prof">Prof</option>
+                                </x-form.select>
+                            </div>
+                        </div>
+                        <x-form.textarea label="Description" name="bio" placeholder="Type"/>
+                        <div class="image-upload-flat mb-2">
+                            <label for="upload-file" class="text-center">
+                                <span> <x-icon.image width="50px" height="50px" fill="#0059C999"/> </span>
+                                <span class="fw-medium">Clik to upload or drag & drop</span>
+                                <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here</span>
+
+                            </label>
+                            <input type="file" id="upload-file" class="d-none">
+                        </div>
+                        <x-form.input type="text" readonly label="Organisation Verified Email" name="type"
+                                      placeholder="Type"
+                                      value=""/>
+
+                    </form>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-md btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+    <!-- Modal : add Conferences-->
+    <div class="modal fade" id="addConferences" tabindex="-1" aria-labelledby="addConferencesLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Conferences and Media Interview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 pt-2">
+                    <form action="">
+                        <x-form.choice-static wire:model="category" label="Category">
+                            <option value="">Select</option>
+                            <option value="Mr">Media Interview</option>
+                        </x-form.choice-static>
+
+                        <x-form.input type="text" label="Title" name="type" placeholder="Type"
+                                      value=""/>
+
+                        <x-form.input type="text" label="Link" name="type" placeholder="Type"
+                                      value=""/>
+
+                    </form>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-md btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+    <!-- Modal : add Conferences-->
+    <div class="modal fade" id="addAwards" tabindex="-1" aria-labelledby="addAwardsLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md flat-modal">
+            <div class="modal-content">
+                <div class="modal-header p-40 pb-0 border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Awards and Honors</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-40 pt-2">
+                    <form action="">
+                        <div class="image-upload-flat mb-2">
+                            <label for="upload-file" class="text-center">
+                                <span> <x-icon.image width="50px" height="50px" fill="#0059C999"/> </span>
+                                <span class="fw-medium">Clik to upload or drag & drop</span>
+                                <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here</span>
+
+                            </label>
+                            <input type="file" id="upload-file" class="d-none">
+                        </div>
+
+
+                        <x-form.input type="text" label="Title of the Award/Honor" name="type" placeholder="Type"
+                                      value=""/>
+
+
+                        <x-form.choice-static class="mb-1" wire:model="skillset" label="Skillset" multiple>
+                            <option value="">Architecture</option>
+                            <option value="Mr">LMS</option>
+                        </x-form.choice-static>
+
+                        <p class="text-sm text-dark-70 mb-2">Suggestion skills: Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design,
+                            Research and Analysis, skill development</p>
+
+                        <x-form.input type="text" label="Relevant Web Link" name="type" placeholder="Type"
+                                      value=""/>
+
+                    </form>
+                </div>
+                <div class="modal-footer p-40 pt-3">
+                    <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-md btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+    
 @endsection
 
 
-<!-- Modal : add Previous Project-->
-<div class="modal fade" id="addPreviousProject" tabindex="-1" aria-labelledby="addPreviousProjectLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-md flat-modal">
-        <div class="modal-content">
-            <div class="modal-header p-40 pb-0 border-0">
-                <h5 class="modal-title" id="exampleModalLabel">Add Previous Project</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-40 pt-2">
-                <form action="">
-                    <x-form.input type="text" readonly label="Project ID" name="type"
-                                  placeholder="Type Here" value=""/>
-                    <x-form.input type="text" readonly label="Address" name="type" placeholder="Type"
-                                  value=""/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <x-form.select label="Start Year" name="title">
-                                <option value="">Select Year</option>
-                                <option value="Mr">Mr</option>
-                                <option value="Mrs">Mrs</option>
-                                <option value="Dr">Dr</option>
-                                <option value="Prof">Prof</option>
-                            </x-form.select>
-                        </div>
-                        <div class="col-md-6">
-                            <x-form.select label="End Year" name="title">
-                                <option value="">Select Year</option>
-                                <option value="Mr">Mr</option>
-                                <option value="Mrs">Mrs</option>
-                                <option value="Dr">Dr</option>
-                                <option value="Prof">Prof</option>
-                            </x-form.select>
-                        </div>
-                    </div>
-                    <x-form.textarea label="Description" name="bio" placeholder="Type"/>
-                    <div class="image-upload-flat mb-2">
-                        <label for="upload-file" class="text-center">
-                            <span> <x-icon.image width="50px" height="50px" fill="#0059C999"/> </span>
-                            <span class="fw-medium">Clik to upload or drag & drop</span>
-                            <span class="text-sm">Drag & drop any images or documents that might be helpful in explaining your brief here</span>
 
-                        </label>
-                        <input type="file" id="upload-file" class="d-none">
-                    </div>
-                    <x-form.input type="text" readonly label="Organisation Verified Email" name="type" placeholder="Type"
-                                  value=""/>
 
-                </form>
-            </div>
-            <div class="modal-footer p-40 pt-3">
-                <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-md btn-primary">Update</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Modal -->
-<!-- Modal : add Conferences-->
-<div class="modal fade" id="addConferences" tabindex="-1" aria-labelledby="addConferencesLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-md flat-modal">
-        <div class="modal-content">
-            <div class="modal-header p-40 pb-0 border-0">
-                <h5 class="modal-title" id="exampleModalLabel">Add Conferences and Media Interview</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-40 pt-2">
-                <form action="">
-                    <x-form.choice-static wire:model="category" label="Category">
-                        <option value="">Select</option>
-                        <option value="Mr">Media Interview</option>
-                    </x-form.choice-static>
+@push('bottom_scripts')
 
-                    <x-form.input type="text" label="Title" name="type" placeholder="Type"
-                                  value=""/>
-
-                    <x-form.input type="text" label="Link" name="type" placeholder="Type"
-                                  value=""/>
-
-                </form>
-            </div>
-            <div class="modal-footer p-40 pt-3">
-                <button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-md btn-primary">Update</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Modal -->
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".awards-carousel").owlCarousel({
+                loop: true,
+                nav: true,
+                dots: false,
+                items: 3
+            });
+        })
+    </script>
+@endpush
