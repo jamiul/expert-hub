@@ -11,12 +11,15 @@
         &.page-sidebar {
             background-color: #FCFCFF;
         }
+        &.page-content {
+           max-width: 968px;
+        }
     }
 }
 
 .left-sidebar-layout {
     @media screen and (min-width: 990px) {
-        grid-template-columns: 320px auto;
+        grid-template-columns: 348px auto;
     }
     @media screen and (max-width: 990px) and (min-width: 767px) {
         grid-template-columns: 280px auto;
@@ -30,7 +33,7 @@
 
 .right-sidebar-layout {
     @media screen and (min-width: 990px) {
-        grid-template-columns:  auto 320px;
+        grid-template-columns:  auto 348px;
     }
     @media screen and (max-width: 990px) and (min-width: 767px) {
         grid-template-columns:  auto 280px;

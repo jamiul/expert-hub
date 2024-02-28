@@ -66,7 +66,7 @@
                       </div>
 
                       <div class="edux-expert-card-area">
-                      <h5>Expert Profile</h5>
+                      <h2 class="h5 fw-bold">Expert Profile</h5>
 
                 <div class="project-expert-card p-0 border-0">
 
@@ -244,16 +244,9 @@
                     </div>
                   </div><!--.//carousel-->
                 </div>
-
-
-
               </div> <!-- Consultant work-->
-
-
               <div class="consultant-testimonial border-0 p-0">
-                <h3 class="mb-1"><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/quote.svg') }}"></img>Rating and Review</h3>
-
-
+                <h3 class="mb-1"><x-icon.quote-right fill="#0036E3"/>Rating and Review</h3>
                 <div class="star-ratings mt-3">
                         <x-icon.star-fill/>
                         <x-icon.star-fill/>
@@ -286,7 +279,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="testimonial-button">
+                <div class="testimonial-button d-flex justify-content-center ">
                   <a href="#">More Review & Rating  <x-icon.chevron-right fill="#0036E3"/> </a>
                 </div>
               </div>

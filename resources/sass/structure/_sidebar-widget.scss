@@ -166,7 +166,8 @@
 
 .user-education-edit-widget {
     .user-education-box-item {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 70px;
         align-items: center;
         gap: 10px;
         border-bottom: 1px solid $edu-border-color;

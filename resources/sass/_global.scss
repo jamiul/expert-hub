@@ -29,7 +29,6 @@ img {
 }
 
 
-
 .social-auth {
     display: grid;
     gap: 16px;
@@ -112,4 +111,8 @@ img {
 
 .bt-1 {
     border-top: 1px solid $edu-border-color;
+}
+
+a {
+    color: $edu-primary-color;
 }
