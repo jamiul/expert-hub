@@ -73,6 +73,48 @@
                                 <livewire:profile.consultation/>
                             </div> <!--Consultation--->
 
+                            <div class="page-block">
+                                <div class="profile-block-card edit-profile-block-card">
+                                    <div class="profile-block-card-header">
+                                        <div class="profile-block-card-title">
+                                            <x-icon.icon-trainer width="24" height="24" fill="#0036E3"/>
+                                            <h3>Consultation</h3>
+                                            <div class="tooltip-wrapper bottom-left">
+                                                <i class="tooltip-icon">
+                                                    <x-icon.info fill="#191D24B2"/>
+                                                </i>
+                                                <div class="tooltip-content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Voluptas,
+                                                    voluptates.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="profile-block-card-action">
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addPreviousProject">
+                                                <x-icon.add/>
+                                            </button>
+                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
+                                                    data-bs-target="#addPreviousProject">
+                                                <x-icon.add/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="profile-block-card-body">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+                                            assumenda aut consequatur corporis dicta, error harum ipsam laborum minus,
+                                            nesciunt pariatur quod reiciendis ut, veritatis voluptas. Assumenda at
+                                            atque, blanditiis dignissimos dolores ex explicabo hic, impedit in incidunt
+                                            ipsam ipsum laboriosam molestias porro provident quas quisquam sequi soluta
+                                            unde voluptas.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
                             <div class="page-block mt-40">
                                 <div class="card card-24">
                                     <div class="card-body">
@@ -187,7 +229,6 @@
                                         </div>
 
                                         <div class="users-projects-list">
-
                                             <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
@@ -736,7 +777,8 @@
                             <option value="Mr">LMS</option>
                         </x-form.choice-static>
 
-                        <p class="text-sm text-dark-70 mb-2">Suggestion skills: Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design,
+                        <p class="text-sm text-dark-70 mb-2">Suggestion skills: Curriculum Editor, E-Learning Developer,
+                            Curriculum Writer, Curriculum Design,
                             Research and Analysis, skill development</p>
 
                         <x-form.input type="text" label="Relevant Web Link" name="type" placeholder="Type"

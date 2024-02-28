@@ -1,0 +1,23 @@
+.profile-block-card {
+    padding: 24px 32px;
+    border: 1px solid $edu-border-color;
+
+    .profile-block-card-header {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: auto 40px;
+    }
+
+    .profile-block-card-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &.edit-profile-block-card {
+        grid-template-columns: auto 70px;
+    }
+
+
+}
