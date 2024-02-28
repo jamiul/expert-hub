@@ -1,4 +1,4 @@
-<div>
+<section class="page-section-sm">
     <div class="find-consultant-details">
         <div class="container profile__page">
             <div class="row border-0">
@@ -17,12 +17,12 @@
 
                     <div class="progress-step-content mt-20">
 
-                        
+
                         @if($currentStep === 1)
                         @include('livewire.training.create-training-step1')
                         @endif
 
-                        
+
 
 
                         @if($currentStep === 2)
@@ -37,12 +37,12 @@
                         @include('livewire.training.create-training-step4')
                         @endif
 
-                        
+
 
                         <div class="create-training-button-area">
-                            
+
                             <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon" wire:click="back">Back</button>
-                            
+
                             <button class="btn btn-primary btn-md w-100" wire:click="next">{{$currentStep < 4 ? 'Continue' : 'Save'}}</button>
                         </div>
 
@@ -56,9 +56,9 @@
 
 
     <!-- Modal : Add Work Experience-->
-    
+
     <!--End Modal -->
 
 
     <!-- ===================== Work Experience Modal start Here ====================== -->
-</div>
+</section>

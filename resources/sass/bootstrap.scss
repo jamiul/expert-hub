@@ -2,23 +2,21 @@
 @import "variables";
 
 // Bootstrap PGK
-@import 'bootstrap/scss/bootstrap';
-
+@import "bootstrap/scss/bootstrap";
 
 //Application Global
 @import "typography";
 @import "global";
 
-
 //Component
-@import 'components/accordion';
-@import 'components/alerts';
+@import "components/accordion";
+@import "components/alerts";
 @import "components/badges";
 @import "components/buttons";
-@import 'components/cards';
-@import 'components/forms';
-@import 'components/modal';
-@import 'components/pagination';
+@import "components/cards";
+@import "components/forms";
+@import "components/modal";
+@import "components/pagination";
 @import "components/spacing";
 @import "components/star-ratings";
 @import "components/step-progress-bar";
@@ -55,13 +53,12 @@
 @import "pages/training-page";
 @import "pages/user-profile-setup";
 
-
 @import "pages/expert-dashboard";
 
 @import "pages/client-dashboard";
 
 @import "pages/admin-dashboard";
 
-
 // Rabiul
 @import "pages/client-transaction-all";
+@import "pages/consultation-page";

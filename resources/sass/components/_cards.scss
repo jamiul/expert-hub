@@ -166,3 +166,21 @@
         }
     }
 }
+
+
+.users-project-item {
+    .users-project-item-header {
+        display: grid;
+        grid-template-columns: auto 70px;
+        gap: 30px;
+    }
+
+    &:first-child {
+        padding-top: 0 !important;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0 !important;
+    }
+}

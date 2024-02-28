@@ -23,4 +23,9 @@ class ClientProfileController extends Controller
             'profile' => auth()->user()->profile,
         ]);
     }
+
+    public function favourites()
+    {
+        return view('frontend.client.profile.favourites');
+    }
 }

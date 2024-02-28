@@ -37,6 +37,7 @@ use App\Livewire\Auth\ClientProfileSetup;
 use App\Livewire\Auth\ClientRegistration;
 use App\Livewire\Auth\ExpertProfileSetup;
 use App\Livewire\Auth\ExpertRegistration;
+use App\Http\Controllers\Frontend\Auth\SocialLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,8 +83,15 @@ Route::get('/email/verify', [EmailVerificationController::class, 'show'])->middl
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/email/resend', [EmailVerificationController::class, 'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 
+//social login
+Route::get('/google/auth/redirect', [SocialLoginController::class, 'googleRedirect'])->middleware('guest')->name('google.redirect');
+Route::get('/google/auth/callback', [SocialLoginController::class, 'googleCallback'])->middleware('guest')->name('google.callback');
+Route::get('/linkedin/auth/redirect', [SocialLoginController::class, 'linkedinRedirect'])->middleware('guest')->name('linkedin.redirect');
+Route::get('/linkedin/auth/callback', [SocialLoginController::class, 'linkedinCallback'])->middleware('guest')->name('linkedin.callback');
+
 Route::get('/expert/profile', [ExpertProfileController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.profile.index');
 Route::get('/expert/profile/create', [ExpertProfileController::class, 'create'])->middleware(['auth', 'expert'])->name('expert.profile.create');
+Route::get('/expert/profile/favourites', [ExpertProfileController::class, 'favourites'])->middleware(['auth', 'expert'])->name('expert.profile.favourites');
 Route::get('/expert/profile/edit', [ExpertProfileController::class, 'edit'])->middleware(['auth', 'expert'])->name('expert.profile.edit');
 Route::get('/expert/profile/{profile}', [ExpertProfileController::class, 'show'])->name('expert.profile.show');
 Route::get('/expert/consultation/{consultation}', [ExpertProfileController::class, 'viewConsultation'])->name('expert.consultation.show');
@@ -93,6 +101,7 @@ Route::get('/expert/contracts', [ExpertContractController::class, 'index'])->mid
 Route::get('/expert/analytics', [ExpertAnalyticsController::class, 'index'])->middleware(['auth', 'expert'])->name('expert.analytics');
 
 Route::get('/client/profile', [ClientProfileController::class, 'index'])->middleware(['auth', 'client'])->name('client.profile');
+Route::get('/client/profile/favourites', [ClientProfileController::class, 'favourites'])->middleware(['auth', 'client'])->name('client.profile.favourites');
 Route::get('/client/profile/edit', [ClientProfileController::class, 'edit'])->middleware(['auth', 'client'])->name('client.profile.edit');
 Route::get('/client/profile/current-position', [ClientProfileController::class, 'position'])->middleware(['auth', 'client'])->name('client.profile.position');
 Route::get('/client/dashboard', [ClientDashboardController::class, 'index'])->middleware(['auth', 'client'])->name('client.dashboard');
