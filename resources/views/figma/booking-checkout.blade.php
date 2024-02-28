@@ -11,7 +11,6 @@
 
                         <div class="edux-paypal-visa-billing-area mb-4">
                             <div class="edux-paypal-billing">
-
                             <div class="form-radio-option edux-radio-option">
                                 <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
                                 <label class="form-radio-title  edux-form-radio-title me-4" for="Male"> <span class="me-1 edux-paypal-title"> <img src="{{ asset('assets/frontend/img/mastercard.png') }}" alt="all-card"> </span> <span>Master ending in 8698</span> </label>
@@ -48,7 +47,7 @@
                         </div>
                     </div>
                     <div class="edux-book-expert-time pt-3 pb-3">
-                        <h4>Book Expert for Consultation</h4>
+                        <h2 class="h6">Book Expert for Consultation</h4>
                         <div class="profile-mile-ester ">
                         <x-icon.light fill="#6E737C"/>
                         <p>The time slot will be held for 10:00</p>
@@ -76,20 +75,11 @@
                         <p>Learn <a href="#">about</a> fees and  <a href="#">estimated taxes</a> </p>
                       
                     </div>
-                    <button type="button" class="btn btn-primary edux-btn-primary">Check & Fund</button>
+                    <button style="max-width:352px" type="button" class="btn btn-primary edux-btn-primary">Check & Fund</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Edit Option Modal start  -->
-
-
-
-
-
-
-
-
-
 @endsection

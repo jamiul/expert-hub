@@ -6,7 +6,7 @@
         <h1 class="h5 mb-20">Favorites</h1>
       </div>
       <div x-data="{ activeTab: 'myFeed' }">
-        <ul class="secondary-tab-nav" id="myTab" role="tablist">
+        <ul class="secondary-tab-nav borer-top" id="myTab" role="tablist">
           <li x-on:click="activeTab = 'myFeed'" class="tab-nav-item" :class="{'active': activeTab === 'myFeed' }"> Experts </li>
           <li x-on:click="activeTab = 'bestMatch'" class="tab-nav-item" :class="{'active': activeTab === 'bestMatch' }"> Scholarships </li>
           <li x-on:click="activeTab = 'savedJobs'" class="tab-nav-item" :class="{'active': activeTab === 'savedJobs' }"> Academic Training </li>

@@ -1,5 +1,8 @@
 .consultant-reviw {
     ul {
+        display: flex;
+        margin-left: 0px;
+        padding-left: 0px;
         li {
             list-style: none;
         }
@@ -217,13 +220,6 @@
     min-width: 185px;
 }
 
-.form-check-input {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    border: 2px solid rgba(0, 0, 0, 0.31);
-}
-
 .edux-btn-set-as-primary {
     display: flex;
     padding: 2px 16px 1px 16px;
@@ -251,7 +247,6 @@
     border-radius: 23px;
     border: 2px solid #c00000;
     background: #c00000;
-
     &:hover {
         display: flex;
         padding: 2px 16px 1px 16px;
@@ -326,4 +321,81 @@
             text-decoration-line: underline;
         }
     }
+}
+
+.consultant-testimonial {
+    .testimonial-button {
+        a {
+            border-bottom: 1px solid #0036e3;
+        }
+    }
+}
+
+.edux-billing-method-area-right {
+    display: flex;
+    width: 100%;
+    gap: 48px;
+}
+
+.edux-no-available-booking {
+    display: flex;
+    width: 100%;
+    padding: 40px;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 8px;
+    border: 1px solid #e7e5ef;
+    background: #fff;
+    .tag-list {
+        a {
+            background: #f4f6f9;
+            border: none;
+        }
+    }
+}
+
+.edux-course-curriculum-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edux-order-stream {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 35px;
+    border: 1px solid rgba(0, 54, 227, 0.1);
+    background: rgba(0, 54, 227, 0.07);
+}
+
+.edux-expert-card-area {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background-color: #f7f9fe;
+    margin: 32px 0px;
+    .project-expert-card {
+        display: flex;
+        gap: 1rem;
+        padding: 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+    }
+}
+
+.eudx-project-expert-thumb {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    .card-body {
+        background-color: #f7f9fe;
+    }
+}
+
+.portfolioCaousel {
+    display: block;
+    width: 100% !important;
+    max-width: 840px !important;
 }

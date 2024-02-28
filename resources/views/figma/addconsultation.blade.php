@@ -29,11 +29,10 @@
         <div class="modal-dialog modal-lg flat-modal">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title pt-3 px-3" id="exampleModalLabel">Add Consultation</h5>
+                    <h5 class="modal-title pt-3 px-4" id="exampleModalLabel">Add Consultation</h5>
                     <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body pb-4">
-
+                <div class="modal-body p-40 pt-0">
                     <ul class="progress-bar-nav-horizontal">
                         <li class="done-item"><strong> Expertise </strong></li>
                         <li class="running-item"><strong> Service fees </strong></li>
@@ -41,7 +40,6 @@
                         <li><strong> Summery </strong></li>
                     </ul>
                     <div class="progress-step-content mt-20">
-
                         <x-form.choice-static wire:model="title" label="Consultation Title">
                             <option value="">Select a consultation title</option>
                             <optgroup label="# Curriculum Expert">
@@ -170,7 +168,6 @@
                                             <li>04:00 PM</li>
                                             <li>05:00 PM</li>
                                             <li>09:00 PM</li>
-                                            <li>09:00 PM</li>
                                         </div>
 
                                         <div class="row edux-padding-xs">
@@ -179,7 +176,6 @@
                                             <li>10:00 AM</li>
                                             <li>04:00 PM</li>
                                             <li>05:00 PM</li>
-                                            <li>09:00 PM</li>
                                             <li>09:00 PM</li>
                                         </div>
                                         <div class="row edux-padding-xs">
@@ -294,8 +290,6 @@
                             <div class="image-upload-preview">
                                 <div class="">
                                     <div class="uploaded-img-preview">
-
-
                                     <x-icon.user-fill width="132" height="133"  fill="#B3C1CF"/>
                                     </div>
                                     <p class="text-sm fst-italic my-1">
@@ -363,7 +357,6 @@
                                                 <li>04:00 PM</li>
                                                 <li>05:00 PM</li>
                                                 <li>09:00 PM</li>
-                                                <li>09:00 PM</li>
                                             </div>
 
                                             <div class="row">
@@ -372,7 +365,6 @@
                                                 <li>10:00 AM</li>
                                                 <li>04:00 PM</li>
                                                 <li>05:00 PM</li>
-                                                <li>09:00 PM</li>
                                                 <li>09:00 PM</li>
                                             </div>
                                         </ul>

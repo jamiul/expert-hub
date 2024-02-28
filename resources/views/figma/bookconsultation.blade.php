@@ -29,12 +29,12 @@
         <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pb-4">
-        <div class="form-input-group form-input-has-icon ">
+        <!-- <div class="form-input-group form-input-has-icon ">
           <div class="icon-field-wrapper">
             <input name="skill" id="skill" class="form-input-field" wire:model="skill" placeholder="Total slot">
             <span class="form-input-icon edux-slot-count"> 3 </span>
           </div>
-        </div>
+        </div> -->
         <div class="mb-40">
           <div class="available-schedule-slot mb-40">
 
@@ -70,10 +70,10 @@
             </div>
           </div>
         </div>
-        <div class="edux-select-options position-relative">
+        <!-- <div class="edux-select-options position-relative">
           <x-form.textarea label="Note" wire:model="bio" placeholder="Bio"> Select options </x-form.textarea>
           <span class="edux-total-select-count">0/200</span>
-        </div>
+        </div> -->
         <div class="modal-footer px-0 pb-0 pt-3">
           <button type="button" class="btn btn-md btn-outline-primary border-2" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-md btn-primary">Book a Consultation</button>

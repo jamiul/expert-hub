@@ -4978,15 +4978,6 @@ body > .edux-no-footer > footer .footer {
     bottom: 20px;
 }
 
-.available-schedule-slot {
-    grid-template-columns: 50% 50%;
-    display: grid;
-    gap: 25px;
-    border-radius: 4px;
-    border: 2px solid #e7e5ef;
-    padding: 20px;
-}
-
 .edux-timezoon {
     max-width: 256px;
 }
@@ -4996,12 +4987,6 @@ body > .edux-no-footer > footer .footer {
 }
 
 /* ============================== Book Consultant End Here ============================= */
-
-.edux-billing-method-area-right {
-    display: flex;
-    width: 100%;
-    gap: 48px;
-}
 
 .edux-billing-method-area {
     display: flex;
@@ -5096,46 +5081,8 @@ body > .edux-no-footer > footer .footer {
     max-width: 840px !important;
 }
 
-.consultant-reviw ul {
-    display: flex;
-    margin-left: 0px;
-    padding-left: 0px;
-}
-
-.consultant-reviw ul li a {
-    align-items: center;
-    display: inline-flex;
-}
-
-.edux-no-available-booking {
-    display: flex;
-    width: 100%;
-    padding: 40px;
-    flex-direction: column;
-    gap: 24px;
-    border-radius: 8px;
-    border: 1px solid #e7e5ef;
-    background: #fff;
-}
-
 .book-expert-profileimg {
     max-height: 538px;
-}
-
-.edux-course-curriculum-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.edux-order-stream {
-    display: flex;
-    padding: 8px 16px;
-    align-items: center;
-    gap: 8px;
-    border-radius: 35px;
-    border: 1px solid rgba(0, 54, 227, 0.1);
-    background: rgba(0, 54, 227, 0.07);
 }
 
 .edux-expert-card-area {
@@ -5146,33 +5093,10 @@ body > .edux-no-footer > footer .footer {
     margin: 32px 0px;
 }
 
-.edux-expert-card-area .card-body {
-    background-color: #f7f9fe !important;
-}
-
 .consultant-details-left {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.edux-no-available-booking .tag-list a {
-    background: #f4f6f9;
-    border: none;
-}
-
-.eudx-project-expert-thumb {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-}
-
-.edux-expert-card-area .project-expert-card {
-    display: flex;
-    gap: 1rem;
-    padding: 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    flex-direction: column;
 }
 
 .edux-right-schedule .tag-list a {
