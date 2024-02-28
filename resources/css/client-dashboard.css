@@ -4998,39 +4998,11 @@ body > .edux-no-footer > footer .footer {
     width: calc(100% - 400px);
 }
 
-.edux-sidebar-expert {
-    display: flex;
-    justify-content: center;
-    display: flex;
-    max-width: 350px;
-    padding: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 8px;
-    border: 2px solid #e7e5ef;
-    background: #fff;
-    width: 100%;
-    align-items: center;
-}
-
 .edux-paypal-billing .form-radio-group {
     margin-bottom: 7px;
     margin-top: 0px;
     padding-top: 0px;
     display: flex;
-}
-
-.edux-radio-option-right {
-    align-items: flex-start;
-    display: flex;
-    gap: 8px;
-}
-
-.edux-form-radio-title-right {
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    flex-direction: column;
 }
 
 .eudx-visa-card {
@@ -5041,10 +5013,6 @@ body > .edux-no-footer > footer .footer {
 
 .edux-paypal-visa-billing .edux-btn-border-primary {
     max-width: 230px;
-}
-
-.edux-check-and-fund .btn {
-    max-width: 100% !important;
 }
 
 /* ============================================ Expert Profile ============================================= */
@@ -5097,11 +5065,6 @@ body > .edux-no-footer > footer .footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.edux-right-schedule .tag-list a {
-    text-align: center;
-    background-color: #ebeff7;
 }
 
 .about-slider .owl-carousel .owl-item img {

@@ -3,11 +3,9 @@
 @vite('resources/default/css/expert-profile.css')
       <div class="container profile__page edux-profile-page">
         <div class="edux-billing-method-area-right">
-
         <div class="col-md-8">
           <div class="edux-no-available-booking mt-5">
               <div class="page-content">
-
               <div class="book-expert-profile pb-3">
                         <img src="{{ asset('assets/frontend/img/book-exprt1.jpg') }}" alt="">
                         <div class="edux-course-curriculum-area">

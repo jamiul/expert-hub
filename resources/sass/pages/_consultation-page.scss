@@ -399,3 +399,46 @@
     width: 100% !important;
     max-width: 840px !important;
 }
+
+.edux-sidebar-expert {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    max-width: 350px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    border: 2px solid #e7e5ef;
+    background: #fff;
+    width: 100%;
+    align-items: center;
+}
+
+.edux-radio-option-right {
+    align-items: flex-start;
+    display: flex;
+    gap: 8px;
+}
+
+.edux-form-radio-title-right {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.edux-right-schedule {
+    .tag-list {
+        a {
+            text-align: center;
+            background-color: #ebeff7;
+        }
+    }
+}
+
+.edux-check-and-fund {
+    .btn {
+        max-width: 100% !important;
+    }
+}
