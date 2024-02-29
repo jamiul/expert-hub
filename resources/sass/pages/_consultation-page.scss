@@ -310,6 +310,7 @@
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
+            color: $edu-primary-color;
         }
     }
 }
@@ -429,6 +430,10 @@
 }
 
 .edux-right-schedule {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
     .tag-list {
         a {
             text-align: center;
@@ -440,5 +445,19 @@
 .edux-check-and-fund {
     .btn {
         max-width: 100% !important;
+    }
+}
+
+.edux-btn-primary:hover {
+    &:hover {
+        display: flex;
+        max-width: 218px;
+        padding: 11px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        background: #002cb9 !important;
+        width: 100%;
+        text-align: center;
     }
 }
