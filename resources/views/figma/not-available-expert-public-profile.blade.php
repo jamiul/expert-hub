@@ -3,11 +3,9 @@
 @vite('resources/default/css/expert-profile.css')
       <div class="container profile__page edux-profile-page">
         <div class="edux-billing-method-area-right">
-
         <div class="col-md-8">
           <div class="edux-no-available-booking mt-5">
               <div class="page-content">
-
               <div class="book-expert-profile pb-3">
                         <img src="{{ asset('assets/frontend/img/book-exprt1.jpg') }}" alt="">
                         <div class="edux-course-curriculum-area">
@@ -66,7 +64,7 @@
                       </div>
 
                       <div class="edux-expert-card-area">
-                      <h5>Expert Profile</h5>
+                      <h2 class="h5 fw-bold">Expert Profile</h5>
 
                 <div class="project-expert-card p-0 border-0">
 
@@ -244,16 +242,9 @@
                     </div>
                   </div><!--.//carousel-->
                 </div>
-
-
-
               </div> <!-- Consultant work-->
-
-
               <div class="consultant-testimonial border-0 p-0">
-                <h3 class="mb-1"><img src="{{ asset('/assets/frontend/default/img/expert_dashboard/icons/quote.svg') }}"></img>Rating and Review</h3>
-
-
+                <h3 class="mb-1"><x-icon.quote-right fill="#0036E3"/>Rating and Review</h3>
                 <div class="star-ratings mt-3">
                         <x-icon.star-fill/>
                         <x-icon.star-fill/>
@@ -286,7 +277,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="testimonial-button">
+                <div class="testimonial-button d-flex justify-content-center ">
                   <a href="#">More Review & Rating  <x-icon.chevron-right fill="#0036E3"/> </a>
                 </div>
               </div>
@@ -308,8 +299,8 @@
                     </div>
 
 <div class="edux-right-schedule mt-3">
-                    <h6>Scheduling</h6>
-                          <div class="form-radio-option edux-radio-option-right">
+                    <!-- <h6>Scheduling</h6> -->
+                          <!-- <div class="form-radio-option edux-radio-option-right">
                                 <input type="radio" name="gender" id="Male" class="form-radio-field form-check-input" wire:model="gender" value="male">
                                 <label class="form-radio-title  edux-form-radio-title-right me-4" for="Male"> <span class="me-1 edux-meeting-title"> Meeting now</span>
                                 <span>Michel is not available right now</span>
@@ -327,15 +318,16 @@
                                 <a href="#" class="expert-profile-tag">2:00 AM</a>
                                 <a href="#" class="expert-profile-tag">3:00 AM</a>
 
-                            </div>
+                            </div> -->
 
                     <div class="edux-check-and-fund">
-                        <p><a href="#">See more times</a>  </p>
-                        <button type="button" class="btn btn-primary edux-btn-primary">Continue</button>
-                        <button class="btn btn-outline-primary btn-md w-100 mt-2 btn-has-icon fw-bold">
+                        <!-- <p><a href="#">See more times</a>  </p> -->
+                        <button class="btn btn-outline-primary btn-md w-100  btn-has-icon fw-bold">
                         <x-icon.message-line fill="#0036E3"/>
-                                Chat with Michael
+                        Book a Consultation
                             </button>
+                        <button class="btn btn-primary btn-md w-100 mt-2">Continue</button>
+                        
                     </div>
                     </div>
                 </div>
