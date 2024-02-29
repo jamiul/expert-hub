@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Training;
 
+use App\Models\Profile;
 use Livewire\Component;
 use App\Models\Training;
 
@@ -18,6 +19,12 @@ class Details extends Component
     {
         $redirectUrlIfNotAuthenticated = route('trainings.show', ['training' => $this->training]);
         $training->favourite($redirectUrlIfNotAuthenticated);
+    }
+
+    public function favouriteIntructor(Profile $profile)
+    {
+        $redirectUrlIfNotAuthenticated = route('trainings.show', ['training' => $this->training]);
+        $profile->favourite($redirectUrlIfNotAuthenticated);
     }
 
     public function render()
