@@ -570,7 +570,7 @@
                             </div> <!--Conferences and Media Interview -->
 
                             <div class="page-block mt-40">
-                                <div class="profile-block-card">
+                                <div class="profile-block-card profile-slider-block-card">
                                     <div class="profile-block-card-header">
                                         <div class="profile-block-card-title">
                                             <x-icon.batch width="32" height="32" fill="#0036E3"/>
@@ -590,11 +590,11 @@
                                             <div class="awards-carousel-nav">
                                                 <button
                                                     class="icon-btn icon-btn-md border bg-primary awards-carousel-next">
-                                                    <x-icon.chevron-top fill="#fff"/>
+                                                    <x-icon.chevron-left fill="#fff"/>
                                                 </button>
                                                 <button
                                                     class="icon-btn icon-btn-md border bg-primary awards-carousel-prev">
-                                                    <x-icon.chevron-top fill="#fff"/>
+                                                    <x-icon.chevron-right fill="#fff"/>
                                                 </button>
                                             </div>
 
@@ -602,78 +602,43 @@
                                     </div>
                                     <div class="profile-block-card-body">
                                         <div class="owl-carousel awards-carousel">
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
+                                            <div class="award-slider-item">
+                                                <div class="award-slider-image">
+                                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}">
                                                 </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
+                                                <p class="fw-medium">
                                                     <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
+                                                </p>
+                                                <div class="tag-list">
+                                                    <span class="tag">Public Health</span>
+                                                    <span class="tag">Infectious Diseases</span>
                                                 </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
+                                            </div> <!--award-slider-item-->
+                                            <div class="award-slider-item">
+                                                <div class="award-slider-image">
+                                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}">
+                                                </div>
+                                                <p class="fw-medium">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </p>
+                                                <div class="tag-list">
+                                                    <span class="tag">Public Health</span>
+                                                    <span class="tag">Infectious Diseases</span>
+                                                </div>
+                                            </div> <!--award-slider-item-->
+                                            <div class="award-slider-item">
+                                                <div class="award-slider-image">
+                                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}">
+                                                </div>
+                                                <p class="fw-medium">
+                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
+                                                </p>
+                                                <div class="tag-list">
+                                                    <span class="tag">Public Health</span>
+                                                    <span class="tag">Infectious Diseases</span>
+                                                </div>
+                                            </div> <!--award-slider-item-->
 
-
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
                                         </div><!--.//carousel-->
                                     </div>
                                 </div>
@@ -781,7 +746,7 @@
                 nav: false,
                 dots: false,
                 items: 3,
-                gap: 24,
+                margin: 24,
             });
 
             jQuery(".awards-carousel-nav .awards-carousel-next").click(function () {
