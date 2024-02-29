@@ -1,0 +1,26 @@
+.awards-carousel {
+    .award-slider-item {
+        .award-slider-image {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        p {
+            margin: 8px 0 4px;
+            line-height: 19.2px;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    color: $edu-primary-color;
+                }
+            }
+        }
+
+        .tag {
+            background-color: #F4F6F9;
+            color: #191D24B2;
+        }
+    }
+}

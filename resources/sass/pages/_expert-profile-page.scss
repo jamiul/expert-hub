@@ -7,6 +7,16 @@
         .profile-block-card-header {
             grid-template-columns: auto 70px;
         }
+        &.profile-slider-block-card{
+            .profile-block-card-header {
+                grid-template-columns: auto 110px;
+            }
+        }
+    }
+    &.profile-slider-block-card {
+        .profile-block-card-header {
+            grid-template-columns: auto 70px;
+        }
     }
 
     .profile-block-card-header {

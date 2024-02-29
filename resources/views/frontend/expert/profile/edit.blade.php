@@ -475,105 +475,68 @@
                             </div> <!--Conferences and Media Interview -->
 
                             <div class="page-block mt-40">
-                                <div class="card card-24">
-                                    <div class="card-body">
-                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.batch width="32" height="32" fill="#0036E3"/>
-                                                <h3 class="mb-0 h4">Awards and Honors</h3>
-                                                <div class="tooltip-wrapper bottom-left">
-                                                    <i class="tooltip-icon">
-                                                        <x-icon.info fill="#191D24B2"/>
-                                                    </i>
-                                                    <div class="tooltip-content">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Voluptas,
-                                                        voluptates.
-                                                    </div>
+                                <div class="profile-block-card edit-profile-block-card profile-slider-block-card">
+                                    <div class="profile-block-card-header">
+                                        <div class="profile-block-card-title">
+                                            <x-icon.batch width="32" height="32" fill="#0036E3"/>
+                                            <h3 class="mb-0 h4">Awards and Honors</h3>
+                                            <div class="tooltip-wrapper bottom-left">
+                                                <i class="tooltip-icon">
+                                                    <x-icon.info fill="#191D24B2"/>
+                                                </i>
+                                                <div class="tooltip-content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Voluptas,
+                                                    voluptates.
                                                 </div>
                                             </div>
-                                            <button class="icon-btn icon-btn-md border" data-bs-toggle="modal"
-                                                    data-bs-target="#addAwards">
+                                        </div>
+                                        <div class="profile-block-card-action">
+                                            <button class="icon-btn icon-btn-md border">
                                                 <x-icon.add/>
                                             </button>
+                                            <div class="awards-carousel-nav">
+                                                <button
+                                                    class="icon-btn icon-btn-md border bg-primary awards-carousel-next">
+                                                    <x-icon.chevron-left fill="#fff"/>
+                                                </button>
+                                                <button
+                                                    class="icon-btn icon-btn-md border bg-primary awards-carousel-prev">
+                                                    <x-icon.chevron-right fill="#fff"/>
+                                                </button>
+                                            </div>
+
                                         </div>
+                                    </div>
+                                    <div class="profile-block-card-body">
                                         <div class="owl-carousel awards-carousel">
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
+                                            <div class="award-slider-item">
+                                                <div class="award-slider-image">
+                                                    <img src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}">
                                                 </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port2.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
+                                                <p class="fw-medium">
                                                     <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
+                                                </p>
+                                                <div class="tag-list">
+                                                    <span class="tag">Public Health</span>
+                                                    <span class="tag">Infectious Diseases</span>
                                                 </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
+                                                <div class="mt-1">
+                                                    <button class="icon-btn m-1 icon-btn-md border">
+                                                        <x-icon.edit/>
+                                                    </button>
+                                                    <button class="icon-btn m-1 icon-btn-md border"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteWorkExperience">
+                                                        <x-icon.delete/>
+                                                    </button>
+                                                </div>
+                                            </div> <!--award-slider-item-->
 
-
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port1.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
-                                            <div class="portfolio__card">
-                                                <figure class="position-relative">
-                                                    <img
-                                                        src="{{ asset('/assets/frontend/default/img/expert_dashboard/port3.jpg') }}"
-                                                        class="img-fluid rounded" alt="Portfolio Thumbnail">
-                                                </figure>
-                                                <h4 class="fs-6 fw-medium title">
-                                                    <a href="#">Comparative Analysis of Public Health Curricula</a>
-                                                </h4>
-                                                <div class="tags">
-                                                    <span>Public Health</span>
-                                                    <span>Infectious Diseases</span>
-                                                </div>
-                                            </div>
                                         </div><!--.//carousel-->
-
                                     </div>
                                 </div>
+
                             </div> <!--Conferences and Media Interview -->
 
                             <div class="page-block mt-40">
