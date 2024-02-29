@@ -73,8 +73,8 @@
 
 .user-bio-edit-widget {
     .user-profile-picture {
-        max-width: 167px;
-        max-height: 167px;
+        width: 167px;
+        height: 167px;
         overflow: hidden;
         position: relative;
         border-radius: 100%;
@@ -267,33 +267,13 @@
 
 .user-bio-widget {
     .user-profile-picture {
-        max-width: 167px;
-        max-height: 167px;
+        width: 167px;
+        height: 167px;
         overflow: hidden;
         position: relative;
         border-radius: 100%;
         margin: 0 auto;
-
-        &:hover {
-            button {
-                bottom: 0;
-            }
-        }
-
-        button {
-            position: absolute;
-            left: 0;
-            right: 0;
-            text-align: center;
-            background-color: $edu-headings-color;
-            bottom: -100%;
-            border: none;
-            padding: 5px 10px 10px;
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.875rem;
-            transition: 0.2s;
-        }
+        background-color: #0036E324;
     }
 
     .user-profile-info {
@@ -323,17 +303,29 @@
         gap: 3px;
 
         li {
-            //display: inline-flex;
-            //gap: 4px;
-            //align-items: center;
             font-size: 0.875rem;
-            font-weight: 500;
-            line-height: 159.5%;
+            font-weight: 400;
+            line-height: 20px;
             list-style: none;
-            color: $edu-primary-color;
-            border-radius: 2.625rem;
-            border: 1px solid $edu-primary-color;
-            padding: 0.125rem 0.60rem;
+            border-right: 1px solid $edu-border-color;
+            padding-right: 4px;
+        }
+
+        &.showing-less-tag {
+            li {
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+        .all-tags-trigger {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            border: 2px solid #EBEFF7;
+            padding: 2px 12px;
+            border-radius: 42px;
+            background-color: #fff;
+            color: #555C68;
         }
     }
 }

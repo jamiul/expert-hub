@@ -73,34 +73,52 @@
                                 <livewire:profile.consultation/>
                             </div> <!--Consultation--->
 
-                            <div class="page-block mt-40">
-                                <div class="card card-24">
-                                    <div class="card-body">
-                                        <div class="page-block-heading d-flex justify-content-between gap-3 mb-3">
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <x-icon.icon-trainer width="24" height="24" fill="#0036E3"/>
-                                                <h3 class="h4 mb-0">Training
-                                                    ({{ $profile->trainings->count() }})</h3>
-                                                <div class="tooltip-wrapper bottom-left">
-                                                    <i class="tooltip-icon">
-                                                        <x-icon.info fill="#191D24B2"/>
-                                                    </i>
-                                                    <div class="tooltip-content">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Voluptas,
-                                                        voluptates.
-                                                    </div>
+                            <div class="page-block">
+                                <div class="profile-block-card edit-profile-block-card">
+                                    <div class="profile-block-card-header">
+                                        <div class="profile-block-card-title">
+                                            <x-icon.icon-trainer width="24" height="24" fill="#0036E3"/>
+                                            <h2 class="h4 mb-0">Training
+                                                ({{ $profile->trainings->count() }})</h2>
+                                            <div class="tooltip-wrapper bottom-left">
+                                                <i class="tooltip-icon">
+                                                    <x-icon.info fill="#191D24B2"/>
+                                                </i>
+                                                <div class="tooltip-content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Voluptas,
+                                                    voluptates.
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="profile-block-card-action">
                                             <a href="/training/create"
                                                class="icon-btn icon-btn-md border">
                                                 <x-icon.add/>
                                             </a>
+                                            <button class="icon-btn icon-btn-md border bg-primary">
+                                                <x-icon.chevron-top fill="#fff"/>
+                                            </button>
                                         </div>
+                                    </div>
 
+                                    <div class="profile-block-card-body">
                                         @forelse ($profile->trainings as $training)
                                             <div class="card p-3 mb-3">
-                                                <h6 class="h-5 mb-3">{{ $training->title }}</h6>
+                                                <div class="edit-profile-element">
+                                                    <h3 class="h6 mb-3">{{ $training->title }}</h3>
+                                                    <div>
+                                                        <button class="icon-btn icon-btn-md border">
+                                                            <x-icon.edit/>
+                                                        </button>
+                                                        <button class="icon-btn icon-btn-md border"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteWorkExperience">
+                                                            <x-icon.delete/>
+                                                        </button>
+                                                    </div>
+                                                </div> <!--edit-profile-element-->
+
                                                 <div class="d-flex">
                                                     @foreach ($training->instructors as $expert)
                                                         <x-expert.mini-card :expert="$expert"/>
@@ -160,10 +178,8 @@
                                         @empty
                                             <p> No data</p>
                                         @endforelse
-
                                     </div>
                                 </div>
-
                             </div> <!--Training --->
 
                             <div class="page-block mt-40">
@@ -187,7 +203,6 @@
                                         </div>
 
                                         <div class="users-projects-list">
-
                                             <div class="users-project-item bb-1 py-4">
                                                 <div class="users-project-item-header">
                                                     <div class="users-project-item-title">
@@ -567,7 +582,7 @@
                                         <div class="page-block-heading mb-3">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <x-icon.quote-right width="32" height="32" fill="#0036E3"/>
-                                                <h3 class="h5 mb-0">Reviews & Rating</h3>
+                                                <h3 class="h5 mb-0">Recommendation</h3>
 
 
                                                 <button class="icon-btn">
@@ -736,7 +751,8 @@
                             <option value="Mr">LMS</option>
                         </x-form.choice-static>
 
-                        <p class="text-sm text-dark-70 mb-2">Suggestion skills: Curriculum Editor, E-Learning Developer, Curriculum Writer, Curriculum Design,
+                        <p class="text-sm text-dark-70 mb-2">Suggestion skills: Curriculum Editor, E-Learning Developer,
+                            Curriculum Writer, Curriculum Design,
                             Research and Analysis, skill development</p>
 
                         <x-form.input type="text" label="Relevant Web Link" name="type" placeholder="Type"
