@@ -1,5 +1,6 @@
-@extends('frontend.layouts.figma', ['header' => 'client']) 
-@section('content') <section class="my-60">
+@extends('frontend.layouts.figma', ['header' => 'client'])
+@section('content')
+<section class="my-60">
   <div class="container">
     <div class="title-page-wrapper">
       <div class="title-page-header pb-0">
@@ -52,7 +53,7 @@
 
 
                     </div>
-                    
+
                   </div>
                   <div class="expert-card-body">
                     <div class="d-flex gap-3 align-items-center">
@@ -517,7 +518,7 @@
             </div>
           </div>
           <div x-show="activeTab === 'savedJobs'" class="tab-content">
-            
+
 
           <div class="row justify-content-center">
             <div class="col-lg-12">
